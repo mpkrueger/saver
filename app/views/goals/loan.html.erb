@@ -1,3 +1,5 @@
+<div class="container-fluid">
+  <div class="row">
 <h1>Ok, let’s figure out when you can <b>pay off your loans</b>.</h1>
 <!--h2>First, give us some specifics about your loan.</h2-->
 
@@ -6,13 +8,16 @@
 
 <%= form_for @loan do |f| %>
 	<div class="form-group">
-		
-		<%= f.text_field :balance, class: 'form-control', placeholder: "Enter amount owed" %>
+		<div class="left-inner-addon">
+			<span>$</span>
+			<%= f.text_field :balance, class: 'form-control', placeholder: "Enter amount owed" %>
+		</div>
 	</div>
 <br>
 <li>What's the interest rate on your loan?</li>
 
 	<div class="form-group">
+
 		<%= f.text_field :rate, class: 'form-control', placeholder: "Interest rate" %>
 	</div>
 
@@ -28,3 +33,6 @@
 	<%= f.submit "See my options", class: 'btn btn-success' %>
 
 <% end %>
+</ul>
+</div>
+</div>
