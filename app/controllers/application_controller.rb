@@ -3,10 +3,9 @@ class ApplicationController < ActionController::Base
 
   def hello
   	render text: 
-  		"<h1>Saver: Helping you reach (and savor) your financial goals</h1>
-  			<p>Which of these is a goal you'd like to achieve?</p>
-  			<li>Paying off my student loan</li>
-  			<li>Buying a house</li>
-  			<li>Saving for retirement</li>"
+  		"<h1>What keeps you up at night?</h1>
+  			<li>When can I pay off my loan?</li>
+  			<li>When can I buy a house?</li>
+  			<li>When can I retire?</li>"
   end
 end
