@@ -3,6 +3,7 @@ class GoalsController < ApplicationController
   end
 
   def loan
+  		@loan = Loan.new
   end
 
   def house

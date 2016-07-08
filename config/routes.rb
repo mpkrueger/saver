@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  
+  resources :loans
+
   get 'goals/index'
 
   get 'goals/loan'
