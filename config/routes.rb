@@ -1,3 +1,11 @@
 Rails.application.routes.draw do
-  root "application#hello"
+  get 'goals/index'
+
+  get 'goals/loan'
+
+  get 'goals/house'
+
+  get 'goals/retirement'
+
+  root to: 'goals#index'
 end
