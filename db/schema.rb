@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160708211136) do
+ActiveRecord::Schema.define(version: 20160708230120) do
+
+  create_table "houses", force: :cascade do |t|
+    t.decimal  "budget"
+    t.decimal  "down_payment"
+    t.decimal  "years_owning"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "loans", force: :cascade do |t|
     t.decimal  "balance"

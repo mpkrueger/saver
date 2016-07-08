@@ -3,10 +3,27 @@
 
 <ul>
 <li>What'd your budget for a home?</li>
-<li>____________________</li>
+
+<%= form_for @house do |f| %>
+	<div class="form-group">
+		<%= f.text_field :budget, class: 'form-control', placeholder: "Enter your budget" %>
+	</div>
+
 <br>
 <li>How much do you want to save for a down payment?</li>
-<li>____________________</li>
+
+	<div class="form-group">
+		<%= f.text_field :down_payment, class: 'form-control', placeholder: "Enter your down payment" %>
+	</div>
+
 <br>
 <li>For how long do you plan to own this home?</li> 
-<li>____________________</li>
+
+	<div class="form-group">
+		<%= f.text_field :years_owning, class: 'form-control', placeholder: "Enter years you expect to live in house" %>
+	</div>
+
+	<%= f.submit "See my options", class: 'btn btn-success' %>
+<% end %>
+
+</ul>
