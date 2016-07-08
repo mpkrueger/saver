@@ -9,22 +9,22 @@
 		
 		<%= f.text_field :balance, class: 'form-control', placeholder: "Enter amount owed" %>
 	</div>
-
-<% end %>
 <br>
 <li>What's the interest rate on your loan?</li>
 
-<%= form_for @loan do |f| %>
 	<div class="form-group">
 		<%= f.text_field :rate, class: 'form-control', placeholder: "Interest rate" %>
 	</div>
-<% end %>
+
 
 <br>
 <li>How many more months do you have on your loan?</li> 
 
-<%= form_for @loan do |f| %>
+
 	<div class="form-group">
 		<%= f.text_field :months_remaining, class: 'form-control', placeholder: "Months remaining" %>
 	</div>
+
+	<%= f.submit "See my options", class: 'btn btn-success' %>
+
 <% end %>
