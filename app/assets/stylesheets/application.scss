@@ -18,25 +18,39 @@
 @import "bootstrap";
 
 h1 {
-   color: teal;
-   font-size: 24px;
-   margin: 15px 0 15px 10px;
-   text-align: center;
-   width: 220px;
+   color: #009999;
+   font-size: 21px;
+   line-height:30px;
+   font-family: Verdana, sans-serif;
+   text-align: left;
+   max-width: 80%;
+ }
+
+ h2{
+ 	color:#333333;
+ 	font-size: 16px;
+ 	line-height:18px;
+ 	font-family: Verdana, sans-serif;
+ 	max-width: 80%;
+ 	margin-top: 0;
  }
  
  body{
- 	font-size: 21px;
- 	color:dark-grey;
- 	margin: 5px;
+ 	font-size: 16px;
+ 	font-family: Tahoma, Geneva, sans-serif;
+ 	color:dark-blue;
+ 	margin: 15px 15px 15px 20px;
+
  }
  
  .btn-default{
+ 	font-size: 21px;
  	margin: 0 0 10px 0;
- 	color:teal;
+ 	color:dark-blue;
  	width: 220px;
  }
 
  ul{
- 	block:none;
+ 	list-style:none;
+    padding-left:0;
  }
