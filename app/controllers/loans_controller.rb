@@ -5,6 +5,8 @@ class LoansController < ApplicationController
 
   def show
   	@loan = Loan.find(params[:id])
+    @monthly_rate = @loan.rate/ 100 / 12
+
   end
 
   def create

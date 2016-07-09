@@ -7,13 +7,13 @@
  <%= form_for @loan do |f| %>
  	<div class="form-group">
  		
- 		<%= f.text_field :balance, class: 'form-control', placeholder: "Enter amount owed" %>
+ 		<%= f.number_field :balance, class: 'form-control', placeholder: "Enter amount owed" %>
  	</div>
  <br>
  <li>What's the interest rate on your loan?</li>
  
  	<div class="form-group">
- 		<%= f.text_field :rate, class: 'form-control', placeholder: "Interest rate" %>
+ 		<%= f.number_field :rate, class: 'form-control', placeholder: "Enter interest rate (e.g. 6.8)" %>
  	</div>
  
  
@@ -22,7 +22,7 @@
  
  
  	<div class="form-group">
- 		<%= f.text_field :months_remaining, class: 'form-control', placeholder: "Months remaining" %>
+ 		<%= f.number_field :months_remaining, class: 'form-control', placeholder: "Months remaining" %>
  	</div>
  
  	<%= f.submit "See my options", class: 'btn btn-success' %>
