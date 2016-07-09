@@ -53,9 +53,22 @@ h1 {
  	width: 80%;
  }
 
-.btn-default:hover, .btn-default:focus {
+.btn-default:hover{
+//still not working
 	backgound-color: #009999;
 	text-color: #FFFFFF;
+} 
+
+.btn-success{
+	background-color: #009999;
+	text-color: #FFFFFF;
+  width:80%;
+  font-size: 16px;
+  padding:10px;
+}
+
+.btn-success:hover{
+	background-color: #00726F;
 }
 
  ul{
@@ -65,17 +78,22 @@ h1 {
 
  .form-control{
  	margin-top: 10px;
- 	font-family: Tahoma, Geneva, sans-serif;
+ 	font-family: "Source Sans Pro", sans-serif;
  }
 
+//these seem to be doing something strange
 .left-inner-addon {
     position: relative;
 }
+
 .left-inner-addon input {
     padding-left: 22px;    
 }
+
 .left-inner-addon span {
-    position: absolute;
+   
+   position: absolute;
     padding: 7px 12px;
+    align:center;
     pointer-events: none;
 }
