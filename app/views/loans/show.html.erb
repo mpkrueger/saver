@@ -1,3 +1,16 @@
-<p>Loan balance: <%= @loan.balance %></p>
-<p>Interest rate: <%= @loan.rate %></p>
+<p>Loan balance: &#36;<%= @loan.balance.round(0) %></p>
+<p>Interest rate: <%= @loan.rate %>%</p>
 <p>Months remaining on loan: <%= @loan.months_remaining %></p>
+
+
+<p>Option 1: Monthly payment to pay off in 2 years</p>
+<p>Number of monthly payments: 24</p>
+<p>Monthly payment: &#36;<%= ((@monthly_rate/100 * @loan.balance)/(1-(1+@monthly_rate/100)**-24)).round(2) %>
+
+<p>Option 2: Monthly payment to pay off in 5 years</p>
+<p>Number of monthly payments: 60</p>
+<p>Monthly payment: &#36;<%= ((@monthly_rate/100 * @loan.balance)/(1-(1+@monthly_rate/100)**-60)).round(2) %>
+
+<p>Option 3: Monthly payment to pay off on schedule</p>
+<p>Number of monthly payments: <%= @loan.months_remaining %></p>
+<p>Monthly payment: &#36;<%= ((@monthly_rate/100 * @loan.balance)/(1-(1+@monthly_rate/100)**-@loan.months_remaining)).round(2) %>
