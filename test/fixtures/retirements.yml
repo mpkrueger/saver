@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  savings: 9.99
+  age: 9.99
+  years_remaining: 9.99
+  annual_spend: 9.99
+
+two:
+  savings: 9.99
+  age: 9.99
+  years_remaining: 9.99
+  annual_spend: 9.99

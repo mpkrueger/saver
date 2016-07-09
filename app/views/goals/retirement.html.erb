@@ -1,12 +1,40 @@
 <h1>Ok, let’s figure out when you can <b>retire</b></h1>
 <!--h2>First, give us some specifics about your loan.</h2-->
 
+
 <ul>
-<li>What'd your budget for a home?</li>
-<li>____________________</li>
+<li>How much have you saved for retirement?</li>
+
+<%= form_for @retirement do |f| %>
+
+	<div class="form-group">
+		<%= f.text_field :savings, class: 'form-control', placeholder: "Enter your retirement savings amount" %>
+	</div>
+
 <br>
-<li>How much do you want to save for a down payment?</li>
-<li>____________________</li>
+<li>How old are you?</li>
+
+	<div class="form-group">
+		<%= f.text_field :age, class: 'form-control', placeholder: "Enter your age" %>
+	</div>
+
 <br>
-<li>For how long do you plan to own this home?</li> 
-<li>____________________</li>
+<li>How many years until your target retirement?</li> 
+
+	<div class="form-group">
+		<%= f.text_field :years_remaining, class: 'form-control', placeholder: "Years remaining" %>
+	</div>
+
+<br>
+<li>How much do you spend each year, approximately?</li>
+
+	<div class="form-group">
+		<%= f.text_field :annual_spend, class: 'form-control', placeholder: "Enter annual spend" %>
+	</div>
+
+	<%= f.submit "Show me my options", class: 'btn btn-success' %>
+
+<% end %>
+
+</ul>
+

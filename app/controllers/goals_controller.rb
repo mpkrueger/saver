@@ -11,5 +11,6 @@ class GoalsController < ApplicationController
   end
 
   def retirement
+    @retirement = Retirement.new
   end
 end

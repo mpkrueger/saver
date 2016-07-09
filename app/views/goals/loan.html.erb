@@ -1,0 +1,31 @@
+<h1>Ok, let’s figure out when you can <b>pay off your loans</b>.</h1>
+ <!--h2>First, give us some specifics about your loan.</h2-->
+ 
+ <ul>
+ <li>How much do you still owe (i.e. your loan balance)?</li>
+ 
+ <%= form_for @loan do |f| %>
+ 	<div class="form-group">
+ 		
+ 		<%= f.text_field :balance, class: 'form-control', placeholder: "Enter amount owed" %>
+ 	</div>
+ <br>
+ <li>What's the interest rate on your loan?</li>
+ 
+ 	<div class="form-group">
+ 		<%= f.text_field :rate, class: 'form-control', placeholder: "Interest rate" %>
+ 	</div>
+ 
+ 
+ <br>
+ <li>How many more months do you have on your loan?</li> 
+ 
+ 
+ 	<div class="form-group">
+ 		<%= f.text_field :months_remaining, class: 'form-control', placeholder: "Months remaining" %>
+ 	</div>
+ 
+ 	<%= f.submit "See my options", class: 'btn btn-success' %>
+ 
+ <% end %>
+ </ul>
