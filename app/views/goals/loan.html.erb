@@ -5,15 +5,16 @@
  <li>How much do you still owe (i.e. your loan balance)?</li>
  
  <%= form_for @loan do |f| %>
- 	<div class="form-group">
- 		
+ 	<div class="form-group inner-addon left-addon">
+ 		<span class="glyphicon">$</span>
  		<%= f.number_field :balance, class: 'form-control', placeholder: "Enter amount owed" %>
  	</div>
  <br>
  <li>What's the interest rate on your loan?</li>
  
- 	<div class="form-group">
- 		<%= f.number_field :rate, class: 'form-control', placeholder: "Enter interest rate (e.g. 6.8)" %>
+ 	<div class="form-group inner-addon right-addon">
+ 		<%= f.number_field :rate, :step => 0.1, class: 'form-control', placeholder: "Enter interest rate (e.g. 6.8)" %>
+ 		<span class="glyphicon">%</span>
  	</div>
  
  
@@ -21,8 +22,9 @@
  <li>How many more months do you have on your loan?</li> 
  
  
- 	<div class="form-group">
+ 	<div class="form-group inner-addon right-addon">
  		<%= f.number_field :months_remaining, class: 'form-control', placeholder: "Months remaining" %>
+ 		<span class="glyphicon">months</span>
  	</div>
  
  	<%= f.submit "See my options", class: 'btn btn-success' %>
