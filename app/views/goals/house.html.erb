@@ -2,25 +2,25 @@
 <!--h2>First, give us some specifics about your loan.</h2-->
 
 <ul>
-<li>What'd your budget for a home?</li>
+<li>What'd you budget for a home?</li>
 
 <%= form_for @house do |f| %>
 	<div class="form-group">
-		<%= f.text_field :budget, class: 'form-control', placeholder: "Enter your budget" %>
+		<%= f.telephone_field :budget, class: 'form-control', placeholder: "Enter your budget" %>
 	</div>
 
 <br>
 <li>How much do you want to save for a down payment?</li>
 
 	<div class="form-group">
-		<%= f.text_field :down_payment, class: 'form-control', placeholder: "Enter your down payment" %>
+		<%= f.telephone_field :down_payment, class: 'form-control', placeholder: "Enter your down payment" %>
 	</div>
 
 <br>
 <li>For how long do you plan to own this home?</li> 
 
 	<div class="form-group">
-		<%= f.text_field :years_owning, class: 'form-control', placeholder: "Enter years you expect to live in house" %>
+		<%= f.telephone_field :years_owning, class: 'form-control', placeholder: "Enter years you expect to live in house" %>
 	</div>
 
 	<%= f.submit "See my options", class: 'btn btn-success' %>
