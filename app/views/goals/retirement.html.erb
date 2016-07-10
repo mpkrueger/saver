@@ -8,28 +8,28 @@
 <%= form_for @retirement do |f| %>
 
 	<div class="form-group">
-		<%= f.text_field :savings, class: 'form-control', placeholder: "Enter your retirement savings amount" %>
+		<%= f.telephone_field :savings, class: 'form-control', placeholder: "Enter your retirement savings amount" %>
 	</div>
 
 <br>
 <li>How old are you?</li>
 
 	<div class="form-group">
-		<%= f.text_field :age, class: 'form-control', placeholder: "Enter your age" %>
+		<%= f.telephone_field :age, class: 'form-control', placeholder: "Enter your age" %>
 	</div>
 
 <br>
 <li>How many years until your target retirement?</li> 
 
 	<div class="form-group">
-		<%= f.text_field :years_remaining, class: 'form-control', placeholder: "Years remaining" %>
+		<%= f.telephone_field :years_remaining, class: 'form-control', placeholder: "Years remaining" %>
 	</div>
 
 <br>
 <li>How much do you spend each year, approximately?</li>
 
 	<div class="form-group">
-		<%= f.text_field :annual_spend, class: 'form-control', placeholder: "Enter annual spend" %>
+		<%= f.telephone_field :annual_spend, class: 'form-control', placeholder: "Enter annual spend" %>
 	</div>
 
 	<%= f.submit "Show me my options", class: 'btn btn-success' %>
