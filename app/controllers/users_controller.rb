@@ -10,7 +10,8 @@ class UsersController < ApplicationController
 
   	if @user.save
   		flash[:notice] = "User created and saved"
-  		redirect_to intro_index_path(@user)
+      session[:current_user_id] = @user.id
+  		redirect_to intro_index_path
   	else
   		flash[:error] = "uh oh"
   		redirect_to root
