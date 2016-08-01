@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  why_here: MyString
+  money_feels: MyString
+  name: MyString
+  age: 1
+  student_loans: false
+  student_amount: 9.99
+  cc_debt: false
+  cc_amount: 9.99
+  savings: false
+  savings_amount: 9.99
+  investments: false
+  investments_type: MyText
+  spend_vs_income: MyText
+
+two:
+  why_here: MyString
+  money_feels: MyString
+  name: MyString
+  age: 1
+  student_loans: false
+  student_amount: 9.99
+  cc_debt: false
+  cc_amount: 9.99
+  savings: false
+  savings_amount: 9.99
+  investments: false
+  investments_type: MyText
+  spend_vs_income: MyText
