@@ -6,11 +6,11 @@ class UsersController < ApplicationController
   end
 
   def create
-  	@user = User.new(params.require(:user).permit(:why_here, :money_feels))
+  	@user = User.new(params.require(:user).permit(:name, :age))
 
   	if @user.save
   		flash[:notice] = "User created and saved"
-  		redirect_to intro_index_path
+  		redirect_to root_path(:anchor => "get_started")
   	else
   		flash[:error] = "uh oh"
   		redirect_to root
