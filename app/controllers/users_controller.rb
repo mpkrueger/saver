@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
   	if @user.save
   		flash[:notice] = "User created and saved"
-  		redirect_to root_path(:anchor => "get_started")
+  		redirect_to root_path(:anchor => "loans")
   	else
   		flash[:error] = "uh oh"
   		redirect_to root

@@ -23,7 +23,7 @@ html{
 
 
 .page-background{
-  background-color: #FFF;
+  background-color: #2F6071;
 }
 
 .gradient{
@@ -69,10 +69,12 @@ h1 {
 }
 
 #coach-section{
-  width:100%;
-  background-color:#2F6071;
-  padding-bottom:40px;
+  width:80%;
+  background-color:#00A99D;
+  padding-bottom:20px;
   padding-top:20px;
+  margin: auto;
+  margin-top: 20px;
  }
 
 .coach-header{
@@ -89,17 +91,22 @@ h1 {
   font-size: 16px;
   font-family: 'Museo Sans', Tahoma, Geneva, sans-serif;
   font-weight: 300;
-  //background-color: #D5DFE3;
-  //color: #2F6071;
   color: #fff;
-  width: 70%;
+  width: 90%;
   padding: 15px;
   margin: auto;
   border-radius:4px;
+  line-height: 2.0;
+  
 }
 
+div.hidden{
+  display: none;
+}
+
+
 #user-section{
-  width:60%;
+  width:80%;
   margin:auto;
   padding-top:40px;
 }
@@ -111,8 +118,8 @@ h1 {
   width: 80%;
   background-color: transparent; 
   line-height: 2.0;
-  color:#22465E;
-  
+  color:#FFF;
+  position:relative;
  }
 
 ::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, :-moz-placeholder{
@@ -129,6 +136,44 @@ h1 {
 outline:none; 
 }
 
+.number-field{
+  padding-left: 5px;
+  width: 60px;
+}
+
+.text-field{
+  padding-left: 5px;
+  width: 250px;
+}
+
+.select-student-loan{
+  width:200px;
+ // overflow: hidden;
+ // margin-left: 35px;
+ text: inline;
+ padding-left: 10px;
+ margin-right: 10px;
+ border-bottom: 1px solid #FFF;
+}
+
+select{
+  border: 0 !important;  /*Removes border*/
+  background: transparent;
+  height: 32px;
+  width: 200px;
+  color: #F6D185;
+  -webkit-appearance: none;  /*Removes default chrome and safari style*/
+  -moz-appearance: none; /* Removes Default Firefox style*/
+//  text-indent: 0.01px; /* Removes default arrow from firefox*/
+}
+
+select:focus {
+  outline: none;
+}
+
+
+
+/* BUTTONS  */
 .btn-default{
   border: 1px solid #D1D9E0;
   background-color: transparent;
@@ -139,7 +184,6 @@ outline:none;
   margin-right:0px;
  }
 
-
 .btn-default:active{
 	background-color: #FFF;
 	color: #43767A;
@@ -147,8 +191,18 @@ outline:none;
   border: 1px solid #FFFFFF;
 } 
 
-.button-row{
+.btn-choice{
+  border: 1px solid #D1D9E0;
+  background-color: transparent;
+  text-align: center;
+  border-radius:8px;
+  padding-left:15px;
+  padding-right: 15px;
+  font-weight:300;
+ 
+}
 
+.button-row{
   text-align:center;
 }
 
