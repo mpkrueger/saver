@@ -5,7 +5,7 @@ class IntroController < ApplicationController
   	:investments, :spending, :present_day, :future, :present_vs_future, :financial_score
 
   def show
-  	@user = User.last
+  	@user = User.find(params[:id])
 
   	render_wizard
   end
