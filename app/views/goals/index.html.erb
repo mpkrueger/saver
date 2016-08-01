@@ -4,14 +4,27 @@
 		<h1>Hey there, thanks for dropping in. What brings you here?
 		</h1>
 	<br /><br />
+	
+	<%= form_for @user do |f| %>
+
 		<span class="madlib-sentence">
 			<span class="reason">I want to know more about money because 
-			<input type="text" placeholder="I want to pay off my debt" maxlength="80" name="reason" class="madlib-sentence border-underline"/>.
+			
+			<%= f.text_field :why_here, class: "madlib-sentence border-underline", placeholder: "I want to pay off my debt" %>
+			.
 			</span><br />
 			<span class="money_feeling">But wading through my finances makes me feel
-			<input type="text" placeholder="overwhelmed" maxlength="30" name="money_feeling" class="madlib-sentence border-underline" />.
+			
+			<%= f.text_field :money_feels, class: "madlib-sentence border-underline", placeholder: "overwhelmed" %>
+
+			.
 		</span>
+		<p> </p>
 		</div>
+
+		<%= f.submit "Next", class: 'btn btn-success' %>
+
+	<% end %>
 	
 </row>
 </div>
