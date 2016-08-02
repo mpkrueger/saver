@@ -43,6 +43,7 @@
 .loan-dropdown{
   //width: 150px;
   display: inline-block;
+  color: #F6D185;
 }
 
 .select-student-loan{
@@ -56,9 +57,16 @@
  // width: 150px;
   display: inline-block;
   padding-left:10px;
+  padding-right: 10px;
   border-bottom: 1px solid #FFF;
 }
 
+.select-savings{
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-bottom: 1px solid #FFF;
+}
 
 
 select{
