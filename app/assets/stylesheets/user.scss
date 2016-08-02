@@ -23,7 +23,6 @@
   font-weight: 300;
   font-family: 'Museo Sans', Tahoma, Geneva, sans-serif;
   max-width: 80%;
-  min-width: 50%;
   background-color: transparent; 
   line-height: 2.0;
   color:#FFF;
@@ -66,6 +65,39 @@ option[default]{
   display: none;
 }
 
+
+/****** CHECKBOXES/TOGGLES **********/
+.multichoice{
+  font-size: 14px;
+  font-weight: 300;
+  font-family: 'Museo Sans', Tahoma, Geneva, sans-serif;
+  width:100%;
+  display:inline-block;
+  margin: auto;
+  margin-bottom: 5px;
+}
+
+.btn-toggle-on-background {
+  background-color:#00D1B8;
+  color:#fff;
+}
+
+ .btn-toggle-on-background:active, .btn-toggle-on-background:hover{
+   background-color:#00D1B8;
+    color:#fff;
+ }
+
+ .btn-toggle-off-background{
+  background-color:#244658;
+  color:#fff
+ }
+
+.btn-toggle-off-background:active, .btn-toggle-off-background:hover{
+  background-color:#244658;
+  color:#fff
+ }
+
+
 /****** ICONS WITHIN FORM INPUTS **********/
 /* enable absolute positioning */
 .inner-addon { 
@@ -96,23 +128,29 @@ option[default]{
 
 
 /* BUTTONS  */
-.btn-default{
+
+.next-button{
   border: 1px solid #D1D9E0;
   background-color: transparent;
- 	color:#D1D9E0;
+  color:#D1D9E0;
   padding:10px;
   text-align: center;
   border-radius:4px;
   margin-right:0px;
- }
+}
 
-.btn-default:active{
-	background-color: #FFF;
-	color: #43767A;
+.next-button:active{
+  background-color: #FFF;
+  color: #43767A;
   border: none;
   border: 1px solid #FFFFFF;
-} 
+}
 
+.button-row{
+  text-align:center;
+}
+
+/*
 .btn-choice{
   border: 1px solid #D1D9E0;
   background-color: transparent;
@@ -121,11 +159,6 @@ option[default]{
   padding-left:15px;
   padding-right: 15px;
   font-weight:300;
- 
-}
-
-.button-row{
-  text-align:center;
 }
 
 .btn-success{
@@ -139,7 +172,7 @@ option[default]{
 
 .btn-success:hover{
 	background-color: #00726F;
-}
+}*/
 
 
 /******* TEXT FORM INPUTS ******/
