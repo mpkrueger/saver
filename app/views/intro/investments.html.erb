@@ -3,3 +3,71 @@
         
     });
 </script>
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+
+<body class="page-background">
+
+<section id="coach-section">
+	<div class="coach-question">
+		<aside>
+		That’s great. The scary truth is 46% of Americans wouldn’t be able to cover a sudden $400 expense. You're on the right track. 
+		</aside><br />
+		<p class="main-question">Are you putting any of that money to work?</p>
+		
+	</div>
+</section>
+
+<!-- fade in user input section -->
+<script>
+$(document).ready(function(){
+    $('div.hidden').hide(0).delay(1500).fadeIn(1000).removeClass('hidden');
+});
+</script>
+
+
+
+<!--div class="hidden" style="display:none;"-->
+	<section id="user-section">
+
+
+	<%= form_for @user do |f| %>
+		<div class="spaced-row">
+				I invest in:
+				
+			<div class="checkbox disabled">
+				<input type="checkbox" data-onstyle="toggle-on-background" data-offstyle="toggle-off-background" data-toggle="toggle" data-on="Yep!" data-off="Nope" data-size="small" id="retirement fund" />
+				    <label for="retirementfund">
+				    <span class="multichoice">a retirement fund (e.g. 401K, IRA)</span>
+				   </label>
+			</div> 
+			<div class="checkbox disabled">
+			 	
+				<input type="checkbox" data-toggle="toggle" data-onstyle="toggle-on-background" data-offstyle="toggle-off-background" data-on="Yep!" data-off="Nope" data-size="small" id="company stocks" />
+			    	<label for="companystocks">
+			    		<span class="multichoice">company stocks (e.g. ESPP)</span>
+			  		</label>
+			</div>
+			<div class="checkbox disabled">
+			 	
+				<input type="checkbox" data-toggle="toggle" data-onstyle="toggle-on-background" data-offstyle="toggle-off-background" data-on="Yep!" data-off="Nope" data-size="small" id="stock market" />
+			    	<label for="stockmarket">
+			    	<span class="multichoice">the stock market (e.g. mutual/index funds, stocks)</span>
+			  		</label>
+			</div>
+			<div class="checkbox disabled">
+				<input type="checkbox" data-toggle="toggle" data-onstyle="toggle-on-background" data-offstyle="toggle-off-background" data-on="Yep!" data-off="Nope" data-size="small"  id="other" />
+			    	<label for="other">
+			    	<span class="multichoice">other moneymakers (e.g. Beanie Babies, stamps)</span>
+			  		</label>
+			</div>	
+			<%= f.text_field :investments_type, class: "madlib-sentence border-underline text-field", placeholder: "first name", :required => true %>.
+		</div>
+		<div class="button-row">
+			<%= f.submit 'Next', class: 'next-button btn-default' %>
+		</div>
+	</section>
+<!--/div-->
+<% end %>
+</body>
