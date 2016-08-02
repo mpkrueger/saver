@@ -8,9 +8,11 @@
 
 <section id="coach-section">
 	<div class="coach-question">
-		Ok, enough about debt – let’s give your piggy bank a shake. Roughly, how much have you saved up?
-		<br /><br />
-		** Think about all the cash you’ve got hidden under your mattress, in your wallet, in your checking/savings account
+		<aside>
+		Enough about debt – let’s give your piggy bank a shake. 
+		</aside>
+		<p class="main-question">Roughly, how much have you saved up?</p>
+		
 	</div>
 </section>
 
@@ -26,11 +28,8 @@ $(document).ready(function(){
 	<%= form_for @user do |f| %>
 		<div class="spaced-row">
 			<div class="madlib-sentence">	
-				<div class="loan-dropdown inner-addon right-addon">
-					<span class="select-savings">
-						<%= f.select :savings_amount, [['I have hundreds', 1], ['I have thousands', 2], ['I have tens of thousands', 3], ['Someone raided my piggy bank', 0]]%>
-					</span>
-				</div>
+				<span class="dropdown-style inner-addon right-addon">
+					<%= f.select :savings_amount, [['I have hundreds', 1], ['I have thousands', 2], ['I have tens of thousands', 3], ['Someone raided my piggy bank', 0]]%>
 				<span class="glyphicon"><%= image_tag("dropdown-arrow.png")%></span>
 				</span>
 			</div>
