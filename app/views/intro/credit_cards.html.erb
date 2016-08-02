@@ -8,9 +8,10 @@
 
 <section id="coach-section">
 	<div class="coach-question">
-		That’s rough, but you’re in good company. 70% of college grads end up with some student loans, and an average of $25,000. 
-		<br /><br />
-		In addition to student loans, it’s easy for people to end up with credit card debt. How are you doing on that front?
+		<aside>
+		That’s rough, but you’re in good company. <br /> 70% of college grads end up with student loans, making it easy to then rack up credit card debt. </aside>
+		<p class="main-question">How are you doing with credit cards?</p>
+		</p>
 	</div>
 </section>
 
@@ -25,17 +26,15 @@ $(document).ready(function(){
 	<section id="user-section">
 	<%= form_for @user do |f| %>
 		<div class="spaced-row">
-			<div class="madlib-sentence">	
+			<p class="madlib-sentence">	
 				
 				I owe
-				<div class="loan-dropdown inner-addon right-addon">
-					<span class="select-cc-loan">
-					<%= f.select :cc_amount, [['less than $1000', 1], ['$1000 – $5000', 2], ['over $5000', 3], ['$0, all paid off', 4], ['$0, no credit cards', 0]]%>
-				<span class="glyphicon"><%= image_tag("dropdown-arrow.png")%></span>
+				<span class="dropdown-style inner-addon right-addon">
+					<%= f.select :cc_amount, [['less than $1000', 1], ['$1000 – $5000', 2], ['over $5000', 3], ['$0, all my cards are paid off', 4], ['I don''t have any credit cards', 0]]%>
+					<span class="glyphicon"><%= image_tag("dropdown-arrow.png")%></span>
 				</span>
-				</div>
 			
-			</div>
+			</p>
 		</div>
 
 		<div class="button-row">
