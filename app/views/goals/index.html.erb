@@ -26,14 +26,14 @@ $(document).ready(function(){
 	<div class="spaced-row">
 		<span class="madlib-sentence">
 			You can call me  
-				<%= f.text_field :name, class: "madlib-sentence border-underline text-field", placeholder: "first name" %>.
+				<%= f.text_field :name, class: "madlib-sentence border-underline text-field", placeholder: "first name", :required => true %>.
 		</span>
 	</div>
 	<div class="spaced-row">
 		<span class="madlib-sentence">			
 			I'm
 					
-					<%= f.telephone_field :age, class: "madlib-sentence border-underline number-field", placeholder: "age" %> years old.
+					<%= f.telephone_field :age, class: "madlib-sentence border-underline number-field", placeholder: "age", :required => true %> years old.
 		</span>
 	</div>
 
