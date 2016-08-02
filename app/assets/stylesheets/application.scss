@@ -68,180 +68,19 @@ h1 {
   margin-bottom: 40px;
 }
 
-#coach-section{
-  width:80%;
-  background-color:#00A99D;
-  padding-bottom:20px;
-  padding-top:20px;
-  margin: auto;
-  margin-top: 20px;
- }
 
-.coach-header{
-  font-size: 16px;
-  font-family: 'Museo Sans', Tahoma, Geneva, sans-serif;
-  font-weight: 500;
-  width: 80%;
-  padding: 10px 10px 10px 10px;
-  text-align: center;
-  margin:auto;
-}
-
-.coach-question{
-  font-size: 16px;
-  font-family: 'Museo Sans', Tahoma, Geneva, sans-serif;
-  font-weight: 300;
-  color: #fff;
-  width: 90%;
-  padding: 15px;
-  margin: auto;
-  border-radius:4px;
-  line-height: 2.0;
-  
-}
-
-
-#user-section{
-  width:80%;
-  margin:auto;
-  padding-top:40px;
-}
-
- .madlib-sentence{
-  font-size: 16px;
-  font-weight: 300;
-  font-family: 'Museo Sans', Tahoma, Geneva, sans-serif;
-  width: 80%;
-  background-color: transparent; 
-  line-height: 2.0;
-  color:#FFF;
-  position:relative;
-  margin:auto;
-  text:inline;
- }
-
-::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, :-moz-placeholder{
-  color: red;
-}
-
- 
-.border-underline{
-  border: none;
-  border-bottom: 1px solid #D1D9E0;
- }
-
-.border-underline:focus { 
-outline:none; 
-}
-
-.number-field{
-  padding-left: 5px;
-  width: 60px;
-}
-
-.text-field{
-  padding-left: 5px;
-  width: 250px;
-}
-
-.loan-dropdown{
-  width:170px;
-  display: inline-block;
-}
-
-.select-student-loan{
-  width:150px;
- padding-left: 10px;
- border-bottom: 1px solid #FFF;
-}
-
-select{
-  border: 0 !important;  /*Removes border*/
-  background: transparent;
-  height: 32px;
-  width: 150px;
-  color: #F6D185;
-  -webkit-appearance: none;  /*Removes default chrome and safari style*/
-  -moz-appearance: none; /* Removes Default Firefox style*/
-//  text-indent: 0.01px; /* Removes default arrow from firefox*/
-}
-
-select:focus {
-  outline: none;
-}
 
 
 
-/* BUTTONS  */
-.btn-default{
-  border: 1px solid #D1D9E0;
-  background-color: transparent;
- 	color:#D1D9E0;
-  padding:10px;
-  text-align: center;
-  border-radius:4px;
-  margin-right:0px;
- }
-
-.btn-default:active{
-	background-color: #FFF;
-	color: #43767A;
-  border: none;
-  border: 1px solid #FFFFFF;
-} 
-
-.btn-choice{
-  border: 1px solid #D1D9E0;
-  background-color: transparent;
-  text-align: center;
-  border-radius:8px;
-  padding-left:15px;
-  padding-right: 15px;
-  font-weight:300;
  
-}
-
-.button-row{
-  text-align:center;
-}
-
-.btn-success{
-	background-color: #009999;
-	text-color: #FFFFFF;
-  width:80%;
-  font-size: 16px;
-  padding:10px;
-  margin:auto;
-}
-
-.btn-success:hover{
-	background-color: #00726F;
-}
 
 
-/* enable absolute positioning */
-.inner-addon { 
-    position: relative; 
-}
 
-/* style icon */
-.inner-addon .glyphicon {
-  position: absolute;
-  padding: 5px 5px;
-  pointer-events: none;
-}
 
-/* align icon */
-.left-addon .glyphicon  { left:  0px; align:center; }
-.right-addon .glyphicon { right: 0px; align:center;}
 
-/* add padding  */
-.left-addon input  { padding-left:  10px; }
-.right-addon input { padding-right: 10px; }
 
-.glyphicon{
-  font-family: 'Museo Sans', Verdana, sans-serif;
-  font-size: 15px;
-  align:center;
-}
+
+
+
+
 
