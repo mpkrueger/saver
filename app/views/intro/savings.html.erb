@@ -3,3 +3,42 @@
         
     });
 </script>
+
+<body class="page-background">
+
+<section id="coach-section">
+	<div class="coach-question">
+		Ok, enough about debt – let’s give your piggy bank a shake. Roughly, how much have you saved up?
+		<br /><br />
+		** Think about all the cash you’ve got hidden under your mattress, in your wallet, in your checking/savings account
+	</div>
+</section>
+
+<!-- fade in user input section -->
+<script>
+$(document).ready(function(){
+    $('div.hidden').hide(0).delay(1500).fadeIn(1000).removeClass('hidden');
+});
+</script>
+
+<div class="hidden" style="display:none;">
+	<section id="user-section">
+	<%= form_for @user do |f| %>
+		<div class="spaced-row">
+			<div class="madlib-sentence">	
+				<div class="loan-dropdown inner-addon right-addon">
+					<span class="select-savings">
+						<%= f.select :savings_amount, [['I have hundreds', 1], ['I have thousands', 2], ['I have tens of thousands', 3], ['Someone raided my piggy bank', 0]]%>
+					</span>
+				</div>
+				<span class="glyphicon"><%= image_tag("dropdown-arrow.png")%></span>
+				</span>
+			</div>
+		</div>
+		<div class="button-row">
+			<%= f.submit "Next", class: 'btn-default' %>
+		</div>
+	</section>
+</div>
+<% end %>
+</body>
