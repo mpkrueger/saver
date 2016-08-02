@@ -23,7 +23,7 @@ $(document).ready(function(){
 
 <div class="hidden" style="display:none;">
 	<section id="user-section">
-	<%= form_for @user do |f| %>
+	<%= form_for @user, url: wizard_path, method: :put do |f| %>
 		<!--div class="button-row">
 			<button type="button" class="btn btn-choice">Yes</button>
 			<button type="button" class="btn btn-choice">No</button>
@@ -33,7 +33,7 @@ $(document).ready(function(){
 				I owe
 				<div class="loan-dropdown inner-addon right-addon">
 				<span class="select-student-loan">
-					<%= f.select :student_amount, ['under $10,000', '$10,000 - $30,000', 'Over $30,000', 'nothing']%>
+					<%= f.select :student_amount, [['under $10,000', 0], ['$10,000 - $30,000', 1], ['Over $30,000', 2.0], ['nothing', 3]]%>
 					<!--select name="student_loans" id="student_amount">
 							  <option value="" disabled selected></option>
 							  <option value="1">under $10,000</option>

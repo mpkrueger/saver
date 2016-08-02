@@ -11,8 +11,14 @@ class IntroController < ApplicationController
   end
 
   def update
-  	@user = User.last
-  	@user.update_attributes(params[:user])
+  	@user = current_user
+  	@user.update_attributes(user_params)
   	render_wizard @user
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :age, :student_loans, :student_amount, :cc_debt, :cc_amount, :savings, :savings_amount, :investments, :investments_type, :spend_vs_income, :present_day, :future_day, :financial_score)
   end
 end

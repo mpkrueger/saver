@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def create
-  	@user = User.new(params.require(:user).permit(:name, :age))
+  	@user = User.new(user_params)
 
   	if @user.save
   		flash[:notice] = "User created and saved"
@@ -22,5 +22,14 @@ class UsersController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :age, :student_loans, :student_amount, :cc_debt, :cc_amount, :savings, :savings_amount, :investments, :investments_type, :spend_vs_income, :present_day, :future_day, :financial_score)
   end
 end
