@@ -100,10 +100,6 @@ h1 {
   
 }
 
-div.hidden{
-  display: none;
-}
-
 
 #user-section{
   width:80%;
@@ -120,6 +116,8 @@ div.hidden{
   line-height: 2.0;
   color:#FFF;
   position:relative;
+  margin:auto;
+  text:inline;
  }
 
 ::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, :-moz-placeholder{
@@ -146,13 +144,14 @@ outline:none;
   width: 250px;
 }
 
+.loan-dropdown{
+  width:170px;
+  display: inline-block;
+}
+
 .select-student-loan{
-  width:200px;
- // overflow: hidden;
- // margin-left: 35px;
- text: inline;
+  width:150px;
  padding-left: 10px;
- margin-right: 10px;
  border-bottom: 1px solid #FFF;
 }
 
@@ -160,7 +159,7 @@ select{
   border: 0 !important;  /*Removes border*/
   background: transparent;
   height: 32px;
-  width: 200px;
+  width: 150px;
   color: #F6D185;
   -webkit-appearance: none;  /*Removes default chrome and safari style*/
   -moz-appearance: none; /* Removes Default Firefox style*/
@@ -220,7 +219,6 @@ select:focus {
 }
 
 
-
 /* enable absolute positioning */
 .inner-addon { 
     position: relative; 
@@ -229,7 +227,7 @@ select:focus {
 /* style icon */
 .inner-addon .glyphicon {
   position: absolute;
-  padding: 10px 10px;
+  padding: 5px 5px;
   pointer-events: none;
 }
 
@@ -238,8 +236,8 @@ select:focus {
 .right-addon .glyphicon { right: 0px; align:center;}
 
 /* add padding  */
-.left-addon input  { padding-left:  30px; }
-.right-addon input { padding-right: 30px; }
+.left-addon input  { padding-left:  10px; }
+.right-addon input { padding-right: 10px; }
 
 .glyphicon{
   font-family: 'Museo Sans', Verdana, sans-serif;
@@ -247,6 +245,3 @@ select:focus {
   align:center;
 }
 
-
-
-//.bgheight { height: 100%; }

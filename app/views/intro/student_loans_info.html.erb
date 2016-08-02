@@ -3,9 +3,9 @@
         
     });
 </script>
-
+<body class="page-background">
 <a id="loans"></a>
-<div class="hidden" style="display:none;">
+
 <section id="coach-section">
 	<div class="coach-question">
 		Nice to meet you, <%= User.last.name %>. It’s awesome to get a handle on your money at this age! 
@@ -14,34 +14,46 @@
 		A lot of people deal with student loans through their 20s. How about you?
 		</div>
 </section>
-<section id="user-section">
-<%= form_for @user do |f| %>
-	<!--div class="button-row">
-		<button type="button" class="btn btn-choice">Yes</button>
-		<button type="button" class="btn btn-choice">No</button>
-	</div-->
-	<div class="spaced-row">
-		<span class="madlib-sentence">			
-			I owe
-			<span class="select-student-loan">
-				<select name="student_loans" id="student_amount">
-						  <option value="1">under $10,000</option>
-						  <option value="2">$10,000 - $30,000</option>
-						  <option value="3">Over $30,000</option>
-						  <option value="0">nothing</option>
-				</select>
-			</span>
-			in loans.
 
-		</span>
-	</div>
+<!-- fade in user input section -->
+<script>
+$(document).ready(function(){
+    $('div.hidden').hide(0).delay(1500).fadeIn(1000).removeClass('hidden');
+});
+</script>
 
-	<div class="button-row">
-		<%= f.submit "Next", class: 'btn-default' %>
-	</div>
-</section>
+<div class="hidden" style="display:none;">
+	<section id="user-section">
+	<%= form_for @user do |f| %>
+		<!--div class="button-row">
+			<button type="button" class="btn btn-choice">Yes</button>
+			<button type="button" class="btn btn-choice">No</button>
+		</div-->
+		<div class="spaced-row">
+			<div class="madlib-sentence">			
+				I owe
+				<div class="loan-dropdown inner-addon right-addon">
+				<span class="select-student-loan">
+					<select name="student_loans" id="student_amount">
+							  <option value="1">under $10,000</option>
+							  <option value="2">$10,000 - $30,000</option>
+							  <option value="3">Over $30,000</option>
+							  <option value="0">nothing</option>
+					</select>
+				<span class="glyphicon"><%= image_tag("dropdown-arrow.png")%></span>
+				</span>
+				</div>
+				
+				in loans. 
+
+			</div>
+		</div>
+
+		<div class="button-row">
+			<%= f.submit "Next", class: 'btn-default' %>
+		</div>
+	</section>
 </div>
-
-
-	
 	<% end %>
+
+</body>

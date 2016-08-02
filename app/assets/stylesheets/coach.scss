@@ -1,0 +1,43 @@
+/*
+ *
+ * COACH SECTION CSS STYLINGS
+ *
+ *
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+
+#coach-section{
+  width:80%;
+  background-color:#00A99D;
+  padding-bottom:20px;
+  padding-top:20px;
+  margin: auto;
+  margin-top: 20px;
+ }
+
+.coach-header{
+  font-size: 16px;
+  font-family: 'Museo Sans', Tahoma, Geneva, sans-serif;
+  font-weight: 500;
+  width: 80%;
+  padding: 10px 10px 10px 10px;
+  text-align: center;
+  margin:auto;
+}
+
+.coach-question{
+  font-size: 16px;
+  font-family: 'Museo Sans', Tahoma, Geneva, sans-serif;
+  font-weight: 300;
+  color: #fff;
+  width: 90%;
+  padding: 15px;
+  margin: auto;
+  border-radius:4px;
+  line-height: 2.0;
+  
+}
