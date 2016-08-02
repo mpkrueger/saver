@@ -23,13 +23,14 @@
   font-size: 16px;
   font-weight: 300;
   font-family: 'Museo Sans', Tahoma, Geneva, sans-serif;
-  width: 80%;
+  max-width: 80%;
+  min-width: 50%;
   background-color: transparent; 
   line-height: 2.0;
   color:#FFF;
   position:relative;
   margin:auto;
-  text:inline;
+  display: inline-block;
  }
 
 ::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, :-moz-placeholder{
@@ -40,21 +41,30 @@
 
 /***** DROPDOWNS  *****/
 .loan-dropdown{
-  width:170px;
+  //width: 150px;
   display: inline-block;
 }
 
 .select-student-loan{
-  width:150px;
+ //width:150px;
  padding-left: 10px;
  border-bottom: 1px solid #FFF;
 }
+
+
+.select-cc-loan{
+ // width: 150px;
+  display: inline-block;
+  padding-left:10px;
+  border-bottom: 1px solid #FFF;
+}
+
+
 
 select{
   border: 0 !important;  /*Removes border*/
   background: transparent;
   height: 32px;
-  width: 150px;
   color: #F6D185;
   -webkit-appearance: none;  /*Removes default chrome and safari style*/
   -moz-appearance: none; /* Removes Default Firefox style*/
@@ -63,6 +73,17 @@ select{
 
 select:focus {
   outline: none;
+}
+
+select:first{
+  color: gray;
+}
+option {
+  color: gray;
+}
+
+option[default]{
+  display: none;
 }
 
 /****** ICONS WITHIN FORM INPUTS **********/

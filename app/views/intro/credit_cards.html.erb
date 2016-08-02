@@ -3,3 +3,60 @@
         
     });
 </script>
+
+<body class="page-background">
+
+<section id="coach-section">
+	<div class="coach-question">
+		That’s rough, but you’re in good company. 70% of college grads end up with some student loans, and an average of $25,000. 
+		<br /><br />
+		In addition to student loans, it’s easy for people to end up with credit card debt. How are you doing on that front?
+	</div>
+</section>
+
+<!-- fade in user input section -->
+<script>
+$(document).ready(function(){
+    $('div.hidden').hide(0).delay(1500).fadeIn(1000).removeClass('hidden');
+});
+</script>
+
+<div class="hidden" style="display:none;">
+	<section id="user-section">
+	<%= form_for @user do |f| %>
+		<div class="spaced-row">
+			<div class="madlib-sentence">	
+				
+				I owe
+				<div class="loan-dropdown inner-addon right-addon">
+					<span class="select-cc-loan">
+					<%= f.select :cc_amount, ['less than $1000', '$1000 – $5000', 'over $5000', '$0, all paid off', '$0, no credit cards']%>
+					<!--select name="cc_loans" id="cc_amount">
+						<option value="" selected disabled></option>
+						<option value="1">less than $1000.</option>
+						<option value="2">$1000 – $5000.</option>
+						<option value="3">over $5000.</option>
+						<option value="4">nada, all paid off.</option>
+						<option value="0">nada, no cards.</option>
+					</select-->
+				<span class="glyphicon"><%= image_tag("dropdown-arrow.png")%></span>
+				</span>
+				</div>
+			
+			</div>
+		</div>
+
+		<div class="button-row">
+			<%= f.submit "Next", class: 'btn-default' %>
+		</div>
+	</section>
+</div>
+	<% end %>
+
+</body>
+
+				
+
+
+
+
