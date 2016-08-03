@@ -115,7 +115,7 @@ option[default]{
 /* style icon */
 .inner-addon .glyphicon {
   position: absolute;
-  padding: 5px 5px;
+  padding: 5px 15px;
   pointer-events: none;
 }
 
@@ -125,12 +125,15 @@ option[default]{
 
 /* add padding  */
 .left-addon input  { padding-left:  10px; }
-.right-addon input { padding-right: 10px; }
+.right-addon input { padding-right: 20px; }
 
 .glyphicon{
   font-family: 'Museo Sans', Verdana, sans-serif;
   font-size: 15px;
   align:center;
+  width: 8px;
+  height: 8px;
+
 }
 
 
