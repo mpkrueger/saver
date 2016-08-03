@@ -27,11 +27,16 @@
   line-height: 2.0;
   color:#FFF;
   position:relative;
-  margin:auto;
+  //margin:auto;
   margin-bottom: 10px;
-  display: inline-block;
+  //display: inline-block;
   padding-right: 10px;
   padding-left: 10px;
+  //text-align: center;
+ }
+
+ .user-content{
+  text-align: center;
  }
 
 ::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, :-moz-placeholder{

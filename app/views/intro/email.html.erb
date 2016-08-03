@@ -1,0 +1,32 @@
+<script type="text/javascript">
+    mixpanel.track("email", {
+        
+    });
+</script>
+
+<body class="page-background">
+
+<section id="coach-section">
+	<div class="coach-question">
+		<aside>Great, let’s see how we can get you all set up for all your future dreams.
+</aside>		<br />
+		<p class="main-question">Enter your email address below to get your $avvies Score and our suggested first move.</p>
+	</div>
+</section>
+
+<section id="user-section">
+	<%= form_for @user do |f| %>
+	<div class="spaced-row user-content">
+		
+			<%= f.text_field :email, class: "madlib-sentence border-underline text-field", placeholder: "email address", :required => true %>
+		
+	</div>
+
+<div class="button-row">
+		<%= f.submit "Give me my $avvies Score", class: 'next-button' %>
+	</div>
+	<% end %>
+</section>
+</div>
+
+</body>
