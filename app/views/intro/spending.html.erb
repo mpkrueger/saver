@@ -3,3 +3,56 @@
         
     });
 </script>
+
+<body class="page-background">
+
+<section id="coach-section">
+	<div class="coach-question">
+		<aside>
+		<%= investment_feedback %> </aside> <br />
+		<p class="main-question">On that note, how much do you spend vs save?</p>
+	</div>
+</section>
+
+<section id="user-section">
+
+<%= form_for @user, url: wizard_path, method: :put do |f| %>
+<!--div class="row">
+  <div class="col-lg-offset-3 col-lg-6">
+    <div class="input-group">
+      		<col>
+			<div class="round-button"><div class="round-button-circle"><span class="round-button-clickable">More than a third</span></div></div>
+			</col>
+			<col>
+			<div class="round-button"><div class="round-button-circle"><span class="round-button-clickable">Not much, if any</span></div></div>
+			</col>
+			<col>
+			<div class="round-button"><div class="round-button-circle"><span class="round-button-clickable">I'm in the red</span></div></div>
+			</col>
+      
+      </div>
+  </div>
+</div-->
+	
+<%= f.text_field :spend_vs_income, class: "madlib-sentence border-underline text-field", placeholder: "first name", :required => true %>
+
+	
+		<div class="spaced row">
+			<col>
+			<div class="round-button"><div class="round-button-circle"><span class="round-button-clickable">More than a third</span></div></div>
+			</col>
+			<col>
+			<div class="round-button"><div class="round-button-circle"><span class="round-button-clickable">Not much, if any</span></div></div>
+			</col>
+			<col>
+			<div class="round-button"><div class="round-button-circle"><span class="round-button-clickable">I'm in the red</span></div></div>
+			</col>
+
+		</div>
+
+	<div class="button-row">
+		<%= f.submit "Next", class: 'next-button' %>
+	</div>
+	<% end %>
+</section>
+</body>

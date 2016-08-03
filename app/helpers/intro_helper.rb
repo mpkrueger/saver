@@ -34,4 +34,14 @@ module IntroHelper
 			"Are you putting any of your money to work?"
 		end
 	end
+
+	def investment_feedback
+		@user = @current_user
+		case @user.investments_type
+		when "other"
+			"Investments get easier once you have more money to invest."
+		else
+			"Glad to hear you’re doing some investing. Gets even better when you have more to invest."
+		end
+	end
 end
