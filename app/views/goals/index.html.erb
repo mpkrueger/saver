@@ -28,6 +28,7 @@ $(document).ready(function(){
 		<span class="madlib-sentence">
 			You can call me  
 				<%= f.text_field :name, class: "madlib-sentence text-field", placeholder: "first name", :autofocus => true, :required => true %>.
+				<input type="text" placeholder="first name" autofocus: true class="madlib-sentence text-field">
 	<br />
 			I'm
 					<%= f.telephone_field :age, class: "madlib-sentence number-field", placeholder: "age", :required => true %> 
