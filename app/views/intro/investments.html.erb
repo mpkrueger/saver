@@ -32,42 +32,45 @@ $(document).ready(function(){
 	<section id="user-section">
 
 
-	<%= form_for @user do |f| %>
+	<%= form_for @user, url: wizard_path, method: :put do |f| %>
 		<div class="spaced-row">
 				I invest in:
 				
-			<div class="checkbox disabled">
-				<input type="checkbox" data-onstyle="toggle-on-background" data-offstyle="toggle-off-background" data-toggle="toggle" data-on="Yep!" data-off="Nope" data-size="small" id="retirement fund" />
-				    <label for="retirementfund">
-				    <span class="multichoice">a retirement fund (e.g. 401K, IRA)</span>
-				   </label>
-			</div> 
-			<div class="checkbox disabled">
-			 	
-				<input type="checkbox" data-toggle="toggle" data-onstyle="toggle-on-background" data-offstyle="toggle-off-background" data-on="Yep!" data-off="Nope" data-size="small" id="company stocks" />
-			    	<label for="companystocks">
+			<%= f.fields_for :investments_type do |i| %>
+				
+				<div class="checkbox disabled">
+					<%= i.check_box :retirement_fund, data: { toggle: 'toggle', onstyle: 'toggle-on-background', offstyle: 'toggle-off-background', on: 'Yep!', off: 'Nope', size: 'small' } %>
+					<label for="retirementfund">
+						<span class="multichoice">a retirement fund (e.g. 401K, IRA)</span>
+					</label>
+				</div>
+
+				<div class="checkbox disabled">
+					<%= i.check_box :company_stock, data: { toggle: 'toggle', onstyle: 'toggle-on-background', offstyle: 'toggle-off-background', on: 'Yep!', off: 'Nope', size: 'small' } %>
+					<label for="companystocks">
 			    		<span class="multichoice">company stocks (e.g. ESPP)</span>
 			  		</label>
-			</div>
-			<div class="checkbox disabled">
-			 	
-				<input type="checkbox" data-toggle="toggle" data-onstyle="toggle-on-background" data-offstyle="toggle-off-background" data-on="Yep!" data-off="Nope" data-size="small" id="stock market" />
-			    	<label for="stockmarket">
-			    	<span class="multichoice">the stock market (e.g. mutual/index funds, stocks)</span>
+				</div>
+
+				<div class="checkbox disabled">
+					<%= i.check_box :stock_market, data: { toggle: 'toggle', onstyle: 'toggle-on-background', offstyle: 'toggle-off-background', on: 'Yep!', off: 'Nope', size: 'small' } %>
+					<label for="stockmarket">
+			    		<span class="multichoice">the stock market (e.g. mutual/index funds, stocks)</span>
 			  		</label>
-			</div>
-			<div class="checkbox disabled">
-				<input type="checkbox" data-toggle="toggle" data-onstyle="toggle-on-background" data-offstyle="toggle-off-background" data-on="Yep!" data-off="Nope" data-size="small"  id="other" />
-			    	<label for="other">
-			    	<span class="multichoice">other moneymakers (e.g. Beanie Babies, stamps)</span>
+				</div>
+
+				<div class="checkbox disabled">
+					<%= i.check_box :beanie_babies, data: { toggle: 'toggle', onstyle: 'toggle-on-background', offstyle: 'toggle-off-background', on: 'Yep!', off: 'Nope', size: 'small' } %>
+					<label for="other">
+			    		<span class="multichoice">other moneymakers (e.g. Beanie Babies, stamps)</span>
 			  		</label>
-			</div>	
-			<%= f.text_field :investments_type, class: "madlib-sentence border-underline text-field", placeholder: "first name", :required => true %>.
-		</div>
-		<div class="button-row">
-			<%= f.submit 'Next', class: 'next-button btn-default' %>
-		</div>
+				</div>	
+
+			<% end %>
+
+		<%= f.submit "Next" %>
+	<% end %>
+		
 	</section>
-<!--/div-->
-<% end %>
+
 </body>
