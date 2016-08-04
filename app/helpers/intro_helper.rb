@@ -39,9 +39,9 @@ module IntroHelper
 		@user = @current_user
 		case @user.investments_type
 		when "other"
-			"Investments get easier once you have more money to invest."
+			"Investing can be intimidating."
 		else
-			"Glad to hear you’re doing some investing. Gets even better when you have more to invest."
+			"Glad to hear you’re doing some investing."
 		end
 	end
 end
