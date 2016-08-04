@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160802205311) do
+ActiveRecord::Schema.define(version: 20160804183928) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+  enable_extension "hstore"
 
   create_table "users", force: :cascade do |t|
     t.string   "why_here"
@@ -24,7 +28,7 @@ ActiveRecord::Schema.define(version: 20160802205311) do
     t.boolean  "savings"
     t.decimal  "savings_amount"
     t.boolean  "investments"
-    t.text     "investments_type"
+    t.hstore   "investments_type"
     t.text     "spend_vs_income"
     t.text     "present_day"
     t.text     "future_day"
