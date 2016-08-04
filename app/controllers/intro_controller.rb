@@ -20,7 +20,7 @@ class IntroController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :age, :student_loans, :student_amount, :cc_debt, 
-      :cc_amount, :savings, :savings_amount, :investments, :investments_type, :spend_vs_income, 
-      :present_day, :future_day, :email, :financial_score)
+      :cc_amount, :savings, :savings_amount, :investments, :spend_vs_income, 
+      :present_day, :future_day, :email, :financial_score, investments_type: [:retirement_fund, :company_stock, :stock_market, :beanie_babies])
   end
 end
