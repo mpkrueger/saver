@@ -25,12 +25,15 @@ $(document).ready(function(){
 <section id="user-section">
 <%= form_for @user do |f| %>
 	<div class="spaced-row user-content">
+		<span class="madlib-sentence">
 			You can call me  
+
 				<%= f.text_field :name, class: "madlib-sentence border-underline text-field", placeholder: "Al", :autofocus => true, :required => true %>.
 	<br />
 			I'm
 					
 					<%= f.telephone_field :age, class: "madlib-sentence border-underline number-field", placeholder: "21", :required => true %> years old.
+		</span>
 	</div>
 
 	<div class="button-row">
