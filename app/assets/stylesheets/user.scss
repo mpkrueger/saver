@@ -265,13 +265,14 @@ option[default]{
 /******* TEXT FORM INPUTS ******/
 
 /* overloading default text input field */
-input{
-   -webkit-appearance: none;  /*Removes default chrome and safari style*/
+input[type="text"]{
+  -webkit-appearance: none;  /*Removes default chrome and safari style*/
   -moz-appearance: none; /* Removes Default Firefox style*/
   border: 0;
   outline: 0;
   background: transparent;
   border-bottom: 1px solid #FFF;
+  border-radius: 0;
 }
 
 .border-underline{
