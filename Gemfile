@@ -6,8 +6,6 @@ gem 'rails', '~> 5.0.0'
 
 gem 'wicked'
 gem 'pg'
-gem 'sqlite3'
-gem 'taps'
 
 group :production do
    gem 'rails_12factor'
