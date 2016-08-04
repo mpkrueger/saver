@@ -265,9 +265,13 @@ option[default]{
 
 /******* TEXT FORM INPUTS ******/
 
+
 .border-underline{
   border: none;
-  border-bottom: 1px solid #D1D9E0;
+  border-bottom: 1px solid #FFF;
+  -webkit-appearance: none;  /*Removes default chrome and safari style*/
+  -moz-appearance: none; /* Removes Default Firefox style*/
+
  }
 
 .border-underline:focus { 
