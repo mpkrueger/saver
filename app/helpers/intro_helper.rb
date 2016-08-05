@@ -44,4 +44,16 @@ module IntroHelper
 			"Glad to hear you’re doing some investing."
 		end
 	end
+
+	def future_story
+		@user = @current_user
+		case @user.future_day['financially']
+		when 1
+			"Unfortunately, financially things are not so good. But there are a lot of years left to change that."
+		when 2
+			"And in good news, finances are looking better. There's more to do, but Future" + @user.name + "is feeling confident."
+		when 3
+			"Best of all, Future" + @user.name + " has made awesome financial decisions and is now riding high. "
+		end
+	end
 end

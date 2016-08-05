@@ -8,15 +8,46 @@
 
 <section id="coach-section">
 	<div class="coach-question">
-		<aside>Take a second to reflect on how life could be different in a couple years.</aside>		
-		<p class="main-question">How prepared do you feel to make this a reality?</p>
+		<aside>Wow, that's awesome. Take a second to reflect on how life could change in just a few years.</aside>		
+		
+	</div>
+
+
+	<hr width="86%">
+	<p class="future-story">
+	Future <%= @user.name %> wakes up on <%= Time.now.strftime("%a, %b %d, %Y") %> in <%= @user.future_day['city'] %>. Future <%= @user.name %> says they love living there because "<%= @user.future_day['reason'] %>". Everyday Future <%= @user.name %> heads to work at <%= @user.future_day['company'] %> as a <%= @user.future_day['role'] %>. When the end of the day rolls around, Future <%= @user.name %> heads to <%= @user.future_day['after_work'] %>. Weekends are wonderful because that's when Future <%= @user.name %> <%= @user.future_day['weekends'] %>. <% future_story %>
+
+		</p>
+	<hr width="86%">
+	<div class="coach-question">
+	<p class="main-question">How prepared do you feel to make this a reality?</p>
 	</div>
 </section>
 
-
 <section id="user-section">
-	[display future vision here + prompt for user to indicate preparedness]
+	<%= form_for @user, url: wizard_path, method: :put do |f| %>
+		<div class="spaced-row user-content">
+			<span class="madlib-sentence">	
+				I feel
+				<span class="dropdown-style inner-addon right-addon">
+					<%= f.select :preparedness, [['very unprepared, I''d need to make major changes', 1], ['a little unprepared, I''d need to make some changes' , 2], ['a little prepared, I could get there', 3], ['very prepared, I could live that life today', 4]]%>
+					<span class="glyphicon"><%= image_tag("dropdown-arrow.png")%></span>
+				</span>
+			
+			</span>
+		</div>
 
+		<div class="button-row">
+			<%= f.submit "Next", class: 'next-button' %>
+		</div>
 </section>
+	<% end %>
+
+
+				
+
+
+
+
 
 </body>
