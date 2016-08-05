@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160805215312) do
+ActiveRecord::Schema.define(version: 20160805232719) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,10 +28,11 @@ ActiveRecord::Schema.define(version: 20160805215312) do
     t.text     "spend_vs_income"
     t.hstore   "future_day"
     t.decimal  "financial_score"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.string   "email"
     t.string   "preparedness"
+    t.hstore   "savvy_score_components"
   end
 
 end
