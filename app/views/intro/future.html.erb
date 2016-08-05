@@ -16,42 +16,71 @@
 </section>
 
 <section id="user-section">
+
+<%= form_for @user, url: wizard_path, method: :put do |f| %>
+	<%= f.fields_for :future_day do |i| %>
 	
 	<div class="row-future">
 	  <div class="col-madlibs-question">I'll live in: </div>
-	  <div class="col-madlibs-field"><input type="text" name="" value="" class="madlib-sentence " placeholder="city"></div>
+	  <div class="col-madlibs-field">
+	  	<%= i.text_field :city, class: "madlib-sentence", placeholder: "city", autofocus: true, required: true %>
+	  	<!-- <input type="text" name="" value="" class="madlib-sentence " placeholder="city"> -->
+	  </div>
 	</div>	
 
 	<div class="row-future">
 	  <div class="col-madlibs-question">because </div>
-	  <div class="col-madlibs-field"><input type="text" name="" value="" class="madlib-sentence" placeholder="reason"></div>
+	  <div class="col-madlibs-field">
+	  	<%= i.text_field :reason, class: "madlib-sentence", placeholder: "reason", required: true %>
+	  	<!-- <input type="text" name="" value="" class="madlib-sentence" placeholder="reason"> -->
+	  </div>
 	</div>	
 
 	<div class="row-future">
 	  <div class="col-madlibs-question">I'll work for </div>
-	  <div class="col-madlibs-field"><input type="text" name="" value="" class="madlib-sentence" placeholder="company"></div>
+	  <div class="col-madlibs-field">
+	  	<%= i.text_field :company, class: "madlib-sentence", placeholder: "company", required: true %>
+	  	<!-- <input type="text" name="" value="" class="madlib-sentence" placeholder="company"> -->
+	  </div>
 	</div>	
 
 	<div class="row-future">
 	  <div class="col-madlibs-question">working as </div>
-	  <div class="col-madlibs-field"><input type="text" name="" value="" class="madlib-sentence" placeholder="role"></div>
+	  <div class="col-madlibs-field">
+	  	<%= i.text_field :role, class: "madlib-sentence", placeholder: "role", required: true %>
+	  	<!-- <input type="text" name="" value="" class="madlib-sentence" placeholder="role"> -->
+	  </div>
 	</div>	
 
 	<div class="row-future">
 	  <div class="col-madlibs-question">After work, I'll </div>
-	  <div class="col-madlibs-field"><input type="text" name="" value="" class="madlib-sentence" placeholder="activity"></div>
+	  <div class="col-madlibs-field">
+	  	<%= i.text_field :after_work, class: "madlib-sentence", placeholder: "activity", required: true %>
+	  	<!-- <input type="text" name="" value="" class="madlib-sentence" placeholder="activity"> -->
+	  </div>
 	</div>	
 
 	<div class="row-future">
 	  <div class="col-madlibs-question">On weekends, I'll </div>
-	  <div class="col-madlibs-field"><input type="text" name="" value="" class="madlib-sentence" placeholder="activity"></div>
+	  <div class="col-madlibs-field">
+	  	<%= i.text_field :weekends, class: "madlib-sentence", placeholder: "activity", required: true %>
+	  	<!-- <input type="text" name="" value="" class="madlib-sentence" placeholder="activity"> -->
+	  </div>
 	</div>	
 
 	<div class="row-future">
 	  <div class="col-madlibs-question">Financially, I'll be </div>
-	  <div class="col-madlibs-field"><select class="dropdown-style inner-addon right-addon"><option>worse off</option><option>better off</option><option>awesome</option></select><span class="glyphicon"><%= image_tag("dropdown-arrow.png")%></span></div>
+	  <div class="col-madlibs-field">
+	  	<%= i.select :financially, [['worse off', 1], ['better off', 2], ['awesome', 3]] %>
+	  	<!-- <select class="dropdown-style inner-addon right-addon"><option>worse off</option><option>better off</option><option>awesome</option></select> -->
+	  	<span class="glyphicon"><%= image_tag("dropdown-arrow.png")%></span>
+	  </div>
 	</div>	
 
+	<%= i.submit "Next", class: 'btn btn-success' %>
+
+	<% end %>
+<% end %>
 
 </section>
 
