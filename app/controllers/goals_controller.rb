@@ -1,6 +1,8 @@
 class GoalsController < ApplicationController
-  def index
+  def introductions
     @user = User.new
   end
+
+
 
 end

@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   get 'goals/index'
 
   root to: 'goals#index'
+
+  get '/goals/introductions'
+
 end
