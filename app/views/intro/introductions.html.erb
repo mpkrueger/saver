@@ -1,0 +1,45 @@
+<script src="jquery-1.12.4.min.js"></script>
+<body class="page-background">
+
+<section id="coach-section">
+	<div class="coach-header">$AVVY
+	</div>
+	
+	<div class="coach-question">
+		<aside>
+		Money can be a sensitive topic, but we’re here to help, <br />no judgment. 
+		</aside>
+		<span class="main-question">
+		Let’s get acquainted.</span>
+	</div>
+</section>
+
+<!-- fade in user input section -->
+<script>
+$(document).ready(function(){
+    $('div.hidden').hide(0).delay(1500).fadeIn(1000).removeClass('hidden');
+});
+</script>
+
+<div class="hidden" style="display:none;">
+<section id="user-section">
+<%= form_for @user do |f| %>
+	<div class="spaced-row user-content">
+		<span class="madlib-sentence">
+			You can call me  
+				<%= f.text_field :name, class: "madlib-sentence text-field", placeholder: "first name", :autofocus => true, :required => true %>.
+	<br />
+			I'm
+					<%= f.telephone_field :age, class: "madlib-sentence number-field", placeholder: "age", :required => true %> 
+					years old.
+		</span>
+	</div>
+
+	<div class="button-row">
+		<%= f.submit "Next", class: 'next-button' %>
+	</div>
+	<% end %>
+</section>
+</div>
+
+</body>
