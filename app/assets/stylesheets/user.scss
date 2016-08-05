@@ -44,15 +44,16 @@
 }
 
 .row-future{
-  margin-left: 15px;
-  margin-right: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
   margin-bottom: 20px;
 }
 
 .col-madlibs-question{
   padding-right: 5px;
   float: left;
-  width: 40%;
+  width: 50%;
+  text-align: right;
 
 }
 
@@ -62,13 +63,10 @@
   display: inline-block;
   margin-top:-.8em;
   color: #F6D185;
-  width: 60%;
+  width: 50%;
 }
 
 
-.textfield-future{
-  color: #F6D185;
-}
 
 
 
@@ -273,6 +271,7 @@ input[type="text"], input[type="tel"]{
   background: transparent;
   border-bottom: 1px solid #FFF;
   border-radius: 0;
+  color: #F6D185;
 }
 
 
@@ -310,6 +309,5 @@ margin: 0;
   padding-right: 5px;
   display: inline-block;
   width: 120px;
-  color: #F6D185;
 }
 

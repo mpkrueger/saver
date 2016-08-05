@@ -11,40 +11,45 @@
 	<div class="coach-question">
 		<aside>
 		Ok, now for the fun stuff – let’s do a little exercise. </aside>
-		<p class="main-question">Imagine it's <%= Time.now.strftime("%a, %b %d, %Y") %>. <br \>That's 3 years from today.</p>
+		<p class="main-question">Let's fast forward to <br /><%= Time.now.strftime("%a, %b %d, %Y") %>, <br />3 years from today</p>
 	</div>
 </section>
 
 <section id="user-section">
 	
 	<div class="row-future">
-	  <div class="col-madlibs-question">Where you'll live: </div>
-	  <div class="col-madlibs-field"><input type="text" name="" value="" class="madlib-sentence border-underline textfield-future" placeholder="city"></div>
+	  <div class="col-madlibs-question">I'll live in: </div>
+	  <div class="col-madlibs-field"><input type="text" name="" value="" class="madlib-sentence " placeholder="city"></div>
 	</div>	
 
 	<div class="row-future">
-	  <div class="col-madlibs-question">Why you'll live there </div>
-	  <div class="col-madlibs-field"><input type="text" name="" value="" class="madlib-sentence border-underline textfield-future" placeholder="reason"></div>
+	  <div class="col-madlibs-question">because </div>
+	  <div class="col-madlibs-field"><input type="text" name="" value="" class="madlib-sentence" placeholder="reason"></div>
 	</div>	
 
 	<div class="row-future">
-	  <div class="col-madlibs-question">What you'll do for work </div>
-	  <div class="col-madlibs-field"><input type="text" name="" value="" class="madlib-sentence border-underline textfield-future" placeholder="job"></div>
+	  <div class="col-madlibs-question">I'll work for </div>
+	  <div class="col-madlibs-field"><input type="text" name="" value="" class="madlib-sentence" placeholder="company"></div>
 	</div>	
 
 	<div class="row-future">
-	  <div class="col-madlibs-question">What you'll do after work </div>
-	  <div class="col-madlibs-field"><input type="text" name="" value="" class="madlib-sentence border-underline textfield-future" placeholder="activity"></div>
+	  <div class="col-madlibs-question">working as </div>
+	  <div class="col-madlibs-field"><input type="text" name="" value="" class="madlib-sentence" placeholder="role"></div>
 	</div>	
 
 	<div class="row-future">
-	  <div class="col-madlibs-question">What you'll do on a weekend </div>
-	  <div class="col-madlibs-field"><input type="text" name="" value="" class="madlib-sentence border-underline textfield-future" placeholder="activity"></div>
+	  <div class="col-madlibs-question">After work, I'll </div>
+	  <div class="col-madlibs-field"><input type="text" name="" value="" class="madlib-sentence" placeholder="activity"></div>
 	</div>	
 
 	<div class="row-future">
-	  <div class="col-madlibs-question">Financial shape </div>
-	  <div class="col-madlibs-field"><input type="text" name="" value="" class="madlib-sentence border-underline textfield-future" placeholder="change/improvement"></div>
+	  <div class="col-madlibs-question">On weekends, I'll </div>
+	  <div class="col-madlibs-field"><input type="text" name="" value="" class="madlib-sentence" placeholder="activity"></div>
+	</div>	
+
+	<div class="row-future">
+	  <div class="col-madlibs-question">Financially, I'll be </div>
+	  <div class="col-madlibs-field"><select class="dropdown-style inner-addon right-addon"><option>worse off</option><option>better off</option><option>awesome</option></select><span class="glyphicon"><%= image_tag("dropdown-arrow.png")%></span></div>
 	</div>	
 
 
