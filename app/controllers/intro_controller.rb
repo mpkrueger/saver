@@ -12,7 +12,7 @@ class IntroController < ApplicationController
 
   def update
   	@user = current_user
-  	@user.update_attributes(user_params)
+    @user.update_attributes(user_params)
   	render_wizard @user
   end
 
