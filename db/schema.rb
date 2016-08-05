@@ -10,36 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160804183928) do
+ActiveRecord::Schema.define(version: 20160805033742) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "hstore"
-
-  create_table "houses", force: :cascade do |t|
-    t.decimal  "budget"
-    t.decimal  "down_payment"
-    t.decimal  "years_owning"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
-  create_table "loans", force: :cascade do |t|
-    t.decimal  "balance"
-    t.decimal  "rate"
-    t.decimal  "months_remaining"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-  end
-
-  create_table "retirements", force: :cascade do |t|
-    t.decimal  "savings"
-    t.decimal  "age"
-    t.decimal  "years_remaining"
-    t.decimal  "annual_spend"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
 
   create_table "users", force: :cascade do |t|
     t.string   "why_here"
@@ -56,7 +31,7 @@ ActiveRecord::Schema.define(version: 20160804183928) do
     t.hstore   "investments_type"
     t.text     "spend_vs_income"
     t.text     "present_day"
-    t.text     "future_day"
+    t.hstore   "future_day"
     t.decimal  "financial_score"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
