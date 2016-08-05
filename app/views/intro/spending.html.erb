@@ -14,49 +14,31 @@
 	</div>
 </section>
 
+<script>
+$(document).ready(function(){
+    $('div.hidden').hide(0).delay(1500).fadeIn(1000).removeClass('hidden');
+});
+</script>
+
 <section id="user-section">
 
-<%= form_for @user, url: wizard_path, method: :put do |f| %>
-<!--div class="row">
-  <div class="col-lg-offset-3 col-lg-6">
-    <div class="input-group">
-      		<col>
-			<div class="round-button"><div class="round-button-circle"><span class="round-button-clickable">More than a third</span></div></div>
-			</col>
-			<col>
-			<div class="round-button"><div class="round-button-circle"><span class="round-button-clickable">Not much, if any</span></div></div>
-			</col>
-			<col>
-			<div class="round-button"><div class="round-button-circle"><span class="round-button-clickable">I'm in the red</span></div></div>
-			</col>
-      
-      </div>
-  </div>
-</div-->
-
-		<%= f.radio_button(:spend_vs_income, "More than a third") %>More than a third
-		<%= f.radio_button(:spend_vs_income, "Not much, if any") %>Not much, if any
-		<%= f.radio_button(:spend_vs_income, "I'm in the red") %>I'm in the red
-
-
-	
-		<div class="spaced row user-content">
-		<p>
-			<col>
-			<div class="round-button"><div class="round-button-circle"><span class="round-button-clickable">More than a third</span></div></div>
-			</col>
-			<col>
-			<div class="round-button"><div class="round-button-circle"><span class="round-button-clickable">Not much, if any</span></div></div>
-			</col>
-			<col>
-			<div class="round-button"><div class="round-button-circle"><span class="round-button-clickable">I'm in the red</span></div></div>
-			</col>
-
+<div class="hidden" style="display:none;">
+	<section id="user-section">
+	<%= form_for @user, url: wizard_path, method: :put do |f| %>
+		<div class="spaced-row user-content">
+			<span class="madlib-sentence">	
+				<span class="dropdown-style inner-addon right-addon">
+					<%= f.select :spend_vs_income, [['More than a third', 'More than a third'], ['Not much, if any', 'Not much, if any'], ['I\'m in the red', 'I\'m in the red']] %>
+				<span class="glyphicon"><%= image_tag("dropdown-arrow.png")%></span>
+				</span>
+			</span>
 		</div>
+		<div class="button-row">
+			<%= f.submit "Next", class: 'next-button' %>
+		</div>
+	</section>
+</div>
+<% end %>
 
-	<div class="button-row">
-		<%= f.submit 'Next', class: 'btn btn-success' %>
-	</div>
-	<% end %>
-</section>
 </body>
+

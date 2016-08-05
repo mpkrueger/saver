@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160805033742) do
+ActiveRecord::Schema.define(version: 20160805214027) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,16 +21,11 @@ ActiveRecord::Schema.define(version: 20160805033742) do
     t.string   "money_feels"
     t.string   "name"
     t.integer  "age"
-    t.boolean  "student_loans"
     t.decimal  "student_amount"
-    t.boolean  "cc_debt"
     t.decimal  "cc_amount"
-    t.boolean  "savings"
     t.decimal  "savings_amount"
-    t.boolean  "investments"
     t.hstore   "investments_type"
     t.text     "spend_vs_income"
-    t.text     "present_day"
     t.hstore   "future_day"
     t.decimal  "financial_score"
     t.datetime "created_at",       null: false

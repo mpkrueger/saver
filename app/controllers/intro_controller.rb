@@ -22,11 +22,11 @@ class IntroController < ApplicationController
       :cc_amount, :savings, :savings_amount, :investments, :spend_vs_income, 
       :preparedness, :email, :financial_score, investments_type: [:retirement_fund, :company_stock, :stock_market, :beanie_babies],
       future_day: [:city, 
-                           :reason, 
-                           :company,
-                           :role,
-                           :after_work,
-                           :weekends,
-                           :financially])
+                   :reason, 
+                   :company,
+                   :role,
+                   :after_work,
+                   :weekends,
+                   :financially])
   end
 end
