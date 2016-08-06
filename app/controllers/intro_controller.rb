@@ -7,6 +7,13 @@ class IntroController < ApplicationController
   def show
   	@user = current_user
     @savvy_score = @user.savvy_score
+    @debt_score_percent = @user.debt_score_percent
+    @savings_score_percent = @user.savings_score_percent
+    @investments_score_percent = @user.investments_score_percent
+    @savings_habits_percent = @user.savings_habits_percent
+    @investment_habits_percent = @user.investment_habits_percent
+    @financial_awareness_percent = @user.financial_awareness_percent
+    @future_preparedness_percent = @user.future_preparedness_percent
   	render_wizard
   end
 
