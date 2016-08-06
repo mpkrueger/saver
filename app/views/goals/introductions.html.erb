@@ -27,7 +27,7 @@ $(document).ready(function(){
 	<div class="spaced-row user-content">
 		<span class="madlib-sentence">
 			You can call me  
-				<%= f.text_field :name, class: "madlib-sentence text-field", placeholder: "first name", :autofocus => true, :required => true %>.
+				<%= f.text_field :name, class: "madlib-sentence text-field", placeholder: "first name", :autofocus => true, :autocorrect => "off" :required => true %>.
 	<br />
 			I'm
 					<%= f.telephone_field :age, class: "madlib-sentence number-field", placeholder: "age", :required => true %> 

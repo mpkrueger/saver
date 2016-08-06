@@ -29,7 +29,7 @@ $(document).ready(function(){
 			<span class="madlib-sentence">	
 				I owe
 				<span class="dropdown-style inner-addon right-addon">
-					<%= f.select :cc_amount, [['less than $1000', 1], ['$1000 – $5000', 2], ['over $5000', 3], ['$0, all my cards are paid off', 4], ['I don''t have any credit cards', 0]], {prompt: 'this much on my credit cards...' }, :required => true %>
+					<%= f.select :cc_amount, [['less than $1000', 1], ['$1000 – $5000', 2], ['over $5000', 3], ['$0, all my cards are paid off', 4], ['I don\'t have any credit cards', 0]], {prompt: 'this much on my credit cards...' }, :required => true %>
 					<span class="glyphicon"><%= image_tag("dropdown-arrow.png")%></span>
 				</span>
 			
