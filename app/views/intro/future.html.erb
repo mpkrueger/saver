@@ -23,7 +23,7 @@
 	<div class="row-future">
 	  <div class="col-madlibs-question">Pronoun for you: </div>
 	  <div class="col-madlibs-field">
-	  	<%= i.text_field :gender, class: "madlib-sentence", placeholder: "she / he / they", autofocus: true, required: true %>
+	  	<%= i.text_field :gender, class: "madlib-sentence", placeholder: "she / he / they", autofocus: true, :autocapitalize => "off", required: true %>
 	  	<!-- <input type="text" name="" value="" class="madlib-sentence " placeholder="city"> -->
 	  </div>
 	</div>	
@@ -31,7 +31,7 @@
 	<div class="row-future">
 	  <div class="col-madlibs-question">I'll live in: </div>
 	  <div class="col-madlibs-field">
-	  	<%= i.text_field :city, class: "madlib-sentence", placeholder: "city", autofocus: true, required: true %>
+	  	<%= i.text_field :city, class: "madlib-sentence", placeholder: "city", autofocus: true, :autocapitalize => "off", required: true %>
 	  	<!-- <input type="text" name="" value="" class="madlib-sentence " placeholder="city"> -->
 	  </div>
 	</div>	
@@ -39,7 +39,7 @@
 	<div class="row-future">
 	  <div class="col-madlibs-question">because it is </div>
 	  <div class="col-madlibs-field">
-	  	<%= i.text_field :reason, class: "madlib-sentence", placeholder: "reason", required: true %>
+	  	<%= i.text_field :reason, class: "madlib-sentence", placeholder: "reason", :autocapitalize => "off", required: true %>
 	  	<!-- <input type="text" name="" value="" class="madlib-sentence" placeholder="reason"> -->
 	  </div>
 	</div>	
@@ -47,7 +47,7 @@
 	<div class="row-future">
 	  <div class="col-madlibs-question">I'll work for </div>
 	  <div class="col-madlibs-field">
-	  	<%= i.text_field :company, class: "madlib-sentence", placeholder: "company", required: true %>
+	  	<%= i.text_field :company, class: "madlib-sentence", placeholder: "company", :autocapitalize => "off", required: true %>
 	  	<!-- <input type="text" name="" value="" class="madlib-sentence" placeholder="company"> -->
 	  </div>
 	</div>	
@@ -55,7 +55,7 @@
 	<div class="row-future">
 	  <div class="col-madlibs-question">working as a </div>
 	  <div class="col-madlibs-field">
-	  	<%= i.text_field :role, class: "madlib-sentence", placeholder: "role", required: true %>
+	  	<%= i.text_field :role, class: "madlib-sentence", placeholder: "role", :autocapitalize => "off", required: true %>
 	  	<!-- <input type="text" name="" value="" class="madlib-sentence" placeholder="role"> -->
 	  </div>
 	</div>	
@@ -63,7 +63,7 @@
 	<div class="row-future">
 	  <div class="col-madlibs-question">After work, I enjoy </div>
 	  <div class="col-madlibs-field">
-	  	<%= i.text_field :after_work, class: "madlib-sentence", placeholder: "activity", required: true %>
+	  	<%= i.text_field :after_work, class: "madlib-sentence", placeholder: "activity", :autocapitalize => "off", required: true %>
 	  	<!-- <input type="text" name="" value="" class="madlib-sentence" placeholder="activity"> -->
 	  </div>
 	</div>	
@@ -71,7 +71,7 @@
 	<div class="row-future">
 	  <div class="col-madlibs-question">On weekends, I enjoy </div>
 	  <div class="col-madlibs-field">
-	  	<%= i.text_field :weekends, class: "madlib-sentence", placeholder: "activity", required: true %>
+	  	<%= i.text_field :weekends, class: "madlib-sentence", placeholder: "activity", :autocapitalize => "off", required: true %>
 	  	<!-- <input type="text" name="" value="" class="madlib-sentence" placeholder="activity"> -->
 	  </div>
 	</div>	
