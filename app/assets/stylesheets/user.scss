@@ -165,6 +165,12 @@ option[default]{
 
 
 /********* BUTTONS  *************/
+.button-row{
+  margin-top: 10px;
+  width: 100%;
+  display: block;
+  text-align: center;
+}
 
 .next-button{
   border: 1px solid #D1D9E0;
@@ -173,7 +179,7 @@ option[default]{
   padding:10px;
   text-align: center;
   border-radius:4px;
-  display: block;
+  margin: auto;
 }
 
 .next-button:active{
@@ -183,12 +189,7 @@ option[default]{
   border: 1px solid #FFFFFF;
 }
 
-.button-row{
-  margin-top: 10px;
-  margin: auto;
-  width: 80%;
-  display: block;
-}
+
 
 
 .round-button {
@@ -236,30 +237,6 @@ option[default]{
 
 
 
-
-/*
-.btn-choice{
-  border: 1px solid #D1D9E0;
-  background-color: transparent;
-  text-align: center;
-  border-radius:8px;
-  padding-left:15px;
-  padding-right: 15px;
-  font-weight:300;
-}
-
-.btn-success{
-	background-color: #009999;
-	text-color: #FFFFFF;
-  width:80%;
-  font-size: 16px;
-  padding:10px;
-  margin:auto;
-}
-
-.btn-success:hover{
-	background-color: #00726F;
-}*/
 
 
 /******* TEXT FORM INPUTS ******/
