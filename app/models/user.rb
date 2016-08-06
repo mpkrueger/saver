@@ -2,9 +2,6 @@ class User < ApplicationRecord
 
 	validates :name, :age, presence: true
 
-	serialize :spend_vs_income
-	serialize :present_day
-
 	def debt_score
 		debt = 20
 
@@ -46,7 +43,6 @@ class User < ApplicationRecord
 
 	def investments_score
 		investments = 0
-
 		if self.investments_type["retirement_fund"] == "1"
 			investments += 10
 		end
@@ -63,7 +59,7 @@ class User < ApplicationRecord
 	end
 
 	def savings_habits
-		savings_habits
+		savings_habits = 0
 
 		case self.spend_vs_income
 		when "More than a third"
@@ -88,7 +84,9 @@ class User < ApplicationRecord
 		proximity_to_future_self = 10
 
 		financial_score = debt + savings + investments + savings_habits + investment_habits + financial_awareness + proximity_to_future_self
+	end
 
+	def update
 	end
 
 	

@@ -6,6 +6,7 @@ class IntroController < ApplicationController
 
   def show
   	@user = current_user
+    @savvy_score = @user.savvy_score
   	render_wizard
   end
 

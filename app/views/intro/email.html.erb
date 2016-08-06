@@ -15,7 +15,7 @@
 </section>
 
 <section id="user-section">
-	<%= form_for @user do |f| %>
+	<%= form_for @user, url: wizard_path, method: :put do |f| %>
 	<div class="spaced-row user-content">
 		
 			<%= f.text_field :email, class: "madlib-sentence border-underline text-field", placeholder: "email address", :required => true %>
