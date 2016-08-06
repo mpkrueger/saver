@@ -2,4 +2,91 @@
     mixpanel.track("financial_score", {
         
     });
+
 </script>
+
+<!--script src="js/skill.bars.jquery.js"></script-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js">
+</script>
+
+<body class="page-background">
+
+<section id="coach-section">
+	<div class="coach-question">
+		<aside>SAVVY SCORE
+</aside>		<br />
+		<p class="main-question">240</p>
+	</div>
+</section>
+
+<section id="user-section">
+	
+
+<div class="skillrow clearfix " data-percent="10%">
+  <div class="skillbar-title" style="background-color: transparent"><span>DEBT</span></div>
+  <div class="skillbar-bar" style="background-color: #FAD472;"></div>
+  <div class="skill-bar-percent">20%</div>
+</div>
+<!-- End Skill Bar -->
+
+<div class="skillrow clearfix " data-percent="30%">
+  <div class="skillbar-title" style="background-color: transparent"><span>SAVINGS</span></div>
+  <div class="skillbar-bar" style="background-color: #FAD472;"></div>
+  <div class="skill-bar-percent">30%</div>
+</div>
+<!-- End Skill Bar -->
+
+<div class="skillrow clearfix " data-percent="65%">
+  <div class="skillbar-title" style="background-color: transparent"><span>INVESTMENTS</span></div>
+  <div class="skillbar-bar" style="background-color: #FAD472;"></div>
+  <div class="skill-bar-percent">65%</div>
+</div>
+<!-- End Skill Bar -->
+
+<div class="skillrow clearfix " data-percent="30%">
+  <div class="skillbar-title" style="background-color: transparent"><span>SAVINGS HABITS</span></div>
+  <div class="skillbar-bar" style="background-color: #FAD472;"></div>
+  <div class="skill-bar-percent">30%</div>
+</div>
+<!-- End Skill Bar -->
+
+<div class="skillrow clearfix " data-percent="70%">
+  <div class="skillbar-title" style="background-color: transparent"><span>INVESTMENT HABITS</span></div>
+  <div class="skillbar-bar" style="background-color: #FAD472;"></div>
+  <div class="skill-bar-percent">30%</div>
+</div>
+<!-- End Skill Bar -->
+
+<div class="skillrow clearfix " data-percent="30%">
+  <div class="skillbar-title" style="background-color: transparent"><span>FINANCIAL AWARENESS</span></div>
+  <div class="skillbar-bar" style="background-color: #FAD472;"></div>
+  <div class="skill-bar-percent">30%</div>
+</div>
+<!-- End Skill Bar -->
+
+<div class="skillrow clearfix " data-percent="90%">
+  <div class="skillbar-title" style="background-color: transparent"><span>FUTURE PREPAREDNESS</span></div>
+  <div class="skillbar-bar" style="background-color: #FAD472;"></div>
+  <div class="skill-bar-percent">30%</div>
+</div>
+<!-- End Skill Bar -->
+
+
+
+
+	<%= form_for @user do |f| %>
+	<div class="spaced-row user-content">
+		Enter in your email address so we can help you improve from here.
+		<br />
+			<%= f.text_field :email, class: "madlib-sentence border-underline text-field", placeholder: "email address", :required => true %>
+		
+	</div>
+
+<div class="button-row">
+		<%= f.submit "I want to increase my savvy", class: 'next-button' %>
+	</div>
+	<% end %>
+</section>
+</div>
+
+</body>

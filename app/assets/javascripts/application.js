@@ -15,3 +15,12 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+
+
+jQuery(document).ready(function() {
+  jQuery('.skillrow').each(function() {
+    jQuery(this).find('.skillbar-bar').animate({
+      width: jQuery(this).attr('data-percent')
+    }, 100);
+  });
+});

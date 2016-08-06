@@ -15,7 +15,7 @@
 
 	<hr width="86%">
 	<p class="future-story">
-	Future <%= @user.name %> wakes up on <%= Time.now.strftime("%a, %b %d, %Y") %> in <%= @user.future_day['city'] %>. Future <%= @user.name %> says they love living there because "<%= @user.future_day['reason'] %>". Everyday Future <%= @user.name %> heads to work at <%= @user.future_day['company'] %> as a <%= @user.future_day['role'] %>. When the end of the day rolls around, Future <%= @user.name %> heads to <%= @user.future_day['after_work'] %>. Weekends are wonderful because that's when Future <%= @user.name %> <%= @user.future_day['weekends'] %>. <% future_story %>
+	Future <%= @user.name %> wakes up on <%= Time.now.strftime("%a, %b %d, %Y") %> in <%= @user.future_day['city'] %>. Future <%= @user.name %> says they love living there because "<%= @user.future_day['reason'] %>". Everyday Future <%= @user.name %> heads to work at <%= @user.future_day['company'] %> as a <%= @user.future_day['role'] %>. When the end of the day rolls around, Future <%= @user.name %> heads to <%= @user.future_day['after_work'] %>. Weekends are wonderful because that's when Future <%= @user.name %> <%= @user.future_day['weekends'] %>. <%= future_financials %>
 
 		</p>
 	<hr width="86%">
@@ -28,9 +28,10 @@
 	<%= form_for @user, url: wizard_path, method: :put do |f| %>
 		<div class="spaced-row user-content">
 			<span class="madlib-sentence">	
-				I feel
+				This future life seems 
+				<br />
 				<span class="dropdown-style inner-addon right-addon">
-					<%= f.select :preparedness, [['very unprepared, I''d need to make major changes', 1], ['a little unprepared, I''d need to make some changes' , 2], ['a little prepared, I could get there', 3], ['very prepared, I could live that life today', 4]]%>
+					<%= f.select :preparedness, [['impossible', 1], ['hard to achieve' , 2], ['possible with effort', 3], ['very possible', 4]]%>
 					<span class="glyphicon"><%= image_tag("dropdown-arrow.png")%></span>
 				</span>
 			

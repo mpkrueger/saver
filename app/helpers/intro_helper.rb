@@ -45,7 +45,7 @@ module IntroHelper
 		end
 	end
 
-	def future_story
+	def future_financials
 		@user = @current_user
 		case @user.future_day['financially']
 		when 1
