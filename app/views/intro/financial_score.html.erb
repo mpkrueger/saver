@@ -14,57 +14,58 @@
 <section id="coach-section">
 	<div class="coach-question">
 		<aside>SAVVY SCORE
+
 </aside>		<br />
-		<p class="main-question">240</p>
+		<p class="main-question"><%= @savvy_score %></p>
 	</div>
 </section>
 
 <section id="user-section">
 	
 
-<div class="skillrow clearfix " data-percent="10%">
+<div class="skillrow clearfix " data-percent="<%= @debt_score_percent %>%">
   <div class="skillbar-title" style="background-color: transparent"><span>DEBT</span></div>
   <div class="skillbar-bar" style="background-color: #FAD472;"></div>
   <div class="skill-bar-percent">20%</div>
 </div>
 <!-- End Skill Bar -->
 
-<div class="skillrow clearfix " data-percent="30%">
+<div class="skillrow clearfix " data-percent="<%= @savings_score_percent %>%">
   <div class="skillbar-title" style="background-color: transparent"><span>SAVINGS</span></div>
   <div class="skillbar-bar" style="background-color: #FAD472;"></div>
   <div class="skill-bar-percent">30%</div>
 </div>
 <!-- End Skill Bar -->
 
-<div class="skillrow clearfix " data-percent="65%">
+<div class="skillrow clearfix " data-percent="<%= @investments_score_percent %>%">
   <div class="skillbar-title" style="background-color: transparent"><span>INVESTMENTS</span></div>
   <div class="skillbar-bar" style="background-color: #FAD472;"></div>
   <div class="skill-bar-percent">65%</div>
 </div>
 <!-- End Skill Bar -->
 
-<div class="skillrow clearfix " data-percent="30%">
+<div class="skillrow clearfix " data-percent="<%= @savings_habits_percent %>%">
   <div class="skillbar-title" style="background-color: transparent"><span>SAVINGS HABITS</span></div>
   <div class="skillbar-bar" style="background-color: #FAD472;"></div>
   <div class="skill-bar-percent">30%</div>
 </div>
 <!-- End Skill Bar -->
 
-<div class="skillrow clearfix " data-percent="70%">
+<div class="skillrow clearfix " data-percent="<%= @investment_habits_percent %>%">
   <div class="skillbar-title" style="background-color: transparent"><span>INVESTMENT HABITS</span></div>
   <div class="skillbar-bar" style="background-color: #FAD472;"></div>
   <div class="skill-bar-percent">30%</div>
 </div>
 <!-- End Skill Bar -->
 
-<div class="skillrow clearfix " data-percent="30%">
+<div class="skillrow clearfix " data-percent="<%= @financial_awareness_percent %>%">
   <div class="skillbar-title" style="background-color: transparent"><span>FINANCIAL AWARENESS</span></div>
   <div class="skillbar-bar" style="background-color: #FAD472;"></div>
   <div class="skill-bar-percent">30%</div>
 </div>
 <!-- End Skill Bar -->
 
-<div class="skillrow clearfix " data-percent="90%">
+<div class="skillrow clearfix " data-percent="<%= @future_preparedness_percent %>%">
   <div class="skillbar-title" style="background-color: transparent"><span>FUTURE PREPAREDNESS</span></div>
   <div class="skillbar-bar" style="background-color: #FAD472;"></div>
   <div class="skill-bar-percent">30%</div>

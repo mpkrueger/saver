@@ -2,8 +2,51 @@ class User < ApplicationRecord
 
 	validates :name, :age, presence: true
 
-	serialize :spend_vs_income
-	serialize :present_day
+	def debt_score_percent 
+		if self.debt_score == 20
+			100
+		else
+			self.debt_score / 20.0 * 100
+		end
+	end
+	
+	def savings_score_percent
+		if self.savings_score == 20
+			100
+		else
+			self.savings_score / 20.0 * 100
+		end
+	end
+
+	def investments_score_percent
+		if self.investments_score == 20
+			100
+		else
+			self.investments_score / 20.0 * 100
+		end
+	end
+
+	def savings_habits_percent
+		if self.savings_habits == 15
+			100
+		else
+			self.savings_habits / 15.0 * 100
+		end
+	end
+
+	def investment_habits_percent
+		5 / 5.0 * 100
+	end
+
+	def financial_awareness_percent
+		10 / 10.0 * 100
+	end
+
+	def future_preparedness_percent
+		10 / 10.0 * 100
+	end
+
+
 
 	def debt_score
 		debt = 20
@@ -46,24 +89,25 @@ class User < ApplicationRecord
 
 	def investments_score
 		investments = 0
+		if self.investments_type != nil
+			if self.investments_type["retirement_fund"] == "1"
+				investments += 10
+			end
 
-		if self.investments_type["retirement_fund"] == "1"
-			investments += 10
-		end
+			if self.investments_type["company_stock"] == "1"
+				investments += 3
+			end
 
-		if self.investments_type["company_stock"] == "1"
-			investments += 3
-		end
-
-		if self.investments_type["stock_market"] == "1"
-			investments += 7
+			if self.investments_type["stock_market"] == "1"
+				investments += 7
+			end
 		end
 
 		investments
 	end
 
 	def savings_habits
-		savings_habits
+		savings_habits = 0
 
 		case self.spend_vs_income
 		when "More than a third"
@@ -88,7 +132,9 @@ class User < ApplicationRecord
 		proximity_to_future_self = 10
 
 		financial_score = debt + savings + investments + savings_habits + investment_habits + financial_awareness + proximity_to_future_self
+	end
 
+	def update
 	end
 
 	
