@@ -48,7 +48,6 @@
 }
 
 
-
 .col-madlibs-question{
   padding-right: 5px;
   float: left;
@@ -66,8 +65,50 @@
   width: 50%;
 }
 
+.row-investments{
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  height: 70px;
+}
 
+.label-investment-type{
+   font-size: 15px;
+  font-weight: 500;
+  font-family: 'Gill Sans', Tahoma, Geneva, sans-serif;
+}
 
+.subtext-investment{
+    font-size: 14px;
+  font-weight: 300;
+  font-family: 'Gill Sans', Tahoma, Geneva, sans-serif;
+  padding-left: 20px;
+}
+
+.col-toggle-btn{
+  padding-right: 5px;
+  float: left;
+  width: 30%;
+  text-align: right;
+  height: 50px;
+}
+
+.col-investment-type{
+  width: 70%;
+  display: inline-block;
+  text-align: left;
+  height: 50px;
+  vertical-align: middle;
+}
+
+.multichoice{
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Gill Sans', Tahoma, Geneva, sans-serif;
+  width:60%;
+  display:inline-block;
+  text-align: left;
+}
 
 
 /***** DROPDOWNS  *****/
@@ -101,15 +142,7 @@ option[default]{
 
 
 /****** CHECKBOXES/TOGGLES **********/
-.multichoice{
-  font-size: 14px;
-  font-weight: 500;
-  font-family: 'Gill Sans', Tahoma, Geneva, sans-serif;
-  width:100%;
-  display:inline-block;
-  margin: auto;
-  margin-bottom: 5px;
-}
+
 
 .btn-toggle-on-background {
   background-color:#00D1B8;
@@ -130,6 +163,7 @@ option[default]{
   background-color:#244658;
   color:#fff
  }
+
 
 
 /****** ICONS WITHIN FORM INPUTS **********/
@@ -290,3 +324,8 @@ margin: 0;
   width: 120px;
 }
 
+.options-block{
+  width: 100%;
+  display: block;
+  text-align: center;
+}

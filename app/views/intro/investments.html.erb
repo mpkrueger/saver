@@ -34,41 +34,62 @@ $(document).ready(function(){
 
 	<%= form_for @user, url: wizard_path, method: :put do |f| %>
 		<div class="spaced-row">
-				I invest in:
-				
+			
+			<div class="options-block">	
 			<%= f.fields_for :investments_type do |i| %>
+			
+				<div class="row-investments checkbox disabled">
+					<div class="col-toggle-btn">
+						<%= i.check_box :retirement_fund, data: { toggle: 'toggle', onstyle: 'toggle-on-background', offstyle: 'toggle-off-background', on: 'Yep!', off: 'Nope', width: '70px', height: '50px' } %>
+					</div>
+					<div class="col-investment-type">
+						<label for="retirementfund">
+							a retirement fund </label>
+						<p class="subtext-investment">(e.g. 401K, IRA)</p>
+					</div>
+				</div>
 				
-				<div class="checkbox disabled">
-					<%= i.check_box :retirement_fund, data: { toggle: 'toggle', onstyle: 'toggle-on-background', offstyle: 'toggle-off-background', on: 'Yep!', off: 'Nope', size: 'small' } %>
-					<label for="retirementfund">
-						<span class="multichoice">a retirement fund (e.g. 401K, IRA)</span>
-					</label>
+
+				<div class="row-investments checkbox disabled">
+					<div class="col-toggle-btn ">
+						<%= i.check_box :company_stock, data: { toggle: 'toggle', onstyle: 'toggle-on-background', offstyle: 'toggle-off-background', on: 'Yep!', off: 'Nope', width: '70px', height: '50px'} %>
+					</div>
+					<div class="col-investment-type">
+						<label for="companystocks" class="label-investment-type">
+				    		company stocks </label>
+				    	<p class="subtext-investment">(e.g. ESPP)</p>
+			  			
+					</div>
 				</div>
 
-				<div class="checkbox disabled">
-					<%= i.check_box :company_stock, data: { toggle: 'toggle', onstyle: 'toggle-on-background', offstyle: 'toggle-off-background', on: 'Yep!', off: 'Nope', size: 'small' } %>
-					<label for="companystocks">
-			    		<span class="multichoice">company stocks (e.g. ESPP)</span>
-			  		</label>
+				<div class="row-investments checkbox disabled">
+					<div class="col-toggle-btn ">
+					<%= i.check_box :stock_market, data: { toggle: 'toggle', onstyle: 'toggle-on-background', offstyle: 'toggle-off-background', on: 'Yep!', off: 'Nope', width: '70px', height: '50px' } %>
+					</div>
+					<div class="col-investment-type">
+						<label for="stockmarket" class="label-investment-type">
+				    		the stock market </label> 
+				    	<p class="subtext-investment">(e.g. mutual/index funds, stocks)</p>
+				  		
+				  	</div>
 				</div>
 
-				<div class="checkbox disabled">
-					<%= i.check_box :stock_market, data: { toggle: 'toggle', onstyle: 'toggle-on-background', offstyle: 'toggle-off-background', on: 'Yep!', off: 'Nope', size: 'small' } %>
-					<label for="stockmarket">
-			    		<span class="multichoice">the stock market (e.g. mutual/index funds, stocks)</span>
-			  		</label>
-				</div>
-
-				<div class="checkbox disabled">
-					<%= i.check_box :beanie_babies, data: { toggle: 'toggle', onstyle: 'toggle-on-background', offstyle: 'toggle-off-background', on: 'Yep!', off: 'Nope', size: 'small' } %>
-					<label for="other">
-			    		<span class="multichoice">other moneymakers (e.g. Beanie Babies, stamps)</span>
-			  		</label>
+				<div class="row-investments checkbox disabled">
+					<div class="col-toggle-btn">
+					<%= i.check_box :beanie_babies, data: { toggle: 'toggle', onstyle: 'toggle-on-background', offstyle: 'toggle-off-background', on: 'Yep!', off: 'Nope', width: '70px', height: '50px'} %>
+					</div>
+					<div class="col-investment-type">
+						<label for="other">
+				    		other moneymakers </label>
+				    	<p class="subtext-investment">(e.g. Beanie Babies, stamps)</p>
+				  		
+				  	</div>
 				</div>	
-
+</div>
 			<% end %>
-
+	<div class="button-row">
 		<%= f.submit 'Next', class: 'next-button' %>
+	</div>
 	<% end %>
 		
 	</section>
