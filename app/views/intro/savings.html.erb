@@ -29,7 +29,7 @@ $(document).ready(function(){
 		<div class="spaced-row user-content">
 			<span class="madlib-sentence">	
 				<span class="dropdown-style inner-addon right-addon">
-					<%= f.select :savings_amount, [['I have hundreds', 1], ['I have thousands', 2], ['I have tens of thousands', 3], ['Someone raided my piggy bank', 0]]%>
+					<%= f.select(:savings_amount, [['I have hundreds', 1], ['I have thousands', 2], ['I have tens of thousands', 3], ['Someone raided my piggy bank', 0]], {prompt: 'My savings...'}, :required => true) %>
 				<span class="glyphicon"><%= image_tag("dropdown-arrow.png")%></span>
 				</span>
 			</span>

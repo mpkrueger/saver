@@ -31,7 +31,7 @@
 				This future life seems 
 				<br />
 				<span class="dropdown-style inner-addon right-addon">
-					<%= f.select :preparedness, [['impossible', 1], ['hard to achieve' , 2], ['possible with effort', 3], ['very possible', 4]]%>
+					<%= f.select :preparedness, [['impossible', 1], ['hard to achieve' , 2], ['possible with effort', 3], ['very possible', 4]], {prompt: 'how likely?'}, :required => true %>
 					<span class="glyphicon"><%= image_tag("dropdown-arrow.png")%></span>
 				</span>
 			

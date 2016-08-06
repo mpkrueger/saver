@@ -28,7 +28,7 @@ $(document).ready(function(){
 		<div class="spaced-row user-content">
 			<span class="madlib-sentence">	
 				<span class="dropdown-style inner-addon right-addon">
-					<%= f.select :spend_vs_income, [['More than a third', 'More than a third'], ['Not much, if any', 'Not much, if any'], ['I\'m in the red', 'I\'m in the red']] %>
+					<%= f.select :spend_vs_income, [['More than a third', 'More than a third'], ['Not much, if any', 'Not much, if any'], ['I\'m in the red', 'I\'m in the red']], { prompt: 'I save...'}, :required => true %>
 				<span class="glyphicon"><%= image_tag("dropdown-arrow.png")%></span>
 				</span>
 			</span>
