@@ -79,7 +79,7 @@
 	<div class="spaced-row user-content">
 		Enter in your email address so we can help you improve from here.
 		<br />
-			<%= f.text_field :email, class: "madlib-sentence border-underline text-field", placeholder: "email address", :required => true %>
+			<%= f.email_field :email, class: "madlib-sentence border-underline text-field", placeholder: "email address", :autocapitalize => "off", :required => true %>
 		
 	</div>
 
