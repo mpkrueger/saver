@@ -75,7 +75,7 @@
 
 
 
-	<%= form_for @user do |f| %>
+	<%= form_for @user, url: wizard_path, method: :put do |f| %>
 	<div class="spaced-row user-content">
 		Enter in your email address so we can help you improve from here.
 		<br />
