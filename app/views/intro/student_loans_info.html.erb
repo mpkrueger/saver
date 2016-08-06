@@ -32,7 +32,7 @@ $(document).ready(function(){
 			<span class="madlib-sentence">			
 				I owe
 				<span class="dropdown-style inner-addon right-addon">
-					<%= f.select :student_amount, [['nothing', 0]], ['under $10,000', 1], ['$10,000 - $30,000', 2], ['Over $30,000', 3], {prompt: 'this much...'}, :required => true %>
+					<%= f.select :student_amount, [['nothing', 0], ['under $10,000', 1], ['$10,000 - $30,000', 2], ['Over $30,000', 3]], {prompt: 'this much...'}, :required => true %>
 				<span class="glyphicon"><%= image_tag("dropdown-arrow.png")%></span>
 				</span>
 				in loans. 
