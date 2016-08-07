@@ -28,12 +28,12 @@ $(document).ready(function(){
 	<section id="user-section">
 	<%= form_for @user, url: wizard_path, method: :put do |f| %>
 		<div class="spaced-row user-content">
-			<span class="madlib-sentence">	
+			<div class="madlib-sentence">	
 				<span class="dropdown-style inner-addon right-addon">
 					<%= f.select :spend_vs_income, [['More than a third', 'More than a third'], ['Not much, if any', 'Not much, if any'], ['I\'m in the red', 'I\'m in the red']], { prompt: 'I save...'}, :required => true %>
 				<span class="glyphicon glyphicon-menu-down" style="color:#FFF"></span>
 				</span>
-			</span>
+			</div>
 		</div>
 		<div class="button-row">
 			<%= f.submit "Next", class: 'next-button' %>

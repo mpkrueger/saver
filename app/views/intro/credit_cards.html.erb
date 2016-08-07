@@ -26,13 +26,13 @@ $(document).ready(function(){
 	<section id="user-section">
 	<%= form_for @user, url: wizard_path, method: :put do |f| %>
 		<div class="spaced-row user-content">
-			<span class="madlib-sentence">	
+			<div class="madlib-sentence">	
 				<span class="dropdown-style inner-addon right-addon">
-					<%= f.select :cc_amount, [['I don\'t have any credit cards', 0], ['I pay them off every month', 4], ['I owe less than $1000', 1], ['I owe $1000 – $5000', 2], ['I owe over $5000', 3]], {prompt: 'I owe this much on my credit cards...' }, :required => true %>
+					<%= f.select :cc_amount, [['I don\'t have any credit cards', 0], ['I pay them off every month', 4], ['I owe less than $1000', 1], ['I owe $1000 – $5000', 2], ['I owe over $5000', 3]], {prompt: 'My credit card debt...' }, :required => true %>
 					<span class="glyphicon glyphicon-menu-down" style="color:#FFF"></span>
 				</span>
 			
-			</span>
+			</div>
 		</div>
 
 		<div class="button-row">

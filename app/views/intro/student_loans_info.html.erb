@@ -32,13 +32,14 @@ $(document).ready(function(){
 	<%= form_for @user, url: wizard_path, method: :put do |f| %>
 		
 		<div class="spaced-row user-content">
-			<span class="madlib-sentence">			
+			<div class="madlib-sentence">			
 				I owe
 				<span class="dropdown-style inner-addon right-addon">
 					<%= f.select :student_amount, [['nothing', 0], ['under $10,000', 1], ['$10,000 - $30,000', 2], ['Over $30,000', 3]], {prompt: 'this much...'}, :required => true %>
-				<span class="glyphicon glyphicon-menu-down" style="color:#FFF"></span>
+					<span class="glyphicon glyphicon-menu-down" style="color:#FFF"></span>
 				</span>
 				in student loans. 
+			</div>
 		</div>
 
 		<div class="button-row">
