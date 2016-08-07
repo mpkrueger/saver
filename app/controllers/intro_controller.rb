@@ -34,6 +34,7 @@ class IntroController < ApplicationController
                    :reason, 
                    :company,
                    :role,
+                   :day_person,
                    :after_work,
                    :weekends,
                    :financially])
