@@ -326,3 +326,25 @@ margin: 0;
   display: block;
   text-align: center;
 }
+
+::-webkit-input-placeholder {
+    color: #888;
+    opacity: 1 !important; /* for chrome */
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    color: #888;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+    color: #888;
+}
+
+:-ms-input-placeholder {  
+   color: #888;
+}
+
+::-webkit-input-prompt{
+  color: #888;
+  opacity: 1 !important;
+}

@@ -10,7 +10,7 @@
 	<div class="coach-question">
 		<aside>
 		<%= student_loans_message %> <br /> 70% of college grads end up with student loans. </aside>
-		<p class="main-question">How are you doing with credit cards?</p>
+		<p class="main-question">How are you doing with credit cards? Any debt?</p>
 		</p>
 	</div>
 </section>
@@ -27,9 +27,8 @@ $(document).ready(function(){
 	<%= form_for @user, url: wizard_path, method: :put do |f| %>
 		<div class="spaced-row user-content">
 			<span class="madlib-sentence">	
-				I owe
 				<span class="dropdown-style inner-addon right-addon">
-					<%= f.select :cc_amount, [['I don\'t have any credit cards', 0], ['$0, all my cards are paid off', 4], ['less than $1000', 1], ['$1000 – $5000', 2], ['over $5000', 3]], {prompt: 'this much on my credit cards...' }, :required => true %>
+					<%= f.select :cc_amount, [['I don\'t have any credit cards', 0], ['I pay them off every month', 4], ['I owe less than $1000', 1], ['I owe $1000 – $5000', 2], ['I owe over $5000', 3]], {prompt: 'I owe this much on my credit cards...' }, :required => true %>
 					<span class="glyphicon"><%= image_tag("dropdown-arrow.png")%></span>
 				</span>
 			
