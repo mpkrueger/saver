@@ -17,13 +17,14 @@
   padding-top:15px;
   margin: auto;
   margin-top: 10px;
+  position: relative;
  }
 
 .coach-chat-triangle{
   content: "";
-  position: absolute;
-  top: 10px;
-  left: 16px;
+  position: relative;
+  top: -15px;
+  left: -15px;
   width: 0;
   height: 0;
   border: 10px solid #00A99D;
@@ -45,6 +46,7 @@
   border-radius:4px;
   line-height: 2.0;
   text-align: left;
+  position: relative;
 }
 
 .main-question{
