@@ -11,7 +11,9 @@
 	<div class="coach-question">
 		<aside>
 		Ok, now for the fun stuff – let’s do a little exercise. </aside>
-		<p class="main-question">Let's fast forward to <br /><%= Time.now.strftime("%a, %b %d, %Y") %>, <br />3 years from today</p>
+		<p class="main-question">Let's fast forward to <br />
+		<%= (Time.now + 2.year).strftime("%a, %b %d, %Y") %>, 
+		<br />3 years from today</p>
 	</div>
 </section>
 
