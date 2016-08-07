@@ -41,7 +41,21 @@ module IntroHelper
 		when "other"
 			"Investing can be intimidating."
 		else
-			"Glad to hear you’re doing some investing."
+			"Glad to hear you’re doing some investing!"
+		end
+	end
+
+	def cc_feedback
+		@user = @current_user
+		case @user.cc_amount
+		when 4
+			"That's great to pay off your statement every month!"
+		when 1, 2
+			"Cool, hopefully we can help you get that paid off soon."
+		when 3
+			"Ok, we can focus on getting that paid off so you don't have to send your hard-earned money to those credit card companies with their high interest rates."
+		when 0
+			"That's good that you're avoiding credit card debt."
 		end
 	end
 
