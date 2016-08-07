@@ -12,7 +12,7 @@
 		<aside>
 		Ok, now for the fun stuff – let’s do a little exercise. </aside>
 		<p class="main-question">Let's fast forward to <br />
-		<%= (Time.now + 2.year).strftime("%a, %b %d, %Y") %>, 
+		<%= (Time.now + 3.year).strftime("%a, %b %d, %Y") %>, 
 		<br />3 years from today</p>
 	</div>
 </section>
@@ -65,7 +65,7 @@
 	<div class="row-future">
 	  <div class="col-madlibs-question">After work, I enjoy </div>
 	  <div class="col-madlibs-field">
-	  	<%= i.text_field :after_work, class: "madlib-sentence", placeholder: "activity", :autocapitalize => "off", required: true %>
+	  	<%= i.text_field :after_work, class: "madlib-sentence", placeholder: "activity(-ies)", :autocapitalize => "off", required: true %>
 	  	<!-- <input type="text" name="" value="" class="madlib-sentence" placeholder="activity"> -->
 	  </div>
 	</div>	
@@ -73,7 +73,7 @@
 	<div class="row-future">
 	  <div class="col-madlibs-question">On weekends, I enjoy </div>
 	  <div class="col-madlibs-field">
-	  	<%= i.text_field :weekends, class: "madlib-sentence", placeholder: "activity", :autocapitalize => "off", required: true %>
+	  	<%= i.text_field :weekends, class: "madlib-sentence", placeholder: "activity(-ies)", :autocapitalize => "off", required: true %>
 	  	<!-- <input type="text" name="" value="" class="madlib-sentence" placeholder="activity"> -->
 	  </div>
 	</div>	
