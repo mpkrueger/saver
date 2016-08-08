@@ -25,8 +25,11 @@ $(document).ready(function(){
 
 
 <div class="hidden" style="display:none;">
+	
+<%= form_for @user, url: wizard_path, method: :put do |f| %>
+
 	<section id="user-section">
-	<%= form_for @user, url: wizard_path, method: :put do |f| %>
+	
 		<div class="spaced-row user-content">
 			<div class="madlib-sentence">	
 				<span class="dropdown-style inner-addon right-addon">

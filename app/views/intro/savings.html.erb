@@ -26,8 +26,11 @@ $(document).ready(function(){
 </script>
 
 <div class="hidden" style="display:none;">
+
+<%= form_for @user, url: wizard_path, method: :put do |f| %>
+
 	<section id="user-section">
-	<%= form_for @user, url: wizard_path, method: :put do |f| %>
+	
 		<div class="spaced-row user-content">
 			<div class="madlib-sentence">	
 				<div class="dropdown-style inner-addon right-addon">
@@ -41,6 +44,6 @@ $(document).ready(function(){
 	<div class="button-row">
 			<%= f.submit "Next", class: 'next-button' %>
 	</div>
+	<% end %>
 </div>
-<% end %>
 </body>
