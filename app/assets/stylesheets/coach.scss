@@ -74,33 +74,18 @@
 }
 
 #savvy-score-section{
-  width: 640px;
+  background-image: image-url("savvy-score-bkgd.png");
+  background-size: cover;
   height: 250px;
-  overflow: hidden;
-    
-}
-
-.savvy-background-image{
-  background-image: image-url('savvy-score-bkgd.png');
   background-repeat: no-repeat;
-   width: 100%;
+  position: relative;
 }
-
-.savvy-score-bkgd{
-  text-align: center;
-  float:left;
-  margin: auto;
-  width: 100%;
- 
-}
-
-
 
 .score-circle{
-  background-image: url("score-circle.png");
+  background-image: image-url("score-circle.png");
   background-repeat: no-repeat;
   margin: auto;
-  display: inline-block;
+  display: block;
   max-width: 244px;
   height: 100%;
   position: relative;
