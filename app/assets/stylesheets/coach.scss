@@ -9,7 +9,6 @@
 @import "bootstrap";
 
 
-
 #coach-section{
   width:80%;
   background-color:#00A99D;
@@ -74,7 +73,46 @@
   background-color:#25605B;
 }
 
-.savvy-score{
+#savvy-score-section{
+  background-image: url("savvy-score-bkgd.png");
+  background-size: cover;
+  height:250px;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.score-circle{
+  background-image: url("score-circle.png");
+  background-repeat: no-repeat;
+  margin: auto;
+  display: block;
+  max-width: 244px;
+  height: 100%;
+  position: relative;
+  text-align: center;
+}
+
+.savvy-score-textgroup{
+  margin: auto;
+  position: absolute;
+  padding-top:25%;
+  width: 100%;
   font-family: 'Gill Sans', Tahoma, Geneva, sans-serif;
-  font-size: 24px;
+}
+.savvy-score-title{
+  font-size: 18px;
+}
+
+.savvy-score{
+  font-size: 48px;
+}
+
+.score-total{
+  font-size: 18px;
+}
+
+#first-priority{
+  text-align: center;
+  padding-top:15px;
+  font-size:18px;
 }

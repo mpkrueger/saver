@@ -8,31 +8,50 @@
 <!--script src="js/skill.bars.jquery.js"></script-->
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js">
 </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script>
-$(document).ready(function(){
-    $('[data-toggle="popover"]').popover(); 
-});
-</script>
+
 
 <body class="page-background">
+
+<section id="savvy-score-section">
+  <div class="score-circle">
+    <div class="savvy-score-textgroup">
+      <div class="savvy-score-title">
+        SAVVY SCORE
+      </div>
+      <div class="savvy-score">
+        <%= @savvy_score %> 
+      </div>
+      <div class="score-total">
+        out of 100
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="first-priority">
+  What we'll tackle first:
+  <br /><%= @weakness %>
+
+</section>
+
+<section id="coach-section">
+  <div class="coach-chat-triangle"></div>
+  <div class="coach-question">
+    We calculated your Savvy Score based on your current debt/savings/investments amounts, your financial habits (which are crucial for an awesome future), and your financial awareness
+  </div>
+</section>
 
 
 <section id="coach-section">
   <div class="coach-chat-triangle"></div>
 	<div class="coach-question">
-		Based on this initial chat, it seems like you're in good shape in terms of your 
-		<%= @strength %>. It seems like we could work a little on your <%= @weakness %>. 
+		Based on this initial chat, it seems like you're in good shape in terms of  
+		<%= @strength %>. So we'll focus on <%= @weakness %>. 
   </div>
 </section>
-<section id="coach-section">
-  <div class="coach-chat-triangle"></div>
-  <div class="coach-question">
-     Your overall Savvy Score is <br /><span class="savvy-score"><%= @savvy_score %> out of 100. </span>
-     <a href="#" data-toggle="popover" title="Savvy Score Info" style="color:#888" data-placement="bottom" data-trigger="focus" data-content="Calculated based on your present debt/savings/investments and your financial habits (which are crucial for an awesome future)">Info</a>
-    </div>
-  </section>
+
 <section id="coach-section">
   <div class="coach-chat-triangle"></div>
   <div class="coach-question">
