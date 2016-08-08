@@ -14,6 +14,8 @@ class IntroController < ApplicationController
     @investment_habits_percent = @user.investment_habits_percent
     @financial_awareness_percent = @user.financial_awareness_percent
     @future_preparedness_percent = @user.future_preparedness_percent
+    @strength = @user.strength
+    @weakness = @user.weakness
   	render_wizard
   end
 
