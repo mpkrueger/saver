@@ -134,6 +134,37 @@ class User < ApplicationRecord
 		financial_score = debt + savings + investments + savings_habits + investment_habits + financial_awareness + proximity_to_future_self
 	end
 
+	def strength
+		ordered_percents = [self.debt_score_percent, self.savings_score_percent, self.investments_score_percent, self.savings_habits_percent].sort
+
+		case ordered_percents.last
+		when self.debt_score_percent
+			"debt"
+		when self.savings_score_percent
+			"savings amount"
+		when self.investments_score_percent
+			"investments"
+		when self.savings_habits_percent
+			"savings habits"
+		end
+			
+	end
+
+	def weakness
+		ordered_percents = [self.debt_score_percent, self.savings_score_percent, self.investments_score_percent, self.savings_habits_percent].sort
+
+		case ordered_percents.first
+		when self.debt_score_percent
+			"debt"
+		when self.savings_score_percent
+			"savings amount"
+		when self.investments_score_percent
+			"investments"
+		when self.savings_habits_percent
+			"savings habits"
+		end
+	end
+
 	def update
 	end
 
