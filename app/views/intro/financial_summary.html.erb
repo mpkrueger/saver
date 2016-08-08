@@ -63,7 +63,13 @@
 <section id="user-section">
 
 	<div class="spaced-row user-content">
-		I'd like to get help with < dropdown with choices >
+		I'd like to get help with 
+      <span class="dropdown-style inner-addon right-addon">
+        <%= f.select(:financial_help, [['saving more', 'saving more',], ['paying down debt more quickly', 'paying down debt more quickly'], ['starting to invest', 'starting to invest']], {prompt: 'choose an area'}, :class => "my-dropdown") %>
+          <span class="glyphicon glyphicon-menu-down" style="color:#FFF"></span>
+        </span>
+      .
+
     You can reach me at
 
 			<%= f.email_field :email, class: "madlib-sentence border-underline text-field", placeholder: "email address", :autocapitalize => "off", :required => true %>
