@@ -1,0 +1,64 @@
+<script type="text/javascript">
+    mixpanel.track("financial_score", {
+        
+    });
+
+</script>
+
+<!--script src="js/skill.bars.jquery.js"></script-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js">
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover(); 
+});
+</script>
+
+<body class="page-background">
+
+
+<section id="coach-section">
+  <div class="coach-chat-triangle"></div>
+	<div class="coach-question">
+		Based on this initial chat, it seems like you're in good shape in terms of your 
+		<%= @good_shape %>. It seems like we could work a little on your <%= @needs_improvement %>. 
+  </div>
+</section>
+<section id="coach-section">
+  <div class="coach-chat-triangle"></div>
+  <div class="coach-question">
+     Your overall Savvy Score is <br /><span class="savvy-score"><%= @savvy_score %> out of 100. </span>
+     <a href="#" data-toggle="popover" title="Savvy Score Info" style="color:#888" data-placement="bottom" data-trigger="focus" data-content="Calculated based on your present debt/savings/investments and your financial habits (which are crucial for an awesome future)">(i)</a>
+    </div>
+  </section>
+<section id="coach-section">
+  <div class="coach-chat-triangle"></div>
+  <div class="coach-question">
+    <p>We'd love to work with you to boost your savvy and improve your finances so that you have the flexibility to live the life you want. </p>
+	</div>
+</section>
+
+<section id="user-section">
+	
+
+
+
+	<%= form_for @user, url: wizard_path, method: :put do |f| %>
+	<div class="spaced-row user-content">
+		I'd like to get help with < dropdown with choices >
+    You can reach me at
+
+			<%= f.email_field :email, class: "madlib-sentence border-underline text-field", placeholder: "email address", :autocapitalize => "off", :required => true %>
+    . 		
+	</div>
+
+<div class="button-row">
+		<%= f.submit "I want to increase my savvy", class: 'next-button' %>
+	</div>
+	<% end %>
+</section>
+</div>
+
+</body>
