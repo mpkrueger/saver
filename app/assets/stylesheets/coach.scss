@@ -74,11 +74,19 @@
 }
 
 #savvy-score-section{
-  background-image: url("savvy-score-bkgd.png");
+// background-image: url("savvy-score-bkgd.png");
 //  background-size: cover;
   height:250px;
-  background-repeat: no-repeat;
+//  background-repeat: no-repeat;
 //  position: relative;
+}
+
+.savvy-score-bkgd{
+  text-align: center;
+  display: block;
+  margin: auto;
+  width: 100%;
+  height: 250px;
 }
 
 .score-circle{
