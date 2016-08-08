@@ -155,13 +155,13 @@ class User < ApplicationRecord
 
 		case ordered_percents.first
 		when self.debt_score_percent
-			"Your Debt"
+			"DEBT"
 		when self.savings_score_percent
-			"Your Savings"
+			"SAVINGS"
 		when self.investments_score_percent
-			"Your Investments"
+			"INVESTMENTS"
 		when self.savings_habits_percent
-			"Your Savings Habits"
+			"SAVINGS HABITS"
 		end
 	end
 
