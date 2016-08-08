@@ -21,8 +21,10 @@ $(document).ready(function(){
 </script>
 
 <div class="hidden" style="display:none;">
-<section id="user-section">
+
 <%= form_for @user do |f| %>
+<section id="user-section">
+
 	<div class="spaced-row user-content">
 		<div class="madlib-sentence">
 			You can call me  
@@ -34,6 +36,8 @@ $(document).ready(function(){
 		</div>
 	</div>
 	
+</section>
+
 <div class="button-row">
 		<%= f.submit "Next", class: 'next-button' %>
 	</div>
@@ -41,6 +45,4 @@ $(document).ready(function(){
 </div>
 
 	<% end %>
-	
-</section>
 </body>
