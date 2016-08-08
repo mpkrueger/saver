@@ -14,16 +14,16 @@
 		<aside>
 		Ok, now for the fun stuff – let’s do a little exercise. </aside>
 		<p class="main-question">Let's fast forward to
-		<%= (Time.now + 3.year).strftime("%a, %b %d, %Y") %>, 
-		3 years from today</p>
+		<%= (Time.now + 5.year).strftime("%a, %b %d, %Y") %>, 
+		5 years from today</p>
 	</div>
 </section>
 
-<section id="user-section">
+
 
 <%= form_for @user, url: wizard_path, method: :put do |f| %>
 	<%= f.fields_for :future_day do |i| %>
-	
+<section id="user-section">
 	<div class="row-future">
 	  <div class="col-madlibs-question">Pronoun to describe me: </div>
 	  <div class="col-madlibs-field">
@@ -95,13 +95,14 @@
 	  	</div>
 	  </div>
 	</div>	
-	<div class="button-row">
+	
+
+
+</section>
+
+<div class="button-row">
 	<%= i.submit "Next", class: 'next-button' %>
 </div>
 	<% end %>
 <% end %>
-
-</section>
-
-
 </body>

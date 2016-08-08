@@ -7,6 +7,7 @@
 <body class="page-background">
 
 <section id="coach-section">
+	 <div class="coach-chat-triangle"></div>
 	<div class="coach-question">
 		<aside>
 		<%= student_loans_message %> <br /> 70% of college grads end up with student loans. </aside>
@@ -35,10 +36,11 @@ $(document).ready(function(){
 			</div>
 		</div>
 
-		<div class="button-row">
-			<%= f.submit "Next", class: 'next-button' %>
-		</div>
+		
 	</section>
+	<div class="button-row">
+			<%= f.submit "Next", class: 'next-button' %>
+	</div>
 </div>
 	<% end %>
 

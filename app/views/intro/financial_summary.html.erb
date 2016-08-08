@@ -23,7 +23,7 @@ $(document).ready(function(){
   <div class="coach-chat-triangle"></div>
 	<div class="coach-question">
 		Based on this initial chat, it seems like you're in good shape in terms of your 
-		<%= @good_shape %>. It seems like we could work a little on your <%= @needs_improvement %>. 
+		<!--%= good_shape %-->. It seems like we could work a little on your <!--%= needs_improvement %-->. 
   </div>
 </section>
 <section id="coach-section">
@@ -40,12 +40,9 @@ $(document).ready(function(){
 	</div>
 </section>
 
+<%= form_for @user, url: wizard_path, method: :put do |f| %>
 <section id="user-section">
-	
 
-
-
-	<%= form_for @user, url: wizard_path, method: :put do |f| %>
 	<div class="spaced-row user-content">
 		I'd like to get help with < dropdown with choices >
     You can reach me at
@@ -54,11 +51,12 @@ $(document).ready(function(){
     . 		
 	</div>
 
-<div class="button-row">
-		<%= f.submit "I want to increase my savvy", class: 'next-button' %>
-	</div>
-	<% end %>
+
 </section>
+<div class="button-row">
+    <%= f.submit "I want to increase my savvy", class: 'next-button' %>
 </div>
+<% end %>
+
 
 </body>
