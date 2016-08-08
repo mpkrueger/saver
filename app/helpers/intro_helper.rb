@@ -1,4 +1,16 @@
 module IntroHelper
+
+	def student_loans_info
+		@user = @current_user
+		i = @user.age.to_i
+		case i
+		when (20..30)
+			"Awesome to start young! A lot of people your age deal with student loans."
+		else
+			"A lot of people are saddled with student loans."
+		end
+	end
+
 	def student_loans_message
 		@user = @current_user
 		case @user.student_amount
