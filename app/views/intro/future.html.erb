@@ -9,18 +9,31 @@
 
 <section id="coach-section">
 	<div class="coach-chat-triangle"></div>
-
 	<div class="coach-question">
 		<aside>
 		Ok, now for the fun stuff – let’s do a little exercise. </aside>
+	</div>
+</section>
+
+<script>
+$(document).ready(function(){
+    for(i=1; i<3; i++) {
+    	$('#chat'+i).hide(0).delay(1000*i).fadeIn(100).removeClass('hidden');
+    }
+});
+</script>
+
+<div id= "chat1" class="hidden" style="display:none;">
+<section id="coach-section">
+	<div class="coach-chat-triangle"></div>
+	<div class="coach-question">
 		<p class="main-question">Let's fast forward to
 		<%= (Time.now + 5.year).strftime("%a, %b %d, %Y") %>, 
 		5 years from today</p>
 	</div>
 </section>
 
-
-
+<div id= "chat2" class="hidden" style="display:none;">
 <%= form_for @user, url: wizard_path, method: :put do |f| %>
 	<%= f.fields_for :future_day do |i| %>
 <section id="user-section">
@@ -74,7 +87,6 @@
 	  	<%= i.text_field :evenings, class: "madlib-sentence", placeholder: 'cooking, studying...', required: true %>
 		</div>
 	  </div>
-	</div>	
 
 	<div class="row-future">
 	  <div class="col-madlibs-question">My life will be different because... </div>
@@ -84,14 +96,14 @@
 	  </div>
 	</div>	
 
-	
+	<div class="button-row">
+	<%= i.submit "Next", class: 'next-button' %>
+</div>
+	<% end %>
 
 
 </section>
 
-<div class="button-row">
-	<%= i.submit "Next", class: 'next-button' %>
-</div>
-	<% end %>
+
 <% end %>
 </body>
