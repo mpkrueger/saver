@@ -5,30 +5,30 @@ class IntroController < ApplicationController
   :future, :future_reflection, :financial_summary, :email, :thanks
 
   def show
-  	@user = current_user
-    @savvy_score = @user.savvy_score
-    @debt_score_percent = @user.debt_score_percent
-    @savings_score_percent = @user.savings_score_percent
-    @investments_score_percent = @user.investments_score_percent
-    @savings_habits_percent = @user.savings_habits_percent
-    @investment_habits_percent = @user.investment_habits_percent
-    @financial_awareness_percent = @user.financial_awareness_percent
-    @future_preparedness_percent = @user.future_preparedness_percent
-    @strength = @user.strength
-    @weakness = @user.weakness
+  	@guest_user = current_user
+    @savvy_score = @guest_user.savvy_score
+    @debt_score_percent = @guest_user.debt_score_percent
+    @savings_score_percent = @guest_user.savings_score_percent
+    @investments_score_percent = @guest_user.investments_score_percent
+    @savings_habits_percent = @guest_user.savings_habits_percent
+    @investment_habits_percent = @guest_user.investment_habits_percent
+    @financial_awareness_percent = @guest_user.financial_awareness_percent
+    @future_preparedness_percent = @guest_user.future_preparedness_percent
+    @strength = @guest_user.strength
+    @weakness = @guest_user.weakness
   	render_wizard
   end
 
   def update
-  	@user = current_user
-    @user.update_attributes(user_params)
-  	render_wizard @user
+  	@guest_user = current_user
+    @guest_user.update_attributes(guest_user_params)
+  	render_wizard @guest_user
   end
 
   private
 
-  def user_params
-    params.require(:user).permit(:name, :age, :student_loans, :student_amount, :cc_debt, 
+  def guest_user_params
+    params.require(:guest_user).permit(:name, :age, :student_loans, :student_amount, :cc_debt, 
       :cc_amount, :savings, :savings_amount, :investments, :spend_vs_income, 
       :preparedness, :email, :financial_score, :financial_help, investments_type: [:retirement_fund, :company_stock, :stock_market, :beanie_babies],
       future_day: [:gender,

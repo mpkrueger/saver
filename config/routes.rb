@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   
+  resources :guest_users
+
   resources :intro
-  resources :users
 
   get 'goals/index'
 
