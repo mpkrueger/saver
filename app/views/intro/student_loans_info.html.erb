@@ -8,8 +8,7 @@
 <section id="coach-section">
 	<div class="coach-chat-triangle"></div>
 	<div class="coach-question">
-
-		Nice to meet you, <%= @current_user.name %>. I'm going to ask you a series of questions to get a better gauge of your financial picture.
+		Nice to meet you, <%= @current_user.name %>. I'm going to ask you some questions about your money. 
 	</div>
 
 </section>
@@ -17,7 +16,7 @@
 <script>
 $(document).ready(function(){
     for(i=1; i<4; i++) {
-    	$('#chat'+i).hide(0).delay(1000*i).fadeIn(100).removeClass('hidden');
+    	$('#chat'+i).hide(0).delay(1500*i).fadeIn(100).removeClass('hidden');
     }
 });
 </script>
@@ -26,7 +25,7 @@ $(document).ready(function(){
 <section id="coach-section">
 	<div class="coach-chat-triangle"></div>
 	<div class="coach-question">
-		<%= student_loans_info %> 
+		At the end, I'll give you a Savvy Score, which represents your financial health/habits. We'll use the score to figure out what to work on first. 
 	</div>
 
 </section>
@@ -36,9 +35,8 @@ $(document).ready(function(){
 	<div class="coach-chat-triangle"></div>
 	<div class="coach-question">
 		<p class="main-question">
-		Do you have any student loans?
+		First off, do you have any student loans?
 	
-		<%= image_tag("icon-gradcap.png", class:"coach-icons") %>
 		</p>
 	</div>
 
@@ -61,7 +59,7 @@ $(document).ready(function(){
 			<div class="madlib-sentence">			
 				I owe
 				<div class="dropdown-style inner-addon right-addon">
-					<%= f.select :student_amount, [['nothing', 0], ['under $10,000', 1], ['$10,000 - $30,000', 2], ['Over $30,000', 3]], {prompt: 'this much...'}, :required => true , :class => "my-dropdown" %>
+					<%= f.select :student_amount, [['Over $30,000', 3], ['$10,000 - $30,000', 2], ['under $10,000', 1],['nothing', 0] ], {prompt: 'this much...'}, :required => true , :class => "my-dropdown" %>
 					<span class="glyphicon glyphicon-menu-down" style="color:#FFF"></span>
 				</div>
 				in student loans. 

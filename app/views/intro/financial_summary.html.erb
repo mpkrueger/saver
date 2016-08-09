@@ -15,7 +15,7 @@
 <body class="page-background">
 
 <section id="savvy-score-section">
- <div class="score-circle"> 
+  <div class="score-circle"> 
     <div class="savvy-score-textgroup">
       <div class="savvy-score-title">
         SAVVY SCORE
@@ -27,53 +27,35 @@
         out of 100
       </div>
     </div>
-  
-</section>
-
-<section id="first-priority">
-  What we'll tackle first:
-  <br /><span class="main-question"><%= @weakness %></span>
-
-</section>
-
-<section id="coach-section">
-  <div class="coach-chat-triangle"></div>
-  <div class="coach-question">
-    We calculated your Savvy Score based on your current debt/savings/investments amounts and your financial habits (which are crucial for an awesome future).
   </div>
 </section>
 
-
-<section id="coach-section">
-  <div class="coach-chat-triangle"></div>
-  <div class="coach-question">
-    We'd love to work with you to boost your savvy and improve your finances so that you have the flexibility to live the life you want. 
-	</div>
-</section>
-
-<%= form_for @user, url: wizard_path, method: :put do |f| %>
-<section id="user-section">
-
-	<div class="spaced-row user-content">
-		I'd like to get help with 
-      <span class="dropdown-style inner-addon right-addon">
-        <%= f.select(:financial_help, [['saving more', 'saving more',], ['paying down debt more quickly', 'paying down debt more quickly'], ['starting to invest', 'starting to invest']], {prompt: 'choose an area'}, :class => "my-dropdown") %>
-          <span class="glyphicon glyphicon-menu-down" style="color:#FFF"></span>
-        </span>
-      .
-      <br /><br />
-    You can reach me at
-
-			<%= f.email_field :email, class: "madlib-sentence border-underline text-field", placeholder: "email address", :autocapitalize => "off", :required => true %>
-    . 		
-	</div>
+<script>
+$(document).ready(function(){
+    for(i=1; i<3; i++) {
+      $('#chat'+i).hide(0).delay(1000*i).fadeIn(100).removeClass('hidden');
+    }
+});
+</script>
 
 
-</section>
-<div class="button-row">
-    <%= f.submit "I want to increase my savvy", class: 'next-button' %>
+<div id="chat1" class="hidden" style="display:none;">
+  <section id="first-priority">
+    What we'll tackle first:
+    <br /><span class="main-question"><%= @weakness %></span>
+  </section>
 </div>
-<% end %>
 
-
+<div id="chat2" class="hidden" style="display:none;">
+  <section id="coach-section">
+    <div class="coach-chat-triangle"></div>
+    <div class="coach-question">
+      We calculated your Savvy Score based on your current debt, savings, investments,  and financial habits (which are crucial for an awesome future).
+    </div>
+  </section>
+  <div class="spaced-row"></div>
+  <div class="button-row">
+      <%= link_to "I want to increase my savvy", next_wizard_path, class: 'next-button' %>
+  </div>
+</div>
 </body>

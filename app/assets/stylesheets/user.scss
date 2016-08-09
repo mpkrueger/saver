@@ -14,7 +14,6 @@
   width:80%;
   margin-top:15px;
   padding-top:20px;
-  padding-bottom:15px;
   margin: auto;
  // background-color:#364249;
 }
@@ -101,6 +100,7 @@
   text-align: left;
   height: 50px;
   vertical-align: middle;
+  margin-top:-8px;
 }
 
 .multichoice{
@@ -160,7 +160,7 @@ option[default]{
 /****** CHECKBOXES/TOGGLES **********/
 
 .checkbox label{
-  padding-top: 12x;
+  padding-top: 12px;
 }
 
 .btn-toggle-on-background {

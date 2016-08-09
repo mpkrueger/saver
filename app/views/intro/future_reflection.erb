@@ -14,10 +14,9 @@
 		
 	</div>
 
-
 	<hr width="86%">
 	<p class="future-story">
-	Future <%= @user.name %> wakes up on <%= (Time.now + 3.year).strftime("%a, %b %d, %Y") %> in <%= @user.future_day['city'] %> in <%= @user.future_day['home'] %> with <%= @user.future_day['living_with'] %>. Future <%= @user.name %> heads to work at <%= @user.future_day['company'] %> and has <%= @user.future_day['responsibilities'] %> compared to a few years before. For lunch, <%= @user.future_day['gender'] %> enjoys eating some delicious <%= @user.future_day['lunch'] %>. When the end of the day rolls around, <%= @user.future_day['gender'] %> loves <%= @user.future_day['evenings'] %>. Looking back to several years before, the biggest change for Future <%= @user.name %> is that <%= @user.future_day['gender'] %> is <%= @user.future_day['major_goal'] %>.
+	On <%= (Time.now + 3.year).strftime("%b %d, %Y") %>, you wake up in your killer <%= @user.future_day['home'] %> with <%= future_livingwith %>. It's a beautiful day in <%= @user.future_day['city'] %>. You head to work where you <%= @user.future_day['company'] %>. When the end of the day rolls around, you're excited to <%= @user.future_day['evenings'] %>. At night, you think about where you were just a few years ago. You think to yourself "Wow, <%= @user.future_day['major_goal'] %>".
 
 		</p>
 	<hr width="86%">
@@ -34,7 +33,7 @@
 				This future life seems 
 				<br />
 				<span class="dropdown-style inner-addon right-addon">
-					<%= f.select :preparedness, [['impossible', 1], ['hard to achieve' , 2], ['possible with effort', 3], ['very possible', 4]], {prompt: 'how likely?'}, :required => true %>
+					<%= f.select :preparedness, [['impossible', 1], ['hard to achieve' , 2], ['possible with effort', 3], ['very possible', 4]], {prompt: 'how possible?'}, :class=> "dropdown-style", :required => true %>
 					<span class="glyphicon"><%= image_tag("dropdown-arrow.png")%></span>
 				</span>
 			

@@ -17,11 +17,10 @@ module IntroHelper
 		when 0
 			"That's great!"
 		when 1
-			"Not bad!"
-		when 2
-			"Rough, but you’re in good company."
-		when 3
-			"You must be eager to get those off your back."
+			"Not bad! Many students graduate with an average of $25K in loans."
+		when 2,3
+			"You’re in good company. 70\% of college grads end up with student loans."
+		
 		end
 	end
 
@@ -61,13 +60,23 @@ module IntroHelper
 		@user = @current_user
 		case @user.cc_amount
 		when 4
-			"That's great to pay off your statement every month!"
-		when 1, 2
-			"Cool, hopefully we can help you get that paid off soon."
-		when 3
-			"Ok, we can focus on getting that paid off so you don't have to send your hard-earned money to those credit card companies with their high interest rates."
+			"That's great that you pay off your statement every month!"
+		when 1, 2, 3
+			"We understand, it's easy to build up credit card debt. Going through this process is a great first step. We'll come up with a plan together to tackle this."
 		when 0
-			"That's good that you're avoiding credit card debt."
+			"Ok, good to know that you're avoiding credit card debt."
+		end
+	end
+
+	def spending_feedback
+		@user = @current_user
+		case @user.spend_vs_income
+		when 'Saving a hefty chunk'
+			"Wow, that's great that you've built up such a good savings habit."
+		when 'Saving a little bit'
+			"Cool, every penny counts!"
+		when 'Spending it all'
+			"It can be hard to stretch your paycheck. We'll see if we can come up with creative ways to start saving a little."
 		end
 	end
 
@@ -80,6 +89,20 @@ module IntroHelper
 			"And in good news, finances are looking better. There's more to do, but Future" + @user.name + "is feeling confident."
 		when 3
 			"Best of all, Future" + @user.name + " has made awesome financial decisions and is now riding high. "
+		end
+	end
+
+	def future_livingwith
+		@user = @current_user
+		case @user.future_day['living_with']
+		when 'my partner'
+			'your partner'
+		when 'my family'
+			'your family'
+		when 'roommates'
+			'your roommates'
+		when 'no one else'
+			'no one so you can dance around'
 		end
 	end
 end

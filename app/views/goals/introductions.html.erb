@@ -11,7 +11,7 @@
 	<div class="coach-chat-triangle"></div>
 	<div class="coach-question">
 		<aside>
-		Hi there, my name is Savvy and I'm here to help you with your finances.
+		Hey there, I'm here to help you get more out of your hard-earned money and boost your financial savvy.
 		</aside>
 	</div>
 </section>
@@ -19,7 +19,7 @@
 <script>
 $(document).ready(function(){
     for(i=1; i<4; i++) {
-    	$('#chat'+i).hide(0).delay(1000*i).fadeIn(100).removeClass('hidden');
+    	$('#chat'+i).hide(0).delay(1250*i).fadeIn(100).removeClass('hidden');
     }
 });
 </script>
@@ -28,18 +28,8 @@ $(document).ready(function(){
 	<div class="coach-chat-triangle"></div>
 	<div class="coach-question">
 		<aside>
-		Money can be a sensitive topic, but I'm here to help, no judgment.
+		Money can be a sensitive topic, so let's get to know each other. What can I call you?
 		</aside>
-	</div>
-</section>
-
-<div id="chat2" class="hidden" style="display:none;">
-<section id="coach-section">
-	<div class="coach-chat-triangle"></div>
-	<div class="coach-question">
-		<span class="main-question">
-		Let’s get acquainted. </span>
-		<%= image_tag("icon-handshake.png", class:"coach-icons") %>
 	</div>
 </section>
 

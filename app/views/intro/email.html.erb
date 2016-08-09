@@ -6,27 +6,53 @@
 
 <body class="page-background">
 
+<section id="first-priority">
+    What we'll tackle first:
+    <br /><span class="main-question"><%= @weakness %></span>
+  </section>
+
+<script>
+$(document).ready(function(){
+    for(i=1; i<3; i++) {
+      $('#chat'+i).hide(0).delay(1000*i).fadeIn(100).removeClass('hidden');
+    }
+});
+</script>
+
+
+<div id="chat1" class="hidden" style="display:none;">
 <section id="coach-section">
-	<div class="coach-question">
-		<aside>Great, let’s see how we can get you all set up for all your future dreams.
-</aside>		<br />
-		<p class="main-question">Enter your email address below to get your $avvies Score and our suggested first move.</p>
+  <div class="coach-chat-triangle"></div>
+  <div class="coach-question">
+    We'd love to work with you to boost your savvy and improve your finances so that you have the flexibility to live the life you want. 
+	</div>
+</section>
+</div>
+
+<div id="chat2" class="hidden" style="display:none;">
+<section id="coach-section">
+  <div class="coach-chat-triangle"></div>
+  <div class="coach-question">
+   Of course, we'll need a way to reach you. :)  
 	</div>
 </section>
 
+<%= form_for @user, url: wizard_path, method: :put do |f| %>
 <section id="user-section">
-	<%= form_for @user, url: wizard_path, method: :put do |f| %>
+
 	<div class="spaced-row user-content">
 		
-			<%= f.text_field :email, class: "madlib-sentence border-underline text-field", placeholder: "email address", :required => true %>
-		
+    You can reach me at
+
+			<%= f.email_field :email, class: "madlib-sentence border-underline text-field", placeholder: "email address", :autocapitalize => "off", :required => true %>
+    . 		
 	</div>
+</section>
 
 <div class="button-row">
-		<%= f.submit "Give me my $avvies Score", class: 'next-button' %>
-	</div>
-	<% end %>
-</section>
+    <%= f.submit "Get my Savvy on", class: 'next-button' %>
+</div>
+<% end %>
 </div>
 
 </body>

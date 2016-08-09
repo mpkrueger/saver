@@ -11,7 +11,7 @@
 	<div class="coach-chat-triangle"></div>
 	<div class="coach-question">
 		<aside>
-		Ok, now for the fun stuff – let’s do a little exercise. </aside>
+		<%= spending_feedback %></aside>
 	</div>
 </section>
 
@@ -27,9 +27,8 @@ $(document).ready(function(){
 <section id="coach-section">
 	<div class="coach-chat-triangle"></div>
 	<div class="coach-question">
-		<p class="main-question">Let's fast forward to
-		<%= (Time.now + 5.year).strftime("%a, %b %d, %Y") %>, 
-		5 years from today</p>
+		Ok, now for the fun stuff – let's fast forward to 5 years from today:
+		<%= (Time.now + 5.year).strftime("%b %d, %Y") %> 
 	</div>
 </section>
 
@@ -37,12 +36,6 @@ $(document).ready(function(){
 <%= form_for @user, url: wizard_path, method: :put do |f| %>
 	<%= f.fields_for :future_day do |i| %>
 <section id="user-section">
-	<div class="row-future">
-	  <div class="col-madlibs-question">Pronoun to describe me: </div>
-	  <div class="col-madlibs-field">
-	  	<%= i.text_field :gender, class: "madlib-sentence", placeholder: "she / he / they", autofocus: true, :autocapitalize => "off", required: true %>
-	  </div>
-	</div>	
 
 	<div class="row-future">
 	  <div class="col-madlibs-question">I'll live in: </div>
@@ -53,10 +46,10 @@ $(document).ready(function(){
 	</div>	
 
 	<div class="row-future">
-	  <div class="col-madlibs-question">in </div>
+	  <div class="col-madlibs-question">in a/an </div>
 	  <div class="col-madlibs-field">
 	  <div class="dropdown-style inner-addon right-addon">
-	  	<%= i.select :home, [['a bigger place', 'a bigger place'], ['the same place', 'the same place'], ['a smaller place', 'a smaller place']], { prompt: '' }, class: "my-dropdown", required: true %>
+	  	<%= i.select :home, [['apartment', 'apartment'], ['house', 'house'], ['mansion', 'mansion'], ['boat', 'boat']], { prompt: '' }, class: "my-dropdown", required: true %>
 		<span class="glyphicon glyphicon-menu-down" style="color:#FFF"></span>
 	  	</div>
 	  </div>
@@ -66,32 +59,33 @@ $(document).ready(function(){
 	  <div class="col-madlibs-question">with </div>
 	  <div class="col-madlibs-field">
 	  <div class="dropdown-style inner-addon right-addon">
-	  	<%= i.select :living_with, [['no one', 'no one'], ['roommates', 'roommates'], ['my partner', 'my partner'], ['family', 'family']], { prompt: '' }, class: "my-dropdown", required: true %>
+	  	<%= i.select :living_with, [['no one else', 'no one else'], ['roommates', 'roommates'], ['my partner', 'my partner'], ['my family', 'my family']], { prompt: '' }, class: "my-dropdown", required: true %>
 		<span class="glyphicon glyphicon-menu-down" style="color:#FFF"></span>
 	  	</div>
 	  </div>
 	</div>	
 
 	<div class="row-future">
-	  <div class="col-madlibs-question">I head to work at </div>
+	  <div class="col-madlibs-question">For work, I </div>
 	  <div class="col-madlibs-field">
-	  	<%= i.text_field :company, class: "madlib-sentence", placeholder: "company", required: true %>
+	  	<%= i.text_field :company, class: "madlib-sentence", placeholder: "draw pictures", required: true %>
 	 
 	  </div>
 	</div>	
 
 
 	<div class="row-future">
-	  <div class="col-madlibs-question">In the evening, I'll likely be </div>
+	  <div class="col-madlibs-question">For fun, I </div>
 	  <div class="col-madlibs-field">
-	  	<%= i.text_field :evenings, class: "madlib-sentence", placeholder: 'cooking, studying...', required: true %>
+	  	<%= i.text_field :evenings, class: "madlib-sentence", placeholder: 'cook, watch TV', required: true %>
 		</div>
 	  </div>
 
+
 	<div class="row-future">
-	  <div class="col-madlibs-question">My life will be different because... </div>
+	  <div class="col-madlibs-question">Life is different b/c </div>
 	  <div class="col-madlibs-field">
-	  	<%= i.text_field :major_goal, class: "madlib-sentence", placeholder: "career / relationship / lifestyle", :autocapitalize => "off", required: true %>
+	  	<%= i.text_field :major_goal, class: "madlib-sentence", placeholder: "relationship / lifestyle", :autocapitalize => "off", required: true %>
 
 	  </div>
 	</div>	
