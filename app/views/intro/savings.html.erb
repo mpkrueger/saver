@@ -46,12 +46,12 @@ $(document).ready(function(){
 		<div class="spaced-row user-content">
 			<div class="madlib-sentence">	
 				<div class="dropdown-style inner-addon right-addon">
-					<%= f.select(:savings_amount, [['Someone raided my piggy bank', 0], ['I have hundreds', 1], ['I have thousands', 2], ['I have tens of thousands', 3]], data: { placeholder: "My savings..."}, :required => true, :class => "my-dropdown") %>
+					<%= f.select(:savings_amount, [['Someone raided my piggy bank', 0], ['I have hundreds', 1], ['I have thousands', 2], ['I have tens of thousands', 3]], { prompt: "My savings..."}, :required => true, :class => "my-dropdown") %>
 					<span class="glyphicon glyphicon-menu-down" style="color:#FFF"></span>
 				</div>
 			</div>
 		</div>
-		
+
 	</section>
 	<div class="button-row">
 			<%= f.submit "Next", class: 'next-button' %>

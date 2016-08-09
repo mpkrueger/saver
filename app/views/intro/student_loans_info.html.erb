@@ -37,8 +37,9 @@ $(document).ready(function(){
 	<div class="coach-question">
 		<p class="main-question">
 		Do you have any student loans?
-		</p>
+	
 		<%= image_tag("icon-gradcap.png", class:"coach-icons") %>
+		</p>
 	</div>
 
 </section>
@@ -60,7 +61,7 @@ $(document).ready(function(){
 			<div class="madlib-sentence">			
 				I owe
 				<div class="dropdown-style inner-addon right-addon">
-					<%= f.select :student_amount, [[{selected: 'this much...'}],['nothing', 0], ['under $10,000', 1], ['$10,000 - $30,000', 2], ['Over $30,000', 3]], :required => true , :class => "my-dropdown" %>
+					<%= f.select :student_amount, [['nothing', 0], ['under $10,000', 1], ['$10,000 - $30,000', 2], ['Over $30,000', 3]], {prompt: 'this much...'}, :required => true , :class => "my-dropdown" %>
 					<span class="glyphicon glyphicon-menu-down" style="color:#FFF"></span>
 				</div>
 				in student loans. 

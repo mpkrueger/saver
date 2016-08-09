@@ -159,6 +159,9 @@ option[default]{
 
 /****** CHECKBOXES/TOGGLES **********/
 
+.checkbox label{
+  padding-top: 12x;
+}
 
 .btn-toggle-on-background {
   background-color:#00D1B8;
@@ -215,6 +218,8 @@ glyphicon{
 
 
 /********* BUTTONS  *************/
+
+
 .button-row{
   margin-top: 10px;
   width: 100%;
