@@ -2,7 +2,7 @@ class IntroController < ApplicationController
   include Wicked::Wizard
 
   steps :student_loans_info, :credit_cards, :savings, :investments, :spending, 
-  :future, :present_vs_future, :financial_summary, :thanks
+  :future, :future_reflection, :financial_summary, :thanks
 
   def show
   	@user = current_user
