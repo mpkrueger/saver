@@ -15,7 +15,6 @@
   margin-top:15px;
   padding-top:20px;
   padding-bottom:15px;
- // margin-bottom: 15px;
   margin: auto;
  // background-color:#364249;
 }
@@ -26,22 +25,18 @@
   font-size: 16px;
   font-weight: 300;
   font-family: 'Gill Sans', Tahoma, Geneva, sans-serif;
-  max-width: 90%;
+  max-width: 100%;
   background-color: transparent; 
   line-height: 2.0;
   color:#FFF;
   position:relative;
   margin-bottom: 10px;
   margin: auto;
-  padding-right: 10px;
-  padding-left: 10px;
  }
 
  .user-content{
   display: block;
   text-align: center;
-  padding-left: 10px;
-  padding-right: 10px;
  }
 
 
@@ -122,16 +117,13 @@
 
 .dropdown-style{
   color: #F6D185;
-//  padding-left: 10px;
-//  padding-right: 20px;
   display: inline-flex;
   border-bottom: 1px solid #FFF;
-  max-width: 100%;
+  width: auto;
 }
 
 select.my-dropdown{
- // width: auto;
-  padding-right:20px;
+  padding-right:25px;
   padding-left:5px;
   text-overflow: clip;
 }
@@ -145,7 +137,7 @@ select{
   background: transparent;
   height: 32px;
   color: #F6D185;
-  padding-right: 20px;
+  padding-right: 25px;
   -webkit-appearance: none;  /*Removes default chrome and safari style*/
   -moz-appearance: none; /* Removes Default Firefox style*/
 }
