@@ -51,6 +51,8 @@ html{
 .app-name{
   text-align: center;
   font-size: 50px;
+  max-width: 80%;
+  margin:auto;
 }
 
 .app-tagline{
@@ -71,7 +73,9 @@ html{
   margin: auto;
   margin-bottom: 10px;
   width: 250px;
-  height: 250px;
+//  height: 250px;
+  max-width:80%;
+  height:auto;
 }
 
 h1 {
