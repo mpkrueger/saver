@@ -33,12 +33,12 @@ class IntroController < ApplicationController
       :preparedness, :email, :financial_score, :financial_help, investments_type: [:retirement_fund, :company_stock, :stock_market, :beanie_babies],
       future_day: [:gender,
                    :city, 
-                   :reason, 
+                   :home, 
+                   :living_with,
                    :company,
-                   :role,
-                   :day_person,
-                   :after_work,
-                   :weekends,
-                   :financially])
+                   :responsibilities,
+                   :lunch,
+                   :evenings,
+                   :major_goal])
   end
 end
