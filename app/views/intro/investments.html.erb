@@ -16,21 +16,27 @@
 		<aside> 
 		<%= savings_feedback %>
 		</aside>
-		<p class="main-question"><%= investment_question %> </p>
-		
 	</div>
 </section>
 
-<!-- fade in user input section -->
 <script>
 $(document).ready(function(){
-    $('div.hidden').hide(0).delay(1500).fadeIn(1000).removeClass('hidden');
+    for(i=1; i<3; i++) {
+    	$('#chat'+i).hide(0).delay(1000*i).fadeIn(100).removeClass('hidden');
+    }
 });
 </script>
 
+<div id= "chat1" class="hidden" style="display:none;">
+<section id="coach-section">
+	<div class="coach-chat-triangle"></div>
 
+	<div class="coach-question">
+		<p class="main-question"><%= investment_question %> </p>
+	</div>
+</section>
 
-<!--div class="hidden" style="display:none;"-->
+<div id= "chat2" class="hidden" style="display:none;">
 	<%= form_for @user, url: wizard_path, method: :put do |f| %>
 
 	<section id="user-section">

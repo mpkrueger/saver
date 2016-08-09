@@ -1,9 +1,15 @@
 <script src="jquery-1.12.4.min.js"></script>
 <body class="page-background">
 <div class="splash-section">
-	<%= image_tag("savvy-logo.png", class: "logo") %>
-	<p class="app-tagline"> Start your journey to a better tomorrow </p>
+	<p class="app-name"> SAVVY </p>
+	<p class="app-tagline"> Savvy is the free financial advisor you've always wanted </p>
 	<p><%= image_tag("hot-air-balloon.png", class:"splash-image") %></p>
+	<p class="app-tagline"> Your free Savvy Score: </p> 
+	<ul>
+	<li> evaluates your entire financial picture</li>
+	<li> identifies your biggest need</li>
+	<li> all with no need to sign in to your bank</li>
+	</ul>
 	<p class="button-row"><%= link_to "Get My Savvy Score", goals_introductions_path, class:"next-button" %></p>
 </div>
 
