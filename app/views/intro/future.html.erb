@@ -40,61 +40,50 @@
 	</div>	
 
 	<div class="row-future">
-	  <div class="col-madlibs-question">because </div>
+	  <div class="col-madlibs-question">in </div>
 	  <div class="col-madlibs-field">
-	  	<%= i.text_field :reason, class: "madlib-sentence", placeholder: "reason", :autocapitalize => "off", required: true %>
-	
+	  <div class="dropdown-style inner-addon right-addon">
+	  	<%= i.select :home, [['a bigger place', 'a bigger place'], ['the same place', 'the same place'], ['a smaller place', 'a smaller place']], { prompt: '' }, class: "my-dropdown", required: true %>
+		<span class="glyphicon glyphicon-menu-down" style="color:#FFF"></span>
+	  	</div>
 	  </div>
 	</div>	
 
 	<div class="row-future">
-	  <div class="col-madlibs-question">I'll work for </div>
+	  <div class="col-madlibs-question">with </div>
+	  <div class="col-madlibs-field">
+	  <div class="dropdown-style inner-addon right-addon">
+	  	<%= i.select :living_with, [['no one', 'no one'], ['roommates', 'roommates'], ['my partner', 'my partner'], ['family', 'family']], { prompt: '' }, class: "my-dropdown", required: true %>
+		<span class="glyphicon glyphicon-menu-down" style="color:#FFF"></span>
+	  	</div>
+	  </div>
+	</div>	
+
+	<div class="row-future">
+	  <div class="col-madlibs-question">I head to work at </div>
 	  <div class="col-madlibs-field">
 	  	<%= i.text_field :company, class: "madlib-sentence", placeholder: "company", required: true %>
 	 
 	  </div>
 	</div>	
 
+
 	<div class="row-future">
-	  <div class="col-madlibs-question">working as a </div>
+	  <div class="col-madlibs-question">In the evening, I'll likely be </div>
 	  <div class="col-madlibs-field">
-	  	<%= i.text_field :role, class: "madlib-sentence", placeholder: "role", :autocapitalize => "off", required: true %>
-	  
+	  	<%= i.text_field :evenings, class: "madlib-sentence", placeholder: 'cooking, studying...', required: true %>
+		</div>
 	  </div>
 	</div>	
 
 	<div class="row-future">
-	  <div class="col-madlibs-question">I spend my days with </div>
+	  <div class="col-madlibs-question">My life will be different because... </div>
 	  <div class="col-madlibs-field">
-	  	<%= i.text_field :day_person, class: "madlib-sentence", placeholder: "people", :autocapitalize => "off", required: true %>
-	  
-	  </div>
-	</div>	
-
-	<div class="row-future">
-	  <div class="col-madlibs-question">I'll spend my evenings with </div>
-	  <div class="col-madlibs-field">
-	  	<%= i.text_field :after_work, class: "madlib-sentence", placeholder: "people", :autocapitalize => "off", required: true %>
-	  </div>
-	</div>	
-
-	<div class="row-future">
-	  <div class="col-madlibs-question">On weekends, I'll enjoy </div>
-	  <div class="col-madlibs-field">
-	  	<%= i.text_field :weekends, class: "madlib-sentence", placeholder: "activies", :autocapitalize => "off", required: true %>
+	  	<%= i.text_field :major_goal, class: "madlib-sentence", placeholder: "career / relationship / lifestyle", :autocapitalize => "off", required: true %>
 
 	  </div>
 	</div>	
 
-	<div class="row-future">
-	  <div class="col-madlibs-question">Financially, I'll be </div>
-	  <div class="col-madlibs-field">
-	  	<div class="dropdown-style inner-addon right-addon">
-		  	<%= i.select :financially, [['worse off', 'worse off'], ['better off', 'better off'], ['awesome', 'awesome']], {prompt: 'better/worse?'}, :required => true, :class=>"my-dropdown" %>
-		  	<span class="glyphicon glyphicon-menu-down" style="color:#FFF"></span>
-	  	</div>
-	  </div>
-	</div>	
 	
 
 
