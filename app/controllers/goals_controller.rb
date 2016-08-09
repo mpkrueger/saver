@@ -1,6 +1,6 @@
 class GoalsController < ApplicationController
   def introductions
-    @user = User.new
+    @guest_user = GuestUser.new
   end
 
 

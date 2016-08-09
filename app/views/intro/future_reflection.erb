@@ -16,7 +16,7 @@
 
 	<hr width="86%">
 	<p class="future-story">
-	On <%= (Time.now + 3.year).strftime("%b %d, %Y") %>, you wake up in your killer <%= @user.future_day['home'] %> with <%= future_livingwith %>. It's a beautiful day in <%= @user.future_day['city'] %>. You head to work where you <%= @user.future_day['company'] %>. When the end of the day rolls around, you're excited to <%= @user.future_day['evenings'] %>. At night, you think about where you were just a few years ago. You think to yourself "Wow, <%= @user.future_day['major_goal'] %>".
+	On <%= (Time.now + 3.year).strftime("%b %d, %Y") %>, you wake up in your killer <%= @guest_user.future_day['home'] %> with <%= future_livingwith %>. It's a beautiful day in <%= @guest_user.future_day['city'] %>. You head to work where you <%= @guest_user.future_day['company'] %>. When the end of the day rolls around, you're excited to <%= @guest_user.future_day['evenings'] %>. At night, you think about where you were just a few years ago. You think to yourself "Wow, <%= @guest_user.future_day['major_goal'] %>".
 
 		</p>
 	<hr width="86%">
@@ -26,7 +26,7 @@
 </section>
 
 
-<%= form_for @user, url: wizard_path, method: :put do |f| %>
+<%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
 <section id="user-section">
 		<div class="spaced-row user-content">
 			<span class="madlib-sentence">	

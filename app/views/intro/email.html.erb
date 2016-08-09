@@ -37,22 +37,7 @@ $(document).ready(function(){
 	</div>
 </section>
 
-<%= form_for @user, url: wizard_path, method: :put do |f| %>
-<section id="user-section">
 
-	<div class="spaced-row user-content">
-		
-    You can reach me at
-
-			<%= f.email_field :email, class: "madlib-sentence border-underline text-field", placeholder: "email address", :autocapitalize => "off", :required => true %>
-    . 		
-	</div>
-</section>
-
-<div class="button-row">
-    <%= f.submit "Get my Savvy on", class: 'next-button' %>
-</div>
-<% end %>
 </div>
 
 </body>
