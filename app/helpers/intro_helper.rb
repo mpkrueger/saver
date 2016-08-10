@@ -1,7 +1,7 @@
 module IntroHelper
 
 	def student_loans_info
-		@guest_user = @current_user
+		@guest_user = @guest_user
 		i = @guest_user.age.to_i
 		case i
 		when (20..30)
@@ -12,7 +12,7 @@ module IntroHelper
 	end
 
 	def student_loans_message
-		@guest_user = @current_user
+		@guest_user = @guest_user
 		case @guest_user.student_amount
 		when 0
 			"That's great!"
@@ -25,7 +25,7 @@ module IntroHelper
 	end
 
 	def savings_feedback
-		@guest_user = @current_user
+		@guest_user = @guest_user
 		case @guest_user.savings_amount
 		when 0
 			"Cool, we’ll work on that. 46\% of Americans wouldn’t be able to cover a sudden $400 expense so you’re not alone."
@@ -37,7 +37,7 @@ module IntroHelper
 	end
 
 	def investment_question
-		@guest_user = @current_user
+		@guest_user = @guest_user
 		case @guest_user.savings_amount
 		when 0, 1
 			"Do you have any investments?"
@@ -47,7 +47,7 @@ module IntroHelper
 	end
 
 	def investment_feedback
-		@guest_user = @current_user
+		@guest_user = @guest_user
 		case @guest_user.investments_type
 		when "other"
 			"Investing can be intimidating."
@@ -57,7 +57,7 @@ module IntroHelper
 	end
 
 	def cc_feedback
-		@guest_user = @current_user
+		@guest_user = @guest_user
 		case @guest_user.cc_amount
 		when 4
 			"That's great that you pay off your statement every month!"
@@ -69,7 +69,7 @@ module IntroHelper
 	end
 
 	def spending_feedback
-		@guest_user = @current_user
+		@guest_user = @guest_user
 		case @guest_user.spend_vs_income
 		when 'Saving a hefty chunk'
 			"Wow, that's great that you've built up such a good savings habit."
@@ -81,19 +81,19 @@ module IntroHelper
 	end
 
 	def future_financials
-		@guest_user = @current_user
+		@guest_user = @guest_user
 		case @guest_user.future_day['financially']
 		when 1
 			"Unfortunately, financially things are not so good. But there are a lot of years left to change that."
 		when 2
 			"And in good news, finances are looking better. There's more to do, but Future" + @guest_user.name + "is feeling confident."
 		when 3
-			"Best of all, Future" + @user.name + " has made awesome financial decisions and is now riding high. "
+			"Best of all, Future" + @guest_user.name + " has made awesome financial decisions and is now riding high. "
 		end
 	end
 
 	def future_livingwith
-		@guest_user = @current_user
+		@guest_user = @guest_user
 		case @guest_user.future_day['living_with']
 		when 'my partner'
 			'your partner'

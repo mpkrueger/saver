@@ -6,7 +6,7 @@ class GuestUsersController < ApplicationController
     @guest_user = GuestUser.new(guest_user_params)
     
     if @guest_user.save
-      session[:current_user_id] = @guest_user.id
+      session[:guest_user_id] = @guest_user.id
       redirect_to intro_index_path
     else
       flash[:error] = "uh oh"
