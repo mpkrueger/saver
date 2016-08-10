@@ -4,5 +4,6 @@ class DashboardController < ApplicationController
 
   def thanks
   	@user = guest_user
+  	@feedback = Feedback.new
   end
 end
