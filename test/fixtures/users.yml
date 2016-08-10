@@ -1,31 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  why_here: MyString
-  money_feels: MyString
-  name: MyString
-  age: 1
-  student_loans: false
-  student_amount: 9.99
-  cc_debt: false
-  cc_amount: 9.99
-  savings: false
-  savings_amount: 9.99
-  investments: false
-  investments_type: MyText
-  spend_vs_income: MyText
-
-two:
-  why_here: MyString
-  money_feels: MyString
-  name: MyString
-  age: 1
-  student_loans: false
-  student_amount: 9.99
-  cc_debt: false
-  cc_amount: 9.99
-  savings: false
-  savings_amount: 9.99
-  investments: false
-  investments_type: MyText
-  spend_vs_income: MyText
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one: {}
+# column: value
+#
+two: {}
+# column: value
