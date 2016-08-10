@@ -1,9 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  def current_user
-    @current_user ||= session[:current_user_id] &&
-      GuestUser.find_by(id: session[:current_user_id])
+  def guest_user
+    @guest_user ||= session[:guest_user_id] &&
+      GuestUser.find_by(id: session[:guest_user_id])
   end
 
 end

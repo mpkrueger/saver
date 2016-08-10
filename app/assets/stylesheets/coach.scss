@@ -106,26 +106,27 @@
   margin: auto;
   position: absolute;
   padding-top:25%;
-  top:-24%;
+  top:-28%;
   font-family: 'Gill Sans', Tahoma, Geneva, sans-serif;
   text-align: center;
   width:100%;
 }
 .savvy-score-title{
   font-size: 15px;
-  padding-top:5%;
+}
+
+.score-total{
+  font-size: 15px;
+  margin-top: -3px;
 }
 
 .savvy-score{
   font-size: 48px;
   font-weight:500;
-  margin-top: -7px;
-}
-
-.score-total{
-  font-size: 18px;
   margin-top: -10px;
 }
+
+
 
 #first-priority{
   text-align: center;
