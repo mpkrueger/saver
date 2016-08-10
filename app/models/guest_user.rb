@@ -120,7 +120,7 @@ class GuestUser < ApplicationRecord
 
 	def strength
 		ordered_percents = [self.debt_score_percent, self.savings_score_percent, self.investments_score_percent, self.savings_habits_percent]
-		ordered_percents.sort
+		ordered_percents = ordered_percents.sort
 
 		case ordered_percents.last
 		when self.debt_score_percent
@@ -137,7 +137,7 @@ class GuestUser < ApplicationRecord
 
 	def area_to_work_on
 		ordered_percents = [self.debt_score_percent, self.savings_score_percent, self.investments_score_percent, self.savings_habits_percent]
-		ordered_percents.sort
+		ordered_percents = ordered_percents.sort
 
 		case ordered_percents.first
 		when self.debt_score_percent
