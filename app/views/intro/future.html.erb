@@ -68,7 +68,7 @@ $(document).ready(function(){
 	<div class="row-future">
 	  <div class="col-madlibs-question">For work, I </div>
 	  <div class="col-madlibs-field">
-	  	<%= i.text_field :company, class: "madlib-sentence", placeholder: "do important stuff", required: true %>
+	  	<%= i.text_field :company, class: "madlib-sentence", placeholder: "do important stuff", autocapitalize: "off", required: true %>
 	 
 	  </div>
 	</div>	
@@ -77,7 +77,7 @@ $(document).ready(function(){
 	<div class="row-future">
 	  <div class="col-madlibs-question">For fun, I </div>
 	  <div class="col-madlibs-field">
-	  	<%= i.text_field :evenings, class: "madlib-sentence", placeholder: 'cook, watch TV', required: true %>
+	  	<%= i.text_field :evenings, class: "madlib-sentence", placeholder: 'cook, watch TV', autocapitalize: "off", required: true %>
 		</div>
 	  </div>
 
