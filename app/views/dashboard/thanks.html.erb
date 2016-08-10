@@ -52,37 +52,27 @@ $(document).ready(function(){
 		
 		<div class="spaced-row user-content">
 			<div class="madlib-sentence">			
-				How likely are you to recommend Savvy to a friend? <br>(1 = not at all likely, 10 = extremely likely)
-				<br>
-				<div class="dropdown-style inner-addon right-addon">
-					<%= f.select :nps, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], {prompt: "How likely?"}, :class => "btn-group" %>
-				</div>
+				I'm <div class="dropdown-style inner-addon right-addon">
+					<%= f.select :nps, [['1 (not at all)', 1], 2, 3, 4, 5, 6, 7, 8, 9, ['10 (extremely)', 10]], {prompt: "how likely?"}, :class => "btn-group my-dropdown" %></div>
+				likely to recommend Savvy to a friend
+				
 				
 			</div>
 		</div>	
-	</section>
-
-	<section id="user-section">
 		
 		<div class="spaced-row user-content">
 			<div class="madlib-sentence">			
-				Based on this experience, how much do you trust Savvy? <br>(1 = not at all, 5 = a lot)
-				<br>
-				<div class="dropdown-style inner-addon right-addon">
-					<%= f.select :trust, [1, 2, 3, 4, 5], {prompt: "How much trust?"}, :class => "btn-group" %>
-				</div>
+				Based on this experience, I trust Savvy <div class="dropdown-style inner-addon right-addon">
+					<%= f.select :trust, [['1 (not at all)' ,1], 2, 3, 4, ['5 (completely)',5]], {prompt: "how much?"}, :class => "btn-group my-dropdown" %></div>
 				
 			</div>
 		</div>	
-	</section>	
-
-	<section id="user-section">
+	
 		
 		<div class="spaced-row user-content">
 			<div class="madlib-sentence">			
-				Anything else you want to share?
-				<br>
-				<%= f.text_field :comment %>
+				I have some more thoughts:
+				<%= f.text_area :comment, :class=>"my-text-area" %>
 				
 			</div>
 		</div>	
