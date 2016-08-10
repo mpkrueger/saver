@@ -5,7 +5,7 @@ class IntroController < ApplicationController
   :future, :future_reflection, :financial_summary, :email, :thanks
 
   def show
-  	@guest_user = current_user
+  	@guest_user = guest_user
     @savvy_score = @guest_user.savvy_score
     @debt_score_percent = @guest_user.debt_score_percent
     @savings_score_percent = @guest_user.savings_score_percent
@@ -20,7 +20,7 @@ class IntroController < ApplicationController
   end
 
   def update
-  	@guest_user = current_user
+  	@guest_user = guest_user
     @guest_user.update_attributes(guest_user_params)
   	render_wizard @guest_user
   end

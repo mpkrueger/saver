@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   
-  devise_for :users, :controllers => { :registrations => "registrations" }
+  get 'dashboard/index'
+
+  get 'dashboard/thanks'
+
+  devise_for :users, :controllers => { :registrations => "registrations", :sessions => "sessions" }
   resources :guest_users
 
   resources :intro
