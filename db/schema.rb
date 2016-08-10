@@ -30,4 +30,24 @@ ActiveRecord::Schema.define(version: 20160809221656) do
     t.datetime "updated_at",       null: false
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string   "why_here"
+    t.string   "money_feels"
+    t.string   "name"
+    t.integer  "age"
+    t.decimal  "student_amount"
+    t.decimal  "cc_amount"
+    t.decimal  "savings_amount"
+    t.hstore   "investments_type"
+    t.text     "spend_vs_income"
+    t.hstore   "future_day"
+    t.decimal  "financial_score"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "email"
+    t.string   "preparedness"
+    t.hstore   "savvy_score_components"
+    t.string   "financial_help"
+  end
+
 end

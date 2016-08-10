@@ -80,15 +80,19 @@
 }
 
 #savvy-score-section{
-  background-image: image-url("savvy-score-bkgd.png");
-  background-size: cover;
-  height: 250px;
-  background-repeat: no-repeat;
+  width:100%;
+  position: relative;
+  margin: auto;
+}
+
+.savvy-score-bgimage{
+  width: 100%;
+  margin:auto;
   position: relative;
 }
 
 .score-circle{
-  background-image: image-url("score-circle.png");
+  //background-image: image-url("score-circle.png");
   background-repeat: no-repeat;
   margin: auto;
   display: block;
@@ -102,20 +106,25 @@
   margin: auto;
   position: absolute;
   padding-top:25%;
-  width: 100%;
+  top:-24%;
   font-family: 'Gill Sans', Tahoma, Geneva, sans-serif;
   text-align: center;
+  width:100%;
 }
 .savvy-score-title{
-  font-size: 18px;
+  font-size: 15px;
+  padding-top:5%;
 }
 
 .savvy-score{
   font-size: 48px;
+  font-weight:500;
+  margin-top: -7px;
 }
 
 .score-total{
   font-size: 18px;
+  margin-top: -10px;
 }
 
 #first-priority{
