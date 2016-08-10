@@ -33,7 +33,7 @@ $(document).ready(function(){
 <section id="coach-section">
   <div class="coach-chat-triangle"></div>
   <div class="coach-question">
-   Of course, we'll need a way to reach you. :)  
+   Of course, we'll need a way to save your info and reach out to you. :)  
   </div>
 </section>
 </div>
@@ -44,29 +44,27 @@ $(document).ready(function(){
 
 <section id="user-section">
 
-  <div class="spaced-row user-content">
-    <div class="madlib-sentence">
+<div class="spaced-row user-content">
+    <div class="madlib-sentence row-future">
       <%= f.email_field :email, class: "madlib-sentence border-underline", placeholder: "email address", autofocus: true %>
   </div>
-  </div>
 
-  <div class="spaced-row user-content">
-    <div class="madlib-sentence">
+
+  <div class="madlib-sentence row-future">
     <%= f.password_field :password, class: "madlib-sentence border-underline", placeholder: "password", autocomplete: "off" %>
   </div>
-  </div>
+  
 
-  <div class="spaced-row user-content">
-    <div class="madlib-sentence">
+  <div class="madlib-sentence row-future">
     <%= f.password_field :password_confirmation, class: "madlib-sentence border-underline", placeholder: "confirm password", autocomplete: "off" %>
   </div>
-  </div>
-</section>
 
+ <div class="spaced-row"></div>
   <div class="button-row">
     <%= f.submit "Sign up", class: 'next-button' %>
   </div>
+</section>
+
 <% end %>
 
-<%= render "devise/shared/links" %>
 </div>
