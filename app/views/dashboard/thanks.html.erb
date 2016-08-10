@@ -19,4 +19,80 @@
 		Thanks, <%= @user.name %>. We'll be in touch soon!
 	</div>
 </section>
+
+<script>
+$(document).ready(function(){
+    for(i=1; i<4; i++) {
+    	$('#chat'+i).hide(0).delay(1500*i).fadeIn(100).removeClass('hidden');
+    }
+});
+</script>
+
+<div id= "chat1" class="hidden" style="display:none;">
+<section id="coach-section">
+	<div class="coach-chat-triangle"></div>
+	<div class="coach-question">
+		In the meantime, if you have a few minutes more I would love to ask you a few quick questions.
+	</div>
+
+</section>
+
+<!-- fade in user input section -->
+<script>
+$(document).ready(function(){
+    $('div.hidden').hide(0).delay(1500).fadeIn(1000).removeClass('hidden');
+});
+</script>
+
+<div id="chat2" class="hidden" style="display:none;">
+	
+	<%= form_for @feedback do |f| %>
+
+	<section id="user-section">
+		
+		<div class="spaced-row user-content">
+			<div class="madlib-sentence">			
+				How likely are you to recommend Savvy to a friend? <br>(1 = not at all likely, 10 = extremely likely)
+				<br>
+				<div class="dropdown-style inner-addon right-addon">
+					<%= f.select :nps, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], {prompt: "How likely?"}, :class => "btn-group" %>
+				</div>
+				
+			</div>
+		</div>	
+	</section>
+
+	<section id="user-section">
+		
+		<div class="spaced-row user-content">
+			<div class="madlib-sentence">			
+				Based on this experience, how much do you trust Savvy? <br>(1 = not at all, 5 = a lot)
+				<br>
+				<div class="dropdown-style inner-addon right-addon">
+					<%= f.select :trust, [1, 2, 3, 4, 5], {prompt: "How much trust?"}, :class => "btn-group" %>
+				</div>
+				
+			</div>
+		</div>	
+	</section>	
+
+	<section id="user-section">
+		
+		<div class="spaced-row user-content">
+			<div class="madlib-sentence">			
+				Anything else you want to share?
+				<br>
+				<%= f.text_field :comment %>
+				
+			</div>
+		</div>	
+	</section>	
+
+
+	<div class="button-row">
+			<%= f.submit "Next", class: 'next-button' %>
+	</div>
+	<% end %>
+</div>
+
 </body>
