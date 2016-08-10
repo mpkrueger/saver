@@ -1,0 +1,78 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+@media screen and (max-width: 480px) {
+  .splash-section{
+    margin: auto;
+    margin-top: 15%;
+    width: 80%;
+  }
+
+  .app-name{
+    text-align: center;
+    font-size: 50px;
+    max-width: 80%;
+    margin:auto;
+  }
+
+  .app-tagline{
+    text-align: center;
+  }
+
+  .logo{
+    text-align: center;
+    display: block;
+    width: 182px;
+    height: 56px;
+    margin: auto;
+  }
+
+  .splash-image{
+    text-align: center;
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    width: 250px;
+    max-width:80%;
+    height:auto;
+  }
+ }
+
+ @media screen and (min-width: 480px) {
+  .splash-section{
+    margin: auto;
+    margin-top: 5%;
+    width: 80%;
+  }
+
+  .app-name{
+    text-align: center;
+    font-size: 50px;
+    max-width: 75%;
+    margin:auto;
+  }
+
+  .app-tagline{
+    text-align: center;
+    font-size: 21px;
+  }
+
+  .logo{
+    text-align: center;
+    display: block;
+    width: 182px;
+    height: 56px;
+    margin: auto;
+  }
+
+  .splash-image{
+    text-align: center;
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    width: 250px;
+    max-width:80%;
+    height:auto;
+  }
+  }

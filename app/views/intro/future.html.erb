@@ -27,7 +27,7 @@ $(document).ready(function(){
 <section id="coach-section">
 	<div class="coach-chat-triangle"></div>
 	<div class="coach-question">
-		Ok, now for the fun stuff – let's fast forward to 5 years from today:
+		Ok, now for the fun stuff – we'll figure out what matters to you and how things might change in the next 5 years. Let's fast forward to:
 		<%= (Time.now + 5.year).strftime("%b %d, %Y") %> 
 	</div>
 </section>
@@ -85,7 +85,7 @@ $(document).ready(function(){
 	<div class="row-future">
 	  <div class="col-madlibs-question">Life is different b/c </div>
 	  <div class="col-madlibs-field">
-	  	<%= i.text_field :major_goal, class: "madlib-sentence", placeholder: "relationship / lifestyle", :autocapitalize => "off", required: true %>
+	  	<%= i.text_field :major_goal, class: "madlib-sentence", placeholder: "I'm debt-free!", :autocapitalize => "off", required: true %>
 
 	  </div>
 	</div>	

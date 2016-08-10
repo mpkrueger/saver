@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  get 'dashboard/final'
   get 'dashboard/index'
 
   get 'dashboard/thanks'

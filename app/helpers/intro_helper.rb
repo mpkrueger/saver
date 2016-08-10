@@ -20,7 +20,6 @@ module IntroHelper
 			"Not bad! Many students graduate with an average of $25K in loans."
 		when 2,3
 			"You’re in good company. 70\% of college grads end up with student loans."
-		
 		end
 	end
 

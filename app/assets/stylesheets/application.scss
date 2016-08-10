@@ -28,81 +28,124 @@ html{
  background-color: #133e49;
 }
 
-.gradient{
-  background-image:
-    linear-gradient(
-      #193D64, #145459
-    );
 
-  background-repeat: no-repeat;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+@media screen and (max-width: 480px) {
+
+
+  h1 {
+     font-size: 18px;
+     line-height:30px;
+     font-family: 'Gill Sans', Verdana, sans-serif;
+     font-weight: 300;
+     text-align: left;
+   }
+
+   
+   body{
+   	font-size: 16px;
+   	font-family: 'Gill Sans', Tahoma, Geneva, sans-serif;
+    font-weight: 300;
+    color:#ffffff;
+   }
+
+
+  .top-bar{
+    background-color:#22465E;
+    height: 20px;
+  }
+
+  .spaced-row{
+    margin-bottom: 20px;
+  }
+
+  .button-row{
+    margin-top: 25px;
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .next-button{
+    border: 1px solid #D1D9E0;
+    background-color: transparent;
+    color:#FFF;
+    padding:10px;
+    text-align: center;
+    border-radius:4px;
+    margin: auto;
+  }
+
+  .next-button:active{
+    background-color: #FFF;
+    color: #43767A;
+    border: none;
+    border: 1px solid #FFFFFF;
+  }
+
+
+
 }
 
-.splash-section{
-  margin: auto;
-  margin-top: 15%;
-  width: 80%;
-}
+@media screen and (min-width: 480px) {
 
-.app-name{
-  text-align: center;
-  font-size: 50px;
-  max-width: 80%;
-  margin:auto;
-}
+  h1 {
+     font-size: 24px;
+     line-height:32px;
+     font-family: 'Gill Sans', Verdana, sans-serif;
+     font-weight: 300;
+     text-align: left;
+   }
 
-.app-tagline{
-  text-align: center;
-}
-
-.logo{
-  text-align: center;
-  display: block;
-  width: 182px;
-  height: 56px;
-  margin: auto;
-}
-
-.splash-image{
-  text-align: center;
-  display: block;
-  margin: auto;
-  margin-bottom: 10px;
-  width: 250px;
-//  height: 250px;
-  max-width:80%;
-  height:auto;
-}
-
-h1 {
-   font-size: 18px;
-   line-height:30px;
-   font-family: 'Gill Sans', Verdana, sans-serif;
-   font-weight: 300;
-   text-align: left;
- }
-
- 
- body{
- 	font-size: 16px;
- 	font-family: 'Gill Sans', Tahoma, Geneva, sans-serif;
-  font-weight: 300;
-  color:#ffffff;
- }
+   
+   body{
+    font-size: 16px;
+    line-height:2;
+    font-family: 'Gill Sans', Tahoma, Geneva, sans-serif;
+    font-weight: 300;
+    color:#ffffff;
+   }
 
 
+  .top-bar{
+    background-color:#22465E;
+    height: 20px;
+  }
 
-.top-bar{
-  background-color:#22465E;
-  height: 20px;
-}
+  .spaced-row{
+    margin-bottom: 20px;
+  }
 
-.spaced-row{
-  margin-bottom: 20px;
+  .button-row{
+      margin-top: 25px;
+      width: 100%;
+      display: block;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .next-button{
+      border: 1px solid #fff;
+      background-color: transparent;
+      color:#FFF;
+      padding:10px;
+      text-align: center;
+      border-radius:4px;
+      margin: auto;
+    }
+
+    .next-button:hover{
+      color:#FFF;
+    }
+
+    .next-button:active{
+      background-color: #FFF;
+      color: #43767A;
+      border: none;
+      border: 1px solid #FFFFFF;
+      font-size:16px;
+    }
+
 }
 
 

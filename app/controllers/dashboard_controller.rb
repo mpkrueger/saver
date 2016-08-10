@@ -6,4 +6,8 @@ class DashboardController < ApplicationController
   	@user = guest_user
   	@feedback = Feedback.new
   end
+
+  def final
+  	@user = guest_user
+  end
 end
