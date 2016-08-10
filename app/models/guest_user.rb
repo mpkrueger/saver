@@ -3,35 +3,19 @@ class GuestUser < ApplicationRecord
 	validates :name, :age, presence: true
 
 	def debt_score_percent 
-		if self.debt_score == 20
-			100
-		else
-			self.debt_score / 20.0 * 100
-		end
+		self.debt_score / 20.0 * 100
 	end
 	
 	def savings_score_percent
-		if self.savings_score == 20
-			100
-		else
-			self.savings_score / 20.0 * 100
-		end
+		self.savings_score / 20.0 * 100
 	end
 
 	def investments_score_percent
-		if self.investments_score == 20
-			100
-		else
-			self.investments_score / 20.0 * 100
-		end
+		self.investments_score / 20.0 * 100
 	end
 
 	def savings_habits_percent
-		if self.savings_habits == 15
-			100
-		else
-			self.savings_habits / 15.0 * 100
-		end
+		self.savings_habits / 15.0 * 100
 	end
 
 	def investment_habits_percent
@@ -135,7 +119,8 @@ class GuestUser < ApplicationRecord
 	end
 
 	def strength
-		ordered_percents = [self.debt_score_percent, self.savings_score_percent, self.investments_score_percent, self.savings_habits_percent].sort
+		ordered_percents = [self.debt_score_percent, self.savings_score_percent, self.investments_score_percent, self.savings_habits_percent]
+		ordered_percents.sort
 
 		case ordered_percents.last
 		when self.debt_score_percent
@@ -150,8 +135,9 @@ class GuestUser < ApplicationRecord
 			
 	end
 
-	def weakness
-		ordered_percents = [self.debt_score_percent, self.savings_score_percent, self.investments_score_percent, self.savings_habits_percent].sort
+	def area_to_work_on
+		ordered_percents = [self.debt_score_percent, self.savings_score_percent, self.investments_score_percent, self.savings_habits_percent]
+		ordered_percents.sort
 
 		case ordered_percents.first
 		when self.debt_score_percent
