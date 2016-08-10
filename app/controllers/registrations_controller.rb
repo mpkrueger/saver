@@ -1,7 +1,7 @@
 class RegistrationsController < Devise::RegistrationsController
 	def new
 		@guest_user = guest_user
-		@weakness = @guest_user.weakness
+		@area_to_work_on = @guest_user.area_to_work_on
 		super
 	end
 
