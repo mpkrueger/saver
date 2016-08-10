@@ -6,6 +6,8 @@ gem 'rails', '~> 5.0.0'
 
 gem 'wicked'
 gem 'pg'
+gem 'devise'
+gem 'figaro', '1.0'
 
 group :production do
    gem 'rails_12factor'
