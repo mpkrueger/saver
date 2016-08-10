@@ -1,7 +1,7 @@
 class RegistrationsController < Devise::RegistrationsController
 	def new
 		@guest_user = guest_user
-		@weakness = @guest_user.weakness
+		@area_to_work_on = @guest_user.area_to_work_on
 		super
 	end
 
@@ -39,7 +39,7 @@ class RegistrationsController < Devise::RegistrationsController
 	  end
 	end
 
-	def after_inactive_sign_up_path_for(resource)
+	def after_sign_up_path_for(resource)
 		dashboard_thanks_path
 	end
 end

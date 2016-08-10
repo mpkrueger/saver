@@ -15,7 +15,7 @@ class IntroController < ApplicationController
     @financial_awareness_percent = @guest_user.financial_awareness_percent
     @future_preparedness_percent = @guest_user.future_preparedness_percent
     @strength = @guest_user.strength
-    @weakness = @guest_user.weakness
+    @area_to_work_on = @guest_user.area_to_work_on
   	render_wizard
   end
 
