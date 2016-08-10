@@ -48,9 +48,12 @@ module IntroHelper
 
 	def investment_feedback
 		@guest_user = @guest_user
-		case @guest_user.investments_type
-		when "other"
-			"Investing can be intimidating."
+		if @guest_user.investments_type['retirement_fund'] == "0" and @guest_user.investments_type['company_stock'] == "0"
+			if @guest_user.investments_type['stock_market'] == "0"
+				"Investing can definitely be intimidating. It'd be great to start working on that together."
+			else
+				"Glad to hear you’re doing some investing!"
+			end
 		else
 			"Glad to hear you’re doing some investing!"
 		end
