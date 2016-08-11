@@ -53,7 +53,7 @@ $(document).ready(function(){
 		<div class="spaced-row user-content">
 			<div class="madlib-sentence">			
 				I'm <div class="dropdown-style inner-addon right-addon">
-					<%= f.select :nps, [['1 (not at all)', 1], 2, 3, 4, 5, 6, 7, 8, 9, ['10 (extremely)', 10]], {prompt: "this much..."}, :class => "btn-group my-dropdown" %></div>
+					<%= f.select :nps, [['1 (not at all)', 1], 2, 3, 4, 5, 6, 7, 8, 9, ['10 (extremely)', 10]], {prompt: "this much..."}, :class => "btn-group my-dropdown" %><span class="glyphicon"><%= image_tag("dropdown-arrow.png")%></span></div>
 				likely to recommend Savvy to a friend
 				
 				
@@ -63,7 +63,7 @@ $(document).ready(function(){
 		<div class="spaced-row user-content">
 			<div class="madlib-sentence">			
 				Based on this experience, I trust Savvy <div class="dropdown-style inner-addon right-addon">
-					<%= f.select :trust, [['1 (not at all)' ,1], 2, 3, 4, ['5 (completely)',5]], {prompt: "this much..."}, :class => "btn-group my-dropdown" %></div>
+					<%= f.select :trust, [['1 (not at all)' ,1], 2, 3, 4, ['5 (completely)',5]], {prompt: "this much..."}, :class => "btn-group my-dropdown" %><span class="glyphicon"><%= image_tag("dropdown-arrow.png")%></span></div>
 				
 			</div>
 		</div>	

@@ -50,7 +50,7 @@ $(document).ready(function(){
 	  <div class="col-madlibs-field">
 	  <div class="dropdown-style inner-addon right-addon">
 	  	<%= i.select :home, [['apartment', 'apartment'], ['house', 'house'], ['mansion', 'mansion'], ['boat', 'boat']], { prompt: '' }, class: "my-dropdown", required: true %>
-		<span class="glyphicon glyphicon-menu-down" style="color:#FFF"></span>
+		<span class="glyphicon"><%= image_tag("dropdown-arrow.png")%></span>
 	  	</div>
 	  </div>
 	</div>	
@@ -60,7 +60,7 @@ $(document).ready(function(){
 	  <div class="col-madlibs-field">
 	  <div class="dropdown-style inner-addon right-addon">
 	  	<%= i.select :living_with, [['no one else', 'no one else'], ['roommates', 'roommates'], ['my partner', 'my partner'], ['my family', 'my family']], { prompt: '' }, class: "my-dropdown", required: true %>
-		<span class="glyphicon glyphicon-menu-down" style="color:#FFF"></span>
+		<span class="glyphicon"><%= image_tag("dropdown-arrow.png")%></span>
 	  	</div>
 	  </div>
 	</div>	

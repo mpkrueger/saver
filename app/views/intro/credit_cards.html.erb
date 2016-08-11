@@ -41,7 +41,7 @@ $(document).ready(function(){
 			<div class="madlib-sentence">	
 				<div class="dropdown-style inner-addon right-addon">
 					<%= f.select :cc_amount, [['I don\'t have any credit cards', 0], ['I pay them off every month', 4], ['I owe less than $1000', 1], ['I owe $1000 – $5000', 2], ['I owe over $5000', 3]], {prompt: 'My credit card debt...' }, :required => true, :class => "my-dropdown" %>
-					<span class="glyphicon glyphicon-menu-down" style="color:#FFF"></span>
+					<span class="glyphicon"><%= image_tag("dropdown-arrow.png")%></span>
 				</div>
 			
 			</div>
