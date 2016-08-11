@@ -1,7 +1,7 @@
 class IntroController < ApplicationController
   include Wicked::Wizard
 
-  steps :student_loans_info, :credit_cards, :savings, :investments, :spending, 
+  steps :savvy_feel, :student_loans_info, :credit_cards, :savings, :investments, :spending, 
   :future, :future_reflection, :financial_summary
 
   def show
@@ -28,7 +28,7 @@ class IntroController < ApplicationController
   private
 
   def guest_user_params
-    params.require(:guest_user).permit(:name, :age, :student_loans, :student_amount, :cc_debt, 
+    params.require(:guest_user).permit(:name, :age, :savvy_feel, :student_loans, :student_amount, :cc_debt, 
       :cc_amount, :savings, :savings_amount, :investments, :spend_vs_income, 
       :preparedness, :email, :financial_score, :financial_help, investments_type: [:retirement_fund, :company_stock, :stock_market, :beanie_babies],
       future_day: [:gender,
