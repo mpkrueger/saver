@@ -16,7 +16,7 @@
 
 	<hr width="86%">
 	<p class="future-story">
-	On <%= (Time.now + 5.year).strftime("%b %d, %Y") %>, you wake up in your killer <%= @guest_user.future_day['home'] %> with <%= future_livingwith %>. It's a beautiful day in <%= @guest_user.future_day['city'] %>. You head to work where you <%= @guest_user.future_day['company'] %>. When the end of the day rolls around, you're excited to <%= @guest_user.future_day['evenings'] %>. At night, you think about where you were just a few years ago. You think to yourself "Wow, <%= @guest_user.future_day['major_goal'] %>".
+	On <%= (Time.now + 5.year).strftime("%b %d, %Y") %>, you wake up in your killer <%= @guest_user.future_day['home'] %> with <%= future_livingwith %>. It's a beautiful day in <%= @guest_user.future_day['city'] %>. You head to work where you <%= future_work %>. When the end of the day rolls around, you're excited to <%= future_fun %>. At night, you think about where you were just a few years ago. You think to yourself "Wow, I'm <%= @guest_user.future_day['major_goal'] %>".
 
 		</p>
 	<hr width="86%">

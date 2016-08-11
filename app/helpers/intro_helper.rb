@@ -107,4 +107,13 @@ module IntroHelper
 			'no one so you can dance around'
 		end
 	end
+
+	def future_work
+		@guest_user.future_day['company'].gsub('my','your').gsub(/\bI'm\b/, 'you\'re').gsub(/\bI\b/, 'you')
+	end
+
+	def future_fun
+		@guest_user.future_day['evenings'].gsub(/\bI'm\b/, 'you\'re').gsub(/\bmy\b/, 'your').gsub(/\bI\b/, 'you')
+		
+	end
 end
