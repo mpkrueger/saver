@@ -8,7 +8,7 @@
 <section id="coach-section">
 	<div class="coach-chat-triangle"></div>
 	<div class="coach-question">
-		<%= savvy_feel_feedback %> 
+		Nice to meet you, <%= @guest_user.name %>. I'm going to ask you some questions about your money. 
 	</div>
 
 </section>
@@ -21,13 +21,21 @@ $(document).ready(function(){
 });
 </script>
 
-
 <div id= "chat1" class="hidden" style="display:none;">
 <section id="coach-section">
 	<div class="coach-chat-triangle"></div>
 	<div class="coach-question">
+		At the end, I'll give you a <span style="font-weight:500">Savvy Score</span>, which represents your financial health & habits. We'll use the score to figure out what to work on first. 
+	</div>
+
+</section>
+
+<div id= "chat2" class="hidden" style="display:none;">
+<section id="coach-section">
+	<div class="coach-chat-triangle"></div>
+	<div class="coach-question">
 		<p class="main-question">
-		Do you have any student loans?
+		First off, how savvy do you feel with money? 
 		</p>
 	</div>
 
@@ -48,12 +56,10 @@ $(document).ready(function(){
 		
 		<div class="spaced-row user-content">
 			<div class="madlib-sentence">			
-				I owe
 				<div class="dropdown-style inner-addon right-addon">
-					<%= f.select :student_amount, [['Over $30,000', 3], ['$10,000 - $30,000', 2], ['under $10,000', 1],['nothing', 0] ], {prompt: 'this much...'}, {:required => true, :class => 'my-dropdown select'} %>
+					<%= f.select :savvy_feel, [['Feels like a foreign language', 'Feels like a foreign language'],['I know the basics, but get lost sometimes', 'I know the basics, but get lost sometimes'], ['I\'m savvier than most', 'I\'m savvier than most'], ['I\'m a pro', 'I\'m a pro']], {prompt: 'this much...'}, {:required => true, :class => 'my-dropdown select'} %>
 					<span class="glyphicon glyphicon-menu-down" style="color:#FFF"></span>
 				</div>
-				in student loans. 
 			</div>
 		</div>	
 	</section>

@@ -11,6 +11,20 @@ module IntroHelper
 		end
 	end
 
+	def savvy_feel_feedback
+		@guest_user = @guest_user
+		case @guest_user.savvy_feel
+		when 'Feels like a foreign language'
+			"Understandable, it can feel overly complex and confusing. We hope we can clear some things up for you."
+		when 'I know the basics, but get lost sometimes'
+			"Great that you know some basics. We hope we can make things clearer to build up a bigger foundation."
+		when 'I\'m savvier than most'
+			"Great, that means you probably have a good foundation that we can build on!"
+		when 'I\'m a pro'
+			"Awesome to hear."
+		end
+	end
+
 	def student_loans_message
 		@guest_user = @guest_user
 		case @guest_user.student_amount
