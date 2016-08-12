@@ -6,98 +6,91 @@
 
 <body class="page-background">
 
-
-<section id="coach-section">
-	<div class="coach-chat-triangle"></div>
-	<div class="coach-question">
-		<aside>
-		<%= spending_feedback %></aside>
-	</div>
-</section>
-
-<script>
-$(document).ready(function(){
-    for(i=1; i<3; i++) {
-    	$('#chat'+i).hide(0).delay(1000*i).fadeIn(100).removeClass('hidden');
-    }
-});
-</script>
-
-<div id= "chat1" class="hidden" style="display:none;">
-<section id="coach-section">
-	<div class="coach-chat-triangle"></div>
-	<div class="coach-question">
-		Ok, now for the fun stuff – we'll figure out what matters to you and how things might change in the next 5 years. Let's fast forward to:
-		<%= (Time.now + 5.year).strftime("%b %d, %Y") %> 
-	</div>
-</section>
-
-<div id= "chat2" class="hidden" style="display:none;">
-<%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
-	<%= f.fields_for :future_day do |i| %>
-<section id="user-section">
-
-	<div class="row-future">
-	  <div class="col-madlibs-question">I'll live in: </div>
-	  <div class="col-madlibs-field">
-	  	<%= i.text_field :city, class: "madlib-sentence", placeholder: "city", required: true %>
-	  	
-	  </div>
-	</div>	
-
-	<div class="row-future">
-	  <div class="col-madlibs-question">in a/an </div>
-	  <div class="col-madlibs-field">
-	  <div class="dropdown-style inner-addon right-addon">
-	  	<%= i.select :home, [['apartment', 'apartment'], ['house', 'house'], ['mansion', 'mansion'], ['boat', 'boat']], { include_blank: '' }, class: "my-dropdown", required: true %>
-		<span class="glyphicon"><<%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
-	  	</div>
-	  </div>
-	</div>	
-
-	<div class="row-future">
-	  <div class="col-madlibs-question">with </div>
-	  <div class="col-madlibs-field">
-	  <div class="dropdown-style inner-addon right-addon">
-	  	<%= i.select :living_with, [['no one else', 'no one else'], ['roommates', 'roommates'], ['my partner', 'my partner'], ['my family', 'my family']], { include_blank: '' }, class: "my-dropdown", required: true %>
-		<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
-	  	</div>
-	  </div>
-	</div>	
-
-	<div class="row-future">
-	  <div class="col-madlibs-question">For work, I </div>
-	  <div class="col-madlibs-field">
-	  	<%= i.text_field :company, class: "madlib-sentence", placeholder: "do important stuff", autocapitalize: "off", required: true %>
-	 
-	  </div>
-	</div>	
-
-
-	<div class="row-future">
-	  <div class="col-madlibs-question">For fun, I </div>
-	  <div class="col-madlibs-field">
-	  	<%= i.text_field :evenings, class: "madlib-sentence", placeholder: 'cook, watch TV', autocapitalize: "off", required: true %>
+	<section id="coach-section">
+		<div class="coach-chat-triangle"></div>
+		<div class="coach-question">
+			<aside>
+				<%= spending_feedback %>
+			</aside>
 		</div>
-	  </div>
+	</section>
+
+	<script>
+		$(document).ready(function(){
+    		for(i=1; i<3; i++) {
+    			$('#chat'+i).hide(0).delay(1000*i).fadeIn(100).removeClass('hidden');
+    		}
+		});
+	</script>
+
+	<div id= "chat1" class="hidden" style="display:none;">
+		<section id="coach-section">
+			<div class="coach-chat-triangle"></div>
+			<div class="coach-question">
+				Ok, now for the fun stuff – we'll figure out what matters to you and how things might change in the next 5 years. Let's fast forward to:
+				<%= (Time.now + 5.year).strftime("%b %d, %Y") %> 
+			</div>
+		</section>
+	</div>
+
+	<%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
+		<div id= "chat2" class="hidden" style="display:none;">
+			<%= f.fields_for :future_day do |i| %>
+				<section id="user-section">
+					<div class="row-future">
+	  					<div class="col-madlibs-question">I'll live in: </div>
+	  					<div class="col-madlibs-field">
+	  						<%= i.text_field :city, class: "madlib-sentence", placeholder: "city", required: true %>
+	  					</div>
+					</div>	
+
+					<div class="row-future">
+	  					<div class="col-madlibs-question">in a/an </div>
+	  					<div class="col-madlibs-field">
+	  						<div class="dropdown-style inner-addon right-addon">
+	  							<%= i.select :home, [['apartment', 'apartment'], ['house', 'house'], ['mansion', 'mansion'], ['boat', 'boat']], { include_blank: '' }, class: "my-dropdown", required: true %>
+								<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
+	  						</div>
+	  					</div>
+					</div>	
+
+					<div class="row-future">
+	  					<div class="col-madlibs-question">with </div>
+	  					<div class="col-madlibs-field">
+	  						<div class="dropdown-style inner-addon right-addon">
+	  							<%= i.select :living_with, [['no one else', 'no one else'], ['roommates', 'roommates'], ['my partner', 'my partner'], ['my family', 'my family']], { include_blank: '' }, class: "my-dropdown", required: true %>
+								<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
+	  						</div>
+	  					</div>
+					</div>	
+
+					<div class="row-future">
+	  					<div class="col-madlibs-question">For work, I </div>
+	  					<div class="col-madlibs-field">
+	  						<%= i.text_field :company, class: "madlib-sentence", placeholder: "do important stuff", autocapitalize: "off", required: true %>
+	  					</div>
+					</div>	
+
+					<div class="row-future">
+	  					<div class="col-madlibs-question">For fun, I </div>
+	  					<div class="col-madlibs-field">
+	  						<%= i.text_field :evenings, class: "madlib-sentence", placeholder: 'cook, watch TV', autocapitalize: "off", required: true %>
+						</div>
+	  				</div>
+
+					<div class="row-future">
+	  					<div class="col-madlibs-question" style="margin-top:-.8em">Life is better because I'm</div>
+	  					<div class="col-madlibs-field">
+	  						<%= i.text_field :major_goal, class: "madlib-sentence", placeholder: "debt-free!", :autocapitalize => "off", required: true %>
+	  					</div>
+					</div>	
 
 
-	<div class="row-future">
-	  <div class="col-madlibs-question" style="margin-top:-.8em">Life is better because I'm</div>
-	  <div class="col-madlibs-field">
-	  	<%= i.text_field :major_goal, class: "madlib-sentence", placeholder: "debt-free!", :autocapitalize => "off", required: true %>
-
-	  </div>
-	</div>	
-
-	<div class="button-row">
-	<%= i.submit "Next", class: 'next-button' %>
-</div>
+					<div class="button-row">
+						<%= i.submit "Next", class: 'next-button' %>
+					</div>
+				</section>
+			<% end %>
+		</div>
 	<% end %>
-
-
-</section>
-
-
-<% end %>
 </body>

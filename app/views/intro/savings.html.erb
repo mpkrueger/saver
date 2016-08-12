@@ -6,56 +6,55 @@
 
 <body class="page-background">
 
-<section id="coach-section">
-	<div class="coach-chat-triangle"></div>
+	<section id="coach-section">
+		<div class="coach-chat-triangle"></div>
 
-	<div class="coach-question">
-		<aside>
-		<%= cc_feedback %> 
-		</aside>
-	</div>
-</section>
+		<div class="coach-question">
+			<aside>
+				<%= cc_feedback %> 
+			</aside>
+		</div>
+	</section>
 
-<script>
-$(document).ready(function(){
-    for(i=1; i<3; i++) {
-    	$('#chat'+i).hide(0).delay(1000*i).fadeIn(100).removeClass('hidden');
-    }
-});
-</script>
+	<script>
+		$(document).ready(function(){
+    		for(i=1; i<3; i++) {
+    			$('#chat'+i).hide(0).delay(1000*i).fadeIn(100).removeClass('hidden');
+    		}
+		});
+	</script>
 
-<div id="chat1" class="hidden" style="display:none;">
-<section id="coach-section">
-	<div class="coach-chat-triangle"></div>
-
-	<div class="coach-question">
-		<aside>
-		Now, let’s give your piggy bank a shake. 
-		
-		<span class="main-question">Roughly, how much have you saved up?</span>
-		</aside>
-	</div>
-</section>
-
-<div id="chat2" class="hidden" style="display:none;">
-
-<%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
-
-	<section id="user-section">
-	
-		<div class="spaced-row user-content">
-			<div class="madlib-sentence">	
-				<div class="dropdown-style inner-addon right-addon">
-					<%= f.select(:savings_amount, [['Someone raided my piggy bank', 0], ['I have hundreds', 1], ['I have thousands', 2], ['I have tens of thousands', 3]], { include_blank: "My savings..." }, :required => true, :class => "my-dropdown") %>
-					<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
-				</div>
+	<div id="chat1" class="hidden" style="display:none;">
+		<section id="coach-section">
+			<div class="coach-chat-triangle"></div>
+			<div class="coach-question">
+				<aside>
+					Now, let’s give your piggy bank a shake. 
+					<span class="main-question">Roughly, how much have you saved up?</span>
+				</aside>
 			</div>
+		</section>
+	</div>
+
+	<%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
+		<div id="chat2" class="hidden" style="display:none;">
+			<section id="user-section">
+				<div class="spaced-row user-content">
+					<div class="madlib-sentence">	
+						<div class="dropdown-style inner-addon right-addon">
+							<%= f.select(:savings_amount, [['Someone raided my piggy bank', 0], ['I have hundreds', 1], ['I have thousands', 2], ['I have tens of thousands', 3]], { include_blank: "My savings..." }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'}) %>
+							<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
+						</div>
+					</div>
+				</div>
+			</section>
 		</div>
 
-	</section>
-	<div class="button-row">
-			<%= f.submit "Next", class: 'next-button' %>
-	</div>
+		<div id="SubmitButton" class="hidden" style="display:none;">
+			<div class="button-row">
+				<%= f.submit "Next", class: 'next-button' %>
+			</div>
+		</div>
 	<% end %>
-</div>
+
 </body>
