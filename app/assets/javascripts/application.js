@@ -24,14 +24,26 @@ jQuery(document).ready(function() {
     }, 100);
   });
 
-  jQuery('form').attr('novalidate', 'novalidate').submit(function() {
-    var is_valid = true;
-    jQuery('[required]', this).each(function() {
-      if (this.value == '') {
-        alert('Please choose an option from the drop-down and hit Done before pressing Next');
-        is_valid = false;
-      }
-    });
-    return is_valid;
+  jQuery('#dropdown').on("change", function() {
+    
+    $('#SubmitButton').hide(0).delay(0).fadeIn(0).removeClass('hidden');
+
+    // var is_valid = true;
+
+    // $('[SubmitButton]').hide;
+
+    // jQuery('[required]', this).each(function() {
+    //   if (this.value != '') {
+        
+        
+
+    //     // alert('Please choose an option from the drop-down and hit Done before pressing Next');
+    //     is_valid = false;
+    //   }
+    // });
+
+    
+
+    // return is_valid;
   });
 });
