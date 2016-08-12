@@ -16,11 +16,28 @@
 //= require bootstrap
 //= require_tree .
 
+function hasNoHtml5Validation () {
+  return typeof(document.createElement('input').checkValidity) === 'function';
+}
 
 jQuery(document).ready(function() {
-  jQuery('.skillrow').each(function() {
-    jQuery(this).find('.skillbar-bar').animate({
-      width: jQuery(this).attr('data-percent')
-    }, 100);
-  });
+	jQuery('.skillrow').each(function() {
+		jQuery(this).find('.skillbar-bar').animate({
+		  width: jQuery(this).attr('data-percent')
+		}, 100);
+	});
+
+	if(hasNoHtml5Validation()){
+
+	    jQuery('form').submit(function(){
+	    	var is_valid = true;
+	    	jQuery('[required]', this).each(function(){
+	    		if(this.value == ''){
+	    			alert('Please select');
+	    			is_valid = false;
+	    		}
+	    	});
+	    	return is_valid;
+	    });
+	}
 });
