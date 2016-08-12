@@ -2,8 +2,12 @@ class GuestUser < ApplicationRecord
 	
 	validates :name, :age, presence: true
 
-	def debt_score_percent 
-		self.debt_score / 20.0 * 100
+	def student_debt_score_percent 
+		self.student_debt_score / 10.0 * 100
+	end
+
+	def cc_debt_score_percent
+		self.cc_debt_score / 10.0 * 100
 	end
 	
 	def savings_score_percent
@@ -23,37 +27,51 @@ class GuestUser < ApplicationRecord
 	end
 
 	def financial_awareness_percent
-		10 / 10.0 * 100
+		self.financial_awareness / 10.0 * 100
 	end
 
 	def future_preparedness_percent
 		10 / 10.0 * 100
 	end
 
+##
+# For the Savvy Score, here's how the scoring currently breaks down:
+# - Debt score = 20 points (combines student loans and credit cards)
+# - Savings score = 20 points
+# - Investments score = 20 points
+# - Savings habits score (how much person is saving of income) = 15 points
+# - Investment habits = 5 points (currently maxed for everyone)
+# - Financial awareness = 10 points
+# - How close person is to their future goals (proximity) = 10 points 
 
-
-	def debt_score
-		debt = 20
+	def student_debt_score
+		student_debt = 20
 
 		case self.student_amount
 		when 1
-			debt -= 3
+			student_debt -= 3
 		when 2
-			debt -= 6
+			student_debt -= 6
 		when 3
-			debt -= 9
+			student_debt -= 9
 		end
+
+		student_debt
+	end
+
+	def cc_debt_score
+		cc_debt = 10
 
 		case self.cc_amount
 		when 1
-			debt -= 3
+			cc_debt -= 3
 		when 2
-			debt -= 6
+			cc_debt -= 6
 		when 3
-			debt -= 9
+			cc_debt -= 9
 		end
 
-		debt
+		cc_debt
 	end
 
 	def savings_score
@@ -94,54 +112,96 @@ class GuestUser < ApplicationRecord
 		savings_habits = 0
 
 		case self.spend_vs_income
-		when "More than a third"
+		when "Saving a hefty chunk"
 			savings_habits += 15
-		when "Not much, if any"
+		when "Saving a little bit"
 			savings_habits += 5
-		when "I'm in the red"
+		when "Spending it all"
 			savings_habits += 0
 		end
 
 		savings_habits
 	end
 
+	def financial_awareness
+		awareness = 0
+
+		case self.savvy_feel
+		when 'Feels like a foreign language'
+			awareness += 2
+		when 'I know the basics, but get lost sometimes'
+			awareness += 4
+		when 'I\'m savvier than most'
+			awareness += 7
+		when 'I\'m a pro'
+			awareness += 10
+		end
+
+		awareness			
+	end
+
+	def future_preparedness
+		preparedness = 0
+
+		case self.preparedness
+		when 1
+			preparedness += 2
+		when 2
+			preparedness += 4
+		when 3
+			preparedness += 7
+		when 4
+			preparedness += 10
+		end
+
+		preparedness
+	end
+
 
 	def savvy_score
-		debt = self.debt_score
+		student_debt = self.student_debt_score
+		cc_debt = self.cc_debt_score
 		savings = self.savings_score
 		investments = self.investments_score
 		savings_habits = self.savings_habits
 		investment_habits = 5
-		financial_awareness = 10
-		proximity_to_future_self = 10
+		financial_awareness = self.financial_awareness
+		future_preparedness = self.future_preparedness
 
-		financial_score = debt + savings + investments + savings_habits + investment_habits + financial_awareness + proximity_to_future_self
-	end
-
-	def strength
-		ordered_percents = [self.debt_score_percent, self.savings_score_percent, self.investments_score_percent, self.savings_habits_percent]
-		ordered_percents = ordered_percents.sort
-
-		case ordered_percents.last
-		when self.debt_score_percent
-			"debt"
-		when self.savings_score_percent
-			"savings amount"
-		when self.investments_score_percent
-			"investments"
-		when self.savings_habits_percent
-			"savings habits"
-		end
-			
+		financial_score = student_debt + cc_debt + savings + investments + savings_habits + investment_habits + financial_awareness + future_preparedness
 	end
 
 	def area_to_work_on
-		ordered_percents = [self.debt_score_percent, self.savings_score_percent, self.investments_score_percent, self.savings_habits_percent]
+		ordered_percents = [self.student_debt_score_percent, self.cc_debt_score_percent, self.savings_score_percent, self.investments_score_percent, self.savings_habits_percent]
 		ordered_percents = ordered_percents.sort
+		
+		# identify the area with the lowest percentage of points
+		area = ordered_percents.first
 
-		case ordered_percents.first
-		when self.debt_score_percent
-			"DEBT"
+		# no investments would yield a zero percent -
+		# but we don't want to tackle that if the person has debt or only very maginal savings
+		# so we check if area equals investments and, if so, check to see whether we should bump debt or savings above it
+
+
+		# check to see if the person has any credit card debt - if so make that the biggest priority
+		if [1,2,3].include? self.cc_amount
+			area = self.cc_debt_score_percent
+		
+		# then check if savings_habits equals zero - if so, make that the biggest priority
+		elsif self.savings_habits_percent == 0
+			area = self.savings_habits_percent
+
+		# then check if savings amount equals zero or hundreds - if so, make that the biggest priority
+		elsif [0,1].include? self.savings_score_percent
+			area = self.savings_score_percent	
+		end
+
+
+		case area
+		when self.student_debt_score_percent
+			"STUDENT LOANS"
+		when self.cc_debt_score_percent
+			"CREDIT CARD DEBT"
 		when self.savings_score_percent
 			"SAVINGS"
 		when self.investments_score_percent
