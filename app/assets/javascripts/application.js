@@ -28,7 +28,7 @@ jQuery(document).ready(function() {
     var is_valid = true;
     jQuery('[required]', this).each(function() {
       if (this.value == '') {
-        alert('Please select');
+        alert('Please choose an option from the drop-down and hit Done before pressing Next');
         is_valid = false;
       }
     });
