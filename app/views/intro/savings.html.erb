@@ -46,7 +46,7 @@ $(document).ready(function(){
 		<div class="spaced-row user-content">
 			<div class="madlib-sentence">	
 				<div class="dropdown-style inner-addon right-addon">
-					<%= f.select(:savings_amount, [['Someone raided my piggy bank', 0], ['I have hundreds', 1], ['I have thousands', 2], ['I have tens of thousands', 3]], { prompt: "My savings..." }, :required => true, :class => "my-dropdown") %>
+					<%= f.select(:savings_amount, [['Someone raided my piggy bank', 0], ['I have hundreds', 1], ['I have thousands', 2], ['I have tens of thousands', 3]], { include_blank: "My savings..." }, :required => true, :class => "my-dropdown") %>
 					<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
 				</div>
 			</div>

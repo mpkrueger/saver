@@ -49,7 +49,7 @@ $(document).ready(function(){
 	  <div class="col-madlibs-question">in a/an </div>
 	  <div class="col-madlibs-field">
 	  <div class="dropdown-style inner-addon right-addon">
-	  	<%= i.select :home, [['apartment', 'apartment'], ['house', 'house'], ['mansion', 'mansion'], ['boat', 'boat']], { prompt: '' }, class: "my-dropdown", required: true %>
+	  	<%= i.select :home, [['apartment', 'apartment'], ['house', 'house'], ['mansion', 'mansion'], ['boat', 'boat']], { include_blank: '' }, class: "my-dropdown", required: true %>
 		<span class="glyphicon"><<%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
 	  	</div>
 	  </div>
@@ -59,7 +59,7 @@ $(document).ready(function(){
 	  <div class="col-madlibs-question">with </div>
 	  <div class="col-madlibs-field">
 	  <div class="dropdown-style inner-addon right-addon">
-	  	<%= i.select :living_with, [['no one else', 'no one else'], ['roommates', 'roommates'], ['my partner', 'my partner'], ['my family', 'my family']], { prompt: '' }, class: "my-dropdown", required: true %>
+	  	<%= i.select :living_with, [['no one else', 'no one else'], ['roommates', 'roommates'], ['my partner', 'my partner'], ['my family', 'my family']], { include_blank: '' }, class: "my-dropdown", required: true %>
 		<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
 	  	</div>
 	  </div>
