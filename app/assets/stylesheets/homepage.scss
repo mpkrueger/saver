@@ -1,0 +1,45 @@
+#main-dash{
+	width:100%;
+	margin:auto;
+	position:relative;
+}
+
+
+.score-balloon-homepage{
+	width:100%;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+#circle {
+    background: #D96B3D;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+
+.homepage-score-textgroup{
+  width:100%;
+  margin: auto;
+  position: absolute;
+  padding-top:28%;
+  margin-left:-15px;
+  top:0;
+  font-family: 'Gill Sans', Tahoma, Geneva, sans-serif;
+  text-align: center;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.homepage-cta{
+	width:100%;
+	margin: auto;
+	position:absolute;
+	padding-top:28%;
+	margin-left:15px;
+	padding-right:10px;
+}

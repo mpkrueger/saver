@@ -15,4 +15,6 @@ class FeedbacksController < ApplicationController
 			redirect_to dashboard_thanks_path
 		end
 	end
+
+	
 end
