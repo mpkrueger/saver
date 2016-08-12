@@ -1,0 +1,57 @@
+<script type="text/javascript">
+    mixpanel.track("homepage", {
+        
+    });
+</script>
+
+<body class="page-background">
+
+<div>
+    <%= image_tag("dashboard_background.png", class:'gradient' )%>
+</div>
+
+
+<section id="top-nav">
+<%= image_tag("savvy-logo.png", class:'top-logo' )%>
+<%= link_to "Sign out", destroy_user_session_path, method: :delete, :class=>'sign-out' %>
+</section>
+<hr />
+
+<section id="main-dash">
+	<div class="col-xs-8 ">
+		<%= image_tag("score-balloon-transparent.png", class:'score-balloon-homepage')%>
+		<div class="homepage-score-textgroup">
+	      <div class="savvy-score-title">
+	        SAVVY SCORE
+	      </div>
+	        <div class="score-total">
+	        (out of 100)
+	      </div>
+	      <div class="savvy-score">
+	        <%= @savvy_score %>
+	      </div>
+		</div>
+	</div>
+	<div class="col-xs-4">
+		<div class="homepage-cta">
+	 		<div class="spaced-row">
+	 		Let’s boost your Savvy by first boosting your SAVINGS
+	 		</div>
+	 		<button class="next-button" text="Start">Start</button>
+	 		
+	 	</div>
+	</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+</body>

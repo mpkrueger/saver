@@ -3,75 +3,74 @@
         
     });
 </script>
+
 <body class="page-background">
 
-<section id="coach-section">
-	<div class="coach-chat-triangle"></div>
-	<div class="coach-question">
-		Nice to meet you, <%= @guest_user.name %>. I'm going to ask you some questions about your money. 
-	</div>
-
-</section>
-
-<script>
-$(document).ready(function(){
-    for(i=1; i<4; i++) {
-    	$('#chat'+i).hide(0).delay(1500*i).fadeIn(100).removeClass('hidden');
-    }
-});
-</script>
-
-<div id= "chat1" class="hidden" style="display:none;">
-<section id="coach-section">
-	<div class="coach-chat-triangle"></div>
-	<div class="coach-question">
-		At the end, I'll give you a <span style="font-weight:500">Savvy Score</span>, which represents your financial health & habits. We'll use the score to figure out what to work on first. 
-	</div>
-
-</section>
-
-<div id= "chat2" class="hidden" style="display:none;">
-<section id="coach-section">
-	<div class="coach-chat-triangle"></div>
-	<div class="coach-question">
-		<p class="main-question">
-		First off, how savvy do you feel with money? 
-		</p>
-	</div>
-
-</section>
-
-<!-- fade in user input section -->
-<script>
-$(document).ready(function(){
-    $('div.hidden').hide(0).delay(1500).fadeIn(1000).removeClass('hidden');
-});
-</script>
-
-<div id="chat3" class="hidden" style="display:none;">
-	
-	<%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
-
-	<section id="user-section">
-		
-		<div class="spaced-row user-content">
-			<div class="madlib-sentence">			
-				<span class="dropdown-style inner-addon right-addon">
-					<%= f.select :savvy_feel, [['Feels like a foreign language', 'Feels like a foreign language'],['I know the basics, but get lost sometimes', 'I know the basics, but get lost sometimes'], ['I\'m savvier than most', 'I\'m savvier than most'], ['I\'m a pro', 'I\'m a pro']], {include_blank: 'this much...'}, {:required => true, :class => 'my-dropdown select'} %>
-					<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
-				</span>
-			</div>
-		</div>	
+	<section id="coach-section">
+		<div class="coach-chat-triangle">
+		</div>
+		<div class="coach-question">
+			Nice to meet you, <%= @guest_user.name %>. I'm going to ask you some questions about your money. 
+		</div>
 	</section>
 
+	<script>
+		$(document).ready(function(){
+	    	for(i=1; i<4; i++) {
+	    		$('#chat'+i).hide(0).delay(1500*i).fadeIn(100).removeClass('hidden');
+	    	}
+		});
+	</script>
 
+	<div id= "chat1" class="hidden" style="display:none;">
+		<section id="coach-section">
+			<div class="coach-chat-triangle">
+			</div>
+			<div class="coach-question">
+				At the end, I'll give you a <span style="font-weight:500">Savvy Score</span>, which represents your financial health & habits. We'll use the score to figure out what to work on first. 
+			</div>
 
-
-	<div class="button-row">
-			<%= f.submit "Next", class: 'next-button' %>
+		</section>
 	</div>
-	<% end %>
-</div>
 
+	<div id= "chat2" class="hidden" style="display:none;">
+		<section id="coach-section">
+			<div class="coach-chat-triangle">
+			</div>
+			<div class="coach-question">
+				<p class="main-question">
+					First off, how savvy do you feel with money? 
+				</p>
+			</div>
+		</section>
+	</div>
+
+	<%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
+		<div id="chat3" class="hidden" style="display:none;">
+			<section id="user-section">
+				<div class="spaced-row user-content">
+					<div class="madlib-sentence">			
+						<span class="dropdown-style inner-addon right-addon">
+							<%= f.select :savvy_feel, [['Feels like a foreign language', 'Feels like a foreign language'],['I know the basics, but get lost sometimes', 'I know the basics, but get lost sometimes'], ['I\'m savvier than most', 'I\'m savvier than most'], ['I\'m a pro', 'I\'m a pro']], {include_blank: 'this much...'}, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
+							<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%>
+							</span>
+						</span>
+					</div>
+				</div>	
+			</section>
+		</div>
+
+
+		<div id="SubmitButton" class="hidden" style="display:none;">
+			<div class="button-row">
+				<%= f.submit "Next", class: 'next-button' %>
+			</div>
+		</div>
+
+		<div class="spaced-row">
+		</div>
+		<div class="spaced-row">
+		</div>
+	<% end %>
 
 </body>

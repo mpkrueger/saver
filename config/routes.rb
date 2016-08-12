@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'dashboard/index'
 
   get 'dashboard/thanks'
+  get 'dashboard/homepage'
 
   devise_for :users, :controllers => { :registrations => "registrations", :sessions => "sessions" }
   resources :guest_users
