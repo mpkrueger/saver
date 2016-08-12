@@ -16,6 +16,10 @@
 //= require bootstrap
 //= require_tree .
 
+function hasNoHtml5Validation () {
+ return typeof(document.createElement('input').checkValidity) === 'function';
+}
+
 
 jQuery(document).ready(function() {
   jQuery('.skillrow').each(function() {
@@ -24,14 +28,34 @@ jQuery(document).ready(function() {
     }, 100);
   });
 
-  jQuery('form').attr('novalidate', 'novalidate').submit(function() {
-    var is_valid = true;
-    jQuery('[required]', this).each(function() {
-      if (this.value == '') {
-        alert('Please select');
-        is_valid = false;
-      }
-    });
-    return is_valid;
+  jQuery('#dropdown').on("change", function() {
+    
+    $('#SubmitButton').hide(0).delay(0).fadeIn(0).removeClass('hidden');
+
   });
+
+  if(hasNoHtml5Validation()){
+ 
+    jQuery('form').submit(function(){
+      var is_valid = true;
+        jQuery('[required]', this).each(function(){
+          if(this.value == ''){
+            alert('Please choose a valid option');
+            is_valid = false;
+          }
+        });
+      return is_valid;
+    });
+  }
+
+    // var is_valid = true;
+
+    // jQuery('[required]', this).each(function() {
+    //   if (this.value != '') {
+    //     alert('Please choose an option from the drop-down and hit Done before pressing Next');
+    //     is_valid = false;
+    //   }
+    // });
+    // return is_valid;
+  
 });
