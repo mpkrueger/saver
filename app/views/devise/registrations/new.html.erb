@@ -45,17 +45,17 @@ $(document).ready(function(){
 <section id="user-section">
 
 <div class="spaced-row user-content">
-    <div class="madlib-sentence row-future">
-      <%= f.email_field :email, class: "text-field", placeholder: "email address" %>
+    <div class="row-future">
+      <%= f.email_field :email, class: "madlib-sentence border-underline", placeholder: "email address" %>
   </div>
 
-  <div class="madlib-sentence row-future">
-    <%= f.password_field :password, class: "text-field", placeholder: "password", autocomplete: "off" %>
+  <div class="row-future">
+    <%= f.password_field :password, class: "madlib-sentence border-underline", placeholder: "password", autocomplete: "off" %>
   </div>
   
 
-  <div class="madlib-sentence row-future">
-    <%= f.password_field :password_confirmation, class: "text-field", placeholder: "confirm password", autocomplete: "off" %>
+  <div class="row-future">
+    <%= f.password_field :password_confirmation, class: "madlib-sentence border-underline", placeholder: "confirm password", autocomplete: "off" %>
   </div>
 
  <div class="spaced-row"></div>
