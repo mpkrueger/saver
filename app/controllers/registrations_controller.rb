@@ -10,13 +10,16 @@ class RegistrationsController < Devise::RegistrationsController
 	  build_resource(sign_up_params)
 	  resource.name = @guest_user.name
 	  resource.age = @guest_user.age
-	  resource.student_amount = @guest_user.student_amount
-	  resource.cc_amount = @guest_user.cc_amount
-	  resource.savings_amount = @guest_user.savings_amount
-	  resource.investments_type = @guest_user.investments_type
-	  resource.spend_vs_income = @guest_user.spend_vs_income
-	  resource.future_day = @guest_user.future_day
-	  resource.preparedness = @guest_user.preparedness
+
+	  resource.fin_profile = FinProfile.new
+	  resource.fin_profile.savvy_feel = @guest_user.savvy_feel
+	  resource.fin_profile.student_amount = @guest_user.student_amount
+	  resource.fin_profile.cc_amount = @guest_user.cc_amount
+	  resource.fin_profile.savings_amount = @guest_user.savings_amount
+	  resource.fin_profile.investments_type = @guest_user.investments_type
+	  resource.fin_profile.spend_vs_income = @guest_user.spend_vs_income
+	  resource.fin_profile.future_day = @guest_user.future_day
+	  resource.fin_profile.preparedness = @guest_user.preparedness
 	  
 	  resource.save
 
