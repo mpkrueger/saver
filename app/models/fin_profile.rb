@@ -143,13 +143,13 @@ class FinProfile < ApplicationRecord
 		preparedness = 0
 
 		case self.preparedness
-		when 1
+		when "1"
 			preparedness += 2
-		when 2
+		when "2"
 			preparedness += 4
-		when 3
+		when "3"
 			preparedness += 7
-		when 4
+		when "4"
 			preparedness += 10
 		end
 
@@ -209,4 +209,5 @@ class FinProfile < ApplicationRecord
 			"SAVINGS HABITS"
 		end
 	end
+
 end

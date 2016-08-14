@@ -45,7 +45,7 @@ class GuestUser < ApplicationRecord
 # - How close person is to their future goals (proximity) = 10 points 
 
 	def student_debt_score
-		student_debt = 20
+		student_debt = 10
 
 		case self.student_amount
 		when 1
@@ -144,13 +144,13 @@ class GuestUser < ApplicationRecord
 		preparedness = 0
 
 		case self.preparedness
-		when 1
+		when "1"
 			preparedness += 2
-		when 2
+		when "2"
 			preparedness += 4
-		when 3
+		when "3"
 			preparedness += 7
-		when 4
+		when "4"
 			preparedness += 10
 		end
 

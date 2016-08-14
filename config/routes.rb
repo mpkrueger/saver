@@ -24,6 +24,10 @@ Rails.application.routes.draw do
 
   get 'goals/index'
 
+  authenticated :user do
+    root to: 'dashboard#homepage'
+  end
+
   root to: 'goals#index'
 
   get '/goals/introductions'
