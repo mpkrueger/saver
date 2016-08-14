@@ -10,6 +10,7 @@ class RegistrationsController < Devise::RegistrationsController
 	  build_resource(sign_up_params)
 	  resource.name = @guest_user.name
 	  resource.age = @guest_user.age
+	  resource.guest_user_id = @guest_user.id
 
 	  resource.fin_profile = FinProfile.new
 	  resource.fin_profile.savvy_feel = @guest_user.savvy_feel
@@ -45,4 +46,14 @@ class RegistrationsController < Devise::RegistrationsController
 	def after_sign_up_path_for(resource)
 		dashboard_homepage_path
 	end
+
+	def after_update_path_for(resource)
+		root_path
+	end
+
+	protected
+
+	def update_resource(resource, params)
+    	resource.update_without_password(params)
+  	end
 end

@@ -6,6 +6,53 @@
 
 <body class="page-background">
 
+	<section id="coach-section">
+		<div class="coach-chat-triangle"></div>
+		<div class="coach-question">
+			<aside>
+			Excellent, this is going to be a great week and a great step toward improving your Savvy Score.
+			</aside>
+		</div>
+	</section>
 
+	<script>
+	$(document).ready(function(){
+	    for(i=1; i<2; i++) {
+	    	$('#chat'+i).hide(0).delay(1250*i).fadeIn(100).removeClass('hidden');
+	    }
+	});
+	</script>
+	<div id= "chat1" class="hidden" style="display:none;">
+		<section id="coach-section">
+			<div class="coach-chat-triangle"></div>
+			<div class="coach-question">
+				<aside>
+					In order to offer encouragement along the way, what's the best phone number to text you at?
+				</aside>
+			</div>
+		</section>
+
+		<!-- fade in user input section -->
+
+
+		<%= form_for @user, url: user_registration_path, method: :put do |f| %>
+		<section id="user-section">
+
+			<div class="spaced-row user-content">
+				<div class="madlib-sentence">
+					You can reach me at
+						<%= f.telephone_field :phone_number, class: "text-field", placeholder: "555-555-5555",  :autocorrect => "off", :required => true %>.
+				</div>
+			</div>
+			
+		</section>
+
+		<div class="button-row">
+				<%= f.submit "Next", class: 'next-button' %>
+		</div>
+
+	</div>
+
+	<% end %>
 
 </body>
