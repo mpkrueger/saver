@@ -1,26 +1,46 @@
-<h2>Log in</h2>
+<script type="text/javascript">
+    mixpanel.track("sign_in", {
+        
+    });
+</script>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email %>
+<body class="page-background">
+
+  <div class="splash-section">
+    <p class="app-name"><%= image_tag("savvy-logo.png", class:"app-name") %> </p>
+    <p class="app-tagline"> The free financial coach you've always wanted </p>
+  
+
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <section id="user-section">
+        <div class="spaced-row user-content">
+          <div class="row-future">
+            <%= f.email_field :email, class: "madlib-sentence border-underline", placeholder: "email address" %>
+          </div>
+
+          <div class="row-future">
+            <%= f.password_field :password, class: "madlib-sentence border-underline", placeholder: "password", autocomplete: "off" %>
+          </div>
+
+          <% if devise_mapping.rememberable? -%>
+            <div class="row-future">
+              <%= f.check_box :remember_me, class: "madlib-sentence" %>
+              <%= f.label :remember_me %>
+            </div>
+          <% end -%>
+
+          <div class="spaced-row"></div>
+          <div class="button-row">
+            <%= f.submit "Sign in", class: 'next-button' %>
+          </div>
+        </div>
+      </section>
+    <% end %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+  <div class="sign-in-link">
+    <%= render "devise/shared/links" %>
   </div>
 
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</body>
