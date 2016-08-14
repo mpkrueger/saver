@@ -7,11 +7,19 @@ class ChallengesController < ApplicationController
   def credit_card_info
     @user = current_user
     @fin_profile = @user.fin_profile
+    @cc_feeling = @user.fin_profile.cc_feeling
+    @cc_approach = @user.fin_profile.cc_approach
+    @cc_rate = @user.fin_profile.cc_rate
+    @cc_amount = @user.fin_profile.cc_amount
   end
 
   def student_loan_info
     @user = current_user
     @fin_profile = @user.fin_profile
+    @student_feeling = @user.fin_profile.student_feeling
+    @student_approach = @user.fin_profile.student_approach
+    @student_rate = @user.fin_profile.student_rate
+    @student_ammount = @user.fin_profile.student_ammount
   end
 
   def investment_info
