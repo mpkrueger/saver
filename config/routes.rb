@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   get 'challenges/saving_info'
   get 'challenges/credit_card_info'
   get 'challenges/student_loan_info'
@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   resources :guest_users
   resources :feedbacks
   resources :intro
+  resources :fin_profiles
 
   get 'goals/index'
 

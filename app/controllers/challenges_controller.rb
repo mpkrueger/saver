@@ -1,4 +1,16 @@
 class ChallengesController < ApplicationController
+  def update
+    @user = current_user
+    @fin_profile = @user.fin_profile
+
+    if @fin_profile.update_attributes(params.require(:fin_profile).permit(:cc_feeling, :cc_approach, :cc_rate, :cc_amount, :student_feeling, :student_approach, :student_rate, :student_amount))
+      redirect_to next_step
+    else
+      flash[:error] = "Uh oh, that didn't work - please try again"
+      render root_path
+    end
+  end
+
   def saving_info
     @user = current_user
     @fin_profile = @user.fin_profile
@@ -19,7 +31,7 @@ class ChallengesController < ApplicationController
     @student_feeling = @user.fin_profile.student_feeling
     @student_approach = @user.fin_profile.student_approach
     @student_rate = @user.fin_profile.student_rate
-    @student_ammount = @user.fin_profile.student_ammount
+    @student_amount = @user.fin_profile.student_amount
   end
 
   def investment_info

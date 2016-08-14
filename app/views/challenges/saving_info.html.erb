@@ -6,6 +6,25 @@
 
 <body class="page-background">
 
+	<%= form_for @fin_profile do |f| %>
+
+		<section id="user-section">		
+			<div class="spaced-row user-content">
+				<div class="madlib-sentence">			
+					<div class="dropdown-style inner-addon right-addon">
+						<%= f.select :cc_feeling, [["a", "a"], ["b", "b"], ["c", "c"]], {include_blank: 'this much...'}, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
+						<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<div id="SubmitButton" class="hidden" style="display:none;">
+			<div class="button-row">
+				<%= f.submit "Next", class: 'next-button' %>
+			</div>
+		</div>
+	<% end %>
 
 
 </body>
