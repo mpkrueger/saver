@@ -6,6 +6,61 @@
 
 <body class="page-background">
 
-	
+<section id="top-nav">
+<%= image_tag("savvy-logo.png", class:'top-logo' )%>
+<%= link_to "Sign out", destroy_user_session_path, method: :delete, :class=>'sign-out' %>
+</section>
+<hr />
+
+<section id="coach-section">
+	<div class="coach-chat-triangle"></div>
+      <div class="coach-question">
+        Ok to give you a good recommendation for boosting your Savings Savvy, we’ll need to get some more details. 
+      </div>
+    </section>
+
+
+<div id= "chat2" class="hidden" style="display:none;">
+	<%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
+
+	<section id="user-section">
+		<div class="spaced-row user-content">
+			<div class="madlib-sentence">	
+				<div class="dropdown-style inner-addon right-addon">
+					When I think about my credit card debt, I think...<br/>
+					<%= f.select(:cc_feeling, [['I\'m in over my head', 0], ['there are skeletons in my closet', 1], ['it is what it is', 3], ['I don\'t think about it', 4]], { include_blank: "my thoughts..." }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'}) %>
+					<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
+				</div>
+			</div>
+
+			<div class="madlib-sentence">	
+				<div class="dropdown-style inner-addon right-addon">
+					My current approach is to pay...<br/>
+					<%= f.select(:cc_approach, [['as much of the total as I can', 0], ['a little more than the minimum due', 1], ['the minimum due', 3], ['less than the minimum', 4]], { include_blank: "my approach..." }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'}) %>
+					<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
+				</div>
+			</div>
+
+			<div class="madlib-sentence">	
+				<div class="dropdown-style inner-addon right-addon">
+					My total credit card balance is...<br/>
+					<%= f.telephone_field  :cc_amount class: "number-field", placeholder: "balance", :required => true %> 
+				</div>
+			</div>
+
+			<div class="madlib-sentence">	
+				<div class="dropdown-style inner-addon right-addon">
+					My credit card(s)' interest rate is...<br/>
+					<%= f.telephone_field :cc_rate class: "number-field", placeholder: "interest rate", :required => true %> 
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="button-row">
+			<%= f.submit "Next", class: 'next-button' %>
+	</div>
+<% end %>
+</div>
+
 
 </body>

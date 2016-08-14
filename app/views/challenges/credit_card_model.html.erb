@@ -5,7 +5,32 @@
 </script>
 
 <body class="page-background">
+<section id="top-nav">
+<%= image_tag("savvy-logo.png", class:'top-logo' )%>
+<%= link_to "Sign out", destroy_user_session_path, method: :delete, :class=>'sign-out' %>
+</section>
+<hr />
 
 
+<section id="coach-section">
+	<div class="coach-chat-triangle"></div>
+      <div class="coach-question">
+        Credit card interest rates can range from 15% to high 20s.
+      </div>
+ </section>
+
+<section id="coach-section">
+	<div class="coach-chat-triangle"></div>
+      <div class="coach-question">
+        Interest rates are a tricky thing. You already know you'll be paying back your total balance ($X), but your interest rate can be harder to calculate. Let's do some quick math.
+      </div>
+ </section>
+
+ <section id="coach-section">
+	<div class="coach-chat-triangle"></div>
+      <div class="coach-question">
+        This year, your balance is $X and with your current interest rate, your total due this year will be $X+$I = $Y. Next year, the 
+      </div>
+ </section>
 
 </body>
