@@ -16,7 +16,7 @@
 <section id="coach-section">
   <div class="coach-chat-triangle"></div>
       <div class="coach-question">
-        Credit card interest rates are tricky to understand. Let's do some quick math.
+        Credit card interest rates are tricky to understand. Many calculate your interest daily (instead of monthly or yearly). Let me do some quick math.
       </div>
  </section>
 
@@ -32,8 +32,12 @@
 <section id="coach-section">
   <div class="coach-chat-triangle"></div>
       <div class="coach-question">
-        Credit cards often calculate your interest daily, so for you that means your daily interest rate is <%= daily_interest_rate %>%. Today your balance is $<%= @cc_amount %>. At the end of today, your new balance will be $<%= new_daily_balance %>. 
+         At the end of the year, you'll owe: <div class="big-number">$<%= @cc_amount.to_i %>
+         <br />+
+         <br />$<%= new_yearly_interest %> 
       </div>
+      <aside style="text-align:center">(that's your interest) </aside>
+
  </section>
 </div>
 
@@ -41,7 +45,7 @@
  <section id="coach-section">
   <div class="coach-chat-triangle"></div>
       <div class="coach-question">
-        Each day, a new balance will be calculated based on interest. So by the end of the week, you'll owe $<%= new_weekly_balance %>. That extra interest could instead go towards your <%= what_you_can_buy %>!
+        That's $<%= (new_yearly_interest / 52).round(2) %> per week you'll be paying in interest instead of <%= what_you_can_buy %>!
       </div>
  </section>
 

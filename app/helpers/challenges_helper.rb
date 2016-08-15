@@ -27,22 +27,33 @@ module ChallengesHelper
 		@new_weekly_example_balance = (@p * (BigDecimal(1 + @r_over_n))**(BigDecimal(@n * @t))).round(2)
 	end
 
+	def new_yearly_interest
+		@user = current_user
+		@p = @user.fin_profile.cc_amount
+		@r = BigDecimal(@user.fin_profile.cc_rate) / BigDecimal(100)
+		@t = (BigDecimal(365) / BigDecimal(365)).round(8)
+		@n = 365
+		@r_over_n = (BigDecimal(@r)/BigDecimal(@n)).round(8)
+		@new_balance = (@p * (BigDecimal(1 + @r_over_n))**(BigDecimal(@n * @t))).round(2)
+		@yearly_interest = (@new_balance - @user.fin_profile.cc_amount).to_i
+	end
+
 	def what_you_can_buy
 		@user = current_user
 		@difference =  new_weekly_balance - @user.fin_profile.cc_amount
 		case @difference
 		when (1..2)
-			"bus fare"
+			"an indulgent McDonalds cheeseburger"
 		when (2..5)
-			"morning coffee"
+			"a glorious morning latte"
 		when (5..10)
-			"lunch out"
+			"a luxurious lunch out"
 		when (10..20)
-			"dinner out"
+			"a delectable dinner out"
 		when (20..30)
-			"dinner for two"
+			"a delicious dinner for two"
 		when (30..50)
-			"date night dinner"
+			"a dreamy date night"
 		end
 	end
 
