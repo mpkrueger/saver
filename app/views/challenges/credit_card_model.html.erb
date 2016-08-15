@@ -15,21 +15,21 @@
 <section id="coach-section">
 	<div class="coach-chat-triangle"></div>
       <div class="coach-question">
-        Credit card interest rates can range from 15% to high 20s.
+        Credit card interest rates are tricky to understand. Let's do some quick math.
       </div>
  </section>
 
 <section id="coach-section">
 	<div class="coach-chat-triangle"></div>
       <div class="coach-question">
-        Interest rates are a tricky thing. You already know you'll be paying back your total balance <%= @cc_amount %>, but your interest rate can be harder to calculate. Let's do some quick math.
+        The interest rate is often calculated on a daily basis (even though it's confusingly called an annual percentage rate). Today your balance is <%= @cc_amount %>.  Your daily interest is <%= @interest %>% / 365, which is <%= daily_interest_rate %>. At the end of today, your new balance will be <%= @cc_amount %> + the interest on that amount (<%= daily_interest_amount %>), adding up to <%= new_daily_balance %>.
       </div>
  </section>
 
  <section id="coach-section">
 	<div class="coach-chat-triangle"></div>
       <div class="coach-question">
-        Right now your balance is $<%= @cc_amount %> and with your current interest rate of <%= @interest %>, your total due this year will be <%= @cc_amount + (@cc_amount * @interest / 100) %>. 
+        So tomorrow 
       </div>
  </section>
 
