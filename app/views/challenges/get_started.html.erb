@@ -41,7 +41,8 @@
 			<div class="spaced-row user-content">
 				<div class="madlib-sentence">
 					You can reach me at
-						<%= f.telephone_field :phone_number, class: "text-field", placeholder: "555-555-5555",  :autocorrect => "off", :required => true %>.
+					<div class="dropdown-style">
+						<%= f.telephone_field :phone_number, class: "text-field", placeholder: "555-555-5555",  :autocorrect => "off", :required => true %>.</div>
 				</div>
 			</div>
 			

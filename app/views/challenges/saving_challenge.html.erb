@@ -5,7 +5,69 @@
 </script>
 
 <body class="page-background">
+<section id="top-nav">
+<%= image_tag("savvy-logo.png", class:'top-logo' )%>
+<%= link_to "Sign out", destroy_user_session_path, method: :delete, :class=>'sign-out' %>
+</section>
+<hr />
+
+<section id="coach-section">
+	<div class="coach-chat-triangle"></div>
+      <div class="coach-question">
+        Because of those high interest amounts, we recommend <%= cc_vs_savings %>. But that's obviously easier said than done…  
+      </div>
+ </section>
+
+<section id="coach-section">
+	<div class="coach-chat-triangle"></div>
+      <div class="coach-question">
+        We don’t know each other well yet and change is hard. So let’s start small. We have a mini-challenge for you.  
+      </div>
+ </section>
+
+<script>
+		$(document).ready(function(){
+    		for(i=1; i<3; i++) {
+    			$('#chat'+i).hide(0).delay(1500*i).fadeIn(100).removeClass('hidden');
+    		}
+		});
+	</script>
+
+<div id= "chat1" class="hidden" style="display:none;">
+	<%= form_for @fin_profile do |f| %>
+
+	<section id="user-section">
+		<div class="spaced-row user-content">
+			<div class="madlib-sentence">	
+			My biggest weekly expense tends to be<br/>
+				<div class="dropdown-style inner-addon right-addon">
+					
+					<%= f.select(:biggest_expense, [['buying coffee', 'buying coffee'], ['going out for drinks', 'going out for drinks'], ['eating lunch out', 'eating lunch out'], ['eating dinner out', 'eating dinner out']], { include_blank: "this activity..." }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'}) %>
+					<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
+				</div>
+			</div>
+		</div>
+		<div class="spaced-row user-content">
+			<div class="madlib-sentence">	
+				I do this
+				<div class="dropdown-style inner-addon right-addon">
+					<%= f.telephone_field :expense_frequency, class: "number-field", placeholder: "#", :value=>"", :required => true %>
+				</div>
+				times a week.
+				
+			</div>
+		</div>
+	</section>
+	<div class="button-row">
+			<%= f.submit "Next", class: 'next-button' %>
+	</div>
+<% end %>
+</div>
+
+<div id= "chat2" class="hidden" style="display:none;">
+ <section id="mini-challenge">
 
 
-
+ </section>
+</div>
 </body>
