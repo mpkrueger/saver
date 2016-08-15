@@ -46,4 +46,16 @@ module ChallengesHelper
 		end
 	end
 
+	def cc_vs_savings
+		@area = current_user.fin_profile.current_focus
+		case @area
+		when "CREDIT CARD DEBT"
+			"that you pay off your credit card balance as soon as possible"
+		when "SAVINGS HABITS"
+			"that you save more"
+		when "STUDENT LOANS"
+			"that you pay off your loans at a faster pace"
+		end
+	end
+
 end

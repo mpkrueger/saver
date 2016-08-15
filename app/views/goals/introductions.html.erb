@@ -43,10 +43,12 @@
 				<div class="spaced-row user-content">
 					<div class="madlib-sentence">
 						You can call me  
-						<%= f.text_field :name, class: "text-field", placeholder: "first name",  :autocorrect => "off", :required => true %>.
+						<div class="dropdown-style">
+						<%= f.text_field :name, class: "text-field", placeholder: "first name",  :autocorrect => "off", :required => true %>. </div>
 						<br />
 						I'm
-						<%= f.telephone_field :age, class: "number-field", placeholder: "age", :required => true %> 
+						<div class="dropdown-style">
+						<%= f.telephone_field :age, class: "number-field", placeholder: "age", :required => true %> </div>
 						years old.
 					</div>
 				</div>
@@ -62,6 +64,7 @@
 				</div>
 			</div>
 		<% end %>
+	
 	</div>
 	
 </body>
