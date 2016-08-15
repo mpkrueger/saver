@@ -47,6 +47,8 @@ class ChallengesController < ApplicationController
   def credit_card_model
     @user = current_user
     @fin_profile = @user.fin_profile
+    @cc_amount = @user.fin_profile.cc_amount
+    @interest = @user.fin_profile.cc_rate
   end
 
   def student_loan_model
