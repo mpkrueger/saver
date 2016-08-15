@@ -6,10 +6,19 @@
 
 <body class="page-background">
 
+	<section id="top-nav">
+			<%= image_tag("savvy-logo.png", class:'top-logo' )%>
+			<%= link_to "Sign out", destroy_user_session_path, method: :delete, :class=>'sign-out' %>
+	</section>
+	<hr class="hr-topnav"/>
+
+
 	<section id="mini-challenge">
 			<div class="challenge-title">Your First Mini Challenge</div>
+			<hr class="challenge-separator"/>
 			<div class="challenge">In the next 5 days, we challenge you to <%= expense_action %> 1 fewer time. </div>
-			<aside>That means you get <%= challenge_frequency %> <%= expense_noun %> this week.</aside>
+			<hr class="challenge-separator"/>
+			That's <%= challenge_frequency %> <%= expense_noun %> this week.
 			
 	</section>
 
