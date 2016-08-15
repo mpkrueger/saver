@@ -198,16 +198,16 @@ class GuestUser < ApplicationRecord
 
 
 		case area
-		when self.student_debt_score_percent
-			"STUDENT LOANS"
 		when self.cc_debt_score_percent
 			"CREDIT CARD DEBT"
+		when self.student_debt_score_percent
+			"STUDENT LOANS"
+		when self.savings_habits_percent
+			"SAVINGS HABITS"
 		when self.savings_score_percent
 			"SAVINGS"
 		when self.investments_score_percent
 			"INVESTMENTS"
-		when self.savings_habits_percent
-			"SAVINGS HABITS"
 		end
 	end
 
