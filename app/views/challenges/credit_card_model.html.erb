@@ -22,14 +22,14 @@
 <section id="coach-section">
 	<div class="coach-chat-triangle"></div>
       <div class="coach-question">
-        The interest rate is often calculated on a daily basis (even though it's confusingly called an annual percentage rate). Today your balance is <%= @cc_amount %>.  Your daily interest is <%= @interest %>% / 365, which is <%= daily_interest_rate %>. At the end of today, your new balance will be <%= @cc_amount %> + the interest on that amount (<%= daily_interest_amount %>), adding up to <%= new_daily_balance %>.
+        Credit cards often calculate your interest daily, so for you that means your daily interest rate is <%= daily_interest_rate %>%. Today your balance is $<%= @cc_amount %>. At the end of today, your new balance will be $<%= new_daily_balance %>. 
       </div>
  </section>
 
  <section id="coach-section">
 	<div class="coach-chat-triangle"></div>
       <div class="coach-question">
-        So tomorrow 
+        Each day, a new balance will be calculated based on interest. So by the end of the week, you'll owe $<%= new_weekly_balance %>. That extra interest could instead go towards your <%= what_you_can_buy %>!
       </div>
  </section>
 
