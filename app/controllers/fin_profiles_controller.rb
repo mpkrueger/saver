@@ -18,7 +18,11 @@ class FinProfilesController < ApplicationController
     		when "SAVINGS HABITS", "SAVINGS"
     			redirect_to challenges_saving_model_path
     		when "STUDENT LOANS"
-    			redirect_to challenges_student_loan_model_path
+          if(@fin_profile.biggest_expense == nil)
+           redirect_to challenges_student_loan_model_path
+          else
+            redirect_to challenges_get_started_path
+          end
     		when "CREDIT CARD DEBT"
           if(@fin_profile.biggest_expense == nil)
     			 redirect_to challenges_credit_card_model_path

@@ -38,6 +38,17 @@ module ChallengesHelper
 		@yearly_interest = (@new_balance - @user.fin_profile.cc_amount).to_i
 	end
 
+	def student_loans_yearly_interest
+		@user = current_user
+		@p = @user.fin_profile.student_amount
+		@r = BigDecimal(@user.fin_profile.student_rate) / BigDecimal(100)
+		@t = (BigDecimal(365) / BigDecimal(365)).round(8)
+		@n = 1
+		@r_over_n = (BigDecimal(@r)/BigDecimal(@n)).round(8)
+		@new_balance = (@p * (BigDecimal(1 + @r_over_n))**(BigDecimal(@n * @t))).round(2)
+		@yearly_interest = (@new_balance - @user.fin_profile.student_amount).to_i
+	end
+
 	def what_you_can_buy
 		@user = current_user
 		@difference =  new_weekly_balance - @user.fin_profile.cc_amount
@@ -61,11 +72,11 @@ module ChallengesHelper
 		@area = current_user.fin_profile.current_focus
 		case @area
 		when "CREDIT CARD DEBT"
-			"that you pay off your credit card balance as soon as possible"
+			"Because of those high interest amounts, we recommend that you pay off your credit card balance as soon as possible"
 		when "SAVINGS HABITS"
-			"that you save more"
+			"Because of how much you can gain in interest, we'd like to help you save (and invest) more"
 		when "STUDENT LOANS"
-			"that you pay off your loans at a faster pace"
+			"Student loans can hang over you for years and years. We'd like to help you pay off your loans at a slightly faster pace"
 		end
 	end
 
