@@ -6,13 +6,20 @@
 
 <body class="page-background">
 
-	<section id="coach-section">
-		<div class="coach-chat-triangle"></div>
-		<div class="coach-question">
-			<aside>
-			Excellent, this is going to be a great week and a great step toward improving your Savvy Score.
-			</aside>
-		</div>
+	<section id="top-nav">
+			<%= image_tag("savvy-logo.png", class:'top-logo' )%>
+			<%= link_to "Sign out", destroy_user_session_path, method: :delete, :class=>'sign-out' %>
+	</section>
+	<hr class="hr-topnav"/>
+
+
+	<section id="mini-challenge">
+			<div class="challenge-title">Your First Mini Challenge</div>
+			<hr class="challenge-separator"/>
+			<div class="challenge">In the next 5 days, we challenge you to <%= expense_action %> 1 fewer time. </div>
+			<hr class="challenge-separator"/>
+			That's <%= challenge_frequency %> <%= expense_noun %> this week.
+			
 	</section>
 
 	<script>

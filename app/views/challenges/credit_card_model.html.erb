@@ -13,21 +13,32 @@
 
 
 <section id="coach-section">
-	<div class="coach-chat-triangle"></div>
+  <div class="coach-chat-triangle"></div>
       <div class="coach-question">
         Credit card interest rates are tricky to understand. Let's do some quick math.
       </div>
  </section>
 
+  <script>
+    $(document).ready(function(){
+        for(i=1; i<3; i++) {
+          $('#chat'+i).hide(0).delay(1250*i).fadeIn(100).removeClass('hidden');
+        }
+    });
+  </script>
+
+<div id= "chat1" class="hidden" style="display:none;">
 <section id="coach-section">
-	<div class="coach-chat-triangle"></div>
+  <div class="coach-chat-triangle"></div>
       <div class="coach-question">
         Credit cards often calculate your interest daily, so for you that means your daily interest rate is <%= daily_interest_rate %>%. Today your balance is $<%= @cc_amount %>. At the end of today, your new balance will be $<%= new_daily_balance %>. 
       </div>
  </section>
+</div>
 
+<div id= "chat2" class="hidden" style="display:none;">
  <section id="coach-section">
-	<div class="coach-chat-triangle"></div>
+  <div class="coach-chat-triangle"></div>
       <div class="coach-question">
         Each day, a new balance will be calculated based on interest. So by the end of the week, you'll owe $<%= new_weekly_balance %>. That extra interest could instead go towards your <%= what_you_can_buy %>!
       </div>
@@ -35,6 +46,7 @@
 
 <div class="button-row">
      <%= link_to "Next", challenges_saving_challenge_path, class: "next-button" %>
+</div>
 </div>
 </body>
 

@@ -68,6 +68,7 @@ class ChallengesController < ApplicationController
     @user = current_user
     @fin_profile = @user.fin_profile
     @biggest_expense = @user.fin_profile.biggest_expense
+    @expense_frequency = @user.fin_profile.expense_frequency
   end
 
   def investment_challenge
@@ -78,5 +79,6 @@ class ChallengesController < ApplicationController
   def get_started
     @user = current_user
     @fin_profile = @user.fin_profile
+    @biggest_expense = @user.fin_profile.biggest_expense
   end
 end
