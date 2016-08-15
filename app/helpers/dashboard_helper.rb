@@ -4,7 +4,7 @@ module DashboardHelper
 		case @user.fin_profile.current_focus
 		when "SAVINGS HABITS", "SAVINGS"
 			challenges_saving_info_path
-		when "STUDENTS LOANS"
+		when "STUDENT LOANS"
 			challenges_student_loan_info_path
 		when "CREDIT CARD DEBT"
 			challenges_credit_card_info_path
