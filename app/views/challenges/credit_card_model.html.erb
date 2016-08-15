@@ -22,14 +22,14 @@
 <section id="coach-section">
 	<div class="coach-chat-triangle"></div>
       <div class="coach-question">
-        Interest rates are a tricky thing. You already know you'll be paying back your total balance ($X), but your interest rate can be harder to calculate. Let's do some quick math.
+        Interest rates are a tricky thing. You already know you'll be paying back your total balance <%= @cc_amount %>, but your interest rate can be harder to calculate. Let's do some quick math.
       </div>
  </section>
 
  <section id="coach-section">
 	<div class="coach-chat-triangle"></div>
       <div class="coach-question">
-        This year, your balance is $X and with your current interest rate, your total due this year will be $X+$I = $Y. Next year, the 
+        Right now your balance is $<%= @cc_amount %> and with your current interest rate of <%= @interest %>, your total due this year will be <%= @cc_amount + (@cc_amount * @interest / 100) %>. 
       </div>
  </section>
 
