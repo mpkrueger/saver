@@ -17,7 +17,7 @@ module IntroHelper
 		when 'Feels like a foreign language'
 			"Understandable, it can feel overly complex and confusing. We hope we can clear some things up for you."
 		when 'I know the basics, but get lost sometimes'
-			"Great that you know some basics. We hope we can make things clearer to build up a bigger foundation."
+			"Great that you know some basics. We hope we can make things clearer to build up a better foundation."
 		when 'I\'m savvier than most'
 			"Great, that means you probably have a good foundation that we can build on!"
 		when 'I\'m a pro'
@@ -43,7 +43,7 @@ module IntroHelper
 		when 0
 			"Cool, we’ll work on that. 46\% of Americans wouldn’t be able to cover a sudden $400 expense so you’re not alone."
 		when 1
-			"Cool, we’ll work on increasing that. It’s generally good to have about 3-6 months worth of expenses saved up."
+			"Cool, we’ll work on increasing that. It’s generally good to have about 3-6 months worth of expenses saved up for emergencies."
 		when 2, 3
 			"That’s great, glad to hear you’re on the right track."
 		end

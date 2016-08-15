@@ -6,56 +6,47 @@
 
 <body class="page-background">
 
-<div>
-    <%= image_tag("dashboard_background.png", class:'gradient' )%>
-</div>
+	<div>
+    	<%= image_tag("dashboard_background.png", class:'gradient' )%>
+	</div>
 
+	<section id="top-nav">
+		<%= image_tag("savvy-logo.png", class:'top-logo' )%>
+		<%= link_to "Sign out", destroy_user_session_path, method: :delete, :class=>'sign-out' %>
+	</section>
+	<hr />
 
-<section id="top-nav">
-<%= image_tag("savvy-logo.png", class:'top-logo' )%>
-<%= link_to "Sign out", destroy_user_session_path, method: :delete, :class=>'sign-out' %>
-</section>
-<hr />
-
-<section id="main-dash">
-	<div class="col-xs-6">
-	<%= image_tag("score-balloon-transparent.png", class:'score-balloon-homepage')%>
-		<div class="homepage-score-textgroup">
-	      	<div class="savvy-score-title">
-	    		SAVVY SCORE
-	  		</div>
-	    	<div class="score-total">
-	    		(out of 100)
-	  		</div>
-	  		<div class="savvy-score">
-	    		<%= @savvy_score %>
-	  		</div>
+	<section id="main-dash">
+		<div class="col-xs-6">
+			<%= image_tag("score-balloon-transparent.png", class:'score-balloon-homepage')%>
+			<div class="homepage-score-textgroup">
+	      		<div class="savvy-score-title">
+	    			SAVVY SCORE
+	  			</div>
+	    		<div class="score-total">
+	    			(out of 100)
+	  			</div>
+	  			<div class="savvy-score">
+		    		<%= @savvy_score %>
+		  		</div>
+			</div>
 		</div>
-	</div>
-	<div class="col-xs-5">
-		<div class="homepage-cta">
-	 		<div class="spaced-row">
-	 			<span style="color:#F9D93D">
-	 				Let’s boost your 
-	 				<span style="color:white; font-weight:400">
-	 					<%= @area_to_work_on %>
-	 				</span> 
-	 				Savvy!
-	 			</span>
+		
+		<div class="col-xs-5">
+			<div class="homepage-cta">
+	 			<div class="spaced-row">
+	 				<span style="color:#F9D93D">
+	 					Let’s boost your 
+	 					<span style="color:white; font-weight:400">
+	 						<%= @area_to_work_on %>
+	 					</span> 
+	 					Savvy!
+	 				</span>
+	 			</div>
+	 			<%= link_to "Start", homepage_challenge_button, class: "next-button" %>	 		
 	 		</div>
-	 		<%= link_to "Start", homepage_challenge_button, class: "next-button" %>
-	 		
-	 	</div>
-	</div>
+		</div>
 
-</section>
-
-
-
-
-
-
-
-
+	</section>
 
 </body>
