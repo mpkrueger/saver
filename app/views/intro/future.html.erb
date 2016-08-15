@@ -33,8 +33,9 @@
 		</section>
 	</div>
 
-	<%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
-		<div id= "chat2" class="hidden" style="display:none;">
+	
+	<div id= "chat2" class="hidden" style="display:none;">
+		<%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
 			<%= f.fields_for :future_day do |i| %>
 				<section id="user-section">
 					<div class="row-future">
@@ -97,6 +98,6 @@
 					</div>
 				</section>
 			<% end %>
-		</div>
-	<% end %>
+		<% end %>
+	</div>
 </body>

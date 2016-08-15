@@ -31,8 +31,9 @@
 		</section>
 	</div>
 
-	<%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
-		<div id="chat3" class="hidden" style="display:none;">
+	
+	<div id="chat3" class="hidden" style="display:none;">
+		<%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
 			<section id="user-section">		
 				<div class="spaced-row user-content">
 					<div class="madlib-sentence">			
@@ -56,8 +57,7 @@
 					adding space below next button
 				</div>
 			</div>
-		</div>
-
-	<% end %>
+		<% end %>
+	</div>	
 
 </body>
