@@ -6,25 +6,66 @@
 
 <body class="page-background">
 
-	<%= form_for @fin_profile do |f| %>
+	<section id="top-nav">
+		<%= image_tag("savvy-logo.png", class:'top-logo' )%>
+		<%= link_to "Sign out", destroy_user_session_path, method: :delete, :class=>'sign-out' %>
+	</section>
+	<hr />
 
-		<section id="user-section">		
-			<div class="spaced-row user-content">
-				<div class="madlib-sentence">			
-					<div class="dropdown-style inner-addon right-addon">
-						<%= f.select :cc_feeling, [["a", "a"], ["b", "b"], ["c", "c"]], {include_blank: 'this much...'}, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
-						<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
+	<section id="coach-section">
+		<div class="coach-chat-triangle"></div>
+      	<div class="coach-question">
+	        Ok to give you a good recommendation for boosting your 
+        	<%= @current_focus.split.map(&:capitalize).join(' ') %>
+        	Savvy, we’ll need to get some more details. 
+      	</div>
+    </section>
+
+    <script>
+		$(document).ready(function(){
+    		for(i=1; i<4; i++) {
+    			$('#chat'+i).hide(0).delay(1500*i).fadeIn(100).removeClass('hidden');
+    		}
+		});
+	</script>
+
+
+	<div id= "chat2" class="hidden" style="display:none;">
+		<%= form_for @fin_profile do |f| %>
+
+			<section id="user-section">
+				<div class="spaced-row user-content">
+					<div class="madlib-sentence">	
+						When I think about saving, I think...<br/>
+						<div class="dropdown-style inner-addon right-addon">
+					
+							<%= f.select(:saving_feeling, [['I don\'t really think about it', 0], ['having a good time is most important', 1], ['I\'d love to but money is tight', 3], ['I\'d love to but spending is too tempting', 4]], { include_blank: "my thoughts..." }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'}) %>
+							<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
+						</div>
 					</div>
 				</div>
-			</div>
-		</section>
-
-		<div id="SubmitButton" class="hidden" style="display:none;">
+				<div class="spaced-row user-content">
+					<div class="madlib-sentence">	
+						My current approach to saving is...<br/>
+						<div class="dropdown-style inner-addon right-addon">
+							<%= f.select(:saving_approach, [['I don\'t really think about it', 0], ['I try to be careful w/ my spending', 1], ['I try to save as much as possible', 3]], { include_blank: "my approach..." }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'}) %>
+							<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
+						</div>
+					</div>
+				</div>
+				<div class="spaced-row user-content">
+					<div class="madlib-sentence">	
+						I spend roughly this much on fixed expenses (housing, car, etc)...<br/>
+						<div class="dropdown-style inner-addon right-addon">
+							<%= f.select(:fixed_expenses, [['less than 30%', 0], ['30% - 50%', 1], ['50% - 70%', 3], ['more than 70%']], { include_blank: "my approach..." }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'}) %>
+							<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
+						</div>
+					</div>
+				</div>
+			</section>
 			<div class="button-row">
 				<%= f.submit "Next", class: 'next-button' %>
 			</div>
-		</div>
-	<% end %>
-
-
+		<% end %>
+	</div>
 </body>

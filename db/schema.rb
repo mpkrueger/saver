@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160815183025) do
+ActiveRecord::Schema.define(version: 20160815210807) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,9 @@ ActiveRecord::Schema.define(version: 20160815183025) do
     t.string   "biggest_expense"
     t.integer  "expense_frequency"
     t.string   "current_focus"
+    t.string   "saving_feeling"
+    t.string   "saving_approach"
+    t.string   "fixed_expenses"
     t.index ["user_id"], name: "index_fin_profiles_on_user_id", using: :btree
   end
 
