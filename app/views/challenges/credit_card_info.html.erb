@@ -19,39 +19,54 @@
       </div>
     </section>
 
+    <script>
+		$(document).ready(function(){
+    		for(i=1; i<4; i++) {
+    			$('#chat'+i).hide(0).delay(1500*i).fadeIn(100).removeClass('hidden');
+    		}
+		});
+	</script>
+
 
 <div id= "chat2" class="hidden" style="display:none;">
-	<%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
+	<%= form_for @fin_profile do |f| %>
 
 	<section id="user-section">
 		<div class="spaced-row user-content">
 			<div class="madlib-sentence">	
+			When I think about credit card debt, I think...<br/>
 				<div class="dropdown-style inner-addon right-addon">
-					When I think about my credit card debt, I think...<br/>
+					
 					<%= f.select(:cc_feeling, [['I\'m in over my head', 0], ['there are skeletons in my closet', 1], ['it is what it is', 3], ['I don\'t think about it', 4]], { include_blank: "my thoughts..." }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'}) %>
 					<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
 				</div>
 			</div>
-
+		</div>
+		<div class="spaced-row user-content">
 			<div class="madlib-sentence">	
+				My current approach is to pay...<br/>
 				<div class="dropdown-style inner-addon right-addon">
-					My current approach is to pay...<br/>
 					<%= f.select(:cc_approach, [['as much of the total as I can', 0], ['a little more than the minimum due', 1], ['the minimum due', 3], ['less than the minimum', 4]], { include_blank: "my approach..." }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'}) %>
 					<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
 				</div>
 			</div>
-
+		</div>
+		<div class="spaced-row user-content">
 			<div class="madlib-sentence">	
+				My total credit card balance is...<br/>
 				<div class="dropdown-style inner-addon right-addon">
-					My total credit card balance is...<br/>
-					<%= f.telephone_field  :cc_amount class: "number-field", placeholder: "balance", :required => true %> 
+					$
+					<%= f.telephone_field  :cc_amount, class: "dollar-sign-field", placeholder: "", :value =>"", :required => true %> 
 				</div>
 			</div>
-
+		</div>
+		<div class="spaced-row user-content">
 			<div class="madlib-sentence">	
+			My credit card(s)' interest rate is...<br/>
 				<div class="dropdown-style inner-addon right-addon">
-					My credit card(s)' interest rate is...<br/>
-					<%= f.telephone_field :cc_rate class: "number-field", placeholder: "interest rate", :required => true %> 
+					
+					<%= f.telephone_field :cc_rate, class: "percentage-field", placeholder: "", :value=>"", :required => true %>
+					<span class="glyphicon" style="font-family: 'Gill Sans'">%</span> 
 				</div>
 			</div>
 		</div>

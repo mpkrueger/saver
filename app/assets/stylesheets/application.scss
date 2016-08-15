@@ -151,6 +151,26 @@ a:focus { color: #FAD472; text-decoration: underline;}
     height: 50px;
   }
 
+.top-nav{
+    width:100%;
+    position: relative;
+  }
+
+  .top-logo{
+    height: 60px;
+    width: auto;
+    margin: 10px 10px;
+    padding: 10px 10px;
+  }
+
+  .sign-out{
+    right:30px;
+    margin-top:32px;
+    height:60px;
+    width:auto;
+    position:absolute;
+  }
+
   .spaced-row{
     margin-bottom: 20px;
   }
