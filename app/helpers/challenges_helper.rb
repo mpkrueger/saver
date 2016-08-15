@@ -58,4 +58,37 @@ module ChallengesHelper
 		end
 	end
 
+	def challenge_frequency
+		@user = current_user
+		@new_freq = @user.fin_profile.expense_frequency - 1
+	end
+
+	def expense_action
+		@user = current_user
+		case current_user.fin_profile.biggest_expense
+		when "buying coffee"
+			"buy coffee"
+		when "going out for drinks"
+			"go out for drinks"
+		when "eating lunch out"
+			"eat lunch out"
+		when "eating dinner out"
+			"eat dinner out"
+		end
+	end
+
+	def expense_noun
+		@user = current_user
+		case current_user.fin_profile.biggest_expense
+		when "buying coffee"
+			"coffee trips"
+		when "going out for drinks"
+			"rounds of drinks"
+		when "eating lunch out"
+			"lunches"
+		when "eating dinner out"
+			"dinners"
+		end
+	end
+
 end
