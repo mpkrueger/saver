@@ -7,56 +7,61 @@
 
 <body class="page-background">
 
-<section id="coach-section">
-	<div class="coach-chat-triangle"></div>
-	<div class="coach-question">
-		<aside>
-		Hey there, I'm here to help you get more out of your hard-earned money and boost your financial savvy.
-		</aside>
-	</div>
-</section>
-
-<script>
-$(document).ready(function(){
-    for(i=1; i<4; i++) {
-    	$('#chat'+i).hide(0).delay(1250*i).fadeIn(100).removeClass('hidden');
-    }
-});
-</script>
-<div id= "chat1" class="hidden" style="display:none;">
-<section id="coach-section">
-	<div class="coach-chat-triangle"></div>
-	<div class="coach-question">
-		<aside>
-		Money can be a sensitive topic, so let's get to know each other. What can I call you?
-		</aside>
-	</div>
-</section>
-
-<!-- fade in user input section -->
-
-
-<%= form_for @guest_user do |f| %>
-<section id="user-section">
-
-	<div class="spaced-row user-content">
-		<div class="madlib-sentence">
-			You can call me  
-				<%= f.text_field :name, class: "text-field", placeholder: "first name",  :autocorrect => "off", :required => true %>.
-			<br />
-			I'm
-					<%= f.telephone_field :age, class: "number-field", placeholder: "age", :required => true %> 
-					years old.
+	<section id="coach-section">
+		<div class="coach-chat-triangle"></div>
+		<div class="coach-question">
+			<aside>
+				Hey there, I'm here to help you get more out of your hard-earned money and boost your financial savvy.
+			</aside>
 		</div>
+	</section>
+
+	<script>
+		$(document).ready(function(){
+    		for(i=1; i<3; i++) {
+    			$('#chat'+i).hide(0).delay(1250*i).fadeIn(100).removeClass('hidden');
+    		}
+		});
+	</script>
+
+	<div id= "chat1" class="hidden" style="display:none;">
+		<section id="coach-section">
+			<div class="coach-chat-triangle"></div>
+			<div class="coach-question">
+				<aside>
+					Money can be a sensitive topic, so let's get to know each other. What can I call you?
+				</aside>
+			</div>
+		</section>
 	</div>
-	
-</section>
 
-<div class="button-row">
-		<%= f.submit "Next", class: 'next-button' %>
-</div>
+	<%= form_for @guest_user do |f| %>
+		<div id= "chat2" class="hidden" style="display:none;">
+			<section id="user-section">
 
-</div>
+				<div class="spaced-row user-content">
+					<div class="madlib-sentence">
+						You can call me  
+						<%= f.text_field :name, class: "text-field", placeholder: "first name",  :autocorrect => "off", :required => true %>.
+						<br />
+						I'm
+						<%= f.telephone_field :age, class: "number-field", placeholder: "age", :required => true %> 
+						years old.
+					</div>
+				</div>
+		
+			</section>
+
+			<div class="button-row">
+				<%= f.submit "Next", class: 'next-button' %>
+			</div>
+			<div class="padding-bottom">
+				<div class="padding-text">
+					adding space below next button
+				</div>
+			</div>
+
+		</div>
 
 	<% end %>
 </body>
