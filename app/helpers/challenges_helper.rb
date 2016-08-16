@@ -49,6 +49,27 @@ module ChallengesHelper
 		@yearly_interest = (@new_balance - @user.fin_profile.student_amount).to_i
 	end
 
+	def years_to_65
+		@user = current_user
+		years = 65 - @user.age
+	end
+
+	def amount_saved
+		@user = current_user
+		@amount = 20 * 52 * (65 - @user.age)
+		number_with_delimiter(@amount)
+	end
+
+	def investment_growth
+		@user = current_user
+		@monthly = 20
+		@growth_rate = 0.06
+		@periods_per_year = 12
+		@number_of_years = 65 - @user.age
+		@total = @monthly * ((1 + @growth_rate / @periods_per_year) ** (@number_of_years * @periods_per_year) - 1) * (@periods_per_year / @growth_rate)
+		number_with_delimiter(@total.round(0))
+	end
+
 	def what_you_can_buy
 		@user = current_user
 		@difference =  new_weekly_balance - @user.fin_profile.cc_amount
