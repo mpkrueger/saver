@@ -28,7 +28,7 @@ class FinProfilesController < ApplicationController
 
           elsif(@fin_profile.student_feeling == 0 && @fin_profile.student_approach == 0)
             #user is paying less than minimum & wants to continue paying < minimum; confusing to us
-           redirect_to challenges_lets_chat_path
+           redirect_to challenges_new_focus_path
 
           elsif((@fin_profile.student_approach == 0 && (@fin_profile.student_feeling == 1) || (@fin_profile.student_feeling == 2))
             #user is paying < minimum but wants to pay more
