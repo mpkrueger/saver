@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'challenges/saving_challenge'
   get 'challenges/investment_challenge'
   get 'challenges/get_started'
+  get 'challenges/lets_chat'
 
   get 'dashboard/final'
   get 'dashboard/index'

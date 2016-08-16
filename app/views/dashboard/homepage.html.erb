@@ -46,13 +46,14 @@
 	<section id="action-items">
 		<div class="action-title">YOUR MISSION</div>
 		<div class="mission">
-			Student Loans Mini-Challenge 
+			<%= @current_focus.titlecase %> Mini-Challenge 
 		</div>
 		<div class="savvy-boost">
 			(+5 Savvy Points) 
 		</div>
-		<div class="spaced-row"></div>
+		<div class="spaced-row">
 		<%= link_to "Start", homepage_challenge_button, class: "dashboard-button" %>
+		</div>
 	</section>
 
 	<footer>

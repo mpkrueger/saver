@@ -1,0 +1,74 @@
+<% @title=": Mini-Challenge" %>
+<script type="text/javascript">
+    mixpanel.track("challenge_lets_chat", {
+        
+    });
+</script>
+
+<body class="page-background">
+
+ <section id="top-nav">
+  	<%= image_tag("savvy-logo.png", class:'top-logo' )%>
+  	<%= link_to "Sign out", destroy_user_session_path, method: :delete, :class=>'sign-out' %>
+	</section>
+	<hr />
+
+	<section id="coach-section">
+  	<div class="coach-chat-triangle"></div>
+  	<div class="coach-question">
+    	<%= lets_chat_message %>
+  	</div>
+	</section>
+
+	<script>
+  	$(document).ready(function(){
+    		for(i=1; i<4; i++) {
+      		$('#chat'+i).hide(0).delay(1250*i).fadeIn(100).removeClass('hidden');
+    		}
+  	});
+	</script>
+
+	<div id= "chat1" class="hidden" style="display:none;">
+  	<section id="coach-section">
+      <div class="coach-chat-triangle"></div>
+      <div class="coach-question">
+        Want to chat about it? I can hop on a phone call or chat over text.
+      </div>
+    </section>
+	</div>
+
+  <div id= "chat2" class="hidden" style="display:none;">
+    <section id="coach-section">
+      <div class="coach-chat-triangle"></div>
+      <div class="coach-question">
+        I know it can be easier to avoid it - but I'd love to help and it'd only take 10 minutes.
+      </div>
+    </section>
+  </div>
+
+	<div id= "chat3" class="hidden" style="display:none;">
+  	<%= form_for @user, url: user_registration_path, method: :put do |f| %>
+      <section id="user-section">
+        <div class="spaced-row user-content">
+          <div class="madlib-sentence"> 
+          I'd like to...
+            <div class="dropdown-style inner-addon right-addon">
+              <%= f.select(:chat_type, [['hop on the phone', 'hop on the phone'], ['chat via text', 'chat via text']], { include_blank: "do this..." }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'}) %>
+              <span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
+            </div>
+          </div>
+          <br />
+          <div class="madlib-sentence">
+            You can reach me at
+            <div class="dropdown-style">
+              <%= f.telephone_field :phone_number, class: "text-field", placeholder: "555-555-5555",  :autocorrect => "off", :required => true %>.
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="button-row">
+          <%= f.submit "Next", class: 'next-button' %>
+      </div>
+    <% end %>
+	</div>
+</body>
