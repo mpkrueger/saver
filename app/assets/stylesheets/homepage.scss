@@ -1,3 +1,14 @@
+.homepage-background{
+  background-color: #133e49;
+  background-image: url('dashboard_background2.png') no-repeat center center fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+
+
 #main-dash{
 	width:90%;
 	margin:auto;
@@ -95,11 +106,21 @@
   text-align: center;
   border-radius: 4px;
   margin:auto;
+  text-decoration:none;
 }
+
+.dashboard-button:hover{
+    text-decoration:none;
+    border: 1px solid #FFFFFF;
+     background-color:#00A99D;
+    color:#fff;
+}
+
 
 .dashboard-button:active{
     background-color: #FFF;
     color: #00E3D3;
+    text-decoration:none;
     border: none;
     border: 1px solid #FFFFFF;
 }
