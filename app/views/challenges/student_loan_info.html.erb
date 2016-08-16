@@ -17,64 +17,45 @@
 <section id="coach-section">
 	<div class="coach-chat-triangle"></div>
       <div class="coach-question">
-        Ok to give you a good recommendation for boosting your 
-        <%= @current_focus.titlecase %>
-        Savvy, we’ll need to get some more details. 
+        Hey <%= @current_user.name %>, we’ll need a couple more details to set up the right <%= @current_focus.titlecase %> mini-challenge. Just these 2 questions below. 
       </div>
     </section>
 
     <script>
 		$(document).ready(function(){
-    		for(i=1; i<4; i++) {
+    		for(i=1; i<2; i++) {
     			$('#chat'+i).hide(0).delay(1500*i).fadeIn(100).removeClass('hidden');
     		}
 		});
 	</script>
 
 
-<div id= "chat2" class="hidden" style="display:none;">
+<div id= "chat1" class="hidden" style="display:none;">
 	<%= form_for @fin_profile do |f| %>
 
 	<section id="user-section">
-		<div class="spaced-row user-content">
-			<div class="madlib-sentence">	
-			When I think about my student loans, I think...<br/>
-				<div class="dropdown-style inner-addon right-addon">
-					
-					<%= f.select(:student_feeling, [['I\'m in over my head', 0], ['there are skeletons in my closet', 1], ['it is what it is', 3], ['it was worth it', 4], ['I don\'t think about it', 5]], { include_blank: "my thoughts..." }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'}) %>
-					<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
-				</div>
-			</div>
-		</div>
+		
 		<div class="spaced-row user-content">
 			<div class="madlib-sentence">	
 				My current approach is to pay...<br/>
 				<div class="dropdown-style inner-addon right-addon">
-					<%= f.select(:student_approach, [['as much of the total as I can', 0], ['a little more than the minimum due', 1], ['the minimum due', 3], ['less than the minimum', 4]], { include_blank: "my approach..." }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'}) %>
+					<%= f.select(:student_approach, [['less than the amount due', 0], ['the amount due', 1],['more than the amount due', 2], ['not sure ', 3],  ], { include_blank: "my approach..." }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'}) %>
 					<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
 				</div>
 			</div>
 		</div>
+
 		<div class="spaced-row user-content">
 			<div class="madlib-sentence">	
-				I have a total of <br/>
+				Ideally, I would<br/>
 				<div class="dropdown-style inner-addon right-addon">
-					$
-					<%= f.telephone_field  :student_amount, class: "dollar-sign-field", placeholder: "", :value =>"", :required => true %> 
-				</div>
-				in student loans.
-			</div>
-		</div>
-		<div class="spaced-row user-content">
-			<div class="madlib-sentence">	
-			My loans' interest rate is <br/>
-				<div class="dropdown-style inner-addon right-addon">
-					
-					<%= f.telephone_field :student_rate, class: "percentage-field", placeholder: "", :value=>"", :required => true %>
-					<span class="glyphicon" style="font-family: 'Gill Sans'">%</span> 
+					<%= f.select(:student_feeling, [['take my time paying these off', 0], ['pay the amount due each month ', 1], ['get rid of these loans asap', 3], ['I\'m not sure', 4]], { include_blank: "my desire..." }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'}) %>
+					<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
 				</div>
 			</div>
 		</div>
+
+
 	</section>
 	<div class="button-row">
 			<%= f.submit "Next", class: 'next-button' %>
