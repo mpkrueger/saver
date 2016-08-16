@@ -1,7 +1,8 @@
 #main-dash{
-	width:100%;
+	width:90%;
 	margin:auto;
 	position:relative;
+
 }
 
 .hr-topnav{
@@ -29,8 +30,8 @@
   margin: auto;
   position: absolute;
   padding-top:23%;
-  margin-left:-15px;
-  top:0;
+  margin-left:-4%;
+  margin-top:-156%;
   font-family: 'Gill Sans', Tahoma, Geneva, sans-serif;
   text-align: center;
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
@@ -41,8 +42,76 @@
 .homepage-cta{
 	width:100%;
 	margin: auto;
+  margin-top:-127%;
 	position:absolute;
 	padding-top:32%;
-	margin-left:15px;
+	margin-left:5%;
 	padding-right:10px;
 }
+
+.current-focus{
+  font-size:26px;
+  font-weight:500;
+  margin-top: 0px;
+  text-align: center;
+  line-height:1.0;
+}
+
+#action-items{
+  width:80%;
+  margin:auto;
+  margin-top:100px;
+  padding: 30px 15px;
+  font-size:18px;
+  border: 1px solid #eee;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.action-title{
+  font-size: 15px;
+  text-align:center;
+  color:#FFF;
+}
+
+.mission{
+  font-size:18px;
+  margin-top:15px;
+  color:#F1C669;
+}
+
+.savvy-boost{
+  font-size:15px;
+  color:#fff;
+  margin-bottom:15px;
+  display:inline-block;
+}
+
+.dashboard-button{
+ // border: 2px solid #00E3D3;
+  background-color:#00A99D;
+  color:#fff;
+  padding:10px 50px;
+  text-align: center;
+  border-radius: 4px;
+  margin:auto;
+}
+
+.dashboard-button:active{
+    background-color: #FFF;
+    color: #00E3D3;
+    border: none;
+    border: 1px solid #FFFFFF;
+}
+
+footer{
+  text-align: center;
+  height: 100px;
+  width: 80%;
+  margin: auto;
+  background-color: transparent;
+  color: #DDD;
+  margin-top: 30px;
+}
+
+
