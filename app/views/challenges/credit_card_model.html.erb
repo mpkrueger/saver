@@ -34,7 +34,7 @@
         At the end of the year, you'll owe: 
         <div class="big-number">$<%= @cc_amount.to_i %>
           <br />+
-          <br />$<%= new_yearly_interest %> 
+          <br />$<%= @new_yearly_interest %> 
         </div>
         <aside style="text-align:center">(that's your interest) </aside>
       </div>
@@ -45,7 +45,7 @@
     <section id="coach-section">
       <div class="coach-chat-triangle"></div>
       <div class="coach-question">
-        That's $<%= (new_yearly_interest / 52).round(2) %> per week you'll be paying in interest instead of <%= what_you_can_buy %>!
+        That's $<%= (@new_yearly_interest / 52).round(2) %> per week you'll be paying in interest instead of <%= what_you_can_buy %>!
       </div>
     </section>
   </div>
