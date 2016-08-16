@@ -8,7 +8,7 @@
 <body class="page-background">
 
 	<div>
-    	<%= image_tag("dashboard_background.png", class:'gradient' )%>
+    	<%= image_tag("dashboard_background2.png", class:'gradient' )%>
 	</div>
 
 	<section id="top-nav">
@@ -18,14 +18,11 @@
 	<hr class="hr-topnav"/>
 
 	<section id="main-dash">
-		<div class="col-xs-6">
-			<%= image_tag("score-balloon-transparent.png", class:'score-balloon-homepage')%>
+		<%= image_tag("dashboard-top-background.png", class:'score-balloon-homepage')%>
+		<div class="col-xs-4">	
 			<div class="homepage-score-textgroup">
 	      		<div class="savvy-score-title">
 	    			SAVVY SCORE
-	  			</div>
-	    		<div class="score-total">
-	    			(out of 100)
 	  			</div>
 	  			<div class="savvy-score">
 		    		<%= @savvy_score %>
@@ -35,19 +32,30 @@
 		
 		<div class="col-xs-5">
 			<div class="homepage-cta">
-	 			<div class="spaced-row">
-	 				<span style="color:#F9D93D">
-	 					Let’s boost your 
-	 					<span style="color:white; font-weight:400">
-	 						<%= @current_focus %>
-	 					</span> 
-	 					Savvy!
-	 				</span>
-	 			</div>
-	 			<%= link_to "Start", homepage_challenge_button, class: "next-button" %>	 		
+				<div class="savvy-score-title">
+	    			FOCUS AREA
+	  			</div>
+	  			<div class="current-focus">
+		    		<%= @current_focus.titlecase %>
+		  		</div>
 	 		</div>
-		</div>
+	 				 		
+	 	</div>
 
 	</section>
+	<section id="action-items">
+		<div class="action-title">YOUR MISSION</div>
+		<div class="mission">
+			Student Loans Mini-Challenge 
+		</div>
+		<div class="savvy-boost">
+			(+5 Savvy Points) 
+		</div>
+		<div class="spaced-row"></div>
+		<%= link_to "Start", homepage_challenge_button, class: "dashboard-button" %>
+	</section>
 
+	<footer>
+		Give us feedback!
+	</footer>
 </body>
