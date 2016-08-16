@@ -1,0 +1,49 @@
+<% @title=": Mini-Challenge" %>
+<script type="text/javascript">
+    mixpanel.track("challenge_new_focus", {
+        
+    });
+</script>
+
+<body class="page-background">
+
+ <section id="top-nav">
+  	<%= image_tag("savvy-logo.png", class:'top-logo' )%>
+  	<%= link_to "Sign out", destroy_user_session_path, method: :delete, :class=>'sign-out' %>
+	</section>
+	<hr />
+
+	<section id="coach-section">
+  	<div class="coach-chat-triangle"></div>
+  	<div class="coach-question">
+    	I'm here to help you reach your financial goals - please choose an area where I can be most helpful!
+  	</div>
+	</section>
+
+	<script>
+  	$(document).ready(function(){
+    		for(i=1; i<4; i++) {
+      		$('#chat'+i).hide(0).delay(1250*i).fadeIn(100).removeClass('hidden');
+    		}
+  	});
+	</script>
+
+	<div id= "chat3" class="hidden" style="display:none;">
+  	<%= form_for @fin_profile do |f| %>
+      <section id="user-section">
+        <div class="spaced-row user-content">
+          <div class="madlib-sentence"> 
+          I'd like to work on...<br />
+            <div class="dropdown-style inner-addon right-addon">
+              <%= f.select(:current_focus, [['Saving', 'SAVINGS'], ['Student Loans', 'STUDENT LOANS'], ['Credit Cards', 'CREDIT CARD DEBT'], ['Investing', 'INVESTMENTS']], { include_blank: "this area..." }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'}) %>
+              <span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="button-row">
+          <%= f.submit "Next", class: 'next-button' %>
+      </div>
+    <% end %>
+	</div>
+</body>

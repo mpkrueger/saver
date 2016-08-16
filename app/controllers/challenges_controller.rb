@@ -77,4 +77,9 @@ class ChallengesController < ApplicationController
     @user = current_user
     @fin_profile = @user.fin_profile
   end
+
+  def new_focus
+    @user = current_user
+    @fin_profile = @user.fin_profile
+  end
 end
