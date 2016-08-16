@@ -7,6 +7,55 @@
 
 <body class="page-background">
 
+	<section id="top-nav">
+    	<%= image_tag("savvy-logo.png", class:'top-logo' )%>
+    	<%= link_to "Sign out", destroy_user_session_path, method: :delete, :class=>'sign-out' %>
+  	</section>
+  	<hr />
 
+  	<section id="coach-section">
+    	<div class="coach-chat-triangle"></div>
+    	<div class="coach-question">
+      		Saving can be hard to do. But it's important to flex that saving muscle - the impact over time can be huge.
+    	</div>
+  	</section>
+
+  	<script>
+    	$(document).ready(function(){
+      		for(i=1; i<3; i++) {
+        		$('#chat'+i).hide(0).delay(1250*i).fadeIn(100).removeClass('hidden');
+      		}
+    	});
+  	</script>
+
+  	<div id= "chat1" class="hidden" style="display:none;">
+    	<section id="coach-section">
+      		<div class="coach-chat-triangle"></div>
+      		<div class="coach-question">
+        		To illustrate, let's consider a quick example. If you could set aside
+        		<div class="med-number">
+        			<br />
+	        		$20 per week for <%= years_to_65 %> years
+	          		<br />
+	          		<br />and get a 6% return
+        		</div>
+        		<!-- <aside style="text-align:center">(that's your interest) </aside> -->
+      		</div>
+    	</section>
+  	</div>
+
+  	<div id= "chat2" class="hidden" style="display:none;">
+    	<section id="coach-section">
+      		<div class="coach-chat-triangle"></div>
+      		<div class="coach-question">
+        		You would have saved $<%= amount_saved %> and earned an extra $<%= investment_growth %> on top of that!
+      		</div>
+    	</section>
+    	<div class="button-row">
+    		<%= link_to "Next", challenges_saving_challenge_path, class: "next-button" %>
+  		</div>
+  	</div>
+
+  	
 
 </body>

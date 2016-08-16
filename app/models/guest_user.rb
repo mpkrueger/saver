@@ -192,8 +192,10 @@ class GuestUser < ApplicationRecord
 			area = self.savings_habits_percent
 
 		# then check if savings amount equals zero or hundreds - if so, make that the biggest priority
-		elsif [0,1].include? self.savings_score_percent
-			area = self.savings_score_percent	
+		elsif [0,1].include? self.savings_score
+			area = self.savings_score_percent
+		elsif [2,3].include? self.student_debt_score
+			area = self.student_debt_score_percent
 		end
 
 
