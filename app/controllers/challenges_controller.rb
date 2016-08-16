@@ -72,4 +72,9 @@ class ChallengesController < ApplicationController
     @fin_profile = @user.fin_profile
     @biggest_expense = @user.fin_profile.biggest_expense
   end
+
+  def lets_chat
+    @user = current_user
+    @fin_profile = @user.fin_profile
+  end
 end

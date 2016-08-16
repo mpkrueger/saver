@@ -45,7 +45,22 @@ module ChallengesHelper
 		end
 	end
 
+	# LETS CHAT PAGE METHODS
+	def lets_chat_message
+		@user = current_user
+		case @user.fin_profile.current_focus
+		when "SAVINGS", "SAVINGS HABITS"
+			"savings savings savings"
+		when "STUDENT LOANS"
+			"student loans"
+		when "CREDIT CARD DEBT"
+			"credit card debt"
+		when "INVESTMENTS"
+			"investments"
+		end
+	end
 
+	# DEBT METHODS
 	def daily_interest_rate
 		@user = current_user
 		@daily_interest_calc = (@user.fin_profile.cc_rate / 365).round(2)
