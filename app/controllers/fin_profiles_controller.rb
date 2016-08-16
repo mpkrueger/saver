@@ -22,10 +22,16 @@ class FinProfilesController < ApplicationController
             redirect_to challenges_get_started_path
           end
     		when "STUDENT LOANS"
-          if(@fin_profile.biggest_expense == nil)
-           redirect_to challenges_student_loan_model_path
-          else
-            redirect_to challenges_get_started_path
+          if(@fin_profile.student_approach == 3 || @fin_profile.student_feeling == 3)
+            redirect_to challenges_lets_chat_path
+          if(@fin_profile.student_feeling == 0 && @fin_profile.student_approach == 0)
+           redirect_to challenges_lets_chat_path
+          else if((@fin_profile.student_approach == 0 && (@fin_profile.student_feeling == 1) || (@fin_profile.student_feeling == 2))
+            redirect_to challenges_saving_info_path
+          else if(@fin_profile.student_feeling == 0 || @fin_profile.student_feeling == 1)
+            redirect_to challenges_new_focus_path
+          else if(@fin_profile.student_approach == 2 && @fin_profile.student_feeling == 2)
+            redirect_to challenges_lets_chat_path
           end
     		when "CREDIT CARD DEBT"
           if(@fin_profile.biggest_expense == nil)
