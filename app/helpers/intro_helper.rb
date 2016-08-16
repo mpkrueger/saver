@@ -78,7 +78,7 @@ module IntroHelper
 		when 4
 			"That's great that you pay off your statement every month!"
 		when 1, 2, 3
-			"We understand, it's easy to build up credit card debt. Going through this process is a great first step. We'll come up with a plan together to tackle this."
+			"We understand, it's easy to build up credit card debt. Going through this process is a great first step. We'll come up with a plan to tackle this together."
 		when 0
 			"Ok, good to know that you're avoiding credit card debt."
 		end
