@@ -2,6 +2,50 @@ module ChallengesHelper
 
 	require "bigdecimal"
 
+	# SAVINGS CHALLENGE METHODS
+	def less_food_message
+		@user = current_user
+		case @user.fin_profile.biggest_expense
+		when "buying coffee"
+			"skipped buying 1 coffee each week"
+		when "going out for drinks"
+			"skipped going out for drinks 1 night each week"
+		when "eating lunch out"
+			"skipped eating lunch out once per week"
+		when "eating dinner out"
+			"skipped eating dinner out once per week"
+		end
+	end
+
+	def food_savings
+		@user = current_user
+		case @user.fin_profile.biggest_expense
+		when "buying coffee"
+			"$130"
+		when "going out for drinks"
+			"$390"
+		when "eating lunch out"
+			"$260"
+		when "eating dinner out"
+			"$390"
+		end
+	end
+
+	def each_food_cost
+		@user = current_user
+		case @user.fin_profile.biggest_expense
+		when "buying coffee"
+			"coffee cost about $5"
+		when "going out for drinks"
+			"night out cost about $15"
+		when "eating lunch out"
+			"lunch out cost about $10"
+		when "eating dinner out"
+			"dinner out cost about $15"
+		end
+	end
+
+
 	def daily_interest_rate
 		@user = current_user
 		@daily_interest_calc = (@user.fin_profile.cc_rate / 365).round(2)

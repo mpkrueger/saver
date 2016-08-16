@@ -16,9 +16,7 @@
 	<section id="coach-section">
 		<div class="coach-chat-triangle"></div>
       	<div class="coach-question">
-	        Ok to give you a good recommendation for boosting your 
-        	<%= @current_focus.titlecase %>
-        	Savvy, we’ll need to get some more details. 
+	        Ok - in this mini-challenge we're going to increase your Savvy Score by taking a small step toward better saving habits. It's going to be awesome.
       	</div>
     </section>
 
@@ -30,6 +28,14 @@
 		});
 	</script>
 
+	<div id= "chat1" class="hidden" style="display:none;">
+		<section id="coach-section">
+			<div class="coach-chat-triangle"></div>
+	      	<div class="coach-question">
+		        To set it up, I need just a little more info. 
+	      	</div>
+	    </section>
+	</div>
 
 	<div id= "chat2" class="hidden" style="display:none;">
 		<%= form_for @fin_profile do |f| %>
@@ -37,35 +43,27 @@
 			<section id="user-section">
 				<div class="spaced-row user-content">
 					<div class="madlib-sentence">	
-						When I think about saving, I think...<br/>
+					Food tends to be a big area of weekly spending. My biggest food expense tends to be<br/>
 						<div class="dropdown-style inner-addon right-addon">
-					
-							<%= f.select(:saving_feeling, [['I don\'t really think about it', 0], ['having a good time is most important', 1], ['I\'d love to but money is tight', 3], ['I\'d love to but spending is too tempting', 4]], { include_blank: "my thoughts..." }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'}) %>
+							
+							<%= f.select(:biggest_expense, [['buying coffee', 'buying coffee'], ['going out for drinks', 'going out for drinks'], ['eating lunch out', 'eating lunch out'], ['eating dinner out', 'eating dinner out']], { include_blank: "this activity..." }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'}) %>
 							<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
 						</div>
 					</div>
 				</div>
 				<div class="spaced-row user-content">
 					<div class="madlib-sentence">	
-						My current approach to saving is...<br/>
+						I do this
 						<div class="dropdown-style inner-addon right-addon">
-							<%= f.select(:saving_approach, [['I don\'t really think about it', 0], ['I try to be careful w/ my spending', 1], ['I try to save as much as possible', 3]], { include_blank: "my approach..." }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'}) %>
-							<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
+							<%= f.telephone_field :expense_frequency, class: "number-field", placeholder: "#", :value=>"", :required => true %>
 						</div>
-					</div>
-				</div>
-				<div class="spaced-row user-content">
-					<div class="madlib-sentence">	
-						I spend roughly this much on fixed expenses (housing, car, etc)...<br/>
-						<div class="dropdown-style inner-addon right-addon">
-							<%= f.select(:fixed_expenses, [['less than 30%', 0], ['30% - 50%', 1], ['50% - 70%', 3], ['more than 70%']], { include_blank: "my approach..." }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'}) %>
-							<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
-						</div>
+						times a week.
+						
 					</div>
 				</div>
 			</section>
 			<div class="button-row">
-				<%= f.submit "Next", class: 'next-button' %>
+					<%= f.submit "Next", class: 'next-button' %>
 			</div>
 		<% end %>
 	</div>
