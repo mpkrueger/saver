@@ -48,7 +48,11 @@
 			(+5 Savvy Points) 
 		</div>
 		<div class="spaced-row">
-		<%= link_to "Start", homepage_challenge_button, class: "dashboard-button" %>
+			<% if @user.phone_number == nil %>
+				<%= link_to "Start", homepage_challenge_button, class: "dashboard-button" %>
+			<% else %>
+				IN PROGRESS: <%= 5-((Time.now - @user.updated_at)/1.day).round(0) %> days remaining!
+			<% end %>
 		</div>
 	</section>
 
