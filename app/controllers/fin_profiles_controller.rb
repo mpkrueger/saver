@@ -44,7 +44,7 @@ class FinProfilesController < ApplicationController
           end
     		
         when "CREDIT CARD DEBT"
-          fif(@fin_profile.cc_approach == 3 || @fin_profile.cc_feeling == 2)
+          if(@fin_profile.cc_approach == 3 || @fin_profile.cc_feeling == 2)
             #user is lost either on their approach or their goal; maybe we can help 
             redirect_to challenges_lets_chat_path
 
