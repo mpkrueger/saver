@@ -22,37 +22,37 @@ class FinProfilesController < ApplicationController
             redirect_to challenges_get_started_path
           end
     		when "STUDENT LOANS"
-          if(@fin_profile.student_approach == 3 || @fin_profile.student_feeling == 3) 
+          if(@fin_profile.student_approach == "3" || @fin_profile.student_feeling == "3") 
             #user is lost either on their approach or their goal; maybe we can help
             redirect_to challenges_lets_chat_path
 
-          elsif(@fin_profile.student_feeling == 0 && @fin_profile.student_approach == 0)
+          elsif(@fin_profile.student_feeling == "0" && @fin_profile.student_approach == "0")
             #user is paying less than minimum & wants to continue paying < minimum; confusing to us
            redirect_to challenges_new_focus_path
 
-          elsif(@fin_profile.student_approach == 0 && (@fin_profile.student_feeling == 1) || (@fin_profile.student_feeling == 2))
+          elsif(@fin_profile.student_approach == "0" && (@fin_profile.student_feeling == "1") || (@fin_profile.student_feeling == "2"))
             #user is paying < minimum but wants to pay more
             redirect_to challenges_saving_info_path
 
-          elsif(@fin_profile.student_feeling == 0 || @fin_profile.student_feeling == 1)
+          elsif(@fin_profile.student_feeling == "0" || @fin_profile.student_feeling == "1")
             #user wants to pay less than or equal to minimum 
             redirect_to challenges_new_focus_path
 
-          elsif(@fin_profile.student_approach == 2 && @fin_profile.student_feeling == 2)
+          elsif(@fin_profile.student_approach == "2" && @fin_profile.student_feeling == "2")
             #user is paying more than minimum and wants to pay off fast; may be complicated
             redirect_to challenges_saving_info_path
           end
     		
         when "CREDIT CARD DEBT"
-          if(@fin_profile.cc_approach == 3 || @fin_profile.cc_feeling == 2)
+          if(@fin_profile.cc_approach == "3" || @fin_profile.cc_feeling == "2")
             #user is lost either on their approach or their goal; maybe we can help 
             redirect_to challenges_lets_chat_path
 
-          elsif(@fin_profile.cc_feeling == 0)
+          elsif(@fin_profile.cc_feeling == "0")
             #user wants to continue what they're doing
             redirect_to challenges_new_focus_path
 
-          elsif (@fin_profile.cc_feeling == 1)
+          elsif (@fin_profile.cc_feeling == "1")
             #user wants to pay debt off faster than they currently are
             redirect_to challenges_saving_info_path
 
