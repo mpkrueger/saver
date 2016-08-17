@@ -1,5 +1,6 @@
+<% @title=": Feedback" %>
 <script type="text/javascript">
-    mixpanel.track("thanks", {
+    mixpanel.track("feedback", {
         
     });
 </script>
@@ -11,40 +12,18 @@
     <%= image_tag("thanks-header.png", class:'savvy-score-bgimage' )%>
 </div>
 </section>
-<section id="coach-section">
-	<div class="coach-chat-triangle"></div>
 
-	<div class="coach-question">
 
-		Thanks, <%= @user.name %>! We'll be in touch soon with a plan to tackle your <%= @guest_user.area_to_work_on.downcase %>.
-	</div>
-</section>
 
-<script>
-$(document).ready(function(){
-    for(i=1; i<4; i++) {
-    	$('#chat'+i).hide(0).delay(1500*i).fadeIn(100).removeClass('hidden');
-    }
-});
-</script>
-
-<div id= "chat1" class="hidden" style="display:none;">
 <section id="coach-section">
 	<div class="coach-chat-triangle"></div>
 	<div class="coach-question">
-		In the meantime, if you have a few minutes more I'd love to hear what you thought about this chat!
+		Thanks in advance for your feedback!
 	</div>
 
 </section>
 
-<!-- fade in user input section -->
-<script>
-$(document).ready(function(){
-    $('div.hidden').hide(0).delay(1500).fadeIn(1000).removeClass('hidden');
-});
-</script>
 
-<div id="chat2" class="hidden" style="display:none;">
 	
 	<%= form_for @feedback do |f| %>
 
@@ -83,6 +62,6 @@ $(document).ready(function(){
 			<%= f.submit "Next", class: 'next-button' %>
 	</div>
 	<% end %>
-</div>
+
 
 </body>
