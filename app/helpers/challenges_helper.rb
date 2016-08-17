@@ -52,11 +52,11 @@ module ChallengesHelper
 		when "SAVINGS", "SAVINGS HABITS"
 			"savings savings savings"
 		when "STUDENT LOANS"
-			"student loans"
+			"Feeling unsure about your student loans?"
 		when "CREDIT CARD DEBT"
-			"credit card debt"
+			"Feeling unsure about your credit card debt?"
 		when "INVESTMENTS"
-			"investments"
+			"investments $$$$$"
 		end
 	end
 
