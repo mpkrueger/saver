@@ -9,10 +9,10 @@ class FeedbacksController < ApplicationController
 		@feedback.user = current_user
 
 		if @feedback.save
-			redirect_to dashboard_final_path
+			redirect_to root_path
 		else
 			flash[:error] = "uh oh, there was an error - please try again or let us know!"
-			redirect_to dashboard_thanks_path
+			redirect_to root_path
 		end
 	end
 

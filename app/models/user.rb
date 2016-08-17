@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_one :fin_profile
+  has_many :feedbacks
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
