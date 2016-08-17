@@ -16,7 +16,7 @@ module IntroHelper
 		case @guest_user.savvy_feel
 		when 'Feels like a foreign language'
 			"Understandable, it can feel overly complex and confusing. We hope we can clear some things up for you."
-		when 'I know the basics, but get lost sometimes'
+		when 'I know the basics, but that\'s it'
 			"Great that you know some basics. We hope we can make things clearer to build up a better foundation."
 		when 'I\'m savvier than most'
 			"Great, that means you probably have a good foundation that we can build on!"
