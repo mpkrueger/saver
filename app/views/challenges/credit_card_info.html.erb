@@ -38,7 +38,7 @@
 			<div class="madlib-sentence">	
 				My current approach is to pay<br/>
 				<div class="dropdown-style inner-addon right-addon">
-					<%= f.select(:cc_approach, [['less than the minimum due', 0], ['the minimum due', 1],['more than the minimum due', 2], ['not sure ', 3],  ], { include_blank: "my approach..." }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'}) %>
+					<%= f.select(:cc_approach, [['less than the minimum due', 0], ['the minimum due', 1],['more than the minimum due', 2], ['not sure ', 3],  ], { include_blank: "my approach..." }, {:required => true, :class => 'my-dropdown select'}) %>
 					<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
 				</div>
 			</div>
