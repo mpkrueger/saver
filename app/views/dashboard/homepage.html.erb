@@ -20,7 +20,7 @@
 	      		<div class="homepage-titles">
 	    			SAVVY SCORE
 	  			</div>
-	  			<div class="savvy-score">
+	  			<div class="homepage-score">
 		    		<%= @savvy_score %>
 		  		</div>
 			</div>
@@ -40,7 +40,8 @@
 
 	</section>
 	<section id="action-items">
-		<div class="action-title">YOUR MISSION</div>
+		<hr class="hr-mission-block" />
+		<div class="action-title">CURRENT MISSION</div>
 		<div class="mission">
 			<%= @current_focus.titlecase %> Mini-Challenge 
 		</div>
@@ -54,9 +55,10 @@
 				IN PROGRESS: <%= 5-((Time.now - @user.updated_at)/1.day).round(0) %> days remaining!
 			<% end %>
 		</p>
+		<hr class="hr-mission-block"/>
 	</section>
 
 	<div class="feedback">
-		<%= link_to "Give us feedback!", dashboard_feedback_path %>
+		<%= link_to " – Give us feedback –", dashboard_feedback_path %>
 	</div>
 </body>
