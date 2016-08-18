@@ -195,7 +195,7 @@ class GuestUser < ApplicationRecord
 			area = self.student_debt_score_percent
 		
 		# then check if the person is spending everything they earn - if so, make that the biggest priority
-		elsif self.spending_vs_income == "all"
+		elsif self.spend_vs_income == "all"
 			area = self.spending_percent
 
 		# then check if savings amount equals zero - if so, make that the biggest priority
