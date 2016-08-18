@@ -16,7 +16,7 @@ class FinProfilesController < ApplicationController
     if @fin_profile.update_attributes(params.require(:fin_profile).permit(:cc_feeling, :cc_approach, :cc_rate, :cc_amount, :biggest_expense, :expense_frequency, :student_feeling, :student_approach, :student_rate, :student_amount, :saving_purpose, :saving_purpose_free_form))
       	case @current_focus
     		when "SAVINGS HABITS", "SAVINGS"
-    			if(@fin_profile.saving_purpose == nil)
+    			if(@fin_profile.biggest_expense == nil)
             redirect_to challenges_saving_model_path
           else
             redirect_to challenges_get_started_path
