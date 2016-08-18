@@ -21,11 +21,13 @@
 				On <%= (Time.now + 5.year).strftime("%b %d, %Y") %>, you wake up in your killer <%= @guest_user.future_day['home'] %> with <%= future_livingwith %>. It's a beautiful day in <%= @guest_user.future_day['city'] %>. You head to work where you <%= future_work %>. When the end of the day rolls around, you're excited to <%= future_fun %>. At night, you think about where you were just a few years ago. You think to yourself "Wow, I'm <%= @guest_user.future_day['major_goal'] %>".
 			</p>
 		<hr width="86%">
+	</section>
+	<section id="coach-section">
+		<div class="coach-chat-triangle"></div>
 		<div class="coach-question">
 			<p class="main-question">How prepared do you feel to make this a reality?</p>
 		</div>
 	</section>
-
 	<%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
 		<section id="user-section">
 			<div class="spaced-row user-content">

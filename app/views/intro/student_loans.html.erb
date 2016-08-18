@@ -9,19 +9,27 @@
 	<section id="coach-section">
 		<div class="coach-chat-triangle"></div>
 		<div class="coach-question">
-			<%= savvy_feel_feedback %> 
+			For each of the 5 pillars of financial health, I'll ask a quick question.
 		</div>
 	</section>
 
 	<script>
 		$(document).ready(function(){
-    		for(i=1; i<3; i++) {
+    		for(i=1; i<4; i++) {
     			$('#chat'+i).hide(0).delay(1500*i).fadeIn(100).removeClass('hidden');
     		}
 		});
 	</script>
-
 	<div id= "chat1" class="hidden" style="display:none;">
+		<section id="coach-section">
+			<div class="coach-chat-triangle"></div>
+				<div class="coach-question">				
+					I'll use your answers to calculate your <span style="font-weight:500">Savvy Score</span> and put together your personalized plan.
+				</div>
+		</section>
+	</div>
+
+	<div id= "chat2" class="hidden" style="display:none;">
 		<section id="coach-section">
 			<div class="coach-chat-triangle"></div>
 			<div class="coach-question">
@@ -33,7 +41,7 @@
 	</div>
 
 	
-	<div id="chat2" class="hidden" style="display:none;">
+	<div id="chat3" class="hidden" style="display:none;">
 		<%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
 			<section id="user-section">		
 				<div class="spaced-row user-content">
@@ -41,9 +49,12 @@
 						I
 						<div class="dropdown-style inner-addon right-addon">
 							<div id="js-loans">
-								<%= f.select :student_amount, [['have student loans', 1],['don\'t have any student loans', 0] ], {include_blank: 'student loans?'}, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
+								<%= f.select :student_amount, [['have student loans', 1],['don\'t have any student loans', 0] ], {include_blank: 'have student loans?'}, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
 								<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
 							</div>
+						</div>
+						<div id="spacing">
+							and
 						</div>
 						<div class="dropdown-style inner-addon right-addon">
 							<div id="js-attitude">
