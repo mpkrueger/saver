@@ -1,0 +1,63 @@
+<% @title=": Financial Picture" %>
+<script type="text/javascript">
+    mixpanel.track("financial_picture", {
+        
+    });
+</script>
+
+<body class="page-background">
+
+	<section id="coach-section">
+		<div class="coach-chat-triangle"></div>
+
+		<div class="coach-question">
+			<aside>
+				<%= preparedness_feedback %>
+			</aside>		
+		</div>
+	</section>
+
+	<script>
+		$(document).ready(function(){
+    		for(i=1; i<3; i++) {
+    			$('#chat'+i).hide(0).delay(1000*i).fadeIn(100).removeClass('hidden');
+    		}
+		});
+	</script>
+
+	<div id="chat1" class="hidden" style="display:none;">
+		<section id="coach-section">
+			<div class="coach-chat-triangle"></div>
+			<div class="coach-question">
+				I'll factor those goals - and how close you are to them today - into your personalized plan.
+			</div>
+		</section>
+	</div>
+
+	<div id="chat2" class="hidden" style="display:none;">
+		<section id="coach-section">
+			<div class="coach-chat-triangle"></div>
+			<div class="coach-question">
+				Now I'd like to talk about the 5 pillars that make up your financial health & habits:
+				<ul>
+					<li> Student Loans</li>
+					<li> Credit Cards</li>
+					<li> Savings</li>
+					<li> Spending Habits</li>
+					<li> Investments</li>
+				</ul>
+			</div>
+		</section>
+		<div class="button-row">
+			<%= link_to "Next", next_wizard_path, class: 'next-button' %>
+		</div>
+		<div class="padding-bottom">
+			<div class="padding-text">
+				adding space below next button
+			</div>
+		</div>
+	</div>
+	
+	
+
+</body>
