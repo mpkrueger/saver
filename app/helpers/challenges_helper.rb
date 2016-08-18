@@ -193,4 +193,18 @@ module ChallengesHelper
 		end
 	end
 
+	def challenge_icon
+		@user = current_user
+		case current_user.fin_profile.biggest_expense
+		when "buying coffee"
+			"icon_coffee.png"
+		when "going out for drinks"
+			"icon_cocktail.png"
+		when "eating lunch out"
+			"icon_burger.png"
+		when "eating dinner out"
+			"icon_fish.png"
+		end
+	end
+
 end
