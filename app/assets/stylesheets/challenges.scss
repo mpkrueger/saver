@@ -18,14 +18,27 @@
 }
 
 #mini-challenge{
-	width:80%;
-	background-color:#E99C4A;
-	border: 4px solid #F1C669;
+	width:100%;
+//	background-color:#E99C4A;
+//	border: 4px solid #F1C669;
 	margin:auto;
-	padding:18px 18px;
-	margin-top:15px;
 	text-align: center;
+	position: relative;
+}
 
+.challenge-header-image{
+	width: 100%;
+	margin:auto;
+	position: relative;
+}
+
+.challenge-header-textgroup{
+	margin: auto;
+  position: absolute;
+  top:6%;
+  font-family: 'Gill Sans', Tahoma, Geneva, sans-serif;
+  text-align: center;
+  width:100%;
 }
 
 .challenge-title{
@@ -38,6 +51,8 @@
 	font-weight:300;
 	font-size:20px;
 	margin-bottom:5px;
+	width:70%;
+	margin:auto;
 }
 
 .challenge-separator{
@@ -66,4 +81,9 @@
 	border-bottom: 1px solid #FFF;
 	width: 70%;
 	white-space: nowrap;
+}
+
+.challenge-icon{
+	width: 50px;
+	height: auto;
 }

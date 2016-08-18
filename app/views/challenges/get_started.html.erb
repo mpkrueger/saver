@@ -11,16 +11,27 @@
 			<%= image_tag("savvy-logo.png", class:'top-logo' )%>
 			<%= link_to "Sign out", destroy_user_session_path, method: :delete, :class=>'sign-out' %>
 	</section>
-	<hr class="hr-topnav"/>
+	<hr class="hr-topnav" style="margin-bottom:0"v/>
 
 
 	<section id="mini-challenge">
-			<div class="challenge-title">Your First Mini Challenge</div>
-			<hr class="challenge-separator"/>
-			<div class="challenge">In the next 5 days, we challenge you to <%= expense_action %> 1 fewer time. </div>
-			<hr class="challenge-separator"/>
-			That's <%= challenge_frequency %> <%= expense_noun %> this week.
+		
+		<%= image_tag("challenge-header-bkgd.png", class:'challenge-header-image')%>
+		<div class="challenge-header-textgroup">
+			<!--div class="challenge-title">Your First Mini Challenge</div-->
+			<div class="challenge">We challenge you to only <%= expense_action %> <%= challenge_frequency %>x in the next 5 days. 
+			<br />
+			</div>
+			<span style="width:70%">
+			(that's one fewer than your usual)</span>
+			<div class="challenge">
+			<% (1..challenge_frequency).each do |i| %>
+				<%= image_tag("icon_coffee.png", class:"challenge-icon") %>
+			<% end %>
+			</div>
 			
+			
+	</div>
 	</section>
 
 	<script>
