@@ -4,10 +4,12 @@
 
 jQuery ->
 	$('#js-attitude').hide()
+	$('#spacing').hide()
 	$('#NextButton').hide()
 	$('#js-loans').change ->
 		has_loans = $('#js-loans :selected').text()
 		if has_loans == "have student loans"
+			$('#spacing').show()
 			$('#js-attitude').show()
 			$('#js-attitude').change ->
 				$('#NextButton').show()

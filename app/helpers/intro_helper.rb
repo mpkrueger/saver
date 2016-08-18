@@ -15,13 +15,27 @@ module IntroHelper
 		@guest_user = @guest_user
 		case @guest_user.savvy_feel
 		when 'Feels like a foreign language'
-			"Understandable, it can feel overly complex and confusing. We hope we can clear some things up for you."
+			"Understandable, thanks for sharing that. Money can be intimidating and I hope I can help."
 		when 'I know the basics, but that\'s it'
-			"Great that you know some basics. We hope we can make things clearer to build up a better foundation."
+			"Great that you know some basics. I hope I can make things clearer to help you build up a better foundation."
 		when 'I\'m savvier than most'
-			"Great, that means you probably have a good foundation that we can build on!"
+			"Great, that means you probably have a good foundation that I can build on!"
 		when 'I\'m a pro'
 			"Awesome to hear."
+		end
+	end
+
+	def preparedness_feedback
+		@guest_user = @guest_user
+		case @guest_user.preparedness
+		when '1'
+			"Nothing's totally impossible - we'll work on getting there together."
+		when '2'
+			"Worthwhile things often require hard work - we'll work on getting there together."
+		when '3'
+			"Great - I'm here to help you maximmize the benefits of that effort."
+		when '4'
+			"Great to hear!"
 		end
 	end
 
@@ -29,11 +43,14 @@ module IntroHelper
 		@guest_user = @guest_user
 		case @guest_user.student_amount
 		when 0
-			"That's great!"
+			"That's great! Not having to pay towards student loans provides more financial flexibility."
 		when 1
-			"Not bad! Many students graduate with an average of $25K in loans."
-		when 2,3
-			"You’re in good company. 70\% of college grads end up with student loans."
+			case @guest_user.student_attitude
+			when 'I\'m fine with them'
+				"You’re in good company. 70\% of college grads end up with student loans."
+			when 'I want to pay them off ASAP'
+				"Ok, it's good to know that's an area you want to work on. I'll keep that in mind."
+			end
 		end
 	end
 
