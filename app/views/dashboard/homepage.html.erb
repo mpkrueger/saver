@@ -41,6 +41,7 @@
 	</section>
 	<section id="action-items">
 		<hr class="hr-mission-block" />
+		<% if @user.phone_number == nil %>
 		<div class="action-title">CURRENT MISSION</div>
 		<div class="mission">
 			<%= @current_focus.titlecase %> Mini-Challenge 
@@ -49,12 +50,26 @@
 			(+5 Savvy Points) 
 		</div>
 		<p>
-			<% if @user.phone_number == nil %>
-				<%= link_to "Start", homepage_challenge_button, class: "dashboard-button" %>
-			<% else %>
-				IN PROGRESS: <%= 5-((Time.now - @user.updated_at)/1.day).round(0) %> days remaining!
-			<% end %>
+			<%= link_to "Start", homepage_challenge_button, class: "dashboard-button" %>
 		</p>
+
+		<% else %>
+				<div class="action-title">
+					<%= 5-((Time.now - @user.updated_at)/1.day).round(0) %> DAYS LEFT!
+				</div>
+				<div class="mission">
+					<%= @current_focus.titlecase %> Mini-Challenge 
+				</div>
+				<div class="savvy-boost">
+					(+5 Savvy Points) 
+				</div>
+				<div class="challenge">
+				<% (1..challenge_frequency).each do |i| %>
+					<%= image_tag(challenge_icon, class:"challenge-icon") %>
+				<% end %>
+				</div>
+			<% end %>
+		
 		<hr class="hr-mission-block"/>
 	</section>
 
