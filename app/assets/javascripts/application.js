@@ -21,7 +21,7 @@ function hasNoHtml5Validation () {
 }
 
 
-jQuery(document).ready(function() {
+var ready = function() {
   jQuery('.skillrow').each(function() {
     jQuery(this).find('.skillbar-bar').animate({
       width: jQuery(this).attr('data-percent')
@@ -29,13 +29,13 @@ jQuery(document).ready(function() {
   });
 
   jQuery('#dropdown').on("change", function() {
-    
+      
     $('#SubmitButton').hide(0).delay(0).fadeIn(0).removeClass('hidden');
 
   });
 
   if(hasNoHtml5Validation()){
- 
+   
     jQuery('form').submit(function(){
       var is_valid = true;
         jQuery('[required]', this).each(function(){
@@ -46,16 +46,8 @@ jQuery(document).ready(function() {
         });
       return is_valid;
     });
-  }
+  };
+};
 
-    // var is_valid = true;
-
-    // jQuery('[required]', this).each(function() {
-    //   if (this.value != '') {
-    //     alert('Please choose an option from the drop-down and hit Done before pressing Next');
-    //     is_valid = false;
-    //   }
-    // });
-    // return is_valid;
-  
-});
+$(document).ready(ready);
+$(document).on('turbolinks:load', ready);
