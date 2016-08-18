@@ -56,10 +56,16 @@
     box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
+.homepage-score{
+  font-size:34px;
+  font-weight: 500;
+}
+
+
 .homepage-cta{
 	width:100%;
 	margin: auto;
-  margin-top:-127%;
+  margin-top:-117%;
 	position:absolute;
 	padding-top:32%;
 	margin-left:5%;
@@ -67,40 +73,41 @@
 }
 
 .current-focus{
-  font-size:24px;
+  font-size:18px;
   font-weight:500;
-  margin-top: 0px;
   text-align: center;
-  line-height:1.0;
+  line-height:1.5;
 }
 
 #action-items{
   width:80%;
   margin:auto;
-  margin-top:7%;
+ // margin-top:7%;
   padding: 15px 15px;
   font-size:18px;
-  border: 1px solid #eee;
+ // border: 1px solid #eee;
   border-radius: 10px;
   text-align: center;
 }
 
 .action-title{
-  font-size: 14px;
+  font-size: 15px;
   text-align:center;
   color:#FFF;
+  margin-top:-5px;
 }
 
 .mission{
   font-size:18px;
-  margin-top:15px;
   color:#F1C669;
+  font-weight:400
 }
 
 .savvy-boost{
   font-size:15px;
-  color:#fff;
-  margin-bottom:15px;
+  color:#F1C669;
+  margin-top:2px;
+  margin-bottom:22px;
   display:inline-block;
 }
 
@@ -130,6 +137,12 @@
     text-decoration:none;
     border: none;
     border: 1px solid #FFFFFF;
+}
+
+.hr-mission-block{
+  width:100%;
+  background:#fff;
+  margin-top:22px;
 }
 
 .feedback{
