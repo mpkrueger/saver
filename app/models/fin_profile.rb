@@ -104,7 +104,7 @@ class FinProfile < ApplicationRecord
 		spending = 0
 
 		case self.spend_vs_income
-		when "a little"
+		when "very little"
 			spending += 15
 		when "some"
 			spending += 10
@@ -194,11 +194,11 @@ class FinProfile < ApplicationRecord
 			area = self.student_debt_score_percent
 		
 		# then check if the person is spending everything they earn - if so, make that the biggest priority
-		elsif self.spending_percent == 0
+		elsif self.spending_vs_income == "all"
 			area = self.spending_percent
 
-		# then check if savings amount equals zero or hundreds - if so, make that the biggest priority
-		elsif [0,1].include? self.savings_score
+		# then check if savings amount equals zero - if so, make that the biggest priority
+		elsif self.savings_score == 0
 			area = self.savings_score_percent
 
 		end
