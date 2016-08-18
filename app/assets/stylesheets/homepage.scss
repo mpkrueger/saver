@@ -37,6 +37,11 @@
     -webkit-border-radius: 50%;
 }
 
+.homepage-titles{
+  font-size: 14px;
+  text-align:center;
+}
+
 .homepage-score-textgroup{
   width:100%;
   margin: auto;
@@ -62,7 +67,7 @@
 }
 
 .current-focus{
-  font-size:26px;
+  font-size:24px;
   font-weight:500;
   margin-top: 0px;
   text-align: center;
@@ -72,7 +77,7 @@
 #action-items{
   width:80%;
   margin:auto;
-  margin-top:10%;
+  margin-top:7%;
   padding: 15px 15px;
   font-size:18px;
   border: 1px solid #eee;
@@ -81,7 +86,7 @@
 }
 
 .action-title{
-  font-size: 15px;
+  font-size: 14px;
   text-align:center;
   color:#FFF;
 }
@@ -108,6 +113,7 @@
   border-radius: 4px;
   margin:auto;
   text-decoration:none;
+  width:60%;
 }
 
 .dashboard-button:hover{
@@ -126,14 +132,14 @@
     border: 1px solid #FFFFFF;
 }
 
-footer{
+.feedback{
   text-align: center;
-  height: 100px;
+  height: 20px;
   width: 80%;
   margin: auto;
   background-color: transparent;
   color: #DDD;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 

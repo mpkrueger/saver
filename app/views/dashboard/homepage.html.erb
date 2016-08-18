@@ -17,7 +17,7 @@
 		<%= image_tag("dashboard-top-background.png", class:'score-balloon-homepage')%>
 		<div class="col-xs-4">	
 			<div class="homepage-score-textgroup">
-	      		<div class="savvy-score-title">
+	      		<div class="homepage-titles">
 	    			SAVVY SCORE
 	  			</div>
 	  			<div class="savvy-score">
@@ -28,7 +28,7 @@
 		
 		<div class="col-xs-5">
 			<div class="homepage-cta">
-				<div class="savvy-score-title">
+				<div class="homepage-titles">
 	    			FOCUS AREA
 	  			</div>
 	  			<div class="current-focus">
@@ -47,16 +47,16 @@
 		<div class="savvy-boost">
 			(+5 Savvy Points) 
 		</div>
-		<div class="spaced-row">
+		<p>
 			<% if @user.phone_number == nil %>
 				<%= link_to "Start", homepage_challenge_button, class: "dashboard-button" %>
 			<% else %>
 				IN PROGRESS: <%= 5-((Time.now - @user.updated_at)/1.day).round(0) %> days remaining!
 			<% end %>
-		</div>
+		</p>
 	</section>
 
-	<footer>
+	<div class="feedback">
 		<%= link_to "Give us feedback!", dashboard_feedback_path %>
-	</footer>
+	</div>
 </body>
