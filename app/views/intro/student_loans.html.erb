@@ -26,7 +26,7 @@
 			<div class="coach-chat-triangle"></div>
 			<div class="coach-question">
 				<p class="main-question">
-					Do you have any student loans?
+					Let's start with student loans - what's your current situation?
 				</p>
 			</div>
 		</section>
@@ -38,16 +38,25 @@
 			<section id="user-section">		
 				<div class="spaced-row user-content">
 					<div class="madlib-sentence">			
-						I owe
+						I
 						<div class="dropdown-style inner-addon right-addon">
-							<%= f.select :student_amount, [['Over $30,000', 3], ['$10,000 - $30,000', 2], ['under $10,000', 1],['nothing', 0] ], {include_blank: 'this much...'}, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
-							<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
+							<div id="js-loans">
+								<%= f.select :student_amount, [['have student loans', 1],['don\'t have any student loans', 0] ], {include_blank: 'student loans?'}, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
+								<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
+							</div>
 						</div>
-						in student loans. 
+						<div class="dropdown-style inner-addon right-addon">
+							<div id="js-attitude">
+								
+								<%= f.select :student_attitude, [['I\'m fine with them', 'I\'m fine with them'], ['I want to pay them off ASAP', 'I want to pay them off ASAP']], {include_blank: 'I feel...'}, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
+								<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
+							</div>
+						</div>
+						 
 					</div>
 				</div>	
 			</section>
-			<div id="SubmitButton" class="hidden" style="display:none;">
+			<div id="NextButton">
 				<div class="button-row">
 					<%= f.submit "Next", class: 'next-button' %>
 				</div>
