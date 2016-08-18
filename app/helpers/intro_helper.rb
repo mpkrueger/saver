@@ -87,11 +87,11 @@ module IntroHelper
 	def spending_feedback
 		@guest_user = @guest_user
 		case @guest_user.spend_vs_income
-		when 'Saving a hefty chunk'
+		when 'a little'
 			"Wow, that's great that you've built up such a good savings habit."
-		when 'Saving a little bit'
+		when 'some'
 			"Cool, every penny counts!"
-		when 'Spending it all'
+		when 'most','all'
 			"It can be hard to stretch your paycheck. We'll see if we can come up with creative ways to start saving a little."
 		end
 	end
