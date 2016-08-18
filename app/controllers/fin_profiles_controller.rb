@@ -61,10 +61,10 @@ class FinProfilesController < ApplicationController
             end
 
           elsif(@fin_profile.saving_purpose == nil)
-            redirect_to challenges_saving_model_path
+              redirect_to challenges_saving_model_path
           else
-            redirect_to challenges_get_started_path
-
+              redirect_to challenges_get_started_path
+          end
     		when "INVESTMENTS"
     			redirect_to challenges_investment_model_path
 		    end
