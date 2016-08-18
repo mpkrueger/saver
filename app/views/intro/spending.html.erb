@@ -41,8 +41,8 @@
 					<div class="madlib-sentence">	
 					I usually spend
 						<span class="dropdown-style inner-addon right-addon">
-							<%= f.select :spend_vs_income, [['all', 'all'], ['most', 'most'], ['some', 'some'], ['a little', 'a little']], { include_blank: 'this much'}, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
-						<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
+							<%= f.select :spend_vs_income, [['all', 'all'], ['most', 'most'], ['some', 'some'], ['very little', 'very little']], { include_blank: 'this much'}, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
+							<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
 						</span>
 					of my paycheck.
 					</div>

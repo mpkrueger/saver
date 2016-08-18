@@ -22,10 +22,6 @@ class GuestUser < ApplicationRecord
 		self.spending / 15.0 * 100
 	end
 
-	def investment_habits_percent
-		5 / 5.0 * 100
-	end
-
 	def financial_awareness_percent
 		self.financial_awareness / 10.0 * 100
 	end
@@ -36,11 +32,10 @@ class GuestUser < ApplicationRecord
 
 ##
 # For the Savvy Score, here's how the scoring currently breaks down:
-# - Debt score = 20 points (combines student loans and credit cards)
+# - Debt score = 30 points (combines student loans and credit cards)
 # - Savings score = 20 points
-# - Investments score = 20 points
+# - Investments score = 15 points
 # - Spending score (how much person is saving of income) = 15 points
-# - Investment habits = 5 points (currently maxed for everyone)
 # - Financial awareness = 10 points
 # - How close person is to their future goals (proximity) = 10 points 
 
@@ -48,27 +43,25 @@ class GuestUser < ApplicationRecord
 		student_debt = 10
 
 		case self.student_amount
+		when 0
+			student_debt
 		when 1
-			student_debt -= 3
-		when 2
-			student_debt -= 6
-		when 3
-			student_debt -= 9
+			student_debt -= 10
 		end
 
 		student_debt
 	end
 
 	def cc_debt_score
-		cc_debt = 10
+		cc_debt = 20
 
 		case self.cc_amount
 		when 1
-			cc_debt -= 3
+			cc_debt -= 5
 		when 2
-			cc_debt -= 6
+			cc_debt -= 10
 		when 3
-			cc_debt -= 9
+			cc_debt -= 20
 		end
 
 		cc_debt
@@ -93,15 +86,15 @@ class GuestUser < ApplicationRecord
 		investments = 0
 		if self.investments_type != nil
 			if self.investments_type["retirement_fund"] == "1"
-				investments += 10
+				investments += 8
 			end
 
 			if self.investments_type["company_stock"] == "1"
-				investments += 3
+				investments += 2
 			end
 
 			if self.investments_type["stock_market"] == "1"
-				investments += 7
+				investments += 5
 			end
 		end
 
@@ -112,7 +105,7 @@ class GuestUser < ApplicationRecord
 		spending = 0
 
 		case self.spend_vs_income
-		when "a little"
+		when "very little"
 			spending += 15
 		when "some"
 			spending += 10
@@ -156,6 +149,14 @@ class GuestUser < ApplicationRecord
 			preparedness += 10
 		end
 
+		if self.student_attitude == "I want to pay them off ASAP"
+			preparedness -= 2
+		end
+
+		if preparedness < 0
+			preparedness = 0
+		end
+
 		preparedness
 	end
 
@@ -170,7 +171,7 @@ class GuestUser < ApplicationRecord
 		financial_awareness = self.financial_awareness
 		future_preparedness = self.future_preparedness
 
-		financial_score = student_debt + cc_debt + savings + investments + spending + investment_habits + financial_awareness + future_preparedness
+		financial_score = student_debt + cc_debt + savings + investments + spending + financial_awareness + future_preparedness
 	end
 
 	def area_to_work_on
@@ -188,16 +189,19 @@ class GuestUser < ApplicationRecord
 		# check to see if the person has any credit card debt - if so make that the biggest priority
 		if [1,2,3].include? self.cc_amount
 			area = self.cc_debt_score_percent
+
+		# then check to see if the person wants to pay off their student loans faster - if so make that the biggest priority
+		elsif student_attitude == "I want to pay them off ASAP"
+			area = self.student_debt_score_percent
 		
-		# then check if spending equals zero - if so, make that the biggest priority
-		elsif self.spending_percent == 0
+		# then check if the person is spending everything they earn - if so, make that the biggest priority
+		elsif self.spending_vs_income == "all"
 			area = self.spending_percent
 
-		# then check if savings amount equals zero or hundreds - if so, make that the biggest priority
-		elsif [0,1].include? self.savings_score
+		# then check if savings amount equals zero - if so, make that the biggest priority
+		elsif self.savings_score == 0
 			area = self.savings_score_percent
-		elsif [2,3].include? self.student_debt_score
-			area = self.student_debt_score_percent
+
 		end
 
 
