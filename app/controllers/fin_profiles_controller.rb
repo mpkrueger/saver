@@ -44,19 +44,27 @@ class FinProfilesController < ApplicationController
           end
     		
         when "CREDIT CARD DEBT"
-          if(@fin_profile.cc_approach == "3" || @fin_profile.cc_feeling == "2")
+          
+
+          if(@fin_profile.cc_approach == nil)
+            if(@fin_profile.cc_approach == "3" || @fin_profile.cc_feeling == "2")
             #user is lost either on their approach or their goal; maybe we can help 
             redirect_to challenges_lets_chat_path
 
-          elsif(@fin_profile.cc_feeling == "0")
-            #user wants to continue what they're doing
-            redirect_to challenges_new_focus_path
+            elsif(@fin_profile.cc_feeling == "0")
+              #user wants to continue what they're doing
+              redirect_to challenges_new_focus_path
 
-          elsif (@fin_profile.cc_feeling == "1")
-            #user wants to pay debt off faster than they currently are
-            redirect_to challenges_saving_info_path
+            elsif (@fin_profile.cc_feeling == "1")
+              #user wants to pay debt off faster than they currently are
+              redirect_to challenges_saving_info_path
+            end
 
-          end
+          elsif(@fin_profile.saving_purpose == nil)
+            redirect_to challenges_saving_model_path
+          else
+            redirect_to challenges_get_started_path
+
     		when "INVESTMENTS"
     			redirect_to challenges_investment_model_path
 		    end
