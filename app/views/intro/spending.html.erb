@@ -39,10 +39,12 @@
 			<section id="user-section">
 				<div class="spaced-row user-content">
 					<div class="madlib-sentence">	
+					I usually spend
 						<span class="dropdown-style inner-addon right-addon">
-							<%= f.select :spend_vs_income, [['Saving a hefty chunk', 'Saving a hefty chunk'], ['Saving a little bit', 'Saving a little bit'], ['Spending it all', 'Spending it all']], { include_blank: 'I save...'}, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
+							<%= f.select :spend_vs_income, [['all', 'all'], ['most', 'most'], ['some', 'some'], ['a little', 'a little']], { include_blank: 'this much'}, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
 						<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
 						</span>
+					of my paycheck.
 					</div>
 				</div>
 			</section>
