@@ -3,6 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).on 'ready page:load', (event) ->
+    console.log(1)
 	$('#js-attitude').hide()
 	$('#spacing').hide()
 	$('#NextButton').hide()
