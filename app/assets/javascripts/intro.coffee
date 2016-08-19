@@ -2,18 +2,21 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$(document).on 'ready page:load', (event) ->
-    console.log(1)
-	$('#js-attitude').hide()
-	$('#spacing').hide()
-	$('#NextButton').hide()
-	$('#js-loans').change ->
-		has_loans = $('#js-loans :selected').text()
-		if has_loans == "have student loans"
-			$('#spacing').show()
-			$('#js-attitude').show()
-			$('#js-attitude').change ->
-				$('#NextButton').show()
-		else
-			$('#js-attitude').hide()
-			$('#NextButton').show()
+$(document).on 'ready turbolinks:load', (event) ->
+  $('#js-attitude').hide()
+  $('#spacing').hide()
+  $('#NextButton').hide()
+  $('#js-loans').change ->
+    has_loans = undefined
+    has_loans = undefined
+    has_loans = $('#js-loans :selected').text()
+    if has_loans == 'have student loans'
+      $('#spacing').show()
+      $('#js-attitude').show()
+      return $('#js-attitude').change(->
+        $('#NextButton').show()
+      )
+    else
+      $('#js-attitude').hide()
+      $('#NextButton').show()
+    
