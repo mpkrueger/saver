@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+//= require intro
 
 function hasNoHtml5Validation () {
  return typeof(document.createElement('input').checkValidity) === 'function';
