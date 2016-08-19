@@ -201,9 +201,9 @@ module ChallengesHelper
 		when "going out for drinks"
 			"icon_cocktail.png"
 		when "eating lunch out"
-			"icon_burger.png"
+			"icon_pizza.png"
 		when "eating dinner out"
-			"icon_fish.png"
+			"icon_drumstick.png"
 		end
 	end
 
