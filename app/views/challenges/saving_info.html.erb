@@ -16,7 +16,7 @@
 	<section id="coach-section">
 		<div class="coach-chat-triangle"></div>
       	<div class="coach-question">
-	        Ok - in this mini-challenge we're going to increase your Savvy Score by taking a small step toward better spending habits. It's going to be awesome.
+	        <%= savings_intro_message %>
       	</div>
     </section>
 
@@ -32,7 +32,7 @@
 		<section id="coach-section">
 			<div class="coach-chat-triangle"></div>
 	      	<div class="coach-question">
-		        To set it up, I need just a little more info. 
+		        Let's first identify an area where you think you could cut back a little bit.
 	      	</div>
 	    </section>
 	</div>
@@ -43,7 +43,7 @@
 			<section id="user-section">
 				<div class="spaced-row user-content">
 					<div class="madlib-sentence">	
-					Food tends to be a big area of weekly spending. I think I could cut back a little bit on<br/>
+					I think I could cut back a little bit on<br/>
 						<div class="dropdown-style inner-addon right-addon">
 							
 							<%= f.select(:biggest_expense, [['buying coffee', 'buying coffee'], ['going out for drinks', 'going out for drinks'], ['eating lunch out', 'eating lunch out'], ['eating dinner out', 'eating dinner out']], { include_blank: "this activity..." }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'}) %>

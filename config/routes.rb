@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'challenges/get_started'
   get 'challenges/lets_chat'
   get 'challenges/new_focus'
+  get 'challenges/loan_saving_model'
 
   get 'dashboard/final'
   get 'dashboard/index'

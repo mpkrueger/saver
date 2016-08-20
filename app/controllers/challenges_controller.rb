@@ -40,6 +40,11 @@ class ChallengesController < ApplicationController
     @fin_profile = @user.fin_profile
   end
 
+  def loan_saving_model
+    @user = current_user
+    @fin_profile = @user.fin_profile
+  end
+
   def credit_card_model
     @user = current_user
     @fin_profile = @user.fin_profile

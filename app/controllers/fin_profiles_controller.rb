@@ -22,40 +22,36 @@ class FinProfilesController < ApplicationController
             redirect_to challenges_get_started_path
           end
     		when "STUDENT LOANS"
-          if(@fin_profile.student_approach == "3" || @fin_profile.student_feeling == "3") 
-            #user is lost either on their approach or their goal; maybe we can help
-            redirect_to challenges_lets_chat_path
-
-          elsif(@fin_profile.student_feeling == "0" && @fin_profile.student_approach == "0")
-            #user is paying less than minimum & wants to continue paying < minimum; confusing to us
-           redirect_to challenges_new_focus_path
-
-          elsif(@fin_profile.student_approach == "0" && (@fin_profile.student_feeling == "1") || (@fin_profile.student_feeling == "2"))
-            #user is paying < minimum but wants to pay more
-            redirect_to challenges_saving_info_path
-
-          elsif(@fin_profile.student_feeling == "0" || @fin_profile.student_feeling == "1")
-            #user wants to pay less than or equal to minimum 
-            redirect_to challenges_new_focus_path
-
-          elsif(@fin_profile.student_approach == "2" && @fin_profile.student_feeling == "2")
-            #user is paying more than minimum and wants to pay off fast; may be complicated
-            redirect_to challenges_saving_info_path
+          
+          if @fin_profile.biggest_expense == nil
+            case @fin_profile.student_approach
+            when "not sure", "more than the amount due"
+              # user is either not sure how much they're paying or is already paying more than amount due - would be good to chat with them to find out more
+              redirect_to challenges_lets_chat_path
+            when "less than the amount due", "the amount due"
+              # user has opportunity to pay more and accelerate repayment with saving challenge
+              redirect_to challenges_saving_info_path
+            end
+          elsif @fin_profile.student_feeling == nil
+            redirect_to challenges_loan_saving_model_path
+          else
+            redirect_to challenges_get_started_path
           end
     		
         when "CREDIT CARD DEBT"
-          
 
           if(@fin_profile.biggest_expense == nil)
-            if(@fin_profile.cc_approach == "not sure" || @fin_profile.cc_feeling == "not sure")
+            
+            case @fin_profile.cc_approach
+            when "not sure"
             #user is lost either on their approach or their goal; maybe we can help 
             redirect_to challenges_lets_chat_path
 
-            elsif(@fin_profile.cc_feeling == "continue what I\'m doing")
+            when "continue what I\'m doing"
               #user wants to continue what they're doing
               redirect_to challenges_new_focus_path
 
-            elsif (@fin_profile.cc_feeling == "pay off my debt faster")
+            when "pay off my debt faster"
               #user wants to pay debt off faster than they currently are
               redirect_to challenges_saving_info_path
             end
@@ -65,6 +61,7 @@ class FinProfilesController < ApplicationController
           else
               redirect_to challenges_get_started_path
           end
+
     		when "INVESTMENTS"
     			redirect_to challenges_investment_model_path
 		    end
