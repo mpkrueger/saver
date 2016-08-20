@@ -33,7 +33,7 @@ module IntroHelper
 		when '2'
 			"Worthwhile things often require hard work - we'll work on getting there together."
 		when '3'
-			"Great - I'm here to help you maximmize the benefits of that effort."
+			"Great - I'm here to help you maximize the benefits of that effort."
 		when '4'
 			"Great to hear!"
 		end

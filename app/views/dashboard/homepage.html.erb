@@ -67,10 +67,11 @@
 				<% (1..challenge_frequency).each do |i| %>
 					<%= image_tag(challenge_icon, class:"challenge-icon") %>
 				<% end %>
+				</div>
 				<div class="savvy-boost">
-					
+					<%= challenge_frequency %> <%= biggest_expense_word.pluralize %> left
 				</div>
-				</div>
+				
 			<% end %>
 		
 		<hr class="hr-mission-block"/>
