@@ -1,0 +1,56 @@
+<% @title=": Financial Picture" %>
+<script type="text/javascript">
+    mixpanel.track("savvy_score_explained", {
+        
+    });
+</script>
+
+<body class="page-background">
+
+	<section id="coach-section">
+		<div class="coach-chat-triangle"></div>
+
+		<div class="coach-question">
+			<aside>
+				<%= spending_feedback %>
+			</aside>		
+		</div>
+	</section>
+
+	<script>
+		$(document).ready(function(){
+    		for(i=1; i<3; i++) {
+    			$('#chat'+i).hide(0).delay(1000*i).fadeIn(100).removeClass('hidden');
+    		}
+		});
+	</script>
+
+	<div id="chat1" class="hidden" style="display:none;">
+		<section id="coach-section">
+			<div class="coach-chat-triangle"></div>
+			<div class="coach-question">
+				Whew. You made it! We've covered a general look at your financial picture. Now I'm going to calculate your <span style="font-weight:500">Savvy Score</span> with the following possible points based on impact to your financial health & habits:
+				<ul>
+					<li> Student Loans: 10 points</li>
+					<li> Credit Cards: 20 points</li>
+					<li> Savings: 20 points</li>
+					<li> Investments: 15 points</li>
+					<li> Spending Habits: 15 points</li>
+					<li> Financial Awareness: 10 points</li>
+					<li> Confidence in Goals: 10 points</li>
+				</ul>
+			</div>
+		</section>
+		<div class="button-row">
+				<%= link_to "Show me my Savvy Score", next_wizard_path, class: 'next-button' %>
+		</div>
+		<div class="padding-bottom">
+			<div class="padding-text">
+				adding space below next button
+			</div>
+		</div>
+	</div>
+		
+	</div>
+
+</body>
