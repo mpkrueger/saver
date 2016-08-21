@@ -113,6 +113,71 @@ module IntroHelper
 		end
 	end
 
+	def savvy_score_thoughts
+		if @guest_user.savvy_score < 40
+			"is lower than I like to see. As your financial coach, I'm going to partner with you to drive it higher."
+		elsif @guest_user.savvy_score < 75
+			"is a bit lower than I like to see. As your financial coach, I'm going to partner with you to drive it higher."
+		elsif @guest_user.savvy_score < 95
+			"is in pretty good shape, but together we can get it even higher. As your financial coach, I'll show you how."
+		else
+			"is top-notch. I can help you optimize a bit further, or perhaps you can help mentor others!"
+		end
+	end
+
+	def focus_area_feedback
+		@guest_user = @guest_user
+		@cc_debt_amount = ""
+		@savings_amount = ""
+
+		case @guest_user.cc_amount
+		when 1
+			@cc_debt_amount = "less than $1,000"
+		when 2
+			@cc_debt_amount = "between $1,000 and $5,000"
+		when 3
+			@cc_debt_amount = "more than $5,000"
+		end
+
+		case @guest_user.savings_amount
+		when 1
+			@savings_amount = "hundreds"
+		when 2
+			@savings_amount = "thousands"
+		when 3
+			@savings_amount = "tens of thousands"
+		end
+
+		case @guest_user.area_to_work_on
+		when "CREDIT CARD DEBT"
+			if @guest_user.cc_attitude == "pay off my debt faster"
+				"You mentioned having " + @cc_debt_amount + " in credit card debt and a desire to pay it off faster. Because credit cards often have high interest rates, that's the area that I want to tackle with you first."
+			elsif @guest_user.cc_attitude == "continue what I\'m doing"
+				"You mentioned having " + @cc_debt_amount + " in credit card debt. You also said you wanted to continue with it. Because credit cards often have high interest rates, I want to work with you on it and better understand your situation."
+			elsif @guest_user.cc_attitude == "get some help"
+				"You mentioned having " + @cc_debt_amount + " in credit card debt. You also said you wanted some help figuring out how to approach it. Because credit cards often have high interest rates, that's the area that I want to tackle with you first."
+			end		
+		when "STUDENT LOANS"
+			"You mentioned having student loans and a desire to pay it off faster. You also don't have any credit card debt so we don't have to worry about higher interest rates. So we'll focus first on helping you pay off those student loans more quickly."
+		when "SPENDING"
+			"You mentioned that you spend " + @guest_user.spend_vs_income + " of your income each month currently. You also don't have any credit card debt to work on first. So I want to work with you on spending less each month and then I'll help you figure out the best thing to do with that savings."
+		when "SAVINGS"
+			if @guest_user.savings_amount == 0
+				"You mentioned that someone raided your piggy bank "
+			else
+				"You mentioned that you have " + @savings_amount + " in savings right now. Because you don't have credit card debt to worry about and already spend less than you earn each month, we're going to focus first on building up your savings for emergencies."
+			end
+		when "INVESTMENTS"
+			if @guest_user.investments_type["retirement_fund"] == "0"
+				"You're in good shape overall! No credit card debt to worry about, a good foundation of savings, and healthy spending habits. You mentioned not having any retirement accounts - so I'd like to work with you on that first. They provide a lot of benefits and it's best to get started as early as possible."
+			elsif @guest_user.investments_type["stock_market"] == "0"
+				"You're in good shape overall! No credit card debt to worry about, a good foundation of savings, and healthy spending habits. You also already have a retirement account set up - nice! You don't have any other investments in the stock market though - so I'd like to work with you on that so that your savings can go to work for you."
+			else
+				"You're in good shape overall! No credit card debt to worry about, a good foundation of savings, and healthy spending habits. You also already have a retirement account set up - nice! We're going to work on improving your overall investment strategy outside of that, which can feel daunting but can be very valuable."
+			end
+		end
+	end
+
 	def future_financials
 		@guest_user = @guest_user
 		case @guest_user.future_day['financially']
@@ -145,6 +210,5 @@ module IntroHelper
 
 	def future_fun
 		@guest_user.future_day['evenings'].gsub(/\bI'm\b/, 'you\'re').gsub(/\bmy\b/, 'your').gsub(/\bI\b/, 'you')
-		
 	end
 end
