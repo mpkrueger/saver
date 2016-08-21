@@ -115,9 +115,9 @@ module IntroHelper
 
 	def savvy_score_thoughts
 		if @guest_user.savvy_score < 40
-			"is lower than I like to see. As your financial coach, I'm going to partner with you to drive it higher."
+			"is a bit lower than I'd like to see. As your financial coach, I'm going to partner with you to drive it higher."
 		elsif @guest_user.savvy_score < 75
-			"is a bit lower than I like to see. As your financial coach, I'm going to partner with you to drive it higher."
+			"is a bit lower than I'd like to see. As your financial coach, I'm going to partner with you to drive it higher."
 		elsif @guest_user.savvy_score < 95
 			"is in pretty good shape, but together we can get it even higher. As your financial coach, I'll show you how."
 		else
