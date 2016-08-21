@@ -159,7 +159,7 @@ module IntroHelper
 			if @guest_user.cc_attitude == "pay off my debt faster"
 				"You mentioned wanting to pay off your credit card debt faster. We'll start there because credit cards often have high interest rates which means the bank is getting paid for free, off your hard work. That seems unfair."
 			elsif @guest_user.cc_attitude == "continue what I\'m doing"
-				"You mentioned having " + @cc_debt_amount + " in credit card debt. You also said you wanted to continue with it. Because credit cards often have high interest rates, I want to work with you on it and better understand your situation."
+				"You mentioned having " + @cc_debt_amount + " in credit card debt. You also said you wanted to continue with it. But because credit cards often have high interest rates, I want to work with you on it and better understand your situation."
 			elsif @guest_user.cc_attitude == "get some help"
 				"You mentioned having " + @cc_debt_amount + " in credit card and that you wanted some help figuring out how to approach it. Because credit cards often have high interest rates, that's the area that I want to tackle with you first."
 			end		
