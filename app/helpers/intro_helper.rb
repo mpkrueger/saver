@@ -19,7 +19,7 @@ module IntroHelper
 		when 'I know the basics, but that\'s it'
 			"Great that you know some basics. I hope I can make things clearer to help you build up a better foundation."
 		when 'I\'m savvier than most'
-			"Great, that means you probably have a good foundation that I can build on!"
+			"Great, that means you probably have a good foundation that we can build on!"
 		when 'I\'m a pro'
 			"Awesome to hear."
 		end
@@ -43,7 +43,7 @@ module IntroHelper
 		@guest_user = @guest_user
 		case @guest_user.student_amount
 		when 0
-			"That's great! Not having to pay towards student loans provides more financial flexibility. That'll get reflected in your Savvy Score."
+			"That's great! Not having student loans gives you more financial flexibility."
 		when 1
 			case @guest_user.student_attitude
 			when 'I\'m fine with them'
@@ -60,7 +60,7 @@ module IntroHelper
 		when 0
 			"Cool, we’ll work on that. 46\% of Americans wouldn’t be able to cover a sudden $400 expense so you’re not alone."
 		when 1
-			"Cool, we’ll work on increasing that. It’s generally good to have about 3-6 months worth of expenses saved up for emergencies."
+			"Cool, we’ll work on increasing that. It’s generally good to have about 3-6 months worth of expenses saved up for emergencies... just in case!"
 		when 2, 3
 			"That’s great, glad to hear you’re on the right track."
 		end
@@ -95,7 +95,11 @@ module IntroHelper
 		when 4
 			"That's great that you pay off your statement every month!"
 		when 1, 2, 3
-			"We understand, it's easy to build up credit card debt. Going through this process is a great first step. We'll come up with a plan to tackle this together."
+			if @guest_user.cc_attitude == "pay off my debt faster"
+				"We understand, it's easy to build up credit card debt. Talking to a financial coach like me is a great first step. We'll come up with a plan to tackle this together."
+			else
+				"We understand, it's easy to build up credit card debt. Talking to a financial coach like me is a great first step."
+			end
 		when 0
 			"Ok, good to know that you're avoiding credit card debt."
 		end
@@ -108,7 +112,9 @@ module IntroHelper
 			"Wow, that's great that you've built up such a good savings habit."
 		when 'some'
 			"Cool, every penny counts!"
-		when 'most','all'
+		when 'most'
+			"It can be hard to stretch your paycheck. We'll see if we can come up with creative ways to start saving a little more."
+		when 'all'
 			"It can be hard to stretch your paycheck. We'll see if we can come up with creative ways to start saving a little."
 		end
 	end
@@ -151,11 +157,11 @@ module IntroHelper
 		case @guest_user.area_to_work_on
 		when "CREDIT CARD DEBT"
 			if @guest_user.cc_attitude == "pay off my debt faster"
-				"You mentioned having " + @cc_debt_amount + " in credit card debt and a desire to pay it off faster. Because credit cards often have high interest rates, that's the area that I want to tackle with you first."
+				"You mentioned wanting to pay off your credit card debt faster. We'll start there because credit cards often have high interest rates which means the bank is getting paid for free, off your hard work. That seems unfair."
 			elsif @guest_user.cc_attitude == "continue what I\'m doing"
 				"You mentioned having " + @cc_debt_amount + " in credit card debt. You also said you wanted to continue with it. Because credit cards often have high interest rates, I want to work with you on it and better understand your situation."
 			elsif @guest_user.cc_attitude == "get some help"
-				"You mentioned having " + @cc_debt_amount + " in credit card debt. You also said you wanted some help figuring out how to approach it. Because credit cards often have high interest rates, that's the area that I want to tackle with you first."
+				"You mentioned having " + @cc_debt_amount + " in credit card and that you wanted some help figuring out how to approach it. Because credit cards often have high interest rates, that's the area that I want to tackle with you first."
 			end		
 		when "STUDENT LOANS"
 			"You mentioned having student loans and a desire to pay it off faster. You also don't have any credit card debt so we don't have to worry about higher interest rates. So we'll focus first on helping you pay off those student loans more quickly."
