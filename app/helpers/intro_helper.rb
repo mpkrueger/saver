@@ -43,13 +43,13 @@ module IntroHelper
 		@guest_user = @guest_user
 		case @guest_user.student_amount
 		when 0
-			"That's great! Not having to pay towards student loans provides more financial flexibility."
+			"That's great! Not having to pay towards student loans provides more financial flexibility. That'll get reflected in your Savvy Score."
 		when 1
 			case @guest_user.student_attitude
 			when 'I\'m fine with them'
 				"You’re in good company. 70\% of college grads end up with student loans."
 			when 'I want to pay them off ASAP'
-				"Ok, it's good to know that's an area you want to work on. I'll keep that in mind."
+				"Ok, it's good to know that's an area you want to work on."
 			end
 		end
 	end

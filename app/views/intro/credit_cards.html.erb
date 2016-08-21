@@ -39,8 +39,20 @@
 				<div class="spaced-row user-content">
 					<div class="madlib-sentence">	
 						<div class="dropdown-style inner-addon right-addon">
-							<%= f.select :cc_amount, [['I don\'t have any credit cards', 0], ['I pay them off every month', 4], ['I owe less than $1000', 1], ['I owe $1000 – $5000', 2], ['I owe over $5000', 3]], {include_blank: 'My credit card debt...' }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
-							<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
+							<div id="cc-loans">
+								<%= f.select :cc_amount, [['I don\'t have any credit cards', 0], ['I pay them off every month', 4], ['I owe less than $1000', 1], ['I owe $1000 to $5000', 2], ['I owe over $5000', 3]], {include_blank: 'My credit card debt...' }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
+								<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
+							</div>
+						</div>
+						<div id="spacing">
+							and I want to
+						</div>
+								
+						<div class="dropdown-style inner-addon right-addon">
+							<div id="cc-attitude">
+								<%= f.select :cc_attitude, [['continue what I\'m doing', 'continue what I\'m doing'], ['pay off my debt faster', 'pay off my debt faster'], ['not sure', 'not sure']], { include_blank: "my desire..." }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
+								<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
+							</div>
 						</div>
 					</div>
 				</div>

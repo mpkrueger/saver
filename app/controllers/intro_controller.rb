@@ -20,7 +20,7 @@ class IntroController < ApplicationController
   private
 
   def guest_user_params
-    params.require(:guest_user).permit(:name, :age, :savvy_feel, :student_loans, :student_amount, :student_attitude, :cc_debt, 
+    params.require(:guest_user).permit(:name, :age, :savvy_feel, :student_loans, :student_amount, :student_attitude, :cc_attitude, 
       :cc_amount, :savings, :savings_amount, :investments, :spend_vs_income, 
       :preparedness, :email, :financial_score, :financial_help, investments_type: [:retirement_fund, :company_stock, :stock_market, :beanie_babies],
       future_day: [:gender,
