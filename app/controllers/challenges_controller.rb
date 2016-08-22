@@ -14,7 +14,6 @@ class ChallengesController < ApplicationController
     @user = current_user
     @fin_profile = @user.fin_profile
     @current_focus = @user.fin_profile.current_focus
-    @cc_feeling = @user.fin_profile.cc_feeling
     @cc_approach = @user.fin_profile.cc_approach
     @cc_rate = @user.fin_profile.cc_rate
     @cc_amount = @user.fin_profile.cc_amount

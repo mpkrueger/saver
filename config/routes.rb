@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   resources :fin_profiles
 
   get 'goals/index'
+  get 'goals/new_focus'
 
   authenticated :user do
     root to: 'dashboard#homepage'

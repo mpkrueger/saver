@@ -14,6 +14,13 @@ module ChallengesHelper
 			elsif @user.fin_profile.student_approach == "the amount due"
 				"Good to hear. Our plan will involve a few different components, including options like consolidation. First, we're going to start with a challenge to increase the amount you're paying toward those loans."
 			end
+		when "CREDIT CARD DEBT"
+			if @user.fin_profile.cc_approach == "the minimum due"
+				# we know in the intro that the user said 'pay off my debt faster' so that have desire
+				"Ok, that's good to hear because it means you're avoiding fees. But it's going to take a long time at that level to pay your credit cards off. So first up, we're going to start with a challenge that will help free up some money to pay more."
+			elsif @user.fin_profile.cc_approach == "more than the minimum due"
+				"That's great to hear! Let's pour some more gas on that fire. We'll start with a challenge that will help you increase that payment even more so that you can get get rid of that credit card debt even sooner."
+			end
 		end
 	end
 
@@ -86,7 +93,19 @@ module ChallengesHelper
 				"That's awesome. It also means I'm not entirely sure how I can be most helpful for you - and I want to better understand your situation."
 			end
 		when "CREDIT CARD DEBT"
-			"Feeling unsure about your credit card debt?"
+			if @user.fin_profile.cc_attitude == "get some help"
+				# user said they want help in the intro
+				"As a first step, I'd love to discuss your situation a bit more - since you earlier said that you wanted some help thinking about how to approach your credit card debt."
+			elsif @user.fin_profile.cc_attitude == "continue what I\'m doing"
+				# user said they have credit card debt but want to continue - would be helpful to chat to better understand
+				"As a first step, I'd love to discuss your situation a bit more - since you earlier said that you have credit card debt but want to continue with it."
+			elsif @user.fin_profile.cc_approach == "less than the minimum due"
+				# can assume that the user said in the intro that they want to "pay off my debt faster" but then said they pay less than minimum due - seems incongruous, so let's chat
+				"I know it can be tough sometimes. For me to help further, it would help to discuss your sitatuion a bit more."
+			elsif @user.fin_profile.cc_approach == "not sure"
+				# can assume that the user said in the intro that they want to "pay off my debt faster" but then said they are "not sure" about their repayment approach - would be good to chat
+				"Feeling unsure about how to best approach your credit card debt?"
+			end
 		when "INVESTMENTS"
 			"investments $$$$$"
 		end
@@ -95,7 +114,7 @@ module ChallengesHelper
 	# NEW FOCUS METHODS
 
 	def new_focus_message
-		@user = current_user
+		
 
 	end
 

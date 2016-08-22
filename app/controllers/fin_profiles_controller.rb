@@ -42,22 +42,23 @@ class FinProfilesController < ApplicationController
 
           if(@fin_profile.biggest_expense == nil)
             
-            case @fin_profile.cc_approach
-            when "not sure"
-            #user is lost either on their approach or their goal; maybe we can help 
-            redirect_to challenges_lets_chat_path
+            if @fin_profile.cc_attitude == "get some help" || @fin_profile.cc_attitude == "continue what I\'m doing"
+              #user said in the intro that they want to get some help with their cc debt or that they want to continue what they're doing; let's chat with them to see if we can help
+              redirect_to challenges_lets_chat_path
+            else
+              case @fin_profile.cc_approach
+              when "not sure", "less than the minimum due"
+              #user is either lost on their approach or having bigger issues; maybe we can help best by chatting
+              redirect_to challenges_lets_chat_path
 
-            when "continue what I\'m doing"
-              #user wants to continue what they're doing
-              redirect_to challenges_new_focus_path
-
-            when "pay off my debt faster"
-              #user wants to pay debt off faster than they currently are
-              redirect_to challenges_saving_info_path
+              when "the minimum due", "more than the minimum due"
+                #user wants to pay debt off faster than they currently are
+                redirect_to challenges_saving_info_path
+              end
             end
 
-          elsif(@fin_profile.saving_purpose == nil)
-              redirect_to challenges_saving_model_path
+          elsif(@fin_profile.cc_feeling == nil)
+              redirect_to challenges_loan_saving_model_path
           else
               redirect_to challenges_get_started_path
           end
