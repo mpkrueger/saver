@@ -15,13 +15,14 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+//= require intro
 
 function hasNoHtml5Validation () {
  return typeof(document.createElement('input').checkValidity) === 'function';
 }
 
 
-var ready = function() {
+$(document).on('turbolinks:load', function() {
   jQuery('.skillrow').each(function() {
     jQuery(this).find('.skillbar-bar').animate({
       width: jQuery(this).attr('data-percent')
@@ -47,7 +48,4 @@ var ready = function() {
       return is_valid;
     });
   };
-};
-
-$(document).ready(ready);
-$(document).on('turbolinks:load', ready);
+});

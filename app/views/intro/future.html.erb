@@ -28,7 +28,7 @@
 		<section id="coach-section">
 			<div class="coach-chat-triangle"></div>
 			<div class="coach-question">
-				Next, I'd like to hear more about your goals for the future. Picture how your life could change in 5 years. Let's fast forward to:
+				I'd love to hear more about your goals. Picture your life 5 years from now. Let's fast forward to:
 				<%= (Time.now + 5.year).strftime("%b %d, %Y") %> 
 			</div>
 		</section>
@@ -81,9 +81,9 @@
 	  				</div>
 
 					<div class="row-future">
-	  					<div class="col-madlibs-question" style="margin-top:-.8em">Life is better because I'm</div>
+	  					<div class="col-madlibs-question" style="margin-top:-.8em">My biggest financial goal is to</div>
 	  					<div class="col-madlibs-field dropdown-style">
-	  						<%= i.text_field :major_goal, class: "madlib-sentence text-field", placeholder: "debt-free!", :autocapitalize => "off", required: true %>
+	  						<%= i.text_field :major_goal, class: "madlib-sentence text-field", placeholder: "buy a house!", :autocapitalize => "off", required: true %>
 	  					</div>
 					</div>	
 

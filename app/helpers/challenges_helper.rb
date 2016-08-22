@@ -3,6 +3,20 @@ module ChallengesHelper
 	require "bigdecimal"
 
 	# SAVINGS CHALLENGE METHODS
+	def savings_intro_message
+		@user = current_user
+		case @user.fin_profile.current_focus
+		when "SAVINGS", "SPENDING"
+			"Ok - in this mini-challenge we're going to increase your Savvy Score by taking a small step toward better spending habits. It's going to be awesome."
+		when "STUDENT LOANS"
+			if @user.fin_profile.student_approach == "less than the amount due"
+				"OK - with that in mind, adjusting your repayment plan or consolidation may be helpful. But our approach is to take small steps in the right direction and so we're going to start with a challenge to increase the amount you're paying toward those loans."
+			elsif @user.fin_profile.student_approach == "the amount due"
+				"Good to hear. Our plan will involve a few different components, including options like consolidation. First, we're going to start with a challenge to increase the amount you're paying toward those loans."
+			end
+		end
+	end
+
 	def less_food_message
 		@user = current_user
 		case @user.fin_profile.biggest_expense
@@ -35,13 +49,27 @@ module ChallengesHelper
 		@user = current_user
 		case @user.fin_profile.biggest_expense
 		when "buying coffee"
-			"coffee cost about $5"
+			"coffee cost ~$5"
 		when "going out for drinks"
-			"night out cost about $15"
+			"night out cost ~$15"
 		when "eating lunch out"
-			"lunch out cost about $10"
+			"lunch out cost ~$10"
 		when "eating dinner out"
-			"dinner out cost about $15"
+			"dinner out cost ~$15"
+		end
+	end
+
+	def biggest_expense_word
+		@user = current_user
+		case @user.fin_profile.biggest_expense
+		when "buying coffee"
+			"coffee"
+		when "going out for drinks"
+			"drinks"
+		when "eating lunch out"
+			"lunch"
+		when "eating dinner out"
+			"dinner"
 		end
 	end
 
@@ -52,12 +80,23 @@ module ChallengesHelper
 		when "SAVINGS", "SPENDING"
 			"savings savings savings"
 		when "STUDENT LOANS"
-			"Feeling unsure about your student loans?"
+			if @user.fin_profile.student_approach == "not sure"
+				"I know it can be hard to keep track of... and easier not to think about it. But I'd really love to help."
+			else
+				"That's awesome. It also means I'm not entirely sure how I can be most helpful for you - and I want to better understand your situation."
+			end
 		when "CREDIT CARD DEBT"
 			"Feeling unsure about your credit card debt?"
 		when "INVESTMENTS"
 			"investments $$$$$"
 		end
+	end
+
+	# NEW FOCUS METHODS
+
+	def new_focus_message
+		@user = current_user
+
 	end
 
 	# DEBT METHODS

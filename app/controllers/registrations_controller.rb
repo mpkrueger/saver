@@ -17,6 +17,7 @@ class RegistrationsController < Devise::RegistrationsController
 	  resource.fin_profile.student_amount = @guest_user.student_amount
 	  resource.fin_profile.student_attitude = @guest_user.student_attitude
 	  resource.fin_profile.cc_amount = @guest_user.cc_amount
+	  resource.fin_profile.cc_attitude = @guest_user.cc_attitude
 	  resource.fin_profile.savings_amount = @guest_user.savings_amount
 	  resource.fin_profile.investments_type = @guest_user.investments_type
 	  resource.fin_profile.spend_vs_income = @guest_user.spend_vs_income

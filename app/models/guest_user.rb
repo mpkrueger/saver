@@ -7,7 +7,7 @@ class GuestUser < ApplicationRecord
 	end
 
 	def cc_debt_score_percent
-		self.cc_debt_score / 10.0 * 100
+		self.cc_debt_score / 20.0 * 100
 	end
 	
 	def savings_score_percent
@@ -15,7 +15,7 @@ class GuestUser < ApplicationRecord
 	end
 
 	def investments_score_percent
-		self.investments_score / 20.0 * 100
+		self.investments_score / 15.0 * 100
 	end
 
 	def spending_percent

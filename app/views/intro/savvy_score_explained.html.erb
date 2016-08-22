@@ -1,6 +1,6 @@
 <% @title=": Financial Picture" %>
 <script type="text/javascript">
-    mixpanel.track("financial_picture", {
+    mixpanel.track("savvy_score_explained", {
         
     });
 </script>
@@ -12,7 +12,7 @@
 
 		<div class="coach-question">
 			<aside>
-				<%= preparedness_feedback %>
+				<%= spending_feedback %>
 			</aside>		
 		</div>
 	</section>
@@ -29,27 +29,19 @@
 		<section id="coach-section">
 			<div class="coach-chat-triangle"></div>
 			<div class="coach-question">
-				Now I'd like to talk about the 5 pillars that make up your financial health & habits:
-				<ul>
-					<li> Student Loans</li>
-					<li> Credit Cards</li>
-					<li> Savings</li>
-					<li> Spending Habits</li>
-					<li> Investments</li>
-				</ul>
+				Thanks for walking me through your financial info. I'm using it now to calculate your <span style="font-weight:500">Savvy Score</span>.
 			</div>
 		</section>
 	</div>
-
-	<div id= "chat2" class="hidden" style="display:none;">
+	<div id="chat2" class="hidden" style="display:none;">
 		<section id="coach-section">
 			<div class="coach-chat-triangle"></div>
 			<div class="coach-question">
-			For each of these, I'll ask a quick question or two. Let's dive in!		
+				Think of your <span style="font-weight:500">Savvy Score</span> as a simplified way of measuring your financial health & habits. Nobody I know scores 100% in life, even a savvy buccaneer like myself.
 			</div>
 		</section>
 		<div class="button-row">
-			<%= link_to "Next", next_wizard_path, class: 'next-button' %>
+				<%= link_to "Show me my Savvy Score", next_wizard_path, class: 'next-button' %>
 		</div>
 		<div class="padding-bottom">
 			<div class="padding-text">
@@ -57,5 +49,6 @@
 			</div>
 		</div>
 	</div>
+
 
 </body>

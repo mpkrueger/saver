@@ -1,0 +1,83 @@
+<% @title=": Mini-Challenge" %>
+<script type="text/javascript">
+    mixpanel.track("challenge_loan_saving_model", {
+        
+    });
+</script>
+
+<body class="page-background">
+
+	<section id="top-nav">
+    	<%= image_tag("savvy-logo.png", class:'top-logo' )%>
+    	<%= link_to "Sign out", destroy_user_session_path, method: :delete, :class=>'sign-out' %>
+  	</section>
+  	<hr />
+
+  	<section id="coach-section">
+    	<div class="coach-chat-triangle"></div>
+    	<div class="coach-question">
+      	Imagine you <%= less_food_message %>.
+    	</div>
+  	</section>
+
+  	<script>
+    	$(document).ready(function(){
+      		for(i=1; i<4; i++) {
+        		$('#chat'+i).hide(0).delay(1250*i).fadeIn(100).removeClass('hidden');
+      		}
+    	});
+  	</script>
+
+  	<div id= "chat1" class="hidden" style="display:none;">
+    	<section id="coach-section">
+        <div class="coach-chat-triangle"></div>
+        <div class="coach-question">
+          Sounds tragic, I know. But over 6 months, that would be an extra <%= food_savings %> if <%= each_food_cost %>. That really adds up. 
+        </div>
+      </section>
+  	</div>
+
+    <div id= "chat2" class="hidden" style="display:none;">
+      <section id="coach-section">
+        <div class="coach-chat-triangle"></div>
+        <div class="coach-question">
+          That's <%= food_savings %> more that you could use to kick your <%= @fin_profile.current_focus.downcase %> to the curb.
+        </div>
+      </section>
+    </div>
+
+  	<div id= "chat3" class="hidden" style="display:none;">
+    	<%= form_for @fin_profile do |f| %>
+        <section id="user-section">
+          <div class="spaced-row user-content">
+            <div class="madlib-sentence"> 
+              <% if @fin_profile.current_focus == "STUDENT LOANS" %>
+
+                Ok, skipping <%= biggest_expense_word %> once per week would be...<br />
+                <div class="dropdown-style inner-addon right-addon">
+                
+                  <%= f.select(:student_feeling, [['easy!', 'easy!'], ['tough, but doable', 'tough, but doable'], ['really hard!', 'really hard!']], { include_blank: "how hard?" }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'}) %>
+                  <span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
+                </div>
+              <% else %>
+                Ok, skipping <%= biggest_expense_word %> once per week would be...<br />
+                <div class="dropdown-style inner-addon right-addon">
+                
+                  <%= f.select(:cc_feeling, [['easy!', 'easy!'], ['tough, but doable', 'tough, but doable'], ['really hard!', 'really hard!']], { include_blank: "how hard?" }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'}) %>
+                  <span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </section>
+        <div id="SubmitButton" class="hidden" style="display:none;">
+          <div class="button-row">
+            <%= f.submit "Next", class: 'next-button' %>
+          </div>
+        </div>
+      <% end %>
+  	</div>
+
+  	
+
+</body>

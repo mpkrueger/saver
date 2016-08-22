@@ -16,7 +16,7 @@
 	<section id="coach-section">
   	<div class="coach-chat-triangle"></div>
   	<div class="coach-question">
-    	I'm here to help you reach your financial goals - please choose an area where I can be most helpful!
+    	<%= new_focus_message %>
   	</div>
 	</section>
 
@@ -28,7 +28,16 @@
   	});
 	</script>
 
-	<div id= "chat3" class="hidden" style="display:none;">
+  <div id= "chat1" class="hidden" style="display:none;">
+      <section id="coach-section">
+        <div class="coach-chat-triangle"></div>
+        <div class="coach-question">
+          I'm here to help you reach your financial goals - please choose an area where I can be most helpful!
+        </div>
+      </section>
+    </div>
+
+	<div id= "chat2" class="hidden" style="display:none;">
   	<%= form_for @fin_profile do |f| %>
       <section id="user-section">
         <div class="spaced-row user-content">

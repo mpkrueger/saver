@@ -19,7 +19,7 @@ module IntroHelper
 		when 'I know the basics, but that\'s it'
 			"Great that you know some basics. I hope I can make things clearer to help you build up a better foundation."
 		when 'I\'m savvier than most'
-			"Great, that means you probably have a good foundation that I can build on!"
+			"Great, that means you probably have a good foundation that we can build on!"
 		when 'I\'m a pro'
 			"Awesome to hear."
 		end
@@ -33,7 +33,7 @@ module IntroHelper
 		when '2'
 			"Worthwhile things often require hard work - we'll work on getting there together."
 		when '3'
-			"Great - I'm here to help you maximmize the benefits of that effort."
+			"Great - I'm here to help you maximize the benefits of that effort."
 		when '4'
 			"Great to hear!"
 		end
@@ -43,13 +43,13 @@ module IntroHelper
 		@guest_user = @guest_user
 		case @guest_user.student_amount
 		when 0
-			"That's great! Not having to pay towards student loans provides more financial flexibility."
+			"That's great! Not having student loans gives you more financial flexibility."
 		when 1
 			case @guest_user.student_attitude
 			when 'I\'m fine with them'
 				"You’re in good company. 70\% of college grads end up with student loans."
 			when 'I want to pay them off ASAP'
-				"Ok, it's good to know that's an area you want to work on. I'll keep that in mind."
+				"Ok, it's good to know that's an area you want to work on."
 			end
 		end
 	end
@@ -60,7 +60,7 @@ module IntroHelper
 		when 0
 			"Cool, we’ll work on that. 46\% of Americans wouldn’t be able to cover a sudden $400 expense so you’re not alone."
 		when 1
-			"Cool, we’ll work on increasing that. It’s generally good to have about 3-6 months worth of expenses saved up for emergencies."
+			"Cool, we’ll work on increasing that. It’s generally good to have about 3-6 months worth of expenses saved up for emergencies... just in case!"
 		when 2, 3
 			"That’s great, glad to hear you’re on the right track."
 		end
@@ -95,7 +95,11 @@ module IntroHelper
 		when 4
 			"That's great that you pay off your statement every month!"
 		when 1, 2, 3
-			"We understand, it's easy to build up credit card debt. Going through this process is a great first step. We'll come up with a plan to tackle this together."
+			if @guest_user.cc_attitude == "pay off my debt faster"
+				"We understand, it's easy to build up credit card debt. Talking to a financial coach like me is a great first step. We'll come up with a plan to tackle this together."
+			else
+				"We understand, it's easy to build up credit card debt. Talking to a financial coach like me is a great first step."
+			end
 		when 0
 			"Ok, good to know that you're avoiding credit card debt."
 		end
@@ -108,8 +112,63 @@ module IntroHelper
 			"Wow, that's great that you've built up such a good savings habit."
 		when 'some'
 			"Cool, every penny counts!"
-		when 'most','all'
+		when 'most'
+			"It can be hard to stretch your paycheck. We'll see if we can come up with creative ways to start saving a little more."
+		when 'all'
 			"It can be hard to stretch your paycheck. We'll see if we can come up with creative ways to start saving a little."
+		end
+	end
+
+	def savvy_score_thoughts
+		if @guest_user.savvy_score < 40
+			"is a bit lower than I'd like to see. But don't be discouraged... as your financial coach, I'm going to partner with you to drive it higher."
+		elsif @guest_user.savvy_score < 75
+			"is a bit lower than I'd like to see. As your financial coach, I'm going to partner with you to drive it higher."
+		elsif @guest_user.savvy_score < 95
+			"is in pretty good shape, but together we can get it even higher. As your financial coach, I'll show you how."
+		else
+			"is top-notch. I can help you optimize a bit further, or perhaps you can help mentor others!"
+		end
+	end
+
+	def focus_area_feedback
+		@guest_user = @guest_user
+		@savings_amount = ""
+
+		case @guest_user.savings_amount
+		when 1
+			@savings_amount = "hundreds"
+		when 2
+			@savings_amount = "thousands"
+		when 3
+			@savings_amount = "tens of thousands"
+		end
+
+		case @guest_user.area_to_work_on
+		when "CREDIT CARD DEBT"
+			if @guest_user.cc_attitude == "pay off my debt faster"
+				"You mentioned wanting to pay off your credit card debt faster. Let's start there first. Credit cards often have high interest rates which means your bank is getting paid for free, off your hard work. That seems unfair and I want to help."
+			elsif @guest_user.cc_attitude == "continue what I\'m doing"
+				"You mentioned that you have some credit card debt, but you’re OK with your current approach. I’d love to understand this more and focus here first since credit card debt usually has an outsized negative impact on financial goals."
+			elsif @guest_user.cc_attitude == "get some help"
+				"Since credit cards often have high interest rates and you mentioned it's an area you want help with, let's tackle that together first."
+			end		
+		when "STUDENT LOANS"
+			"Since you want to pay off your student loans faster, let's focus on squashing those loans together first."
+		when "SPENDING HABITS"
+			"First off, you don't have credit card debt - so you're already in better shape than 38% of Americans. But you did say that you spend " + @guest_user.spend_vs_income + " of your income each month. So let’s see if we can try to cut back a little and then use those extra savings to grow your overall wealth."
+		when "SAVINGS"
+			if @guest_user.savings_amount == 0
+				"First off, you don't have credit card debt - so you're already in better shape than 38% of Americans. But you did say that someone raided your piggy bank - that's not nice. We'll start there because having a healthy emergency fund is critical. When life throws you a nasty surprise, I don't want you to be in a pickle."
+			else
+				"First off, you don't have credit card debt - so you're already in better shape than 38% of Americans. You mentioned that you have " + @savings_amount + " in savings. We'll start there because having a healthy emergency fund is critical. When life throws you a nasty surprise, I don't want you to be in a pickle."
+			end
+		when "INVESTMENTS"
+			if @guest_user.investments_type["retirement_fund"] == "0"
+				"You're in good shape overall! No credit card debt, a good foundation of savings, and healthy spending habits. But you mentioned not having any retirement accounts. A little now in retirement accounts adds up quickly for the future, so let's work on that first together."
+			elsif @guest_user.investments_type["stock_market"] == "0"
+				"You're in good shape overall! No credit card debt, a good foundation of savings, and healthy spending habits. You also already have a retirement account set up - nice! You don't have any other investments in the stock market though - so let's work on that together first, so we help your savings grow faster."
+			end
 		end
 	end
 
@@ -145,6 +204,5 @@ module IntroHelper
 
 	def future_fun
 		@guest_user.future_day['evenings'].gsub(/\bI'm\b/, 'you\'re').gsub(/\bmy\b/, 'your').gsub(/\bI\b/, 'you')
-		
 	end
 end
