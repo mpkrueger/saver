@@ -121,7 +121,7 @@ module IntroHelper
 
 	def savvy_score_thoughts
 		if @guest_user.savvy_score < 40
-			"is a bit lower than I'd like to see. As your financial coach, I'm going to partner with you to drive it higher."
+			"is a bit lower than I'd like to see. But don't be discouraged... as your financial coach, I'm going to partner with you to drive it higher."
 		elsif @guest_user.savvy_score < 75
 			"is a bit lower than I'd like to see. As your financial coach, I'm going to partner with you to drive it higher."
 		elsif @guest_user.savvy_score < 95
@@ -133,17 +133,7 @@ module IntroHelper
 
 	def focus_area_feedback
 		@guest_user = @guest_user
-		@cc_debt_amount = ""
 		@savings_amount = ""
-
-		case @guest_user.cc_amount
-		when 1
-			@cc_debt_amount = "less than $1,000"
-		when 2
-			@cc_debt_amount = "between $1,000 and $5,000"
-		when 3
-			@cc_debt_amount = "more than $5,000"
-		end
 
 		case @guest_user.savings_amount
 		when 1
@@ -157,29 +147,27 @@ module IntroHelper
 		case @guest_user.area_to_work_on
 		when "CREDIT CARD DEBT"
 			if @guest_user.cc_attitude == "pay off my debt faster"
-				"You mentioned wanting to pay off your credit card debt faster. We'll start there because credit cards often have high interest rates which means the bank is getting paid for free, off your hard work. That seems unfair."
+				"You mentioned wanting to pay off your credit card debt faster. Let's start there first. Credit cards often have high interest rates which means your bank is getting paid for free, off your hard work. That seems unfair and I want to help."
 			elsif @guest_user.cc_attitude == "continue what I\'m doing"
-				"You mentioned having " + @cc_debt_amount + " in credit card debt. You also said you wanted to continue with it. But because credit cards often have high interest rates, I want to work with you on it and better understand your situation."
+				"You mentioned that you have some credit card debt, but you’re OK with your current approach. I’d love to understand this more and focus here first since credit card debt usually has an outsized negative impact on financial goals."
 			elsif @guest_user.cc_attitude == "get some help"
-				"You mentioned having " + @cc_debt_amount + " in credit card and that you wanted some help figuring out how to approach it. Because credit cards often have high interest rates, that's the area that I want to tackle with you first."
+				"Since credit cards often have high interest rates and you mentioned it's an area you want help with, let's tackle that together first."
 			end		
 		when "STUDENT LOANS"
-			"You mentioned having student loans and a desire to pay it off faster. You also don't have any credit card debt so we don't have to worry about higher interest rates. So we'll focus first on helping you pay off those student loans more quickly."
-		when "SPENDING"
-			"You mentioned that you spend " + @guest_user.spend_vs_income + " of your income each month currently. You also don't have any credit card debt to work on first. So I want to work with you on spending less each month and then I'll help you figure out the best thing to do with that savings."
+			"Since you want to pay off your student loans faster, let's focus on squashing those loans together first."
+		when "SPENDING HABITS"
+			"First off, you don't have credit card debt - so you're already in better shape than 38% of Americans. But you did say that you spend " + @guest_user.spend_vs_income + " of your income each month. So let’s see if we can try to cut back a little and then use those extra savings to grow your overall wealth."
 		when "SAVINGS"
 			if @guest_user.savings_amount == 0
-				"You mentioned that someone raided your piggy bank "
+				"First off, you don't have credit card debt - so you're already in better shape than 38% of Americans. But you did say that someone raided your piggy bank - that's not nice. We'll start there because having a healthy emergency fund is critical. When life throws you a nasty surprise, I don't want you to be in a pickle."
 			else
-				"You mentioned that you have " + @savings_amount + " in savings right now. Because you don't have credit card debt to worry about and already spend less than you earn each month, we're going to focus first on building up your savings for emergencies."
+				"First off, you don't have credit card debt - so you're already in better shape than 38% of Americans. You mentioned that you have " + @savings_amount + " in savings. We'll start there because having a healthy emergency fund is critical. When life throws you a nasty surprise, I don't want you to be in a pickle."
 			end
 		when "INVESTMENTS"
 			if @guest_user.investments_type["retirement_fund"] == "0"
-				"You're in good shape overall! No credit card debt to worry about, a good foundation of savings, and healthy spending habits. You mentioned not having any retirement accounts - so I'd like to work with you on that first. They provide a lot of benefits and it's best to get started as early as possible."
+				"You're in good shape overall! No credit card debt, a good foundation of savings, and healthy spending habits. But you mentioned not having any retirement accounts. A little now in retirement accounts adds up quickly for the future, so let's work on that first together."
 			elsif @guest_user.investments_type["stock_market"] == "0"
-				"You're in good shape overall! No credit card debt to worry about, a good foundation of savings, and healthy spending habits. You also already have a retirement account set up - nice! You don't have any other investments in the stock market though - so I'd like to work with you on that so that your savings can go to work for you."
-			else
-				"You're in good shape overall! No credit card debt to worry about, a good foundation of savings, and healthy spending habits. You also already have a retirement account set up - nice! We're going to work on improving your overall investment strategy outside of that, which can feel daunting but can be very valuable."
+				"You're in good shape overall! No credit card debt, a good foundation of savings, and healthy spending habits. You also already have a retirement account set up - nice! You don't have any other investments in the stock market though - so let's work on that together first, so we help your savings grow faster."
 			end
 		end
 	end
