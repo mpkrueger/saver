@@ -97,6 +97,8 @@ module IntroHelper
 		when 1, 2, 3
 			if @guest_user.cc_attitude == "pay off my debt faster"
 				"We understand, it's easy to build up credit card debt. Talking to a financial coach like me is a great first step. We'll come up with a plan to tackle this together."
+			elsif @guest_user.cc_attitude == "get some help"
+				"We understand, it's easy to build up credit card debt. I'd love to help you with it."
 			else
 				"We understand, it's easy to build up credit card debt. Talking to a financial coach like me is a great first step."
 			end

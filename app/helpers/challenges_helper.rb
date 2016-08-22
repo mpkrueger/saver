@@ -2,12 +2,25 @@ module ChallengesHelper
 
 	require "bigdecimal"
 
+	def first_challenge_route
+		case @user.fin_profile.current_focus
+		when "SPENDING HABITS", "SAVINGS"
+			challenges_saving_info_path
+		when "STUDENT LOANS"
+			challenges_student_loan_info_path
+		when "CREDIT CARD DEBT"
+			challenges_credit_card_info_path
+		when "INVESTMENTS"
+			challenges_investment_info_path
+		end
+	end
+
 	# SAVINGS CHALLENGE METHODS
 	def savings_intro_message
 		@user = current_user
 		case @user.fin_profile.current_focus
 		when "SAVINGS", "SPENDING"
-			"Ok - in this mini-challenge we're going to increase your Savvy Score by taking a small step toward better spending habits. It's going to be awesome."
+			"Ok - in this first mini-challenge we're going to increase your Savvy Score by taking a small step toward better spending habits. It's going to be awesome."
 		when "STUDENT LOANS"
 			if @user.fin_profile.student_approach == "less than the amount due"
 				"OK - with that in mind, adjusting your repayment plan or consolidation may be helpful. But our approach is to take small steps in the right direction and so we're going to start with a challenge to increase the amount you're paying toward those loans."

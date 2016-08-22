@@ -47,7 +47,12 @@ class RegistrationsController < Devise::RegistrationsController
 	end
 
 	def after_sign_up_path_for(resource)
-		dashboard_homepage_path
+		@user = current_user
+		if @user.fin_profile.cc_attitude == "get some help" || @user.fin_profile.cc_attitude == "continue what I\'m doing"
+			challenges_lets_chat_path
+		else
+			challenges_intro_path
+		end
 	end
 
 	def after_update_path_for(resource)

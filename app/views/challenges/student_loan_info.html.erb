@@ -17,7 +17,7 @@
 <section id="coach-section">
 	<div class="coach-chat-triangle"></div>
       <div class="coach-question">
-        Hey <%= @current_user.name %>, you mentioned that you want to pay back your loans ASAP. I'm here to help. 
+        We're tackling student loans first - and I just need a little more info to set up our first mini-challenge.
       </div>
     </section>
 
@@ -46,7 +46,7 @@
 					<div class="madlib-sentence">	
 						My current approach is to pay...<br/>
 						<div class="dropdown-style inner-addon right-addon">
-							<%= f.select(:student_approach, [['less than the amount due', 'less than the amount due'], ['the amount due', 'the amount due'],['more than the amount due', 'more than the amount due'], ['not sure', 'not sure']], { include_blank: "my approach..." }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'}) %>
+							<%= f.select(:student_approach, [['less than the amount due', 'less than the amount due'], ['the amount due', 'the amount due'],['more than the amount due', 'more than the amount due'], ['not sure', 'not sure']], { include_blank: "this much each month..." }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'}) %>
 							<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
 						</div>
 					</div>
