@@ -10,7 +10,7 @@ $(document).on 'ready turbolinks:load', (event) ->
     has_loans = undefined
     has_loans = undefined
     has_loans = $('#student-loans :selected').text()
-    if has_loans == 'have student loans'
+    if has_loans == 'I have student loans'
       $('#spacing').show()
       $('#student-attitude').show()
       return $('#student-attitude').change(->

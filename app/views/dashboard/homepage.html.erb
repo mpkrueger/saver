@@ -54,23 +54,29 @@
 		</p>
 
 		<% else %>
-				<div class="action-title">
-					<%= 5-((Time.now - @user.updated_at)/1.day).round(0) %> DAYS LEFT!
-				</div>
-				<div class="mission">
-					<%= @current_focus.titlecase %> Mini-Challenge 
-				</div>
-				<div class="savvy-boost">
-					(+5 Savvy Points) 
-				</div>
-				<div class="challenge">
-				<% (1..challenge_frequency).each do |i| %>
-					<%= image_tag(challenge_icon, class:"challenge-icon") %>
+				<% if @user.fin_profile.biggest_expense == nil %>
+					<div class="action-title">
+						We'll be reaching out to you soon!
+					</div>
+				<% else %>
+					<div class="action-title">
+						<%= 5-((Time.now - @user.updated_at)/1.day).round(0) %> DAYS LEFT!
+					</div>
+					<div class="mission">
+						<%= @current_focus.titlecase %> Mini-Challenge 
+					</div>
+					<div class="savvy-boost">
+						(+5 Savvy Points) 
+					</div>
+					<div class="challenge">
+					<% (1..challenge_frequency).each do |i| %>
+						<%= image_tag(challenge_icon, class:"challenge-icon") %>
+					<% end %>
+					</div>
+					<div class="savvy-boost">
+						<%= challenge_frequency %> <%= biggest_expense_word.pluralize %> left
+					</div>
 				<% end %>
-				</div>
-				<div class="savvy-boost">
-					<%= challenge_frequency %> <%= biggest_expense_word.pluralize %> left
-				</div>
 				
 			<% end %>
 		
