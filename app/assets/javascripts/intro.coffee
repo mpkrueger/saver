@@ -7,8 +7,6 @@ $(document).on 'ready turbolinks:load', (event) ->
   $('#spacing').hide()
   $('#NextButton').hide()
   $('#student-loans').change ->
-    has_loans = undefined
-    has_loans = undefined
     has_loans = $('#student-loans :selected').text()
     if has_loans == 'I have student loans'
       $('#spacing').show()
@@ -26,8 +24,6 @@ $(document).on 'ready turbolinks:load', (event) ->
   $('#spacing').hide()
   $('#NextButton').hide()
   $('#cc-loans').change ->
-    has_loans = undefined
-    has_loans = undefined
     has_loans = $('#cc-loans :selected').text()
     if has_loans == "I owe less than $1000" || has_loans == "I owe $1000 to $5000" || has_loans == "I owe over $5000"
       $('#spacing').show()
