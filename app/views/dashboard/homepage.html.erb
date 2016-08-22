@@ -5,85 +5,59 @@
     });
 </script>
 
+
+
 <body class="homepage-background">
 
 	<section id="top-nav">
-		<%= image_tag("savvy-logo.png", class:'top-logo' )%>
-		<%= link_to "Sign out", destroy_user_session_path, method: :delete, :class=>'sign-out' %>
+		<%= image_tag("savvy_logo_subtle.png", class:'subtle-logo' )%>
 	</section>
-	<hr class="hr-topnav"/>
 
-	<section id="main-dash">
-		<%= image_tag("dashboard-top-background.png", class:'score-balloon-homepage')%>
-		<div class="col-xs-4">	
-			<div class="homepage-score-textgroup">
-	      		<div class="homepage-titles">
-	    			SAVVY SCORE
-	  			</div>
-	  			<div class="homepage-score">
-		    		<%= @savvy_score %>
-		  		</div>
-			</div>
-		</div>
-		
-		<div class="col-xs-5">
-			<div class="homepage-cta">
-				<div class="homepage-titles">
-	    			FOCUS AREA
-	  			</div>
-	  			<div class="current-focus">
-		    		<%= @current_focus.titlecase %>
-		  		</div>
-	 		</div>
-	 				 		
-	 	</div>
-
-	</section>
 	<section id="action-items">
-		<hr class="hr-mission-block" />
-		<% if @user.phone_number == nil %>
-		<div class="action-title">CURRENT MISSION</div>
-		<div class="mission">
-			<%= @current_focus.titlecase %> Mini-Challenge 
-		</div>
-		<div class="savvy-boost">
-			(+5 Savvy Points) 
-		</div>
-		<p>
-			<%= link_to "Start", homepage_challenge_button, class: "dashboard-button" %>
-		</p>
+		<% if @user.fin_profile.biggest_expense == nil %>
+			<div class="action-title">
+				We'll be reaching out to you soon!
+			</div>
 
 		<% else %>
-				<% if @user.fin_profile.biggest_expense == nil %>
-					<div class="action-title">
-						We'll be reaching out to you soon!
-					</div>
-				<% else %>
-					<div class="action-title">
-						<%= 5-((Time.now - @user.updated_at)/1.day).round(0) %> DAYS LEFT!
-					</div>
-					<div class="mission">
-						<%= @current_focus.titlecase %> Mini-Challenge 
-					</div>
-					<div class="savvy-boost">
-						(+5 Savvy Points) 
-					</div>
-					<div class="challenge">
-					<% (1..challenge_frequency).each do |i| %>
-						<%= image_tag(challenge_icon, class:"challenge-icon") %>
-					<% end %>
-					</div>
-					<div class="savvy-boost">
-						<%= challenge_frequency %> <%= biggest_expense_word.pluralize %> left
-					</div>
+			<div id="circle">
+				<%= image_tag(challenge_icon, class:'challenge_header_image' )%>
+			</div>
+
+			<div class="action-title">
+				<%= biggest_expense_word.titlecase %> Challenge
+				<br />
+				Day <%= ((Time.now - @user.updated_at)/1.day).round(0) + 1 %> of 5
+			</div>
+
+			<div class="action">
+				<%= challenge_subtext %> <%= challenge_frequency %> times this week.
+				<br />
+				<div class="savvy-boost">
+				(Tap a piggy bank below everytime you do)
+				</div>
+				<div class="challenge">
+				<% (1..challenge_frequency).each do |i| %>
+					<%= image_tag('button_piggy_bank_unselected.png', class:"challenge-icon") %>
 				<% end %>
-				
-			<% end %>
-		
-		<hr class="hr-mission-block"/>
+				</div>
+			</div>
+		<% end %>
+	
+
 	</section>
+	
 
 	<div class="feedback">
-		<%= link_to " – Give us feedback –", dashboard_feedback_path %>
+		<div class="spaced-row">
+		<%= link_to " – Give Feedback –", dashboard_feedback_path %>
+		</div>
+		<div class="sign-out-icon">
+			<%= link_to image_tag('sign_out.png', class:'sign-out-icon' ), destroy_user_session_path, method: :delete, :class=>'sign-out' %><%= %>
+		</div>
+		<div class="help-icon">
+			<%= link_to image_tag('help_icon.png', class:'help-icon' ),   challenges_lets_chat_path %>
+		</div>
+		
 	</div>
 </body>

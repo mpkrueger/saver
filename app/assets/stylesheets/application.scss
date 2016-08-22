@@ -16,7 +16,7 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
+@import url('http://fonts.googleapis.com/css?family=Lato');
 
 
 
@@ -56,7 +56,7 @@ a:focus { color: #FAD472; text-decoration: underline;}
   h1 {
      font-size: 18px;
      line-height:30px;
-     font-family: 'Gill Sans', Verdana, sans-serif;
+     font-family: 'Lato', Helvetica, sans-serif;
      font-weight: 300;
      text-align: left;
    }
@@ -64,7 +64,7 @@ a:focus { color: #FAD472; text-decoration: underline;}
    
    body{
    	font-size: 16px;
-   	font-family: 'Gill Sans', Tahoma, Geneva, sans-serif;
+   	font-family: 'Lato', Helvetica, Geneva, sans-serif;
     font-weight: 300;
     color:#ffffff;
    }
@@ -80,6 +80,16 @@ a:focus { color: #FAD472; text-decoration: underline;}
     width: auto;
     margin: 3px 10px;
   }
+
+  .subtle-logo{
+    margin: auto;
+    margin-top:3%;
+    width:25%;
+    height:auto;
+    display:block;
+  }
+
+
 
   .sign-out{
     right:10px;
@@ -129,7 +139,7 @@ a:focus { color: #FAD472; text-decoration: underline;}
   h1 {
      font-size: 24px;
      line-height:32px;
-     font-family: 'Gill Sans', Verdana, sans-serif;
+     font-family: 'Lato', Verdana, sans-serif;
      font-weight: 300;
      text-align: left;
    }
@@ -138,7 +148,7 @@ a:focus { color: #FAD472; text-decoration: underline;}
    body{
     font-size: 16px;
     line-height:2;
-    font-family: 'Gill Sans', Tahoma, Geneva, sans-serif;
+    font-family: 'Lato', Tahoma, Geneva, sans-serif;
     font-weight: 300;
     color:#ffffff;
    }

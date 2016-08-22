@@ -1,10 +1,5 @@
 .homepage-background{
   background-color: #133e49;
-  background-image: url('dashboard_background2.png');
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   height:100%;
 }
 
@@ -29,13 +24,23 @@
 }
 
 #circle {
-    background: #D96B3D;
-    width: 200px;
-    height: 200px;
+    background: #26837f;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
+    text-align:center;
+    margin:auto;
 }
+
+.challenge_header_image{
+   width:80%;
+   margin:auto;
+   margin-top:15%;
+
+}
+
 
 .homepage-titles{
   font-size: 14px;
@@ -72,6 +77,8 @@
 	padding-right:10px;
 }
 
+
+
 .current-focus{
   font-size:18px;
   font-weight:500;
@@ -80,7 +87,7 @@
 }
 
 #action-items{
-  width:80%;
+  width:90%;
   margin:auto;
  // margin-top:7%;
   padding: 15px 15px;
@@ -91,21 +98,21 @@
 }
 
 .action-title{
-  font-size: 15px;
+  font-family: 'Lato', Helvetica;
+  font-size: 20px;
   text-align:center;
   color:#FFF;
-  margin-top:-5px;
+  margin-top:25px;
 }
 
-.mission{
+.action{
+    font-family: 'Lato', Helvetica;
   font-size:18px;
-  color:#F1C669;
-  font-weight:400
+  margin-top:15px;
 }
 
 .savvy-boost{
-  font-size:15px;
-  color:#F1C669;
+  font-size:14px;
   margin-top:2px;
   margin-bottom:22px;
   display:inline-block;
@@ -153,6 +160,20 @@
   background-color: transparent;
   color: #DDD;
   margin-top: 20px;
+  font-size:14px;
 }
 
+.sign-out-icon{
+  position:absolute;
+  margin-left:-10%;
+  margin-top: -2%;
+  width:30px;
+  height:30px;
+}
+
+.help-icon{
+  margin-left:10px;
+  width:30px;
+  height:30px;
+}
 
