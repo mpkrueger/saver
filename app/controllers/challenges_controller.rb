@@ -4,6 +4,12 @@ class ChallengesController < ApplicationController
   def update
   end
 
+  def intro
+    @user = current_user
+    @fin_profile = @user.fin_profile
+    @current_focus = @user.fin_profile.current_focus
+  end
+
   def saving_info
     @user = current_user
     @fin_profile = @user.fin_profile
