@@ -2,6 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
+
 $(document).on 'ready turbolinks:load', (event) ->
   $('#easy-response').hide()
   $('#tough-response').hide()
@@ -24,3 +25,4 @@ $(document).on 'ready turbolinks:load', (event) ->
       $('#tough-response').hide()
       $('#hard-response').show()
       $('#NextButton').show()
+    

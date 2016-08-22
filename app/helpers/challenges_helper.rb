@@ -268,13 +268,27 @@ module ChallengesHelper
 		@user = current_user
 		case current_user.fin_profile.biggest_expense
 		when "buying coffee"
-			"icon_coffee.png"
+			"image_coffee.png"
 		when "going out for drinks"
 			"icon_cocktail.png"
 		when "eating lunch out"
-			"icon_pizza.png"
+			"image_burger.png"
 		when "eating dinner out"
 			"icon_drumstick.png"
+		end
+	end
+
+	def challenge_subtext
+		@user = current_user
+		case current_user.fin_profile.biggest_expense
+		when "buying coffee"
+			"Make coffee at home"
+		when "going out for drinks"
+			"Skip the booze"
+		when "eating lunch out"
+			"Pack your lunch"
+		when "eating dinner out"
+			"Rustle up some dinner at home"
 		end
 	end
 
