@@ -23,21 +23,22 @@
     box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
-#circle {
-    background: #26837f;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    text-align:center;
-    margin:auto;
+#circle-header {
+  height: 100%;
+    position: relative;
 }
 
+.circle{
+  width: 45%;
+  position: relative;
+}
 .challenge_header_image{
-   width:80%;
-   margin:auto;
-   margin-top:10px;
+    width: 34%;
+    margin: auto;
+    margin-top: 4%;
+    position: absolute;
+    display: inline-block;
+    margin-left: -40%;
 
 }
 
