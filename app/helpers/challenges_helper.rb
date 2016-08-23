@@ -19,7 +19,7 @@ module ChallengesHelper
 	def savings_intro_message
 		@user = current_user
 		case @user.fin_profile.current_focus
-		when "SAVINGS", "SPENDING"
+		when "SAVINGS", "SPENDING HABITS"
 			"Ok - in this first mini-challenge we're going to increase your Savvy Score by taking a small step toward better spending habits. It's going to be awesome."
 		when "STUDENT LOANS"
 			if @user.fin_profile.student_approach == "less than the amount due"
