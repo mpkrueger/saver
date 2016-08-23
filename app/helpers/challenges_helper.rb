@@ -97,7 +97,7 @@ module ChallengesHelper
 	def lets_chat_message
 		@user = current_user
 		case @user.fin_profile.current_focus
-		when "SAVINGS", "SPENDING"
+		when "SAVINGS", "SPENDING HABITS"
 			"savings savings savings"
 		when "STUDENT LOANS"
 			if @user.fin_profile.student_approach == "not sure"
@@ -224,7 +224,7 @@ module ChallengesHelper
 		case @area
 		when "CREDIT CARD DEBT"
 			"Because of those high interest amounts, we recommend that you pay off your credit card balance as soon as possible"
-		when "SPENDING"
+		when "SPENDING HABITS"
 			"Because of how much you can gain in interest, we'd like to help you save (and invest) more"
 		when "STUDENT LOANS"
 			"Student loans can hang over you for years and years. We'd like to help you pay off your loans at a slightly faster pace"
