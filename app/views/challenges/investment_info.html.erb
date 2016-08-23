@@ -7,6 +7,58 @@
 
 <body class="page-background">
 
+	<section id="coach-section">
+		<div class="coach-chat-triangle"></div>
+	    <div class="coach-question">
+	        <%= investment_intro %>
+      	</div>
+    </section>
 
+    <script>
+		$(document).ready(function(){
+			for(i=1; i<2; i++) {
+    			$('#chat'+i).hide(0).delay(1500*i).fadeIn(100).removeClass('hidden');
+    		}
+		});
+	</script>
+
+	<div id="chat1" class="hidden" style="display:none;">
+		<%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
+			<section id="user-section">		
+				<div class="spaced-row user-content">
+					<div class="madlib-sentence">
+						<div class="dropdown-style inner-addon right-addon">
+							<div id="401k">
+								<%= f.select :student_amount, [['offers a 401(k)', 'offers a 401(k)'],['doesn\'t offer a 401(k)', 'doesn\'t offer a 401(k)']], {include_blank: 'My company...'}, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
+								<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
+							</div>
+						</div>
+						<div id="spacing">
+							and
+						</div>
+						<div class="dropdown-style inner-addon right-addon">
+							<div id="matching">
+								
+								<%= f.select :student_attitude, [['the company matches some amount', 'I\'m fine with them'], ['I want to pay them off ASAP', 'I want to pay them off ASAP']], {include_blank: 'I feel...'}, {:id => "dropdown", :class => 'my-dropdown select'} %>
+								<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
+							</div>
+						</div>
+						 
+					</div>
+				</div>	
+			</section>
+			<div id="NextButton">
+				<div class="button-row">
+					<%= f.submit "Next", class: 'next-button' %>
+				</div>
+			</div>
+
+			<div class="padding-bottom">
+				<div class="padding-text">
+					adding space below next button
+				</div>
+			</div>
+		<% end %>
+	</div>	
 
 </body>
