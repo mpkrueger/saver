@@ -13,7 +13,8 @@
 		<p class="app-tagline"> The free financial coach you've always wanted </p>
 		<p><%= image_tag("hot-air-balloon.png", class:"splash-image") %></p>
 		<p class="button-row"><%= link_to "Get My Savvy Score", goals_introductions_path, class:"next-button" %></p>
-		<p class="sign-in-link"><%= link_to "Already have an account? Sign in", new_user_session_path %></p>
+		<br />
+		<p class="sign-in-link"><%= link_to "Already have a Savvy Score?", new_user_session_path, class:"sign-in-link" %></p>
 	</div>
 
 	<% if user_signed_in? %>
