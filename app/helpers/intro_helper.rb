@@ -123,11 +123,11 @@ module IntroHelper
 
 	def savvy_score_thoughts
 		if @guest_user.savvy_score < 40
-			"is a bit lower than I'd like to see. But don't be discouraged, there's a lot we can do together. As your financial coach, I'm here to help you get more financially savvy."
+			"is on the low side but we can work together to improve it."
 		elsif @guest_user.savvy_score < 75
-			"is a bit lower than I'd like to see. But don't worry, there's a lot we can do together. As your financial coach, I'm here to help you get more financially savvy."
+			"is a decent start but we can work together to improve it."
 		elsif @guest_user.savvy_score < 95
-			"is pretty good, but I think we can get it even higher if we work together. As your financial coach, I'll help you boost your financial savvy."
+			"is pretty good but we can get it even higher if we work together."
 		else
 			"is top-notch. I can help you optimize a bit further, or perhaps you can help mentor others!"
 		end
@@ -156,7 +156,7 @@ module IntroHelper
 				"Since credit cards often have high interest rates and you mentioned it's an area you want help with, let's tackle that together first."
 			end		
 		when "STUDENT LOANS"
-			"Since you want to pay off your student loans faster, let's focus on squashing those loans together."
+			"I'd like to start there since you mentioned wanting to pay them off faster and doing so would free up extra money each month!"
 		when "SPENDING HABITS"
 			"First off, you don't have credit card debt - so you're already in better shape than 38% of Americans. But you did say that you spend " + @guest_user.spend_vs_income + " of your income each month. So let’s see if we can try to cut back a little and then use those extra savings to grow your overall wealth."
 		when "SAVINGS"
@@ -170,6 +170,36 @@ module IntroHelper
 				"You're in good shape overall! No credit card debt, a good foundation of savings, and healthy spending habits. But you mentioned not having any retirement accounts. A little now in retirement accounts adds up quickly for the future, so let's work on that first together."
 			elsif @guest_user.investments_type["stock_market"] == "0"
 				"You're in good shape overall! No credit card debt, a good foundation of savings, and healthy spending habits. You also already have a retirement account set up - nice! You don't have any other investments in the stock market though - so let's work on that together first, so we help your savings grow faster."
+			end
+		end
+	end
+
+	def focus_area_examples
+		@guest_user = @guest_user
+		case @guest_user.area_to_work_on
+		when "CREDIT CARD DEBT"
+			if @guest_user.cc_attitude == "pay off my debt faster"
+				"so that I can get you started on the path towards debt-free living."
+			elsif @guest_user.cc_attitude == "continue what I\'m doing"
+				"so that I can get to know you better and help you take the best steps forward towards your future goals."
+			elsif @guest_user.cc_attitude == "get some advice"
+					"so that I can get to know you better and help you take the best steps forward towards your future goals."
+		end		
+		when "STUDENT LOANS"
+			"Some of the things I'll help you work through include: increasing your payment amount, exploring consolidation, and evaluating repayment options."
+		when "SPENDING HABITS"
+			"so that I can get you started on the path towards your future goals."
+		when "SAVINGS"
+			if @guest_user.savings_amount == 0
+				"so that I can get your piggy bank repaired and help you fill it up."
+			else
+				"so that I can help you build up those savings."
+			end
+		when "INVESTMENTS"
+			if @guest_user.investments_type["retirement_fund"] == "0"
+				"so that I can help you get your retirement fund jumpstarted."
+			elsif @guest_user.investments_type["stock_market"] == "0"
+				"so that I can help you put your savings to work to earn you more money."
 			end
 		end
 	end
