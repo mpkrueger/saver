@@ -5,6 +5,20 @@
     });
 </script>
 
+<script type="text/javascript">
+	function swap()
+	{
+		var img = document.getElementById("pig");
+	   if (img.src.endsWith('unselected.png') != -1)  
+	   { 
+	      document.getElementById("pig").src = "/assets/button_piggy_bank_selected.png";  
+	   } 
+	   else
+	   { 
+	      document.getElementById("pig").src = "/assets/button_piggy_bank_unselected.png"; 
+	   }
+	}
+</script>
 
 
 <body class="homepage-background">
@@ -41,6 +55,8 @@
 				<% (1..challenge_frequency).each do |i| %>
 					<%= image_tag('button_piggy_bank_unselected.png', class:"challenge-icon") %>
 				<% end %>
+
+			<img src="/assets/button_piggy_bank_unselected.png" id="pig" onclick="swap()" class="challenge-icon" />
 				</div>
 			</div>
 		<% end %>

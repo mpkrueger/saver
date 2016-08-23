@@ -50,8 +50,12 @@
 								
 						<div class="dropdown-style inner-addon right-addon">
 							<div id="cc-attitude">
-								<%= f.select :cc_attitude, [['continue what I\'m doing', 'continue what I\'m doing'], ['pay off my debt faster', 'pay off my debt faster'], ['get some help', 'get some help']], { include_blank: "my desire..." }, {:id => "dropdown", :class => 'my-dropdown select'} %>
+								<%= f.select :cc_attitude, [['continue what I\'m doing', 'continue what I\'m doing'], ['pay off my debt faster', 'pay off my debt faster'], ['get some advice', 'get some advice']], { include_blank: "my desire..." }, {:id => "dropdown", :class => 'my-dropdown select'} %>
 								<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
+
+<%= f.select :student_attitude, [['I\'m fine with them', 'I\'m fine with them'], ['I want to pay them off ASAP', 'I want to pay them off ASAP']], {include_blank: 'I feel...'}, {:id => "dropdown", :class => 'my-dropdown select'} %>
+
+
 							</div>
 						</div>
 					</div>

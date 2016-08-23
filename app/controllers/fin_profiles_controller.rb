@@ -42,7 +42,7 @@ class FinProfilesController < ApplicationController
 
           if(@fin_profile.biggest_expense == nil)
             
-            if @fin_profile.cc_attitude == "get some help" || @fin_profile.cc_attitude == "continue what I\'m doing"
+            if @fin_profile.cc_attitude == "get some advice" || @fin_profile.cc_attitude == "continue what I\'m doing"
               #user said in the intro that they want to get some help with their cc debt or that they want to continue what they're doing; let's chat with them to see if we can help
               redirect_to challenges_lets_chat_path
             else

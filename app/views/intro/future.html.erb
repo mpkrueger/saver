@@ -28,8 +28,7 @@
 		<section id="coach-section">
 			<div class="coach-chat-triangle"></div>
 			<div class="coach-question">
-				I'd love to hear more about your goals. Picture your life 5 years from now. Let's fast forward to:
-				<%= (Time.now + 5.year).strftime("%b %d, %Y") %> 
+				I'd love to hear more about your future plans & goals. How might your life be different 5 years from now?
 			</div>
 		</section>
 	</div>
@@ -39,6 +38,7 @@
 		<%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
 			<%= f.fields_for :future_day do |i| %>
 				<section id="user-section">
+				<div class="row-future future-date">In <%= (Time.now + 5.year).strftime("%A, %b. %d, %Y") %>... </div>
 					<div class="row-future">
 	  					<div class="col-madlibs-question">I'll live in: </div>
 	  					<div class="col-madlibs-field dropdown-style">
@@ -60,7 +60,7 @@
 	  					<div class="col-madlibs-question">with </div>
 	  					<div class="col-madlibs-field">
 	  						<div class="dropdown-style inner-addon right-addon">
-	  							<%= i.select :living_with, [['no one else', 'no one else'], ['roommates', 'roommates'], ['my partner', 'my partner'], ['my family', 'my family']], { include_blank: '' }, class: "my-dropdown", required: true %>
+	  							<%= i.select :living_with, [['no one else', 'no one else'], ['roommates', 'roommates'], ['my soulmate', 'my soulmate'], ['my family', 'my family']], { include_blank: '' }, class: "my-dropdown", required: true %>
 								<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
 	  						</div>
 	  					</div>

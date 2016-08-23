@@ -7,41 +7,33 @@
 
 <body class="page-background">
 
-  <section id="coach-section">
-    <div class="coach-chat-triangle"></div>
-
-    <div class="coach-question">
-      <aside>
-        Great, now you can come back to Savvy and your info will be saved.
-      </aside>    
-    </div>
-  </section>
+  
 
   <script>
     $(document).ready(function(){
-        for(i=1; i<4; i++) {
+        for(i=1; i<2; i++) {
           $('#chat'+i).hide(0).delay(1000*i).fadeIn(100).removeClass('hidden');
         }
     });
   </script>
 
-  <div id="chat2" class="hidden" style="display:none;">
+  
     <section id="coach-section">
         <div class="coach-chat-triangle"></div>
         <div class="coach-question">
           I'm a big believer in taking small steps that add up to big change. So our initial efforts may not feel huge, but over time they'll make a huge difference.
         </div>
     </section>
-  </div>
-  <div id="chat3" class="hidden" style="display:none;">
+
+  <div id="chat1" class="hidden" style="display:none;">
     <section id="coach-section">
         <div class="coach-chat-triangle"></div>
         <div class="coach-question">
-          I call these steps "mini-challenges" and I'll make them as simple and fun as possible. These mini-challenges will be personalized for you!
+         I'll make this as simple and fun as possible!
         </div>
     </section>
     <div class="button-row">
-        <%= link_to "See my first mini-challenge", first_challenge_route , class: 'next-button' %>
+        <%= link_to "Take my first step", first_challenge_route , class: 'next-button' %>
     </div>
     <div class="padding-bottom">
       <div class="padding-text">

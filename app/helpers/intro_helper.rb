@@ -96,11 +96,11 @@ module IntroHelper
 			"That's great that you pay off your statement every month!"
 		when 1, 2, 3
 			if @guest_user.cc_attitude == "pay off my debt faster"
-				"We understand, it's easy to build up credit card debt. Talking to a financial coach like me is a great first step. We'll come up with a plan to tackle this together."
-			elsif @guest_user.cc_attitude == "get some help"
-				"We understand, it's easy to build up credit card debt. I'd love to help you with it."
+				"I understand, it's easy to build up credit card debt. Talking to a financial coach like me is a great first step. I'll come up with a plan that we can tackle together."
+			elsif @guest_user.cc_attitude == "get some advice"
+				"I understand, it's easy to build up credit card debt. I'd love to help you with it."
 			else
-				"We understand, it's easy to build up credit card debt. Talking to a financial coach like me is a great first step."
+				"I understand, it's easy to build up credit card debt. Talking to a financial coach like me is a great first step."
 			end
 		when 0
 			"Ok, good to know that you're avoiding credit card debt."
@@ -149,21 +149,21 @@ module IntroHelper
 		case @guest_user.area_to_work_on
 		when "CREDIT CARD DEBT"
 			if @guest_user.cc_attitude == "pay off my debt faster"
-				"You mentioned wanting to pay off your credit card debt faster. Let's start there first. Credit cards often have high interest rates which means your bank is getting paid for free, off your hard work. That seems unfair and I want to help."
+				"You mentioned wanting to pay off your credit card debt faster. Credit cards often have high interest rates which means your credit card company is getting your hard-earned money for free. That seems unfair, let's see if we can avoid that. I have some good ideas to start tackling this."
 			elsif @guest_user.cc_attitude == "continue what I\'m doing"
-				"You mentioned that you have some credit card debt, but you’re OK with your current approach. I’d love to understand this more and focus here first since credit card debt usually has an outsized negative impact on financial goals."
-			elsif @guest_user.cc_attitude == "get some help"
+				"I suggested working on your credit card debt first because this type of debt usually has a big negative impact on financial goals. But you mentioned that you’re OK with your current approach. We should start by chatting so that we tackle something that makes sense for you."
+			elsif @guest_user.cc_attitude == "get some advice"
 				"Since credit cards often have high interest rates and you mentioned it's an area you want help with, let's tackle that together first."
 			end		
 		when "STUDENT LOANS"
-			"Since you want to pay off your student loans faster, let's focus on squashing those loans together first."
+			"Since you want to pay off your student loans faster, let's focus on squashing those loans together."
 		when "SPENDING HABITS"
 			"First off, you don't have credit card debt - so you're already in better shape than 38% of Americans. But you did say that you spend " + @guest_user.spend_vs_income + " of your income each month. So let’s see if we can try to cut back a little and then use those extra savings to grow your overall wealth."
 		when "SAVINGS"
 			if @guest_user.savings_amount == 0
-				"First off, you don't have credit card debt - so you're already in better shape than 38% of Americans. But you did say that someone raided your piggy bank - that's not nice. We'll start there because having a healthy emergency fund is critical. When life throws you a nasty surprise, I don't want you to be in a pickle."
+				"First off, you don't have credit card debt - so you're already in better shape than 38% of Americans. But you did mention that someone raided your piggy bank (not cool!). We'll start there because having a healthy emergency fund (i.e. a fat piggybank) is critical. I know you've got some exciting plans, but I want you to be prepared just in case there are any sudden twists or turns along the way."
 			else
-				"First off, you don't have credit card debt - so you're already in better shape than 38% of Americans. You mentioned that you have " + @savings_amount + " in savings. We'll start there because having a healthy emergency fund is critical. When life throws you a nasty surprise, I don't want you to be in a pickle."
+				"First off, you don't have credit card debt - so you're already in better shape than 38% of Americans. You mentioned that you have " + @savings_amount + " in savings. We'll start there because having a healthy emergency fund (i.e. a fat piggybank) is critical. When life throws you a nasty surprise, I don't want you to be in a pickle."
 			end
 		when "INVESTMENTS"
 			if @guest_user.investments_type["retirement_fund"] == "0"
@@ -173,6 +173,48 @@ module IntroHelper
 			end
 		end
 	end
+
+	def focus_area_next_action 
+		@guest_user = @guest_user
+		@savings_amount = ""
+
+		case @guest_user.savings_amount
+		when 1
+			@savings_amount = "hundreds"
+		when 2
+			@savings_amount = "thousands"
+		when 3
+			@savings_amount = "tens of thousands"
+		end
+
+		case @guest_user.area_to_work_on
+		when "CREDIT CARD DEBT"
+			if @guest_user.cc_attitude == "pay off my debt faster"
+				"so that I can get you started on the path towards debt-free living."
+			elsif @guest_user.cc_attitude == "continue what I\'m doing"
+				"so that I can get to know you better and help you take the best steps forward towards your future goals."
+			elsif @guest_user.cc_attitude == "get some advice"
+					"so that I can get to know you better and help you take the best steps forward towards your future goals."
+		end		
+		when "STUDENT LOANS"
+			"so that I can get you started on the path towards debt-free living."
+		when "SPENDING HABITS"
+			"so that I can get you started on the path towards your future goals."
+		when "SAVINGS"
+			if @guest_user.savings_amount == 0
+				"so that I can get your piggy bank repaired and help you fill it up."
+			else
+				"so that I can help you build up those savings."
+			end
+		when "INVESTMENTS"
+			if @guest_user.investments_type["retirement_fund"] == "0"
+				"so that I can help you get your retirement fund jumpstarted."
+			elsif @guest_user.investments_type["stock_market"] == "0"
+				"so that I can help you put your savings to work to earn you more money."
+			end
+		end
+	end
+
 
 	def future_financials
 		@guest_user = @guest_user
@@ -189,8 +231,8 @@ module IntroHelper
 	def future_livingwith
 		@guest_user = @guest_user
 		case @guest_user.future_day['living_with']
-		when 'my partner'
-			'your partner'
+		when 'my soulmate'
+			'your soulmate'
 		when 'my family'
 			'your family'
 		when 'roommates'
