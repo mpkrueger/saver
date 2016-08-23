@@ -52,11 +52,12 @@
 				(Tap a piggy bank below everytime you do)
 				</div>
 				<div class="challenge">
-				<% (1..challenge_frequency).each do |i| %>
-					<%= image_tag('button_piggy_bank_unselected.png', class:"challenge-icon") %>
-				<% end %>
+					
+					<% (1..(7-challenge_frequency)).each do |i| %>
+						<%= link_to image_tag('button_piggy_bank_unselected.png', :controller => :fin_profiles, :action => :increment_piggies, id: ("bank"+i.to_s), class:"bank-icon") %>
+					<% end %>
 
-			<img src="/assets/button_piggy_bank_unselected.png" id="pig" onclick="swap()" class="challenge-icon" />
+			<!-- <img src="/assets/button_piggy_bank_unselected.png" id="pig" onclick="swap()" class="challenge-icon" /> -->
 				</div>
 			</div>
 		<% end %>

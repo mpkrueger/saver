@@ -15,6 +15,7 @@ class DashboardController < ApplicationController
 
   def homepage
 		@user = current_user
+    @fin_profile = @user.fin_profile
 		@savvy_score = @user.fin_profile.savvy_score
 		@current_focus = @user.fin_profile.current_focus
 	end
