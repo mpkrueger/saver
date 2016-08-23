@@ -21,17 +21,17 @@ $(document).on 'ready turbolinks:load', (event) ->
     
 
   $('#cc-attitude').hide()
-  $('#spacing').hide()
-  $('#NextButton').hide()
+  $('#cc-spacing').hide()
+  $('#cc-NextButton').hide()
   $('#cc-loans').change ->
     has_loans = $('#cc-loans :selected').text()
     if has_loans == "I owe less than $1000" || has_loans == "I owe $1000 to $5000" || has_loans == "I owe over $5000"
-      $('#spacing').show()
+      $('#cc-spacing').show()
       $('#cc-attitude').show()
       return $('#cc-attitude').change(->
-        $('#NextButton').show()
+        $('#cc-NextButton').show()
       )
     else
-      $('#spacing').hide()
+      $('#cc-spacing').hide()
       $('#cc-attitude').hide()
-      $('#NextButton').show()
+      $('#cc-NextButton').show()
