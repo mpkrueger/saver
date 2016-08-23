@@ -37,12 +37,17 @@ $(document).on('turbolinks:load', function() {
 
   $(function(){
     $(".bank-icon").on('click', function() {
-      if ($(this).attr("class") == "bank-icon") {
-        this.src = this.src.replace("_unselected-21e191015cfa0169a8a84c729b026fc322ce3f0f4dac2fbe65c27945484ba7e0","_selected-71ed6969627c7a840e65a4f144bb68b8717abb86136173b0ba033d39b94d739a");
+      var $this = $(this);
+
+      if(!$this.data('clicked')){
+        $this.attr('src',  $this.data('selected-src'));
+        $.post('/fin_profiles/increment_piggies');
+        $this.data('clicked', true);
       }
-      $(this).toggleClass("on");
     });
   });
+
+  // :controller => :fin_profiles, :action => :increment_piggies
 
   if(hasNoHtml5Validation()){
    

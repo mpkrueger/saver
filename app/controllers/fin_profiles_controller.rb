@@ -73,24 +73,8 @@ class FinProfilesController < ApplicationController
   end
 
   def increment_piggies
-    @user = current_user
-    @fin_profile = @user.fin_profile
-    @current_focus = @user.fin_profile.current_focus
-    @cc_rate = @fin_profile.cc_rate
-    raise
-    @cc_rate += 1
-    raise
-    if @fin_profile.update_attributes(params.require(:fin_profile).permit(:cc_feeling, :cc_approach, :cc_rate, :cc_amount, :biggest_expense, :expense_frequency, :student_feeling, :student_approach, :student_rate, :student_amount, :saving_purpose, :saving_purpose_free_form))
-      raise
-    else
-      flash[:error] = "Uh oh, that didn't work - please try again"
-      render root_path
-    end
-
-    # respond_to do |format|
-    #    format.html
-    #    format.js
-    #  end
+    current_user.fin_profile.increment(:piggies).save
+    head :ok
   end
 
 end
