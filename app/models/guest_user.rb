@@ -108,7 +108,7 @@ class GuestUser < ApplicationRecord
 		when "very little"
 			spending += 15
 		when "some"
-			spending += 10
+			spending += 12
 		when "most"
 			spending += 5
 		when "all"
@@ -180,10 +180,6 @@ class GuestUser < ApplicationRecord
 		
 		# identify the area with the lowest percentage of points
 		area = ordered_percents.first
-
-		# no investments would yield a zero percent -
-		# but we don't want to tackle that if the person has debt or only very maginal savings
-		# so we check if area equals investments and, if so, check to see whether we should bump debt or savings above it
 
 
 		# check to see if the person has any credit card debt - if so make that the biggest priority
