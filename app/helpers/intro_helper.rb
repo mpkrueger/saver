@@ -29,11 +29,11 @@ module IntroHelper
 		@guest_user = @guest_user
 		case @guest_user.preparedness
 		when '1'
-			"Nothing's totally impossible - we'll work on getting there together."
+			"Nothing's totally impossible, we'll work on getting there together."
 		when '2'
-			"Worthwhile things often require hard work - we'll work on getting there together."
+			"It's hard, but well worth it. We'll work on getting there together."
 		when '3'
-			"Great - I'm here to help you make that future a reality."
+			"Great, I'm here to help you make that future a reality."
 		when '4'
 			"Great to hear!"
 		end
@@ -123,11 +123,11 @@ module IntroHelper
 
 	def savvy_score_thoughts
 		if @guest_user.savvy_score < 40
-			"is a bit lower than I'd like to see. But don't be discouraged... as your financial coach, I'm going to partner with you to drive it higher."
+			"is a bit lower than I'd like to see. But don't be discouraged, there's a lot we can do together. As your financial coach, I'm here to help you get more financially savvy."
 		elsif @guest_user.savvy_score < 75
-			"is a bit lower than I'd like to see. As your financial coach, I'm going to partner with you to drive it higher."
+			"is a bit lower than I'd like to see. But don't worry, there's a lot we can do together. As your financial coach, I'm here to help you get more financially savvy."
 		elsif @guest_user.savvy_score < 95
-			"is in pretty good shape, but together we can get it even higher. As your financial coach, I'll show you how."
+			"is pretty good, but I think we can get it even higher if we work together. As your financial coach, I'll help you boost your financial savvy."
 		else
 			"is top-notch. I can help you optimize a bit further, or perhaps you can help mentor others!"
 		end
