@@ -96,11 +96,11 @@ module IntroHelper
 			"That's great that you pay off your statement every month!"
 		when 1, 2, 3
 			if @guest_user.cc_attitude == "pay off my debt faster"
-				"I understand, it's easy to build up credit card debt. Talking to a financial coach like me is a great first step. I'll come up with a plan that we can tackle together."
+				"I understand, it's easy to build up credit card debt. This chat is a great first step. I'll come up with a plan to help you pay it off faster."
 			elsif @guest_user.cc_attitude == "get some advice"
 				"I understand, it's easy to build up credit card debt. I'd love to help you with it."
 			else
-				"I understand, it's easy to build up credit card debt. Talking to a financial coach like me is a great first step."
+				"That's good to know. We'll come back to this later because credit card debt in particular has a big impact on your finances."
 			end
 		when 0
 			"Ok, good to know that you're avoiding credit card debt."

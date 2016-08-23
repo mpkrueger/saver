@@ -18,7 +18,9 @@
 @import "bootstrap";
 @import url('http://fonts.googleapis.com/css?family=Lato');
 
-
+html{
+  height: 100%;
+}
 
 .page-background{
  /* background-color: #2F6071;  dark blue */
@@ -45,13 +47,32 @@ a { color:#fff;}
 a:hover{ color: #FAD472; text-decoration: none;}
 a:focus { color: #FAD472; text-decoration: underline;}
 
-@media screen and (max-width: 480px) {
-
-  html{
-  height: 100%;
-  }
+.emoticon{
+  margin-top:-10px;
+}
 
 
+.next-button{
+  border: 1px solid #fff;
+  background-color: transparent;
+  color:#FFF;
+  padding:10px;
+  text-align: center;
+  border-radius:4px;
+  margin: auto;
+}
+
+.next-button:active{
+    background-color: #FFF;
+    color: #43767A;
+    border: none;
+    border: 1px solid #FFFFFF;
+}
+
+
+
+
+@media screen and (max-width: 350px) {
 
   h1 {
      font-size: 18px;
@@ -63,8 +84,8 @@ a:focus { color: #FAD472; text-decoration: underline;}
 
    
    body{
-   	font-size: 16px;
-   	font-family: Helvetica, sans-serif;
+    font-size: 15px;
+    font-family: Helvetica, sans-serif;
     font-weight: 300;
     color:#ffffff;
    }
@@ -109,32 +130,75 @@ a:focus { color: #FAD472; text-decoration: underline;}
     display: block;
     text-align: center;
   }
+  
+}
 
-  .next-button{
-    border: 1px solid #D1D9E0;
-    background-color: transparent;
-    color:#FFF;
-    padding:10px;
-    text-align: center;
-    border-radius:4px;
+
+
+
+
+
+@media screen and (min-width: 350px) and (max-width: 480px) {
+
+  h1 {
+     font-size: 18px;
+     line-height:30px;
+     font-family: Helvetica, sans-serif;
+     font-weight: 300;
+     text-align: left;
+   }
+
+   
+   body{
+   	font-size: 16px;
+   	font-family: Helvetica, sans-serif;
+    font-weight: 300;
+    color:#ffffff;
+   }
+
+
+  .top-nav{
+    width:100%;
+    position: relative;
+  }
+
+  .top-logo{
+    height: 30px;
+    width: auto;
+    margin: 3px 10px;
+  }
+
+  .subtle-logo{
     margin: auto;
+    margin-top:3%;
+    width:25%;
+    height:auto;
+    display:block;
   }
 
-  .next-button:active{
-    background-color: #FFF;
-    color: #43767A;
-    border: none;
-    border: 1px solid #FFFFFF;
+  .sign-out{
+    right:10px;
+    margin-top:10px;
+    height:30px;
+    width:auto;
+    position:absolute;
   }
 
+  .spaced-row{
+    margin-bottom: 20px;
+  }
 
+  .button-row{
+    margin-top: 25px;
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
 
 }
 
 @media screen and (min-width: 480px) {
-  html{
-  height: 100%;
-  }
+
 
   h1 {
      font-size: 24px;
@@ -191,32 +255,23 @@ a:focus { color: #FAD472; text-decoration: underline;}
       margin-bottom: 30px;
     }
 
-    .next-button{
-      border: 1px solid #fff;
-      background-color: transparent;
-      color:#FFF;
-      padding:10px;
-      text-align: center;
-      border-radius:4px;
-      margin: auto;
-    }
+  .next-button{
+    font-size: 16px;
+  }
 
     .next-button:hover{
+      font-size:16px;
       color:#FFF;
     }
 
     .next-button:active{
-      background-color: #FFF;
-      color: #43767A;
-      border: none;
-      border: 1px solid #FFFFFF;
       font-size:16px;
     }
 
 }
 
 
-
+  
 
 
 

@@ -21,9 +21,6 @@
 
 /***** MADLIB STRUCTURE  *****/
  .madlib-sentence{
-  font-size: 16px;
-  font-weight: 300;
-  font-family: 'Gill Sans', Tahoma, Geneva, sans-serif;
   max-width: 100%;
   background-color: transparent; 
   line-height: 2.0;
@@ -80,15 +77,11 @@
 }
 
 .label-investment-type{
-   font-size: 15px;
-  font-weight: 300;
-  font-family: 'Gill Sans', Tahoma, Geneva, sans-serif;
+
 }
 
 .subtext-investment{
-    font-size: 14px;
-  font-weight: 300;
-  font-family: 'Gill Sans', Tahoma, Geneva, sans-serif;
+  font-size: 14px;
   padding-left: 20px;
 }
 
@@ -111,8 +104,6 @@
 
 .multichoice{
   font-size: 14px;
-  font-weight: 300;
-  font-family: 'Gill Sans', Tahoma, Geneva, sans-serif;
   width:60%;
   display:inline-block;
   text-align: left;
@@ -213,8 +204,6 @@ option[default]{
 .right-addon input { padding-right: 20px; }
 
 glyphicon{
-  font-family: 'Museo Sans', Verdana, sans-serif;
-  font-size: 15px;
   align:center;
   height:5px;
   width: 5px;
@@ -317,4 +306,8 @@ margin: 0;
 ::-webkit-input-prompt{
   color: #888;
   opacity: 1 !important;
+}
+
+#spacing, #cc-spacing{
+      margin-top: 1.5em;
 }

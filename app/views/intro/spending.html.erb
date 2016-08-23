@@ -40,20 +40,44 @@
 				<div class="spaced-row user-content">
 					<div class="madlib-sentence">	
 					I usually spend
+					<div id="spending-amount">
 						<span class="dropdown-style inner-addon right-addon">
 							<%= f.select :spend_vs_income, [['all', 'all'], ['most', 'most'], ['some', 'some'], ['very little', 'very little']], { include_blank: 'this much'}, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
 							<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
 						</span>
+					</div>
 					of my paycheck.
 					</div>
 				</div>
 			</section>
-			<div id="SubmitButton" class="hidden" style="display:none;">
+
+	<div id="response">  
+        <section id="coach-section">
+          <div class="coach-chat-triangle"></div>
+          <div class="coach-question"> 
+          	<div id="all">         
+            	It can be hard to stretch your paycheck. We'll see if we can come up with creative ways to start saving a little.
+            </div>
+            <div id="most">
+            	It can be hard to stretch your paycheck. We'll see if we can come up with creative ways to start saving a little more.
+            </div>
+            <div id="some">
+            	Cool, every penny counts!
+            </div>
+            <div id="verylittle">
+            	Wow, that's great that you've built up such a good savings habit!
+            </div>
+          </div>
+        </section>
+      </div>
+
+
+			<div id="NextButton">
 				<div class="button-row">
 					<%= f.submit "Next", class: 'next-button' %>
 				</div>
 			</div>
-			<div class="padding-bottom">
+			<div class="page-bottom-padding">
 				<div class="padding-text">
 					adding space below next button
 				</div>
