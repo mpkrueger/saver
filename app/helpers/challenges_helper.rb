@@ -288,7 +288,7 @@ module ChallengesHelper
 		when "eating lunch out"
 			"Pack your lunch"
 		when "eating dinner out"
-			"Rustle up some dinner at home"
+			"Rustle up dinner at home"
 		end
 	end
 

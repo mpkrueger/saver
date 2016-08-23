@@ -42,11 +42,11 @@
 			<div class="action-title">
 				<%= biggest_expense_word.titlecase %> Challenge
 				<br />
-				Day <%= ((Time.now - @user.updated_at)/1.day).round(0) + 1 %> of 5
+				Day <%= ((Time.now - @user.updated_at)/1.day).round(0) + 1 %> of 7
 			</div>
 
 			<div class="action">
-				<%= challenge_subtext %> <%= challenge_frequency %> times this week.
+				<%= challenge_subtext %> <%= 7 - challenge_frequency %> times.
 				<br />
 				<div class="savvy-boost">
 				(Tap a piggy bank below everytime you do)
