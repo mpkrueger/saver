@@ -149,15 +149,12 @@
   margin-top:22px;
 }
 
-.feedback{
-  text-align: center;
-  height: 20px;
-  width: 80%;
+.secondary-links{
+  height: 30px;
+  width: 90%;
   margin: auto;
-  background-color: transparent;
-  color: #DDD;
   margin-top: 20px;
-  font-size:14px;
+  position: relative;
 }
 
 .sign-out-icon{
@@ -166,11 +163,25 @@
   margin-top: -2%;
   width:30px;
   height:30px;
+
 }
 
 .help-icon{
-  margin-left:10px;
+  margin-left:15px;
   width:30px;
   height:30px;
+  display:inline-block;
+}
+
+.feedback{
+    color: #40787c;
+    font-size: 14px;
+    margin-left: 15px;
+    height: 30px;
+    position: absolute;
+    width: 100px;
+    padding-top: 5px;
+    display:inline-block;
+
 }
 

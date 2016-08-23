@@ -47,10 +47,9 @@
 
 	</section>
 	
+	
 
-	<div class="feedback">
-		
-		<%= link_to " – Give Feedback –", dashboard_feedback_path %>
+	<div class="secondary-links">
 	
 		<div class="sign-out-icon">
 			<%= link_to image_tag('sign_out.png', class:'sign-out-icon' ), destroy_user_session_path, method: :delete, :class=>'sign-out' %><%= %>
@@ -58,6 +57,8 @@
 		<div class="help-icon">
 			<%= link_to image_tag('help_icon.png', class:'help-icon' ),   challenges_lets_chat_path %>
 		</div>
-		
+		<div class="feedback">
+		<%= link_to "Give Feedback", dashboard_feedback_path, :class=>'feedback' %>
+		</div>
 	</div>
 </body>
