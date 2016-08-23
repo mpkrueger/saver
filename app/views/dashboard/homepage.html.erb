@@ -53,8 +53,12 @@
 				</div>
 				<div class="challenge">
 					
-					<% (1..(7-challenge_frequency)).each do |i| %>
-						<%= link_to image_tag('button_piggy_bank_unselected.png', :controller => :fin_profiles, :action => :increment_piggies, id: ("bank"+i.to_s), class:"bank-icon") %>
+					<% (1..(7 - challenge_frequency)).each do |i| %>
+						<% clicked = (i <= current_user.fin_profile.piggies) %>
+						<%= image_tag(clicked ? 'button_piggy_bank_selected.png' : 'button_piggy_bank_unselected.png', class: "bank-icon", data: {
+							selected_src: asset_path('button_piggy_bank_selected.png'),
+							clicked: clicked
+						}) %>
 					<% end %>
 
 			<!-- <img src="/assets/button_piggy_bank_unselected.png" id="pig" onclick="swap()" class="challenge-icon" /> -->

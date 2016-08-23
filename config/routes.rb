@@ -25,7 +25,12 @@ Rails.application.routes.draw do
   resources :guest_users
   resources :feedbacks
   resources :intro
-  resources :fin_profiles
+
+  resources :fin_profiles do
+    collection do
+      post 'increment_piggies'
+    end
+  end
 
   get 'goals/index'
   get 'goals/new_focus'

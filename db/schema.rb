@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160822041223) do
+ActiveRecord::Schema.define(version: 20160823224213) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,8 +36,8 @@ ActiveRecord::Schema.define(version: 20160822041223) do
     t.hstore   "future_day"
     t.string   "preparedness"
     t.integer  "user_id"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
     t.string   "cc_approach"
     t.decimal  "cc_rate"
     t.string   "student_feeling"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20160822041223) do
     t.string   "student_attitude"
     t.string   "cc_attitude"
     t.string   "cc_feeling"
+    t.integer  "piggies",                  default: 0
     t.index ["user_id"], name: "index_fin_profiles_on_user_id", using: :btree
   end
 

@@ -186,7 +186,7 @@ module IntroHelper
 					"so that I can get to know you better and help you take the best steps forward towards your future goals."
 		end		
 		when "STUDENT LOANS"
-			"Some of the things I'll help you work through include: increasing your payment amount, exploring consolidation, and evaluating repayment options."
+			"Some of the things I'll help you work through include: paying more each month, exploring consolidation and learning about alternative repayment options."
 		when "SPENDING HABITS"
 			"so that I can get you started on the path towards your future goals."
 		when "SAVINGS"
