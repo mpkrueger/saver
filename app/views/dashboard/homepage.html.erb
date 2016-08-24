@@ -25,10 +25,47 @@
 
 
 	<section id="homepage-content">
-		<% if @user.fin_profile.biggest_expense == nil %>
-			<div class="homepage-title">
-				We'll be reaching out to you soon!
+
+<!-- if they've set up phone or text for chat_type and they haven't set their biggest_expense, then let's chat -->
+		<% if (@user.chat_type != nil) && 
+			@user.fin_profile.biggest_expense == nil %>
+			<div class="homepage-top-content">
+				<div class="balloon-note-graphic">
+					<%= image_tag 'balloon_note.png', class:"balloon-note-graphic" %>
+				</div>
+
+				<div class="action">
+					Thanks, <%= @user.name %>! I’m looking forward to chatting with you. I’ll be reaching out soon. 
+					<br /><br />
+					Your coach, <br />
+					Savvy
+				</div>
 			</div>
+
+
+<!-- if they've started the challenge flow, but didn't get to set their biggest_expense, let's let them finish -->
+		<% elsif @user.fin_profile.biggest_expense == nil %>
+			<div class="homepage-top-content">
+				<div class="balloon-note-graphic">
+					<%= image_tag 'balloon_note.png', class:"balloon-note-graphic" %>
+				</div>
+
+				<div class="action">
+					Hi, <%= @user.name %>. Let's finish setting up your challenge. </div>
+					<div class="button-row">
+					<% if @current_focus == 'STUDENT LOANS' %>
+						<%= link_to "Set Up My Challenge", challenges_student_loan_info_path, class: 'next-button' %>
+					<% elsif @current_focus == 'CREDIT CARD DEBT' %>
+						<%= link_to "Set Up My Challenge", challenges_credit_card_info_path, class: 'next-button' %>
+					<% elsif @current_focus == 'SAVINGS' ||  @current_focus == 'SAVINGS HABITS' %>
+						<%= link_to "Set Up My Challenge", challenges_saving_info_path, class: 'next-button' %>
+					<% elsif @current_focus == 'INVESTMENTS' %>
+						<%= link_to "Set Up My Challenge", challenges_investment_info_path, class: 'next-button' %>
+					<% end %>
+					</div>
+				
+			</div>
+	
 
 		<% else %>
 			
