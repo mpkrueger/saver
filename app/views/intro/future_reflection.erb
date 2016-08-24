@@ -12,7 +12,7 @@
 
 		<div class="coach-question">
 			<aside>
-				Wow, that's awesome. Take a second to reflect on how life could change in just a few years.
+				Wow, that's awesome. I asked you to do this so you can start thinking about what might change in just a few years. Take a moment to reflect on what a future day could look like. 
 			</aside>		
 		</div>
 	</section>
@@ -26,17 +26,19 @@
 	</script>
 
 	<div id= "chat1" class="hidden" style="display:none;">
-		<section id="coach-section">	
-			<p class="future-story">
-				On <%= (Time.now + 5.year).strftime("%b %d, %Y") %>, you wake up in your killer <%= @guest_user.future_day['home'] %> with <%= future_livingwith %>. It's a beautiful day in <%= @guest_user.future_day['city'] %>. You head to work where you <%= future_work %>. When the end of the day rolls around, you're excited to <%= future_fun %>. At night, you think about where you were just a few years ago. You think to yourself "Wow, pretty incredible that I was able to <%= @guest_user.future_day['major_goal'] %>."
-			</p>
-		</section>
+			
+			<div class="future-story">
+				<hr class="hr-future"/>
+				On <%= (Time.now + 5.year).strftime("%b %d, %Y") %>, you wake up in your killer <%= @guest_user.future_day['home'] %> with <%= future_livingwith %>. It's a beautiful day in <%= @guest_user.future_day['city'] %>. You head to work where you <%= future_work %>. When the end of the day rolls around, you're excited to <%= future_fun %>. At night, you think about where you were just a few years ago. You think to yourself "Wow, pretty incredible that I was able to <%= @guest_user.future_day['major_goal'] %>!"
+				<hr class="hr-future"/>
+			</div>
+
 	</div>
 	
 	<div id= "chat3" class="hidden" style="display:none;">
 		<section id="coach-section">
 			<div class="coach-chat-triangle"></div>
-			<div class="coach-question">
+			<div class="coach-question">I'd love to know how far-off this future seems, especially from a financial perspective. 
 				<p class="main-question">How prepared do you feel to make this a reality?</p>
 			</div>
 		</section>

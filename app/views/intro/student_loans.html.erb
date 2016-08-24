@@ -10,7 +10,7 @@
 	<section id="coach-section">
 		<div class="coach-chat-triangle"></div>
 		<div class="coach-question">
-			Let's start with debt. Did you take any loans out for school?
+			Let's start with debt. Do you have any student loans?
 		</div>
 	</section>
 
@@ -30,7 +30,7 @@
 					<div class="madlib-sentence">
 						<div class="dropdown-style inner-addon right-addon">
 							<div id="student-loans">
-								<%= f.select :student_amount, [['I have student loans', 1],['I don\'t have any student loans', 0] ], {include_blank: 'My student loans...'}, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
+								<%= f.select :student_amount, [['I have student loans', 1],['I don\'t have any student loans', 0] ], {include_blank: 'I do/don\'t...'}, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
 								<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
 							</div>
 						</div>

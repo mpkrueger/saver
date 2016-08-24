@@ -19,7 +19,7 @@ class FinProfilesController < ApplicationController
     			if(@fin_profile.saving_purpose == nil)
             redirect_to challenges_saving_model_path
           else
-            redirect_to challenges_get_started_path
+            redirect_to root_path
           end
     		when "STUDENT LOANS"
           
@@ -35,7 +35,7 @@ class FinProfilesController < ApplicationController
           elsif @fin_profile.student_feeling == nil
             redirect_to challenges_loan_saving_model_path
           else
-            redirect_to challenges_get_started_path
+            redirect_to root_path
           end
     		
         when "CREDIT CARD DEBT"
@@ -60,7 +60,7 @@ class FinProfilesController < ApplicationController
           elsif(@fin_profile.cc_feeling == nil)
               redirect_to challenges_loan_saving_model_path
           else
-              redirect_to challenges_get_started_path
+              redirect_to root_path
           end
 
     		when "INVESTMENTS"
