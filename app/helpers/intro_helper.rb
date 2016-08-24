@@ -198,7 +198,7 @@ module IntroHelper
 				and learning about alternative repayment options."
 		when "SPENDING HABITS"
 			"Let's face it - budgeting by yourself isn't fun. That's where I come in! I've got a series of fun challenges
-			that will have you saving more starting this week."
+			that will ."
 		when "SAVINGS"
 			if @guest_user.savings_amount == 0
 				"so that I can get your piggy bank repaired and help you fill it up."
