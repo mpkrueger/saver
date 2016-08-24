@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160823224213) do
+ActiveRecord::Schema.define(version: 20160824195744) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20160823224213) do
     t.string   "cc_attitude"
     t.string   "cc_feeling"
     t.integer  "piggies",                  default: 0
+    t.string   "spend_less"
     t.index ["user_id"], name: "index_fin_profiles_on_user_id", using: :btree
   end
 
@@ -70,6 +71,7 @@ ActiveRecord::Schema.define(version: 20160823224213) do
     t.string   "savvy_feel"
     t.string   "student_attitude"
     t.string   "cc_attitude"
+    t.string   "spend_less"
   end
 
   create_table "users", force: :cascade do |t|

@@ -17,8 +17,8 @@ class FinProfile < ApplicationRecord
 		self.investments_score / 20.0 * 100
 	end
 
-	def spending_percent
-		self.spending / 15.0 * 100
+	def savings_habits_percent
+		self.savings_habits / 15.0 * 100
 	end
 
 	def financial_awareness_percent
@@ -34,7 +34,7 @@ class FinProfile < ApplicationRecord
 # - Debt score = 30 points (combines student loans and credit cards)
 # - Savings score = 20 points
 # - Investments score = 15 points
-# - Spending score (how much person is saving of income) = 15 points
+# - Savings Habit score (how much person is saving of income) = 15 points
 # - Financial awareness = 10 points
 # - How close person is to their future goals (proximity) = 10 points 
 
@@ -100,21 +100,21 @@ class FinProfile < ApplicationRecord
 		investments
 	end
 
-	def spending
-		spending = 0
+	def savings_habits
+		savings_habits = 0
 
 		case self.spend_vs_income
 		when "very little"
-			spending += 15
+			savings_habits += 15
 		when "some"
-			spending += 10
+			savings_habits += 10
 		when "most"
-			spending += 5
+			savings_habits += 5
 		when "all"
-			spending += 0
+			savings_habits += 0
 		end
 
-		spending
+		savings_habits
 	end
 
 	def financial_awareness
@@ -165,16 +165,16 @@ class FinProfile < ApplicationRecord
 		cc_debt = self.cc_debt_score
 		savings = self.savings_score
 		investments = self.investments_score
-		spending = self.spending
+		savings_habits = self.savings_habits
 		investment_habits = 5
 		financial_awareness = self.financial_awareness
 		future_preparedness = self.future_preparedness
 
-		financial_score = student_debt + cc_debt + savings + investments + spending + financial_awareness + future_preparedness
+		financial_score = student_debt + cc_debt + savings + investments + savings_habits + financial_awareness + future_preparedness
 	end
 
 	def area_to_work_on
-		ordered_percents = [self.student_debt_score_percent, self.cc_debt_score_percent, self.savings_score_percent, self.investments_score_percent, self.spending_percent]
+		ordered_percents = [self.student_debt_score_percent, self.cc_debt_score_percent, self.savings_score_percent, self.investments_score_percent, self.savings_habits_percent]
 		ordered_percents = ordered_percents.sort
 		
 		# identify the area with the lowest percentage of points
@@ -194,8 +194,8 @@ class FinProfile < ApplicationRecord
 			area = self.student_debt_score_percent
 		
 		# then check if the person is spending everything they earn - if so, make that the biggest priority
-		elsif self.spend_vs_income == "all"
-			area = self.spending_percent
+		elsif self.spend_vs_income == "none"
+			area = self.savings_habits_percent
 
 		# then check if savings amount equals zero - if so, make that the biggest priority
 		elsif self.savings_score == 0
@@ -209,8 +209,8 @@ class FinProfile < ApplicationRecord
 			"CREDIT CARD DEBT"
 		when self.student_debt_score_percent
 			"STUDENT LOANS"
-		when self.spending_percent
-			"SPENDING HABITS"
+		when self.savings_habits_percent
+			"SAVINGS HABIT"
 		when self.savings_score_percent
 			"SAVINGS"
 		when self.investments_score_percent

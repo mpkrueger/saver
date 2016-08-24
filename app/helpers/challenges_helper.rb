@@ -4,7 +4,7 @@ module ChallengesHelper
 
 	def first_challenge_route
 		case @user.fin_profile.current_focus
-		when "SPENDING HABITS", "SAVINGS"
+		when "SAVINGS HABITS", "SAVINGS"
 			challenges_saving_info_path
 		when "STUDENT LOANS"
 			challenges_student_loan_info_path
@@ -19,8 +19,8 @@ module ChallengesHelper
 	def savings_intro_message
 		@user = current_user
 		case @user.fin_profile.current_focus
-		when "SAVINGS", "SPENDING HABITS"
-			"Ok - in this first mini-challenge we're going to increase your Savvy Score by taking a small step toward better spending habits. It's going to be awesome."
+		when "SAVINGS", "SAVINGS HABITS"
+			"Ok - in this first mini-challenge we're going to increase your Savvy Score by taking a small step toward better savings habits. It's going to be awesome."
 		when "STUDENT LOANS"
 			if @user.fin_profile.student_approach == "less than the amount due"
 				"OK - with that in mind, adjusting your repayment plan or consolidation may be helpful. But our approach is to take small steps in the right direction and so we're going to start with a challenge to increase the amount you're paying toward those loans."
@@ -97,7 +97,7 @@ module ChallengesHelper
 	def lets_chat_message
 		@user = current_user
 		case @user.fin_profile.current_focus
-		when "SAVINGS", "SPENDING HABITS"
+		when "SAVINGS", "SAVINGS HABITS"
 			"I'm always here for you - no matter what issue you might be dealing with."
 		when "STUDENT LOANS"
 			if @user.fin_profile.student_approach == "not sure"
@@ -228,7 +228,7 @@ module ChallengesHelper
 		case @area
 		when "CREDIT CARD DEBT"
 			"Because of those high interest amounts, we recommend that you pay off your credit card balance as soon as possible"
-		when "SPENDING HABITS"
+		when "SAVINGS HABITS"
 			"Because of how much you can gain in interest, we'd like to help you save (and invest) more"
 		when "STUDENT LOANS"
 			"Student loans can hang over you for years and years. We'd like to help you pay off your loans at a slightly faster pace"

@@ -71,40 +71,21 @@ $(document).on 'ready turbolinks:load', (event) ->
 
 
 
-  $('#response').hide()
-  $('#all').hide()
-  $('#most').hide()
-  $('#some').hide()
-  $('#verylittle').hide()
+  $('#little').hide()
+  $('#none').hide()
   $('#NextButton').hide()
-  $('#spending-amount').change ->
-    spending = $('#spending-amount :selected').text()
-    if spending == 'all'
-      $('#verylittle').hide()
-      $('#most').hide()
-      $('#some').hide()
-      $('#all').show()
-      $('#response').show()
+  $('#savings-habits').change ->
+    savings_habits = $('#savings-habits :selected').text()
+    if savings_habits == 'none'
+      $('#little').hide()
+      $('#none').show()
       $('#NextButton').show()
-    else if spending == 'most'
-      $('#verylittle').hide()
-      $('#some').hide()
-      $('#all').hide()
-      $('#most').show()
-      $('#response').show()
+    else if savings_habits == 'a little'
+      $('#none').hide()
+      $('#little').show()
       $('#NextButton').show()
-    else if spending == 'some'
-      $('#verylittle').hide()
-      $('#most').hide()
-      $('#all').hide()
-      $('#some').show()
-      $('#response').show()
+    else if savings_habits == 'a lot'
+      $('#none').hide()
+      $('#little').hide()
       $('#NextButton').show()
-    else if spending == 'very little'
-      $('#most').hide()
-      $('#some').hide()
-      $('#all').hide()
-      $('#verylittle').show()
-      $('#response').show()
-      $('#NextButton').show()
-    window.scrollTo(0, document.body.scrollHeight);    
+    window.scrollTo(0, document.body.scrollHeight);

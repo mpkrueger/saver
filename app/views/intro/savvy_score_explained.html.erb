@@ -10,9 +10,13 @@
 	<section id="coach-section">
 		<div class="coach-chat-triangle"></div>
 		<div class="coach-question">
-			Thanks for walking me through your financial info! I'm ready to calculate your <span style="font-weight:500">Savvy Score</span> which is a simplified way of measuring your financial health and habits.
+			<%= investment_feedback %> 
 		</div>
 	</section>
+
+
+
+	
 
 	<script>
 		$(document).ready(function(){
@@ -24,6 +28,15 @@
 
 
 	<div id="chat1" class="hidden" style="display:none;">
+		<section id="coach-section">
+			<div class="coach-chat-triangle"></div>
+			<div class="coach-question">
+				Good news – I'm ready to calculate your <span style="font-weight:500">Savvy Score</span> which is a simplified way of measuring your financial health and habits.
+			</div>
+		</section>
+	</div>
+
+	<div id="chat2" class="hidden" style="display:none;">
 		<section id="coach-section">
 			<div class="coach-chat-triangle"></div>
 			<div class="coach-question">

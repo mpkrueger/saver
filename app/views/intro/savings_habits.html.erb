@@ -1,0 +1,112 @@
+<% @title=": Savings Habits" %>
+<script type="text/javascript">
+    mixpanel.track("savings_habit", {
+        
+    });
+</script>
+
+<body class="page-background">
+
+	<section id="coach-section">
+		<div class="coach-chat-triangle"></div>
+		<div class="coach-question">
+			<aside>
+				<%= cc_feedback %> 
+			</aside>
+		</div>
+	</section>
+
+	<script>
+		$(document).ready(function(){
+    		for(i=1; i<3; i++) {
+    			$('#chat'+i).hide(0).delay(1000*i).fadeIn(100).removeClass('hidden');
+    		}
+		});
+	</script>
+
+	<div id="chat1" class="hidden" style="display:none;">
+		<section id="coach-section">
+			<div class="coach-chat-triangle"></div>
+			<div class="coach-question">
+
+				<p class="main-question">How much money do you roughly save from your paycheck each month?</p>
+			</div>
+		</section>
+	</div>
+
+	
+	<div id="chat2" class="hidden" style="display:none;">
+		<%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
+			<section id="user-section">
+				<div class="spaced-row user-content">
+					<div class="madlib-sentence">	
+					I usually save
+					<div id="savings-habits">
+						<span class="dropdown-style inner-addon right-addon">
+							<%= f.select :spend_vs_income, [['none', 'none'], ['a little', 'a little'], ['a lot', 'a lot']], { include_blank: 'this much...'}, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
+							<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
+						</span>
+					</div>
+					of my paycheck.
+					</div>
+				</div>
+			</section>
+
+
+			<div id="none">  
+		        <section id="coach-section">
+		          <div class="coach-chat-triangle"></div>
+		          <div class="coach-question">         
+	            	It can be hard to stretch your paycheck, especially if your fixed costs (like rent, bills, childcare, etc.) are high. Outside of these, are there are things that you could cut back on to save a little?
+	              </div>
+	             </section>
+	        	<section id="user-section">
+				<div class="spaced-row user-content">
+					<div class="madlib-sentence">	
+		            	<span class="dropdown-style inner-addon right-addon">
+							<%= f.select :spend_less, [['yeah', 'yeah'], ['it depends', 'it depends'], ['no', 'no']], { include_blank: 'cutting back...'}, {:id => "dropdown", :class => 'my-dropdown select'} %>
+							<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
+						</span>
+					</div>
+				</div>
+				</section>
+			</div>
+	        <div id="little">
+	        	<section id="coach-section">
+		          <div class="coach-chat-triangle"></div>
+		          <div class="coach-question">    
+	            	That's great that you're finding ways to save a little. It can be hard, especially if your fixed costs (like rent, bills, childcare, etc.) are high. Outside of these, are there things that you could cut back on to save even more?
+	              </div>
+	            </section>
+	            <section id="user-section">
+				<div class="spaced-row user-content">
+					<div class="madlib-sentence">	
+		            	<span class="dropdown-style inner-addon right-addon">
+							<%= f.select :spend_less, [['yeah', 'yeah'], ['it depends', 'it depends'], ['no', 'no']], { include_blank: 'cutting back...'}, {:id => "dropdown", :class => 'my-dropdown select'} %>
+							<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
+						</span>
+					</div>
+	            </div>
+	            </section>
+	        </div>
+	        
+
+
+			<div id="NextButton">
+				<div class="button-row">
+					<%= f.submit "Next", class: 'next-button' %>
+				</div>
+			</div>
+
+
+			<div class="page-bottom-padding">
+				<div class="padding-text">
+					adding space below next button
+				</div>
+			</div>
+
+		<% end %>
+	</div>
+
+</body>
+

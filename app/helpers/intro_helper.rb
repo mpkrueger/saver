@@ -107,17 +107,21 @@ module IntroHelper
 		end
 	end
 
-	def spending_feedback
+	def savings_habits_feedback
 		@guest_user = @guest_user
-		case @guest_user.spend_vs_income
-		when 'a little'
-			"Wow, that's great that you've built up such a good savings habit."
-		when 'some'
-			"Cool, every penny counts!"
-		when 'most'
-			"It can be hard to stretch your paycheck. We'll see if we can come up with creative ways to start saving a little more."
-		when 'all'
-			"It can be hard to stretch your paycheck. We'll see if we can come up with creative ways to start saving a little."
+		case @guest_user.spend_less
+		when 'yeah'
+			"Great, I have some fun ideas on how to make saving fun. We'll talk more about that later."
+		when 'it depends'
+			"Cool, I have some fun ideas on how to make saving fun and I think good savings habits are well worth it, but we can talk more about that later."
+		when 'no'
+			"Cool, I understand there may not be any wiggle room in how much you spend/save each month. We can talk about other potential ways to increase your savings each month later."
+		when ''
+			if @guest_user.spend_vs_income == "a lot"
+				"Wow, that's great that you've built up such a good savings habit!"
+			else
+				"Having good savings habits is the best way to build up your overall wealth."
+			end
 		end
 	end
 
@@ -162,7 +166,7 @@ module IntroHelper
 		when "STUDENT LOANS"
 			"I'd like to start there since you mentioned wanting to pay them off faster and doing so would free 
 				up extra money each month!"
-		when "SPENDING HABITS"
+		when "SAVINGS HABITS"
 			"I'd like to start there because saving each month is the foundation of a healthy financial house. 
 				And you don't have any credit card to address first which is fantastic. So let’s 
 				see if we can try to cut back a little and grow your overall wealth."
@@ -178,11 +182,11 @@ module IntroHelper
 			end
 		when "INVESTMENTS"
 			if @guest_user.investments_type["retirement_fund"] == "0"
-				"You're in good shape overall! No credit card debt, a good foundation of savings, and healthy spending habits. 
+				"You're in good shape overall! No credit card debt, a good amount saved up, and healthy savings habits. 
 					But you mentioned not having any retirement accounts. A little now adds up quickly for the future, so let's 
 					work on that first together."
 			elsif @guest_user.investments_type["stock_market"] == "0"
-				"You're in good shape overall! No credit card debt, a good foundation of savings, and healthy spending habits. 
+				"You're in good shape overall! No credit card debt, a good amount saved up, and healthy savings habits.  
 					But you mentioned that you haven't yet started investing in the stock market - so let's work on that 
 					together first, so we help your savings grow faster."
 			end
@@ -205,7 +209,7 @@ module IntroHelper
 		when "STUDENT LOANS"
 			"Some of the things I'll help you tackle include: paying more each month, exploring consolidation 
 				and learning about alternative repayment options."
-		when "SPENDING HABITS", "SAVINGS"
+		when "SAVINGS HABITS", "SAVINGS"
 			"Let's face it - budgeting by yourself isn't fun. That's where I come in! I've got a series of fun challenges
 				that will have you saving more starting this week."
 		when "INVESTMENTS"
@@ -245,7 +249,7 @@ module IntroHelper
 		end		
 		when "STUDENT LOANS"
 			"so that I can get you started on the path towards debt-free living."
-		when "SPENDING HABITS"
+		when "SAVINGS HABITS"
 			"so that I can get you started on the path towards your future goals."
 		when "SAVINGS"
 			if @guest_user.savings_amount == 0
