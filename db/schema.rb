@@ -96,6 +96,7 @@ ActiveRecord::Schema.define(version: 20160824195744) do
     t.string   "phone_number"
     t.integer  "guest_user_id"
     t.string   "chat_type"
+    t.string   "contact_prefs"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end

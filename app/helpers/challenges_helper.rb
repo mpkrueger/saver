@@ -23,16 +23,23 @@ module ChallengesHelper
 			"Ok - in this first mini-challenge we're going to increase your Savvy Score by taking a small step toward better savings habits. It's going to be awesome."
 		when "STUDENT LOANS"
 			if @user.fin_profile.student_approach == "less than the amount due"
-				"OK - with that in mind, adjusting your repayment plan or consolidation may be helpful. But our approach is to take small steps in the right direction and so we're going to start with a challenge to increase the amount you're paying toward those loans."
+				"OK - with that in mind, adjusting your repayment plan or consolidation may be helpful. But 
+					our approach is to take small steps in the right direction and so we're going to start 
+					with a challenge to increase the amount you're paying toward those loans."
 			elsif @user.fin_profile.student_approach == "the amount due"
-				"Good to hear. Our plan will involve a few different components, including options like consolidation. First, we're going to start with a challenge to increase the amount you're paying toward those loans."
+				"Good to hear. We're going to start with a challenge to increase the amount you're 
+					paying toward those loans."
 			end
 		when "CREDIT CARD DEBT"
 			if @user.fin_profile.cc_approach == "the minimum due"
 				# we know in the intro that the user said 'pay off my debt faster' so that have desire
-				"Ok, that's good to hear because it means you're avoiding fees. But it's going to take a long time at that level to pay your credit cards off. So first up, we're going to start with a challenge that will help free up some money to pay more."
+				"Ok, that's good to hear because it means you're avoiding fees. But it's going to take a long 
+					time to pay your credit cards off. So first up, we're going to start with a 
+					challenge that will help free up some money to pay more."
 			elsif @user.fin_profile.cc_approach == "more than the minimum due"
-				"That's great to hear! Let's pour some more gas on that fire. We'll start with a challenge that will help you increase that payment even more so that you can get get rid of that credit card debt even sooner."
+				"That's great to hear! Let's pour some more gas on that fire. We'll start with a challenge that 
+					will help you increase that payment even more so that you can get get rid of that credit card 
+					debt even sooner."
 			end
 		end
 	end
