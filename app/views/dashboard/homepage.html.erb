@@ -23,37 +23,28 @@
 
 <body class="homepage-background">
 
-	<section id="top-nav">
-		<%= image_tag("savvy_logo_subtle.png", class:'subtle-logo' )%>
-	</section>
 
-	<section id="action-items">
+	<section id="homepage-content">
 		<% if @user.fin_profile.biggest_expense == nil %>
-			<div class="action-title">
+			<div class="homepage-title">
 				We'll be reaching out to you soon!
 			</div>
 
 		<% else %>
-			<div id="circle-header">
-				<%= image_tag('circle.png', class:'circle') %>
-				<%= image_tag(challenge_icon, class:'challenge_header_image' )%>
-			</div>
-
-			<div class="action-title">
-				<%= biggest_expense_word.titlecase %> Challenge
-				<br />
-				Day <%= ((Time.now - @user.updated_at)/1.day).round(0) + 1 %> of 7
-			</div>
-
-			<div class="action">
-				<%= challenge_subtext %> <%= 7 - challenge_frequency %> times.
-				<br />
-				<div class="savvy-boost">
-				(Tap a piggy bank below everytime you do)
+			
+			<div class="homepage-top-content">
+				<div class="homepage-title">
+					<span style="color:#E99C4A">Savvy Savings Challenge</span>
+					<br />
+					Day <%= ((Time.now - @user.updated_at)/1.day).round(0) + 1 %> of 7
 				</div>
-				<div class="challenge">
-					
-					<% (1..(7 - challenge_frequency)).each do |i| %>
+
+				<div class="action">
+					Collect a piggy bank each time you <%= challenge_subtext.downcase %> instead of <%= @biggest_expense %>.
+				</div>
+				<div class="piggy-bank-group">
+						
+						<% (1..(7 - challenge_frequency)).each do |i| %>
 						<% clicked = (i <= current_user.fin_profile.piggies) %>
 						<%= image_tag(clicked ? 'button_piggy_bank_selected.png' : 'button_piggy_bank_unselected.png', class: "bank-icon", data: {
 							selected_src: asset_path('button_piggy_bank_selected.png'),
@@ -61,9 +52,20 @@
 						}) %>
 					<% end %>
 
-			<!-- <img src="/assets/button_piggy_bank_unselected.png" id="pig" onclick="swap()" class="challenge-icon" /> -->
 				</div>
 			</div>
+			<div class="ribbon-content">
+				<div class="small-score-balloon">
+				+5
+				</div>
+				<div class="ribbon-text">
+				Collect all <% 7 - challenge_frequency %> piggy banks to boost your Savvy Score! 
+				</div>
+			</div>
+
+
+
+
 		<% end %>
 	
 
@@ -73,14 +75,11 @@
 
 	<div class="secondary-links">
 	
-		<div class="sign-out-icon">
-			<%= link_to image_tag('sign_out.png', class:'sign-out-icon' ), destroy_user_session_path, method: :delete, :class=>'sign-out' %><%= %>
-		</div>
-		<div class="help-icon">
+		
+			<%= link_to image_tag('sign_out.png', class:'sign-out-icon'), destroy_user_session_path, method: :delete %>
+		
 			<%= link_to image_tag('help_icon.png', class:'help-icon' ),   challenges_lets_chat_path %>
-		</div>
-		<div class="feedback">
+
 		<%= link_to "Give Feedback", dashboard_feedback_path, :class=>'feedback' %>
-		</div>
 	</div>
 </body>

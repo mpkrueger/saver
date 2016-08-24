@@ -18,6 +18,7 @@ class DashboardController < ApplicationController
     @fin_profile = @user.fin_profile
 		@savvy_score = @user.fin_profile.savvy_score
 		@current_focus = @user.fin_profile.current_focus
+    @biggest_expense = @user.fin_profile.biggest_expense
 	end
 
   def update
