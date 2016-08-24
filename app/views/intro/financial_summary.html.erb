@@ -46,7 +46,7 @@
     <section id="coach-section">
       <div class="coach-chat-triangle"></div>
       <div class="coach-question">
-        Your Savvy Score of <%= @savvy_score %> <%= savvy_score_thoughts %>
+        Your Savvy Score of <%= @savvy_score %> <%= savvy_score_thoughts %> Let’s boost it by focusing on your <%= @area_to_work_on.downcase %>.
       </div>
     </section>
   </div>
@@ -55,7 +55,7 @@
     <section id="coach-section">
       <div class="coach-chat-triangle"></div>
       <div class="coach-question">
-        Let’s boost your Savvy Score by focusing on your <%= @area_to_work_on.downcase %>. <%= focus_area_feedback %>
+        <%= focus_area_feedback %>
       </div>
     </section>
     <div class="spaced-row"></div>
