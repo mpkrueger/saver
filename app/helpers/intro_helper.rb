@@ -198,27 +198,28 @@ module IntroHelper
 		case @guest_user.area_to_work_on
 		when "CREDIT CARD DEBT"
 			if @guest_user.cc_attitude == "pay off my debt faster"
-				"Some of the things I'll help you tackle include: paying more each month, evaluating different 
-					repayment strategies and exploring consolidation."
+				"I want to help you: pay off more of your debt each month, 
+				evaluate different payment strategies, and explore ways to consolidate your credit card 
+				balances."
 			elsif @guest_user.cc_attitude == "continue what I\'m doing"
-				"I want to see if we can tackle it because this type of debt usually has a big negative impact 
-					on financial goals."
+				"I want to see if we can tackle it because this type of debt usually has a big negative 
+				impact on financial goals."
 			elsif @guest_user.cc_attitude == "get some advice"
 				"I'm really excited to help you take the first step toward taming that credit card debt."
 			end		
 		when "STUDENT LOANS"
-			"Some of the things I'll help you tackle include: paying more each month, exploring consolidation 
-				and learning about alternative repayment options."
+			"I want to help you: pay off more of your loans each month, explore whether we can consolidate 
+			your loans, and look into alternative repayment options."
 		when "SAVINGS HABITS", "SAVINGS"
-			"Let's face it - budgeting by yourself isn't fun. That's where I come in! I've got a series of fun challenges
-				that will have you saving more starting this week."
+			"Let's face it - budgeting by yourself isn't fun. That's where I come in! I've got a series of 
+			fun challenges that will have you saving more starting this week."
 		when "INVESTMENTS"
 			if @guest_user.investments_type["retirement_fund"] == "0"
-				"Retirement can feel like it's a long way away - but time is your best friend. I'll make it easy to get started on investing 
-					for the future so that your money can grow on its own."
+				"Retirement can feel like it's a long way away - but time is your best friend. I'll make it
+				 easy to get started on investing for the future so that your money can grow on its own."
 			elsif @guest_user.investments_type["stock_market"] == "0"
-				"Investing can seem complex and overwhelming but it doesn't need to be. I'll provide simple steps to get you going
-					while teaching you about investing along the way."
+				"Investing can seem complex and overwhelming but it doesn't need to be. I'll provide simple 
+				steps to get you going while teaching you about investing along the way."
 			end
 		end
 	end
