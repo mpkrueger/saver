@@ -123,13 +123,13 @@ module IntroHelper
 
 	def savvy_score_thoughts
 		if @guest_user.savvy_score < 40
-			"is on the low side but we can work together to improve it."
+			"is on the low side."
 		elsif @guest_user.savvy_score < 75
-			"is a decent start but we can work together to improve it."
+			"is a decent start."
 		elsif @guest_user.savvy_score < 95
-			"is pretty good but we can get it even higher if we work together."
+			"is pretty good."
 		else
-			"is top-notch. I can help you optimize a bit further, or perhaps you can help mentor others!"
+			"is top-notch."
 		end
 	end
 
@@ -149,16 +149,23 @@ module IntroHelper
 		case @guest_user.area_to_work_on
 		when "CREDIT CARD DEBT"
 			if @guest_user.cc_attitude == "pay off my debt faster"
-				"You mentioned wanting to pay off your credit card debt faster. Credit cards often have high interest rates which means your credit card company is getting your hard-earned money for free. That seems unfair, let's see if we can avoid that. I have some good ideas to start tackling this."
+				"That's something you mentioned wanting to pay off faster and it's a great place to since 
+					it often has high interest rates. That means your credit card company is getting 
+					more of your hard-earned money. I have some good ideas to start tackling this."
 			elsif @guest_user.cc_attitude == "continue what I\'m doing"
-				"I suggested working on your credit card debt first because this type of debt usually has a big negative impact on financial goals. But you mentioned that you’re OK with your current approach. We should start by chatting so that we tackle something that makes sense for you."
+				"You mentioned that you're ok with your current approach to those credit cards so I would love 
+					to start by chatting and better understanding your situation."
 			elsif @guest_user.cc_attitude == "get some advice"
-				"Since credit cards often have high interest rates and you mentioned it's an area you want help with, let's tackle that together first."
+				"Since credit cards often have high interest rates and you mentioned it's an area you want help 
+					with, let's tackle that together first."
 			end		
 		when "STUDENT LOANS"
-			"I'd like to start there since you mentioned wanting to pay them off faster and doing so would free up extra money each month!"
+			"I'd like to start there since you mentioned wanting to pay them off faster and doing so would free 
+				up extra money each month!"
 		when "SPENDING HABITS"
-			"First off, you don't have credit card debt - so you're already in better shape than 38% of Americans. But you did say that you spend " + @guest_user.spend_vs_income + " of your income each month. So let’s see if we can try to cut back a little and then use those extra savings to grow your overall wealth."
+			"I chose that area because saving each month is the foundation of a healthy financial house. 
+				And, unlike 38% of Americans, you thankfully don't have any credit card to address first. So let’s 
+				see if we can try to cut back a little and grow your overall wealth."
 		when "SAVINGS"
 			if @guest_user.savings_amount == 0
 				"First off, you don't have credit card debt - so you're already in better shape than 38% of Americans. But you did mention that someone raided your piggy bank (not cool!). We'll start there because having a healthy emergency fund (i.e. a fat piggybank) is critical. I know you've got some exciting plans, but I want you to be prepared just in case there are any sudden twists or turns along the way."
@@ -181,14 +188,17 @@ module IntroHelper
 			if @guest_user.cc_attitude == "pay off my debt faster"
 				"so that I can get you started on the path towards debt-free living."
 			elsif @guest_user.cc_attitude == "continue what I\'m doing"
-				"so that I can get to know you better and help you take the best steps forward towards your future goals."
+				"I want to see if we can tackle it because this type of debt usually has a big negative impact 
+					on financial goals."
 			elsif @guest_user.cc_attitude == "get some advice"
-					"so that I can get to know you better and help you take the best steps forward towards your future goals."
+				"I'm really excited to help you take the first step toward taming that credit card debt."
 		end		
 		when "STUDENT LOANS"
-			"Some of the things I'll help you work through include: paying more each month, exploring consolidation and learning about alternative repayment options."
+			"Some of the things I'll help you work through include: paying more each month, exploring consolidation 
+				and learning about alternative repayment options."
 		when "SPENDING HABITS"
-			"so that I can get you started on the path towards your future goals."
+			"Let's face it - budgeting by yourself isn't fun. That's where I come in! I've got a series of fun challenges
+			that will have you saving more starting this week."
 		when "SAVINGS"
 			if @guest_user.savings_amount == 0
 				"so that I can get your piggy bank repaired and help you fill it up."
@@ -222,9 +232,11 @@ module IntroHelper
 			if @guest_user.cc_attitude == "pay off my debt faster"
 				"so that I can get you started on the path towards debt-free living."
 			elsif @guest_user.cc_attitude == "continue what I\'m doing"
-				"so that I can get to know you better and help you take the best steps forward towards your future goals."
+				"so that I can get to know you better and help you take the best steps forward towards your 
+					future goals."
 			elsif @guest_user.cc_attitude == "get some advice"
-					"so that I can get to know you better and help you take the best steps forward towards your future goals."
+					"so that I can get to know you better and help you take the best steps forward towards 
+						your future goals."
 		end		
 		when "STUDENT LOANS"
 			"so that I can get you started on the path towards debt-free living."
@@ -252,7 +264,8 @@ module IntroHelper
 		when 1
 			"Unfortunately, financially things are not so good. But there are a lot of years left to change that."
 		when 2
-			"And in good news, finances are looking better. There's more to do, but Future" + @guest_user.name + "is feeling confident."
+			"And in good news, finances are looking better. There's more to do, but Future" + @guest_user.name + "is 
+				feeling confident."
 		when 3
 			"Best of all, Future" + @guest_user.name + " has made awesome financial decisions and is now riding high. "
 		end
