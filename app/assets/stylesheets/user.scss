@@ -218,7 +218,7 @@ glyphicon{
 /******* TEXT FORM INPUTS ******/
 
 /* overloading default text input field */
-input[type="text"], input[type="tel"]{
+input[type="text"], input[type="tel"], input[type="email"]{
   -webkit-appearance: none;  /*Removes default chrome and safari style*/
   -moz-appearance: none; /* Removes Default Firefox style*/
   border: 0;
