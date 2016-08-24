@@ -77,4 +77,9 @@ class FinProfilesController < ApplicationController
     head :ok
   end
 
+  def reset_piggies
+    current_user.fin_profile.update(piggies: 0)
+    redirect_to root_path
+  end
+
 end

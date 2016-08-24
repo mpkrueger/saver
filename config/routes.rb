@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   resources :fin_profiles do
     collection do
       post 'increment_piggies'
+      post 'reset_piggies'
     end
   end
 
