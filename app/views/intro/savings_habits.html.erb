@@ -43,7 +43,7 @@
 					I usually save
 					<div id="savings-habits">
 						<span class="dropdown-style inner-addon right-addon">
-							<%= f.select :spend_vs_income, [['none', 'none'], ['a little', 'a little'], ['a lot', 'a lot']], { include_blank: 'this much...'}, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
+							<%= f.select :savings_from_income, [['none', 'none'], ['a little', 'a little'], ['a lot', 'a lot']], { include_blank: 'this much...'}, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
 							<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
 						</span>
 					</div>

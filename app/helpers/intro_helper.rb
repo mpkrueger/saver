@@ -117,7 +117,7 @@ module IntroHelper
 		when 'no'
 			"Cool, I understand there may not be any wiggle room in how much you spend/save each month. We can talk about other potential ways to increase your savings each month later."
 		when ''
-			if @guest_user.spend_vs_income == "a lot"
+			if @guest_user.savings_from_income == "a lot"
 				"Wow, that's great that you've built up such a good savings habit!"
 			else
 				"Having good savings habits is the best way to build up your overall wealth."

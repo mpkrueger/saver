@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160824205942) do
+ActiveRecord::Schema.define(version: 20160824223537) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(version: 20160824205942) do
     t.decimal  "cc_amount"
     t.decimal  "savings_amount"
     t.hstore   "investments_type"
-    t.string   "spend_vs_income"
     t.hstore   "future_day"
     t.string   "preparedness"
     t.integer  "user_id"
@@ -53,6 +52,7 @@ ActiveRecord::Schema.define(version: 20160824205942) do
     t.string   "cc_feeling"
     t.integer  "piggies",                  default: 0
     t.string   "spend_less"
+    t.string   "savings_from_income"
     t.index ["user_id"], name: "index_fin_profiles_on_user_id", using: :btree
   end
 
@@ -63,15 +63,15 @@ ActiveRecord::Schema.define(version: 20160824205942) do
     t.decimal  "cc_amount"
     t.decimal  "savings_amount"
     t.hstore   "investments_type"
-    t.string   "spend_vs_income"
     t.hstore   "future_day"
     t.string   "preparedness"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.string   "savvy_feel"
     t.string   "student_attitude"
     t.string   "cc_attitude"
     t.string   "spend_less"
+    t.string   "savings_from_income"
   end
 
   create_table "users", force: :cascade do |t|
