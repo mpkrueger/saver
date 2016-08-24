@@ -104,7 +104,7 @@ class GuestUser < ApplicationRecord
 	def savings_habits
 		savings_habits = 0
 
-		case self.spend_vs_income
+		case self.savings_from_income
 		when "very little"
 			savings_habits += 15
 		when "some"
@@ -191,7 +191,7 @@ class GuestUser < ApplicationRecord
 			area = self.student_debt_score_percent
 		
 		# then check if the person is spending everything they earn and they're willing to cut back - if so, make that the biggest priority
-		elsif self.spend_vs_income == "none" && (self.spend_less == "yeah" || self.spend_less == "it depends")
+		elsif self.savings_from_income == "none" && (self.spend_less == "yeah" || self.spend_less == "it depends")
 			area = self.savings_habits_percent
 
 		# then check if savings amount equals zero - if so, make that the biggest priority

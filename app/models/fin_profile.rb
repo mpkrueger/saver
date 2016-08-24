@@ -6,7 +6,7 @@ class FinProfile < ApplicationRecord
 	end
 
 	def cc_debt_score_percent
-		self.cc_debt_score / 10.0 * 100
+		self.cc_debt_score / 20.0 * 100
 	end
 	
 	def savings_score_percent
@@ -14,7 +14,7 @@ class FinProfile < ApplicationRecord
 	end
 
 	def investments_score_percent
-		self.investments_score / 20.0 * 100
+		self.investments_score / 15.0 * 100
 	end
 
 	def savings_habits_percent
@@ -34,7 +34,7 @@ class FinProfile < ApplicationRecord
 # - Debt score = 30 points (combines student loans and credit cards)
 # - Savings score = 20 points
 # - Investments score = 15 points
-# - Savings Habit score (how much person is saving of income) = 15 points
+# - Savings Habits score (how much person is saving of income) = 15 points
 # - Financial awareness = 10 points
 # - How close person is to their future goals (proximity) = 10 points 
 
@@ -103,7 +103,7 @@ class FinProfile < ApplicationRecord
 	def savings_habits
 		savings_habits = 0
 
-		case self.spend_vs_income
+		case self.savings_from_income
 		when "very little"
 			savings_habits += 15
 		when "some"
@@ -180,10 +180,6 @@ class FinProfile < ApplicationRecord
 		# identify the area with the lowest percentage of points
 		area = ordered_percents.first
 
-		# no investments would yield a zero percent -
-		# but we don't want to tackle that if the person has debt or only very maginal savings
-		# so we check if area equals investments and, if so, check to see whether we should bump debt or savings above it
-
 
 		# check to see if the person has any credit card debt - if so make that the biggest priority
 		if [1,2,3].include? self.cc_amount
@@ -193,8 +189,8 @@ class FinProfile < ApplicationRecord
 		elsif student_attitude == "I want to pay them off ASAP"
 			area = self.student_debt_score_percent
 		
-		# then check if the person is spending everything they earn - if so, make that the biggest priority
-		elsif self.spend_vs_income == "none"
+		# then check if the person is spending everything they earn and they're willing to cut back - if so, make that the biggest priority
+		elsif self.savings_from_income == "none" && (self.spend_less == "yeah" || self.spend_less == "it depends")
 			area = self.savings_habits_percent
 
 		# then check if savings amount equals zero - if so, make that the biggest priority
@@ -210,7 +206,7 @@ class FinProfile < ApplicationRecord
 		when self.student_debt_score_percent
 			"STUDENT LOANS"
 		when self.savings_habits_percent
-			"SAVINGS HABIT"
+			"SAVINGS HABITS"
 		when self.savings_score_percent
 			"SAVINGS"
 		when self.investments_score_percent

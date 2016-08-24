@@ -21,7 +21,7 @@ class RegistrationsController < Devise::RegistrationsController
 	  resource.fin_profile.spend_less = @guest_user.spend_less
 	  resource.fin_profile.savings_amount = @guest_user.savings_amount
 	  resource.fin_profile.investments_type = @guest_user.investments_type
-	  resource.fin_profile.spend_vs_income = @guest_user.spend_vs_income
+	  resource.fin_profile.savings_from_income = @guest_user.savings_from_income
 	  resource.fin_profile.future_day = @guest_user.future_day
 	  resource.fin_profile.preparedness = @guest_user.preparedness
 	  resource.fin_profile.current_focus = @guest_user.area_to_work_on
