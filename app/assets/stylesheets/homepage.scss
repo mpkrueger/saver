@@ -3,186 +3,122 @@
   height:100%;
 }
 
-
-
-#main-dash{
-	width:90%;
-	margin:auto;
-	position:relative;
-
-}
-
-.hr-topnav{
-  width:100%; height:-0.5px; background: #fff; margin-top:0; 
-}
-
-.score-balloon-homepage{
-	width:100%;
-	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-    box-sizing: border-box;         /* Opera/IE 8+ */
-}
-
-#circle-header {
-  height: 100%;
-    position: relative;
-}
-
-.circle{
-  width: 45%;
-  position: relative;
-}
-.challenge_header_image{
-    width: 34%;
-    margin: auto;
-    margin-top: 4%;
-    position: absolute;
-    display: inline-block;
-    margin-left: -40%;
-
-}
-
-
-.homepage-titles{
-  font-size: 14px;
-  text-align:center;
-}
-
-.homepage-score-textgroup{
+#homepage-content{
   width:100%;
-  margin: auto;
-  position: absolute;
-  padding-top:23%;
-  margin-left:-4%;
-  margin-top:-156%;
-  text-align: center;
-  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-    box-sizing: border-box;         /* Opera/IE 8+ */
-}
-
-.homepage-score{
-  font-size:34px;
-  font-weight: 500;
-}
-
-
-.homepage-cta{
-	width:100%;
-	margin: auto;
-  margin-top:-117%;
-	position:absolute;
-	padding-top:32%;
-	margin-left:5%;
-	padding-right:10px;
 }
 
 
 
-.current-focus{
-  font-size:18px;
-  font-weight:500;
-  text-align: center;
-  line-height:1.5;
-}
-
-#action-items{
+.homepage-top-content{
   width:90%;
   margin:auto;
- // margin-top:7%;
+  margin-top:5%;
   padding: 15px 15px;
-  font-size:18px;
- // border: 1px solid #eee;
-  border-radius: 10px;
-  text-align: center;
+  text-align: center;  
+
 }
 
-.action-title{
-  font-size: 20px;
+.homepage-title{
+  font-size: 21px;
   text-align:center;
-  color:#FFF;
-  margin-top:25px;
 }
 
 .action{
-  font-size:18px;
   margin-top:15px;
-}
-
-.savvy-boost{
-  font-size:14px;
-  margin-top:2px;
-  margin-bottom:22px;
-  display:inline-block;
-}
-
-.dashboard-button{
- // border: 2px solid #00E3D3;
-  background-color:#00A99D;
-  color:#fff;
-  padding:10px 50px;
-  text-align: center;
-  border-radius: 4px;
-  margin:auto;
-  text-decoration:none;
-  width:60%;
-}
-
-.dashboard-button:hover{
-    text-decoration:none;
-    border: 1px solid #FFFFFF;
-     background-color:#00A99D;
-    color:#fff;
+  margin-bottom:15px;
 }
 
 
-.dashboard-button:active{
-    background-color: #FFF;
-    color: #00E3D3;
-    text-decoration:none;
-    border: none;
-    border: 1px solid #FFFFFF;
-}
 
-.hr-mission-block{
+
+
+.piggy-bank-group{
+  margin-bottom:5px;
+  margin-top:15px;
   width:100%;
-  background:#fff;
-  margin-top:22px;
+  margin:auto;
 }
+
+.bank-icon{
+  width: 28%;
+  height: auto;
+  padding: 7px 0px;
+  margin: 2px;
+}
+
+
+
+.ribbon-content{
+  background-image: url("ribbon.png");
+  background-size: cover;
+  width: 85%;
+  padding: 10px;
+}
+
+.small-score-balloon{
+  background-image:url('small-balloon.png');
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+  display: inline-block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 36px;
+  height:54px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-top:7px;
+  padding-left:3%;
+  color:#5FC4A7;
+}
+
+.ribbon-text{
+    position: absolute;
+    margin-left: 5px;
+    width: 60%;
+    display: inline-block;
+    color:#5FC4A7;
+    padding-top:7px;
+    font-size:14px;
+}
+
+
+
 
 .secondary-links{
-  height: 30px;
-  width: 90%;
+  height: 50px;
+  width: 100%;
   margin: auto;
-  margin-top: 20px;
-  position: relative;
+//  margin-top: 20px;
+  padding: 7px 7px;
+  position: fixed;
+  bottom:0;
+  background-color: #0E2C33;
 }
 
 .sign-out-icon{
   position:absolute;
-  margin-left:-10%;
-  margin-top: -2%;
   width:30px;
   height:30px;
 
 }
 
 .help-icon{
-  margin-left:15px;
+  margin-left:50px;
   width:30px;
   height:30px;
   display:inline-block;
 }
 
 .feedback{
-    color: #40787c;
-    font-size: 14px;
-    margin-left: 15px;
-    height: 30px;
-    position: absolute;
-    width: 100px;
-    padding-top: 5px;
-    display:inline-block;
+  color: #40787c;
+  font-size: 14px;
+  right: 15px;
+  height: 30px;
+  position: absolute;
+  width: 100px;
+  padding-top: 5px;
+  display: inline-block;
+  text-decoration: underline;
 
 }
-
