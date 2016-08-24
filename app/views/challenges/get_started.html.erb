@@ -6,30 +6,24 @@
 </script>
 
 <body class="page-background">
-
-	<section id="mini-challenge">
 		
-		<%= image_tag("challenge-header-bkgd.png", class:'challenge-header-image')%>
-		<div class="challenge-header-textgroup">
-			<!--div class="challenge-title">Your First Mini Challenge</div-->
-			<div class="challenge">Our first challenge: save a little extra by <%= @user.fin_profile.biggest_expense %> only <%= challenge_frequency %>x in the next 7 days. 
-			<br />
-			</div>
-			<span style="width:70%">
-			(one fewer than your usual)</span>
-			<div class="challenge">
-			<% (1..challenge_frequency).each do |i| %>
-				<%= image_tag(challenge_icon, class:"challenge-icon") %>
-			<% end %>
-			</div>
-			
-			
+	<div class="challenge">
+		<%= image_tag(challenge_icon, class:"challenge-icon") %>
 	</div>
+		
+	<section id="coach-section">
+		<div class="coach-chat-triangle"></div>
+		<div class="coach-question">
+			<aside>
+				Our goal is to save a little extra by <%= @user.fin_profile.biggest_expense %> only <%= challenge_frequency %>x in the next 7 days.
+			</aside>
+		</div>
 	</section>
+		
 
 	<script>
 	$(document).ready(function(){
-	    for(i=1; i<2; i++) {
+	    for(i=1; i<4; i++) {
 	    	$('#chat'+i).hide(0).delay(1250*i).fadeIn(100).removeClass('hidden');
 	    }
 	});
@@ -39,37 +33,49 @@
 			<div class="coach-chat-triangle"></div>
 			<div class="coach-question">
 				<aside>
-					In order to offer encouragement along the way, what's the best phone number to text you at?
+					I prefer to think of that as saving money <%= 7 - challenge_frequency %> times - so I'll help you count those wins!
 				</aside>
 			</div>
 		</section>
-
-		<!-- fade in user input section -->
-
-
-		<%= form_for @user, url: user_registration_path, method: :put do |f| %>
-		<section id="user-section">
-
-			<div class="spaced-row user-content">
-				<div class="madlib-sentence">
-					You can reach me at
-					<div class="dropdown-style">
-						<%= f.telephone_field :phone_number, class: "text-field", placeholder: "555-555-5555",  :autocorrect => "off", :required => true %>.</div>
-				</div>
-			</div>
-			
-		</section>
-
-		<div class="button-row">
-			<%= f.submit "Next", class: 'next-button' %>
-		</div>
-      <div class="page-bottom-padding">
-          <div class="padding-text">
-            adding space below next button
-          </div>
-      </div>
 	</div>
 
-	<% end %>
+	<div id= "chat2" class="hidden" style="display:none;">
+		<section id="coach-section">
+			<div class="coach-chat-triangle"></div>
+			<div class="coach-question">
+				<aside>
+					As your coach, I'm here to cheer you on and help you crush this challenge. How can I send words of encouragement?
+				</aside>
+			</div>
+		</section>
+	</div>	
+
+	<div id= "chat3" class="hidden" style="display:none;">
+		<%= form_for @user, url: user_registration_path, method: :put do |f| %>
+			<section id="user-section">
+
+				<div class="spaced-row user-content">
+					<div class="madlib-sentence">
+						You can cheer me on by<br \>
+						<div class="dropdown-style inner-addon right-addon">
+							<%= f.select :contact_prefs, [['sending a text once or twice', 'sending a text once or twice'], ['sending a text in the evening', 'sending a text in the evening'],['sending me email', 'sending me email'], ['no thanks - I\'ll check back', 'no thanks - I\'ll check back']], { include_blank: "my preferred method..." }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
+							<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<div id="SubmitButton" class="hidden" style="display:none;">
+				<div class="button-row">
+					<%= f.submit "Next", class: 'next-button' %>
+				</div>
+			</div>
+	      	<div class="page-bottom-padding">
+	          <div class="padding-text">
+	            adding space below next button
+	          </div>
+	      	</div>
+		<% end %>
+	</div>
 
 </body>
