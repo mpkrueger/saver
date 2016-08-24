@@ -79,13 +79,16 @@ $(document).on 'ready turbolinks:load', (event) ->
     if savings_habits == 'none'
       $('#little').hide()
       $('#none').show()
-      $('#NextButton').show()
+      return $('#none').change(->
+        $('#NextButton').show()
+      )
     else if savings_habits == 'a little'
       $('#none').hide()
       $('#little').show()
-      $('#NextButton').show()
+      return $('#a little').change(->
+        $('#NextButton').show()
+      )
     else if savings_habits == 'a lot'
       $('#none').hide()
       $('#little').hide()
       $('#NextButton').show()
-    window.scrollTo(0, document.body.scrollHeight);
