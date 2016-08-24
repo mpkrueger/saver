@@ -60,7 +60,7 @@ module IntroHelper
 		when 0
 			"Cool, we’ll work on that. 46\% of Americans wouldn’t be able to cover a sudden $400 expense so you’re not alone."
 		when 1
-			"Cool, we’ll work on increasing that. It’s generally good to have about 3-6 months worth of expenses saved up for emergencies... just in case!"
+			"Cool, we’ll work on increasing that. It’s generally good to have about 3-6 months worth of expenses saved up... just in case!"
 		when 2, 3
 			"That’s great, glad to hear you’re on the right track."
 		end
@@ -96,9 +96,9 @@ module IntroHelper
 			"That's great that you pay off your statement every month!"
 		when 1, 2, 3
 			if @guest_user.cc_attitude == "pay off my debt faster"
-				"I understand, it's easy to build up credit card debt. This chat is a great first step. I'll come up with a plan to help you pay it off faster."
+				"I understand, it's easy to build up credit card debt. This chat is a great first step. I'll come up with a plan to help you pay it off faster. Let me understand your full financial picture first."
 			elsif @guest_user.cc_attitude == "get some advice"
-				"I understand, it's easy to build up credit card debt. I'd love to help you with it."
+				"I understand, it's easy to build up credit card debt. I'd love to help you with it. Let me understand your full financial picture first."
 			else
 				"That's good to know. We'll come back to this later because credit card debt in particular has a big impact on your finances."
 			end
@@ -126,7 +126,7 @@ module IntroHelper
 			"is on the low side."
 		elsif @guest_user.savvy_score < 75
 			"is a decent start."
-		elsif @guest_user.savvy_score < 95
+		elsif @guest_user.savvy_score < 90
 			"is pretty good."
 		else
 			"is top-notch."

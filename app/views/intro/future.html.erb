@@ -37,7 +37,7 @@
 	<div id= "chat2" class="hidden" style="display:none;">
 		<%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
 			<%= f.fields_for :future_day do |i| %>
-				<section id="user-section">
+				<section id="user-section-future">
 				<div class="row-future future-date">In <%= (Time.now + 5.year).strftime("%A, %b. %d, %Y") %>... </div>
 					<div class="row-future">
 	  					<div class="col-madlibs-question">I'll live in: </div>
@@ -81,7 +81,7 @@
 	  				</div>
 
 					<div class="row-future">
-	  					<div class="col-madlibs-question" style="margin-top:-.8em">I've managed to </div>
+	  					<div class="col-madlibs-question">I've managed to </div>
 	  					<div class="col-madlibs-field dropdown-style">
 	  						<%= i.text_field :major_goal, class: "madlib-sentence text-field", placeholder: "buy a house!", :autocapitalize => "off", required: true %>
 	  					</div>
