@@ -69,13 +69,13 @@ module ChallengesHelper
 		@user = current_user
 		case @user.fin_profile.biggest_expense
 		when "buying coffee"
-			"coffee cost ~$5"
+			"coffee costs ~$5"
 		when "going out for drinks"
-			"night out cost ~$15"
+			"a night out cost ~$15"
 		when "eating lunch out"
-			"lunch out cost ~$10"
+			"lunch out costs ~$10"
 		when "eating dinner out"
-			"dinner out cost ~$15"
+			"dinner out costs ~$15"
 		end
 	end
 
