@@ -98,12 +98,14 @@ module ChallengesHelper
 		@user = current_user
 		case @user.fin_profile.current_focus
 		when "SAVINGS", "SPENDING HABITS"
-			"savings savings savings"
+			"I'm always here for you - no matter what issue you might be dealing with."
 		when "STUDENT LOANS"
 			if @user.fin_profile.student_approach == "not sure"
 				"I know it can be hard to keep track of... and easier not to think about it. But I'd really love to help."
-			else
+			elsif @user.fin_profile.student_approach == "more than the amount due"
 				"That's awesome. It also means I'm not entirely sure how I can be most helpful for you - and I want to better understand your situation."
+			else
+				"I'm always here for you - no matter what issue you might be dealing with."
 			end
 		when "CREDIT CARD DEBT"
 			if @user.fin_profile.cc_attitude == "get some help"
@@ -118,9 +120,11 @@ module ChallengesHelper
 			elsif @user.fin_profile.cc_approach == "not sure"
 				# can assume that the user said in the intro that they want to "pay off my debt faster" but then said they are "not sure" about their repayment approach - would be good to chat
 				"Feeling unsure about how to best approach your credit card debt?"
+			else
+				"I'm always here for you - no matter what issue you might be dealing with."
 			end
 		when "INVESTMENTS"
-			"investments $$$$$"
+			"I'm always here for you - no matter what issue you might be dealing with."
 		end
 	end
 
