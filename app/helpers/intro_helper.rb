@@ -149,7 +149,7 @@ module IntroHelper
 		case @guest_user.area_to_work_on
 		when "CREDIT CARD DEBT"
 			if @guest_user.cc_attitude == "pay off my debt faster"
-				"That's something you mentioned wanting to pay off faster and it's a great place to since 
+				"That's something you mentioned wanting to pay off faster and it's a great place to start since 
 					it often has high interest rates. That means your credit card company is getting 
 					more of your hard-earned money. I have some good ideas to start tackling this."
 			elsif @guest_user.cc_attitude == "continue what I\'m doing"
@@ -163,20 +163,28 @@ module IntroHelper
 			"I'd like to start there since you mentioned wanting to pay them off faster and doing so would free 
 				up extra money each month!"
 		when "SPENDING HABITS"
-			"I chose that area because saving each month is the foundation of a healthy financial house. 
-				And, unlike 38% of Americans, you thankfully don't have any credit card to address first. So let’s 
+			"I'd like to start there because saving each month is the foundation of a healthy financial house. 
+				And you don't have any credit card to address first which is fantastic. So let’s 
 				see if we can try to cut back a little and grow your overall wealth."
 		when "SAVINGS"
 			if @guest_user.savings_amount == 0
-				"First off, you don't have credit card debt - so you're already in better shape than 38% of Americans. But you did mention that someone raided your piggy bank (not cool!). We'll start there because having a healthy emergency fund (i.e. a fat piggybank) is critical. I know you've got some exciting plans, but I want you to be prepared just in case there are any sudden twists or turns along the way."
+				"I'd like to start there because you mentioned that someone raided your piggy bank (not cool!). Having a healthy 
+					emergency fund (a fat piggybank) is critical. I know you've got some exciting plans, but I want you 
+					to be ok if there are any surprises along the way."
 			else
-				"First off, you don't have credit card debt - so you're already in better shape than 38% of Americans. You mentioned that you have " + @savings_amount + " in savings. We'll start there because having a healthy emergency fund (i.e. a fat piggybank) is critical. When life throws you a nasty surprise, I don't want you to be in a pickle."
+				"I'd like to start there because you mentioned that your piggy bank has " + @savings_amount +" of dollars. Having a healthy 
+					emergency fund (a fat piggybank) is critical. I know you've got some exciting plans, but I want you 
+					to be ok if there are any surprises along the way."
 			end
 		when "INVESTMENTS"
 			if @guest_user.investments_type["retirement_fund"] == "0"
-				"You're in good shape overall! No credit card debt, a good foundation of savings, and healthy spending habits. But you mentioned not having any retirement accounts. A little now in retirement accounts adds up quickly for the future, so let's work on that first together."
+				"You're in good shape overall! No credit card debt, a good foundation of savings, and healthy spending habits. 
+					But you mentioned not having any retirement accounts. A little now adds up quickly for the future, so let's 
+					work on that first together."
 			elsif @guest_user.investments_type["stock_market"] == "0"
-				"You're in good shape overall! No credit card debt, a good foundation of savings, and healthy spending habits. You also already have a retirement account set up - nice! You don't have any other investments in the stock market though - so let's work on that together first, so we help your savings grow faster."
+				"You're in good shape overall! No credit card debt, a good foundation of savings, and healthy spending habits. 
+					But you mentioned that you haven't yet started investing in the stock market - so let's work on that 
+					together first, so we help your savings grow faster."
 			end
 		end
 	end
@@ -186,30 +194,27 @@ module IntroHelper
 		case @guest_user.area_to_work_on
 		when "CREDIT CARD DEBT"
 			if @guest_user.cc_attitude == "pay off my debt faster"
-				"so that I can get you started on the path towards debt-free living."
+				"Some of the things I'll help you tackle include: paying more each month, evaluating different 
+					repayment strategies and exploring consolidation."
 			elsif @guest_user.cc_attitude == "continue what I\'m doing"
 				"I want to see if we can tackle it because this type of debt usually has a big negative impact 
 					on financial goals."
 			elsif @guest_user.cc_attitude == "get some advice"
 				"I'm really excited to help you take the first step toward taming that credit card debt."
-		end		
+			end		
 		when "STUDENT LOANS"
-			"Some of the things I'll help you work through include: paying more each month, exploring consolidation 
+			"Some of the things I'll help you tackle include: paying more each month, exploring consolidation 
 				and learning about alternative repayment options."
-		when "SPENDING HABITS"
+		when "SPENDING HABITS", "SAVINGS"
 			"Let's face it - budgeting by yourself isn't fun. That's where I come in! I've got a series of fun challenges
-			that will ."
-		when "SAVINGS"
-			if @guest_user.savings_amount == 0
-				"so that I can get your piggy bank repaired and help you fill it up."
-			else
-				"so that I can help you build up those savings."
-			end
+				that will have you saving more starting this week."
 		when "INVESTMENTS"
 			if @guest_user.investments_type["retirement_fund"] == "0"
-				"so that I can help you get your retirement fund jumpstarted."
+				"Retirement can feel like it's a long way away - but time is your best friend. I'll make it easy to get started on investing 
+					for the future so that your money can grow on its own."
 			elsif @guest_user.investments_type["stock_market"] == "0"
-				"so that I can help you put your savings to work to earn you more money."
+				"Investing can seem complex and overwhelming but it doesn't need to be. I'll provide simple steps to get you going
+					while teaching you about investing along the way."
 			end
 		end
 	end
