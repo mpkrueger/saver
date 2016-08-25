@@ -85,7 +85,7 @@ $(document).on 'ready turbolinks:load', (event) ->
     else if savings_habits == 'a little'
       $('#none').hide()
       $('#little').show()
-      return $('#a little').change(->
+      return $('#little').change(->
         $('#NextButton').show()
       )
     else if savings_habits == 'a lot'

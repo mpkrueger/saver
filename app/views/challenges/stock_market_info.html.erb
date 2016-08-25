@@ -1,0 +1,112 @@
+<% @title=": Mini-Challenge" %>
+<script type="text/javascript">
+    mixpanel.track("challenge_stock_market_info", {
+        
+    });
+</script>
+
+<body class="page-background">
+
+	<section id="coach-section">
+		<div class="coach-chat-triangle"></div>
+	    <div class="coach-question">
+	        <%= investment_intro %>
+      	</div>
+    </section>
+
+    <script>
+		$(document).ready(function(){
+			for(i=1; i<3; i++) {
+    			$('#chat'+i).hide(0).delay(1500*i).fadeIn(100).removeClass('hidden');
+    		}
+		});
+	</script>
+
+	<div id= "chat1" class="hidden" style="display:none;">
+		<section id="coach-section">
+			<div class="coach-chat-triangle">
+			</div>
+			<div class="coach-question">
+				Do you have $500 that you would be willing to invest into the stock market this week?
+			</div>
+
+		</section>
+	</div>
+
+
+
+	<div id="chat2" class="hidden" style="display:none;">
+		<%= form_for @fin_profile do |f| %>
+			<section id="user-section">		
+				<div class="spaced-row user-content">
+					<div class="madlib-sentence">
+						<div id="500">
+							<div class="dropdown-style inner-addon right-addon">
+								<%= f.select :student_amount, [['Yes, I do', 'Yes, I do'],['No, I don\'t', 'No, I don\'t'], ['That depends...', 'That depends...']], {include_blank: 'I do/don\'t...'}, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
+								<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</section>
+			<div id="yes-response">
+				<section id="coach-section">
+	          		<div class="coach-chat-triangle"></div>
+          			<div class="coach-question">          			
+            			Great to hear - let's do this!
+            		</div>
+            	</section>
+            </div>
+            <div id="no-response">
+            	<section id="coach-section">
+	          		<div class="coach-chat-triangle"></div>
+          			<div class="coach-question">
+            			Ok, I understand. Let's try a savings challenge to build up to that amount then.
+            		</div>
+            	</section>
+            </div>
+            <div id="depends-response">
+            	<section id="coach-section">
+	          		<div class="coach-chat-triangle"></div>
+          			<div class="coach-question">
+            			I want to help you dip your toe into investing and do so without any fees. Is that something you'd like to do?
+            		</div>          		
+	        	</section>
+	        </div>
+	        <div id="depends-choice">
+		        <section id="user-section">		
+					<div class="spaced-row user-content">
+						<div class="madlib-sentence">
+							<div class="dropdown-style inner-addon right-addon">
+								<%= f.select :student_amount, [['Yes, let\'s do it', 'Yes, let\'s do it'],['No thanks, I\'d rather not right now', 'No thanks, I\'d rather not right now']], {include_blank: 'Yes/no...'}, {:id => "dropdown", :class => 'my-dropdown select'} %>
+								<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
+							</div>
+						</div>
+					</div>	
+				</section>
+			</div>
+			<div id="choice-yes">
+            	<section id="coach-section">
+	          		<div class="coach-chat-triangle"></div>
+          			<div class="coach-question">
+            			Sounds good - let's get started!
+            		</div>          		
+	        	</section>
+	        </div>
+	        <div id="choice-no">
+            	<section id="coach-section">
+	          		<div class="coach-chat-triangle"></div>
+          			<div class="coach-question">
+            			No worries at all - let's instead do a savings challenge and build up some money to dip our toes into the investments pool.
+            		</div>          		
+	        	</section>
+	        </div>
+			<div id="NextButton"">
+				<div class="button-row">
+					<%= f.submit "Next", class: 'next-button' %>
+				</div>
+			</div>
+		<% end %>
+	</div>	
+
+</body>
