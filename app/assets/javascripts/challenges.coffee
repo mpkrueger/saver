@@ -92,19 +92,28 @@ $(document).on 'ready turbolinks:load', (event) ->
 
   $('#spacing').hide()
   $('#matching').hide()
-  $('#offers-401k').hide()
+  $('#matches-401k').hide()
+  $('#no-match').hide()
   $('#no-401k').hide()
   $('#NextButton').hide()
   $('#401k').change ->
     has_401k = $('#401k :selected').text()
     if has_401k == 'offers a 401k'
       $('#no-401k').hide()
-      $('#offers-401k').hide()
+      $('#matches-401k').hide()
+      $('#no-match').hide()
       $('#spacing').show()
       $('#matching').show()
       return $('#matching').change ->
-        $('#offers-401k').show()
-        $('#NextButton').show()
+        matches = $('#matching :selected').text()
+        if matches == 'they match some amount'
+          $('#no-match').hide()
+          $('#matches-401k').show()
+          $('#NextButton').show()
+        else
+          $('#matches-401k').hide()
+          $('#no-match').show()
+          $('#NextButton').show()
     else if has_401k == 'doesn\'t offer a 401k'
       $('#spacing').hide()
       $('#matching').hide()
