@@ -229,7 +229,7 @@ module IntroHelper
 		when "INVESTMENTS"
 			if @guest_user.investments_type["retirement_fund"] == "0"
 				"Retirement can feel like it's a long way away - but time is your best friend. I'll make it
-				 easy to get started on investing for the future so that your money can grow on its own."
+				 easy to get started investing for the future so that your money can grow on its own."
 			elsif @guest_user.investments_type["stock_market"] == "0"
 				"Investing can seem complex and overwhelming but it doesn't need to be. I'll provide simple 
 				steps to get you going while teaching you about investing along the way."

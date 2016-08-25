@@ -45,6 +45,16 @@ class ChallengesController < ApplicationController
     @fin_profile = @user.fin_profile
   end
 
+  def retirement_model
+    @user = current_user
+    @fin_profile = @user.fin_profile
+  end
+
+  def stock_market_model
+    @user = current_user
+    @fin_profile = @user.fin_profile
+  end
+
   def saving_model
     @user = current_user
     @fin_profile = @user.fin_profile
@@ -63,11 +73,6 @@ class ChallengesController < ApplicationController
   end
 
   def student_loan_model
-    @user = current_user
-    @fin_profile = @user.fin_profile
-  end
-
-  def investment_model
     @user = current_user
     @fin_profile = @user.fin_profile
   end

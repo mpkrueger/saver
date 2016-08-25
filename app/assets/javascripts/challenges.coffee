@@ -61,11 +61,11 @@ $(document).on 'ready turbolinks:load', (event) ->
       $('#depends-choice').show()
       return $('#depends-choice').change ->
         invest = $('#depends-choice :selected').text()
-        if invest == "Yes, let\'s do it"
+        if invest == "Yes, let\'s invest $500"
           $('#choice-no').hide()
           $('#choice-yes').show()
           $('#NextButton').show()
-        else if invest == "No thanks, I\'d rather not right now"
+        else if invest == "No thanks, let\'s do something else"
           $('#choice-yes').hide()
           $('#choice-no').show()
           $('#NextButton').show()
@@ -90,3 +90,24 @@ $(document).on 'ready turbolinks:load', (event) ->
       $('#selected-pig').hide()
       $('#unselected-pig').show() 
 
+  $('#spacing').hide()
+  $('#matching').hide()
+  $('#offers-401k').hide()
+  $('#no-401k').hide()
+  $('#NextButton').hide()
+  $('#401k').change ->
+    has_401k = $('#401k :selected').text()
+    if has_401k == 'offers a 401(k)'
+      $('#no-401k').hide()
+      $('#offers-401k').hide()
+      $('#spacing').show()
+      $('#matching').show()
+      return $('#matching').change ->
+        $('#offers-401k').show()
+        $('#NextButton').show()
+    else if has_401k == 'doesn\'t offer a 401(k)'
+      $('#spacing').hide()
+      $('#matching').hide()
+      $('#offers-401k').hide()
+      $('#no-401k').show()
+      $('#NextButton').show()

@@ -329,11 +329,11 @@ module ChallengesHelper
 	def investment_intro
 		@user = current_user
 		if @user.fin_profile.investments_type["retirement_fund"] == "0"
-			"We're tackling investments - and our first challenge will involve retirement accounts. 
+			"Your first challenge will involve retirement accounts. 
 				I just need a little more info to set it up."
 		elsif @user.fin_profile.investments_type["stock_market"] == "0"
-			"We're tackling investments - and our first challenge will involve investing in the stock 
-				market. I just need a little more info to set it up."
+			"Your first challenge will involve investing in the stock market. We'll ease into it and 
+				start with a small step. I just need a little more info to tailor the challenge for you."
 		end
 	end
 
