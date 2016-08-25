@@ -70,7 +70,11 @@ class FinProfilesController < ApplicationController
     			if @fin_profile.investments_type["retirement_fund"] == "0"
             redirect_to challenges_retirement_model_path
           elsif @fin_profile.investments_type["stock_market"] == "0"
-            redirect_to challenges_stock_market_model_path
+            if @fin_profile.invest_now == "Yes, I do" || @fin_profile.invest_decision == "Yes, let\'s invest $500"
+              redirect_to challenges_stock_market_model_path
+            else
+              redirect_to challenges_saving_info_path
+            end
           end
 		    end
     else

@@ -45,6 +45,8 @@ module ChallengesHelper
 					will help you increase that payment even more so that you can get get rid of that credit card 
 					debt even sooner."
 			end
+		when "INVESTMENTS"
+			"Ok - in this first challenge we're going to save a little money that you can set aside for future investment."
 		end
 	end
 
@@ -220,15 +222,25 @@ module ChallengesHelper
 
 	def amount_saved
 		@user = current_user
-		@amount = 20 * 52 * (65 - @user.age)
+		@amount_saved = 100 * 12 * (65 - @user.age)
 		number_with_delimiter(@amount)
 	end
 
 	def investment_growth
 		@user = current_user
-		@monthly = 20
+		@monthly = 100
 		@growth_rate = 0.06
 		@periods_per_year = 12
+		@number_of_years = 65 - @user.age
+		@total = @monthly * ((1 + @growth_rate / @periods_per_year) ** (@number_of_years * @periods_per_year) - 1) * (@periods_per_year / @growth_rate)
+		number_with_delimiter(@total.round(0))
+	end
+
+	def total_saved
+		@user = current_user
+		@monthly = 1200
+		@growth_rate = 0.06
+		@periods_per_year = 1
 		@number_of_years = 65 - @user.age
 		@total = @monthly * ((1 + @growth_rate / @periods_per_year) ** (@number_of_years * @periods_per_year) - 1) * (@periods_per_year / @growth_rate)
 		number_with_delimiter(@total.round(0))
@@ -334,6 +346,32 @@ module ChallengesHelper
 		elsif @user.fin_profile.investments_type["stock_market"] == "0"
 			"Your first challenge will involve investing in the stock market. We'll ease into it and 
 				start with a small step. I just need a little more info to tailor the challenge for you."
+		end
+	end
+
+	def retirement_intro
+		@user = current_user
+		if @user.fin_profile.company_401k == "offers a 401k" && @user.fin_profile.company_matches == true
+			"401ks are great because they have an immediate tax benefit: money you put in your 401k is not taxed. 
+				It's even better in your situation because your company matches - that's like free money!"
+		elsif @user.fin_profile.company_401k == "offers a 401k" && @user.fin_profile.company_matches == false
+			"401ks are great because they have an immediate tax benefit: money you put in your 401k is not taxed. 
+				And it's a great way to set up an automated investing plan."
+		elsif @user.fin_profile.company_401k == "doesn\'t offer a 401k"
+			"The best alternative to a 401k is the IRA, which stands for Individual Retirement Account. You'll have 
+				to set this up on your own, but I have a recommendation to help make it simple and easy to get started."
+		end
+	end
+
+	def retirement_challenge
+		@user = current_user
+		if @user.fin_profile.company_401k == "offers a 401k"
+			"Your challenge this week is to set up a 401k at your company. I recommend setting it up at a minimum of 3% 
+				of your income - but do as much as you feel comfortable with!"
+		else
+			"Your challenge this week is to set up an IRA and start making monthly contributions to it, at whatever 
+				amount you feel comfortable. I recommend using Vanguard because they have some of the lowest fees 
+				while also being extremely reputable."
 		end
 	end
 
