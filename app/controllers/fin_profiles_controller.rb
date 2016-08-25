@@ -13,7 +13,10 @@ class FinProfilesController < ApplicationController
     @fin_profile = @user.fin_profile
     @current_focus = @user.fin_profile.current_focus
 
-    if @fin_profile.update_attributes(params.require(:fin_profile).permit(:cc_feeling, :cc_approach, :cc_rate, :cc_amount, :biggest_expense, :expense_frequency, :student_feeling, :student_approach, :student_rate, :student_amount, :saving_purpose, :saving_purpose_free_form))
+    if @fin_profile.update_attributes(params.require(:fin_profile).permit(:cc_feeling, :cc_approach, :cc_rate, 
+          :cc_amount, :biggest_expense, :expense_frequency, :student_feeling, :student_approach, :student_rate, 
+          :student_amount, :saving_purpose, :saving_purpose_free_form, :invest_now, :invest_decision, :company_401k, 
+          :company_matches))
       	case @current_focus
     		when "SAVINGS HABITS", "SAVINGS"
     			if(@fin_profile.saving_purpose == nil)
@@ -64,7 +67,11 @@ class FinProfilesController < ApplicationController
           end
 
     		when "INVESTMENTS"
-    			redirect_to challenges_investment_model_path
+    			if @fin_profile.investments_type["retirement_fund"] == "0"
+            redirect_to challenges_retirement_model_path
+          elsif @fin_profile.investments_type["stock_market"] == "0"
+            redirect_to challenges_stock_market_model_path
+          end
 		    end
     else
       flash[:error] = "Uh oh, that didn't work - please try again"
