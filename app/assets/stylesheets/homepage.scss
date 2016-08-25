@@ -46,7 +46,7 @@
 .bank-icon{
   width: 26%;
   height: auto;
-  padding: 7px 0px;
+  padding: 5px 0px;
   margin: 2px;
   cursor: pointer;
 }
@@ -54,40 +54,59 @@
 
 
 .ribbon-content{
-  background-image: url("ribbon.png");
-  background-size: cover;
-  width: 85%;
-  padding: 10px;
+  width: 80%;
+
 }
 
-.small-score-balloon{
-  background-image:url('small-balloon.png');
-  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-    box-sizing: border-box;         /* Opera/IE 8+ */
-  display: inline-block;
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 36px;
-  height:54px;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding-top:7px;
-  padding-left:3%;
-  color:#5FC4A7;
+.ribbon-image{
+  width:100%;
+  margin:auto;
+  position: relative;
 }
+
 
 .ribbon-text{
     position: absolute;
-    margin-left: 5px;
-    width: 60%;
+    margin-left: 20%;
+    width: 50%;
     display: inline-block;
     color:#5FC4A7;
     padding-top:7px;
     font-size:14px;
+    position:absolute;
+    margin-top:-17%;
 }
 
 
+.small-score-balloon{
+  background-image: image-url("small-balloon.png");
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+  display: block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 36px;
+  height:54px;
+  margin-left: 4%;
+  padding-top:7px;
+  padding-left:2%;
+  color:#5FC4A7;
+  position:absolute;
+  margin-top:-17%;
+}
+
+
+
+.reset-pigs-block{
+  font-size:14px;
+  margin-top:10px;
+}
+
+.reset-pigs{
+  text-decoration: underline;
+   color:#5FC4A7;
+}
 
 
 .secondary-links{
@@ -95,35 +114,46 @@
   width: 100%;
   margin: auto;
 //  margin-top: 20px;
-  padding: 7px 7px;
+  padding-top: 5px;
+  padding: 14px 10px;
   position: fixed;
   bottom:0;
   background-color: #0E2C33;
+  color: #40787c;
+  font-size: 14px;
 }
 
-.sign-out-icon{
-  position:absolute;
-  width:30px;
+
+.eqi-container {
+  display: flex;
+  justify-content: space-between;
+}
+.eqi-container div {
+  width: 100px;
+  height: 50px;
+}
+
+
+.sign-out{
+  color: #40787c;
+  font-size: 14px;
+  text-decoration: underline;
   height:30px;
 
 }
 
-.help-icon{
-  margin-left:50px;
-  width:30px;
+.get-help{
+  color: #40787c;
+  font-size: 14px;
+  text-decoration: underline;
   height:30px;
-  display:inline-block;
+
 }
 
 .feedback{
   color: #40787c;
   font-size: 14px;
-  right: 15px;
-  height: 30px;
-  position: absolute;
-  width: 100px;
-  padding-top: 5px;
-  display: inline-block;
   text-decoration: underline;
+  height: 30px;
 
 }
