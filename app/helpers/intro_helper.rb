@@ -181,6 +181,7 @@ module IntroHelper
 				"You mentioned that you don't think you can cut back on anything. I definitely understand,
 				it's not always possible to spend any less to save more. We may have to consider some bigger
 				changes. I'd love to start by chatting so I can better understand your situation."
+			end
 
 		when "SAVINGS"
 			if @guest_user.savings_amount == 0
