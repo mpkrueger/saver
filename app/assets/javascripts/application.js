@@ -36,7 +36,7 @@ $(document).on('turbolinks:load', function() {
   });
 
   $(function(){
-    $(".bank-icon").on('click', function() {
+    $("#homepage-pigs").on('click', function() {
       var $this = $(this);
 
       if(!$this.data('clicked')){
@@ -44,8 +44,11 @@ $(document).on('turbolinks:load', function() {
         $.post('/fin_profiles/increment_piggies');
         $this.data('clicked', true);
       }
+
     });
   });
+
+
 
   // :controller => :fin_profiles, :action => :increment_piggies
 

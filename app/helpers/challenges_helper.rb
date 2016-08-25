@@ -104,6 +104,25 @@ module ChallengesHelper
 		end
 	end
 
+	def savings_purpose
+		@user = current_user
+		case @user.fin_profile.saving_purpose
+		when "put it toward retirement"
+			"for retirement"
+		when "invest it in the stock market"
+			"so you can invest in the stock market"
+		when "pay off loans"
+			"to pay off those loans faster"
+		when "put it toward a trip"
+			"so you can take an awesome trip"
+		when "something else"
+			"for: " + @user.fin_profile.saving_purpose_free_form
+		when "I'm not sure – would love help"
+			"and we'll discuss how to make the most out of those savings"
+		end
+	end
+
+
 	# LETS CHAT PAGE METHODS
 	def lets_chat_message
 		@user = current_user
