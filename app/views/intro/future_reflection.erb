@@ -29,7 +29,7 @@
 			
 			<div class="future-story">
 				<hr class="hr-future"/>
-				On <%= (Time.now + 5.year).strftime("%b %d, %Y") %>, you wake up in your killer <%= @guest_user.future_day['home'] %> with <%= future_livingwith %>. It's a beautiful day in <%= @guest_user.future_day['city'] %>. You head to work where you <%= future_work %>. When the end of the day rolls around, you're excited to <%= future_fun %>. At night, you think about where you were just a few years ago. You think to yourself "Wow, pretty incredible that I was able to <%= @guest_user.future_day['major_goal'] %>!"
+				On <%= (Time.zone.now + 5.year).strftime("%b %d, %Y") %>, you wake up in your killer <%= @guest_user.future_day['home'] %> with <%= future_livingwith %>. It's a beautiful day in <%= @guest_user.future_day['city'] %>. You head to work where you <%= future_work %>. When the end of the day rolls around, you're excited to <%= future_fun %>. At night, you think about where you were just a few years ago. You think to yourself "Wow, pretty incredible that I was able to <%= @guest_user.future_day['major_goal'] %>!"
 				<hr class="hr-future"/>
 			</div>
 
