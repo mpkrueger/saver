@@ -20,7 +20,7 @@ module ChallengesHelper
 		@user = current_user
 		case @user.fin_profile.current_focus
 		when "SAVINGS", "SAVINGS HABITS"
-			"Ok - in this first mini-challenge we're going to increase your Savvy Score by taking a small step toward better savings habits. It's going to be awesome."
+			"Ok - in this first challenge we're going to increase your Savvy Score by taking a small step toward better savings habits. It's going to be awesome."
 		when "STUDENT LOANS"
 			if @user.fin_profile.student_approach == "less than the amount due"
 				"OK - with that in mind, adjusting your repayment plan or consolidation may be helpful. But 
@@ -305,10 +305,12 @@ module ChallengesHelper
 
 	def investment_intro
 		@user = current_user
-		if @user.fin_profile.investments_type["retirement"] == "0"
-			"We're tackling investments - and our first mini-challenge will involve retirement accounts. I just need a little more info to set it up."
+		if @user.fin_profile.investments_type["retirement_fund"] == "0"
+			"We're tackling investments - and our first challenge will involve retirement accounts. 
+				I just need a little more info to set it up."
 		elsif @user.fin_profile.investments_type["stock_market"] == "0"
-			"We're tackling investments - and our first mini-challenge will involve investing in the stock market. I just need a little more info to set it up."
+			"We're tackling investments - and our first challenge will involve investing in the stock 
+				market. I just need a little more info to set it up."
 		end
 	end
 
