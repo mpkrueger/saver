@@ -52,9 +52,9 @@
 
 				<div class="spaced-row user-content">
 					<div class="madlib-sentence">
-						You can cheer me on by<br \>
+						You can encourage me with<br \>
 						<div class="dropdown-style inner-addon right-addon">
-							<%= f.select :contact_prefs, [['sending a text once or twice', 'sending a text once or twice'], ['sending a text in the evening', 'sending a text in the evening'],['sending me email', 'sending me email'], ['no thanks - I\'ll check back', 'no thanks - I\'ll check back']], { include_blank: "my preferred method..." }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
+							<%= f.select :contact_prefs, [['1-2 texts this week', '1-2 texts this week'], ['a quick daily text', 'a quick daily text'],['a daily email', 'a daily email'], ['I\'ll check back myself', 'I\'ll check back myself']], { include_blank: "my preferred method..." }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
 							<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
 						</div>
 					</div>

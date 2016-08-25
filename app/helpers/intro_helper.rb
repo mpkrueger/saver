@@ -113,9 +113,11 @@ module IntroHelper
 		when 'yeah'
 			"Great, I have some fun ideas on how to make saving fun. We'll talk more about that later."
 		when 'it depends'
-			"Cool, I have some fun ideas on how to make saving fun and I think good savings habits are well worth it, but we can talk more about that later."
+			"Cool, I have some fun ideas on how to make saving fun and I think good savings habits are 
+			well worth it, but we can talk more about that later."
 		when 'no'
-			"Cool, I understand there may not be any wiggle room in how much you spend/save each month. We can talk about other potential ways to increase your savings each month later."
+			"Cool, I understand there may not be any wiggle room in how much you spend/save each month. 
+			We can talk about other potential ways to increase your savings each month later."
 		when ''
 			if @guest_user.savings_from_income == "a lot"
 				"Wow, that's great that you've built up such a good savings habit!"
@@ -156,7 +158,7 @@ module IntroHelper
 				"That's something you mentioned wanting to pay off faster and it's a great place to start since 
 					it often has high interest rates. That means your credit card company is getting 
 					more of your hard-earned money. I have some good ideas to start tackling this."
-			elsif @guest_user.cc_attitude == "continue what I\'m doing"
+			elsif @guest_user.cc_attitude == "continue what I'm doing"
 				"You mentioned that you're ok with your current approach to those credit cards so I would love 
 					to start by chatting and better understanding your situation."
 			elsif @guest_user.cc_attitude == "get some advice"
@@ -167,28 +169,38 @@ module IntroHelper
 			"I'd like to start there since you mentioned wanting to pay them off faster and doing so would free 
 				up extra money each month!"
 		when "SAVINGS HABITS"
-			"I'd like to start there because saving each month is the foundation of a healthy financial house. 
-				And you don't have any credit card to address first which is fantastic. So let’s 
+			if @guest_user.spend_less == "yeah"
+				"I'd like to start there because saving each month is the foundation of a healthy financial 
+				house. And you don't have any credit card debt to address which is fantastic. So let’s 
 				see if we can try to cut back a little and grow your overall wealth."
+			elsif @guest_user.spend_less == "it depends"
+				"I'd like to start there because saving each month is the foundation of a healthy financial 
+				house. And you don't have any credit card debt to address which is fantastic. You 
+				sounded a little unsure about whether you can cut back, but let's it this a shot!"
+			elsif @guest_user.spend_less == "no"
+				"You mentioned that you don't think you can cut back on anything. I definitely understand,
+				it's not always possible to spend any less to save more. We may have to consider some bigger
+				changes. I'd love to start by chatting so I can better understand your situation."
+
 		when "SAVINGS"
 			if @guest_user.savings_amount == 0
-				"I'd like to start there because you mentioned that someone raided your piggy bank (not cool!). Having a healthy 
-					emergency fund (a fat piggybank) is critical. I know you've got some exciting plans, but I want you 
-					to be ok if there are any surprises along the way."
+				"I'd like to start there because you mentioned that someone raided your piggy bank (not cool!). 
+				Having a healthy emergency fund (a fat piggybank) is critical. I know you've got some exciting 
+				plans, but I want you to be ok if there are any surprises along the way."
 			else
-				"I'd like to start there because you mentioned that your piggy bank has " + @savings_amount +" of dollars. Having a healthy 
-					emergency fund (a fat piggybank) is critical. I know you've got some exciting plans, but I want you 
-					to be ok if there are any surprises along the way."
+				"I'd like to start there because you mentioned that your piggy bank has " + @savings_amount +
+				" of dollars. Having a healthy emergency fund (a fat piggybank) is critical. I know you've got 
+				some exciting plans, but I want you to be ok if there are any surprises along the way."
 			end
 		when "INVESTMENTS"
 			if @guest_user.investments_type["retirement_fund"] == "0"
-				"You're in good shape overall! No credit card debt, a good amount saved up, and healthy savings habits. 
-					But you mentioned not having any retirement accounts. A little now adds up quickly for the future, so let's 
-					work on that first together."
+				"You're in good shape overall! No credit card debt, a good amount saved up, and healthy savings 
+				habits. But you mentioned not having any retirement accounts. A little now adds up quickly for 
+				the future, so let's work on that first together."
 			elsif @guest_user.investments_type["stock_market"] == "0"
-				"You're in good shape overall! No credit card debt, a good amount saved up, and healthy savings habits.  
-					But you mentioned that you haven't yet started investing in the stock market - so let's work on that 
-					together first, so we help your savings grow faster."
+				"You're in good shape overall! No credit card debt, a good amount saved up, and healthy savings 
+				habits. But you mentioned that you haven't yet started investing in the stock market - so let's 
+				work on that together first, so we help your savings grow faster."
 			end
 		end
 	end
@@ -201,7 +213,7 @@ module IntroHelper
 				"I want to help you: pay off more of your debt each month, 
 				evaluate different payment strategies, and explore ways to consolidate your credit card 
 				balances."
-			elsif @guest_user.cc_attitude == "continue what I\'m doing"
+			elsif @guest_user.cc_attitude == "continue what I'm doing"
 				"I want to see if we can tackle it because this type of debt usually has a big negative 
 				impact on financial goals."
 			elsif @guest_user.cc_attitude == "get some advice"
@@ -241,7 +253,7 @@ module IntroHelper
 		when "CREDIT CARD DEBT"
 			if @guest_user.cc_attitude == "pay off my debt faster"
 				"so that I can get you started on the path towards debt-free living."
-			elsif @guest_user.cc_attitude == "continue what I\'m doing"
+			elsif @guest_user.cc_attitude == "continue what I'm doing"
 				"so that I can get to know you better and help you take the best steps forward towards your 
 					future goals."
 			elsif @guest_user.cc_attitude == "get some advice"
@@ -272,12 +284,14 @@ module IntroHelper
 		@guest_user = @guest_user
 		case @guest_user.future_day['financially']
 		when 1
-			"Unfortunately, financially things are not so good. But there are a lot of years left to change that."
+			"Unfortunately, financially things are not so good. But there are a lot of years 
+			left to change that."
 		when 2
-			"And in good news, finances are looking better. There's more to do, but Future" + @guest_user.name + "is 
-				feeling confident."
+			"And in good news, finances are looking better. There's more to do, but Future" 
+			+ @guest_user.name + "is feeling confident."
 		when 3
-			"Best of all, Future" + @guest_user.name + " has made awesome financial decisions and is now riding high. "
+			"Best of all, Future" + @guest_user.name + " has made awesome financial decisions and 
+			is now riding high. "
 		end
 	end
 
