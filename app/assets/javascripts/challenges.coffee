@@ -69,3 +69,24 @@ $(document).on 'ready turbolinks:load', (event) ->
           $('#choice-yes').hide()
           $('#choice-no').show()
           $('#NextButton').show()
+
+  $('#savingspurpose-other').hide()
+  $('#savings-purpose').change ->
+    savingspurpose = $('#savings-purpose :selected').text()
+    if savingspurpose == 'something else'
+      $('#savingspurpose-other').show()
+      $('#NextButton').show()
+    else
+      $('#NextButton').show()
+
+  $('#selected-pig').hide()
+  $('#unselected-pig').click ->
+    if($('#unselected-pig').is(':visible'))
+      $('#unselected-pig').hide()
+      $('#selected-pig').show() 
+
+  $('#selected-pig').click ->
+    if($('#selected-pig').is(':visible'))
+      $('#selected-pig').hide()
+      $('#unselected-pig').show() 
+

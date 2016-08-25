@@ -4,14 +4,27 @@
         
     });
 </script>
-
+<script type="text/javascript">
+	function swap()
+	{
+		var img = document.getElementById("pig");
+	   if (img.src.endsWith('unselected.png') != -1)  
+	   { 
+	      document.getElementById("pig").src = "/assets/button_piggy_bank_selected.png";  
+	   } 
+	   else
+	   { 
+	      document.getElementById("pig").src = "/assets/button_piggy_bank_unselected.png"; 
+	   }
+	}
+</script>
 <body class="page-background">
 		
 	<section id="coach-section">
 		<div class="coach-chat-triangle"></div>
 		<div class="coach-question">
 			<aside>
-				Our goal is to save a little extra by <%= @user.fin_profile.biggest_expense %> only <%= challenge_frequency %>x in the next 7 days.
+				Great, let's get you that extra cash <%= savings_purpose %>! You said you usually go out for <%= biggest_expense_word %> <%= challenge_frequency + 1 %> times each week. <br /><br /><strong>Your challenge will be to only go out for <%= biggest_expense_word %> <%= challenge_frequency %> times in the next 7 days. </strong>
 			</aside>
 		</div>
 	</section>
@@ -29,7 +42,17 @@
 			<div class="coach-chat-triangle"></div>
 			<div class="coach-question">
 				<aside>
-					I prefer to think of that as saving money <%= 7 - challenge_frequency %> times - so I'll help you count those wins!
+					And just so you don't get down on those days you're not <%= @biggest_expense %>, I'll have <%= 7 - challenge_frequency %> piggy banks for you to collect each day you're not <%= @biggest_expense %>. <br /><br /><span style="font-size:14px">(feel free to practice collecting your wins now!)</span><br />
+
+					<div id="unselected-pig">
+					<%= image_tag('button_piggy_bank_unselected.png',
+							class: "bank-icon") %>
+					</div>
+					<div id="selected-pig">
+					<%= image_tag('button_piggy_bank_selected.png',
+							class: "bank-icon") %>
+					</div>
+
 				</aside>
 			</div>
 		</section>
@@ -40,7 +63,7 @@
 			<div class="coach-chat-triangle"></div>
 			<div class="coach-question">
 				<aside>
-					As your coach, I'm here to cheer you on and help you crush this challenge. How can I send words of encouragement?
+					I'll be here to cheer you on and help you crush this challenge. How can I send words of encouragement?
 				</aside>
 			</div>
 		</section>

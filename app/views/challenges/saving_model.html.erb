@@ -47,20 +47,24 @@
             <div class="madlib-sentence"> 
             I would take that <%= food_savings %> and...<br/>
               <div class="dropdown-style inner-addon right-addon">
+                <div id="savings-purpose">
+                  <%= f.select(:saving_purpose, [['put it toward retirement', 'put it toward retirement'], ['invest it in the stock market', 'invest it in the stock market'], ['pay off loans', 'pay off loans'], ['put it toward a trip', 'put it toward a trip'], ['something else', 'something else'], ['I\'m not sure - would love help', 'I\'m not sure – would love help']], { include_blank: "do this..." }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'}) %>
+                  <span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
+                </div>
+              </div>
+
+              <div id="savingspurpose-other">
                 
-                <%= f.select(:saving_purpose, [['put it toward retirement', 'put it toward retirement'], ['invest it in the stock market', 'invest it in the stock market'], ['pay off loans', 'pay off loans'], ['put it toward a trip', 'put it toward a trip'], ['I\'m not sure - would love help', 'I\'m not sure - would love help']], { include_blank: "do this..." }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'}) %>
-                <span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
+                <div class="comment-field top-margin" >
+                  <%= f.text_field :saving_purpose_free_form, class: "text-field", placeholder: "something else..." %>
+                </div>
               </div>
-              <br />
-              OR
-              <br />
-              <div class="comment-field">
-                <%= f.text_field :saving_purpose_free_form, class: "text-field", placeholder: "something else..." %>
-              </div>
+
+
             </div>
           </div>
         </section>
-        <div id="SubmitButton" class="hidden" style="display:none;">
+        <div id="NextButton">
           <div class="button-row">
             <%= f.submit "Next", class: 'next-button' %>
           </div>
