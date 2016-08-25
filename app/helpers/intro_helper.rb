@@ -111,9 +111,9 @@ module IntroHelper
 		@guest_user = @guest_user
 		case @guest_user.spend_less
 		when 'yeah'
-			"Great, I have some fun ideas on how to make saving fun. We'll talk more about that later."
+			"Great, I have some ways to make saving fun. We'll talk more about that later."
 		when 'it depends'
-			"Cool, I have some fun ideas on how to make saving fun and I think good savings habits are 
+			"Cool, I have some ways to make saving fun and I think good savings habits are 
 			well worth it, but we can talk more about that later."
 		when 'no'
 			"Cool, I understand there may not be any wiggle room in how much you spend/save each month. 

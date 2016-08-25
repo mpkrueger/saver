@@ -47,17 +47,20 @@
   </div>  
 
   <div id= "chat3" class="hidden" style="display:none;">
-
-        <div class="button-row">
-          <%= link_to "Got it!", root_path, class: 'next-button' %>
+    <section id="user-section">
+      <div class="button-row">
+        <%= link_to "Got it!", root_path, class: 'next-button' %>
+      </div>
+      <br \>
+      <div class="button-row">
+      <%= link_to "Or let us know if you'd like to chat", challenges_lets_chat_path, class: 'secondary-cta-link' %>
+      </div>
+      <div class="page-bottom-padding">
+        <div class="padding-text">
+          adding space below next button
         </div>
-        <br \>
-        <%= link_to "Or let us know if you'd like to chat", challenges_lets_chat_path, class: 'feedback' %>
-          <div class="page-bottom-padding">
-            <div class="padding-text">
-              adding space below next button
-            </div>
-          </div>
+      </div>
+    </section>
   </div>
 
 </body>
