@@ -62,8 +62,10 @@ $(document).on 'ready turbolinks:load', (event) ->
       return $('#depends-choice').change ->
         invest = $('#depends-choice :selected').text()
         if invest == "Yes, let\'s do it"
+          $('#choice-no').hide()
           $('#choice-yes').show()
           $('#NextButton').show()
         else if invest == "No thanks, I\'d rather not right now"
+          $('#choice-yes').hide()
           $('#choice-no').show()
           $('#NextButton').show()
