@@ -35,7 +35,12 @@ class ChallengesController < ApplicationController
     @student_amount = @user.fin_profile.student_amount
   end
 
-  def investment_info
+  def retirement_info
+    @user = current_user
+    @fin_profile = @user.fin_profile
+  end
+
+  def stock_market_info
     @user = current_user
     @fin_profile = @user.fin_profile
   end

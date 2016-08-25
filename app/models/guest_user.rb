@@ -196,6 +196,9 @@ class GuestUser < ApplicationRecord
 		elsif self.savings_score == 0
 			area = self.savings_score_percent
 
+		elsif self.savings_score == 20
+			area = self.investments_score_percent
+
 		end
 
 
