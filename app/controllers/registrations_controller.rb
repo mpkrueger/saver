@@ -51,7 +51,7 @@ class RegistrationsController < Devise::RegistrationsController
 		@user = current_user
 		if @user.fin_profile.cc_attitude == "get some advice" || @user.fin_profile.cc_attitude == "continue what I\'m doing"
 			challenges_lets_chat_path
-		elsif @user.fin_profile.spend_less == "no"
+		elsif @user.fin_profile.spend_less == "no" && @user.fin_profile.current_focus != "INVESTMENTS"
 			challenges_lets_chat_path
 		else
 			challenges_intro_path

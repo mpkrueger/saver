@@ -176,7 +176,7 @@ module IntroHelper
 			elsif @guest_user.spend_less == "it depends"
 				"I'd like to start there because saving each month is the foundation of a healthy financial 
 				house. And you don't have any credit card debt to address which is fantastic. You 
-				sounded a little unsure about whether you can cut back, but let's it this a shot!"
+				sounded a little unsure about whether you can cut back, but let's give this a shot!"
 			elsif @guest_user.spend_less == "no"
 				"You mentioned that you don't think you can cut back on anything. I definitely understand,
 				it's not always possible to spend any less to save more. We may have to consider some bigger
@@ -195,13 +195,13 @@ module IntroHelper
 			end
 		when "INVESTMENTS"
 			if @guest_user.investments_type["retirement_fund"] == "0"
-				"You're in good shape overall! No credit card debt, a good amount saved up, and healthy savings 
-				habits. But you mentioned not having any retirement accounts. A little now adds up quickly for 
-				the future, so let's work on that first together."
+				"You're in good shape overall! No credit card debt and a good amount saved up. But you mentioned 
+					not having any retirement accounts. A little now adds up quickly for the future, so let's 
+					work on that first together."
 			elsif @guest_user.investments_type["stock_market"] == "0"
-				"You're in good shape overall! No credit card debt, a good amount saved up, and healthy savings 
-				habits. But you mentioned that you haven't yet started investing in the stock market - so let's 
-				work on that together first, so we help your savings grow faster."
+				"You're in good shape overall! No credit card debt and a good amount saved up. But you mentioned 
+					that you haven't yet started investing in the stock market - so let's work on that together 
+					first, so we help your savings grow faster."
 			end
 		end
 	end

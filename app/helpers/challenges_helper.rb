@@ -11,7 +11,11 @@ module ChallengesHelper
 		when "CREDIT CARD DEBT"
 			challenges_credit_card_info_path
 		when "INVESTMENTS"
-			challenges_investment_info_path
+			if @user.fin_profile.investments_type["retirement_fund"] == "0"
+				challenges_retirement_info_path
+			else
+				challenges_stock_market_info_path
+			end
 		end
 	end
 
