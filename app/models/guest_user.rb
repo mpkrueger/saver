@@ -196,7 +196,8 @@ class GuestUser < ApplicationRecord
 		elsif self.savings_score == 0
 			area = self.savings_score_percent
 
-		elsif self.savings_score == 20
+		# if user has tens of thousands in savings and isn't spending all of their income, give them investments
+		elsif self.savings_score == 20 && savings_from_income != "none"
 			area = self.investments_score_percent
 
 		end
@@ -205,8 +206,6 @@ class GuestUser < ApplicationRecord
 		case area
 		when self.cc_debt_score_percent
 			"CREDIT CARD DEBT"
-		when self.student_debt_score_percent
-			"STUDENT LOANS"
 		when self.savings_habits_percent
 			"SAVINGS HABITS"
 		when self.savings_score_percent
