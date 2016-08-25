@@ -27,7 +27,7 @@
 			<div class="coach-chat-triangle">
 			</div>
 			<div class="coach-question">
-				Do you have $500 that you would be willing to invest into the stock market this week?
+				Do you have $500 that you would be willing to invest this week? I'd like to start with that amount because it's the lowest amount to avoid any fees at my favorite investment option. If not, no worries.
 			</div>
 
 		</section>
@@ -42,7 +42,7 @@
 					<div class="madlib-sentence">
 						<div id="500">
 							<div class="dropdown-style inner-addon right-addon">
-								<%= f.select :student_amount, [['Yes, I do', 'Yes, I do'],['No, I don\'t', 'No, I don\'t'], ['That depends...', 'That depends...']], {include_blank: 'I do/don\'t...'}, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
+								<%= f.select :invest_now, [['Yes, I do', 'Yes, I do'],['No, I don\'t', 'No, I don\'t'], ['That depends...', 'That depends...']], {include_blank: 'I do/don\'t...'}, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
 								<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
 							</div>
 						</div>
@@ -53,7 +53,7 @@
 				<section id="coach-section">
 	          		<div class="coach-chat-triangle"></div>
           			<div class="coach-question">          			
-            			Great to hear - let's do this!
+            			Great to hear - I'll show you how to get started!
             		</div>
             	</section>
             </div>
@@ -61,7 +61,7 @@
             	<section id="coach-section">
 	          		<div class="coach-chat-triangle"></div>
           			<div class="coach-question">
-            			Ok, I understand. Let's try a savings challenge to build up to that amount then.
+            			No worries, I totally understand. Let's try a savings challenge to build up to that amount then.
             		</div>
             	</section>
             </div>
@@ -69,7 +69,7 @@
             	<section id="coach-section">
 	          		<div class="coach-chat-triangle"></div>
           			<div class="coach-question">
-            			I want to help you dip your toe into investing and do so without any fees. Is that something you'd like to do?
+            			I'm suggesting this first step because it's a low-cost, low-risk way to get started. But I totally understand if you're not ready for it just yet. Would you like to try it or do something else instead?
             		</div>          		
 	        	</section>
 	        </div>
@@ -78,7 +78,7 @@
 					<div class="spaced-row user-content">
 						<div class="madlib-sentence">
 							<div class="dropdown-style inner-addon right-addon">
-								<%= f.select :student_amount, [['Yes, let\'s do it', 'Yes, let\'s do it'],['No thanks, I\'d rather not right now', 'No thanks, I\'d rather not right now']], {include_blank: 'Yes/no...'}, {:id => "dropdown", :class => 'my-dropdown select'} %>
+								<%= f.select :invest_decision, [['Yes, let\'s invest $500', 'Yes, let\'s invest $500'],['No thanks, let\'s do something else', 'No thanks, let\'s do something else']], {include_blank: 'Yes/no...'}, {:id => "dropdown", :class => 'my-dropdown select'} %>
 								<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
 							</div>
 						</div>
@@ -89,7 +89,7 @@
             	<section id="coach-section">
 	          		<div class="coach-chat-triangle"></div>
           			<div class="coach-question">
-            			Sounds good - let's get started!
+            			Sounds good - I'll show you how get started!
             		</div>          		
 	        	</section>
 	        </div>
@@ -97,7 +97,7 @@
             	<section id="coach-section">
 	          		<div class="coach-chat-triangle"></div>
           			<div class="coach-question">
-            			No worries at all - let's instead do a savings challenge and build up some money to dip our toes into the investments pool.
+            			No worries at all - let's start with a savings challenge and build up some money to dip our toes into the investments pool.
             		</div>          		
 	        	</section>
 	        </div>

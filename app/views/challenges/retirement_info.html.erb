@@ -27,9 +27,10 @@
 			<section id="user-section">		
 				<div class="spaced-row user-content">
 					<div class="madlib-sentence">
+					My company 
 						<div class="dropdown-style inner-addon right-addon">
 							<div id="401k">
-								<%= f.select :student_amount, [['offers a 401(k)', 'offers a 401(k)'],['doesn\'t offer a 401(k)', 'doesn\'t offer a 401(k)']], {include_blank: 'My company...'}, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
+								<%= f.select :company_401k, [['offers a 401(k)', 'offers a 401(k)'],['doesn\'t offer a 401(k)', 'doesn\'t offer a 401(k)']], {include_blank: 'offers/doesn\'t offer...'}, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
 								<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
 							</div>
 						</div>
@@ -39,7 +40,7 @@
 						<div class="dropdown-style inner-addon right-addon">
 							<div id="matching">
 								
-								<%= f.select :student_attitude, [['the company matches some amount', 'I\'m fine with them'], ['I want to pay them off ASAP', 'I want to pay them off ASAP']], {include_blank: 'I feel...'}, {:id => "dropdown", :class => 'my-dropdown select'} %>
+								<%= f.select :company_matches, [['they match some amount', true], ['they don\'t match', false]], {include_blank: 'matches...'}, {:id => "dropdown", :class => 'my-dropdown select'} %>
 								<span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
 							</div>
 						</div>
@@ -47,6 +48,25 @@
 					</div>
 				</div>	
 			</section>
+
+			<div id="offers-401k">
+				<section id="coach-section">
+	          		<div class="coach-chat-triangle"></div>
+          			<div class="coach-question">          			
+            			That's great that your company offers a 401(k) - I'm going to help you take advantage of it.
+            		</div>
+            	</section>
+            </div>
+
+            <div id="no-401k">
+				<section id="coach-section">
+	          		<div class="coach-chat-triangle"></div>
+          			<div class="coach-question">          			
+            			That's ok that your company doesn't have a 401(k) - you can still start a retirement account. I'll show you how.
+            		</div>
+            	</section>
+            </div>
+
 			<div id="NextButton">
 				<div class="button-row">
 					<%= f.submit "Next", class: 'next-button' %>
