@@ -104,13 +104,11 @@ class FinProfile < ApplicationRecord
 		savings_habits = 0
 
 		case self.savings_from_income
-		when "very little"
+		when "a lot"
 			savings_habits += 15
-		when "some"
-			savings_habits += 10
-		when "most"
+		when "a little"
 			savings_habits += 5
-		when "all"
+		when "none"
 			savings_habits += 0
 		end
 
