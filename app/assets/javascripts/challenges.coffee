@@ -97,7 +97,7 @@ $(document).on 'ready turbolinks:load', (event) ->
   $('#NextButton').hide()
   $('#401k').change ->
     has_401k = $('#401k :selected').text()
-    if has_401k == 'offers a 401(k)'
+    if has_401k == 'offers a 401k'
       $('#no-401k').hide()
       $('#offers-401k').hide()
       $('#spacing').show()
@@ -105,7 +105,7 @@ $(document).on 'ready turbolinks:load', (event) ->
       return $('#matching').change ->
         $('#offers-401k').show()
         $('#NextButton').show()
-    else if has_401k == 'doesn\'t offer a 401(k)'
+    else if has_401k == 'doesn\'t offer a 401k'
       $('#spacing').hide()
       $('#matching').hide()
       $('#offers-401k').hide()
