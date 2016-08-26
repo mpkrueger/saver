@@ -173,12 +173,11 @@ class GuestUser < ApplicationRecord
 	end
 
 	def area_to_work_on
-		ordered_percents = [self.student_debt_score_percent, self.cc_debt_score_percent, self.savings_score_percent, self.investments_score_percent, self.savings_habits_percent]
+		ordered_percents = [self.savings_score_percent, self.investments_score_percent, self.savings_habits_percent]
 		ordered_percents = ordered_percents.sort
 		
 		# identify the area with the lowest percentage of points
 		area = ordered_percents.first
-
 
 		# check to see if the person has any credit card debt - if so make that the biggest priority
 		if [1,2,3].include? self.cc_amount
@@ -197,7 +196,7 @@ class GuestUser < ApplicationRecord
 			area = self.savings_score_percent
 
 		# if user has tens of thousands in savings and isn't spending all of their income, give them investments
-		elsif self.savings_score == 20 && savings_from_income != "none" && income_investments_score < 13
+		elsif self.savings_score == 20 && self.savings_from_income != "none" && self.investments_score < 13
 			area = self.investments_score_percent
 
 		end
@@ -210,6 +209,10 @@ class GuestUser < ApplicationRecord
 			"SAVINGS"
 		when self.investments_score_percent
 			"INVESTMENTS"
+		when self.cc_debt_score_percent
+			"CREDIT CARD DEBT"
+		when self.student_debt_score_percent
+			"STUDENT LOANS"
 		end
 	end
 

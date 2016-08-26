@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get 'dashboard/index'
   get 'dashboard/feedback'
   get 'dashboard/homepage'
+  get 'dashboard/savvy_score'
 
   devise_for :users, :controllers => { :registrations => "registrations", :sessions => "sessions" }
   resources :guest_users
