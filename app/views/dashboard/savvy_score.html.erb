@@ -13,56 +13,58 @@
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
-<body class="page-background">
+<body class="profile-background">
 
-  <section id="savvy-score-section">
-    <div class="savvy-score-bgimage">
-      <%= image_tag("savvy-score-bkgd-2.png", class:'savvy-score-bgimage' )%>
-      <div class="savvy-score-textgroup">
-        <div class="savvy-score-title">
-          SAVVY SCORE
+  <section id="main-dash">
+    <div class="top-profile-block">
+
+      <div class="col-xs-5">  
+        <%= image_tag("score-balloon-transparent.png", class:'score-balloon-homepage')%>
+        <div class="homepage-score-textgroup">
+          <div class="profile-score-title">
+              SAVVY SCORE
+          </div>
+          <div class="profile-score">
+              <%= @savvy_score %>
+          </div>
         </div>
-        <div class="score-total">
-          (out of 100)
+      </div>
+      <div class="col-xs-1"></div>
+      <div class="col-xs-5">
+        <div class="profile-name">
+              <%= @user.name %> 
         </div>
-        <div class="savvy-score">
-          <%= @savvy_score %> 
-        </div>
-   
+        
+        <div class="contact-info">
+        <span class="reset-pigs"><%= link_to "Edit", edit_user_registration_path, :class=>"reset-pigs" %></span><br/>
+           <%= @user.age %> years old <br/>
+          <%= @user.email %> <br/>
+          <%= number_to_phone(@user.phone_number, area_code: true) %>
+        </div>          
+      </div>
+      <div class="col-xs-1"></div>
+    </div>
+
+    <div class="focus-areas">
+      <div class="col-xs-6 profile-labels">
+        Current focus: <br/>
+        Current challenge: <br />
+      </div>
+      <div class="col-xs-4 profile-current-stuff">
+        <%= @current_focus.titlecase %> <br />
+        <%= @current_focus.titlecase %> Challenge
       </div>
     </div>
+  </section>
+
   
-  </section>
 
-  <section id="first-priority">
-    What we're tackling first:
-    <br /><span class="main-question"><%= @current_focus.titlecase %></span>
-  </section>
-
-  <section id="first-priority">
-    Your name:
-    <br /><span class="main-question"><%= @user.name %></span>
-  </section>
-
-  <section id="first-priority">
-    Your phone number:
-    <br /><span class="main-question"><%= @user.phone_number %></span>
-  </section>
-
-  <section id="first-priority">
-    Your email:
-    <br /><span class="main-question"><%= @user.email %></span>
-  </section>
-
-  <div class="button-row">
-      <%= link_to "Back to homepage", root_path, class: 'next-button' %>
-  </div>
-
-  <section id="user-section">
+  <section>
     <div class="spaced-row user-content">
-      <div class="row-future">
-        <%= link_to "Make changes to my profile", edit_user_registration_path, :class=>"reset-pigs" %>
+      <div class="button-row">
+        <%= link_to "Back to homepage", root_path, class: 'next-button' %>
       </div>
+     
     </div>
   </section>
   

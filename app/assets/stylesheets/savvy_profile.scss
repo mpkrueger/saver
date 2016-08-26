@@ -1,0 +1,90 @@
+
+
+#main-dash{
+	margin:auto;
+	position:relative;
+	padding-top: 10%;
+	margin-bottom:20px;
+	display:block;
+}
+
+.top-profile-block{
+	height:200px;
+	width:100%;
+}
+
+.focus-areas{
+	text-align: center;
+    margin-top: 15px;
+    font-size: 18px;
+    height:70px;
+    width:100%;
+}
+
+.profile-background{
+	background-color:#125D70;
+	background-image: url('dashboard_background2.png');
+	background-repeat: no-repeat;
+	position:fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+.score-balloon-homepage{
+	width:100%;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.homepage-score-textgroup{
+  width:100%;
+  margin: auto;
+  position: absolute;
+  padding-top:25%;
+  margin-left:-9%;
+  margin-top:-120%;
+  text-align: center;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+
+.profile-score-title{
+    font-size: 11px;
+    text-align: center;
+
+}
+
+.profile-score{
+	font-size: 48px;
+    font-weight: 500;
+    margin-top: -10px;
+    color: #fff;
+}
+
+.profile-name{
+	font-size:36px;
+	font-weight:500;
+	margin-bottom:10px;
+	padding-top:35%;
+}
+
+.contact-info{
+	font-size:16px;
+}
+
+.profile-labels{
+	text-align:right;
+	font-size:16px;
+}
+
+.profile-current-stuff{
+	color:#F1C669;
+	font-size:16px;
+	text-align:left;
+
+}
