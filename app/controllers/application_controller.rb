@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:account_update, keys: [:phone_number, :chat_type, :contact_prefs])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:phone_number, :chat_type, :contact_prefs, :name, :email, :psasword, :current_password, :password_confirmation])
   end
 
 end
