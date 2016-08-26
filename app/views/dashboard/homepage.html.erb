@@ -41,6 +41,7 @@
 				</div>
 			</div>
 
+			<%= link_to dashboard_savvy_score_path do %>
 			<div class="ribbon-content">
 				<%= image_tag("ribbon.png", class:'ribbon-image' )%>
 				<div class="small-score-balloon">
@@ -50,6 +51,7 @@
 				Complete the challenge to boost your Investments! 
 				</div>
 			</div>
+			<% end %>
 
 <!-- if they're in the investments focus area and have finished the retirement flow -->
 
@@ -133,15 +135,17 @@
 				</div>
 
 			</div>
-			<div class="ribbon-content">
-				<%= image_tag("ribbon.png", class:'ribbon-image' )%>
-				<div class="small-score-balloon">
-				+2
+			<%= link_to dashboard_savvy_score_path do %>
+				<div class="ribbon-content">
+					<%= image_tag("ribbon.png", class:'ribbon-image' )%>
+					<div class="small-score-balloon">
+					+2
+					</div>
+					<div class="ribbon-text">
+					Complete the challenge to boost your Savings Habits! 
+					</div>
 				</div>
-				<div class="ribbon-text">
-				Complete the challenge to boost your Savings Habits! 
-				</div>
-			</div>
+			<% end %>
 
 
 

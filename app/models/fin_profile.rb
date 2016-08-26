@@ -196,15 +196,13 @@ class FinProfile < ApplicationRecord
 			area = self.savings_score_percent
 
 		# if user has tens of thousands in savings and isn't spending all of their income, give them investments
-		elsif self.savings_score == 20 && savings_from_income != "none"
+		elsif self.savings_score == 20 && self.savings_from_income != "none" && self.investments_score < 13
 			area = self.investments_score_percent
 
 		end
 
 
 		case area
-		when self.cc_debt_score_percent
-			"CREDIT CARD DEBT"
 		when self.savings_habits_percent
 			"SAVINGS HABITS"
 		when self.savings_score_percent
