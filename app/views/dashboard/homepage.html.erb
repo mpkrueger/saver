@@ -69,15 +69,17 @@
 				</div>
 			</div>
 
-			<div class="ribbon-content">
-				<%= image_tag("ribbon.png", class:'ribbon-image' )%>
-				<div class="small-score-balloon">
-				+2
+			<%= link_to dashboard_savvy_score_path do %>
+				<div class="ribbon-content">
+					<%= image_tag("ribbon.png", class:'ribbon-image' )%>
+					<div class="small-score-balloon">
+					+2
+					</div>
+					<div class="ribbon-text">
+					Complete the challenge to boost your Investments! 
+					</div>
 				</div>
-				<div class="ribbon-text">
-				Complete the challenge to boost your Investments! 
-				</div>
-			</div>
+			<% end %>
 
 <!-- if they've started the savings challenge flow, but didn't get to set their biggest_expense, let's let them finish -->
 		<% elsif @user.fin_profile.biggest_expense == nil %>
