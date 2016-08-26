@@ -37,7 +37,7 @@
 					<%= image_tag 'balloon_note.png', class:"balloon-note-graphic" %>
 				</div>
 				<div class="action">
-					Hi, <%= @user.name %>. Your challenge this week is to invest $500 into the stock market. Complete this challenge by visiting <%= link_to "Wealthfront", "https://www.wealthfront.com" %>.
+					Hi, <%= @user.name %>. Your challenge this week is to invest $500 into the stock market. Complete this challenge by visiting <%= link_to "Wealthfront", "https://www.wealthfront.com", :class=>"homepage-link" %>.
 				</div>
 			</div>
 
@@ -64,7 +64,7 @@
 					<% if @user.fin_profile.company_401k == "offers a 401k" %>
 						Hi, <%= @user.name %>. Your challenge this week is to set up a 401k at your company.
 					<% else %>
-						Hi, <%= @user.name %>. Your challenge is to Your challenge this week is to set up an IRA. Complete this challenge by visiting <%= link_to "Vanguard", "https://investor.vanguard.com/ira/how-to-open-an-ira" %>.
+						Hi, <%= @user.name %>. Your challenge is to Your challenge this week is to set up an IRA. Complete this challenge by visiting <%= link_to "Vanguard", "https://investor.vanguard.com/ira/how-to-open-an-ira", :class=>"homepage-link" %>.
 					<% end %>
 				</div>
 			</div>
@@ -79,6 +79,8 @@
 					Complete the challenge to boost your Investments! 
 					</div>
 				</div>
+
+
 			<% end %>
 
 <!-- if they've started the savings challenge flow, but didn't get to set their biggest_expense, let's let them finish -->
@@ -133,7 +135,7 @@
 				</div>
 
 				<div class="reset-pigs-block">
-					<%= link_to "Oops, please reset my piggy banks", reset_piggies_fin_profiles_path, :class=>"reset-pigs" , method: :post %>
+					<%= link_to "Oops, please reset my piggy banks", reset_piggies_fin_profiles_path, :class=>"homepage-link" , method: :post %>
 				</div>
 
 			</div>
@@ -147,17 +149,16 @@
 					Complete the challenge to boost your Savings Habits! 
 					</div>
 				</div>
+
+				<div class="page-bottom-padding">
+		          <div class="padding-text">
+		            adding space below next button
+		          </div>
+		        </div>				
 			<% end %>
 
-
-
-
 		<% end %>
-	
-
 	</section>
-	
-
 
 	<div class="secondary-links">
 		<div class="eqi-container">

@@ -17,7 +17,7 @@
 
   <section id="main-dash">
     <div class="top-profile-block">
-
+      <div class="col-xs-1"></div>
       <div class="col-xs-5">  
         <%= image_tag("score-balloon-transparent.png", class:'score-balloon-homepage')%>
         <div class="homepage-score-textgroup">
@@ -29,17 +29,18 @@
           </div>
         </div>
       </div>
-      <div class="col-xs-1"></div>
+    
       <div class="col-xs-5">
         <div class="profile-name">
               <%= @user.name %> 
         </div>
         
         <div class="contact-info">
-        <span class="reset-pigs"><%= link_to "Edit", edit_user_registration_path, :class=>"reset-pigs" %></span><br/>
+        
            <%= @user.age %> years old <br/>
           <%= @user.email %> <br/>
-          <%= number_to_phone(@user.phone_number, area_code: true) %>
+          <%= number_to_phone(@user.phone_number, area_code: true) %> <br />
+          <span class="reset-pigs"><%= link_to "Edit", edit_user_registration_path, :class=>"homepage-link" %></span>
         </div>          
       </div>
       <div class="col-xs-1"></div>
@@ -48,11 +49,10 @@
     <div class="focus-areas">
       <div class="col-xs-6 profile-labels">
         Current focus: <br/>
-        Current challenge: <br />
+
       </div>
       <div class="col-xs-4 profile-current-stuff">
         <%= @current_focus.titlecase %> <br />
-        <%= @current_focus.titlecase %> Challenge
       </div>
     </div>
   </section>
