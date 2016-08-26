@@ -1,43 +1,71 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<% @title=": Update Profile" %>
+<script type="text/javascript">
+    mixpanel.track("profile_update", {
+        
+    });
+</script>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+<body class="page-background">
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email %>
-  </div>
+  <section id="first-priority">
+    Update your profile info, <%= @user.name %>
+  </section>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= devise_error_messages! %>
+    <section id="user-section">
+      <div class="spaced-row user-content">
+        <div class="row-future">
+          <div class="dropdown-style">
+            <%= f.text_field :name, class: "madlib-sentence border-underline", placeholder: "name" %>
+          </div>
+        </div>
+
+        <div class="row-future">
+          <div class="dropdown-style">
+            <%= f.email_field :email, class: "madlib-sentence border-underline", placeholder: "email address" %>
+          </div>
+        </div>
+
+        <div class="row-future">
+          <div class="dropdown-style">
+          <%= f.telephone_field :phone_number, class: "madlib-sentence border-underline", placeholder: "555-555-5555" %>
+          </div>
+        </div>
+
+        <div class="row-future">
+            <div class="dropdown-style inner-addon right-addon">
+              <%= f.select :contact_prefs, [['1-2 texts this week', '1-2 texts this week'], ['a quick daily text', 'a quick daily text'],['a daily email', 'a daily email'], ['I\'ll check back myself', 'I\'ll check back myself']], :class => 'my-dropdown select' %>
+              <span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span>
+            </div>
+          </div>
+
+        <div class="row-future">
+          <div class="dropdown-style">
+          <%= f.password_field :password, class: "madlib-sentence border-underline", placeholder: "password", autocomplete: "off" %>
+          </div>
+        </div>
+
+        <div class="row-future">
+          <div class="dropdown-style">
+          <%= f.password_field :password_confirmation, class: "madlib-sentence border-underline", placeholder: "confirm password", autocomplete: "off" %>
+          </div>
+        </div>
+
+        <div class="spaced-row"></div>
+        <div class="button-row">
+          <%= f.submit "Update", class: 'next-button' %>
+        </div>
+      </div>
+    </section>
   <% end %>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
+  <section id="user-section">
+    <div class="spaced-row user-content">
+      <div class="row-future">
+        <%= link_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :class=>"reset-pigs" %>
+      </div>
+    </div>
+  </section>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+</body>

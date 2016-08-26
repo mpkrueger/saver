@@ -34,39 +34,42 @@
   
   </section>
 
-  <script>
-    $(document).ready(function(){
-      for(i=1; i<5; i++) {
-        $('#chat'+i).hide(0).delay(1000*i).fadeIn(100).removeClass('hidden');
-      }
-    });
-  </script>
+  <section id="first-priority">
+    What we're tackling first:
+    <br /><span class="main-question"><%= @current_focus.titlecase %></span>
+  </section>
 
-  <div id="chat2" class="hidden" style="display:none;">
-    <section id="coach-section">
-      <div class="coach-chat-triangle"></div>
-      <div class="coach-question">
-        abc
-      </div>
-    </section>
+  <section id="first-priority">
+    Your name:
+    <br /><span class="main-question"><%= @user.name %></span>
+  </section>
+
+  <section id="first-priority">
+    Your phone number:
+    <br /><span class="main-question"><%= @user.phone_number %></span>
+  </section>
+
+  <section id="first-priority">
+    Your email:
+    <br /><span class="main-question"><%= @user.email %></span>
+  </section>
+
+  <div class="button-row">
+      <%= link_to "Back to homepage", root_path, class: 'next-button' %>
   </div>
 
-  <div id="chat4" class="hidden" style="display:none;">
-    <section id="coach-section">
-      <div class="coach-chat-triangle"></div>
-      <div class="coach-question">
-        def
-      </div>
-    </section>
-    <div class="spaced-row"></div>
-      <div class="button-row">
-          <%= link_to "Back to homepage", root_path, class: 'next-button' %>
-      </div>
-      <div class="page-bottom-padding">
-          <div class="padding-text">
-            adding space below next button
-          </div>
+  <section id="user-section">
+    <div class="spaced-row user-content">
+      <div class="row-future">
+        <%= link_to "Make changes to my profile", edit_user_registration_path, :class=>"reset-pigs" %>
       </div>
     </div>
+  </section>
+  
+  <div class="page-bottom-padding">
+      <div class="padding-text">
+        adding space below next button
+      </div>
   </div>
+
 </body>
