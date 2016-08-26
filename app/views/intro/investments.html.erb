@@ -7,28 +7,30 @@
 <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
-
-<body class="page-background">
-
-	<section id="coach-section">
-		<div class="coach-chat-triangle"></div>
-
-		<div class="coach-question">
-			<p class="main-question"><%= investment_question %> </p>
-		</div>
-	</section>
-
 	<script>
 	$(document).ready(function(){
-	    for(i=1; i<2; i++) {
+	    for(i=1; i<3; i++) {
 	    	$('#chat'+i).hide(0).delay(1000*i).fadeIn(100).removeClass('hidden');
 	    }
 	});
 	</script>
 
-
+<body class="page-background">
 
 	<div id= "chat1" class="hidden" style="display:none;">
+	<section id="coach-section">
+		<div class="coach-chat-triangle"></div>
+
+		<div class="coach-question">
+			<%= investment_question %> 
+		</div>
+	</section>
+	</div>
+
+
+
+
+	<div id= "chat2" class="hidden" style="display:none;">
 		<%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
 
 			<section id="user-section">

@@ -5,29 +5,28 @@
     });
 </script>
 
+<script>
+		$(document).ready(function(){
+    		for(i=1; i<10; i++) {
+    			$('#chat'+i).hide(0).delay(1000*i).fadeIn(100).removeClass('hidden');
+    		}
+		});
+	</script>
+
 <body class="page-background">
 
+<div id="chat1" class="hidden" style="display:none;">
 	<section id="coach-section">
 		<div class="coach-chat-triangle"></div>
 		<div class="coach-question">
 			<%= investment_feedback %> 
 		</div>
 	</section>
+</div>
 
 
 
-	
-
-	<script>
-		$(document).ready(function(){
-    		for(i=1; i<3; i++) {
-    			$('#chat'+i).hide(0).delay(1000*i).fadeIn(100).removeClass('hidden');
-    		}
-		});
-	</script>
-
-
-	<div id="chat1" class="hidden" style="display:none;">
+	<div id="chat2" class="hidden" style="display:none;">
 		<section id="coach-section">
 			<div class="coach-chat-triangle"></div>
 			<div class="coach-question">
@@ -36,7 +35,7 @@
 		</section>
 	</div>
 
-	<div id="chat2" class="hidden" style="display:none;">
+	<div id="chat4" class="hidden" style="display:none;">
 		<section id="coach-section">
 			<div class="coach-chat-triangle"></div>
 			<div class="coach-question">

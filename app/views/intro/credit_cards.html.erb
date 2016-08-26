@@ -4,9 +4,17 @@
         
     });
 </script>
+	<script>
+		$(document).ready(function(){
+    		for(i=1; i<10; i++) {
+    			$('#chat'+i).hide(0).delay(1000*i).fadeIn(100).removeClass('hidden');
+    		}
+		});
+	</script>
 
 <body class="page-background">
 
+	<div id="chat1" class="hidden" style="display:none;">
 	<section id="coach-section">
 		<div class="coach-chat-triangle"></div>
 		<div class="coach-question">
@@ -15,25 +23,19 @@
 			</aside>		
 		</div>
 	</section>
+	</div>
 
-	<script>
-		$(document).ready(function(){
-    		for(i=1; i<3; i++) {
-    			$('#chat'+i).hide(0).delay(1000*i).fadeIn(100).removeClass('hidden');
-    		}
-		});
-	</script>
 
-	<div id="chat1" class="hidden" style="display:none;">
+	<div id="chat3" class="hidden" style="display:none;">
 		<section id="coach-section">
 	 		<div class="coach-chat-triangle"></div>
 			<div class="coach-question">
-				<p class="main-question">How are you doing with credit cards? Any debt?</p>
+				How are you doing with credit cards? Any debt?
 			</div>
 		</section>
 	</div>
 
-	<div id="chat2" class="hidden" style="display:none;">
+	<div id="chat4" class="hidden" style="display:none;">
 		<%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
 			<section id="user-section">	
 				<div class="spaced-row user-content">

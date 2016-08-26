@@ -7,8 +7,8 @@
 
 <script>
 		$(document).ready(function(){
-	    	for(i=1; i<5; i++) {
-	    		$('#chat'+i).hide(0).delay(2000*i).fadeIn(100).removeClass('hidden');
+	    	for(i=1; i<10; i++) {
+	    		$('#chat'+i).hide(0).delay(1000*i).fadeIn(100).removeClass('hidden');
 	    	}
 		});
 </script>
@@ -26,7 +26,7 @@
 	</div>
 	
 
-	<div id= "chat2" class="hidden" style="display:none;">
+	<div id= "chat3" class="hidden" style="display:none;">
 		<section id="coach-section">
 			<div class="coach-chat-triangle">
 			</div>
@@ -37,7 +37,7 @@
 		</section>
 	</div>
 
-	<div id= "chat3" class="hidden" style="display:none;">
+	<div id= "chat5" class="hidden" style="display:none;">
 		<section id="coach-section">
 			<div class="coach-chat-triangle">
 			</div>
@@ -50,7 +50,7 @@
 	</div>
 
 	
-	<div id="chat4" class="hidden" style="display:none;">
+	<div id="chat6" class="hidden" style="display:none;">
 		<%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
 			<section id="user-section">
 				<div class="spaced-row user-content">

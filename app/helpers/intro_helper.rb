@@ -211,28 +211,32 @@ module IntroHelper
 		case @guest_user.area_to_work_on
 		when "CREDIT CARD DEBT"
 			if @guest_user.cc_attitude == "pay off my debt faster"
-				"I want to help you: pay off more of your debt each month, 
-				evaluate different payment strategies, and explore ways to consolidate your credit card 
-				balances."
+				"I’ve created a plan for you to help you kick your debt to the curb and I’m going to be 
+				your personal coach to keep you motivated along the way."
 			elsif @guest_user.cc_attitude == "continue what I'm doing"
-				"I want to see if we can tackle it because this type of debt usually has a big negative 
-				impact on financial goals."
+				"I've created a plan that I hope will help you kick your debt to the curb. I want to see 
+				if we can tackle this because credit card debt in particular usually has a big negative 
+				impact on your finances because of the high interest rates."
 			elsif @guest_user.cc_attitude == "get some advice"
-				"I'm really excited to help you take the first step toward taming that credit card debt."
+				"I’ve created a plan for you to help you kick your debt to the curb and I’m going to be 
+				your personal coach to help you get savvier and keep you motivated along the way. "
 			end		
 		when "STUDENT LOANS"
-			"I want to help you: pay off more of your loans each month, explore whether we can consolidate 
-			your loans, and look into alternative repayment options."
+			"I’ve created a plan for you to help you kick your debt to the curb and I’m going to be 
+			your personal coach to help you get savvier and keep you motivated along the way."
 		when "SAVINGS HABITS", "SAVINGS"
-			"Let's face it - budgeting by yourself isn't fun. That's where I come in! I've got a series of 
-			fun challenges that will have you saving more starting this week."
+			"Let's face it - budgeting isn't fun. That's where I come in! I've created a plan for you 
+			that will have you saving more starting this week. I’m going to be here as
+				your personal coach to help you get savvier and keep you motivated along the way."
 		when "INVESTMENTS"
 			if @guest_user.investments_type["retirement_fund"] == "0"
-				"Retirement can feel like it's a long way away - but time is your best friend. I'll make it
-				 easy to get started investing for the future so that your money can grow on its own."
+				"Retirement can feel like it's a long way away - but time is your best friend. I've created a
+				plan for you to make it easy to get started investing. And I’m going to be here as
+				your personal coach to help you get savvier and keep you motivated along the way."
 			elsif @guest_user.investments_type["stock_market"] == "0"
-				"Investing can seem complex and overwhelming but it doesn't need to be. I'll provide simple 
-				steps to get you going while teaching you about investing along the way."
+				"Investing can seem complex and overwhelming but it doesn't need to be. I've created a
+				plan for you to make it easy to get started investing. And I’m going to be here as
+				your personal coach to help you get savvier and keep you motivated along the way."
 			end
 		end
 	end
@@ -253,29 +257,49 @@ module IntroHelper
 		case @guest_user.area_to_work_on
 		when "CREDIT CARD DEBT"
 			if @guest_user.cc_attitude == "pay off my debt faster"
-				"so that I can get you started on the path towards debt-free living."
+				"I know that dealing with your finances is easy to put off, so I’m going to start you off 
+				this week with a small, easy first step. We’ll build up from there. Create a Savvy account 
+				to get started."
 			elsif @guest_user.cc_attitude == "continue what I'm doing"
-				"so that I can get to know you better and help you take the best steps forward towards your 
-					future goals."
+				"I know that dealing with your finances is easy to put off, so I’m going to start you off 
+				this week with a small, easy first step. We’ll build up from there. Create a Savvy account 
+				to get started."
 			elsif @guest_user.cc_attitude == "get some advice"
-					"so that I can get to know you better and help you take the best steps forward towards 
-						your future goals."
+				"I know that dealing with your finances can be overwhelming, so I’m going to start you off 
+				this week with a small, easy first step. We’ll build up from there. Create a Savvy account 
+				to get started."
 		end		
 		when "STUDENT LOANS"
-			"so that I can get you started on the path towards debt-free living."
+			"I know that dealing with your finances is easy to put off, so I’m going to start you off 
+			this week with a small, easy first step. We’ll build up from there. Create a Savvy account 
+			to get started."
 		when "SAVINGS HABITS"
-			"so that I can get you started on the path towards your future goals."
+			"I know that dealing with your finances is easy to put off, so I’m going to start you off 
+			this week with a fun and easy first step. We’ll build up from there and make sure your 
+				piggy bank gets fat and happy. Create a Savvy account to get started."
 		when "SAVINGS"
 			if @guest_user.savings_amount == 0
-				"so that I can get your piggy bank repaired and help you fill it up."
+				"I know that dealing with your finances is easy to put off, so I’m going to start you off 
+				this week with a fun and easy first step. We’ll build up from there and make sure your 
+				piggy bank gets repaired and filled up. Create a Savvy account 
+				to get started."
 			else
-				"so that I can help you build up those savings."
+				"I know that dealing with your finances is easy to put off, so I’m going to start you off 
+				this week with a fun and easy first step. We’ll build up from there and make sure your 
+				piggy bank gets fat and happy. Create a Savvy account 
+				to get started."
 			end
 		when "INVESTMENTS"
 			if @guest_user.investments_type["retirement_fund"] == "0"
-				"so that I can help you get your retirement fund jumpstarted."
+				"I know that dealing with finances (especially a retirement fund) is easy to put off, so 
+				I’m going to start you off this week with an easy first step. We’ll build up from there
+				and make sure future you will be comfortable and happy. Create a Savvy account 
+				to get started."
 			elsif @guest_user.investments_type["stock_market"] == "0"
-				"so that I can help you put your savings to work to earn you more money."
+				"I know that dealing with finances is easy to put off especially when you've got savings, 
+				so I’m going to start you off this week with an easy first step. We’ll build up from there
+				and make sure investments are doing more work than you are. Create a Savvy account 
+				to get started."
 			end
 		end
 	end
