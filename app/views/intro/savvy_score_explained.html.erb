@@ -42,9 +42,12 @@
 				It's pretty difficult to score 100% (even for savvy buccaneers like myself), so don't worry if your score seems low. The key is to set up good habits and improve your financial health, and that's where I can help.
 			</div>
 		</section>
-		<div class="button-row">
-				<%= link_to "Show me my Savvy Score", next_wizard_path, class: 'next-button' %>
-		</div>
+		<%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
+			<%= f.hidden_field :current_focus, value: @guest_user.area_to_work_on %>
+			<div class="button-row">
+					<%= f.submit "Show me my Savvy Score", class: 'next-button' %>
+			</div>
+		<% end %>
 		<div class="page-bottom-padding">
 			<div class="padding-text">
 				adding space below next button
