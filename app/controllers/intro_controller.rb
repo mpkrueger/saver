@@ -7,7 +7,7 @@ class IntroController < ApplicationController
   def show
   	@guest_user = guest_user
     @savvy_score = @guest_user.savvy_score
-    @area_to_work_on = @guest_user.area_to_work_on
+    @current_focus = @guest_user.current_focus
   	render_wizard
   end
 
@@ -21,7 +21,7 @@ class IntroController < ApplicationController
 
   def guest_user_params
     params.require(:guest_user).permit(:name, :age, :savvy_feel, :student_loans, :student_amount, :student_attitude, :cc_attitude, 
-      :cc_amount, :savings_from_income, :spend_less, :savings_amount, :investments,  
+      :cc_amount, :savings_from_income, :spend_less, :savings_amount, :investments, :current_focus, 
       :preparedness, :email, :financial_score, :financial_help, investments_type: [:retirement_fund, :company_stock, :stock_market, :beanie_babies],
       future_day: [:gender,
                    :city, 

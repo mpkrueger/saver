@@ -46,7 +46,7 @@
     <section id="coach-section">
       <div class="coach-chat-triangle"></div>
       <div class="coach-question">
-        Your Savvy Score of <%= @savvy_score %> <%= savvy_score_thoughts %> Let’s boost it by focusing on your <%= @area_to_work_on.downcase %>.
+        Your Savvy Score of <%= @savvy_score %> <%= savvy_score_thoughts %> Let’s boost it by focusing on your <%= @current_focus.downcase %>.
       </div>
     </section>
   </div>
@@ -58,15 +58,19 @@
         <%= focus_area_feedback %>
       </div>
     </section>
-    <div class="spaced-row"></div>
+    <div class="spaced-row">
       <div class="button-row">
           <%= link_to "Boost My Savvy", new_user_registration_path, class: 'next-button' %>
       </div>
-      <div class="page-bottom-padding">
-          <div class="padding-text">
-            adding space below next button
-          </div>
-      </div>
+    </div>
+    <br \>
+    <div class="spaced-row">
+      <%= link_to "Or choose another focus area", goals_new_focus_path, class: 'new_focus_area' %>
+    </div>
+    <div class="page-bottom-padding">
+        <div class="padding-text">
+          adding space below next button
+        </div>
     </div>
   </div>
 </body>

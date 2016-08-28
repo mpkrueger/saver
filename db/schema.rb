@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160825183100) do
+ActiveRecord::Schema.define(version: 20160828040905) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 20160825183100) do
     t.string   "cc_attitude"
     t.string   "spend_less"
     t.string   "savings_from_income"
+    t.string   "current_focus"
   end
 
   create_table "users", force: :cascade do |t|

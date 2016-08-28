@@ -152,7 +152,7 @@ module IntroHelper
 			@savings_amount = "tens of thousands"
 		end
 
-		case @guest_user.area_to_work_on
+		case @guest_user.current_focus
 		when "CREDIT CARD DEBT"
 			if @guest_user.cc_attitude == "pay off my debt faster"
 				"That's something you mentioned wanting to pay off faster and it's a great place to start since 
@@ -208,7 +208,7 @@ module IntroHelper
 
 	def focus_area_examples
 		@guest_user = @guest_user
-		case @guest_user.area_to_work_on
+		case @guest_user.current_focus
 		when "CREDIT CARD DEBT"
 			if @guest_user.cc_attitude == "pay off my debt faster"
 				"I’ve created a plan for you to help you kick your debt to the curb and I’m going to be 
@@ -254,7 +254,7 @@ module IntroHelper
 			@savings_amount = "tens of thousands"
 		end
 
-		case @guest_user.area_to_work_on
+		case @guest_user.current_focus
 		when "CREDIT CARD DEBT"
 			if @guest_user.cc_attitude == "pay off my debt faster"
 				"I know that dealing with your finances is easy to put off, so I’m going to start you off 

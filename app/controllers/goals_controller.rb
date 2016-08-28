@@ -7,6 +7,10 @@ class GoalsController < ApplicationController
     @guest_user = GuestUser.new
   end
 
+  def new_focus
+  	@guest_user = guest_user
+  end
+
 
 
 end
