@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   resources :guest_users
   resources :feedbacks
   resources :intro
+  resources :beta_users
 
   resources :fin_profiles do
     collection do
@@ -38,12 +39,14 @@ Rails.application.routes.draw do
 
   get 'goals/index'
   get 'goals/new_focus'
+  get 'goals/investing'
+  get 'goals/thanks'
 
   authenticated :user do
     root to: 'dashboard#homepage'
   end
 
-  root to: 'goals#index'
+  root to: 'goals#investing'
 
   get '/goals/introductions'
 

@@ -1,0 +1,19 @@
+<script type="text/javascript">
+    mixpanel.track("investing_landing_page", {
+        
+    });
+</script>
+
+
+
+<body class="page-background">
+	<div class="splash-section">
+		<p class="app-name"><%= image_tag("savvy-logo.png", class:"app-name") %> </p>
+		<p class="app-tagline"> The financial coach you've always wanted </p>
+
+		<%= form_for @beta_user do |f| %>
+			<%= f.text_field :first_name, placeholder: "first name" %>
+			<%= f.text_field :email, placeholder: "email" %>
+			<%= f.submit "Sign me up" %>
+		<% end %>
+</body>
