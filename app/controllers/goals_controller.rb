@@ -11,6 +11,10 @@ class GoalsController < ApplicationController
   	@guest_user = guest_user
   end
 
+  def investing
+  	@beta_user = BetaUser.new
+  end
+
 
 
 end
