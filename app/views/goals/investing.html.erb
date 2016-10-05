@@ -6,14 +6,32 @@
 
 
 
-<body class="page-background">
+<body class="splash-background">
+	<div class="splash-banner">
+		<div class="banner-image">
+		</div>
+	</div>
 	<div class="splash-section">
-		<p class="app-name"><%= image_tag("savvy-logo.png", class:"app-name") %> </p>
-		<p class="app-tagline"> The financial coach you've always wanted </p>
+		<div class="splash-question"> Ready to invest, but unsure where to start?</div>
 
-		<%= form_for @beta_user do |f| %>
-			<%= f.text_field :first_name, placeholder: "first name" %>
-			<%= f.text_field :email, placeholder: "email" %>
-			<%= f.submit "Sign me up" %>
-		<% end %>
+		<div class="signup-instruction">
+			Sign up to get help investing.
+		</div>
+
+		<div class="row">
+		<div class="field-col email-field">
+			<%= form_for @beta_user do |f| %>
+				<%= f.email_field :email, placeholder: "your email address", class:"email-field" %>
+		</div>
+		<div class="btn-col">
+				<%= f.submit ">", class:"signup-button" %>
+			<% end %>
+		</div>
+		</div>
+
+		<div class="signup-incentive">
+			First 100 sign-ups will get a
+			free, personalized session.
+		</div>
+	</div>
 </body>
