@@ -9,7 +9,10 @@
   padding: 0;
 }
 
-
+.thanks-background{
+  background-color:#1D2D49;
+  padding: 0;
+}
 
 
 //for smaller phones
@@ -105,6 +108,37 @@
   margin-top: 15px;
 }
 
+
+.thanks-banner{
+     margin: auto;
+    margin-top: 0;
+    width: 100%;
+    height: 260px; 
+    margin-bottom:40px;
+}
+
+.thanks-banner-image{
+    background-image: url(signup_thanks_mobile_banner.png);
+    background-repeat: no-repeat;
+    position: relative;
+    display: block;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    max-width: 350px;
+    width: 100%;
+    height: 260px;
+  }
+
+.thanks-message{
+  font-size:18px;
+  font-family:'Gill Sans';
+  margin-top:20px;
+  margin-bottom:30px;
+}
+
+
   .app-name{
     text-align: center;
     font-size: 50px;
@@ -150,7 +184,7 @@
     margin: auto;
     margin-top: 0;
     width: 100%;
-    height: 160px;
+    height: 260px;
     margin-bottom: 5%;
 }
 
@@ -165,7 +199,7 @@
     -o-background-size: cover;
     max-width: 480px;
     width: 100%;
-    height: 156px;
+    height: 260px;
 
   }
 
@@ -242,6 +276,38 @@
 }
 
 
+.thanks-banner{
+     margin: auto;
+    margin-top: 0;
+    width: 100%;
+    height: 330px; 
+    margin-bottom:20px;
+}
+
+.thanks-banner-image{
+    background-image: url(signup_thanks_mobile_banner.png);
+    background-repeat: no-repeat;
+    position: relative;
+    display: block;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    max-width: 450px;
+    width: 100%;
+    height: 75%;
+  }
+
+.thanks-message{
+  font-size:18px;
+  font-family:'Gill Sans';
+  margin-top:20px;
+  margin-bottom:30px;
+}
+
+
+
+
   .app-name{
     text-align: center;
     font-size: 50px;
@@ -280,7 +346,7 @@
 
 
 //for desktop
- @media screen and (min-width: 480px) {
+ @media screen and (min-width: 480px) and (max-width: 900px){
  
   .splash-banner{
     margin: auto;
@@ -377,6 +443,38 @@
 }
 
 
+.thanks-banner{
+     margin: auto;
+    margin-top: 0;
+    width: 100%;
+    height: 280px; 
+    margin-bottom:40px;
+}
+
+.thanks-banner-image{
+    background-image: url(signup_thanks_web_banner.png);
+    background-repeat: no-repeat;
+    position: relative;
+    display: block;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    width: 100%;
+    height: 280px;
+  }
+
+.thanks-message{
+  font-size:24px;
+  font-family:'Gill Sans';
+  margin-top:20px;
+  margin-bottom:30px;
+      line-height: 1.2em;
+    width: 75%;
+    margin: auto;
+}
+
+
 
 
   .app-name{
@@ -409,3 +507,170 @@
     height:auto;
   }
   }
+
+
+  //for desktop
+ @media screen and (min-width: 900px) {
+
+  .splash-banner{
+    margin: auto;
+    margin-top: 0;
+    width: 100%;
+    height: 240px;
+    margin-bottom: 20px;
+}
+
+  .banner-image{
+    background-image: url(signup_lp_web_banner.png);
+    background-repeat: no-repeat;
+    position: relative;
+    display: block;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    width: 100%;
+    height: 240px;
+    margin-bottom:10px;
+  }
+
+.splash-section{
+  width:65%;
+  text-align:center;
+  margin:auto;
+}
+ .splash-question{
+    font-size:45px;
+    font-family:'Gill Sans', Arial;
+    line-height: 1.2em;
+    color:#fff;
+    margin-bottom:6%;
+ }
+
+.signup-instruction{
+  font-size:21px;
+  font-family:'Gill Sans';
+  color:#fff;
+  margin-top:15px;
+  margin-bottom: 10px;
+}
+
+.row-email{
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-bottom:20px;
+    height: 55px;
+}
+
+.email-field{
+  font-size:18px;
+  font-family:'Gill Sans';
+  color:#3D7892;
+  border: 1px solid #376F82;
+  background-color:#FBF9DD;
+  padding-left:10px;
+    height: 55px;
+  text-align: left;
+  width: 80%;
+}
+
+.field-col{
+    width: 75%;
+    float: left;
+    display: inline-block;
+    margin-left: 6%;
+}
+.btn-col{
+    float: left;
+    display: inline-block;
+}
+
+.signup-button{
+  background-color:#4E9CB7;
+  color:#fff;
+  border: none;
+  width: 54px;
+    height: 54px;
+    margin-top: 1px;
+    margin-left: 5px;
+    font-size: 13px;
+
+
+}
+
+.signup-incentive{
+  width:100%;
+  font-size:18px;
+  font-family:'Gill Sans';
+  color:#F9D791;
+  margin-top: 15px;
+}
+
+
+.thanks-banner{
+     margin: auto;
+    margin-top: 0;
+    width: 100%;
+  height: 350px;
+    margin-bottom: 20px;
+}
+
+
+
+.thanks-banner-image{
+    background-image: url(signup_thanks_web_banner.png);
+    background-repeat: no-repeat;
+    position: relative;
+    display: block;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+.thanks-message{
+  font-size:24px;
+  font-family:'Gill Sans';
+  margin-top:20px;
+  margin-bottom:30px;
+      line-height: 1.2em;
+    width: 75%;
+    margin: auto;
+}
+
+
+
+
+  .app-name{
+    text-align: center;
+    font-size: 50px;
+    max-width: 75%;
+    margin:auto;
+  }
+
+  .app-tagline{
+    text-align: center;
+    font-size: 21px;
+  }
+
+  .logo{
+    text-align: center;
+    display: block;
+    width: 182px;
+    height: 56px;
+    margin: auto;
+  }
+
+  .splash-image{
+    text-align: center;
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    width: 250px;
+    max-width:80%;
+    height:auto;
+  }
+}
+
