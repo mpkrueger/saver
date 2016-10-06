@@ -8,6 +8,8 @@ gem 'wicked'
 gem 'pg'
 gem 'devise'
 gem 'figaro', '1.0'
+gem 'premailer-rails'
+gem 'nokogiri'
 
 
 group :production do
