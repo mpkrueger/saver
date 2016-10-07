@@ -1,0 +1,15 @@
+/* line 1, /Users/Matt/code/fin-goals/app/assets/stylesheets/email.scss */
+body {
+  padding: 50px 80px 50px 80px;
+}
+
+/* line 5, /Users/Matt/code/fin-goals/app/assets/stylesheets/email.scss */
+.list {
+  line-height: 1.5;
+}
+
+/* line 9, /Users/Matt/code/fin-goals/app/assets/stylesheets/email.scss */
+.email-body {
+  font-family: Arial, Verdana;
+  line-height: 1.4;
+}
