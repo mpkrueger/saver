@@ -6,4 +6,8 @@ class BetaMailerPreview < ActionMailer::Preview
     BetaMailer.beta_intro(BetaUser.last)
   end
 
+  def get_started
+  	BetaMailer.get_started(BetaUser.last)
+  end
+
 end
