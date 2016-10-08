@@ -16,7 +16,7 @@ class BetaMailer < ApplicationMailer
     @beta_user = beta_user
     @subject = "Let's invest!"
     @typeform_button_text = "Get started now"
-    @book_chat_button_text = "Book my session"
+    @book_chat_button_text = "Let's get started!"
 
     mail(to: @beta_user.email, subject: @subject)
   end
