@@ -1,6 +1,6 @@
 Hi there,
 
-<p>Thanks again for signing up for <%= link_to "Savvy", "www.getsavvier.com" %>. We’re really excited to be working with you!</p>
+<p>Thanks again for signing up for <%= link_to "Savvy", "www.getsavvier.com", :class=>"email-link" %>. We’re really excited to be working with you!</p>
 
 <p>As one of our first 100 beta signups, you're going to get the red-carpet treatment: a 1:1 personalized session to walk through your goals and get started investing.</p>
 
@@ -20,7 +20,7 @@ Hi there,
   <![endif]-->
   <![if !mso]>
   <table cellspacing="0" cellpadding="0"> <tr> 
-  <td align="center" width="300" height="40" bgcolor="#125D70" style="-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; color: #ffffff; display: block;">
+  <td align="center" width="300" height="40" bgcolor="#00A99D" style="-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; color: #ffffff; display: block;">
     <a href="http://doodle.com/poll/3y4yfky4myqb2sk6" style="font-size:16px; font-weight: bold; font-family:sans-serif; text-decoration: none; line-height:40px; width:100%; display:inline-block">
     <span style="color: #ffffff;">
       <%= @book_chat_button_text %>
@@ -31,9 +31,10 @@ Hi there,
   <![endif]>
 </div>
 </p>
+<br />
+<p>You can get an early start by answering a few questions about your finances before we chat: 
+<%= link_to "Savvy Intro Survey", "https://sushmita7.typeform.com/to/vhBNnn", :class=>"email-link" %>
 
-<p>Feel free to  tell us more about your situation before we chat by answering a few questions here:
-<div>
 <!--[if mso]>
   <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://sushmita7.typeform.com/to/vhBNnn" style="height:40px;v-text-anchor:middle;width:300px;" arcsize="10%" stroke="f" fillcolor="#125D70">
     <w:anchorlock/>
@@ -42,18 +43,7 @@ Hi there,
     </center>
   </v:roundrect>
   <![endif]-->
-  <![if !mso]>
-  <table cellspacing="0" cellpadding="0"> <tr> 
-  <td align="center" width="300" height="40" bgcolor="#125D70" style="-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; color: #ffffff; display: block;">
-    <a href="https://sushmita7.typeform.com/to/vhBNnn" style="font-size:16px; font-weight: bold; font-family:sans-serif; text-decoration: none; line-height:40px; width:100%; display:inline-block">
-    <span style="color: #ffffff;">
-      <%= @typeform_button_text %>
-    </span>
-    </a>
-  </td> 
-  </tr> </table> 
-  <![endif]>
-</div>
+  
 
 <p>We’re looking forward to chatting with you!</p>
 
