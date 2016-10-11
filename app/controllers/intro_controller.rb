@@ -5,22 +5,20 @@ class IntroController < ApplicationController
    :savvy_score_explained, :financial_summary, :focus_area
 
   def show
-  	@guest_user = guest_user
-    @savvy_score = @guest_user.savvy_score
-    @current_focus = @guest_user.current_focus
+    @user = current_user
   	render_wizard
   end
 
   def update
-  	@guest_user = guest_user
-    @guest_user.update_attributes(guest_user_params)
+  	@user = current_user
+    @investing_profile.update_attributes(user_params)
   	render_wizard @guest_user
   end
 
   private
 
-  def guest_user_params
-    params.require(:guest_user).permit(:name, :age, :savvy_feel, :student_loans, :student_amount, :student_attitude, :cc_attitude, 
+  def investing_profile_params
+    params.require(:user).permit(:name, :age, :savvy_feel, :student_loans, :student_amount, :student_attitude, :cc_attitude, 
       :cc_amount, :savings_from_income, :spend_less, :savings_amount, :investments, :current_focus, 
       :preparedness, :email, :financial_score, :financial_help, investments_type: [:retirement_fund, :company_stock, :stock_market, :beanie_babies],
       future_day: [:gender,

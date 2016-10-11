@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  explain_stocks_vs_funds: false
+  knows_diversification: false
+  worry_about_risks: false
+  curious_about_access_to_money: false
+  remaining_concerns_about_access: false
+  investment_goal: MyString
+  post_investment_goal: MyString
+  knows_amount_to_invest: false
+  amount_wants_to_invest: 9.99
+  amount_to_get_started: 9.99
+  has_retirement_account: false
+  has_invested_before: false
+  has_these_types_of_debt: 
+  user: one
+
+two:
+  explain_stocks_vs_funds: false
+  knows_diversification: false
+  worry_about_risks: false
+  curious_about_access_to_money: false
+  remaining_concerns_about_access: false
+  investment_goal: MyString
+  post_investment_goal: MyString
+  knows_amount_to_invest: false
+  amount_wants_to_invest: 9.99
+  amount_to_get_started: 9.99
+  has_retirement_account: false
+  has_invested_before: false
+  has_these_types_of_debt: 
+  user: two
