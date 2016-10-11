@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161005175617) do
+ActiveRecord::Schema.define(version: 20161011182513) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,6 +86,26 @@ ActiveRecord::Schema.define(version: 20161005175617) do
     t.string   "current_focus"
   end
 
+  create_table "investing_profiles", force: :cascade do |t|
+    t.boolean  "explain_stocks_vs_funds"
+    t.boolean  "knows_diversification"
+    t.boolean  "worry_about_risks"
+    t.boolean  "curious_about_access_to_money"
+    t.boolean  "remaining_concerns_about_access"
+    t.string   "investment_goal"
+    t.string   "post_investment_goal"
+    t.boolean  "knows_amount_to_invest"
+    t.decimal  "amount_wants_to_invest"
+    t.decimal  "amount_to_get_started"
+    t.boolean  "has_retirement_account"
+    t.boolean  "has_invested_before"
+    t.string   "has_these_types_of_debt",         default: [],              array: true
+    t.integer  "user_id"
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
+    t.index ["user_id"], name: "index_investing_profiles_on_user_id", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -114,4 +134,5 @@ ActiveRecord::Schema.define(version: 20161005175617) do
   end
 
   add_foreign_key "fin_profiles", "users"
+  add_foreign_key "investing_profiles", "users"
 end

@@ -1,30 +1,11 @@
 class RegistrationsController < Devise::RegistrationsController
 	def new
-		@guest_user = guest_user
-		@area_to_work_on = @guest_user.area_to_work_on
 		super
 	end
 
 	def create
-	  @guest_user = GuestUser.find_by(id: session[:guest_user_id])
+	  
 	  build_resource(sign_up_params)
-	  resource.name = @guest_user.name
-	  resource.age = @guest_user.age
-	  resource.guest_user_id = @guest_user.id
-
-	  resource.fin_profile = FinProfile.new
-	  resource.fin_profile.savvy_feel = @guest_user.savvy_feel
-	  resource.fin_profile.student_amount = @guest_user.student_amount
-	  resource.fin_profile.student_attitude = @guest_user.student_attitude
-	  resource.fin_profile.cc_amount = @guest_user.cc_amount
-	  resource.fin_profile.cc_attitude = @guest_user.cc_attitude
-	  resource.fin_profile.spend_less = @guest_user.spend_less
-	  resource.fin_profile.savings_amount = @guest_user.savings_amount
-	  resource.fin_profile.investments_type = @guest_user.investments_type
-	  resource.fin_profile.savings_from_income = @guest_user.savings_from_income
-	  resource.fin_profile.future_day = @guest_user.future_day
-	  resource.fin_profile.preparedness = @guest_user.preparedness
-	  resource.fin_profile.current_focus = @guest_user.current_focus
 	  
 	  resource.save
 
@@ -48,14 +29,7 @@ class RegistrationsController < Devise::RegistrationsController
 	end
 
 	def after_sign_up_path_for(resource)
-		@user = current_user
-		if @user.fin_profile.cc_attitude == "get some advice" || @user.fin_profile.cc_attitude == "continue what I\'m doing"
-			challenges_lets_chat_path
-		elsif @user.fin_profile.spend_less == "no" && @user.fin_profile.current_focus != "INVESTMENTS"
-			challenges_lets_chat_path
-		else
-			challenges_intro_path
-		end
+		intro_our_mission_path
 	end
 
 	def after_update_path_for(resource)
@@ -69,7 +43,7 @@ class RegistrationsController < Devise::RegistrationsController
   	end
 
   	def sign_up_params
-    	params.require(:user).permit(:email, :phone_number, :password, :password_confirmation)
+    	params.require(:user).permit(:email, :name, :phone_number, :password, :password_confirmation)
   	end
 
   	def account_update_params
