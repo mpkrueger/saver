@@ -1,0 +1,41 @@
+// Place all the styles related to the services controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.services-logo{
+	width:100%;
+	height:auto;
+}
+
+.is-table-row {
+    display: table;
+}
+.is-table-row [class*="col-"] {
+    float: none;
+    display: table-cell;
+    vertical-align: top;
+}
+
+.services-icon{
+	width:100%;
+	height:auto;
+}
+
+.services-row{
+	margin-bottom:20px;
+}
+
+.services-text-col{
+	padding-top:20px;
+}
+
+.factors-text{
+	text-align:center;
+	margin-top:5px;
+}
+
+.factors-icons{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
