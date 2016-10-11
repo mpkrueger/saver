@@ -29,7 +29,7 @@ class RegistrationsController < Devise::RegistrationsController
 	end
 
 	def after_sign_up_path_for(resource)
-		intro_our_mission_path
+		intro_index_path
 	end
 
 	def after_update_path_for(resource)
