@@ -1,34 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'intro/introduction'
-
-  get 'intro/introduction_2'
-
-  get 'intro/ways_to_invest'
-
-  get 'intro/diversification'
-
-  get 'intro/risks'
-
-  get 'intro/access'
-
-  get 'intro/takeaways'
-
-  get 'intro/investment_goal'
-
-  get 'intro/post_investment'
-
-  get 'intro/initial_investment'
-
-  get 'intro/retirement_account'
-
-  get 'intro/investment_experience'
-
-  get 'intro/debt'
-
-  get 'intro/other_thoughts'
-
-  get 'intro/follow_up'
 
   get 'challenges/saving_info'
   get 'challenges/credit_card_info'
