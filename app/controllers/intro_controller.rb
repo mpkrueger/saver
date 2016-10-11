@@ -1,19 +1,25 @@
 class IntroController < ApplicationController
   include Wicked::Wizard
 
-  steps :savvy_feel, :future, :future_reflection, :financial_picture, :student_loans, :credit_cards, :savings_habits, :savings, :investments, 
-   :savvy_score_explained, :financial_summary, :focus_area
+  steps :introduction, :introduction_2, :ways_to_invest, :diversification, :risks, :access, :takeaways, 
+  :investment_goal, :post_investment, :initial_investment, :retirement_account, :investment_experience, 
+  :debt, :other_thoughts, :follow_up
 
   def show
     @user = current_user
-  	render_wizard
+    if current_user.investing_profile != nil
+      @investing_profile = current_user.investing_profile
+    else
+      @investing_profile = InvestingProfile.new
+    end
+    render_wizard
   end
 
   def update
-  	@user = current_user
+    @user = current_user
     @investing_profile = @user.investing_profile
     @investing_profile.update_attributes(investing_profile_params)
-  	render_wizard @guest_user
+    render_wizard @user
   end
 
   private

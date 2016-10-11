@@ -1,5 +1,6 @@
 class InvestingProfilesController < ApplicationController
 	def new
+		@investing_profile = InvestingProfile.new
 	end
 
 	def create

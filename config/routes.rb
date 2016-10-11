@@ -1,21 +1,13 @@
 Rails.application.routes.draw do
 
   get 'services/welcome'
-
   get 'services/overview'
-
   get 'services/factors'
-
   get 'services/fees'
-
   get 'services/easeandflex'
-
   get 'services/reputation'
-
   get 'services/summary'
-
   get 'services/recommendation'
-
   get 'services/choice'
 
   get 'challenges/saving_info'
