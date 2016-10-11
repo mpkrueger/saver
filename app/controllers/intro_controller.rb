@@ -11,24 +11,17 @@ class IntroController < ApplicationController
 
   def update
   	@user = current_user
-    @investing_profile.update_attributes(user_params)
+    @investing_profile = @user.investing_profile
+    @investing_profile.update_attributes(investing_profile_params)
   	render_wizard @guest_user
   end
 
   private
 
   def investing_profile_params
-    params.require(:user).permit(:name, :age, :savvy_feel, :student_loans, :student_amount, :student_attitude, :cc_attitude, 
-      :cc_amount, :savings_from_income, :spend_less, :savings_amount, :investments, :current_focus, 
-      :preparedness, :email, :financial_score, :financial_help, investments_type: [:retirement_fund, :company_stock, :stock_market, :beanie_babies],
-      future_day: [:gender,
-                   :city, 
-                   :home, 
-                   :living_with,
-                   :company,
-                   :responsibilities,
-                   :lunch,
-                   :evenings,
-                   :major_goal])
+    params.require(:investing_profile).permit(:explain_stocks_vs_funds, :knows_diversification, :worry_about_risks,
+      :curious_about_access_to_money, :remaining_concerns_about_access, :investment_goal, :post_investment_goal, 
+      :knows_amount_to_invest, :amount_wants_to_invest, :amount_to_get_started, :has_retirement_account, :has_invested_before, 
+      :has_these_types_of_debt)
   end
 end
