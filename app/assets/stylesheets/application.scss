@@ -115,6 +115,19 @@ a:focus { color: #337ab7; text-decoration: underline;}
     margin-bottom:10px;
 }
 
+.short-option-button{
+    width: 30%;
+    white-space: normal;
+    text-align: left;
+    border: 1px solid #80c1b6;
+    background-color: transparent;
+    color: #00A99D;
+    padding: 10px 30px;
+    border-radius:6px;
+    text-decoration: none;
+    margin-bottom:10px;
+}
+
 .option-button:hover{
   color:#fff;
   background-color:#00a99D;
