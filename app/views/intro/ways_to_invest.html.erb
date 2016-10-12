@@ -1,6 +1,6 @@
 <script>
-$(function() {
-  $('a[href*="#"]:not([href="#"])').click(function() {
+$(document).ready(function() {
+  $('a[href*="#anchor"]:not([href="#"])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
@@ -9,25 +9,27 @@ $(function() {
           scrollTop: target.offset().top
         }, 1000);
 
-        $('#stocks').hide(0).fadeIn(100).removeClass('hidden');
+        // $('#stocks').hide(0).fadeIn(100).removeClass('hidden');
+        
         return false;
       }
     }
   });
-});
+  $('a[href*="#anchor1"]:not([href="#"])').click(function() {
+    $('#funds').show();
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
 
-
-$(function() {
-	$('#anchor1').click(function() {
-    var href = $.attr(this, 'href');
-    $('html, body').animate({
-        scrollTop: $(href).offset().top
-    }, 500, function () {
-        window.location.hash = href;
-    });
-    $('#funds').hide(0).fadeIn(100).removeClass('hidden');
-    return false;
-	});
+        
+        return false;
+      }
+    }
+  });
 });
 
   </script>
@@ -55,26 +57,25 @@ $(function() {
 <% end %>
 </div>
 
-<div id="stocks" class="hidden" style="display:none;">
-	<div class="edu-block"> <a name="anchor"></a>
-	  <div class="big-headline">Investing in a specific company's stock
-		</div>
-		<div class="headline">
-			<p>If you invest in a specific company, your money will go up and down following the company's ups and downs. </p>
 
-			<p>The Good: it can be really fun to research and speculate on companies. And this can sometimes lead to big rewards!</p>
-
-			<p>The Bad: this can also lead to big losses! Also, individual stocks tend to require more time and research than funds.</p>
-
-			<p><span style="font-weight:500;">Main takeaway: this is a risky type of investment. </span>
-			<br />Because of this, we don't recommend starting here or putting all of your money into individual stocks.</p>
-		</div>
-
-	<p><a href="#anchor1">Continue</a></p>
+<div class="edu-block"> <a name="anchor"></a>
+  <div class="big-headline">Investing in a specific company's stock
 	</div>
+	<div class="headline">
+		<p>If you invest in a specific company, your money will go up and down following the company's ups and downs. </p>
+
+		<p>The Good: it can be really fun to research and speculate on companies. And this can sometimes lead to big rewards!</p>
+
+		<p>The Bad: this can also lead to big losses! Also, individual stocks tend to require more time and research than funds.</p>
+
+		<p><span style="font-weight:500;">Main takeaway: this is a risky type of investment. </span>
+		<br />Because of this, we don't recommend starting here or putting all of your money into individual stocks.</p>
+	</div>
+
+	<br /><p><a href="#anchor1" class="next-button">Continue</a></p>
 </div>
 
-<div id="funds" class="hidden" style="display:none;">
+<div id="funds" style="display:none;">
 	<div class="edu-block">
 		<a name="anchor1"></a><div class="big-headline">Investing in index funds
 		</div>
@@ -85,5 +86,11 @@ $(function() {
 
 			<p>The Bad: Some would say it's less exciting than investing in individual stocks - there are fewer swings up and down. We think it's great to have less drama! But it's important to understand that some people might consider it a bit more "dull."</p>
 		</div>
+
+		<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+			<%= f.hidden_field :explain_stocks_vs_funds, value: "Yes" %>
+
+			<%= f.submit "Next", class:"next-button" %>
+		<% end %>
 	</div>
 </div>
