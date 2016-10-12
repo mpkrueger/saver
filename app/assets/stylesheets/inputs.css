@@ -1,0 +1,164 @@
+/***** DROPDOWNS  *****/
+
+.dropdown-style{
+  display: inline-flex;
+  border-bottom: 1px solid #00A99D;
+  width: auto;
+  max-width:100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+select.my-dropdown{
+  padding-right:25px;
+  padding-left:5px;
+  width: auto;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #F6D185;
+}
+
+select#prompt{
+  color:#666;
+}
+
+select{
+  border: 0 !important;  /*Removes border*/
+  background: transparent;
+  height: 32px;
+  color: #F6D185;
+  -webkit-appearance: none;  /*Removes default chrome and safari style*/
+  -moz-appearance: none; /* Removes Default Firefox style*/
+}
+
+select:focus {
+  outline: none;
+}
+
+option[default]{
+  display: none;
+}
+
+
+
+/* overloading default text input fields */
+input[type="text"], input[type="tel"], input[type="email"], input[type="password"]{
+  -webkit-appearance: none;  /*Removes default chrome and safari style*/
+  -moz-appearance: none; /* Removes Default Firefox style*/
+  border: 0;
+  border-bottom: 1px solid #ddd;
+  outline: 0;
+  background: transparent;
+  border-radius: 0;
+}
+
+
+input[type=text]:focus {
+  @include box-shadow(0 0 0);
+  outline:0;
+  border:0;
+  border-bottom: 1px solid #00A99D;
+  -webkit-appearance: none;  /*Removes default chrome and safari style*/
+  -moz-appearance: none; /* Removes Default Firefox style*/
+}
+
+input[type=text_area], textarea:focus{
+  @include box-shadow(0 0 0);
+  outline:0;
+  border:1px solid #00A99D;
+  -webkit-appearance: none;  /*Removes default chrome and safari style*/
+  -moz-appearance: none; /* Removes Default Firefox style*/
+}
+
+.money-field{
+  padding-left: 5px;
+  padding-right: 5px;
+  display: inline-block;
+  width: 130px;
+}
+
+
+
+.border-underline{
+  border: none;
+  border-bottom: 1px solid #FFF;
+  -webkit-appearance: none;  /*Removes default chrome and safari style*/
+  -moz-appearance: none; /* Removes Default Firefox style*/
+
+ }
+
+.border-underline:focus { 
+outline:none; 
+}
+
+.custom-text-area{
+  background-color: transparent;
+  border: 1px solid #DDD;
+  color:#00A99D;
+  resize: none;
+  padding:10px 15px;
+  width:90%;
+  height:120px;
+}
+
+.custom-text-area:focus{
+  @include box-shadow(0 0 0);
+  border:1px solid #00A99D;
+}
+
+
+
+/***** placeholder text *******/
+
+::-webkit-input-placeholder {
+    color: #888;
+    opacity: 1 !important; /* for chrome */
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    color: #888;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+    color: #888;
+}
+
+:-ms-input-placeholder {  
+   color: #888;
+}
+
+::-webkit-input-prompt{
+  color: #888;
+  opacity: 1 !important;
+}
+
+
+
+/****** ICONS WITHIN FORM INPUTS **********/
+/* enable absolute positioning */
+.inner-addon { 
+    position: relative; 
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 8px 5px;
+  pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px; align:center; }
+.right-addon .glyphicon { right: 0px; align:center; }
+
+/* add padding  */
+.left-addon input  { padding-left:  10px; }
+.right-addon input { padding-right: 20px; }
+
+glyphicon{
+  align:center;
+  height:5px;
+  width: 5px;
+  vertical-align: middle;
+}
