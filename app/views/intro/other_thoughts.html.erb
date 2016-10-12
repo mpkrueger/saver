@@ -1,8 +1,16 @@
+<script type="text/javascript">
+    mixpanel.track("intro_other_thoughts", {
+        
+    });
+</script>
 <script>
+$(document).ready(function() {
 	$('#questions').click(function() {
   	$('#questionsField').removeClass('hiddendiv');
+  	$('#none').hide();
   	$('#questions').hide();
   });
+ });
  </script>
 
 <div class="edu-block">
@@ -13,10 +21,12 @@
 
 		<p>We'll try to address all of your questions and concerns in our follow-up.</p>
 
+		<div id="none">
 		<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
 	    <%= f.hidden_field :questions, value: "none" %>	
       <%= f.submit "Nope, I'm good to go!", class:"option-button" %>
   	<% end %>
+  	</div>
 		
 		<input type="button" id="questions" class="option-button" value="Yeah, actually...">
     <div id="questionsField" class="hiddendiv">
@@ -24,7 +34,7 @@
   		<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
   			<%= f.hidden_field :knows_amount_to_invest, value: "No" %>
     		<div class="inner-addon left-addon">
-    			<%= f.text_field :questions,  :autofocus=>true%>
+    			<%= f.text_area :questions, class:'custom-text-area', :autofocus=>true%>
     		</div>
     		<br />
     		<%= f.submit "Next", class:"next-button" %>
