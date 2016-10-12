@@ -52,10 +52,8 @@ $(document).ready(function() {
 	<p>We believe funds are the best place to start. </p>
 	<p>Would you like to know more about the tradeoffs between these two?</p>
   </div>
-
-
-	<br /><a href="#anchor" class="next-button">Yes</a><br /><br />
-
+<br />
+	 <a href="#anchor" class="next-button">Yes</a> <br /><br />
 	<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
 
 	<%= f.hidden_field :explain_stocks_vs_funds, value: "No" %>

@@ -2,7 +2,7 @@
 
 .dropdown-style{
   display: inline-flex;
-  border-bottom: 1px solid #00A99D;
+  border-bottom: 1px solid #ddd;
   width: auto;
   max-width:100%;
   overflow: hidden;
@@ -47,7 +47,6 @@ input[type="text"], input[type="tel"], input[type="email"], input[type="password
   -webkit-appearance: none;  /*Removes default chrome and safari style*/
   -moz-appearance: none; /* Removes Default Firefox style*/
   border: 0;
-  border-bottom: 1px solid #ddd;
   outline: 0;
   background: transparent;
   border-radius: 0;

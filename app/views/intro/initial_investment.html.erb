@@ -60,7 +60,7 @@ $(document).ready(function() {
 		<br />
 	<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
       <%= f.hidden_field :knows_amount_to_invest, value: "Yes" %>
-      <div class="inner-addon left-addon">
+      <div class="dropdown-style inner-addon left-addon">
       	$<%= f.telephone_field :amount_to_get_started, class:"money-field"%>
       	
       </div>
@@ -96,10 +96,10 @@ $(document).ready(function() {
       		<br />
       		<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
       		<%= f.hidden_field :knows_amount_to_invest, value: "No" %>
-	      	<div class="inner-addon left-addon">
+	      	<div class="dropdown-style inner-addon left-addon">
 	      	$<%= f.telephone_field :amount_to_get_started, class:"money-field", :autofocus=>true%>
 	      	</div>
-	      	<br />
+	      	<br /><br />
 	      	<%= f.submit "Next", class:"next-button" %>
 	     	<% end %>
       	</div>
