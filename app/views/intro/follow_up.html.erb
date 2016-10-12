@@ -13,12 +13,12 @@
 
 		<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
 	    <%= f.hidden_field :follow_up_prefs, value: "email" %>
-      <%= f.submit "Email", class:"option-button" %>
+      <%= f.submit "Email", class:"short-option-button" %>
     <% end %>
 
  		<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
 	    <%= f.hidden_field :follow_up_prefs, value: "phone or text chat" %>
-      <%= f.submit "Phone or text chat", class:"option-button" %>
+      <%= f.submit "Phone or text chat", class:"short-option-button" %>
     <% end %>
 
 	</div>
