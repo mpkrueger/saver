@@ -15,8 +15,6 @@ class BetaMailer < ApplicationMailer
   def get_started(beta_user)
     @beta_user = beta_user
     @subject = "Let's invest!"
-    @typeform_button_text = "Get started now"
-    @book_chat_button_text = "Let's get started!"
 
     mail(to: @beta_user.email, subject: @subject)
   end
