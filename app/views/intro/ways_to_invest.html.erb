@@ -32,38 +32,46 @@ $(function() {
 
   </script>
 
-<p>There are 2 main ways to invest in the stock market:</p>
-<ul>
-	<li>buy a specific company's stock</li>
-	<li>buy index funds</li>
-</ul>
+<div class="edu-block">
+  <div class="big-headline">
+  There are 2 main ways to invest in the stock market:
+  </div>
+  <div class="headline">
+	<ul>
+		<li>buy a specific company's stock</li>
+		<li>buy index funds</li>
+	</ul>
+	<p>We believe index funds are the best place to start. </p>
+	<p>Would you like to know more aobut the tradeoffs between these two?</p>
+  </div>
 
-<p>We believe index funds are the best place to start. </p>
 
-<p>Would you like to know more aobut the tradeoffs between these two?</p>
-
-<p><a href="#anchor" class="next-button">Yes</a></p>
+<br /><a href="#anchor" class="next-button">Yes</a><br /><br />
 
 <%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
 	<%= f.hidden_field :explain_stocks_vs_funds, value: "No" %>
 
 	<%= f.submit "No", class:"next-button" %>
 <% end %>
+</div>
 
 <div id="stocks" class="hidden" style="display:none;">
-<a name="anchor">Investing in a specific company's stock</a>
+	<div class="edu-block"> <a name="anchor"></a>
+	  <div class="big-headline">Investing in a specific company's stock
+		</div>
+		<div class="headline">
+			<p>If you invest in a specific company, your money will go up and down following the company's ups and downs. </p>
 
-<p>If you invest in a specific company, your money will go up and down following the company's ups and downs. </p>
+			<p>The Good: it can be really fun to research and speculate on companies. And this can sometimes lead to big rewards!</p>
 
-<p>The Good: it can be really fun to research and speculate on companies. And this can sometimes lead to big rewards!</p>
+			<p>The Bad: this can also lead to big losses! Also, individual stocks tend to require more time and research than funds.</p>
 
-<p>The Bad: this can also lead to big losses! Also, individual stocks tend to require more time and research than funds.</p>
+			<p>Main takeaway: this is a risky type of investment. </p>
+			<p>Because of this, we don't recommend starting here or putting all of your money into individual stocks.</p>
+		</div>
 
-<p>Main takeaway: this is a risky type of investment. </p>
-<p>Because of this, we don't recommend starting here or putting all of your money into individual stocks.<p>
-
-
-<p><a href="#anchor1" class="next-button">Next</a></p>
+	<p><a href="#anchor1" class="next-button">Next</a></p>
+	</div>
 </div>
 
 <div id="funds" class="hidden" style="display:none;">
