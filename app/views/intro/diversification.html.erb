@@ -1,2 +1,60 @@
-<h1>Intro#diversification</h1>
-<p>Find me in app/views/intro/diversification.html.erb</p>
+<script>
+$(function() {
+  $('a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+
+        $('#diversify').hide(0).fadeIn(100).removeClass('hidden');
+        return false;
+      }
+    }
+  });
+});
+
+  </script>
+
+<div class="edu-block">
+  <div class="big-headline">
+  Ok, a couple more quick questions to make sure we've covered the basics.
+  </div>
+  <div class="headline">In Investing Land, you hear the word "diversify" a lot. Do you want a quick overview of what it means to diversify your investments?
+  </div>
+
+<br /><a href="#anchor" class="next-button">Sure</a><br /><br />
+
+<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+	<%= f.hidden_field :knows_diversification, value: "Yes" %>
+	<%= f.submit "No need", class:"next-button" %>
+<% end %>
+</div>
+
+<div id="diversify" class="hidden" style="display:none;">
+	<div class="edu-block"> <a name="anchor"></a>
+	  <div class="big-headline">What does it mean to diversify your investments?
+		</div>
+		<div class="headline edu-para">
+			<p>Diversifying essentially means spreading your investments across a large set of companies to lower your risk. </p>
+
+			<p>For example, if you had all your money invested in one company and its stock plummets, all of your money could be wiped out. </p>
+
+			<p>To prevent this, you'd invest your money in a diverse set of companies. You can invest in different size companies (small, medium, large), different industries (e.g. tech, agriculture, energy), in domestic vs. international funds, and much more.</p>
+		</div>
+
+	 	<div class="button-row">
+    		<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+	<%= f.hidden_field :knows_diversification, value: "No" %>
+	<%= f.submit "Got it", class:"next-button" %>
+<% end %>
+  		</div>
+	</div>
+</div>
+
+
+		
+	</div>
+</div>
