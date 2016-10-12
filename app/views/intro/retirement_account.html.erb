@@ -1,2 +1,21 @@
-<h1>Intro#retirement_account</h1>
-<p>Find me in app/views/intro/retirement_account.html.erb</p>
+<div class="edu-block">
+  <div class="big-headline">
+    Do you already have a retirement account (401K or an IRA) set up?
+  </div>
+  <div class="subtext">
+ Usually it's recommended to start with a retirement account because there are tax benefits.
+  </div>
+  <br />
+  <div class="option-row">
+  <%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+	<%= f.hidden_field :has_retirement_account, value: "Yes" %>
+	<%= f.submit "Yes", class:"next-button" %>
+  <% end %>
+  </div>
+  <div class="option-row">
+  <%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+	<%= f.hidden_field :has_retirement_account, value: "No" %>
+	<%= f.submit "No", class:"next-button" %>
+  <% end %>
+  </div>
+</div>
