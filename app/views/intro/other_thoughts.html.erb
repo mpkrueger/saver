@@ -1,2 +1,34 @@
-<h1>Intro#other_thoughts</h1>
-<p>Find me in app/views/intro/other_thoughts.html.erb</p>
+<script>
+	$('#questions').click(function() {
+  	$('#questionsField').removeClass('hiddendiv');
+  	$('#questions').hide();
+  });
+ </script>
+
+<div class="edu-block">
+  <div class="edu-para">
+		<p>Great, that's all the info we need today. Thanks for answering all of our questions – these will help us figure out the best options and plan for you. </p>
+
+		<p>Before we wrap up – do you have any remaining questions or anything else we should take into account when we're figuring out your options?</p>
+
+		<p>We'll try to address all of your questions and concerns in our follow-up.</p>
+
+		<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+	    <%= f.hidden_field :questions, value: "none" %>	
+      <%= f.submit "Nope, I'm good to go!", class:"option-button" %>
+  	<% end %>
+		
+		<input type="button" id="questions" class="option-button" value="Yeah, actually...">
+    <div id="questionsField" class="hiddendiv">
+  		<br />
+  		<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+  			<%= f.hidden_field :knows_amount_to_invest, value: "No" %>
+    		<div class="inner-addon left-addon">
+    			<%= f.text_field :questions,  :autofocus=>true%>
+    		</div>
+    		<br />
+    		<%= f.submit "Next", class:"next-button" %>
+   		<% end %>
+  	</div>
+	</div>
+</div>
