@@ -4,7 +4,16 @@ class InvestingProfilesController < ApplicationController
 	end
 
 	def create
+		@user = current_user
 		@investing_profile = InvestingProfile.new(investing_profile_params)
+		@investing_profile.user = @user
+
+		if @investing_profile.save
+			redirect_to next_wizard_path
+		else
+			flash[:error] = "uh oh"
+			redirect_to root
+		end
 	end
 
 	def update

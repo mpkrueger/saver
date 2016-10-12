@@ -6,6 +6,8 @@ class RegistrationsController < Devise::RegistrationsController
 	def create
 	  
 	  build_resource(sign_up_params)
+
+	  resource.investing_profile = InvestingProfile.new
 	  
 	  resource.save
 

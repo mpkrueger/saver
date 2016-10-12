@@ -39,6 +39,7 @@ Rails.application.routes.draw do
   resources :feedbacks
   resources :intro
   resources :beta_users
+  resources :investing_profiles
 
   resources :fin_profiles do
     collection do

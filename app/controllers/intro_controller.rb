@@ -1,14 +1,14 @@
 class IntroController < ApplicationController
   include Wicked::Wizard
 
-  steps :introduction, :introduction_2, :ways_to_invest, :diversification, :risks, :access, :takeaways, 
+  steps :introduction, :ways_to_invest, :diversification, :risks, :access, :takeaways, 
   :investment_goal, :post_investment, :initial_investment, :retirement_account, :investment_experience, 
   :debt, :other_thoughts, :follow_up
 
   def show
     @user = current_user
-    if current_user.investing_profile != nil
-      @investing_profile = current_user.investing_profile
+    if @user.investing_profile != nil
+      @investing_profile = @user.investing_profile
     else
       @investing_profile = InvestingProfile.new
     end
@@ -19,7 +19,7 @@ class IntroController < ApplicationController
     @user = current_user
     @investing_profile = @user.investing_profile
     @investing_profile.update_attributes(investing_profile_params)
-    render_wizard @user
+    render_wizard @investing_profile
   end
 
   private
