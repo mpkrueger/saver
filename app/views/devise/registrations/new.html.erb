@@ -5,54 +5,81 @@
     });
 </script>
 
+<script>
+$(document).ready(function() {
+  $('a[href*="#anchor"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
 
-
-
-  <div class="big-headline">Hi there! </div>
-
-  <div class="headline">Let's get started!</div>
-  <a href="#anchor">Next</a>
-
-
-
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
-
-    <section id="user-section">
-      <div class="spaced-row user-content">
+        // $('#stocks').hide(0).fadeIn(100).removeClass('hidden');
         
-        <div class="row-future">
-          What's your name? <br/>
-          <div class="dropdown-style">
-            <%= f.text_field :name, class: "madlib-sentence border-underline", placeholder: "your first name" %>
-          </div> 
-        </div>
+        return false;
+      }
+    }
+  });
+  $('a[href*="#email"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
 
-        <div class="row-future">
-          And what's your email address? <br />
-          <div class="dropdown-style">
-              <%= f.email_field :email, class: "madlib-sentence border-underline", placeholder: "email address" %>
-          </div>
-        </div>
-
-        <div class="row-future">
-          <div class="dropdown-style">
-            <%= f.password_field :password, class: "madlib-sentence border-underline", placeholder: "password", autocomplete: "off" %>
-          </div>
-        </div>
-
-        <div class="row-future">
-          <div class="dropdown-style">
-          <%= f.password_field :password_confirmation, class: "madlib-sentence border-underline", placeholder: "confirm password", autocomplete: "off" %>
-          </div>
-        </div>
-
-        <div class="spaced-row"></div>
-        <div class="button-row">
-          <%= f.submit "Sign up", class: 'next-button' %>
-        </div>
         
+        return false;
+      }
+    }
+  });
+});
+
+</script>
+
+
+<div class="edu-block">
+    <div class="big-headline">Hi there! </div>
+
+    <div class="headline">Let's get started!</div>
+   <br /><br /><a href="#anchor">Next</a>
+</div>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+
+<a name="anchor"></a>
+<div class="edu-block">        
+      What's your name? <br/><br />
+      <div class="dropdown-style"> 
+        <%= f.text_field :name, class: "border-underline", style:"width:250px;",placeholder: "your first name" %>
+      </div> 
+    <br /><br /><a href="#email">Next</a>
+</div>
+
+<a name="email"></a>
+<div class="edu-block">     
+      And let's make sure we can store your info and reach out to the right person.<br /> <br />
+      <div class="dropdown-style">
+          <%= f.email_field :email, class: "border-underline", style:"width:250px;", placeholder: "email address" %>
       </div>
-    </section>
+      <br /> <br />
+      <div class="dropdown-style">
+        <%= f.password_field :password, class: "border-underline", style:"width:250px;", placeholder: "password", autocomplete: "off" %>
+      </div>
+      <br /> <br />
+      <div class="dropdown-style">
+      <%= f.password_field :password_confirmation, class: "border-underline", style:"width:250px;", placeholder: "confirm password", autocomplete: "off" %>
+      </div>
+
+      <div class="spaced-row"></div>
+      
+        <%= f.submit "Sign up", class: 'next-button' %>
+        
+</div>
 
   <% end %>

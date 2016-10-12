@@ -1,2 +1,52 @@
-<h1>Intro#access</h1>
-<p>Find me in app/views/intro/access.html.erb</p>
+<script>
+$(function() {
+  $('a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+
+        return false;
+      }
+    }
+  });
+});
+</script>
+
+<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+<div class="edu-block">
+  <div class="headline">
+  Investing in the stock market is best over a long period of time (e.g. 20 years). But you may need to access your money in a shorter timeframe. 
+  </div>
+  <div class="big-headline">
+  Do you want to know more about what would happen if you need to access your money sooner?
+  </div>
+
+  <br /><a href="#anchor" class="next-button">Yes</a><br /><br />
+  
+  <%= f.hidden_field :curious_about_access_to_money, value: "No" %>
+  <%= f.submit "No", class:"next-button" %>
+  
+</div>
+
+
+<div id="access"><a name="anchor"></a>
+  <div class="edu-block"> 
+    <div class="big-headline">What happens if I need to access the money I invest sooner than 20 years?</div>
+
+    <div class="headline">You can pull your money out of the stock market at any time with no fees. Like any bank transfer, it'll take 2-4 days to get into your bank account. 
+    <br />
+    <p class='edu-para'>The main thing to note is that the stock market goes up and down over the years. If you need to access your money when the stock market is down, you may have less money than what you invested.</p>
+    <br />
+    <p>Any remaining concerns about accessing your money?</p>
+    <%= f.text_area :remaining_concerns_about_access, :class=>"custom-text-area" %>
+    <br /><br />
+    <%= f.submit "Onwards", class:"next-button" %>
+
+    </div>
+  </div>
+</div>
+<% end %>
