@@ -1,2 +1,21 @@
-<h1>Intro#investment_experience</h1>
-<p>Find me in app/views/intro/investment_experience.html.erb</p>
+<div class="edu-block">
+  <div class="big-headline">
+    Have you already invested anything in the stock market?
+  </div>
+  <div class="subtext">
+  (For example, individual company stocks, index funds, mutual funds, etc.)
+  </div>
+  <br />
+  <div class="option-row">
+  <%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+	<%= f.hidden_field :has_invested_before, value: "Yes" %>
+	<%= f.submit "Yes", class:"next-button" %>
+  <% end %>
+  </div>
+  <div class="option-row">
+  <%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+	<%= f.hidden_field :has_invested_before, value: "No" %>
+	<%= f.submit "No", class:"next-button" %>
+  <% end %>
+  </div>
+</div>
