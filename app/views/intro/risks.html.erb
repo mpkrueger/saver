@@ -9,43 +9,40 @@ $(function() {
           scrollTop: target.offset().top
         }, 1000);
 
-        $('#risks').hide(0).fadeIn(100).removeClass('hidden');
         return false;
       }
     }
   });
 });
+</script>
 
-  </script>
-<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+
 <div class="edu-block">
   <div class="big-headline">
 	Do you worry about the risks of investing?
   </div>
 
 	<br /><a href="#anchor" class="next-button">Yes</a><br /><br />
-	
+	<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
 	<%= f.hidden_field :worry_about_risks, value: "No" %>
 	<%= f.submit "No", class:"next-button" %>
-
+	<% end %>
 </div>
 
-<div id="risks" class="hidden" style="display:none;">
-	<div class="edu-block"> <a name="anchor"></a>
+<div id="risks"><a name="anchor"></a>
+	<div class="edu-block"> 
 	  <div class="big-headline">Q: Worried about risk?<br/>
-	  A: No need to worry. Investing over a long time period is very safe. In fact, there has been no 20 year period where you would've lost money by investing in a stock fund. 
-		</div> <br />
+	  A: No need to worry. Investing over a long time period is very safe. In fact, there has been no 20 year period where you would've lost money by investing in a stock fund. </div> <br />
 		<div class="headline">
-			<p>The absolute worst case was if you had invested in 1929 –  the year of the stock market crash followed by the 10-year Great Depression. If you invested $100 in 1929, you would've ended up with $102.50 in 1949. Bummer, but given the disastrous economy, it's reassuring that you still wouldn't have lost money!</p>
-<br />
-			<p>Outside of that one year – people who invested $100 in any other year got anywhere between $290 – $2,700 at the end of 20 years. </p>
-<br />
-			<p>If you invest for a long time period, you will not lose money. And more importantly, you will substantially grow your money.</p>
-		</div>
-<br />
-			<%= f.hidden_field :worry_about_risks, value: "Yes" %>
-			<%= f.submit "Ok, I feel better", class:"next-button" %>
+			<p class="edu-para">The absolute worst case was if you had invested in 1929 –  the year of the stock market crash followed by the 10-year Great Depression. If you invested $100 in 1929, you would've ended up with $102.50 in 1949. Bummer, but given the disastrous economy, it's reassuring that you still wouldn't have lost money!</p>
 	
+			<p class="edu-para">Outside of that one year – people who invested $100 in any other year got anywhere between $290 – $2,700 at the end of 20 years. </p>
+
+			<p class="edu-para">If you invest for a long time period, you will not lose money. And more importantly, you will substantially grow your money.</p>
+		</div>
+		<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+		<%= f.hidden_field :worry_about_risks, value: "Yes" %>
+		<%= f.submit "Ok, I feel better", class:"next-button" %>
+		<% end %>
 	</div>
 </div>
-<% end %>

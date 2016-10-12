@@ -38,10 +38,15 @@ a:focus { color: #337ab7; text-decoration: underline;}
 
 .anchor-style{ color:transparent; }
 
+.centered-title{
+  text-align:center;
+  margin:auto;
+  width:80%;
+}
+
 .big-headline{
   font-size:21px;
   font-weight:bold;
-  text-align:left;
   color: #333;
   margin-top:20px;
   margin-bottom:10px;
@@ -49,7 +54,6 @@ a:focus { color: #337ab7; text-decoration: underline;}
 
 .headline{
   font-size: 18px;
-  text-align:left;
   color: #333;
 }
 
@@ -67,12 +71,21 @@ a:focus { color: #337ab7; text-decoration: underline;}
   padding-top: 20%;
 }
 
+.centered-block{
+  width: 70%;
+  margin: auto;
+  height: 800px;
+  vertical-align: middle;
+  padding-top: 20%;
+}
+
 .hidden{
   color:#ddd;
 }
 
 .edu-para{
   line-height:1.6;
+  margin-bottom:18px;
 }
 
 

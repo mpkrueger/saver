@@ -9,7 +9,6 @@ $(function() {
           scrollTop: target.offset().top
         }, 1000);
 
-        $('#access').hide(0).fadeIn(100).removeClass('hidden');
         return false;
       }
     }
@@ -34,13 +33,13 @@ $(function() {
 </div>
 
 
-<div id="access" class="hidden" style="display:none;">
-  <div class="edu-block"> <a name="anchor"></a>
+<div id="access"><a name="anchor"></a>
+  <div class="edu-block"> 
     <div class="big-headline">What happens if I need to access the money I invest sooner than 20 years?</div>
 
     <div class="headline">You can pull your money out of the stock market at any time with no fees. Like any bank transfer, it'll take 2-4 days to get into your bank account. 
     <br />
-    <p>The main thing to note is that the stock market goes up and down over the years. If you need to access your money when the stock market is down, you may have less money than what you invested.</p>
+    <p class='edu-para'>The main thing to note is that the stock market goes up and down over the years. If you need to access your money when the stock market is down, you may have less money than what you invested.</p>
     <br />
     <p>Any remaining concerns about accessing your money?</p>
     <%= f.text_area :remaining_concerns_about_access, :class=>"custom-text-area" %>

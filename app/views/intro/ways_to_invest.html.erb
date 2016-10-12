@@ -16,7 +16,7 @@ $(document).ready(function() {
     }
   });
   $('a[href*="#anchor1"]:not([href="#"])').click(function() {
-    $('#funds').show();
+  //  $('#funds').show();
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
@@ -34,6 +34,7 @@ $(document).ready(function() {
 
   </script>
 
+
 <div class="edu-block">
   <div class="big-headline">
   There are 2 main ways to invest in the stock market:
@@ -41,24 +42,25 @@ $(document).ready(function() {
   <div class="headline">
 	<ul>
 		<li>buy a specific company's stock</li>
-		<li>buy index funds</li>
+		<li>buy funds (e.g. mutual funds, index funds)</li>
 	</ul>
-	<p>We believe index funds are the best place to start. </p>
+	<p>We believe funds are the best place to start. </p>
 	<p>Would you like to know more about the tradeoffs between these two?</p>
   </div>
 
 
-<br /><a href="#anchor" class="next-button">Yes</a><br /><br />
+	<br /><a href="#anchor" class="next-button">Yes</a><br /><br />
 
-<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+	<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+
 	<%= f.hidden_field :explain_stocks_vs_funds, value: "No" %>
 
 	<%= f.submit "No", class:"next-button" %>
-<% end %>
+	<% end %>
 </div>
 
-
-<div class="edu-block"> <a name="anchor"></a>
+<a name="anchor"></a>
+<div class="edu-block"> 
   <div class="big-headline">Investing in a specific company's stock
 	</div>
 	<div class="headline">
@@ -68,31 +70,32 @@ $(document).ready(function() {
 
 		<p>The Bad: this can also lead to big losses! Also, individual stocks tend to require more time and research than funds.</p>
 
-		<p><span style="font-weight:500;">Main takeaway: this is a risky type of investment. </span>
+		<p><span style="font-weight:bold;">Main takeaway: this is a risky type of investment. </span>
 		<br />Because of this, we don't recommend starting here or putting all of your money into individual stocks.</p>
 	</div>
 
-	<br /><p><a href="#anchor1" class="next-button">Continue</a></p>
+	<br /><p><a href="#anchor1">Continue</a></p>
 </div>
 
-<div id="funds" style="display:none;">
+
+<div id="funds"><a name="anchor1"></a>
 	<div class="edu-block">
-		<a name="anchor1"></a><div class="big-headline">Investing in index funds
+		<div class="big-headline">Investing in funds
 		</div>
 		<div class="headline">
-			<p>An index fund is a collection of company stocks. </p>
+			<p>A fund is a collection of company stocks. </p>
 
-			<p>The Good: Index funds lower your risk by investing your money in a range of companies so you're not dependent on any one company's success or failure. Index funds also require less time and energy to manage than individual stocks.</p>
+			<p>The Good: Funds lower your risk by investing your money in a range of companies so you're not dependent on any one company's success or failure. Funds also require less time and energy to manage than individual stocks.</p>
 
-			<p>The Bad: Some would say it's less exciting than investing in individual stocks - there are fewer swings up and down. We think it's great to have less drama! But it's important to understand that some people might consider it a bit more "dull."</p>
+			<p>The Bad: Some would say it's less exciting than investing in individual stocks - there are fewer swings up and down. We think it's great to have less drama! But if you're looking for excitement, funds are going to seem a bit dull.</p>
 		</div>
 
 
 		<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+
 			<%= f.hidden_field :explain_stocks_vs_funds, value: "Yes" %>
 
-			<%= f.submit "Next", class:"next-button" %>
+			<%= f.submit "Got it", class:"next-button" %>	
 		<% end %>
-
 	</div>
 </div>
