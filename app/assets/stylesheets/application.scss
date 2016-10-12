@@ -141,19 +141,49 @@ a:focus { color: #337ab7; text-decoration: underline;}
   margin:auto;
 }
 
+/* overloading default text input field */
+input[type="text"], input[type="tel"], input[type="email"], input[type="password"]{
+  -webkit-appearance: none;  /*Removes default chrome and safari style*/
+  -moz-appearance: none; /* Removes Default Firefox style*/
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-radius: 0;
+}
+
+
+input[type=text]:focus, input[type=text_area]:focus, textarea:focus {
+  @include box-shadow(0 0 0);
+  border: 1px solid #00A99D;
+  -webkit-appearance: none;  /*Removes default chrome and safari style*/
+  -moz-appearance: none; /* Removes Default Firefox style*/
+}
+
+.border-underline{
+  border: none;
+  border-bottom: 1px solid #FFF;
+  -webkit-appearance: none;  /*Removes default chrome and safari style*/
+  -moz-appearance: none; /* Removes Default Firefox style*/
+
+ }
+
+.border-underline:focus { 
+outline:none; 
+}
+
 .custom-text-area{
   background-color: transparent;
-  border: 1px solid #333;
+  border: 1px solid #DDD;
   color:#00A99D;
   resize: none;
   padding:10px 15px;
-  width:60%;
+  width:90%;
   height:120px;
 }
 
 .custom-text-area:focus{
+  @include box-shadow(0 0 0);
   border:1px solid #00A99D;
-  box-shadow: none;
 }
 
 

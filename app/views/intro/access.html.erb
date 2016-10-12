@@ -1,6 +1,6 @@
 <script>
-$(function() {
-  $('a[href*="#"]:not([href="#"])').click(function() {
+$(document).ready(function() {
+  $('a[href*="#access"]:not([href="#"])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
@@ -9,14 +9,30 @@ $(function() {
           scrollTop: target.offset().top
         }, 1000);
 
+        // $('#stocks').hide(0).fadeIn(100).removeClass('hidden');
+        
+        return false;
+      }
+    }
+  });
+  $('a[href*="#concerns"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+
+        
         return false;
       }
     }
   });
 });
-</script>
 
-<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+  </script>
+
 <div class="edu-block">
   <div class="headline">
   Investing in the stock market is best over a long period of time (e.g. 20 years). But you may need to access your money in a shorter timeframe. 
@@ -25,28 +41,35 @@ $(function() {
   Do you want to know more about what would happen if you need to access your money sooner?
   </div>
 
-  <br /><a href="#anchor" class="next-button">Yes</a><br /><br />
-  
+  <br /><a href="#access" class="next-button">Yes</a><br /><br />
+  <%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
   <%= f.hidden_field :curious_about_access_to_money, value: "No" %>
   <%= f.submit "No", class:"next-button" %>
-  
+  <% end %>
 </div>
 
 
-<div id="access"><a name="anchor"></a>
+<div id="access"><a name="access"></a>
   <div class="edu-block"> 
     <div class="big-headline">What happens if I need to access the money I invest sooner than 20 years?</div>
 
-    <div class="headline">You can pull your money out of the stock market at any time with no fees. Like any bank transfer, it'll take 2-4 days to get into your bank account. 
+    <div class="headline">
+    <p class="edu-para">You can pull your money out of the stock market at any time with no fees. Like any bank transfer, it'll take 2-4 days to get into your bank account. </p>
+    <p class="edu-para">The main thing to note is that the stock market goes up and down over the years. If you need to access your money when the stock market is down, you may have less money than what you invested.</p>
     <br />
-    <p class='edu-para'>The main thing to note is that the stock market goes up and down over the years. If you need to access your money when the stock market is down, you may have less money than what you invested.</p>
-    <br />
-    <p>Any remaining concerns about accessing your money?</p>
-    <%= f.text_area :remaining_concerns_about_access, :class=>"custom-text-area" %>
-    <br /><br />
-    <%= f.submit "Onwards", class:"next-button" %>
-
+    <a href="#concerns" class="next-button">Continue</a></p>
     </div>
   </div>
 </div>
-<% end %>
+
+<div id="concerns"><a name="concerns"></a>
+  <div class="edu-block"> 
+    Any remaining concerns about accessing your money?
+    <br /><br />
+      <%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+      <%= f.text_area :remaining_concerns_about_access, :class=>"custom-text-area" %>
+    <br /><br />
+      <%= f.submit "Onwards", class:"next-button" %>
+      <% end %>
+  </div>
+</div>

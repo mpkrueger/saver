@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161011225857) do
+ActiveRecord::Schema.define(version: 20161012190203) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,7 +88,6 @@ ActiveRecord::Schema.define(version: 20161011225857) do
 
   create_table "investing_profiles", force: :cascade do |t|
     t.string   "explain_stocks_vs_funds"
-    t.string   "knows_diversification"
     t.string   "worry_about_risks"
     t.string   "curious_about_access_to_money"
     t.string   "remaining_concerns_about_access"
@@ -103,6 +102,7 @@ ActiveRecord::Schema.define(version: 20161011225857) do
     t.integer  "user_id"
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
+    t.string   "explain_diversification"
     t.index ["user_id"], name: "index_investing_profiles_on_user_id", using: :btree
   end
 

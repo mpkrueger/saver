@@ -27,7 +27,7 @@ $(function() {
 <br /><a href="#anchor" class="next-button">Sure</a><br /><br />
 
 <%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
-	<%= f.hidden_field :knows_diversification, value: "Yes" %>
+	<%= f.hidden_field :explain_diversification, value: "Yes" %>
 	<%= f.submit "No need", class:"next-button" %>
 <% end %>
 </div>
@@ -44,7 +44,7 @@ $(function() {
 		</div>
 
 	    <%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
-		<%= f.hidden_field :knows_diversification, value: "No" %>
+		<%= f.hidden_field :explain_diversification, value: "No" %>
 		<%= f.submit "Got it", class:"next-button" %>
 		<% end %>
 	</div>
