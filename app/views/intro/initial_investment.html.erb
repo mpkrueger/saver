@@ -1,2 +1,112 @@
-<h1>Intro#initial_investment</h1>
-<p>Find me in app/views/intro/initial_investment.html.erb</p>
+<script>
+$(document).ready(function() {
+  $('a[href*="#initialamount"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        
+        return false;
+      }
+    }
+  });
+
+  $('a[href*="#recommendation"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        
+        return false;
+      }
+    }
+  });
+
+  $('#other').click(function() {
+  	$('#otheramount').removeClass('hiddendiv');
+  	$('#other').hide();
+  });
+
+});
+
+  </script>
+
+<div class="edu-block"> 
+  <div class="big-headline">Do you already know how much you want to initially invest?</div>
+
+  <div class="headline">
+    
+	<br /><a href="#initialamount" class="next-button">Yes</a><br />
+	<br /><a href="#recommendation" class="next-button">No</a><br />
+
+  </div>
+</div>
+
+
+<div id="initialamount"><a name="initialamount"></a>
+	<div class="edu-block"> 
+		<div class="big-headline">
+		Great, how much do you have in mind? </div>
+
+		<div class="subtext">
+			Many recommend that you have 3-6 months of expenses set aside for a rainy day fund in a savings (or checking) account. We just want to make sure you're covered!
+		</div>
+		<br />
+	<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+      <%= f.hidden_field :knows_amount_to_invest, value: "Yes" %>
+      <div class="inner-addon left-addon">
+      	$<%= f.telephone_field :amount_to_get_started, class:"money-field"%>
+      	
+      </div>
+      <br /><br />
+      <%= f.submit "Next", class:"next-button" %> 
+    <% end %>
+
+</div>
+
+<div id="recommendation"><a name="recommendation"></a>
+	<div class="edu-block"> 
+		<div class="headline">
+		No problem. Our recommendation is to start small to get the hang of investing. You can always contribute more in the future. How much would you feel comfortable getting started with? </div>
+		<br />
+		<div class="subtext">
+			Many investment services have minimum amounts or high fees at low amounts. So we recommend that you save up enough to invest $500 at minimum.
+		</div>
+		<br />
+	    <%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+	    	<%= f.hidden_field :knows_amount_to_invest, value: "No" %>
+			<%= f.hidden_field :amount_to_get_started, value: "500" %>
+      		<%= f.submit "$500", class:"option-button" %>
+      	<% end %>
+
+ 		<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+	    	<%= f.hidden_field :knows_amount_to_invest, value: "No" %>
+			<%= f.hidden_field :amount_to_get_started, value: "1,000" %>
+      		<%= f.submit "$1,000", class:"option-button" %>
+      	<% end %>
+		
+		<input type="button" id="other" class="option-button" value="Other">
+      	<div id="otheramount" class="hiddendiv">
+      		<br />
+      		<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+      		<%= f.hidden_field :knows_amount_to_invest, value: "No" %>
+	      	<div class="inner-addon left-addon">
+	      	$<%= f.telephone_field :amount_to_get_started, class:"money-field", :autofocus=>true%>
+	      	</div>
+	      	<br />
+	      	<%= f.submit "Next", class:"next-button" %>
+	     	<% end %>
+      	</div>
+		
+		
+	</div>
+</div>
+
+
+
