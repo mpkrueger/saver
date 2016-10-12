@@ -4,22 +4,16 @@
         
     });
 </script>
+<div style="margin-top:20%">
+<section id="intro-page">
+	<div class="intro_image_block"><%= image_tag("savvy_thumbnail.png") %> </div>
+	<p class="app-tagline"> Welcome to Savvy </p>
+	<p class="button-row"><%= link_to "Get Started", new_user_registration_path, class:"next-button" %></p>
+	<br />
+</section>
+</div>
+<% if user_signed_in? %>
+	<%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+<% end %>
 
-
-
-<body class="page-background">
-	<div class="splash-section">
-		<p class="app-name"><%= image_tag("savvy-logo.png", class:"app-name") %> </p>
-		<p class="app-tagline"> The financial coach you've always wanted </p>
-		<p><%= image_tag("hot-air-balloon.png", class:"splash-image") %></p>
-		<p class="button-row"><%= link_to "Get My Savvy Score", goals_introductions_path, class:"next-button" %></p>
-		<br />
-		<p class="sign-in-link"><%= link_to "Already have a Savvy Score?", new_user_session_path, class:"sign-in-link" %></p>
-
-	</div>
-
-	<% if user_signed_in? %>
-		<%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-	<% end %>
-</body>
 

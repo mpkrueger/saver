@@ -1,7 +1,7 @@
 class IntroController < ApplicationController
   include Wicked::Wizard
 
-  steps :introduction, :introduction_2, :ways_to_invest, :diversification, :risks, :access, :takeaways, 
+  steps :introduction, :ways_to_invest, :diversification, :risks, :access, :takeaways, 
   :investment_goal, :post_investment, :initial_investment, :retirement_account, :investment_experience, 
   :debt, :other_thoughts, :follow_up
 

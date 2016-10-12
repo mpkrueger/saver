@@ -5,32 +5,39 @@
     });
 </script>
 
-<body class="page-background">
 
-Welcome back to Savvy! 
 
-<p>Let's get started - first, we just need a a bit more info.</p>
+
+  <div class="big-headline">Hi there! </div>
+
+  <div class="headline">Let's get started!</div>
+  <a href="#anchor">Next</a>
+
+
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
 
     <section id="user-section">
       <div class="spaced-row user-content">
+        
         <div class="row-future">
+          What's your name? <br/>
           <div class="dropdown-style">
-          <%= f.email_field :email, class: "madlib-sentence border-underline", placeholder: "email address" %>
+            <%= f.text_field :name, class: "madlib-sentence border-underline", placeholder: "your first name" %>
+          </div> 
+        </div>
+
+        <div class="row-future">
+          And what's your email address? <br />
+          <div class="dropdown-style">
+              <%= f.email_field :email, class: "madlib-sentence border-underline", placeholder: "email address" %>
           </div>
         </div>
 
         <div class="row-future">
           <div class="dropdown-style">
-          <%= f.text_field :name, class: "madlib-sentence border-underline", placeholder: "your first name" %>
-          </div>
-        </div>
-
-        <div class="row-future">
-          <div class="dropdown-style">
-          <%= f.password_field :password, class: "madlib-sentence border-underline", placeholder: "password", autocomplete: "off" %>
+            <%= f.password_field :password, class: "madlib-sentence border-underline", placeholder: "password", autocomplete: "off" %>
           </div>
         </div>
 
@@ -44,13 +51,8 @@ Welcome back to Savvy!
         <div class="button-row">
           <%= f.submit "Sign up", class: 'next-button' %>
         </div>
-        <div class="page-bottom-padding">
-          <div class="padding-text">
-            adding space below next button
-          </div>
-        </div>
+        
       </div>
     </section>
 
   <% end %>
-</body>

@@ -1,2 +1,74 @@
-<h1>Intro#ways_to_invest</h1>
-<p>Find me in app/views/intro/ways_to_invest.html.erb</p>
+<script>
+$(function() {
+  $('a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
+</script>
+
+
+<div class="edu-block">
+  <div class="big-headline">
+  There are 2 main ways to invest in the stock market:
+  </div>
+
+  <div class="headline">
+  	• buy a specific company's stock
+	<br />• buy funds (e.g. index funds, mutual funds, etc.) <br />
+	<br />
+	We believe index funds are the best place to start. Would you like to know more about the tradeoffs between these two?
+  </div>
+  <br />
+  <a href="#anchor" class="choice-button">Sure!</a> <br /><br />
+  <%= link_to "No thanks", next_wizard_path, class:"choice-button" %>
+</div>
+
+
+<a name="anchor" id="anchor" class="anchor-style">Indiv Stocks</a>
+<div class="edu-block">
+	<div class="big-headline">
+		Investing in a specific company's stock
+	</div>
+
+  <div class="headline">
+	<p>If you invest in a specific company, your money will go up and down following the company's ups and downs. </p>
+
+	<p>The Good: it can be really fun to research and speculate on companies. And this can sometimes lead to big rewards!</p>
+
+	<p>The Bad: this can also lead to big losses! Also, individual stocks tend to require more time and research than funds.</p>
+
+<p>Main takeaway: this is a risky type of investment. 
+Because of this, we don't recommend starting here or putting all of your money into individual stocks.</p>
+
+  </div>
+  <br />
+  <a href="#anchor">Next</a>
+</div>
+
+
+<a name="anchor" id="anchor" class="anchor-style">Funds</a>
+<div class="edu-block">
+	<div class="big-headline">
+		Investing in a specific company's stock
+	</div>
+
+  <div class="headline">
+	<p>If you invest in a specific company, your money will go up and down following the company's ups and downs. </p>
+
+	<p>The Good: it can be really fun to research and speculate on companies. And this can sometimes lead to big rewards!</p>
+
+	<p>The Bad: this can also lead to big losses! Also, individual stocks tend to require more time and research than funds.</p>
+  </div>
+  <br />
+  <a href="#anchor">Next</a>
+</div>
+

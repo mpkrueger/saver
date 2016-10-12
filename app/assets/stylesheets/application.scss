@@ -30,34 +30,25 @@ html{
 }
 
 
-.gradient{
-    background-repeat: no-repeat;
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    width: 100%;
-    margin:auto;
-    position: absolute;
-    bottom:0;
-  }
-
 hr { width:100%; height:-0.5px; background: #fff; margin-top:0; }
-a { color:#fff;}
-a:hover{ color: #FAD472; text-decoration: none;}
-a:focus { color: #FAD472; text-decoration: underline;}
+a { color:#00A99D;}
+a:hover{ color: #00A99D; text-decoration: underline;}
+a:focus { color: #337ab7; text-decoration: underline;}
 
+
+.anchor-style{ color:transparent; }
 
 .big-headline{
   font-size:21px;
-  text-align:center;
+  text-align:left;
   color: #333;
+  margin-top:20px;
+  margin-bottom:10px;
 }
 
 .headline{
   font-size: 18px;
-  text-align:center;
+  text-align:left;
   color: #333;
 }
 
@@ -66,6 +57,25 @@ a:focus { color: #FAD472; text-decoration: underline;}
   text-decoration: underline;
 }
 
+.edu-block{
+  width: 85%;
+  margin: auto;
+  text-align: left;
+  height: 800px;
+  vertical-align: middle;
+  padding-top: 20%;
+}
+
+.hidden{
+  color:#ddd;
+}
+
+.edu-para{
+  font-size:18px;
+  line-height:1.4;
+}
+
+
 .secondary-cta-link{ 
   font-size:14px; 
   text-decoration:underline; 
@@ -73,18 +83,11 @@ a:focus { color: #FAD472; text-decoration: underline;}
 
 }
 
-.emoticon{
-  margin-top:-10px;
-}
-
-.unbolded-label{
-  font-weight:normal;  
-}
 
 .next-button{
-  border: 1px solid #333;
+  border: 1px solid #00A99D;
   background-color: transparent;
-  color:#333;
+  color: #00A99D;
   padding: 10px 30px;
   text-align: center;
   border-radius:6px;
@@ -93,18 +96,35 @@ a:focus { color: #FAD472; text-decoration: underline;}
 }
 
 .next-button:active{
-    background-color: #333;
-    color: #43767A;
+    background-color: #00A99D;
+    color: #fff;
     border: none;
-    border: 1px solid #FFFFFF;
+    border: 1px solid #00A99D;
 }
 
 .next-button:disabled{
-    background-color: #333;
-    color: #43767A;
+    background-color: #00A99D;
+    color: #fff;
     border: none;
-    border: 1px solid #FFFFFF;
+    border: 1px solid #00A99D;
     opacity:0.5;
+}
+
+.next-button:hover{
+  color:#00A99D;
+  border: 1px solid #00A99D;
+}
+
+
+.choice-button{
+  border: 1px solid #00A99D;
+  background-color:transparent;
+  color:#00A99D;
+  padding: 10px 20px;
+  min-width:140px;
+  text-align:center;
+  border-radius:4px;
+  margin:auto;
 }
 
 
