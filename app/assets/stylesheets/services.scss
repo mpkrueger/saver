@@ -25,9 +25,7 @@
 	margin-bottom:20px;
 }
 
-.services-text-col{
-	padding-top:20px;
-}
+
 
 .factors-text{
 	text-align:center;
@@ -38,4 +36,25 @@
     width: 80%;
     margin: auto;
     text-align: center;
+}
+
+
+@media screen and (max-width: 350px) {
+	.services-text-col{
+		padding-top:0px;
+	}
+
+
+}
+
+@media screen and (min-width: 350px) and (max-width: 480px) {
+	.services-text-col{
+		padding-top:12px;
+	}
+}
+
+@media screen and (min-width: 480px) {
+	.services-text-col{
+		padding-top:20px;
+	}
 }

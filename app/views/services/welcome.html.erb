@@ -1,15 +1,73 @@
-<div class="headline">Hi #name#, we're excited to help you invest your #$1,000#. First, we'll pick between two investment services.<br /><span class="subtext">Why these two?</span></div>
 
-	<div class="row is-table-row">
-		<div class="col-sm-5 col-md-5 col-lg-5">
-			<%= image_tag("vanguard_logo.png", class:"services-logo") %>
+<script>
+$(function() {
+  $('a[href*="#anchor"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+
+  $('a[href*="#intro"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+
+});
+</script>
+
+<a name="intro"></a>
+<div class="edu-block">
+	<div class="big-headline">Hi <%= @user.name %>, we're excited to help you invest your <%= @amount %>.
+	</div>
+	<div class="headline"> First, we'll pick between two investment services.</div>
+	<span class="subtext" style="text-decoration:underline;"><a href="#anchor">(Why these two?)</a></span>
+	
+	<br />
+	<p class="headline">
+		<div class="row is-table-row">
+			<div class="col-sm-5 col-md-5 col-lg-5">
+				<%= image_tag("vanguard_logo.png", class:"services-logo") %>
+			</div>
+			<div class="col-sm-5 col-md-5 col-lg-5">
+				<%= image_tag("betterment_logo.png", class:"services-logo") %>
+			</div>
 		</div>
-		<div class="col-sm-5 col-md-5 col-lg-5">
-			<%= image_tag("betterment_logo.png", class:"services-logo") %>
-		</div>
+	</p>
+
+	<div class="button-row">
+	<%= link_to "Next", services_overview_path, class:"next-button" %>
 	</div>
 
+</div>
 
-<div class="button-row">
-<%= link_to "Next", services_overview_path, class:"next-button" %>
+
+<a name="anchor"></a>
+<div class="edu-block">
+	<div class="big-headline">Why these two services?</div>
+	<div class="headline">
+    	<p class="edu-para">There are two main ways to invest – 
+    	<ul>
+    		<li>A hands-on approach where you have more autonomy to pick your funds and manage your investments</li>
+    		<li>A hands-off approach where you contribute money to a service (often called a robo-advisor) that manages your investment portfolio for you.</li>
+    	</ul>
+
+    <p class="edu-para">Vanguard and Betterment are each respectively the best in their class for these two approaches.</p>
+  </div>
+ 	<a href="#intro">Back</a>
+    
 </div>
