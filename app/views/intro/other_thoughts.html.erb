@@ -7,8 +7,6 @@
 $(document).ready(function() {
 	$('#questions').click(function() {
   	$('#questionsField').removeClass('hiddendiv');
-  	$('#none').hide();
-  	$('#questions').hide();
   });
  });
  </script>
@@ -29,14 +27,13 @@ $(document).ready(function() {
   	</div>
 		
 		<input type="button" id="questions" class="short-option-button" value="Yeah, actually...">
+    <br />
     <div id="questionsField" class="hiddendiv">
-  		<br />
   		<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
   			<%= f.hidden_field :knows_amount_to_invest, value: "No" %>
     		<div class="">
     			<%= f.text_area :questions, class:'custom-text-area', :autofocus=>true %>
     		</div>
-    		<br />
     		<%= f.submit "Next", class:"next-button" %>
    		<% end %>
   	</div>
