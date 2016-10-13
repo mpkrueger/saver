@@ -17,15 +17,15 @@
 
 
 		<% if @user.investing_profile.follow_up_prefs != nil %>
-			<div class="splash-question"> Hey, <%= @user.name %>!</div>
-			<div class="signup-instruction">
+			<div class="user-welcome"> Hey, <%= @user.name %>!</div>
+			<div class="user-feedback-cta">
 				We'll be reaching out soon with recommendations and steps for you. In the meantime, we'd really appreciate feedback! <br />
 				<div class="button-row">
 				<%= link_to "Give Feedback", dashboard_feedback_path, :class=>'next-button' %>
 				</div>
 			</div>
 		<% elsif @user.investing_profile.follow_up_prefs == nil %>
-			<div class="splash-question"> Hey, <%= @user.name %>! 
+			<div class="user-welcome"> Hey, <%= @user.name %>! 
 				<div class="signup-instruction">
 					Our first step is to get to know you so we can put together the best options for you. <br />
 					<div class="button-row">

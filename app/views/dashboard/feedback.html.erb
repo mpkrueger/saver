@@ -5,68 +5,65 @@
     });
 </script>
 
-<body class="page-background">
 
-<section id="savvy-score-section">
-<div class="savvy-score-bgimage">
-    <%= image_tag("thanks-header.png", class:'savvy-score-bgimage' )%>
-</div>
-</section>
+<div class="edu-block">
 
-
-
-<section id="coach-section">
-	<div class="coach-chat-triangle"></div>
-	<div class="coach-question">
-		Thanks in advance for your feedback!
+	<div class="centered-title">
+		<div class="big-headline">
+			Thanks in advance for your feedback!
+		</div>
 	</div>
 
-</section>
 
 
 	
 	<%= form_for @feedback do |f| %>
 
-	<section id="user-section">
+
 		
-		<div class="spaced-row user-content">
-			<div class="madlib-sentence">			
-				I'm <div class="dropdown-style inner-addon right-addon">
-					<%= f.select :nps, [['1 (not at all)', 1], 2, 3, 4, 5, 6, 7, 8, 9, ['10 (extremely)', 10]], {prompt: "this much..."}, :class => "btn-group my-dropdown" %><span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span></div>
-				likely to recommend Savvy to a friend
-				
-				
-			</div>
-		</div>	
+	How likely are you to recommend Savvy to a friend?
+	<div class="spaced-row ">
+		<div class="madlib-sentence">			
+			<div class="dropdown-style inner-addon right-addon">
+				<%= f.select :nps, [['1 (not at all)', 1], 2, 3, 4, 5, 6, 7, 8, 9, ['10 (extremely)', 10]], {prompt: "(this much)"}, :class => "btn-group my-dropdown" %>
+				<span class="glyphicon">
+					<%= "\u25BE" %>
+				</span></div>
+		</div>
+	</div>	
 		
-		<div class="spaced-row user-content">
-			<div class="madlib-sentence">			
-				Based on this experience, I trust Savvy <div class="dropdown-style inner-addon right-addon">
-					<%= f.select :trust, [['1 (not at all)' ,1], 2, 3, 4, ['5 (completely)',5]], {prompt: "this much..."}, :class => "btn-group my-dropdown" %><span class="glyphicon"><%= image_tag("dropdown-arrow.png", size: "10x10")%></span></div>
-				
-			</div>
-		</div>	
+	<div class="spaced-row">
+	Based on this experience, how much do you trust Savvy?
+	
+	<div class="spaced-row">
+		<div class="madlib-sentence">			
+			 <div class="dropdown-style inner-addon right-addon">
+				<%= f.select :trust, [['1 (not at all)' ,1], 2, 3, 4, ['5 (completely)',5]], {prompt: "(this much)"}, :class => "btn-group my-dropdown" %>
+				<span class="glyphicon">
+					<%= "\u25BE" %>
+				</span>
+			  </div>
+			
+		</div>
+	</div>	
+	</div>
 	
 		
-		<div class="spaced-row user-content">
-			<div class="madlib-sentence">			
-				I have some more thoughts:
-				<%= f.text_area :comment, :class=>"my-text-area" %>
-				
+	<div class="spaced-row">
+		<div class="edu-para">			
+			Any other thoughts on your experience with Savvy so far? 
+			<div class="spaced-row">
+			<%= f.text_area :comment, :class=>"custom-text-area" %>
 			</div>
-		</div>	
-	</section>	
-
-
-	<div class="button-row">
-			<%= f.submit "Next", class: 'next-button' %>
-	</div>
-	<div class="page-bottom-padding">
-		<div class="padding-text">
-			adding space below next button
+			
 		</div>
-	</div>
+	</div>	
+
+
+
+
+			<%= f.submit "Next", class: 'next-button' %>
+
+	
 	<% end %>
-
-
-</body>
+</div>
