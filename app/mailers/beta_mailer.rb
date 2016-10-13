@@ -18,4 +18,12 @@ class BetaMailer < ApplicationMailer
 
     mail(to: @beta_user.email, subject: @subject)
   end
+
+  def send_get_started(ids)
+    @ids = []
+    @ids = ids
+    @ids.each do |id|
+      BetaMailer.get_started(BetaUser.find_by_id(id)).deliver
+    end
+  end
 end
