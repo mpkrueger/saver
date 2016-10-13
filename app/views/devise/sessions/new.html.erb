@@ -5,26 +5,25 @@
     });
 </script>
 
-<body class="page-background">
 
-  <div class="splash-section">
-    <p class="app-name"><%= image_tag("savvy-logo.png", class:"app-name") %> </p>
-    <p class="app-tagline"> The free financial coach you've always wanted </p>
   
-
+<div style="margin-top:20%">
+<section id="intro-page">
+  <div class="intro_image_block"><%= image_tag("savvy_thumbnail.png", style:"width:150px;height:auto;") %> </div>
+  <p class="app-tagline"> Welcome to Savvy </p>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <section id="user-section">
         <div class="spaced-row user-content">
           <div class="row-future">
             <div class="dropdown-style">
-            <%= f.email_field :email, class: "madlib-sentence border-underline", placeholder: "email address" %>
+            <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:250px;", placeholder: "email address" %>
             </div>
           </div>
 
           <div class="row-future">
           <div class="dropdown-style">
-            <%= f.password_field :password, class: "madlib-sentence border-underline", placeholder: "password", autocomplete: "off" %>
+            <%= f.password_field :password, class: "border-underline", style:"width:250px;", placeholder: "password", autocomplete: "off" %>
             </div>
           </div>
 
@@ -42,11 +41,14 @@
         </div>
       </section>
     <% end %>
-  </div>
+
+
+
 
   <div class="sign-in-link">
     <%= link_to "Sign up", root_path %><br />
     <%= render "devise/shared/links" %>
   </div>
 
-</body>
+  </section>
+</div>
