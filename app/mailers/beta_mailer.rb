@@ -19,11 +19,26 @@ class BetaMailer < ApplicationMailer
     mail(to: @beta_user.email, subject: @subject)
   end
 
+  def follow_up(beta_user)
+    @beta_user = beta_user
+    @subject = "Let's do this!"
+
+    mail(to: @beta_user.email, subject: @subject)
+  end
+
   def send_get_started(ids)
     @ids = []
     @ids = ids
     @ids.each do |id|
       BetaMailer.get_started(BetaUser.find_by_id(id)).deliver
+    end
+  end
+
+  def send_follow_up(ids)
+    @ids = []
+    @ids = ids
+    @ids.each do |id|
+      BetaMailer.follow_up(BetaUser.find_by_id(id)).deliver
     end
   end
 end

@@ -10,4 +10,8 @@ class BetaMailerPreview < ActionMailer::Preview
   	BetaMailer.get_started(BetaUser.last)
   end
 
+  def follow_up
+  	BetaMailer.follow_up(BetaUser.last)
+  end
+
 end
