@@ -1,7 +1,7 @@
 <% @title=": Home" %>
 <script type="text/javascript">
     mixpanel.track("homepage", {
-        
+			"distinct_id": <%= @user.id.to_s %>        
     });
 </script>
 
