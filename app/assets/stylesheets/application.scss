@@ -99,7 +99,7 @@ a:focus { color: #337ab7; text-decoration: underline;}
   text-decoration: none;
 }
 
-.next-button:active{
+.next-button:active, .next-button:focus{
     background-color: #00A99D;
     color: #fff;
     border: none;
