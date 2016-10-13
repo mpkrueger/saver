@@ -1,0 +1,16 @@
+/* line 1, /Users/Matt/code/fin-goals/app/assets/stylesheets/email.scss */
+.email-body {
+  padding: 50px 80px 50px 80px;
+  font-family: Arial, Verdana;
+  line-height: 1.4;
+}
+
+/* line 7, /Users/Matt/code/fin-goals/app/assets/stylesheets/email.scss */
+.list {
+  line-height: 1.5;
+}
+
+/* line 11, /Users/Matt/code/fin-goals/app/assets/stylesheets/email.scss */
+.email-link {
+  color: #00A99D;
+}
