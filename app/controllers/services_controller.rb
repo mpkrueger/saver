@@ -1,4 +1,6 @@
 class ServicesController < ApplicationController
+  before_action :authenticate_user!
+  
   def welcome
     @user = current_user
     @amount = @user.investing_profile.amount_wants_to_invest
