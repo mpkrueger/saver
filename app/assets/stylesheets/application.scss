@@ -39,6 +39,9 @@ a:focus { color: #337ab7; text-decoration: underline;}
 
 .anchor-style{ color:transparent; }
 
+ul {
+    padding-left:5%;
+}
 
 
 .hidden{
@@ -99,11 +102,12 @@ a:focus { color: #337ab7; text-decoration: underline;}
   text-decoration: none;
 }
 
-.next-button:active, .next-button:focus{
+.next-button:active, .next-button:focus, .short-option-button:focus, .short-option-button:active{
     background-color: #00A99D;
     color: #fff;
     border: none;
     border: 1px solid #00A99D;
+    outline:0;
 }
 
 .next-button:disabled{
