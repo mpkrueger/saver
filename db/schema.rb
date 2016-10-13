@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161012231630) do
+ActiveRecord::Schema.define(version: 20161013225430) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -94,8 +94,8 @@ ActiveRecord::Schema.define(version: 20161012231630) do
     t.string   "investment_goal"
     t.string   "post_investment_goal"
     t.string   "knows_amount_to_invest"
-    t.decimal  "amount_wants_to_invest"
-    t.decimal  "amount_to_get_started"
+    t.integer  "amount_wants_to_invest"
+    t.integer  "amount_to_get_started"
     t.string   "has_retirement_account"
     t.string   "has_invested_before"
     t.integer  "user_id"

@@ -66,7 +66,7 @@ $(document).ready(function() {
 	<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
       <%= f.hidden_field :knows_amount_to_invest, value: "Yes" %>
       <div class="dropdown-style inner-addon left-addon">
-      	$<%= f.telephone_field :amount_to_get_started, class:"money-field"%>
+      	$<%= f.telephone_field :amount_to_invest, class:"money-field"%>
       	
       </div>
       <br /><br />

@@ -32,7 +32,7 @@ $(function() {
 
 <a name="intro"></a>
 <div class="edu-block">
-	<div class="big-headline">Hi <%= @user.name %>, we're excited to help you invest your $<%= @amount.to_i %>.
+	<div class="big-headline">Hi <%= @user.name %>, we're excited to help you invest your $<%= number_with_delimiter(@amount) %>.
 	</div>
 	<div class="headline"> First, we'll pick between two investment services.</div>
 	<span class="subtext" style="text-decoration:underline;"><a href="#anchor">(Why these two?)</a></span>
