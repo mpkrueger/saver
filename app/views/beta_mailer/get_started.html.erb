@@ -11,25 +11,18 @@ Hi there,
 
 </p>
 <div>
-<!--[if mso]>
-  <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="http://www.getsavvier.com/goals/index" style="height:40px;v-text-anchor:middle;width:300px;" arcsize="10%" stroke="f" fillcolor="#125D70">
-    <w:anchorlock/>
-    <center style="color:#ffffff;font-family:sans-serif;font-size:16px;font-weight:bold;">
-      Let's get started!
-    </center>
-  </v:roundrect>
-  <![endif]-->
-  <![if !mso]>
+
   <table cellspacing="0" cellpadding="0"> <tr> 
   <td align="center" width="300" height="40" bgcolor="#00A99D" style="-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; color: #ffffff; display: block;">
-    <a href="http://www.getsavvier.com/goals/index" style="font-size:16px; font-weight: bold; font-family:sans-serif; text-decoration: none; line-height:40px; width:100%; display:inline-block">
+
+ <!--    <a href="http://www.getsavvier.com/goals/index" style="font-size:16px; font-weight: bold; font-family:sans-serif; text-decoration: none; line-height:40px; width:100%; display:inline-block"> -->
     <span style="color: #ffffff;">
-      Let's get started!
+      <%= link_to "Let's get started!", goals_index_url(email: @beta_user.email), class: "email-button" %>
     </span>
     </a>
   </td> 
-  </tr> </table> 
-  <![endif]>
+  </tr> 
+  </table> 
 </div>
 
 
