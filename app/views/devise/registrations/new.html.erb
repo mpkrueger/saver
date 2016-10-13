@@ -65,7 +65,7 @@ $(document).ready(function() {
 <div class="edu-block">     
       And let's make sure we can store your info and reach out to the right person.<br /> <br />
       <div class="dropdown-style">
-          <%= f.email_field :email, class: "border-underline", style:"width:250px;", placeholder: "email address" %>
+          <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:250px;", placeholder: "email address" %>
       </div>
       <br /> <br />
       <div class="dropdown-style">
