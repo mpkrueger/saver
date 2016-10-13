@@ -34,7 +34,7 @@ $(document).ready(function() {
   		<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
   			<%= f.hidden_field :knows_amount_to_invest, value: "No" %>
     		<div class="inner-addon left-addon">
-    			<%= f.text_area :questions, class:'custom-text-area', :autofocus=>true%>
+    			<%= f.text_area :questions, class:'custom-text-area', :autofocus=>true %>
     		</div>
     		<br />
     		<%= f.submit "Next", class:"short-option-button" %>

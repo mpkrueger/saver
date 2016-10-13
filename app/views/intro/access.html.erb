@@ -48,7 +48,7 @@ $(document).ready(function() {
 
   <br /><a href="#access" class="next-button">Yes</a><br /><br />
   <%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
-  <%= f.hidden_field :curious_about_access_to_money, value: "No" %>
+    <%= f.hidden_field :curious_about_access_to_money, value: "No" %>
   <%= f.submit "No", class:"next-button" %>
   <% end %>
 </div>
@@ -59,7 +59,7 @@ $(document).ready(function() {
     <div class="big-headline">What happens if I need to access the money I invest sooner than 20 years?</div>
 
     <div class="headline">
-    <p class="edu-para">You can pull your money out of the stock market at any time with no fees. Like any bank transfer, it'll take 2-4 days to get into your bank account. </p>
+    <p class="edu-para">You can pull your money out of the stock market at any time with no fees. Like any bank transfer, it'll take 4-6 days to get into your bank account. </p>
     <p class="edu-para">The main thing to note is that the stock market goes up and down over the years. If you need to access your money when the stock market is down, you may have less money than what you invested.</p>
     <br />
     <a href="#concerns" class="next-button">Continue</a></p>
@@ -71,7 +71,8 @@ $(document).ready(function() {
   <div class="edu-block"> 
     Any remaining concerns about accessing your money?
     <br /><br />
-      <%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+    <%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+      <%= f.hidden_field :curious_about_access_to_money, value: "Yes" %>
       <%= f.text_area :remaining_concerns_about_access, :class=>"custom-text-area" %>
     <br /><br />
       <%= f.submit "Onwards", class:"next-button" %>
