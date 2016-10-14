@@ -78,7 +78,6 @@ ul {
     border-radius:6px;
     text-decoration: none;
     margin-bottom:10px;
-    touch-action: manipulation;
 }
 
 .option-button:hover{
@@ -101,7 +100,6 @@ ul {
   border-radius:6px;
   margin: auto;
   text-decoration: none;
-  touch-action: manipulation;
 }
 
 .next-button:active, .next-button:focus, .short-option-button:focus, .short-option-button:active{
