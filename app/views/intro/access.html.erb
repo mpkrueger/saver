@@ -38,6 +38,8 @@ $(document).ready(function() {
   $('#moreConcerns').click(function() {
     $('#moreConcernsField').removeClass('hiddendiv');
     $('#moreConcernsField').focus();
+    $('#none').hide();
+    $('#moreConcerns').hide();
   });
 });
 
@@ -76,11 +78,22 @@ $(document).ready(function() {
   <div class="edu-block"> 
     Any remaining concerns about accessing your money?
     <br /><br />
-    <%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
-      <%= f.hidden_field :curious_about_access_to_money, value: "Yes" %>
-      <%= f.text_area :remaining_concerns_about_access, :class=>"custom-text-area" %>
-    <br /><br />
-      <%= f.submit "Onwards", class:"next-button" %>
+    <div id="none">
+      <%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+        <%= f.hidden_field :curious_about_access_to_money, value: "Yes" %> 
+        <%= f.submit "Nope, I'm good to go!", class: "short-option-button" %>
       <% end %>
+    </div>
+
+    <input type="button" id="moreConcerns" class="short-option-button" value="Yeah, actually...">
+    <br />
+    <div id="moreConcernsField" class="hiddendiv">
+      <%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+        <%= f.hidden_field :curious_about_access_to_money, value: "Yes" %>
+        <%= f.text_area :remaining_concerns_about_access, :class=>"custom-text-area" %>
+        <br /><br />
+        <%= f.submit "Onwards", class:"next-button" %>
+      <% end %>
+    </div>
   </div>
 </div>
