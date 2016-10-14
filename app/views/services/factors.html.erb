@@ -1,28 +1,52 @@
 
-<div class="headline">Diving a bit deeper, we'll directly compare these two services in terms of the following:</div>
-<br />
-	<div class="row is-table-row">
-		<div class="col-sm-3 col-md-3 col-lg-3">
-			<div class="factors-icons"><%= image_tag("fees_icon.png", class:"factors-icons") %></div>
-			<div class="factors-text">Fees</div>
+<div class="edu-block">
+	<div class="headline">Diving a bit deeper, we'll directly compare these two services in terms of the following:</div>
+	<br />
+		<!--div class="row is-table-row">
+			<div class="col-md-3 col-lg-3">
+				<div class="factors-icons"><%= image_tag("fees_icon.png", class:"factors-icons") %></div>
+				<div class="factors-text">Fees</div>
+			</div>
+			<div class="col-md-3 col-lg-3">
+				<div class="factors-icons"><%= image_tag("ease_icon.png", class:"factors-icons") %></div>
+				<div class="factors-text">Ease of Use</div>
+			</div>
+			<div class="col-md-3 col-lg-3">
+				<div class="factors-icons"><%= image_tag("flex_icon.png", class:"factors-icons") %></div>
+				<div class="factors-text">Flexibility</div>
+			</div>
+			<div class="col-md-3 col-lg-3">
+				<div class="factors-icons"><%= image_tag("rep_icon.png", class:"factors-icons") %></div>
+				<div class="factors-text">Reputation</div>
+			</div>
+		</div-->
+
+		<div class="row is-table-row" style="width:80%; margin:auto;">
+			<div class="col-md-6 col-lg-6">
+				<div class="factors-icons"><%= image_tag("fees_icon.png", class:"factors-icons") %></div>
+				<div class="factors-text">Fees</div>
+			</div>
+			<div class="col-md-6 col-lg-6">
+				<div class="factors-icons"><%= image_tag("ease_icon.png", class:"factors-icons") %></div>
+				<div class="factors-text">Ease of Use</div>
+			</div>
 		</div>
-		<div class="col-sm-3 col-md-3 col-lg-3">
-			<div class="factors-icons"><%= image_tag("ease_icon.png", class:"factors-icons") %></div>
-			<div class="factors-text">Ease of Use</div>
+		<br />
+
+		<div class="row is-table-row" style="width:80%; margin:auto;">
+			<div class="col-xs-6 col-sm-6">
+				<div class="factors-icons"><%= image_tag("rep_icon.png", class:"factors-icons") %></div>
+				<div class="factors-text">Reputation</div>
+			</div>
+			<div class="col-xs-6 col-sm-6 ">
+				<div class="factors-icons"><%= image_tag("flex_icon.png", class:"factors-icons") %></div>
+				<div class="factors-text">Flexibility</div>
+			</div>
+
 		</div>
-		<div class="col-sm-3 col-md-3 col-lg-3">
-			<div class="factors-icons"><%= image_tag("flex_icon.png", class:"factors-icons") %></div>
-			<div class="factors-text">Flexibility</div>
-		</div>
-		<div class="col-sm-3 col-md-3 col-lg-3">
-			<div class="factors-icons"><%= image_tag("rep_icon.png", class:"factors-icons") %></div>
-			<div class="factors-text">Reputation</div>
-		</div>
+<div class="spaced-row"></div><br/>
+
+	<div class="button-row" style="text-align:center;margin:auto;">
+	<%= link_to "Next", services_fees_path, class:"next-button" %>
 	</div>
-
-
-
-
-<div class="button-row">
-<%= link_to "Next", services_overview_path, class:"next-button" %>
 </div>
