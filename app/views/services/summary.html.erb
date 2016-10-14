@@ -1,2 +1,37 @@
-<h1>Services#summary</h1>
-<p>Find me in app/views/services/summary.html.erb</p>
+<div class="edu-block">
+<div class="big-headline"> In Summary </div>
+
+	<div class="row is-table-row services-row">
+		<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2" style="padding: 0;">
+			<%= image_tag("vanguard_icon.png", class:"services-icon") %>
+		</div>
+		<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 services-text-col">
+			<div class="headline">Vanguard is best for you if you <br />
+			
+				<ul>
+					<li >want the lowest fees</li>
+					<li >want to take more control over your portfolio</li>
+					<li >are comfortable with a clunky UI</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="row is-table-row services-row">
+		<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2" style="padding: 0;">
+			<%= image_tag("betterment_icon.png", class:"services-icon") %>
+		</div>
+		<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 services-text-col">
+			<div class="headline">Betterment is best for you if you <br />
+			
+				<ul>
+					<li >want to invest and forget about it</li>
+					<li >want an easy-to-use website and mobile app</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="button-row">
+		<%= link_to "Next", services_recommendation_path, class:"next-button" %>
+	</div>
+</div>
