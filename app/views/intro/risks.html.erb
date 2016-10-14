@@ -49,5 +49,10 @@ $(function() {
 		<%= f.hidden_field :worry_about_risks, value: "Yes" %>
 		<%= f.submit "Ok, I feel better", class:"next-button" %>
 		<% end %>
+		<br />
+		<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+		<%= f.hidden_field :worry_about_risks, value: "Yes and I still have concerns" %>
+		<%= f.submit "I still have concerns", class:"next-button" %>
+		<% end %>
 	</div>
 </div>
