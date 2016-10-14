@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_one :investing_profile
+  has_one :investing_profile, dependent: :destroy
   has_many :feedbacks
 
   # Include default devise modules. Others available are:
