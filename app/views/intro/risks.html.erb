@@ -19,11 +19,11 @@ $(function() {
     }
   });
 
-  $('#questions').click(function() {
-  	$('#none').hide();
-    $('#questions').hide();
-    $('#questionsField').removeClass('hiddendiv');
-    $('#questionsField').focus();
+  $('#concerns').click(function() {
+  	$('#ok').hide();
+    $('#concerns').hide();
+    $('#concernsField').removeClass('hiddendiv');
+    $('#concernsField').focus();
   });
 });
 </script>
@@ -53,15 +53,22 @@ $(function() {
 
 			<p class="edu-para">If you invest for a long time period, you will not lose money. And more importantly, you will substantially grow your money.</p>
 		</div>
-		<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
-		<%= f.hidden_field :worry_about_risks, value: "Yes" %>
-		<%= f.submit "Ok, I feel better", class:"next-button" %>
-		<% end %>
+		<div id="ok">
+			<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+				<%= f.hidden_field :worry_about_risks, value: "Yes" %>
+				<%= f.submit "Ok, I feel better", class:"next-button" %>
+			<% end %>
+		</div>
 		<br />
-		<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
-		<%= f.hidden_field :worry_about_risks, value: "Yes and I still have concerns" %>
-		<%= f.submit "I still have concerns", class:"next-button" %>
-		<% end %>
+		<input type="button" id="concerns" class="next-button" value="I still have concerns">
+		<br />
+		<div id="concernsField" class="hiddendiv">
+			<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+				<%= f.hidden_field :worry_about_risks, value: "Yes and I have additional concerns" %>
+				<%= f.text_area :concerns_about_risks, class: 'custom-text-area', autofocus: true, placeholder: "My concerns include..." %>
+				<%= f.submit "Next", class:"next-button" %>
+			<% end %>
+		</div>
 	</div>
 </div>
 
