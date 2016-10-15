@@ -18,23 +18,31 @@ $(function() {
       }
     }
   });
+
+  $('#questions').click(function() {
+  	$('#none').hide();
+    $('#questions').hide();
+    $('#questionsField').removeClass('hiddendiv');
+    $('#questionsField').focus();
+  });
 });
 </script>
 
 
 <div class="edu-block">
   <div class="big-headline">
-	Do you worry about the risks of investing?
+		Do you worry about the risks of investing?
   </div>
 
 	<br /><a href="#anchor" class="next-button">Yes</a><br /><br />
 	<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
-	<%= f.hidden_field :worry_about_risks, value: "No" %>
-	<%= f.submit "No", class:"next-button" %>
+		<%= f.hidden_field :worry_about_risks, value: "No" %>
+		<%= f.submit "No", class:"next-button" %>
 	<% end %>
 </div>
 
-<div id="risks"> <div class="spaced-row"><a name="anchor"></a></div>
+<div id="risks"> 
+	<a name="anchor"></a>
 	<div class="edu-block"> 
 	  <div class="big-headline">Q: Worried about risk?<br/>
 	  A: No need to worry. Investing over a long time period is very safe. In fact, there has been no 20 year period where you would've lost money by investing in a stock fund. </div> <br />
@@ -55,4 +63,7 @@ $(function() {
 		<%= f.submit "I still have concerns", class:"next-button" %>
 		<% end %>
 	</div>
+</div>
+
+<div class="edu-block">
 </div>

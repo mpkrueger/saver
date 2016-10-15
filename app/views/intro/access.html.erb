@@ -47,16 +47,16 @@ $(document).ready(function() {
 
 <div class="edu-block">
   <div class="headline">
-  Investing in the stock market is best over a long period of time (e.g. 20 years). But you may need to access your money in a shorter timeframe. 
-  </div>
-  <div class="big-headline">
-  Do you want to know more about what would happen if you need to access your money sooner?
-  </div>
+    Investing in the stock market is best over a long period of time (e.g. 20 years). But you may need to access your money in a shorter timeframe. 
+    </div>
+    <div class="big-headline">
+    Do you want to know more about what would happen if you need to access your money sooner?
+    </div>
 
-  <br /><a href="#access" class="next-button">Yes</a><br /><br />
-  <%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
-    <%= f.hidden_field :curious_about_access_to_money, value: "No" %>
-  <%= f.submit "No", class:"next-button" %>
+    <br /><a href="#access" class="next-button">Yes</a><br /><br />
+    <%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+      <%= f.hidden_field :curious_about_access_to_money, value: "No" %>
+    <%= f.submit "No", class:"next-button" %>
   <% end %>
 </div>
 
