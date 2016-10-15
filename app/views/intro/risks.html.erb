@@ -18,23 +18,31 @@ $(function() {
       }
     }
   });
+
+  $('#concerns').click(function() {
+  	$('#ok').hide();
+    $('#concerns').hide();
+    $('#concernsField').removeClass('hiddendiv');
+    $('#concernsField').focus();
+  });
 });
 </script>
 
 
 <div class="edu-block">
   <div class="big-headline">
-	Do you worry about the risks of investing?
+		Do you worry about the risks of investing?
   </div>
 
 	<br /><a href="#anchor" class="next-button">Yes</a><br /><br />
 	<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
-	<%= f.hidden_field :worry_about_risks, value: "No" %>
-	<%= f.submit "No", class:"next-button" %>
+		<%= f.hidden_field :worry_about_risks, value: "No" %>
+		<%= f.submit "No", class:"next-button" %>
 	<% end %>
 </div>
 
-<div id="risks"> <div class="spaced-row"><a name="anchor"></a></div>
+<div id="risks"> 
+	<a name="anchor"></a>
 	<div class="edu-block"> 
 	  <div class="big-headline">Q: Worried about risk?<br/>
 	  A: No need to worry. Investing over a long time period is very safe. In fact, there has been no 20 year period where you would've lost money by investing in a stock fund. </div> <br />
@@ -45,14 +53,24 @@ $(function() {
 
 			<p class="edu-para">If you invest for a long time period, you will not lose money. And more importantly, you will substantially grow your money.</p>
 		</div>
-		<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
-		<%= f.hidden_field :worry_about_risks, value: "Yes" %>
-		<%= f.submit "Ok, I feel better", class:"next-button" %>
-		<% end %>
+		<div id="ok">
+			<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+				<%= f.hidden_field :worry_about_risks, value: "Yes" %>
+				<%= f.submit "Ok, I feel better", class:"next-button" %>
+			<% end %>
+		</div>
 		<br />
-		<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
-		<%= f.hidden_field :worry_about_risks, value: "Yes and I still have concerns" %>
-		<%= f.submit "I still have concerns", class:"next-button" %>
-		<% end %>
+		<input type="button" id="concerns" class="next-button" value="I still have concerns">
+		<br />
+		<div id="concernsField" class="hiddendiv">
+			<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+				<%= f.hidden_field :worry_about_risks, value: "Yes and I have additional concerns" %>
+				<%= f.text_area :concerns_about_risks, class: 'custom-text-area', autofocus: true, placeholder: "My concerns include..." %>
+				<%= f.submit "Next", class:"next-button" %>
+			<% end %>
+		</div>
 	</div>
+</div>
+
+<div class="edu-block">
 </div>
