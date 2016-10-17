@@ -6,32 +6,48 @@
 
 
 
-<body class="splash-background">
+<div class="splash-background">
 	<div class="splash-banner">
 		<div class="banner-image">
 		</div>
 	</div>
 	<div class="splash-section">
-		<div class="splash-question"> Ready to invest, but unsure where to start?</div>
+		<div class="splash-question"> Ready to invest, but unsure where to start?
+		</div>
 
 		<div class="signup-instruction">
 			Sign up to get help investing.
 		</div>
 
 		<div class="row-email">
-		<div class="field-col email-field">
-			<%= form_for @beta_user do |f| %>
-				<%= f.email_field :email, placeholder: "your email address", class:"email-field", required: true %>
-		</div>
-		<div class="btn-col">
-				<%= f.submit "\u25BA", class:"signup-button" %>
-			<% end %>
-		</div>
-		</div>
-
-		<div class="signup-incentive">
-			First 100 sign-ups will get a
-			free, personalized session.
+			<div class="field-col email-field">
+				<%= form_for @beta_user do |f| %>
+					<%= f.email_field :email, placeholder: "your email address", class:"email-field", required: true %>
+			</div>
+			<div class="btn-col">
+					<%= f.submit "\u25BA", class:"signup-button" %>
+				<% end %>
+			</div>
 		</div>
 	</div>
-</body>
+</div>
+<div class="module-2">
+	<h3>We'll help you invest in 3 simple steps</h3>
+	<div>
+		1. Get to know you
+		We want to understand your situation, your concerns, your goals.
+	</div>
+	<div>
+		2. Make a recommendation
+		We'll figure out which options make most sense for you and give you our recommendation.
+	</div>
+	<div>
+		3. Make an investment
+		We'll walk you through making an investment so that you have guidance along the way.
+	</div>
+</div>
+<div class="module-3">
+	<h3>Our Mission</h3>
+	<p>We're on a mission to help everyone feel comfortable with investing. We know far too many people who feel uncertain about what to do with their money. We believe deeply in the power of putting your money to work and want to help everyone reap the benefits.</p>
+	<p>We don't receive any referral compensation or kickbacks so our recommendations are unbiased and focused on what's best for you.</p>
+</div>
