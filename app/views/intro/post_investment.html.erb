@@ -38,8 +38,8 @@ $(document).ready(function() {
 
 
      <%= form_for @investing_profile, url: wizard_path, method: :put do |f| %> 
-      <%= f.hidden_field :post_investment_goal, value: "I want to optimize my investment portfolio over time." %>
-      <%= f.submit "I want to optimize my investment portfolio over time.", class:"option-button" %>
+      <%= f.hidden_field :post_investment_goal, value: "I want to actively choose my investment in the future." %>
+      <%= f.submit "I want to actively choose my investments in the future.", class:"option-button" %>
       <% end %>
  
       <%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>

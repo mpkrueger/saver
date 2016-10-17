@@ -4,6 +4,7 @@ class ServicesController < ApplicationController
   def welcome
     @user = current_user
     @amount = @user.investing_profile.amount_to_get_started
+    @post_investment_goal = @user.investing_profile.post_investment_goal
   end
 
   def overview

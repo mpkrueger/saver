@@ -1,2 +1,38 @@
-<h1>Services#recommendation</h1>
-<p>Find me in app/views/services/recommendation.html.erb</p>
+<div class="edu-block">
+	<div class="big-headline">
+	<% if @post_investment_goal == "I want to spend very little time and effort on my investments in the future." %>
+		<p class="headline">
+			<div style="width:30%;margin:auto;">
+					<%= image_tag("betterment_logo.png", class:"services-logo") %>
+			</div>
+			We recommend Betterment because you mentioned you want to spend very little time and effort on investing. With Betterment you can rest easy that your money will be invested and managed well without you having to think about it.
+		</p>
+	
+	<% elsif @post_investment_goal == "I want to learn more and experiment as I get more comfortable."  %>
+		<p class="headline">
+			<div style="width:30%;margin:auto;">
+					<%= image_tag("vanguard_logo.png", class:"services-logo") %>
+			</div>
+			We recommend Vanguard because you mentioned you want to learn and experiment. Vanguard has more flexibility so you'll be able to experiment with your investment portfolio. As you get more comfortable, Vanguard gives you the option to choose particular index funds or even stocks without having to create a new account.
+		</p>
+
+
+	<% elsif @post_investment_goal == "I want to optimize my investment portfolio over time." %>
+		<p class="headline">
+			<div style="width:30%;margin:auto;">
+					<%= image_tag("vanguard_logo.png", class:"services-logo") %>
+			</div>
+			We recommend Vanguard because you mentioned you want to optimize your portfolio over time. Vanguard gives you a lot more flexibility than Betterment to manage your investment portfolio. As you get more comfortable, Vanguard gives you the option to choose particular index funds or even stocks without having to create a new account.
+		</p>
+
+
+
+	<% elsif @post_investment_goal == "I don't plan to invest more in the future." %>
+		<div class="headline">
+		You mentioned that you don't plan to invest more in the future.
+		</div>
+
+	<% end %>
+
+</div>
+	
