@@ -14,4 +14,8 @@ class BetaMailerPreview < ActionMailer::Preview
   	BetaMailer.follow_up(BetaUser.last)
   end
 
+  def user_profile
+    BetaMailer.user_profile(User.last)
+  end
+
 end

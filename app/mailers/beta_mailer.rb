@@ -26,6 +26,21 @@ class BetaMailer < ApplicationMailer
     mail(to: @beta_user.email, subject: @subject)
   end
 
+  def user_profile(user)
+    @user = user
+    @investing_profile = @user.investing_profile
+    @subject = "New user info"
+
+    mail(to:["mpkrueger@gmail.com", "ssubrama@gmail.com"], subject: @subject)
+  end
+
+  def send_user_profile(id)
+    @id = id
+    @user = User.find_by_id(@id)
+
+    BetaMailer.user_profile(@user).deliver
+  end
+
   def send_get_started(ids)
     @ids = []
     @ids = ids
