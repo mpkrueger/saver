@@ -7,6 +7,7 @@
  /* background-color: #133e49; dark teal */
  background-color:#125D70;
   padding: 0;
+  padding-bottom: 20px;
 }
 
 .thanks-background{
@@ -15,13 +16,34 @@
 }
 
 
+.module-2{
+  display:block;
+  background-color: #1e8699;
+  color: #fff;
+  padding: 20px;
+}
+
+
+.module-3{
+  display:block;
+  background-color:#26b99a;
+  color:#fff;
+  padding: 20px;
+}
+
+
+
+.col-padding{
+  padding-right:25px;
+}
+
 //for smaller phones
 @media screen and (max-width: 350px) {
   .splash-banner{
     margin: auto;
     margin-top: 0;
     width: 100%;
-    height: 160px;
+    height: 200px;
 }
 
   .banner-image{
@@ -35,7 +57,7 @@
     -o-background-size: cover;
     max-width: 350px;
     width: 100%;
-    height: 140px;
+    height: 200px;
 
   }
 
@@ -67,7 +89,7 @@
     font-weight: 300;
     line-height: 1.2em;
     color:#fff;
-    margin-bottom:15%;
+    margin-bottom:8%;
  }
 
 .signup-instruction{
@@ -158,6 +180,50 @@
   margin-top:20px;
   margin-bottom:30px;
   color:#fff;
+}
+
+.module-2-height{
+  height:700px;
+}
+
+.module-title{
+  font-family:'Gill Sans';
+  font-size:24px;
+  font-weight:300;
+  text-align:center;
+  margin-bottom:10px;
+
+}
+
+.step-icon{
+    width: 56%;
+    margin: auto;
+    text-align: center;
+}
+
+.step-title{
+  font-size: 16px;
+    font-weight: 400;
+    font-family: 'Museo Sans';
+    text-align: center;
+}
+
+.step-subtext{
+  font-family: 'Museo Sans';
+    font-size: 16px;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 5%;
+  }
+
+.mission-text{
+  font-family:'Museo Sans';
+  font-size:16px;
+  font-weight:300;
+  text-align:left;
+   padding: 0px 8%;
+  line-height: 1.4em;
+  margin: 5px auto;
 }
 
 
@@ -254,7 +320,7 @@
     font-weight: 300;
     line-height: 1.2em;
     color:#fff;
-    margin-bottom:15%;
+    margin-bottom:5%;
  }
 
 .signup-instruction{
@@ -350,7 +416,50 @@
   color:#fff;
 }
 
+.module-2-height{
+  height:720px;
+}
 
+.module-title{
+  font-family:'Gill Sans';
+  font-size:24px;
+  font-weight:300;
+  text-align:center;
+  margin-bottom:10px;
+  margin-top:10px;
+}
+
+.step-icon{
+    width: 56%;
+    margin: auto;
+    text-align: center;
+}
+
+.step-title{
+  font-size: 16px;
+    font-weight: 400;
+    font-family: 'Museo Sans';
+    text-align: center;
+    margin-bottom:5px;
+}
+
+.step-subtext{
+  font-family: 'Museo Sans';
+    font-size: 16px;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 5%;
+  }
+
+.mission-text{
+  font-family:'Museo Sans';
+  font-size:16px;
+  font-weight:300;
+  text-align:left;
+   padding: 0px 8%;
+  line-height: 1.4em;
+  margin: 5px auto;
+}
 
 
   .app-name{
@@ -542,7 +651,47 @@
     color:#fff;
 }
 
+.module-2-height{
+  height:300px;
+}
 
+.module-title{
+  font-family:'Gill Sans';
+    font-size: 28px;
+    font-weight: 300;
+    text-align: center;
+  margin-bottom:10px;
+}
+
+.step-icon{
+    width: 65%;
+    margin: auto;
+    text-align: center;
+}
+
+.step-title{
+  font-size:18px;
+  font-weight:300;
+  text-align:center;
+}
+
+.step-subtext{
+  font-family:'Museo Sans';
+  font-size: 16px;
+  font-weight: 300;
+  text-align:center;
+  margin-top: 5px;
+}
+
+.mission-text{
+  font-family:'Museo Sans';
+  font-size:18px;
+  font-weight:300;
+  text-align:left;
+   padding: 0px 8%;
+  line-height: 1.4em;
+  margin: 15px auto;
+}
 
 
   .app-name{
@@ -584,7 +733,7 @@
     margin: auto;
     margin-top: 0;
     width: 100%;
-    height: 240px;
+    height: 280px;
     margin-bottom: 20px;
 }
 
@@ -598,7 +747,7 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     width: 100%;
-    height: 240px;
+    height: 280px;
     margin-bottom:10px;
   }
 
@@ -726,7 +875,47 @@
     color:#fff;
 }
 
+.module-2-height{
+  height:300px;
+}
 
+.module-title{
+  font-family:'Gill Sans';
+    font-size: 28px;
+    font-weight: 300;
+    text-align: center;
+  margin-bottom:10px;
+}
+
+.step-icon{
+    width: 65%;
+    margin: auto;
+    text-align: center;
+}
+
+.step-title{
+  font-size:18px;
+  font-weight:300;
+  text-align:center;
+}
+
+.step-subtext{
+  font-family:'Museo Sans';
+  font-size: 16px;
+  font-weight: 300;
+  text-align:center;
+  margin-top: 5px;
+}
+
+.mission-text{
+  font-family:'Museo Sans';
+  font-size:18px;
+  font-weight:300;
+  text-align:left;
+   padding: 0px 8%;
+  line-height: 1.4em;
+  margin: 15px auto;
+}
 
 
   .app-name{
