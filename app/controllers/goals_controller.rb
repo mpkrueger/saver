@@ -15,6 +15,10 @@ class GoalsController < ApplicationController
   	@beta_user = BetaUser.new
   end
 
+  def thanks
+    @beta_user = BetaUser.find_by_email(params[:email])
+  end
+
 
 
 end

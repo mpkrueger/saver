@@ -4,6 +4,16 @@
     });
 </script>
 
+<script>
+$(function() {
+	$('#remind').click(function() {
+  	$('#start').hide();
+    $('#remind').hide();
+    $('#remindMessage').removeClass('hiddendiv');
+  });
+});
+</script>
+
 
 
 <body class="thanks-background">
@@ -13,5 +23,21 @@
 	</div>
 	<div class="splash-section">
 		<div class="splash-question"> Thanks for signing up!</div>
-		<div class="thanks-message"> We're working hard and will let you know as soon as Savvy is ready for you.</div>
+		<div id="start">
+			<%= form_for @beta_user, remote: true do |f| %>
+				<%= f.hidden_field :start_or_remind, value: "start" %>
+				<%= f.submit "Get started now", class: "next-button" %>
+			<% end %>
+			<br />
+		</div>
+		<div id="remind">
+			<%= form_for @beta_user, remote: true do |f| %>
+				<%= f.hidden_field :start_or_remind, value: "remind" %>
+				<%= f.submit "Send me an email to start later", class: "next-button" %>
+			<% end %>
+		</div>
+		<div id="remindMessage" class="hiddendiv">
+			<div class="thanks-message"> Sounds good! We'll send you an email shortly with a link to get started.</div>
+		</div>
+	</div>
 </body>
