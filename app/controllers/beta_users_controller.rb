@@ -7,7 +7,7 @@ class BetaUsersController < ApplicationController
   	@beta_user = BetaUser.new(params.require(:beta_user).permit(:first_name, :email))
   	if @beta_user.save
   		BetaMailer.beta_intro(@beta_user).deliver
-  		redirect_to goals_thanks_path(email: @beta_user.email)
+  		redirect_to goals_index_path(email: @beta_user.email)
   	else
   		flash[:error] = "Uh oh, that didn't work - please try again"
   	end
