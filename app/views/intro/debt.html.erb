@@ -1,6 +1,6 @@
 <script type="text/javascript">
     mixpanel.track("intro_debt", {
-      "distinct_id": <%= @user.id.to_s %>        
+
     });
 </script>
 <div class="edu-block">
@@ -11,7 +11,7 @@
   (Choose as many as you like)
   </div>
   <br />
-  <%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+  <%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
     <div class="option-row">
     <%= f.fields_for :has_these_types_of_debt do |i| %>
       

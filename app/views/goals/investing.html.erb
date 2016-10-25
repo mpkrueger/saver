@@ -16,18 +16,11 @@
 		</div>
 
 		<div class="signup-instruction">
-			Sign up to get help investing.
+			We're building a service to help you invest. Your feedback while we're in beta would be much appreciated.
 		</div>
 
-		<div class="row-email">
-			<div class="field-col email-field">
-				<%= form_for @beta_user do |f| %>
-					<%= f.email_field :email, placeholder: "your email address", class:"email-field", required: true %>
-			</div>
-			<div class="btn-col">
-					<%= f.submit "\u25BA", class:"signup-button" %>
-				<% end %>
-			</div>
+		<div>
+			<%= link_to "Get started now", goals_introductions_path, class: 'next-button' %>
 		</div>
 	</div>
 </div>

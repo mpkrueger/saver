@@ -15,15 +15,6 @@ class GuestUsersController < ApplicationController
   end
 
   def update
-    @guest_user = guest_user
-    @current_focus = @guest_user.current_focus
-
-    if @guest_user.update_attributes(params.require(:guest_user).permit(:current_focus))
-      redirect_to new_user_registration_path
-    else
-      flash[:error] = "Uh oh, that didn't work - please try again"
-      render goals_new_focus_path
-    end
   end
 
   private

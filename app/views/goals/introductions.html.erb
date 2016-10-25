@@ -7,68 +7,50 @@
 </script>
 
 <script>
-	$(document).ready(function(){
-		for(i=1; i<4; i++) {
-			$('#chat'+i).hide(0).delay(1250*i).fadeIn(100).removeClass('hidden');
-		}
-	});
+$(document).ready(function() {
+  $('a[href*="#anchor"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+
+        // $('#stocks').hide(0).fadeIn(100).removeClass('hidden');
+        
+        return false;
+      }
+    }
+  });
+});
+
 </script>
 
 
-<body class="page-background">
+<div class="edu-block">
+  <div class="intro_image_block"><%= image_tag("savvy_thumbnail.png", style:"width:150px;height:auto;") %> </div>
+    <div class="big-headline">Hi there! </div>
 
-	<div id= "chat1" class="hidden" style="display:none;">
-		<section id="coach-section">
-			<div class="coach-chat-triangle"></div>
-			<div class="coach-question">
-				<aside>
-					Hey there, I'm here to help you get more out of your hard-earned money and boost your financial savvy.
-				</aside>
-			</div>
-		</section>
-	</div>		
+    <div class="headline">Before we dive in, let's get to know each other briefly.</div>
+   <br /><br /><a href="#anchor", class="next-button">Next</a>
+</div>
 
-	<div id= "chat2" class="hidden" style="display:none;">
-		<section id="coach-section">
-			<div class="coach-chat-triangle"></div>
-			<div class="coach-question">
-				<aside>
-					Money can be a sensitive topic, so let's get to know each other. What can I call you?
-				</aside>
-			</div>
-		</section>
-	</div>
 
-	
-	<div id= "chat3" class="hidden" style="display:none;">
-		<%= form_for @guest_user do |f| %>
-			<section id="user-section">
+<%= form_for @guest_user do |f| %>
+<a name="anchor"></a>
+<div class="edu-block">        
+      What's your name? <br/><br />
+      <div class="dropdown-style"> 
+        <%= f.text_field :name, class: "border-underline", style:"width:250px;",placeholder: "your first name", autocorrect: "off" %>
+      </div>
+      <br/><br />
+      How old are you? <br/><br />
+      <div class="dropdown-style"> 
+        <%= f.telephone_field :age, class: "border-underline", style:"width:250px;", placeholder: "your age", :required => true %>
+      </div>
+    <br /><br />
+    <%= f.submit "Next", class: 'next-button' %>
+</div>
 
-				<div class="spaced-row user-content">
-					<div class="madlib-sentence">
-						You can call me  
-						<div class="dropdown-style">
-						<%= f.text_field :name, class: "text-field", placeholder: "first name",  :autocorrect => "off", :required => true %> </div>
-						<br />
-						and I'm
-						<div class="dropdown-style">
-						<%= f.telephone_field :age, class: "number-field", placeholder: "age", :required => true %> </div>
-						years old.
-					</div>
-				</div>
-		
-			</section>
-
-			<div class="button-row">
-				<%= f.submit "Next", class: 'next-button' %>
-			</div>
-			<div class="page-bottom-padding">
-				<div class="padding-text">
-					adding space below next button
-				</div>
-			</div>
-		<% end %>
-	
-	</div>
-	
-</body>
+  <% end %>
