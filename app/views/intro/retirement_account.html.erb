@@ -1,6 +1,6 @@
 <script type="text/javascript">
     mixpanel.track("intro_retirement_account", {
-      "distinct_id": <%= @user.id.to_s %>        
+
     });
 </script>
 <div class="edu-block">
@@ -12,13 +12,13 @@
   </div>
   <br />
   <div class="option-row">
-  <%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+  <%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
 	<%= f.hidden_field :has_retirement_account, value: "Yes" %>
 	<%= f.submit "Yes", class:"next-button" %>
   <% end %>
   </div>
   <div class="option-row">
-  <%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+  <%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
 	<%= f.hidden_field :has_retirement_account, value: "No" %>
 	<%= f.submit "No", class:"next-button" %>
   <% end %>

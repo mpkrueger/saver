@@ -1,6 +1,6 @@
 <script type="text/javascript">
     mixpanel.track("intro_ways_to_invest", {
-      "distinct_id": <%= @user.id.to_s %>
+
     });
 </script>
 <script>
@@ -52,7 +52,7 @@ $(document).ready(function() {
   </div>
 <br />
 	 <a href="#anchor" class="next-button">Yes</a> <br /><br />
-	<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+	<%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
 
 	<%= f.hidden_field :explain_stocks_vs_funds, value: "No" %>
 
@@ -92,7 +92,7 @@ $(document).ready(function() {
 		</div>
 
 
-		<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+		<%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
 
 			<%= f.hidden_field :explain_stocks_vs_funds, value: "Yes" %>
 

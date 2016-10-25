@@ -1,6 +1,6 @@
 <script type="text/javascript">
     mixpanel.track("goals_index", {
-    	"beta_email": "<%= params[:email] %>"
+ 
     });
 </script>
 <div style="margin-top:20%">
@@ -11,7 +11,7 @@
 		<% if User.find_by_email(params[:email]).present? %>
 			<%= link_to "Sign back in", new_user_session_path(email: params[:email]), class: "next-button" %>
 		<% else %>
-			<%= link_to "Get Started", new_user_registration_path(email: params[:email]), class: "next-button" %>
+			<%= link_to "Get Started", goals_introductions_path, class: "next-button" %>
 		<% end %>
 	</p>
 	<br />

@@ -1,6 +1,6 @@
 <script type="text/javascript">
     mixpanel.track("intro_initial_investment", {
-      "distinct_id": <%= @user.id.to_s %>        
+
     });
 </script>
 <script>
@@ -63,10 +63,10 @@ $(document).ready(function() {
 			Many recommend that you have 3-6 months of expenses set aside for a rainy day fund in a savings (or checking) account. We just want to make sure you're covered!
 		</div>
 		<br />
-	<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+	<%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
       <%= f.hidden_field :knows_amount_to_invest, value: "Yes" %>
       <div class="dropdown-style inner-addon left-addon">
-      	$<%= f.telephone_field :amount_to_invest, class:"money-field"%>
+      	$<%= f.telephone_field :amount_to_get_started, class:"money-field"%>
       	
       </div>
       <br /><br />
@@ -84,13 +84,13 @@ $(document).ready(function() {
 			Many investment services have minimum amounts or high fees at low amounts. So we recommend that you save up enough to invest $500 at minimum.
 		</div>
 		<br />
-	    <%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+	    <%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
 	    	<%= f.hidden_field :knows_amount_to_invest, value: "No" %>
 			<%= f.hidden_field :amount_to_get_started, value: "500" %>
       		<%= f.submit "$500", class:"option-button" %>
       	<% end %>
 
- 		<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+ 		<%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
 	    	<%= f.hidden_field :knows_amount_to_invest, value: "No" %>
 			<%= f.hidden_field :amount_to_get_started, value: "1000" %>
       		<%= f.submit "$1,000", class:"option-button" %>
@@ -99,7 +99,7 @@ $(document).ready(function() {
 		<input type="button" id="other" class="option-button" value="Other">
       	<div id="otheramount" class="hiddendiv">
       		<br />
-      		<%= form_for @investing_profile, url: wizard_path, method: :put do |f| %>
+      		<%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
       		<%= f.hidden_field :knows_amount_to_invest, value: "No" %>
 	      	<div class="dropdown-style inner-addon left-addon">
 	      	$<%= f.telephone_field :amount_to_get_started, class:"money-field", :autofocus=>true%>

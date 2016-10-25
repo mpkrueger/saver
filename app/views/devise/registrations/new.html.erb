@@ -1,27 +1,12 @@
 <% @title=": Sign Up" %>
 <script type="text/javascript">
     mixpanel.track("sign_up", {
-        "beta_email": "<%= params[:email] %>"
+        
     });
 </script>
 
 <script>
 $(document).ready(function() {
-  $('a[href*="#anchor"]:not([href="#"])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html, body').animate({
-          scrollTop: target.offset().top
-        }, 1000);
-
-        // $('#stocks').hide(0).fadeIn(100).removeClass('hidden');
-        
-        return false;
-      }
-    }
-  });
   $('a[href*="#email"]:not([href="#"])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
       var target = $(this.hash);
@@ -42,34 +27,28 @@ $(document).ready(function() {
 
 
 <div class="edu-block">
-    <div class="big-headline">Hi there! </div>
+    <div class="big-headline">What's next? </div>
 
-    <div class="headline">Let's get started!</div>
-   <br /><br /><a href="#anchor", class="next-button">Next</a>
+    <div class="headline">
+      <p>Based on the info you provided, we'll identify the best options and our recommendation for you. We'll also walk you through steps to make an investment. </p>
+
+      <p>First, let's create an account so that we can save your info and stay in touch.</p>
+    </div>
+   <br /><br /><a href="#email", class="next-button">Next</a>
 </div>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-
-<a name="anchor"></a>
-<div class="edu-block">        
-      What's your name? <br/><br />
-      <div class="dropdown-style"> 
-        <%= f.text_field :name, class: "border-underline", style:"width:250px;",placeholder: "your first name", :autofocus=>true %>
-      </div> 
-    <br /><br /><a href="#email", class="next-button">Next</a>
-</div>
-
 <a name="email"></a>
 <div class="edu-block">     
-      And let's make sure we can store your info and reach out to the right person.<br /> <br />
+      Create your Savvy account.<br /> <br />
       <div class="dropdown-style">
           <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:250px;", placeholder: "email address" %>
       </div>
       <br /> <br />
       <div class="dropdown-style">
-        <%= f.password_field :password, class: "border-underline", style:"width:250px;", placeholder: "password", autocomplete: "off" %>
+        <%= f.password_field :password, class: "border-underline", style:"width:250px;", placeholder: "password (at least 6 characters)", autocomplete: "off" %>
       </div>
       <br /> <br />
 

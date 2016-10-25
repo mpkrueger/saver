@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161017233728) do
+ActiveRecord::Schema.define(version: 20161025043602) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,20 +71,24 @@ ActiveRecord::Schema.define(version: 20161017233728) do
   create_table "guest_users", force: :cascade do |t|
     t.string   "name"
     t.integer  "age"
-    t.decimal  "student_amount"
-    t.decimal  "cc_amount"
-    t.decimal  "savings_amount"
-    t.hstore   "investments_type"
-    t.hstore   "future_day"
-    t.string   "preparedness"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-    t.string   "savvy_feel"
-    t.string   "student_attitude"
-    t.string   "cc_attitude"
-    t.string   "spend_less"
-    t.string   "savings_from_income"
-    t.string   "current_focus"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.string   "explain_stocks_vs_funds"
+    t.string   "worry_about_risks"
+    t.string   "curious_about_access_to_money"
+    t.string   "remaining_concerns_about_access"
+    t.string   "investment_goal"
+    t.string   "post_investment_goal"
+    t.string   "knows_amount_to_invest"
+    t.integer  "amount_wants_to_invest"
+    t.integer  "amount_to_get_started"
+    t.string   "has_retirement_account"
+    t.string   "has_invested_before"
+    t.string   "explain_diversification"
+    t.hstore   "has_these_types_of_debt"
+    t.text     "questions"
+    t.string   "follow_up_prefs"
+    t.text     "concerns_about_risks"
   end
 
   create_table "investing_profiles", force: :cascade do |t|
