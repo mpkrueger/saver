@@ -5,11 +5,11 @@ class BetaMailer < ApplicationMailer
   #
   #   en.beta_mailer.beta_intro.subject
   #
-  def beta_intro(beta_user)
-    @beta_user = beta_user
+  def beta_intro(user)
+    @user = user
     @subject = "Investing in 3 simple steps - coming soon!"
 
-    mail(to: @beta_user.email, subject: @subject)
+    mail(to: @user.email, subject: @subject)
   end
 
   def get_started(beta_user)

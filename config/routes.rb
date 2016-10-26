@@ -33,6 +33,8 @@ Rails.application.routes.draw do
   get 'dashboard/feedback'
   get 'dashboard/homepage'
   get 'dashboard/savvy_score'
+  get 'dashboard/invested'
+  get 'dashboard/invested_thanks'
 
   devise_for :users, :controllers => { :registrations => "registrations", :sessions => "sessions" }
   resources :guest_users
