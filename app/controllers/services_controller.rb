@@ -31,6 +31,11 @@ class ServicesController < ApplicationController
     @post_investment_goal = @user.investing_profile.post_investment_goal
   end
 
+  def vanguard
+    @user = current_user
+    @investing_profile = @user.investing_profile
+  end
+
   def choice
   end
 end

@@ -1,0 +1,35 @@
+<script type="text/javascript">
+    mixpanel.track("services_vanguard", {
+
+    });
+</script>
+
+<div class="edu-block">
+	<div class="intro_image_block"><%= image_tag("vanguard_logo.png", style:"width:250px;height:auto;") %> </div>
+	<div class="big-headline">
+			Awesome, we love Vanguard - let's do this!
+	</div>
+	<p>The easiest way to get started with Vanguard is something called a target date fund.</p>
+	<p>Target date funds keep a growth profile (90% stocks / 10% bonds) until about 25 years prior to the “target date” at which point it’ll start slowly shifting towards bonds. This is to reduce risk as you approach retirement.</p>
+	<p>We recommend choosing a target date fund that roughly lines up with when you would turn 65 so that it manages the risk profile for you.</p>
+	<p>Based on your age, our recommendation would be <b><%= target_date_for_user %></b></p>
+	<p>Click the best choice for you below:</p>
+	
+	<%= form_for @investing_profile do |f| %>
+    <%= f.hidden_field :vanguard_target_date, value: "#{target_date_for_user.to_i - 5}" %>
+    <%= f.submit "#{target_date_for_user.to_i - 5}", class:"next-button" %>
+  <% end %>
+  <br />
+	<%= form_for @investing_profile do |f| %>
+    <%= f.hidden_field :vanguard_target_date, value: "#{target_date_for_user}" %>
+    <%= f.submit "#{target_date_for_user}", class:"next-button" %>
+  <% end %>
+  <br />
+  <%= form_for @investing_profile do |f| %>
+    <%= f.hidden_field :vanguard_target_date, value: "#{target_date_for_user.to_i + 5}" %>
+    <%= f.submit "#{target_date_for_user.to_i + 5}", class:"next-button" %>
+  <% end %>
+
+ </div>
+ <div class="edu-block">
+ </div>

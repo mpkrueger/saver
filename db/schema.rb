@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161026191043) do
+ActiveRecord::Schema.define(version: 20161026214709) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -118,6 +118,8 @@ ActiveRecord::Schema.define(version: 20161026191043) do
     t.text     "investing_experience"
     t.text     "investing_better"
     t.string   "previous_investment_service"
+    t.string   "service_choice"
+    t.string   "vanguard_target_date"
     t.index ["user_id"], name: "index_investing_profiles_on_user_id", using: :btree
   end
 
