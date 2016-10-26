@@ -18,6 +18,15 @@ class DashboardController < ApplicationController
 
 	end
 
+  def invested
+    @user = current_user
+    @investing_profile = @user.investing_profile
+  end
+
+  def invested_thanks
+    @user = current_user
+  end
+
   def savvy_score
     @user = current_user
     @fin_profile = @user.fin_profile
