@@ -7,7 +7,7 @@ class BetaMailer < ApplicationMailer
   #
   def beta_intro(user)
     @user = user
-    @subject = "Investing in 3 simple steps - coming soon!"
+    @subject = "Welcome to Savvy!"
 
     mail(to: @user.email, subject: @subject)
   end
