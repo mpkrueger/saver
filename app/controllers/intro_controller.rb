@@ -17,8 +17,24 @@ class IntroController < ApplicationController
     render_wizard @guest_user
   end
 
+  def follow_up
+    @guest_user = guest_user
+  end
+
+  def thanks
+    @guest_user = guest_user
+  end
+
   def finish_wizard_path
-    new_user_registration_path
+    if @guest_user.has_these_types_of_debt["personal_loans"] == "1" || @guest_user.has_these_types_of_debt["credit_card_debt"] == "1"
+      follow_up_intro_index_path
+    elsif @guest_user.has_retirement_account == "No"
+      follow_up_intro_index_path
+    elsif @guest_user.concerns_about_risks != nil || @guest_user.remaining_concerns_about_access != nil || @guest_user.questions != nil
+      follow_up_intro_index_path
+    else
+      new_user_registration_path
+    end
   end
 
   private
