@@ -14,7 +14,15 @@ class IntroController < ApplicationController
   def update
     @guest_user = guest_user
     @guest_user.update_attributes(guest_user_params)
-    render_wizard @guest_user
+    if @guest_user.amount_to_get_started != nil && @guest_user.amount_to_get_started > 4999
+      redirect_to amount_check_intro_index_path
+    else
+      render_wizard @guest_user
+    end
+  end
+
+  def amount_check
+    @guest_user = guest_user
   end
 
   def follow_up
