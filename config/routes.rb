@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'services/recommendation'
   get 'services/choice'
   get 'services/vanguard'
+  get 'services/vanguard_instructions'
   get 'services/betterment'
 
   get 'challenges/saving_info'

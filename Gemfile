@@ -10,6 +10,7 @@ gem 'devise'
 gem 'figaro', '1.0'
 gem 'premailer-rails'
 gem 'nokogiri'
+gem 'rounding'
 
 
 group :production do

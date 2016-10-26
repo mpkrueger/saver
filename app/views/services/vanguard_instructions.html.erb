@@ -1,0 +1,39 @@
+<script type="text/javascript">
+    mixpanel.track("services_vanguard", {
+
+    });
+</script>
+<script>
+$(document).ready(function() {
+	$('#vanguard').click(function() {
+    $('#instructions').hide();
+    $('#follow_up').removeClass('hiddendiv');
+  });
+});
+</script>
+
+<div style="margin-top:5%; margin-left:10%">
+	<div id="instructions">
+		<div class="intro_image_block"><%= image_tag("Vanguard_target_date_fund.png", style:"width:50%;height:auto;") %> </div>
+		<div class="big-headline">
+				Making your investment
+		</div>
+			<p>You'll need the following info ready to set up your Vanguard investment:</p>
+			<ul>
+				<li>Your social security number (this is required for every new investment)</li>
+				<li>Your bank account's routing & account numbers (to transfer money into Vanguard)</li>
+				<li>Vanguard will ask you what you want to do with your dividends - we recommend choosing "Reinvest" so that your investment grows that much more</li>
+			</ul>
+			<p>Click the button below and go to the "Buy" button on the Vanguard page - as is shown in the image above.</p>
+			<br />
+			<%= link_to "Set up Vanguard", vanguard_url, target: "_blank", id: "vanguard", class: "next-button" %>
+		</div>
+	<div id="follow_up" class="hiddendiv">
+		<div class="big-headline">
+				Let us know when you've invested!
+		</div>
+		<p>We'd really love to hear about your experience investing, so that we can keep improving Savvy.</p>
+		<br />
+		<%= link_to "I invested!", dashboard_invested_path, class: "next-button"%>
+	</div>
+</div>
