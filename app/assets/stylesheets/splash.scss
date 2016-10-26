@@ -44,8 +44,38 @@
   padding-right:25px;
 }
 
+.lp-button-row{
+    margin-bottom: 3%;
+    height: 50px;
+}
+
+
+.lp-button:hover{
+  background-color:#5fc4b3;
+  color:#fff;
+  text-decoration:none;
+}
+
+.lp-button:active{
+  background-color:#399986;
+  color: #50aa9e;
+}
+
+
 //for smaller phones
 @media screen and (max-width: 350px) {
+
+  .lp-button{
+    background-color: #00A99D;
+    color: #FFF;
+    padding: 15px 60px;
+    text-align: center;
+    border-radius: 6px;
+    margin: auto;
+    text-decoration: none;
+  }
+
+
   .splash-banner{
     margin: auto;
     margin-top: 0;
@@ -190,15 +220,16 @@
 }
 
 .module-2-height{
-  height:700px;
+  height:760px;
 }
 
 .module-title{
   font-family:'Gill Sans', Sans-Serif;
-  font-size:24px;
+  font-size:21px;
   font-weight:300;
   text-align:center;
   margin-bottom:10px;
+  margin-top:10px;
 
 }
 
@@ -206,13 +237,15 @@
     width: 56%;
     margin: auto;
     text-align: center;
+    margin-bottom: 3%;
 }
 
 .step-title{
-  font-size: 16px;
-    font-weight: 400;
-    font-family: 'Museo Sans', 'Open Sans', Sans-Serif;
-    text-align: center;
+  font-size: 21px;
+  font-weight: 300;
+  font-family: 'Museo Sans', 'Open Sans', Sans-Serif;
+  text-align: center;
+  margin-bottom: 5px;
 }
 
 .step-subtext{
@@ -221,17 +254,22 @@
     font-weight: 300;
     text-align: center;
     margin-bottom: 5%;
+    width: 86%;
+    margin: auto;
   }
+
+.step-bottom-padding{
+  margin-bottom:8%;
+}
+
 
 .mission-text{
   font-family: 'Museo Sans', 'Open Sans', Sans-Serif;
-  font-size:16px;
-  font-weight:300;
-  text-align:left;
-   padding: 0px 8%;
-  line-height: 1.4em;
-  margin: 5px auto;
-  text-indent: 20px;
+    font-size: 16px;
+    font-weight: 300;
+    text-align: center;
+    width: 88%;
+    margin: 5px auto;
 }
 
 
@@ -276,6 +314,18 @@
 
 //for bigger phones like iphone 6
 @media screen and (min-width: 350px) and (max-width: 480px) {
+  .lp-button{
+    background-color: #00A99D;
+    color: #FFF;
+    padding: 15px 60px;
+    text-align: center;
+    border-radius: 6px;
+    margin: auto;
+    text-decoration: none;
+  }
+
+
+
   .splash-banner{
     margin: auto;
     margin-top: 0;
@@ -430,7 +480,7 @@
 
 .module-title{
   font-family:'Gill Sans', Sans-Serif;
-  font-size:24px;
+  font-size:21px;
   font-weight:300;
   text-align:center;
   margin-bottom:10px;
@@ -444,8 +494,8 @@
 }
 
 .step-title{
-  font-size: 16px;
-    font-weight: 400;
+      font-size: 21px;
+    font-weight: 300;
     font-family: 'Museo Sans', 'Open Sans', Sans-Serif;
     text-align: center;
     margin-bottom:5px;
@@ -457,17 +507,22 @@
     font-weight: 300;
     text-align: center;
     margin-bottom: 5%;
+    width: 86%;
+    margin:auto;
   }
+
+.step-bottom-padding{
+  margin-bottom:6%;
+}
+
 
 .mission-text{
   font-family: 'Museo Sans', 'Open Sans', Sans-Serif;
-  font-size:16px;
-  font-weight:300;
-  text-align:left;
-   padding: 0px 8%;
-  line-height: 1.4em;
-  margin: 5px auto;
-  text-indent: 20px;
+    font-size: 16px;
+    font-weight: 300;
+    text-align: center;
+    width: 88%;
+    margin: 5px auto;
 }
 
 
@@ -511,6 +566,17 @@
 //for desktop
  @media screen and (min-width: 480px) and (max-width: 900px){
  
+  .lp-button{
+    background-color: #00A99D;
+    color: #FFF;
+    padding: 15px 60px;
+    text-align: center;
+    border-radius: 6px;
+    margin: auto;
+    text-decoration: none;
+  }
+
+
   .splash-banner{
     margin: auto;
     margin-top: 0;
@@ -662,7 +728,7 @@
 }
 
 .module-2-height{
-  height:300px;
+  height:320px;
 }
 
 .module-title{
@@ -671,6 +737,7 @@
     font-weight: 300;
     text-align: center;
   margin-bottom:10px;
+  margin-top: 15px;
 }
 
 .step-icon{
@@ -680,9 +747,12 @@
 }
 
 .step-title{
-  font-size:18px;
+  font-size:21px;
+  font-family:'Museo Sans', Sans-Serif;
   font-weight:300;
   text-align:center;
+  margin-bottom: 4%;
+    margin-top: 2%;
 }
 
 .step-subtext{
@@ -692,6 +762,9 @@
   text-align:center;
   margin-top: 5px;
 }
+
+
+
 
 .mission-text{
   font-family:'Museo Sans', Sans-Serif;
@@ -739,6 +812,16 @@
 
   //for desktop
  @media screen and (min-width: 900px) {
+
+  .lp-button{
+    background-color: #00A99D;
+    color: #FFF;
+    padding: 15px 60px;
+    text-align: center;
+    border-radius: 6px;
+    margin: auto;
+    text-decoration: none;
+  }
 
   .splash-banner{
     margin: auto;
@@ -888,7 +971,7 @@
 }
 
 .module-2-height{
-  height:300px;
+  height:340px;
 }
 
 .module-title{
@@ -897,6 +980,7 @@
     font-weight: 300;
     text-align: center;
   margin-bottom:10px;
+  margin-top: 15px;
 }
 
 .step-icon{
@@ -906,9 +990,12 @@
 }
 
 .step-title{
-  font-size:18px;
+  font-size:21px;
+  font-family:'Museo Sans', Sans-Serif;
   font-weight:300;
   text-align:center;
+  margin-bottom: 4%;
+    margin-top: 2%;
 }
 
 .step-subtext{
