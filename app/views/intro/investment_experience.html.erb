@@ -3,6 +3,18 @@
 
     });
 </script>
+
+<script>
+$(document).ready(function() {
+  $('#has-invested').click(function() {
+    $('#has-invested').hide();
+    $('#no').hide();
+    $('#service').removeClass('hiddendiv');
+    $('#service').focus();
+  });
+});
+</script>
+
 <div class="edu-block">
   <div class="big-headline">
     Have you already invested anything in the stock market?
@@ -11,13 +23,21 @@
   (For example, individual company stocks, index funds, mutual funds, etc.)
   </div>
   <br />
-  <div class="option-row">
-  <%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
-	<%= f.hidden_field :has_invested_before, value: "Yes" %>
-	<%= f.submit "Yes", class:"next-button" %>
-  <% end %>
-  </div>
-  <div class="option-row">
+  <input type="button" id="has-invested" class="next-button" value="Yes">
+    <br />
+    <div id="service" class="hiddendiv">
+      <%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
+        <%= f.hidden_field :has_invested_before, value: "Yes" %>
+        <p>Which brokerage or service did you use to invest previously?</p>
+        <div class="dropdown-style"> 
+        <%= f.text_field :previous_investment_service, class: "border-underline", style:"width:250px;",placeholder: "Service I've used", autocorrect: "off" %>
+        </div>
+        <br /><br />
+        <%= f.submit "Next", class:"next-button" %>
+      <% end %>
+    </div>
+  <br />
+  <div id="no" class="option-row">
   <%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
 	<%= f.hidden_field :has_invested_before, value: "No" %>
 	<%= f.submit "No", class:"next-button" %>
