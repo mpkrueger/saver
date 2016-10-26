@@ -45,6 +45,7 @@ Rails.application.routes.draw do
     collection do
       get 'follow_up'
       get 'thanks'
+      get 'amount_check'
     end
   end
   resources :beta_users
