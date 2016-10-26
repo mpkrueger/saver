@@ -26,6 +26,32 @@
 }
 
 
+.services-button{
+  border: 1px solid #ccc;
+  background-color: transparent;
+  padding: 30px 30px;
+  text-align: center;
+  border-radius:0px;
+  margin: auto;
+  text-decoration: none;
+}
+
+.services-button:hover{
+	box-shadow: 0 0 10px rgba(0,0,0,.2);
+}
+
+.services-button:active{
+	border: 1px solid #777;
+	box-shadow: 0 0 10px rgba(0,0,0,.2);
+}
+
+
+.services-moreinfo{
+	text-align:center;
+	font-size: 14px;
+	text-decoration: underline;
+	margin-top:25px;
+}
 
 .factors-text{
 	text-align:center;

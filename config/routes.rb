@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get 'services/summary'
   get 'services/recommendation'
   get 'services/choice'
+  get 'services/vanguard'
+  get 'services/betterment'
 
   get 'challenges/saving_info'
   get 'challenges/credit_card_info'

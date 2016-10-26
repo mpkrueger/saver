@@ -1,38 +1,70 @@
 <div class="edu-block">
 	<div class="big-headline">
+	Choosing an investment service
+	</div>
+	<br />
 	<% if @post_investment_goal == "I want to spend very little time and effort on my investments in the future." %>
 		<p class="headline">
 			<div style="width:30%;margin:auto;">
-					<%= image_tag("betterment_logo.png", class:"services-logo") %>
+				<%= image_tag("betterment_logo.png", class:"services-logo") %>
 			</div>
-			We recommend Betterment because you mentioned you want to spend very little time and effort on investing. With Betterment you can rest easy that your money will be invested and managed well without you having to think about it.
+			We recommend Betterment because you mentioned you want to spend very little time and effort on investing. Betterment will manage and rebalance your investment portfolio without you having to think about it.
 		</p>
 	
-	<% elsif @post_investment_goal == "I want to learn more and experiment as I get more comfortable."  %>
+	<% elsif @post_investment_goal == "I want to actively choose my investment in the future."  %>
 		<p class="headline">
 			<div style="width:30%;margin:auto;">
-					<%= image_tag("vanguard_logo.png", class:"services-logo") %>
+				<%= image_tag("vanguard_logo.png", class:"services-logo") %>
 			</div>
-			We recommend Vanguard because you mentioned you want to learn and experiment. Vanguard has more flexibility so you'll be able to experiment with your investment portfolio. As you get more comfortable, Vanguard gives you the option to choose particular index funds or even stocks without having to create a new account.
+			We recommend Vanguard because you mentioned you want to play an active role in choosing your investments in the future. Vanguard gives you a lot more flexibility than Betterment to manage your investment portfolio. As you get more comfortable, Vanguard gives you the option to choose particular index funds or even stocks without having to create a new account.
 		</p>
 
 
-	<% elsif @post_investment_goal == "I want to optimize my investment portfolio over time." %>
+	<% elsif @post_investment_goal == "I want to learn more and experiment as I get more comfortable." %>
 		<p class="headline">
 			<div style="width:30%;margin:auto;">
-					<%= image_tag("vanguard_logo.png", class:"services-logo") %>
+				<%= image_tag("vanguard_logo.png", class:"services-logo") %>
 			</div>
-			We recommend Vanguard because you mentioned you want to optimize your portfolio over time. Vanguard gives you a lot more flexibility than Betterment to manage your investment portfolio. As you get more comfortable, Vanguard gives you the option to choose particular index funds or even stocks without having to create a new account.
+			We recommend Vanguard because you mentioned you want to learn and experiment. Vanguard has more flexibility so you'll be able to experiment with your investment portfolio. As you get more comfortable, Vanguard gives you the option to choose particular index funds or even stocks without having to create a new account.
+			
 		</p>
 
 
 
 	<% elsif @post_investment_goal == "I don't plan to invest more in the future." %>
-		<div class="headline">
-		You mentioned that you don't plan to invest more in the future.
-		</div>
+		<p class="headline">
+			<div style="width:30%;margin:auto;">
+				<%= image_tag("betterment_logo.png", class:"services-logo") %>
+			</div>
+			We recommend Betterment because you mentioned you don't want to invest more in the future. Betterment will manage your investment portfolio without you having to think about it.
+		</p>
 
 	<% end %>
+
+	
+		<div class="headline">
+		Ultimately the choice is yours. Which service would you prefer?
+		</div>
+		<p class="headline">
+			<div class="row is-table-row">
+				<div class="col-sm-5 col-md-5 col-lg-5">
+					<%= link_to (image_tag("vanguard_logo.png", class:"services-logo services-button")), services_vanguard_path %>
+				</div>
+				<div class="col-sm-5 col-md-5 col-lg-5">
+					<%= link_to (image_tag("betterment_logo.png", class:"services-logo services-button")), 
+					services_betterment_path %>
+				</div>
+			</div>
+		</p>
+
+		<p class="services-moreinfo">
+			<%= link_to "(I want to read about the trade-offs between these 2 services)", services_summary_path, class:"services-moreinfo" %>
+		</p>
+
+
+	
+	
+
 
 </div>
 	
