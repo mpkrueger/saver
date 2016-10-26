@@ -20,8 +20,6 @@ $(document).ready(function() {
 
 		<p>Before we move on – do you have any remaining questions you'd like us to help you with?</p> 
 
-    <p>These won't factor into our immediate recommendation, but we can reach out to address these specifically.</p>
-
 		<div id="none">
 		<%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
 	    <%= f.hidden_field :questions, value: "noNe" %>	

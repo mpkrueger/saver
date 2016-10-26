@@ -53,7 +53,7 @@ class RegistrationsController < Devise::RegistrationsController
 	end
 
 	def after_sign_up_path_for(resource)
-		services_welcome_path
+		services_recommendation_path
 	end
 
 	def after_update_path_for(resource)
