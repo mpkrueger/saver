@@ -39,7 +39,12 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :registrations => "registrations", :sessions => "sessions" }
   resources :guest_users
   resources :feedbacks
-  resources :intro
+  resources :intro do
+    collection do
+      get 'follow_up'
+      get 'thanks'
+    end
+  end
   resources :beta_users
   resources :investing_profiles
 

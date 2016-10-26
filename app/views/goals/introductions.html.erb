@@ -8,7 +8,22 @@
 
 <script>
 $(document).ready(function() {
-  $('a[href*="#anchor"]:not([href="#"])').click(function() {
+  $('a[href*="#us"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+
+        // $('#stocks').hide(0).fadeIn(100).removeClass('hidden');
+        
+        return false;
+      }
+    }
+  });
+  $('a[href*="#you"]:not([href="#"])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
@@ -27,27 +42,36 @@ $(document).ready(function() {
 
 </script>
 
-
 <div class="edu-block">
   <div class="intro_image_block"><%= image_tag("savvy_thumbnail.png", style:"width:150px;height:auto;") %> </div>
     <div class="big-headline">Hi there! </div>
 
-    <div class="headline">Before we dive in, let's get to know each other briefly.</div>
-   <br /><br /><a href="#anchor", class="next-button">Next</a>
+    <div class="headline">Let's get to know each other a little.</div>
+   <br /><br /><a href="#us", class="next-button">Next</a>
+</div>
+
+<a name="us"></a>
+<div class="edu-block">
+  <div>
+    <div class="big-headline">Savvy: Helping you invest</div>
+
+    <div class="headline">We're early in our journey to build a financial coach that helps you improve your finances. You could say this experience is a beta - we're hoping to learn what works best. We would really love your feedback!</div>
+   <br /><br /><a href="#you", class="next-button">Next</a>
+  </div>
 </div>
 
 
 <%= form_for @guest_user do |f| %>
-<a name="anchor"></a>
+<a name="you"></a>
 <div class="edu-block">        
       What's your name? <br/><br />
       <div class="dropdown-style"> 
-        <%= f.text_field :name, class: "border-underline", style:"width:250px;",placeholder: "your first name", autocorrect: "off" %>
+        <%= f.text_field :name, class: "border-underline", style:"width:250px;",placeholder: "my first name", autocorrect: "off" %>
       </div>
       <br/><br />
       How old are you? <br/><br />
       <div class="dropdown-style"> 
-        <%= f.telephone_field :age, class: "border-underline", style:"width:250px;", placeholder: "your age", :required => true %>
+        <%= f.telephone_field :age, class: "border-underline", style:"width:250px;", placeholder: "my age", :required => true %>
       </div>
     <br /><br />
     <%= f.submit "Next", class: 'next-button' %>
