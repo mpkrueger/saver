@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161026170614) do
+ActiveRecord::Schema.define(version: 20161026191043) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -90,6 +90,7 @@ ActiveRecord::Schema.define(version: 20161026170614) do
     t.string   "follow_up_prefs"
     t.text     "concerns_about_risks"
     t.string   "email"
+    t.string   "previous_investment_service"
   end
 
   create_table "investing_profiles", force: :cascade do |t|
@@ -116,6 +117,7 @@ ActiveRecord::Schema.define(version: 20161026170614) do
     t.string   "invested_amount"
     t.text     "investing_experience"
     t.text     "investing_better"
+    t.string   "previous_investment_service"
     t.index ["user_id"], name: "index_investing_profiles_on_user_id", using: :btree
   end
 

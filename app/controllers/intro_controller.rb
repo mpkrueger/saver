@@ -14,7 +14,7 @@ class IntroController < ApplicationController
   def update
     @guest_user = guest_user
     @guest_user.update_attributes(guest_user_params)
-    if @guest_user.amount_to_get_started != nil && @guest_user.amount_to_get_started > 4999
+    if @guest_user.amount_to_get_started != nil && @guest_user.amount_to_get_started > 4999 && @guest_user.has_retirement_account == nil
       redirect_to amount_check_intro_index_path
     else
       render_wizard @guest_user
@@ -38,7 +38,9 @@ class IntroController < ApplicationController
       follow_up_intro_index_path
     elsif @guest_user.has_retirement_account == "No"
       follow_up_intro_index_path
-    elsif @guest_user.concerns_about_risks != nil || @guest_user.remaining_concerns_about_access != nil || @guest_user.questions != nil
+    elsif @guest_user.concerns_about_risks != nil || @guest_user.remaining_concerns_about_access != nil || @guest_user.questions != "noNe"
+      follow_up_intro_index_path
+    elsif @guest_user.investment_goal == "I need more money in the short-term and hope investing will help"
       follow_up_intro_index_path
     else
       new_user_registration_path
@@ -51,7 +53,7 @@ class IntroController < ApplicationController
     params.require(:guest_user).permit(:explain_stocks_vs_funds, :explain_diversification, :worry_about_risks, 
       :concerns_about_risks, :curious_about_access_to_money, :remaining_concerns_about_access, :investment_goal, :post_investment_goal, 
       :knows_amount_to_invest, :amount_wants_to_invest, :amount_to_invest, :amount_to_get_started, :has_retirement_account, 
-      :has_invested_before, :questions, :follow_up_prefs, 
+      :has_invested_before, :previous_investment_service, :questions, :follow_up_prefs, 
       has_these_types_of_debt: [:student_debt, :car_loans, :mortgage_loans, :personal_loans, :credit_card_debt, :none])
   end
 end

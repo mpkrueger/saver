@@ -23,6 +23,7 @@ class RegistrationsController < Devise::RegistrationsController
 	  resource.investing_profile.amount_to_get_started = @guest_user.amount_to_get_started
 	  resource.investing_profile.has_retirement_account = @guest_user.has_retirement_account
 	  resource.investing_profile.has_invested_before = @guest_user.has_invested_before
+	  resource.investing_profile.previous_investment_service = @guest_user.previous_investment_service
 	  resource.investing_profile.explain_diversification = @guest_user.explain_diversification
 	  resource.investing_profile.has_these_types_of_debt = @guest_user.has_these_types_of_debt
 	  resource.investing_profile.questions = @guest_user.questions

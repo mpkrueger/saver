@@ -44,8 +44,8 @@ $(document).ready(function() {
  
      <div class="headline">
        <%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
-         <%= f.hidden_field :investment_goal, value: "I have a specific goal I want money for and my savings alone won’t get me there" %>
-         <%= f.submit "I have a specific goal I want money for and my savings alone won’t get me there", class:"option-button" %>
+         <%= f.hidden_field :investment_goal, value: "I have a specific long-term goal and my savings alone won’t get me there" %>
+         <%= f.submit "I have a specific long-term goal and my savings alone won’t get me there", class:"option-button" %>
        <% end %>
  
  
@@ -55,8 +55,13 @@ $(document).ready(function() {
          <% end %>
  
          <%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
-         <%= f.hidden_field :investment_goal, value: "I've heard it's the right thing to do, but I'm not sure why." %>
-         <%= f.submit "I've heard it's the right thing to do, but I'm not sure why.", class:"option-button" %>
+         <%= f.hidden_field :investment_goal, value: "I've heard it's the right thing to do, but I'm not sure why" %>
+         <%= f.submit "I've heard it's the right thing to do, but I'm not sure why", class:"option-button" %>
+         <% end %>
+
+         <%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
+         <%= f.hidden_field :investment_goal, value: "I need more money in the short-term and hope investing will help" %>
+         <%= f.submit "I need more money in the short-term and hope investing will help", class:"option-button" %>
          <% end %>
  
      </div>
