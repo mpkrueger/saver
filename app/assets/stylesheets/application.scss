@@ -60,7 +60,6 @@ ul {
   font-size:14px; 
   text-decoration:underline; 
   color: #ddd;
-
 }
 
 .option-row{
@@ -134,9 +133,37 @@ ul {
   margin:auto;
 }
 
+.edu-link{
+  border:none;
+  color:#00A99D;
+  text-decoration: underline;
+  background-color: transparent;
+}
+
+.edu-link:active, .edu-link:focus, .edu-link:hover{
+  border:none;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+  outline:0;
+}
 
 
+.hide-link{
+  font-size:15px; 
+  text-decoration:underline; 
+  color: #444;
+  background-color:transparent;
+  border:none;
+}
 
+.hide-link:active, .hide-link:focus, .hide-link:hover{
+  border:none;
+ -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+  outline:0;
+}
 
 @media screen and (max-width: 350px) {
 

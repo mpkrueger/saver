@@ -46,17 +46,17 @@ $(document).ready(function() {
   <div class="intro_image_block"><%= image_tag("savvy_thumbnail.png", style:"width:150px;height:auto;") %> </div>
     <div class="big-headline">Hi there! </div>
 
-    <div class="headline">Let's get to know each other a little.</div>
-   <br /><br /><a href="#us", class="next-button">Next</a>
+    <div class="headline option-row">Let's get to know each other a little.</div>
+   <br /><a href="#us", class="next-button">Next</a>
 </div>
 
 <a name="us"></a>
 <div class="edu-block">
   <div>
-    <div class="big-headline">Savvy: Helping you invest</div>
+    <div class="big-headline">Savvy is here to help you invest.</div>
 
-    <div class="headline">We're early in our journey to build a financial coach that helps you improve your finances. You could say this experience is a beta - we're hoping to learn what works best. We would really love your feedback!</div>
-   <br /><br /><a href="#you", class="next-button">Next</a>
+    <div class="headline option-row">We believe strongly in the power of investing and want to make it easier for you to get started investing. We're early in our journey and want to learn what resonates with you so we'll ask for your feedback along the way. We're excited to help you get started.</div>
+  <br /><a href="#you", class="next-button">Next</a>
   </div>
 </div>
 
@@ -64,13 +64,13 @@ $(document).ready(function() {
 <%= form_for @guest_user do |f| %>
 <a name="you"></a>
 <div class="edu-block">        
-      What's your name? <br/><br />
-      <div class="dropdown-style"> 
+      <div class="headline option-row">What's your name? </div>
+      <div class="dropdown-style" style="width:60%;"> 
         <%= f.text_field :name, class: "border-underline", style:"width:250px;",placeholder: "my first name", autocorrect: "off" %>
       </div>
       <br/><br />
-      How old are you? <br/><br />
-      <div class="dropdown-style"> 
+       <div class="headline option-row">How old are you? </div>
+      <div class="dropdown-style" style="width:25%;"> 
         <%= f.telephone_field :age, class: "border-underline", style:"width:250px;", placeholder: "my age", :required => true %>
       </div>
     <br /><br />
