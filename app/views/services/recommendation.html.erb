@@ -69,17 +69,19 @@ $(document).ready(function() {
 
 <div class="edu-block" id="anchor1">
 	<% if @post_investment_goal == "I want to spend very little time and effort on my investments in the future." %>
-		<div class="big-headline">
-			Based on everything you've told us, we recommend Betterment.
-		</div>
+		<div class="headline">
+			Based on everything you've told us, we recommend: 
+		<h3> Betterment </h3>
+		</div><br />
 		<p class="headline">
 			This is because you mentioned you want to spend very little time and effort on investing. Betterment will manage and rebalance your investment portfolio without you having to think about it.
 		</p>
 	
 	<% elsif @post_investment_goal == "I want to actively choose my investment in the future."  %>
-		<div class="big-headline">
-			Based on everything you've told us, we recommend Vanguard.
-		</div>
+		<div class="headline">
+			Based on everything you've told us, we recommend: 
+		<h3> Vanguard </h3>
+		</div><br />
 
 		<p class="headline">
 			
@@ -88,9 +90,10 @@ $(document).ready(function() {
 
 
 	<% elsif @post_investment_goal == "I want to learn more and experiment as I get more comfortable." %>
-		<div class="big-headline">
-			Based on everything you've told us, we recommend Vanguard
-		</div>
+		<div class="headline">
+			Based on everything you've told us, we recommend: 
+		<h3> Vanguard </h3>
+		</div><br />
 		<p class="headline">
 			
 			This is because you mentioned you want to learn and experiment. Vanguard has more flexibility so you'll be able to experiment with your investment portfolio. As you get more comfortable, Vanguard gives you the option to choose particular index funds or even stocks without having to create a new account.
@@ -100,21 +103,17 @@ $(document).ready(function() {
 
 
 	<% elsif @post_investment_goal == "I don't plan to invest more in the future." %>
+		<div class="headline">
+			Based on everything you've told us, we recommend: 
+		<h3> Betterment </h3>
+		</div><br />
 		<p class="headline">
-			<div style="width:30%;margin:auto;">
-				<%= image_tag("betterment_logo.png", class:"services-logo") %>
-			</div>
 			We recommend Betterment because you mentioned you don't want to invest more in the future. Betterment will manage your investment portfolio without you having to think about it.
-
-			
 		</p>
 
 	<% end %>
-
-	<br />
-		<div class="headline">
+		
 		The choice is yours. Which service would you prefer?
-		</div>
 		<p class="headline">
 			<div class="row is-table-row">
 				<div class="col-sm-5 col-md-5 col-lg-5">

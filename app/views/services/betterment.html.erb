@@ -16,24 +16,29 @@ $(document).ready(function() {
   <div id="instructions">
   <div class="intro_image_block"><%= image_tag("betterment_logo.png", style:"width:250px;height:auto;") %> </div>
   <div class="big-headline">
-      Awesome, we love Betterment - let's do this!
+      Awesome, we love Betterment!
   </div>
-	<p>Betterment does a good job walking you throught the process of setting up an account and making an investment.</p>
-	<p>You'll need the following info ready to get going:</p>
+	<p>Betterment does a good job walking you through the process of setting up an account and making an investment.</p>
+	<p>You'll need the following info ready:</p>
       <ul>
-        <li>Your social security number (this is required for every new investment)</li>
-        <li>Your bank account username & password (to transfer money into Betterment)</li>
+        <li style="margin-bottom:10px;">Your social security number <br />(this is required for every new investment)</li>
+        <li>Your bank account username & password <br />(to transfer money into Betterment)</li>
       </ul>
       <br />
       <%= link_to "Set up Betterment", "https://www.betterment.com/", target: "_blank", id: "betterment", class: "next-button" %>
+      <br /> <br />
+      (and come back here after you're done for a surprise treat!)
     </div>
   <div id="follow_up" class="hiddendiv">
     <div class="big-headline">
-        Let us know when you've invested!
+        Let us know whether you made an investment!
     </div>
-    <p>We'd really love to hear about your experience investing, so that we can keep improving Savvy.</p>
+    <p>We'd really love to hear about your experience investing so that we can keep improving Savvy.</p>
     <br />
-    <%= link_to "I invested!", dashboard_invested_path, class: "next-button"%>
+    <%= link_to "I invested!", dashboard_invested_path, class: "next-button"%> <br />
+    
+
+
   </div>
 </div>
 	
