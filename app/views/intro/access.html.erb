@@ -53,10 +53,10 @@ $(document).ready(function() {
     Do you want to know more about what would happen if you need to access your money sooner?
     </div>
 
-    <br /><a href="#access" class="next-button">Yes</a><br /><br />
+    <br /><a href="#access" class="short-option-button">Yes</a><br /><br />
     <%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
       <%= f.hidden_field :curious_about_access_to_money, value: "No" %>
-    <%= f.submit "No", class:"next-button" %>
+    <%= f.submit "No", class:"short-option-button" %>
   <% end %>
 </div>
 
@@ -66,7 +66,7 @@ $(document).ready(function() {
     <div class="big-headline">What happens if I need to access the money I invest sooner than 20 years?</div>
 
     <div class="headline">
-    <p class="edu-para">For any of the options we'll recommend, you can access your money at any time with no fees. Accessing your money will involve selling your investments for what they're worth at that time. The money will be in your bank account within 4-6 days. If your investment is worth more at that time than what you initially invested, you will owe some taxes on the amount it went up (this is called "capital gains"). </p>
+    <p class="edu-para">For any of the funds we'll recommend, you can access your money at any time with no fees. Accessing your money will involve selling your investments for what they're worth at that time. The money will be in your bank account within 4-6 days. If your investment is worth more at that time than what you initially invested, you will owe some taxes on the amount it went up (this is called "capital gains"). </p>
     <p class="edu-para">The main thing to note is that the stock market goes up and down over the years. If you need to access your money when the stock market is down, you may have less money than what you invested.</p>
     <br />
     <a href="#concerns" class="next-button">Continue</a></p>
