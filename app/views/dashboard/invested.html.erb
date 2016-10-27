@@ -17,7 +17,9 @@
       </div>
       <br /><br />
       <p>How much did you end up investing?</p>
-        $<%= f.telephone_field :invested_amount, class: "border-underline", style:"width:250px;", placeholder: "amount invested" %>
+         <div class="dropdown-style"> 
+          $<%= f.telephone_field :invested_amount, class: "border-underline", style:"width:250px;", placeholder: "amount invested" %>
+        </div>
         <br /><br />
       <p>How would you describe your experience overall?</p>
         <%= f.text_area :investing_experience, class: "custom-text-area", placeholder: "" %>
