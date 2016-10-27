@@ -20,7 +20,7 @@ class DashboardController < ApplicationController
 
   def invested
     @user = current_user
-    @investing_profile = @user.investing_profile
+    @investing_feedback = @user.investing_feedback
   end
 
   def invested_thanks

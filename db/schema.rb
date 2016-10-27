@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161027194533) do
+ActiveRecord::Schema.define(version: 20161027200402) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -93,6 +93,18 @@ ActiveRecord::Schema.define(version: 20161027194533) do
     t.string   "previous_investment_service"
   end
 
+  create_table "investing_feedbacks", force: :cascade do |t|
+    t.string   "investment_service"
+    t.string   "invested_amount"
+    t.text     "investing_experience"
+    t.text     "investing_better"
+    t.text     "got_stuck"
+    t.integer  "user_id"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.index ["user_id"], name: "index_investing_feedbacks_on_user_id", using: :btree
+  end
+
   create_table "investing_profiles", force: :cascade do |t|
     t.string   "explain_stocks_vs_funds"
     t.string   "worry_about_risks"
@@ -152,5 +164,6 @@ ActiveRecord::Schema.define(version: 20161027194533) do
   end
 
   add_foreign_key "fin_profiles", "users"
+  add_foreign_key "investing_feedbacks", "users"
   add_foreign_key "investing_profiles", "users"
 end

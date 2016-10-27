@@ -37,9 +37,15 @@ class ServicesController < ApplicationController
     @investing_profile = @user.investing_profile
   end
 
+  def vanguard_instructions
+    @user = current_user
+    @investing_feedback = @user.investing_feedback
+  end
+
   def betterment
     @user = current_user
     @investing_profile = @user.investing_profile
+    @investing_feedback = @user.investing_feedback
   end
 
   def choice

@@ -29,6 +29,7 @@ class RegistrationsController < Devise::RegistrationsController
 	  resource.investing_profile.questions = @guest_user.questions
 	  resource.investing_profile.concerns_about_risks = @guest_user.concerns_about_risks
 
+	  resource.investing_feedback = InvestingFeedback.new
 	  
 	  resource.save
 
