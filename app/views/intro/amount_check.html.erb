@@ -6,19 +6,20 @@
 
 <div class="edu-block">
   <div class="big-headline">
-  Quick check
+  A quick check-in
   </div>
-  <div class="headline edu-para">You entered a pretty large amount to invest and we just want to make sure you know the risks before starting at that level:
+  <div class="headline edu-para">It's awesome that you want to invest $<%= @initial_amount %>. A couple  things to note.
   <ul>
-  	<li>The stock market goes up and down and you may experience a loss in the short or medium-term</li>
-  	<li>Withdrawing money from the stock market to cover emergencies can result in having to pay taxes or potentially a loss of money - so you should have an emergency fund of 3-6 months worth of expenses separate from your investment</li>
+  	<li>It's good to have an emergency fund outside of your investments. The general guideline is to have 3-6 months worth of expenses saved up. </li>
   	<li>If you have a short-term goal that you want to use this money toward, it may be worth less at the time that you want to use it (again, because the stock market goes up and down in the short & medium-term)</li>
   </ul>
   </div>
 
-<br />
-<%= link_to "Got it, I'd still like to invest $#{number_with_delimiter(@guest_user.amount_to_get_started)}", wizard_path(:retirement_account), class: "next-button" %>
-<br /><br />
+  <br />
+  <div class="centered-title">
+  <%= link_to "Got it, I'm ready to invest $#{number_with_delimiter(@initial_amount)}", wizard_path(:retirement_account), class: "next-button" %>
+  <br /><br />
 
-<%= link_to "Actually, I'd like to start a little smaller", wizard_path(:initial_investment, anchor: "recommendation") %>
+  <%= link_to "Actually, I'd like to invest a smaller amount", wizard_path(:initial_investment, anchor: "recommendation"), class: "centered-title" %>
+  </div>
 </div>
