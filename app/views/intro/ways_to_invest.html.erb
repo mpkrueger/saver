@@ -50,18 +50,18 @@ $(document).ready(function() {
   We're going to focus on investing in funds.
   </div>
   <div class="headline">
-    <p class="edu-para">People invest in many ways – by buying individual company stocks, real estate, precious art or valuables, etc. We agree with financial experts that funds (e.g. mutual funds, index funds) are the best place to start and should make up most of your investment portfolio. </p>
+    <p class="edu-para">Most financial experts agree that funds (e.g. mutual funds, index funds) should make up most of your investment portfolio. There are many other ways to invest, like buying individual company stocks, real estate, precious art or valuables, etc., but these are riskier and require more time and knowledge.</p>
 	
-	<p class="edu-para option-row">Would you like to know more about why funds are recommended?</p>
+	   <p class="edu-para option-row">Would you like to know more about why funds are recommended?</p>
   </div>
-<br />
+  <div class="headline">
 	 <a href="#anchor" class="next-button">Yes</a> <br /><br />
 	
 
-	<%= f.hidden_field :explain_stocks_vs_funds, value: "No" %>
+	 <%= f.hidden_field :explain_stocks_vs_funds, value: "No" %>
 
-	<%= f.submit "No", class:"next-button" %>
-	
+	 <%= f.submit "No", class:"next-button" %>
+	</div>
 </div>
 
 <a name="anchor"></a>
@@ -75,24 +75,28 @@ $(document).ready(function() {
     <p class="edu-para">The main reason experts advocate investing in funds is because they're less risky than other types of investments and can lead to more stable returns.</p>
 
     <p class="edu-para option-row">Expand any of these topics below if you're curious: <br />
-      <input type="button" id="stocks" value="How do funds compare to individual stocks?" class="edu-link"> <br />
-         
-        <div id="fundsvsstocks" class="hiddendiv" style="padding-left:6px;">
-          <p class="edu-para">
-            If you invest in a specific company, your money will go up and down following the company's ups and downs. It can be fun to speculate and lead to big rewards but also big losses. In other words, it's risky. Funds lower your risk by investing your money in a big range of companies so you're not dependent on any one company's success or failure. They provide a solid way to get returns on your money and require less time and energy to manage than individual stocks. Funds are less sexy because you don't get to research and speculate and try to outsmart others, but low drama with your finances can be a good thing. Because of this risk, we recommend funds as your main investment strategy. <br />
-            <input type="button" id="hidestocks" value="(hide)" class="hide-link">
-          </p>
-        </div>
+      </p>
+
+    <input type="button" id="stocks" value="How do funds compare to individual stocks?" 
+    class="edu-link option-row"> <br />
+
+    <div id="fundsvsstocks" class="hiddendiv" style="padding-left:6px; ">
+      <p class="edu-para">
+        If you invest in a specific company, your money will go up and down following the company's ups and downs. It can be fun to speculate and lead to big rewards but also big losses. In other words, it's risky. Funds lower your risk by investing your money in a big range of companies so you're not dependent on any one company's success or failure. They provide a solid way to get returns on your money and require less time and energy to manage than individual stocks. Funds are less sexy because you don't get to research and speculate and try to outsmart others, but low drama with your finances can be a good thing. Because of this risk, we recommend funds as your main investment strategy. <br />
+        <input type="button" id="hidestocks" value="(hide)" class="hide-link">
+      </p>
+    </div>
      
-       <input type="button" id="savings" value="How do funds compare to savings accounts?" class="edu-link"> <br />
+       <input type="button" id="savings" value="How do funds compare to savings accounts?" 
+       class="edu-link option-row"> <br />
           
-          <div id="fundsvssavings" class="hiddendiv" style="padding-left:6px;">
+          <div id="fundsvssavings" class="hiddendiv" style="padding-left:6px; ">
           <p class="edu-para">
             Many people in recent generations are keeping their money in a savings account. Checking/savings accounts are nice because your money is protected and you have immediate access to your money. However, your money also won't grow (and with current interest rates, your money won't keep up with inflation). In terms of the long-term, it's risky to keep all of your money in the bank so we recommend investing some portion of your money in the stock market so that your money can grow.<br/>
              <input type="button" id="hidesavings" value="(hide)" class="hide-link">
           </p>
           </div>
-    </p>
+   
       
 	</div>
 
