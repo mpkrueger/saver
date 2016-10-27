@@ -51,6 +51,7 @@ Rails.application.routes.draw do
   end
   resources :beta_users
   resources :investing_profiles
+  resources :investing_feedbacks
 
   resources :fin_profiles do
     collection do

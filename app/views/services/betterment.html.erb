@@ -47,7 +47,7 @@ $(document).ready(function() {
     <input type="button" id="investment_stuck" class="short-option-button" value="I got stuck :(">
     </div>
     <div id="stuckField" class="hiddendiv">
-      <%= form_for @investing_profile do |f| %>
+      <%= form_for @investing_feedback do |f| %>
         <%= f.hidden_field :knows_amount_to_invest, value: "No" %>
         <div class="">
           <%= f.text_area :got_stuck, placeholder: "Tell us where you got stuck...", class: 'custom-text-area', :autofocus=>true %>

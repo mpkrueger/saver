@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  investment_service: MyString
+  invested_amount: MyString
+  investing_experience: MyText
+  investing_better: MyText
+  got_stuck: MyText
+  user: one
+
+two:
+  investment_service: MyString
+  invested_amount: MyString
+  investing_experience: MyText
+  investing_better: MyText
+  got_stuck: MyText
+  user: two
