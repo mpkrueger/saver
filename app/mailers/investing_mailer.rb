@@ -1,0 +1,2 @@
+class InvestingMailer < ApplicationMailer
+end
