@@ -17,10 +17,10 @@
 
 
 		<% if @user.investing_profile.service_choice != nil %>
-			<div class="user-welcome"> Hey, <%= @user.name %>!</div>
-			<div class="user-feedback-cta">
+			<div class="user-welcome" style="text-align:left;"> Hey, <%= @user.name %>,</div>
+			<div class="signup-instruction" style="text-align:left;">
 				Congrats on picking <%= @user.investing_profile.service_choice %>! We hope you were able to 
-				successfully make an investment! If so, could you please fill out a couple quick questions about your experience? It'll help us make Savvy better for the next group!   <br />
+				successfully make an investment. If so, could you please fill out a couple quick questions about your experience? It'll help us make Savvy better for the next group.   <br />
 				<div class="button-row">
 				<%= link_to "Give Feedback", dashboard_invested_path, :class=>'lp-button' %>
 				</div>
