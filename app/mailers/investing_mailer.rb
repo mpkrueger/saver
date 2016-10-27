@@ -5,8 +5,9 @@ class InvestingMailer < ApplicationMailer
   #
   #   en.investing_mailer.investment_feedback.subject
   #
-  def investment_feedback
-    @greeting = "Hi"
+  def investment_feedback(user)
+    @user = user
+    @investing_profile = @user.investing_profile
 
     mail to: "to@example.org"
   end

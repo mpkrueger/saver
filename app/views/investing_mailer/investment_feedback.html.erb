@@ -1,5 +1,32 @@
-<h1>Investing#investment_feedback</h1>
+Hi <%= @user.name %>,
 
-<p>
-  <%= @greeting %>, find me in app/views/investing_mailer/investment_feedback.html.erb
-</p>
+<p>Thanks for signing up for <%= link_to "Savvy", "www.getsavvier.com" %>!</p>
+
+<p>Congratulations on choosing <%= @investing_profile.service_choice %> as the place to invest.</p>
+
+<p>We'd love to hear your thoughts and feedback on the process of making the investment - it helps us make Savvy better so that we can help even more people.</p>
+
+<div>
+  <table cellspacing="0" cellpadding="0"> <tr> 
+  <td align="center" width="300" height="40" bgcolor="#00A99D" style="-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; color: #ffffff; display: block;">
+    <span style="color: #ffffff;">
+      <%= link_to "Share my thoughts", dashboard_invested_url, class: "email-button" %>
+    </span>
+    </a>
+  </td> 
+  </tr> 
+  </table> 
+</div>
+
+<p>If you didn't yet finish making the investment - we would love to know why. Was it for one of the following reasons:</p>
+<ol>
+	<li>I didn't have the bank account information ready to complete the process</li>
+	<li>I didn't feel comfortable completing the investment</li>
+	<li>A different reason</li>
+</ol>
+
+<p>You can just reply to this email with "1", "2", or "3" - it would be super helpful for us!</p>
+
+<p>Thanks & stay savvy,<br />
+Matt and Sushmita<br />
+Savvy cofounders</p>

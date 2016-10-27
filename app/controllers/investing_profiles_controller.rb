@@ -21,8 +21,10 @@ class InvestingProfilesController < ApplicationController
 		@investing_profile = @user.investing_profile
 		if @investing_profile.update_attributes(investing_profile_params)
 			if @investing_profile.service_choice == "Vanguard" && @investing_profile.vanguard_target_date == nil
+				InvestingMailer.investment_feedback(@user).deliver
 				redirect_to services_vanguard_path
 			elsif @investing_profile.service_choice == "Betterment"
+				InvestingMailer.investment_feedback(@user).deliver
 				redirect_to services_betterment_path
 			elsif @investing_profile.vanguard_target_date != nil
 				redirect_to services_vanguard_instructions_path
