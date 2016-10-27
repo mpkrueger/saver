@@ -13,7 +13,7 @@
 		<p>Where did you end up making your investment?</p>
 		<%= form_for @investing_profile do |f| %>
 	    <div class="dropdown-style"> 
-        <%= f.text_field :investment_service, class: "border-underline", style:"width:250px;",placeholder: "Betterment, Vanguard, or other", autocorrect: "off" %>
+        <%= f.text_field :investment_service, value: (params[:investment_service]), class: "border-underline", style:"width:250px;",placeholder: "Betterment, Vanguard, or other", autocorrect: "off" %>
       </div>
       <br /><br />
       <p>How much did you end up investing?</p>
