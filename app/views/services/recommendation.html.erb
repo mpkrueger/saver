@@ -118,11 +118,11 @@ $(document).ready(function() {
 		<p class="headline">
 			<div class="row is-table-row">
 				<div class="col-sm-5 col-md-5 col-lg-5">
-					<%= link_to (image_tag("vanguard_logo.png", class:"services-logo services-button")), services_vanguard_path %>
+					<%= link_to (image_tag("vanguard_logo.png", class:"services-logo services-button")), investing_profile_path(@investing_profile, investing_profile: {service_choice: "Vanguard"}), method: :put %>
 				</div>
 				<div class="col-sm-5 col-md-5 col-lg-5">
 					<%= link_to (image_tag("betterment_logo.png", class:"services-logo services-button")), 
-					services_betterment_path %>
+					investing_profile_path(@investing_profile, investing_profile: {service_choice: "Betterment"}), method: :put %>
 				</div>
 			</div>
 		</p>
