@@ -20,8 +20,8 @@ $(function() {
   });
 
   $('#concerns').click(function() {
-  	$('#ok').hide();
-    $('#concerns').hide();
+  	//$('#ok').hide();
+    //$('#concerns').hide();
     $('#concernsField').removeClass('hiddendiv');
     $('#concernsField').focus();
   });
@@ -45,7 +45,7 @@ $(function() {
 	<a name="anchor"></a>
 	<div class="edu-block"> 
 	  <div class="big-headline">Q: Worried about risk?<br/>
-	  A: No need to worry. Investing over a long time period is very safe. In fact, there has been no 20 year period where you would've lost money by investing in a stock fund. </div> <br />
+	  A: No need to worry. Investing over a long time period is very safe. In fact, there has been no 20 year period where you would've lost money by investing in a fund. </div> <br />
 		<div class="headline">
 			<p class="edu-para">The absolute worst case was if you had invested in 1929 –  the year of the stock market crash followed by the 10-year Great Depression. If you invested $100 in 1929, you would've ended up with $102.50 in 1949. Bummer, but given the disastrous economy, it's reassuring that you still wouldn't have lost money!</p>
 	
@@ -53,19 +53,19 @@ $(function() {
 
 			<p class="edu-para">If you invest for a long time period, you will not lose money. And more importantly, you will substantially grow your money.</p>
 		</div>
-		<div id="ok">
+		<div id="ok" >
 			<%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
 				<%= f.hidden_field :worry_about_risks, value: "Yes" %>
-				<%= f.submit "Ok, I feel better", class:"next-button" %>
+				<%= f.submit "Ok, I feel better", class:"short-option-button" %>
 			<% end %>
 		</div>
-		<br />
-		<input type="button" id="concerns" class="next-button" value="I still have concerns">
-		<br />
+		<div class="option-row">
+		<input type="button" id="concerns" class="short-option-button" value="I still have concerns">
+		</div>
 		<div id="concernsField" class="hiddendiv">
 			<%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
 				<%= f.hidden_field :worry_about_risks, value: "Yes and I have additional concerns" %>
-				<%= f.text_area :concerns_about_risks, class: 'custom-text-area', autofocus: true, placeholder: "My concerns include..." %>
+				<%= f.text_area :concerns_about_risks, class: 'custom-text-area', autofocus: true, placeholder: "My concerns are..." %>
 				<%= f.submit "Next", class:"next-button" %>
 			<% end %>
 		</div>
