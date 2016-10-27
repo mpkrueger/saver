@@ -10,7 +10,7 @@ Hi <%= @user.name %>,
   <table cellspacing="0" cellpadding="0"> <tr> 
   <td align="center" width="300" height="40" bgcolor="#00A99D" style="-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; color: #ffffff; display: block;">
     <span style="color: #ffffff;">
-      <%= link_to "Share my thoughts", dashboard_invested_url, class: "email-button" %>
+      <%= link_to "Share my thoughts", dashboard_invested_url(investment_service: @investing_profile.service_choice), class: "email-button" %>
     </span>
     </a>
   </td> 

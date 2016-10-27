@@ -9,7 +9,9 @@ class InvestingMailer < ApplicationMailer
     @user = user
     @investing_profile = @user.investing_profile
 
-    mail to: "to@example.org"
+    @subject = "How did the investment go?"
+
+    mail(to: @user.email, subject: @subject)
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
