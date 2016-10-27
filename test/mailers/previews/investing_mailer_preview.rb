@@ -8,7 +8,7 @@ class InvestingMailerPreview < ActionMailer::Preview
 
   # Preview this email at http://localhost:3000/rails/mailers/investing_mailer/choice_follow_up
   def choice_follow_up
-    InvestingMailer.choice_follow_up
+    InvestingMailer.choice_follow_up(User.last)
   end
 
 end

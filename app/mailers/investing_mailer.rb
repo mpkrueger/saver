@@ -16,9 +16,12 @@ class InvestingMailer < ApplicationMailer
   #
   #   en.investing_mailer.choice_follow_up.subject
   #
-  def choice_follow_up
+  def choice_follow_up(user)
+  	@user = user
     @greeting = "Hi"
+    @subject = "Temptation Bundling: Investing + Treat Yo'Self"
 
-    mail to: "to@example.org"
+    mail(to: @user.email, subject: @subject)
   end
 end
+
