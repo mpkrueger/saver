@@ -22,7 +22,7 @@
 				Congrats on picking <%= @user.investing_profile.service_choice %>! We hope you were able to 
 				successfully make an investment! If so, could you please fill out a couple quick questions about your experience? It'll help us make Savvy better for the next group!   <br />
 				<div class="button-row">
-				<%= link_to "Give Feedback", investment_feedback_path, :class=>'lp-button' %>
+				<%= link_to "Give Feedback", dashboard_invested_path, :class=>'lp-button' %>
 				</div>
 			</div>
 		<% elsif @user.investing_profile.service_choice == nil %>
