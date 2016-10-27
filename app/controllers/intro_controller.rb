@@ -39,7 +39,7 @@ class IntroController < ApplicationController
       follow_up_intro_index_path
     elsif @guest_user.has_retirement_account == "No"
       follow_up_intro_index_path
-    elsif @guest_user.concerns_about_risks != nil || @guest_user.remaining_concerns_about_access != nil || @guest_user.questions != "noNe"
+    elsif @guest_user.concerns_about_risks != nil || @guest_user.remaining_concerns_about_access != nil || @guest_user.questions != ""
       follow_up_intro_index_path
     elsif @guest_user.investment_goal == "I need more money in the short-term and hope investing will help"
       follow_up_intro_index_path

@@ -81,19 +81,19 @@ $(document).ready(function() {
 		No problem. Our recommendation is to start small to initially get the hang of investing. After this, we can make a longer-term investment plan based on your situation and goals. How much would you feel comfortable getting started with? </div>
 		<br />
 		<div class="headline">
-			Many investment services have minimum amounts or high fees at low amounts. So we recommend that you save up enough to invest $500 at minimum.
+			Many investment services have minimum amounts or high fees at low amounts. So we recommend that you save up enough to invest $1000 at minimum.
 		</div>
 		<br />
 	    <%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
 	    	<%= f.hidden_field :knows_amount_to_invest, value: "No" %>
-			<%= f.hidden_field :amount_to_get_started, value: "500" %>
-      		<%= f.submit "$500", class:"option-button" %>
+			<%= f.hidden_field :amount_to_get_started, value: "1000" %>
+      		<%= f.submit "$1,000", class:"option-button" %>
       	<% end %>
 
  		<%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
 	    	<%= f.hidden_field :knows_amount_to_invest, value: "No" %>
-			<%= f.hidden_field :amount_to_get_started, value: "1000" %>
-      		<%= f.submit "$1,000", class:"option-button" %>
+			<%= f.hidden_field :amount_to_get_started, value: "2000" %>
+      		<%= f.submit "$2,000", class:"option-button" %>
       	<% end %>
 		
 		<input type="button" id="other" class="option-button" value="Other">

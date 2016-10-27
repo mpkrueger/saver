@@ -22,7 +22,7 @@ $(document).ready(function() {
 
 		<div id="none">
 		<%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
-	    <%= f.hidden_field :questions, value: "noNe" %>	
+	    <%= f.hidden_field :questions, value: nil %>	
       <%= f.submit "Nope, I'm good to go!", class: "short-option-button" %>
   	<% end %>
   	</div>
