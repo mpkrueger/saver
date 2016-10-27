@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161026214709) do
+ActiveRecord::Schema.define(version: 20161027194533) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -120,6 +120,7 @@ ActiveRecord::Schema.define(version: 20161026214709) do
     t.string   "previous_investment_service"
     t.string   "service_choice"
     t.string   "vanguard_target_date"
+    t.string   "got_stuck"
     t.index ["user_id"], name: "index_investing_profiles_on_user_id", using: :btree
   end
 
