@@ -23,6 +23,7 @@ class IntroController < ApplicationController
 
   def amount_check
     @guest_user = guest_user
+    @initial_amount = guest_user.amount_to_get_started
   end
 
   def follow_up
