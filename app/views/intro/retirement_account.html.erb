@@ -11,16 +11,15 @@
  Usually it's recommended to start with a retirement account because there are tax benefits.
   </div>
   <br />
-  <div class="option-row">
+  
   <%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
 	<%= f.hidden_field :has_retirement_account, value: "Yes" %>
 	<%= f.submit "Yes", class:"next-button" %>
   <% end %>
-  </div>
-  <div class="option-row">
+ <br />
+
   <%= form_for @guest_user, url: wizard_path, method: :put do |f| %>
 	<%= f.hidden_field :has_retirement_account, value: "No" %>
 	<%= f.submit "No", class:"next-button" %>
   <% end %>
-  </div>
 </div>
