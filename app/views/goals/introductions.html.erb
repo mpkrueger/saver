@@ -64,12 +64,12 @@ $(document).ready(function() {
 <%= form_for @guest_user do |f| %>
 <a name="you"></a>
 <div class="edu-block">        
-      <div class="headline option-row">What's your name? </div>
+      <div class="headline">What's your name? </div>
       <div class="dropdown-style" style="width:150px;"> 
         <%= f.text_field :name, class: "border-underline", style:"width:250px;",placeholder: "my first name", autocorrect: "off" %>
       </div>
       <br/><br />
-       <div class="headline option-row">How old are you? </div>
+       <div class="headline">How old are you? </div>
       <div class="dropdown-style" style="width:75px;"> 
         <%= f.telephone_field :age, class: "border-underline", style:"width:250px;", placeholder: "my age", :required => true %>
       </div>
