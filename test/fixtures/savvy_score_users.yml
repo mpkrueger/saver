@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  savvy_feel: MyString
+  debt_types: 
+  cc_amount: MyString
+  cc_approach: MyString
+  student_loan_amount: MyString
+  student_loan_apporach: MyString
+  personal_loan_amount: MyString
+  savings_amount: MyString
+  spending_habit: MyString
+  investment_types: MyString
+  debt_question: MyString
+  savings_question: MyString
+  investment_question: MyString
+  spending_question: MyString
+
+two:
+  savvy_feel: MyString
+  debt_types: 
+  cc_amount: MyString
+  cc_approach: MyString
+  student_loan_amount: MyString
+  student_loan_apporach: MyString
+  personal_loan_amount: MyString
+  savings_amount: MyString
+  spending_habit: MyString
+  investment_types: MyString
+  debt_question: MyString
+  savings_question: MyString
+  investment_question: MyString
+  spending_question: MyString

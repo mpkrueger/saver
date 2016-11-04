@@ -1,0 +1,2 @@
+class SavvyScoreUser < ApplicationRecord
+end

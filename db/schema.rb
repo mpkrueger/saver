@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161027200402) do
+ActiveRecord::Schema.define(version: 20161104232651) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -134,6 +134,27 @@ ActiveRecord::Schema.define(version: 20161027200402) do
     t.string   "vanguard_target_date"
     t.string   "got_stuck"
     t.index ["user_id"], name: "index_investing_profiles_on_user_id", using: :btree
+  end
+
+  create_table "savvy_score_users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "age"
+    t.string   "savvy_feel"
+    t.hstore   "debt_types"
+    t.string   "cc_amount"
+    t.string   "cc_approach"
+    t.string   "student_loan_amount"
+    t.string   "student_loan_apporach"
+    t.string   "personal_loan_amount"
+    t.string   "savings_amount"
+    t.string   "spending_habit"
+    t.string   "investment_types"
+    t.string   "debt_question"
+    t.string   "savings_question"
+    t.string   "investment_question"
+    t.string   "spending_question"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   create_table "users", force: :cascade do |t|
