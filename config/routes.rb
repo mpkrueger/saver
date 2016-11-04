@@ -60,6 +60,7 @@ Rails.application.routes.draw do
   resources :beta_users
   resources :investing_profiles
   resources :investing_feedbacks
+  resources :savvy_score_users
 
   resources :fin_profiles do
     collection do
