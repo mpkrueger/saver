@@ -1,0 +1,83 @@
+<% @title=": Introductions" %>
+
+
+<script>
+$(document).ready(function() {
+  $('a[href*="#us"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+
+        
+        return false;
+      }
+    }
+  });
+  $('a[href*="#you"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+
+        // $('#stocks').hide(0).fadeIn(100).removeClass('hidden');
+        
+        return false;
+      }
+    }
+  });
+});
+
+</script>
+
+<div class="edu-block">
+  <div class="intro_image_block"><%= image_tag("savvy_thumbnail.png", style:"width:150px;height:auto;") %> </div>
+    <div class="big-headline">Hi there! </div>
+
+    <div class="headline option-row">Let's get to know each other a little.</div>
+   <br /><a href="#us", class="next-button">Next</a>
+</div>
+
+<a name="us"></a>
+<div class="edu-block">
+    <div class="headline">There are a few main areas that make up your financial health and habits.</div>
+       <ul>
+            <li> Debt </li>
+            <li> Savings </li>
+            <li> Investments</li>
+      </ul>
+    </div>
+    <br />
+    <div class="headline">
+      I'll ask you a quick question or two for each and then I'll give you a Savvy Score to measure your overall financial health.  Let's dive in! 
+      <br />
+      <%= link_to "Next", next_wizard_path, class:"next-button" %>
+    </div>
+  <br /><a href="#you", class="next-button">Next</a>
+  </div>
+</div>
+
+
+<%= form_for @guest_user do |f| %>
+<a name="you"></a>
+<div class="edu-block">        
+      <div class="headline">What's your name? </div>
+      <div class="dropdown-style" style="width:150px;"> 
+        <%= f.text_field :name, class: "border-underline", style:"width:250px;",placeholder: "my first name", autocorrect: "off" %>
+      </div>
+      <br/><br />
+       <div class="headline">How old are you? </div>
+      <div class="dropdown-style" style="width:75px;"> 
+        <%= f.telephone_field :age, class: "border-underline", style:"width:250px;", placeholder: "my age", :required => true %>
+      </div>
+    <br /><br />
+    <%= f.submit "Next", class: 'next-button' %>
+</div>
+
+  <% end %>

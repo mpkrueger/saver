@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'savvy_score/credit_cards'
+  get 'savvy_score/student_loans'
+  get 'savvy_score/savings_total'
+  get 'savvy_score/savings_habits'
+  get 'savvy_score/investments'
+  get 'savvy_score/intro_outline'
+  get 'savvy_score/final_summary'
+
   get 'services/welcome'
   get 'services/overview'
   get 'services/factors'
@@ -64,6 +72,7 @@ Rails.application.routes.draw do
   get 'goals/new_focus'
   get 'goals/investing'
   get 'goals/thanks'
+  get 'goals/savvy_score_introductions'
 
   authenticated :user do
     root to: 'dashboard#homepage'
@@ -71,6 +80,6 @@ Rails.application.routes.draw do
 
   root to: 'goals#investing'
 
-  get '/goals/introductions'
+  get '/goals/invest_introductions'
 
 end
