@@ -1,7 +1,7 @@
 class SavvyScoreController < ApplicationController
   include Wicked::Wizard
 
-  steps :student_loans, :credit_cards, :savings_total, :savings_habits, :investments, :final_summary
+  steps :debt, :savings_total, :savings_habits, :spending_habits, :investments, :final_summary
 
   def show
     @guest_user = guest_user
