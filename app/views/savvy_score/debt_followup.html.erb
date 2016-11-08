@@ -1,0 +1,98 @@
+
+
+<div class="edu-block">
+
+	<% if @savvy_score_user.debt_types["credit_card_debt"] == "1" || @savvy_score_user.debt_types["student_debt"] == "1" ||
+		 @savvy_score_user.debt_types["personal_loans"] == "1" %>
+
+		 <div class="big-headline">
+		We'd love to get a rough sense of how much you owe.
+		 </div><br />
+
+		<%= form_for @savvy_score_user, url: wizard_path, method: :put do |f| %>
+
+			<% if @savvy_score_user.debt_types["credit_card_debt"] == "1" %>
+			   	<div class="big-headline"> Credit Card Debt 
+			   	</div>
+			    
+			    <div class="headline">
+				   	It's easy to build up credit card debt. We'd love to help you pay this off so that you can avoid those high interest fees. How big is your credit card balance? 
+			   		<br />
+			   		<div class="dropdown-style inner-addon right-addon">
+						<%= f.select :cc_amount, [['I owe less than $1000', 0], ['I owe $1000 to $5000', 1], ['I owe over $5000', 2]], {include_blank: 'this much...' }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
+						<span class="downarrow" style="font-size:24px; margin-top:-5px;"><%= "\u2304" %></span>
+					</div>
+					<br /><br />
+					And how quickly do you want to deal with your credit card debt? 
+					<br />
+			   		<div class="dropdown-style inner-addon right-addon">
+			   			<%= f.select :cc_approach, [['continue what I\'m doing', 'continue what I\'m doing'], ['pay off my debt faster', 'pay off my debt faster'], ['get some advice', 'get some advice']], { include_blank: "my approach..." }, {:id => "dropdown", :class => 'my-dropdown select'} %>
+			   			<span class="downarrow" style="font-size:24px; margin-top:-5px;"><%= "\u2304" %></span>
+
+					</div>
+						
+				</div>
+			<% end %>
+
+			<br />
+
+			<% if @savvy_score_user.debt_types["student_debt"] == "1" %>
+				<div class="big-headline"> Student Loans </div>
+				<div class="headline">
+					You're in good company – 70% of college grads end up with student loans.
+					How much do you have left to pay off? <br />
+					<div class="dropdown-style inner-addon right-addon">
+						<div id="student-debt">
+							<%= f.select :student_loan_amount, [['I owe less than $5,000', 0], ['I owe $5,000 to $10,000', 1], ['I owe $10,000 to $15,000', 2], ['I owe over $15000', 3]], {include_blank: 'this much' }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
+							<span class="downarrow" style="font-size:24px; margin-top:-5px;"><%= "\u2304" %></span>
+						</div>
+					</div><br /><br />
+					And what's your approach to paying off your loans? <br />
+					<div class="dropdown-style inner-addon right-addon">
+						<div id="student-debt">
+							<%= f.select :student_loan_approach, [['Slow and steady', 'Slow and steady'], ['I want to pay them off ASAP', 'I want to pay them off ASAP'], ['I want some advice', 'I want some advice']], {include_blank: 'my approach...' }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
+							<span class="downarrow" style="font-size:24px; margin-top:-5px;"><%= "\u2304" %></span>
+						</div>
+					</div>
+
+				 </div>
+			<% end %>
+			<br />
+
+			<% if @savvy_score_user.debt_types["personal_loans"] == "1" %>
+				<div class="big-headline">Personal Loan </div>
+				<div class="headline">
+						How big is your personal loan? <br />
+						<div class="dropdown-style inner-addon right-addon">
+							<div id="student-debt">
+								<%= f.select :personal_loan_amount, [['I owe less than $5,000', 0], ['I owe $5,000 to $10,000', 1], ['I owe $10,000 to $15,000', 2], ['I owe over $15000', 3]], {include_blank: 'this much' }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
+								<span class="downarrow" style="font-size:24px; margin-top:-5px;"><%= "\u2304" %></span>
+							</div>
+						</div>
+
+				 </div>
+			<% end %>
+			<br />
+			<%= f.submit "On to savings...", class:"next-button" %>
+			<br /><br />
+		<% end %>
+
+	<% elsif @savvy_score_user.debt_types["mortgage_loans"] == "1" || @savvy_score_user.debt_types["car_loans"] == "1" %>	
+		<div class="headline">
+		That's great to hear that you aren't carrying any high-interest debt nor student loans. A lot of people are dealing with one or both of these in addition to their mortgage and car loans. 
+		</div>
+		<br />
+		<%= link_to "On to savings...", next_wizard_path, class:"next-button" %>
+		<br />
+
+	<% elsif %>
+		<div class="headline">
+		That's fantastic that you're debt-free! Not having any debt or loans give you a lot more flexibility with your money.
+		</div>
+		<br />
+		<%= link_to "On to savings...", next_wizard_path, class:"next-button" %>
+		<br />
+
+	<% end %>
+
+</div>

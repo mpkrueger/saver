@@ -1,0 +1,30 @@
+
+
+<div class="edu-block">
+  <div class="big-headline">
+  	Debt & Loans
+  </div>
+  <div class="headline">
+   Do you have any of the following?
+  </div>
+  <div class="subtext">
+  (Choose as many as you like)
+  </div>
+  <br />
+  <%= form_for @savvy_score_user, url: wizard_path, method: :put do |f| %>
+    <div class="option-row">
+    <%= f.fields_for :debt_types do |i| %>
+      	
+        <label><%= i.check_box :student_debt %> Student Loans</label><br />
+        <label><%= i.check_box :car_loans %> Car Loans</label><br />
+        <label><%= i.check_box :mortgage_loans %> Mortgage Loans</label><br />
+        <label><%= i.check_box :personal_loans %> Personal Loans</label><br />
+        <label><%= i.check_box :credit_card_debt %> Credit Card Debt</label><br />
+        <label><%= i.check_box :none %> None of these</label>
+	   <% end %>
+     <br /><br />
+	  <%= f.submit "Next", class: 'next-button' %>
+    </div>
+  <% end %>
+
+</div>
