@@ -7,16 +7,17 @@
   max-width:100%;
   overflow: hidden;
   white-space: nowrap;
+  color:#00A99D;
 }
 
 select.my-dropdown{
   padding-right:25px;
   padding-left:5px;
+  color:#00A99D;
   width: auto;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  color: #F6D185;
 }
 
 select#prompt{
@@ -27,13 +28,14 @@ select{
   border: 0 !important;  /*Removes border*/
   background: transparent;
   height: 32px;
-  color: #F6D185;
+  color:#00A99D;
   -webkit-appearance: none;  /*Removes default chrome and safari style*/
   -moz-appearance: none; /* Removes Default Firefox style*/
 }
 
 select:focus {
   outline: none;
+  color:#00A99D;
 }
 
 option[default]{

@@ -1,19 +1,23 @@
 class SavvyScoreController < ApplicationController
   include Wicked::Wizard
 
-  steps :debt, :savings_total, :savings_habits, :spending_habits, :investments, :final_summary
+  steps :debt, :debt_followup, :savings_total, :spending_habits, :investments, :investments_followup, :final_summary
+
+
 
   def show
-    @guest_user = guest_user
+    
+    @savvy_score_user = SavvyScoreUser.find_by_id(session[:savvy_score_user_id])
     
     render_wizard
   end
 
   def update
-    @guest_user = guest_user
-    @guest_user.update_attributes(guest_user_params)
-    render_wizard @guest_user
+    @savvy_score_user = SavvyScoreUser.find_by_id(session[:savvy_score_user_id])
+    @savvy_score_user.update_attributes(savvy_score_user_params)
+    render_wizard @savvy_score_user
   end
+
 
   def credit_cards
   end
@@ -36,12 +40,12 @@ class SavvyScoreController < ApplicationController
   def final_summary
   end
 
-  def guest_user_params
-    params.require(:guest_user).permit(:explain_stocks_vs_funds, :explain_diversification, :worry_about_risks, 
-      :concerns_about_risks, :curious_about_access_to_money, :remaining_concerns_about_access, :investment_goal, :post_investment_goal, 
-      :knows_amount_to_invest, :amount_wants_to_invest, :amount_to_invest, :amount_to_get_started, :has_retirement_account, 
-      :has_invested_before, :previous_investment_service, :questions, :follow_up_prefs, 
-      has_these_types_of_debt: [:student_debt, :car_loans, :mortgage_loans, :personal_loans, :credit_card_debt, :none])
+  def savvy_score_user_params
+    params.require(:savvy_score_user).permit(:name, :age, :savvy_feel, 
+        :cc_amount, :cc_approach, :student_loan_amount, :student_loan_approach, 
+        :personal_loan_amount, :savings_amount, :spending_habit, :debt_question, 
+        :savings_question, :investment_question, :spending_question, 
+        debt_types: [:student_debt, :car_loans, :mortgage_loans, :personal_loans, :credit_card_debt, :none],
+        investment_types: [:retirement_funds, :stock_funds, :indiv_stocks, :real_estate, :none])
   end
-
 end

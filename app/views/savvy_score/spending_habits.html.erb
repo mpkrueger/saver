@@ -1,3 +1,23 @@
-<h1>SavvyScore#savings_habits</h1>
-<p>Find me in app/views/savvy_score/savings_habits.html.erb</p>
+<div class="edu-block">
+   	<div class="big-headline">Spending Habits</div>
 
+   	 <div class="headline">
+   	 <%= savings_feedback %> 
+   	 </div> <br />
+   	 <div class="headline">
+   	 How much money do you roughly spend from your paycheck each month? <Br />
+   	 <%= form_for @savvy_score_user, url: wizard_path, method: :put do |f| %>
+   	 I spend 
+		<div class="dropdown-style inner-addon right-addon">
+	   	 <%= f.select(:spending_habit, [['all', 'all'], ['some', 'some'], ['only a little', 'only a little'], ['beats me', 'beats me']], { include_blank: "this much..." }, {:id => "dropdown", :required => true, :class => 'select'}) %>
+	   	 <span class="downarrow" style="font-size:24px; margin-top:-5px;"><%= "\u2304" %></span>
+   	 	</div>
+   	 	of my paycheck.
+
+   	 	<br /><br/>
+
+   	 	<%= f.submit "Next", class:"next-button" %>
+
+   	 <% end %>
+   	 </div>
+</div>

@@ -1,0 +1,43 @@
+<script>
+$(document).ready(function() {
+  $('a[href*="#score"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+
+        
+        return false;
+      }
+    }
+  });
+});
+</script>
+
+
+<div class="edu-block">
+   
+   	<div class="headline">
+   		<%= investment_feedback %> 
+   	</div>
+   	<br />
+   	<div class="headline">
+   		I'm ready to calculate your <span style="font-weight:500">Savvy Score</span> which is a simplified way of measuring your financial health and habits.
+   	</div>
+   	<br /><a href="#score" class="short-option-button">Next</a>
+</div>
+
+
+
+<div class="edu-block" id="score">
+	<div class="headline">
+		It's pretty difficult to score 100%, so don't worry if your score seems low. The key is to set up good habits and improve your financial health and I'm here to help you improve any areas.
+	</div>
+	<br />
+	<%= link_to "On to my savvy score...", next_wizard_path, class:"next-button" %>
+		
+
+</div>

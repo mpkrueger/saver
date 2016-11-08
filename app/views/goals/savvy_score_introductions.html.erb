@@ -46,24 +46,23 @@ $(document).ready(function() {
 
 <a name="us"></a>
 <div class="edu-block">
-    <div class="headline">There are a few main areas that make up your financial health and habits.</div>
+    <div class="headline">I'm here to help you get a gauge of how you're doing financially. There are a few main areas that contribute to your financial health:
        <ul>
             <li> Debt </li>
             <li> Savings </li>
             <li> Investments</li>
       </ul>
     </div>
-    <br />
     <div class="headline">
-      I'll ask you a quick question or two for each and then I'll give you a Savvy Score to measure your overall financial health.  Let's dive in! 
-      <br />
-    </div>
+      I'll ask you a quick question or two on each area and then I'll give you a Savvy Score to represent your financial health.  I'll also give you feedback and tips along the way. Let's dive in! 
+      
+    </div><br />
   <a href="#you", class="next-button">Next</a>
   </div>
 </div>
 
 
-<%= form_for @guest_user do |f| %>
+<%= form_for @savvy_score_user do |f| %>
 <a name="you"></a>
 <div class="edu-block">        
       <div class="headline">What's your name? </div>
