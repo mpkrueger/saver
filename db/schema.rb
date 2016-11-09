@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161108202052) do
+ActiveRecord::Schema.define(version: 20161108222948) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -151,10 +151,11 @@ ActiveRecord::Schema.define(version: 20161108202052) do
     t.string   "savings_question"
     t.string   "investment_question"
     t.string   "spending_question"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.string   "student_loan_approach"
     t.hstore   "investment_types"
+    t.string   "personal_loans_interest"
   end
 
   create_table "users", force: :cascade do |t|
