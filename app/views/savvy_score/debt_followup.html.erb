@@ -5,9 +5,6 @@
 	<% if @savvy_score_user.debt_types["credit_card_debt"] == "1" || @savvy_score_user.debt_types["student_debt"] == "1" ||
 		 @savvy_score_user.debt_types["personal_loans"] == "1" %>
 
-		 <div class="big-headline">
-		We'd love to get a rough sense of how much you owe.
-		 </div><br />
 
 		<%= form_for @savvy_score_user, url: wizard_path, method: :put do |f| %>
 
@@ -43,7 +40,7 @@
 					How much do you have left to pay off? <br />
 					<div class="dropdown-style inner-addon right-addon">
 						<div id="student-debt">
-							<%= f.select :student_loan_amount, [['I owe less than $5,000', 0], ['I owe $5,000 to $10,000', 1], ['I owe $10,000 to $15,000', 2], ['I owe over $15000', 3]], {include_blank: 'this much' }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
+							<%= f.select :student_loan_amount, [['I owe less than $10,000', 0], ['I owe $10,000 to $20,000', 1], ['I owe $20,000 to $30,000', 2], ['I owe over $30,000', 3]], {include_blank: 'this much' }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
 							<span class="downarrow" style="font-size:24px; margin-top:-5px;"><%= "\u2304" %></span>
 						</div>
 					</div><br /><br />
@@ -65,10 +62,17 @@
 						How big is your personal loan? <br />
 						<div class="dropdown-style inner-addon right-addon">
 							<div id="student-debt">
-								<%= f.select :personal_loan_amount, [['I owe less than $5,000', 0], ['I owe $5,000 to $10,000', 1], ['I owe $10,000 to $15,000', 2], ['I owe over $15000', 3]], {include_blank: 'this much' }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
+								<%= f.select :personal_loan_amount, [['I owe less than $5,000', 0], ['I owe $5,000 to $10,000', 1], ['I owe $10,000 to $15,000', 2], ['I owe over $15000', 3]], {include_blank: 'this much...' }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
 								<span class="downarrow" style="font-size:24px; margin-top:-5px;"><%= "\u2304" %></span>
 							</div>
+						</div><br/><br/>
+						And what's the interest rate on that loan? <br />
+						<div class="dropdown-style inner-addon right-addon">
+						<div id="personal_loans_interest">
+							<%= f.select :personal_loans_interest, [['Under 10%', 1], ['Over 10%', 2], ['I don''t know', 3]], {include_blank: 'interest rate...' }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
+							<span class="downarrow" style="font-size:24px; margin-top:-5px;"><%= "\u2304" %></span>
 						</div>
+					</div>
 
 				 </div>
 			<% end %>

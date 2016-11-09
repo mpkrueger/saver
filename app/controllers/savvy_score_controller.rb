@@ -38,6 +38,8 @@ class SavvyScoreController < ApplicationController
   end
 
   def final_summary
+    @savvy_score_user = SavvyScoreUser.find_by_id(session[:savvy_score_user_id])
+    @savvy_score = @savvy_score_user.savvy_score
   end
 
   def savvy_score_user_params

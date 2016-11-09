@@ -1,2 +1,17 @@
-<h1>SavvyScore#final_summary</h1>
-<p>Find me in app/views/savvy_score/final_summary.html.erb</p>
+<div class="edu-block">
+	<div class="big-headline">
+		 <%= @savvy_score_user.savvy_score %> out of 100
+	</div>
+	<div class="headline">
+		<%= savvy_score_thoughts %> Here's the full breakdown:
+		<br /><br />
+		Debt: <%= @savvy_score_user.student_debt_score + @savvy_score_user.cc_debt_score + @savvy_score_user.personal_loan_score %> 
+		out of 30
+		<br />
+		Savings: <%= @savvy_score_user.savings_score %> out of 20
+		<br />
+		Spending Habits: <%= @savvy_score_user.spending_habit_score %> out of 30
+		<br />
+		Investments: <%= @savvy_score_user.investments_score %> out of 20
+
+</div>
