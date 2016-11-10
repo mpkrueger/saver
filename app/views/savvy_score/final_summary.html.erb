@@ -1,3 +1,30 @@
+<script>
+$(document).ready(function() {
+  $('#debt_seemore').click(function() {
+	    $('#debtinfo').removeClass("hiddendiv");
+	     $('#debtinfo').toggle();
+  });
+
+  $('#savings_seemore').click(function() {
+  	$('#savingsinfo').removeClass("hiddendiv");
+  	$('#savingsinfo').toggle();
+  });
+
+  $('#spending_seemore').click(function() {
+  	$('#spendinginfo').removeClass("hiddendiv");
+  	$('#spendinginfo').toggle();
+  });
+
+  $('#investments_seemore').click(function() {
+  	$('#investmentsinfo').removeClass("hiddendiv");
+  	$('#investmentsinfo').toggle();
+  });
+
+});
+
+</script>
+
+
 <div class="edu-block">
 	<div class="big-headline">
 		 <%= @savvy_score_user.savvy_score %> out of 100
@@ -5,13 +32,33 @@
 	<div class="headline">
 		<%= savvy_score_thoughts %> Here's the full breakdown:
 		<br /><br />
-		Debt: <%= @savvy_score_user.student_debt_score + @savvy_score_user.cc_debt_score + @savvy_score_user.personal_loan_score %> 
-		out of 30
+		Debt: <input type="button" id="debt_seemore" value="<%= @savvy_score_user.student_debt_score + @savvy_score_user.cc_debt_score + @savvy_score_user.personal_loan_score %> out of 30" class="edu-link">
+		
+		<div id="debtinfo" class="hiddendiv">
+		<br /><blockquote><%= debt_score_explanation %></blockquote>
+		</div>
+
+
 		<br />
-		Savings: <%= @savvy_score_user.savings_score %> out of 20
+		Savings: <input type="button" id="savings_seemore" value="<%= @savvy_score_user.savings_score %> out of 20" class="edu-link">
+		
+		<div id="savingsinfo" class="hiddendiv">
+		<br /><blockquote><%= savings_score_explanation %></blockquote>
+		</div>
+
+
 		<br />
-		Spending Habits: <%= @savvy_score_user.spending_habit_score %> out of 30
+		Spending Habits: <input type="button" id="spending_seemore" value="<%= @savvy_score_user.spending_habit_score %> out of 30" class="edu-link"> 
+		<div id="spendinginfo" class="hiddendiv">
+		<br /><blockquote><%= spending_habits_score_explanation %></blockquote>
+		</div>
+
 		<br />
-		Investments: <%= @savvy_score_user.investments_score %> out of 20
+		Investments: <input type="button" id="investments_seemore" value="<%= @savvy_score_user.investments_score %> out of 20" class="edu-link"> 
+		<div id="investmentsinfo" class="hiddendiv">
+		<br /><blockquote><%= investments_score_explanation %></blockquote>
+		</div>
+
+		<br />
 
 </div>

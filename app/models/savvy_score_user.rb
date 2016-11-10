@@ -37,13 +37,13 @@ class SavvyScoreUser < ApplicationRecord
 		student_debt = 10
 
 		case self.debt_types["student_debt"]
-			when 0
+			when "0"
 				student_debt -= 1
-			when 1
+			when "1"
 				student_debt -= 2
-			when 2
+			when "2"
 				student_debt -= 4
-			when 3
+			when "3"
 				student_debt -= 6
 		end
 
@@ -54,11 +54,11 @@ class SavvyScoreUser < ApplicationRecord
 		cc_debt = 10
 
 		case self.debt_types["credit_card_debt"]
-			when 1
+			when "1"
 				cc_debt -= 6
-			when 2
+			when "2"
 				cc_debt -= 8
-			when 3
+			when "3"
 				cc_debt -= 10
 		end
 
@@ -68,27 +68,27 @@ class SavvyScoreUser < ApplicationRecord
 	def personal_loan_score
 		personal_loans = 10
 		# high interest
-		if(self.debt_types["personal_loans"]  == 2) 
+		if(self.personal_loans_interest  == "2") 
 			case self.personal_loan_amount
-				when 0
+				when "0"
 					personal_loans -= 6
-				when 1
+				when "1"
 					personal_loans -= 8
-				when 2
+				when "2"
 					personal_loans -= 10
 			end
 		#low interest
-		elsif(self.debt_types["personal_loans"]  == 1)
+		elsif(self.personal_loans_interest  == "1")
 			case self.personal_loan_amount
-				when 0
+				when "0"
 					personal_loans -= 2
-				when 1
+				when "1"
 					personal_loans -= 4
-				when 2
+				when "2"
 					personal_loans -= 6
 			end
 		#I don't know
-		elsif(self.debt_types["personal_loans"]  == 3)
+		elsif(self.personal_loans_interest  == "3")
 			personal_loans = 0
 		end
 
