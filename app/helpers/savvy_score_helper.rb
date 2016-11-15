@@ -15,14 +15,14 @@ module SavvyScoreHelper
 	def spending_feedback
 		@savvy_score_user = SavvyScoreUser.find_by_id(session[:savvy_score_user_id])
 		case @savvy_score_user.spending_habit
-		when 'all'
+		when 'more than I earn'
 			"Cool, I understand there may not be any wiggle room in how much you spend and save each month. 
-			We can talk later about other potential ways to tuck a little away each month."
-		when 'some'
+			We can talk later about potential options to allow you to save a little."
+		when 'about what I earn'
 			"Cool, I understand there may not be much wiggle room in how much you spend and save each month.
-			We can talk later about other potential ways to tuck extra away each month."
-		when 'a little'
-			"That's great, saving more than you spend is an awesome way to build up your wealth so you can have 
+			We can talk later about potential ways to tuck extra away each month."
+		when 'less than I earn'
+			"That's great, saving part of your paycheck is an awesome way to build up your wealth so you can achieve 
 			financial freedom."
 		end
 	end
@@ -67,28 +67,6 @@ module SavvyScoreHelper
 		total_deduction = cc_deduction + student_deduction + personal_loan_deduction
 
 		if(total_deduction > 0) #debt
-			# message += "Your debt score was lowered by " + total_deduction.to_s + " points because of your " 
-			# if(cc_deduction > 0)
-			# 	message += "credit card debt"
-			# 	if (student_deduction > 0)
-			# 		if(personal_loan_deduction > 0)
-			# 			message += ", your student loans, and your personal loans.\n"
-			# 		else
-			# 			message += " and your student loans.\n"
-			# 		end
-			# 	else
-			# 		message += ".\n"
-			# 	end
-			# elsif(student_deduction > 0)
-			# 	if(personal_loan_deduction > 0)
-			# 		message += "student loans and your personal loans.\n"
-			# 	else
-			# 		message += "student loans.\n"
-			# 	end
-
-			# elsif(personal_loan_deduction > 0)
-			# 	message += "personal loans.\n"
-			# end
 
 		else #no debt (personal loans, cc debt, or student loans)
 			message += "Sweet! You don't have any high-interest debt!"
@@ -96,10 +74,10 @@ module SavvyScoreHelper
 
 		if (cc_deduction > 0)
 			message += "Credit Card Debt: -" + cc_deduction.to_s + " points\n"
-			message += "We think credit cards are awesome, but their high interest rates can make your balance build up like a Katamari. "
+			message += "We think credit cards are great for convenience, but their high interest rates can make your balance build up like a snowball. "
 		end
 		if (student_deduction > 0)
-			message += "Student Loans: -" + student_deduction.to_s + " points\n\n"
+			message += "Student Loans: -" + student_deduction.to_s + " points\n"
 			if(student_deduction > 2)
 				message += "Student loans tend to have low interest rates, but having more than $20k in debt can hold you back."
 			elsif(student_deduction <= 2)
@@ -114,7 +92,7 @@ module SavvyScoreHelper
 				message += "It's great that your personal loans have a low interest rate."
 			end
 		end
-		message
+		message.gsub(/\n/, '<br/>').html_safe 
 
 	end
 
@@ -122,30 +100,39 @@ module SavvyScoreHelper
 		message = ""
 		case (@savvy_score_user.savings_amount)
 			when "0" #none
-				message += "Piggy bank raids are the worst! We gotta get you some emergency savings to make sure you have an umbrella or an awning to duck under for those sudden downpours. "
+				message += "Piggy Bank Raid: 0 out of 20 points\n" + 
+				"Piggy bank raids are the worst! We gotta get you some emergency savings to make sure you have an umbrella or an awning to duck under for those sudden downpours. "
 			when "1" #hundreds
-				message += "Let's work on getting those Benjamins to multiply until you have 3-6 months of expenses ready for an emergency."
+				message += "You've saved hundreds: +5 points\n" +
+				"Let's work on getting those Benjamins to multiply until you have 3-6 months of expenses ready for an emergency."
 			when "2" #thousands
-				message += "Let's work on saving up until you've got 3-6 months of expenses ready for an emergency."
+				message += "You've saved thousands: +15 points\n" + 
+				"Great start, let's work on saving up until you've got 3-6 months of expenses ready for an emergency."
 			when "3" #tens of thousands
-				message += "Great work saving up!"
+				message += "You've saved tens of thousands: +20 points\n" + 
+				"Great work building up those savings! Your piggybank must be ready to explode."
 			when "4" #I don't know
-				message += "Ok, first step – log into your bank account and check how much you've got. It'll take less than 5 minutes, we''re happy to wait. :)"
+				message += "Lost piggy bank: 0 points\nFirst step – log into your bank account and check how much you've got. It'll take less than 5 minutes, we''re happy to wait. :)"
 		end
+		message.gsub(/\n/, '<br/>').html_safe 
 	end
 
 	def spending_habits_score_explanation
 		message = ""
 		case @savvy_score_user.spending_habit
-			when "all"
-				message += "It can be extremely hard to squirrel away a portion of each paycheck. But there may be small steps to take. Try this short exercise –  log into Mint.com or your bank account and look at your last month's transactions. Add up all of the expenses that you have to pay every month – like your rent, bills, etc. Subtract that from the amount you earn each month. With the amount remaining – think about if there's any area you could cut back, even $10 – is it food? entertainment? shopping?"
-			when "some"
-				message += "Good to hear you're squirreling a small portion away each month. Some recommend that you try to save 20% of each paycheck. That may not be possible, but it's worth doing a quick exercise to think about any areas you can cut back even a little. "
-			when "only a little"
-				message += "Awesome that you have such a good habit of saving!"
+			when "more than I earn"
+				message += "Spending more than you earn: -30 points\n" + 
+				"It can be extremely hard to squirrel away a portion of each paycheck. But there may be small steps to take. Try this short exercise –  log into Mint.com or your bank account and look at your last month's transactions. Add up all of the expenses that you have to pay every month – like your rent, bills, etc. Subtract that from the amount you earn each month. With the amount remaining – think about if there's any area you could cut back, even $10 – is it food? entertainment? shopping?"
+			when "about what I earn"
+				message += "Spending about what you earn: -15 points\n" + 
+				"Good that you're not eating into your savings, but it's a healthy practice to save a little from each paycheck. Many Americans only save 3-4%, but some experts recommend that you try to save 20% of each paycheck. That may not be possible, but it's worth doing a quick exercise to think about any areas you can cut back, even a little."
+			when "less than I earn"
+				message += "Spending less than you earn: +30 points\n" + "Awesome that you have such a good habit of saving! As a benchmark – many Americans only save 3-4%, but experts recommend that you try to save as much as 20% of each paycheck. We think the most important thing is to be aware of your spending and to be conscious of saving when you can."
 			when "beats me"
-				message += "Do a short exercise – log into Mint.com or your bank account and look at your past transactions over the last 6 months. Figure out how much you've spent total relative to how much you've earned. That'll give you a sense for how well you're saving."
+				message += "No clue: 0 points\n" + 
+				"We think it's important to have some rough awareness of how much you're spending and earning. Here's a short exercise – log into Mint.com or your bank account and look at your transactions over the last 6 months. Figure out how much you've spent total relative to how much you've earned. That'll give you a sense for how well you're saving. See if you're beating the national average of saving 4%."
 		end
+		message.gsub(/\n/, '<br/>').html_safe 
 	end
 
 	def investments_score_explanation
@@ -172,28 +159,29 @@ module SavvyScoreHelper
 			message += "No Retirement Savings: -" + retirement_deduction.to_s + " points\n" + 
 				"It's hard to relate to Future You, but investing in a retirement account early on is extremely important. "
 				if(@savvy_score_user.investment_types["stock_funds"] == "1")
-					message += "It's great that you've been investing in stock funds outside of retirement funds. This gives you some more flexibility to use the money when you'd like. You might consider additionally opening and contributing to a retirement account to take advantage of the tax benefits.\n"
+					message += "It's great that you've been investing in stock funds outside of retirement funds. This gives you some more flexibility to use the money when you'd like. You might consider additionally opening and contributing to a retirement account to take advantage of the tax benefits.\\n"
 				else
 					message += "We recommend opening and contributing to a retirement account to take advantage of the tax benefits.\n"
 				end
 		end
-		
+
 		if (stock_fund_deduction > 0)
 			message += "Not investing in a stock fund: -" + stock_fund_deduction.to_s + " points\n" + 
 				"Beyond retirement savings, we additionally recommend investing in a stock fund so that you can put your savings to work.\n"
 		end
 		
 		if (indiv_stock_addition > 0)
-			message += "We gave you " + indiv_stock_addition.to_s + " points back for investing in individual company stocks. This doesn't make up the bulk of your Investments Score because most financial experts agree that funds (e.g. mutual funds, index funds) should make up most of your investment portfolio because they provide more diversification and lower your risk.\n"
+			message += "+" + indiv_stock_addition.to_s + " points back for investing in individual company stocks. This doesn't make up the bulk of your Investments Score because most financial experts agree that funds (e.g. mutual funds, index funds) should make up most of your investment portfolio because they provide more diversification and lower your risk.\n"
 		end
 
 		if (real_estate_addition > 0)
-			message += "We gave you " + real_estate_addition.to_s + " points back for investing in real estate. This doesn't make up the bulk of your Investments Score because most financial experts agree that funds (e.g. mutual funds, index funds) should make up most of your investment portfolio because they provide more diversification and lower your risk.\n"
+			message += "+" + real_estate_addition.to_s + " points back for investing in real estate. This doesn't make up the bulk of your Investments Score because most financial experts agree that funds (e.g. mutual funds, index funds) should make up most of your investment portfolio because they provide more diversification and lower your risk.\n"
 		end
 
 		if(@savvy_score_user.investments_score == 20)
-			message += "You're in great shape here!"
+			message += "Investing in retirement funds and stock funds: +20 points\n" + "You're in great shape in terms of your investments! Investing is an awesome way to put your hard-earned money to work."
 		end
+		message.gsub(/\n/, '<br/>').html_safe 
 	end
 
 end
