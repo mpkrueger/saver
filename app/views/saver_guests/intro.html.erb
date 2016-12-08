@@ -3,7 +3,7 @@
 
 <script>
 $(document).ready(function() {
-  $('a[href*="#us"]:not([href="#"])').click(function() {
+  $('a[href*="#questions"]:not([href="#"])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
@@ -17,47 +17,25 @@ $(document).ready(function() {
       }
     }
   });
-  $('a[href*="#you"]:not([href="#"])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html, body').animate({
-          scrollTop: target.offset().top
-        }, 1000);
-
-        // $('#stocks').hide(0).fadeIn(100).removeClass('hidden');
-        
-        return false;
-      }
-    }
-  });
+  
 });
 
 </script>
 
 <div class="edu-block">
-  <div class="intro_image_block"><%= image_tag("savvy_thumbnail.png", style:"width:150px;height:auto;") %> </div>
+  <div class="intro_image_block"><%= image_tag("piggybank2.png", style:"width:150px;height:auto;") %> </div>
     <div class="big-headline">Hi there! </div>
 
-    <div class="headline option-row">Ready to trim your bills?</div>
-   <br /><a href="#us", class="next-button">Let's do it!</a>
+    <div class="headline option-row">We're excited to save you some money.</div>
+   <a href="#questions", class="next-button">Next</a>
 </div>
 
-<a name="us"></a>
-<div class="edu-block">
-    <div class="headline">Ok, here's how this works. We'll ask you a couple questions, we'll look at your latest cable/internet bill and then we'll negotiate you a lower rate without making any changes to your service. Easy money, right?
-    </div>
-    <br />
-  <a href="#you", class="next-button">Yeah!</a>
-  </div>
-</div>
 
 
 <%= form_for @saver_guest do |f| %>
-<a name="you"></a>
+<a name="questions"></a>
 <div class="edu-block">        
-	<div class="headline">First off, a couple quick questions so we can give you an estimate of how much we can save you. </div>
+	<div class="headline text-60-width">First off, a couple quick questions so we can give you an estimate of how much we can save you. </div>
 	<br />
 	<div style="margin-left:10px;">
 	    <div class="headline">1. When did you last move? </div>
