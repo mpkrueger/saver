@@ -1,20 +1,56 @@
+<script>
+$(document).ready(function() {
+  $('a[href*="#email"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+
+        
+        return false;
+      }
+    }
+  });
+  
+});
+
+</script>
+
+
+
 <div class="edu-block">
-	Based on our experience with similar customers, we think you can save <br />
-	<span style="font-weight:500; font-size:28px;"><%= projected_savings %></span><br />
-	<br />
-	<% if projected_savings == "–" %>
-		We'll be able to give you a more accurate estimate once we take a look at your latest bill.
+<% if @saver_guest.last_moved == 'more than a year ago' && @saver_guest.negotiated == "no" %>
+	<div class="big-headline">Expected savings: </div>
+	<span style="font-weight:500; font-size:32px;"><%= projected_savings %></span>
+	<div class="subtext"> (based on our experience with similar customers)</div>
+
+<% else %>
+	<div class="headline">
+	<% if @saver_guest.last_moved == 'less than a year ago' %>
+		It'll be helpful for us to look at your latest bill since you moved in the last year (and likely started a new contract then). 
+	<% elsif @saver_guest.negotiated =="yes" %>
+		It'll be helpful for us to look at your latest bill since you negotiated a better rate in the last year. 
 	<% end %>
+	</div>
 
-	<br /> <br />
-	Let's get you some money back. We'll send you an email to kick this off and you can send us your latest bill. Then we'll get to work researching and negotiating a lower rate for you.
-	<br />
+<% end %>
+	<br /><br />
 
+	We'll send you an email to kick this off and you can send us your latest bill. Then we'll get to work researching and negotiating a lower rate for you.
+	<br /><br />
 	<%= form_for @saver_guest do |f| %>
-       <div class="dropdown-style">
-       	<%= f.email_field :email, class: "madlib-sentence border-underline", placeholder: "email address" %>
-       </div>
-       <br /><br />
+		
+			<div class="dropdown-style">
+       			<%= f.text_field :name, class: "madlib-sentence border-underline", placeholder: "your first name" %>
+       		</div>
+       		<br />
+       		<div class="dropdown-style" style="margin-top:10px;">
+       			<%= f.email_field :email, class: "madlib-sentence border-underline", placeholder: "your email address" %>
+       		</div>
+       <br /><br /><br />
        <%= f.submit "I'm ready to save", class: 'next-button' %>
     <% end %>
 </div>
