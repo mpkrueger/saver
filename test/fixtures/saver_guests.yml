@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  last_moved: MyString
+  negotiated: MyString
+  services: 
+  email: MyString
+  name: MyString
+
+two:
+  last_moved: MyString
+  negotiated: MyString
+  services: 
+  email: MyString
+  name: MyString

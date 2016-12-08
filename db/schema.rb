@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161108222948) do
+ActiveRecord::Schema.define(version: 20161208000451) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -134,6 +134,16 @@ ActiveRecord::Schema.define(version: 20161108222948) do
     t.string   "vanguard_target_date"
     t.string   "got_stuck"
     t.index ["user_id"], name: "index_investing_profiles_on_user_id", using: :btree
+  end
+
+  create_table "saver_guests", force: :cascade do |t|
+    t.string   "last_moved"
+    t.string   "negotiated"
+    t.hstore   "services"
+    t.string   "email"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "savvy_score_users", force: :cascade do |t|

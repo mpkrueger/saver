@@ -1,0 +1,2 @@
+class SaverGuest < ApplicationRecord
+end

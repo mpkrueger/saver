@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  resources :saver_guests do
+    collection do
+      get 'intro'
+      get 'intro2'
+      get 'thanks'
+    end
+  end
+
   resources :savvy_score
 
   get 'services/welcome'
