@@ -24,6 +24,7 @@ class SaverGuestsController < ApplicationController
   def update
   		@saver_guest = SaverGuest.find_by_id(session[:saver_guest_id])
   		if @saver_guest.update_attributes(saver_guest_params)
+  			SaverGuestMailer.guest_signup(@saver_guest).deliver
   			redirect_to thanks_saver_guests_path
   		else
   			flash[:error] = "uh oh"
