@@ -22,8 +22,15 @@ $(document).ready(function() {
 
 </script>
 
+<div class="header saver-header">
+	<div class="header-col-left"><%= image_tag("piggybank2.png", style:"width:100px;height:auto;") %> </div>
+	<div class="header-logo">	<%= image_tag("savvysaverlogo.png", style:"width:250px; height:auto;") %></div>
+		<br /> <hr />
+	</div>
+</div>
+
 <div class="edu-block">
-  <div class="intro_image_block"><%= image_tag("piggybank2.png", style:"width:150px;height:auto;") %> </div>
+  
     <div class="big-headline">Hi there! </div>
 
     <div class="headline option-row">We're excited to save you some money.</div>
@@ -35,7 +42,7 @@ $(document).ready(function() {
 <%= form_for @saver_guest do |f| %>
 <a name="questions"></a>
 <div class="edu-block">        
-	<div class="headline text-60-width">First off, a couple quick questions so we can give you an estimate of how much we can save you. </div>
+	<div class="headline textbox-width">First off, a couple quick questions so we can give you an estimate of how much we can save you. </div>
 	<br />
 	<div style="margin-left:10px;">
 	    <div class="headline">1. When did you last move? </div>
