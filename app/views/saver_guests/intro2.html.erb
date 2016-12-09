@@ -20,20 +20,20 @@ $(document).ready(function() {
 </script>
 
 <div class="header saver-header">
-	<div class="intro_image_block"><%= image_tag("piggybank2.png", style:"width:100px;height:auto;") %> 
-	<%= image_tag("savvysaverlogo.png", style:"width:250px; height:auto;") %>
-		<br /> <hr />
+	<div class="saver-header-icon-block"><%= image_tag("piggybank2.png", class:"saver-header-icon") %> </div>
+	<div class="saver-header-logo-block">	<%= image_tag("savvysaverlogo.png", class:"saver-header-logo") %></div>
+		<br /> <hr class="saver-hr"/>
 	</div>
 </div>
 
-<div class="edu-block">
+<div class="saver-question-block">
 <% if @saver_guest.last_moved == 'more than a year ago' && @saver_guest.negotiated == "no" %>
 	<div class="big-headline">Expected savings: </div>
 	<span style="font-weight:500; font-size:32px;"><%= projected_savings %></span>
-	<div class="subtext"> (based on our experience with similar customers)</div>
+	
 
 <% else %>
-	<div class="headline textbox-width">
+	<div class="headline">
 	<% if @saver_guest.last_moved == 'less than a year ago' %>
 		It'll be helpful for us to look at your latest bill since you moved in the last year (and likely started a new contract then). 
 	<% elsif @saver_guest.negotiated =="yes" %>
@@ -43,7 +43,7 @@ $(document).ready(function() {
 
 <% end %>
 	<br /><br />
-	<div class="headline textbox-width">
+	<div class="headline">
 	We'll send you an email to kick this off and you can send us your latest bill. Then we'll get to work researching and negotiating a lower rate for you.
 	</div>
 	<br />
