@@ -17,6 +17,8 @@ $(document).ready(function() {
       }
     }
   });
+
+  
   
 });
 
@@ -44,31 +46,36 @@ $(document).ready(function() {
 	<br />
 	<div style="margin-left:10px;">
 	    <div class="headline">1. When did you last move? </div>
-	    <div class="dropdown-style inner-addon right-addon">
-	        <%= f.select :last_moved, [['less than a year ago', 'less than a year ago'], ['more than a year ago', 'more than a year ago']], { include_blank: "this long ago..." }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
-	         <span class="glyphicon" style="margin-top:-5px;">
-	     		<%= "\u25BE" %>
-	   		</span>
-	    </div>
-	    <br /><br />
-	    <div class="headline">2. Have you negotiated a lower rate in the last year? </div>
-	    <div class="dropdown-style inner-addon right-addon"> 
-	        <%= f.select :negotiated, [['yes', 'yes'], ['no', 'no']], { include_blank: "I negotiated..." }, {:id => "dropdown", :required => true, :class => 'my-dropdown select'} %>
-	        <span class="glyphicon" style="margin-top:-5px;">
-	     		<%= "\u25BE" %>
-	   		</span>
-	    </div>
-	    <br /><br />
-	    <div class="headline">3. Which services do you currently have? </div>
-	    <%= f.fields_for :services do |i| %>
-	        <label><%= i.check_box :cable %> Cable</label><br />
-	        <label><%= i.check_box :internet %> Internet</label><br />
-	        <label><%= i.check_box :phone %> Phone </label><br />
-	        <label><%= i.check_box :other %> Other </label>
-	    <% end %>
-    	<br /><br />
+	    <div class="field form-group">
+		    <div class="btn-group" data-toggle="buttons">
+		      <%= f.label :last_moved, class: "btn btn-primary" do %>
+		        <%= f.radio_button :last_moved, "Less than a year ago" %>
+		        Less than a year ago
+		      <% end %><br /><br />
+		      <%= f.label :last_moved, class: "btn btn-primary" do %>
+		        <%= f.radio_button :last_moved, "More than a year ago" %>
+		        More than a year ago
+		      <% end %>
+		    </div>
+	  	</div>
+	</div>
+    <br /><br />
+    <div class="headline">2. Have you negotiated a lower rate in the last year? </div>
+    <%= f.radio_button(:negotiated, "yes") %>
+    <%= label_tag(:negotiated_yes, "Yes") %><br />
+    <%= f.radio_button(:negotiated, "no") %>
+    <%= label_tag(:negotiated_no, "No") %>
+    <br /><br />
+    <div class="headline">3. Which services do you currently have? </div>
+    <%= f.fields_for :services do |i| %>
+        <label><%= i.check_box :cable %> Cable</label><br />
+        <label><%= i.check_box :internet %> Internet</label><br />
+        <label><%= i.check_box :phone %> Phone </label><br />
+        <label><%= i.check_box :other %> Other </label>
+    <% end %>
+	<br /><br />
     </div>
-    <%= f.submit "Next", class: 'next-button' %>
-</div>
+	    <%= f.submit "Next", class: 'next-button' %>
+	</div>
 
   <% end %>
