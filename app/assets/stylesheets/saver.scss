@@ -1,0 +1,136 @@
+/*
+ * CSS for Savvy Saver
+ *
+ *
+ */
+
+
+
+
+.saver-header{
+    position: fixed;
+    width: 100%;
+    background-color: white;
+    padding-top:2%;
+}
+
+.saver-header-icon-block{
+    float: left;
+    display: inline-block;
+    width: 20%;
+}
+
+
+.saver-textbox-width{
+  width:82%;
+}
+
+.saver-hr{
+	margin-top:2%;
+}
+
+
+@media screen and (max-width: 350px) {
+
+	.saver-question-block{
+	  width: 85%;
+	  margin: auto;
+	  text-align: left;
+	  height: 800px;
+	  vertical-align: middle;
+	  padding-top: 40%;
+	}
+
+	.saver-header-logo-block{
+		position: relative;
+		width: 55%;
+		margin: auto;
+		margin-top: 6%;
+	}
+
+	.saver-header-icon{
+		width: 100%;
+	    height: auto;
+	    margin: auto;
+	}
+
+	.saver-header-logo{
+		width: 90%;
+	    height: auto;
+	}
+
+}
+
+
+@media screen and (min-width: 350px) and (max-width: 480px) {
+
+	.saver-question-block{
+	  width: 85%;
+	  margin: auto;
+	  text-align: left;
+	  height: 800px;
+	  vertical-align: middle;
+	  padding-top: 40%;
+	}
+
+	.saver-header-logo-block{
+		position: relative;
+    	width: 60%;
+    	margin: auto;
+    	margin-top: 7%;
+	}
+
+	.saver-header-icon{
+		width: 100%;
+	    height: auto;
+	    margin: auto;
+	}
+
+	.saver-header-logo{
+		width: 90%;
+	    height: auto;
+	}
+
+}
+
+@media screen and (min-width: 480px) {
+
+	.saver-question-block{
+		width: 70%;
+		margin: auto;
+		text-align: left;
+		height: 800px;
+		vertical-align: middle;
+		padding-top: 20%;
+	}
+
+	.saver-header-icon-block{
+		float: left;
+	    display: inline-block;
+	    height: 70px;
+	    width: 10%;
+	    margin-left: 20px;
+	}
+
+	.saver-header-logo-block{
+		position: relative;
+	    width: 72%;
+	    margin: auto;
+	    margin-top: 2%;
+	    display: inline-block;
+	}
+
+	.saver-header-icon{
+		width: 90%;
+	    margin: auto;
+	}
+
+	.saver-header-logo{
+		width: 50%;
+    	height: auto;
+	}	
+
+
+}
+
+
