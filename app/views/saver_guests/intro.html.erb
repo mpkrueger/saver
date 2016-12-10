@@ -63,7 +63,7 @@ $(document).ready(function() {
 		    </div>
 	  	</div>
 	</div>
-    <br /><br />
+    <br />
     <div style="margin-left:10px;">
 	    <div class="headline">2. Have you negotiated a lower rate in the last year? </div>
 	    <div class="field form-group">
@@ -79,7 +79,7 @@ $(document).ready(function() {
 			</div>
 		</div>
 	</div>
-    <br /><br />
+    <br />
     <div style="margin-left:10px;">
     <div class="headline">3. Which services do you currently have? </div>
     <%= f.fields_for :services do |i| %>
@@ -89,10 +89,11 @@ $(document).ready(function() {
         <label><%= i.check_box :other %> Other </label>
     <% end %>
     </div>
-	<br /><br />
+	<br />
   
 
 	<%= f.submit "Next", class: 'next-button' %>
+	<br /><br /><br /><br />
 </div>
 
   <% end %>
