@@ -80,6 +80,7 @@ $(document).ready(function() {
 		</div>
 	</div>
     <br /><br />
+    <div style="margin-left:10px;">
     <div class="headline">3. Which services do you currently have? </div>
     <%= f.fields_for :services do |i| %>
         <label><%= i.check_box :cable %> Cable</label><br />
@@ -87,6 +88,7 @@ $(document).ready(function() {
         <label><%= i.check_box :phone %> Phone </label><br />
         <label><%= i.check_box :other %> Other </label>
     <% end %>
+    </div>
 	<br /><br />
   
 
