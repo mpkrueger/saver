@@ -47,12 +47,12 @@ $(document).ready(function() {
 	<div style="margin-left:10px;">
 	    <div class="headline">1. When did you last move? </div>
 	    <div class="field form-group">
-		    <div class="btn-group" data-toggle="buttons">
-		      <%= f.label :last_moved, class: "btn btn-primary" do %>
+		    <div class="btn-group" data-toggle="buttons" style="width:80%; margin-top:20px">
+		      <%= f.label :last_moved, class: "btn btn-primary option-button saver-2-buttons" do %>
 		        <%= f.radio_button :last_moved, "Less than a year ago" %>
 		        Less than a year ago
-		      <% end %><br /><br />
-		      <%= f.label :last_moved, class: "btn btn-primary" do %>
+		      <% end %>
+		      <%= f.label :last_moved, class: "btn btn-primary option-button saver-2-buttons" do %>
 		        <%= f.radio_button :last_moved, "More than a year ago" %>
 		        More than a year ago
 		      <% end %>
@@ -60,11 +60,21 @@ $(document).ready(function() {
 	  	</div>
 	</div>
     <br /><br />
-    <div class="headline">2. Have you negotiated a lower rate in the last year? </div>
-    <%= f.radio_button(:negotiated, "yes") %>
-    <%= label_tag(:negotiated_yes, "Yes") %><br />
-    <%= f.radio_button(:negotiated, "no") %>
-    <%= label_tag(:negotiated_no, "No") %>
+    <div style="margin-left:10px;">
+	    <div class="headline">2. Have you negotiated a lower rate in the last year? </div>
+	    <div class="field form-group">
+	    	<div class="btn-group" data-toggle="buttons" style="width:80%; margin-top:20px;">
+	     		<%= f.label :negotiated, class: "btn btn-primary option-button saver-2-button" do %>
+			        <%= f.radio_button :negotiated, "Yes" %>
+			        Yes
+			      <% end %>
+			    <%= f.label :negotiated, class: "btn btn-primary option-button saver-2-button" do %>
+			        <%= f.radio_button :negotiated, "No" %>
+			        No
+			    <% end %>
+			</div>
+		</div>
+	</div>
     <br /><br />
     <div class="headline">3. Which services do you currently have? </div>
     <%= f.fields_for :services do |i| %>
@@ -74,8 +84,9 @@ $(document).ready(function() {
         <label><%= i.check_box :other %> Other </label>
     <% end %>
 	<br /><br />
-    </div>
-	    <%= f.submit "Next", class: 'next-button' %>
-	</div>
+  
+
+	<%= f.submit "Next", class: 'next-button' %>
+</div>
 
   <% end %>

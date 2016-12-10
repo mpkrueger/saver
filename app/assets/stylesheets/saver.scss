@@ -31,6 +31,17 @@
 }
 
 
+.btn-primary:active, .btn-primary:focus, .btn:active, .btn:focus{
+    outline: 0;
+}
+
+.saver-2-buttons{
+	
+    text-align: center;
+    width: 50%;
+}
+
+
 @media screen and (max-width: 350px) {
 
 	.saver-question-block{
