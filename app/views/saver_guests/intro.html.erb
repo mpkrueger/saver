@@ -47,12 +47,12 @@ $(document).ready(function() {
 	<div style="margin-left:10px;">
 	    <div class="headline">1. When did you last move? </div>
 	    <div class="field form-group">
-		    <div class="btn-group" data-toggle="buttons" style="width:80%; margin-top:20px">
-		      <%= f.label :last_moved, class: "btn btn-primary option-button" do %>
+		    <div class="btn-group" data-toggle="buttons" style="width:100%; margin-top:20px">
+		      <%= f.label :last_moved, class: "btn btn-primary option-button saver-button" do %>
 		        <%= f.radio_button :last_moved, "Less than a year ago" %>
 		        Less than a year ago
 		      <% end %>
-		      <%= f.label :last_moved, class: "btn btn-primary option-button" do %>
+		      <%= f.label :last_moved, class: "btn btn-primary option-button saver-button" do %>
 		        <%= f.radio_button :last_moved, "More than a year ago" %>
 		        More than a year ago
 		      <% end %>
