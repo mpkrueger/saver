@@ -8,7 +8,7 @@ class SaverGuestMailer < ApplicationMailer
   def guest_signup(user)
     @user = user
     
-    @subject = "Saving you money on your cable & internet bill"
+    @subject = "What would you do with an extra $300?"
 
     if(@user.last_moved == 'More than a year ago' && @user.negotiated == "No")
       if(@user.services['phone']=='1' && @user.services['internet']=='1' && @user.services['cable']=='1')
