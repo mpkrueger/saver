@@ -56,11 +56,11 @@ $(document).ready(function() {
 	<%= form_for @saver_guest do |f| %>
 		
 			<div class="dropdown-style">
-       			<%= f.text_field :name, class: "madlib-sentence border-underline", style:"width:300px;", placeholder: "your first name"%>
+       			<%= f.text_field :name, class: "madlib-sentence border-underline", style:"width:300px;", placeholder: "your first name", required: true %>
        		</div>
        		<br />
        		<div class="dropdown-style" style="margin-top:10px;">
-       			<%= f.email_field :email, class: "madlib-sentence border-underline", style:"width:300px;", placeholder: "your email address" %>
+       			<%= f.email_field :email, class: "madlib-sentence border-underline", style:"width:300px;", placeholder: "your email address", required: true %>
        		</div>
        <br /><br /><br />
        <%= f.submit "I'm ready to save", class: 'next-button' %>
