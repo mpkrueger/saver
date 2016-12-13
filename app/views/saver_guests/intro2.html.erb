@@ -33,16 +33,16 @@ $(document).ready(function() {
 </div>
 
 <div class="saver-question-block">
-<% if @saver_guest.last_moved == 'more than a year ago' && @saver_guest.negotiated == "no" %>
+<% if @saver_guest.last_moved == 'More than a year ago' && @saver_guest.negotiated == "No" %>
 	<div class="big-headline">Expected savings: </div>
 	<span style="font-weight:500; font-size:32px;"><%= projected_savings %></span>
 	
 
 <% else %>
 	<div class="headline">
-	<% if @saver_guest.last_moved == 'less than a year ago' %>
+	<% if @saver_guest.last_moved == 'Less than a year ago' %>
 		It'll be helpful for us to look at your latest bill since you moved in the last year (and likely started a new contract then). 
-	<% elsif @saver_guest.negotiated =="yes" %>
+	<% elsif @saver_guest.negotiated =="Yes" %>
 		It'll be helpful for us to look at your latest bill since you negotiated a better rate in the last year. 
 	<% end %>
 	</div>
@@ -56,11 +56,11 @@ $(document).ready(function() {
 	<%= form_for @saver_guest do |f| %>
 		
 			<div class="dropdown-style">
-       			<%= f.text_field :name, class: "madlib-sentence border-underline", style:"width:300px;", placeholder: "your first name"%>
+       			<%= f.text_field :name, class: "madlib-sentence border-underline", style:"width:300px;", placeholder: "your first name", required: true %>
        		</div>
        		<br />
        		<div class="dropdown-style" style="margin-top:10px;">
-       			<%= f.email_field :email, class: "madlib-sentence border-underline", style:"width:300px;", placeholder: "your email address" %>
+       			<%= f.email_field :email, class: "madlib-sentence border-underline", style:"width:300px;", placeholder: "your email address", required: true %>
        		</div>
        <br /><br /><br />
        <%= f.submit "I'm ready to save", class: 'next-button' %>
