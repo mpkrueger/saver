@@ -17,9 +17,9 @@ class SaverGuestMailer < ApplicationMailer
         
       end
     elsif @user.last_moved == 'Less than a year ago'
-      @custom_message = "Because you’ve moved in the last year, there may be less of an opportunity to negotiate a lower price - your latest bill will tell us a lot. We will compare your rate to other people with similar services and see if we can save you some money."
+      @custom_message = "Because you’ve moved in the last year, there may be less of an opportunity to negotiate a lower price - your latest bill will tell us a lot."
     elsif @user.negotiated == 'Yes'
-      @custom_message = "Because you’ve negotiated a better rate in the last year, there may be less of an opportunity to negotiate a lower price on your behalf - your latest bill will tell us a lot. We will compare your rate to other people with similar services and see if we can save you some money."
+      @custom_message = "Because you’ve negotiated a better rate in the last year, there may be less of an opportunity to negotiate a lower price on your behalf - your latest bill will tell us a lot."
     end
 
 
