@@ -32,27 +32,15 @@ $(document).ready(function() {
 	</div>
 </div>
 
+
 <div class="saver-question-block">
-<% if @saver_guest.last_moved == 'More than a year ago' && @saver_guest.negotiated == "No" %>
-	<div class="big-headline">Expected savings: </div>
-	<span style="font-weight:500; font-size:32px;"><%= projected_savings %></span>
-	
 
-<% else %>
-	<div class="headline">
-	<% if @saver_guest.last_moved == 'Less than a year ago' %>
-		It'll be helpful for us to look at your latest bill since you moved in the last year (and likely started a new contract then). 
-	<% elsif @saver_guest.negotiated =="Yes" %>
-		It'll be helpful for us to look at your latest bill since you negotiated a better rate in the last year. 
-	<% end %>
-	</div>
-
-<% end %>
+	Great, thanks! We're here to do the work so you can save time and money. On average we've saved people $300 a year. 
 	<br /><br />
-	<div class="headline">
-	We'll send you an email to kick this off and ask that you send us your latest bill. Then we'll get to work researching and negotiating a lower rate for you.
-	</div>
-	<br />
+	All we need from you is your email so we can contact you about your bill and your savings.
+	<br /><br />
+
+	
 	<%= form_for @saver_guest do |f| %>
 		
 			<div class="dropdown-style">
@@ -62,7 +50,11 @@ $(document).ready(function() {
        		<div class="dropdown-style" style="margin-top:10px;">
        			<%= f.email_field :email, class: "madlib-sentence border-underline", style:"width:300px;", placeholder: "your email address", required: true %>
        		</div>
-       <br /><br /><br />
+       		<br /> <br />
+       		<div class="subtext">
+       			We promise not to spam your inbox.
+       		</div>
+       <br />
        <%= f.submit "I'm ready to save", class: 'next-button' %>
     <% end %>
 </div>
