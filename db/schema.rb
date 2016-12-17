@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161208000451) do
+ActiveRecord::Schema.define(version: 20161216233723) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -142,8 +142,9 @@ ActiveRecord::Schema.define(version: 20161208000451) do
     t.hstore   "services"
     t.string   "email"
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "another_year"
   end
 
   create_table "savvy_score_users", force: :cascade do |t|

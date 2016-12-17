@@ -35,7 +35,7 @@ class SaverGuestsController < ApplicationController
   private
 
 	def saver_guest_params
-		params.require(:saver_guest).permit(:name, :last_moved, :negotiated, :email, 
+		params.require(:saver_guest).permit(:name, :last_moved, :negotiated, :another_year, :email, 
 			services: [:cable, :phone, :internet, :other])
 	end
 
