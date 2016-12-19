@@ -46,26 +46,10 @@ $(document).ready(function() {
 
 <%= form_for @saver_guest do |f| %>
 <div class="saver-question-block" id="questions">        
-	<div class="headline">First off, a couple quick questions so we can give you an estimate of how much we can save you. </div>
+	<div class="headline">First off, a couple quick questions about your cable and/or internet services. </div>
 	<br />
-	<div style="margin-left:10px;">
-	    <div class="headline">1. When did you last move? </div>
-	    <div class="field form-group">
-		    <div class="btn-group" data-toggle="buttons" style="width:100%; margin-top:20px">
-		      <%= f.label :last_moved, class: "btn btn-primary option-button saver-button" do %>
-		        <%= f.radio_button :last_moved, "Less than a year ago" %>
-		        Less than a year ago
-		      <% end %>
-		      <%= f.label :last_moved, class: "btn btn-primary option-button saver-button" do %>
-		        <%= f.radio_button :last_moved, "More than a year ago" %>
-		        More than a year ago
-		      <% end %>
-		    </div>
-	  	</div>
-	</div>
-    <br />
-    <div style="margin-left:10px;">
-	    <div class="headline">2. Are you planning to use this service for another 12 months? </div>
+	    <div style="margin-left:10px;">
+	    <div class="headline">1. Do you want to keep getting what you have now for the next year? </div>
 	    <div class="field form-group">
 	    	<div class="btn-group" data-toggle="buttons" style="width:100%; margin-top:20px;">
 	     		<%= f.label :another_year, class: "btn btn-primary option-button saver-2-button" do %>
@@ -83,17 +67,25 @@ $(document).ready(function() {
 			</div>
 		</div>
 	</div>
-    <br />
-    <div style="margin-left:10px;">
-    <div class="headline">3. Which services do you currently have? </div>
-    <%= f.fields_for :services do |i| %>
-        <label><%= i.check_box :cable %> Cable</label><br />
-        <label><%= i.check_box :internet %> Internet</label><br />
-        <label><%= i.check_box :phone %> Landline phone </label><br />
-        <label><%= i.check_box :other %> Other </label>
-    <% end %>
-    </div>
+
 	<br />
+
+	<div style="margin-left:10px;">
+	    <div class="headline">2. When did you last move? </div>
+	    <div class="field form-group">
+		    <div class="btn-group" data-toggle="buttons" style="width:100%; margin-top:20px">
+		      <%= f.label :last_moved, class: "btn btn-primary option-button saver-button" do %>
+		        <%= f.radio_button :last_moved, "Less than a year ago" %>
+		        Less than a year ago
+		      <% end %>
+		      <%= f.label :last_moved, class: "btn btn-primary option-button saver-button" do %>
+		        <%= f.radio_button :last_moved, "More than a year ago" %>
+		        More than a year ago
+		      <% end %>
+		    </div>
+	  	</div>
+	</div>
+    <br />
   
 
 	<%= f.submit "Next", class: 'next-button' %>
