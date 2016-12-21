@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'bills/index'
+
+  get 'bills/new'
+
+  get 'bills/create'
+
+  get 'bills/destroy'
+
   resources :saver_guests do
     collection do
       get 'intro'
@@ -84,5 +92,11 @@ Rails.application.routes.draw do
   root to: 'goals#investing'
 
   get '/goals/invest_introductions'
+
+  
+  resources :bills, only: [:index, :new, :create, :destroy]
+  root "bills#index"
+  
+
 
 end
