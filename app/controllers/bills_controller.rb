@@ -14,6 +14,7 @@ class BillsController < ApplicationController
   		redirect_to bills_path, notice: "The bill #{@bill.name} has been uploaded."
   	else
   		render "new"
+    end
   end
 
   def destroy
@@ -23,9 +24,8 @@ class BillsController < ApplicationController
   end
 
   private
-      def bill_params
+    def bill_params
       params.require(:bill).permit(:name, :attachment)
-  		end
-   end
+  	end
 
 end

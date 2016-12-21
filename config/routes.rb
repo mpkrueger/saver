@@ -95,7 +95,6 @@ Rails.application.routes.draw do
 
   
   resources :bills, only: [:index, :new, :create, :destroy]
-  root "bills#index"
   
 
 
