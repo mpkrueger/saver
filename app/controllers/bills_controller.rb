@@ -9,9 +9,12 @@ class BillsController < ApplicationController
 
   def create
   	@bill = Bill.new(bill_params)
+    @bill.name = "Saver Guest ID: #{SaverGuest.find_by_id(session[:saver_guest_id]).id}"
+    @saver_guest = SaverGuest.find_by_id(session[:saver_guest_id])
+    @bill.saver_guest = @saver_guest
 
   	if @bill.save
-  		redirect_to bills_path, notice: "The bill #{@bill.name} has been uploaded."
+  		redirect_to thanks_saver_guests_path
   	else
   		render "new"
     end

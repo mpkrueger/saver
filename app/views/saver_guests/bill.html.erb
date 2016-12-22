@@ -1,0 +1,27 @@
+<% @title=": Upload Bill" %>
+<script type="text/javascript">
+    mixpanel.track("saver_bill", {
+
+    });
+</script>
+
+<div class="header saver-header">
+	<div class="saver-header-icon-block"><%= image_tag("piggybank2.png", class:"saver-header-icon") %> </div>
+	<div class="saver-header-logo-block">	<%= image_tag("savvysaverlogo.png", class:"saver-header-logo") %></div>
+		<br /> <hr class="saver-hr"/>
+	</div>
+</div>
+
+
+
+
+<div class="saver-question-block">
+	<div class="big-headline">Hi there! </div>
+    <div class="headline option-row">We're excited to save you some money.</div>
+   	<%= form_for @bill, html: { multipart: true } do |f| %>
+    <%= f.file_field :attachment %>
+    <br />
+    <%= f.submit "Upload my bill", class: "btn btn-primary" %>
+   	<% end %>
+   	<%= link_to "Skip for now", thanks_saver_guests_path, class: "btn btn-secondary" %>
+</div>
