@@ -10,8 +10,9 @@ Rails.application.routes.draw do
 
   resources :saver_guests do
     collection do
-      get 'intro'
-      get 'intro2'
+      get 'how_it_works'
+      get 'signup'
+      get 'bill'
       get 'thanks'
     end
   end

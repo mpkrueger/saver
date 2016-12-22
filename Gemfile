@@ -11,6 +11,7 @@ gem 'figaro', '1.0'
 gem 'premailer-rails'
 gem 'nokogiri'
 gem 'rounding'
+gem 'fog'
 
 
 group :production do
