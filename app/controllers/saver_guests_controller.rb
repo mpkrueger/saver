@@ -7,7 +7,8 @@ class SaverGuestsController < ApplicationController
 		@saver_guest = SaverGuest.new(saver_guest_params)
 		if @saver_guest.save
 			session[:saver_guest_id] = @saver_guest.id
-			redirect_to bill_saver_guests_path
+			SaverGuestMailer.guest_signup(@saver_guest).deliver
+			redirect_to thanks_saver_guests_path
 		else
 			flash[:error] = "uh oh"
 			redirect_to root_path
