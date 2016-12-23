@@ -29,75 +29,69 @@ $(document).ready(function() {
 </script>
 
 
-		<div class="header saver-header">
-			<div class="saver-header-icon-block"><%= image_tag("piggybank2.png", class:"saver-header-icon") %> </div>
-			<div class="saver-header-logo-block">	<%= image_tag("savvysaverlogo.png", class:"saver-header-logo") %></div>
-				<br /> <hr class="saver-hr"/>
-		</div>
+<div class="header saver-header">
+	<div class="saver-header-icon-block"><%= image_tag("piggybank2.png", class:"saver-header-icon") %> </div>
+	<div class="saver-header-logo-block">	<%= image_tag("savvysaverlogo.png", class:"saver-header-logo") %></div>
+		<br /> <hr class="saver-hr"/>
+</div>
 
 
 <div class="howitworks-block">
-    <div class="big-headline">Hi there! </div>
-    <div class="headline option-row">We're excited to save you some money. Here's how this works.</div>
+    <div class="step-text big-headline option-row">Hi there! </div>
+    <div class="step-text">We're excited to save you some money. Here's how it works.</div>
   
     <div class="row">
       <div class="savvy-step col-xs-12 col-sm-3 col-md-3 col-lg-3">
         <div class="step-image">
           <%= image_tag("billcutting_step_1.png", class:"saver-header-icon") %>
         </div>
-        <br />
-        <span class="step-numbers">
+        
+        <div class="step-numbers">
         1.
-        </span>
-        <br />
-        <div class="step-text">
-          You’ll send us your bill.
         </div>
-        <br />
+        
+        <div class="step-text">
+          Send us your bill.
+        </div>
+        
       </div>
       <div class="savvy-step col-xs-12 col-sm-3 col-md-3 col-lg-3">
         
         <div class="step-image">
           <%= image_tag("billcutting_step_2.png", class:"saver-header-icon") %>
         </div>
-        <br />
-        <span class="step-numbers">
+        <div class="step-numbers">
         2.
-        </span>
-        <br />
-        <div class="step-text">
-          We’ll call your cable company and negotiate a new monthly rate.
         </div>
-        <br />
+        <div class="step-text">
+          We’ll call your cable/internet company and negotiate a new monthly rate.
+        </div>
       </div>
       <div class="savvy-step col-xs-12 col-sm-3 col-md-3 col-lg-3">
       
         <div class="step-image">
           <%= image_tag("billcutting_step_3.png", class:"saver-header-icon") %>
         </div>
-        <br />
-        <span class="step-numbers">
+        <div class="step-numbers">
         3.
-        </span>  <br />
+        </div>  
         <div class="step-text">
-          We’ll email you with your new monthly rate. 
-          (* We’ll only make changes to your rate, not your services *)
+          We’ll email you with your new monthly rate. <br/>
+          <span class="subtext">* We’ll only make changes to your rate, not your services. </span>
         </div>
-        <br />
       </div>
       <div class="savvy-step col-xs-12 col-sm-3 col-md-3 col-lg-3">
        
         <div class="step-image">
             <%= image_tag("billcutting_step_4.png", class:"saver-header-icon") %>
         </div>
-        <br />
-        <span class="step-numbers">
+        <div class="step-numbers">
          4.
-         </span>  <br />
+         </div>  
          <div class="step-text">
-          You’ll pay us $100 if we save you $200+ annually. Otherwise, your savings are free.
+          Pay us $100 if we save you $200+ annually. Otherwise, your savings are free.
         </div>
-        <br />
+        
       </div>
     </div>
 
@@ -105,7 +99,7 @@ $(document).ready(function() {
 
 
    	<div class="accept-button" style="margin-auto; text-align:center;">
-      <%= link_to "I’m fine with you making changes to my monthly bill \u2192", signup_saver_guests_path, class:"accept-link" %>
+      <%= link_to "I’m excited to save money and understand you'll be making changes to my bill \u2192", signup_saver_guests_path, class:"accept-link" %>
     </div>
     <div style="height:30px; color:transparent;">
       a
