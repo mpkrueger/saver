@@ -19,9 +19,10 @@
 	<div class="big-headline">Hi there! </div>
     <div class="headline option-row">We're excited to save you some money.</div>
    	<%= form_for @bill, html: { multipart: true } do |f| %>
-    <%= f.file_field :attachment %>
-    <br />
-    <%= f.submit "Upload my bill", class: "btn btn-primary" %>
+      <%= f.file_field :attachment %>
+      <%= f.hidden_field :name, value: "Cable / Internet" %>
+      <br />
+      <%= f.submit "Upload my bill", class: "btn btn-primary" %>
    	<% end %>
    	<%= link_to "Skip for now", thanks_saver_guests_path, class: "btn btn-secondary" %>
 </div>

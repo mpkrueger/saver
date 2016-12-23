@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     collection do
       get 'how_it_works'
       get 'signup'
-      get 'bill'
+      # get 'bill'
       get 'thanks'
     end
   end
