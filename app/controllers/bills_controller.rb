@@ -4,13 +4,13 @@ class BillsController < ApplicationController
   end
 
   def new
-  	@bill = Bill.new
+  	@saver_guest = SaverGuest.find_by_id(params[:saver_guest_id])
+    @bill = Bill.new
   end
 
   def create
   	@bill = Bill.new(bill_params)
-    @bill.name = "Saver Guest ID: #{SaverGuest.find_by_id(session[:saver_guest_id]).id}"
-    @saver_guest = SaverGuest.find_by_id(session[:saver_guest_id])
+    @saver_guest = SaverGuest.find_by_id(params[:saver_guest_id])
     @bill.saver_guest = @saver_guest
 
   	if @bill.save
@@ -18,6 +18,10 @@ class BillsController < ApplicationController
   	else
   		render "new"
     end
+  end
+
+  def show
+    @bill = Bill.find(params[:id])
   end
 
   def destroy
