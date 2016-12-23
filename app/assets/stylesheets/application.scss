@@ -14,9 +14,11 @@
  *= require_self
  */
 
+@import "custom_grid.scss";
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import url('http://fonts.googleapis.com/css?family=Lato');
+
 
 html{
   height: 100%;
