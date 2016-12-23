@@ -20,6 +20,10 @@ class BillsController < ApplicationController
     end
   end
 
+  def show
+    @bill = Bill.find(params[:id])
+  end
+
   def destroy
   	@bill = Bill.find(params[:id])
     @bill.destroy

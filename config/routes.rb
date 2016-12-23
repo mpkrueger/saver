@@ -1,14 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'bills/index'
-
-  get 'bills/new'
-
-  get 'bills/create'
-
-  get 'bills/destroy'
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
 
   resources :saver_guests do
+    resources :bills
     collection do
       get 'how_it_works'
       get 'signup'
@@ -93,9 +89,6 @@ Rails.application.routes.draw do
   root to: 'goals#investing'
 
   get '/goals/invest_introductions'
-
-  
-  resources :bills, only: [:index, :new, :create, :destroy]
   
 
 

@@ -12,6 +12,8 @@ gem 'premailer-rails'
 gem 'nokogiri'
 gem 'rounding'
 gem 'fog'
+gem 'activeadmin', github: 'activeadmin'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
 
 group :production do
