@@ -34,10 +34,11 @@ $(document).ready(function() {
 
 <%= form_for @saver_guest do |f| %>
 <div class="saver-question-block" id="questions">        
-  <div class="headline">First off, a couple quick questions about your cable and/or internet services. </div>
+  <div class="headline">First off, a couple quick questions about your cable and/or internet services. 
+  </div>
   <br />
-      <div style="margin-left:10px;">
-      <div class="headline">1. Do you want to keep getting what you have now for the next year? </div>
+  <div style="margin-left:10px;">
+    <div class="headline">1. Do you want to keep getting what you have now for the next year? </div>
       <div class="field form-group">
         <div class="btn-group" data-toggle="buttons" style="width:100%; margin-top:20px;">
           <%= f.label :another_year, class: "btn btn-primary option-button saver-2-button" do %>
@@ -59,7 +60,7 @@ $(document).ready(function() {
   <br />
 
   <div style="margin-left:10px;">
-      <div class="headline">2. When did you last move? </div>
+    <div class="headline">2. When did you last move? </div>
       <div class="field form-group">
         <div class="btn-group" data-toggle="buttons" style="width:100%; margin-top:20px">
           <%= f.label :last_moved, class: "btn btn-primary option-button saver-button" do %>
@@ -71,21 +72,29 @@ $(document).ready(function() {
             More than a year ago
           <% end %>
         </div>
-      </div>
+    </div>
   </div>
     <br />
-  <div class="dropdown-style">
-            <%= f.text_field :name, class: "madlib-sentence border-underline", style:"width:300px;", placeholder: "your first name", required: true %>
-          </div>
-          <br />
-          <div class="dropdown-style" style="margin-top:10px;">
-            <%= f.email_field :email, class: "madlib-sentence border-underline", style:"width:300px;", placeholder: "your email address", required: true %>
-          </div>
-          <br /> <br />
-          <div class="subtext">
-            We promise not to spam your inbox.
-          </div>
+    <a href="#email" class="short-option-button">Next</a>
+</div>
 
+<div class="saver-question-block" id="email">
+  Great, thanks! We're here to do the work so you can save time and money. On average we've saved people $300 a year. 
+  <br /> <br />
+  All we need from you is your first name (so we know what to call you) and your email so we can contact you about your bill and your savings.
+  <br /> <br />
+  <div class="dropdown-style">
+      <%= f.text_field :name, class: "madlib-sentence border-underline", style:"width:300px;", placeholder: "your first name", required: true %>
+  </div>
+  <br />
+  <div class="dropdown-style" style="margin-top:10px;">
+    <%= f.email_field :email, class: "madlib-sentence border-underline", style:"width:300px;", placeholder: "your email address", required: true %>
+  </div>
+  <br /> <br />
+  <div class="subtext">
+    We promise not to spam your inbox.
+  </div>
+  <br />
   <%= f.submit "I'm ready to save", class: 'next-button' %>
   <br /><br /><br /><br />
 </div>
@@ -93,7 +102,5 @@ $(document).ready(function() {
   <% end %>
 
 
-<div class="saver-question-block">
 
-	Great, thanks! We're here to do the work so you can save time and money. On average we've saved people $300 a year. 
-	<br /><br />
+	

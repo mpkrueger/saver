@@ -36,91 +36,76 @@ $(document).ready(function() {
 		</div>
 
 
-<div style="width:90%; padding-top: 15%; margin:auto;">
+<div class="howitworks-block">
     <div class="big-headline">Hi there! </div>
     <div class="headline option-row">We're excited to save you some money. Here's how this works.</div>
   
     <div class="row">
-      <div class="col-xs-3 col-s-3 col-md-3 col-lg-3" style="text-align:center;">
-        <span class="step-image">
+      <div class="savvy-step col-xs-12 col-sm-3 col-md-3 col-lg-3">
+        <div class="step-image">
           <%= image_tag("billcutting_step_1.png", class:"saver-header-icon") %>
-        </span>
-
-      </div>
-      <div class="col-xs-3 col-s-3 col-md-3 col-lg-3" style="text-align:center;">
-        
-        <span class="step-image">
-          <%= image_tag("billcutting_step_2.png", class:"saver-header-icon") %>
-        </span>
-
-      </div>
-      <div class="col-xs-3 col-s-3 col-md-3 col-lg-3" style="text-align:center;">
-      
-        <span class="step-image">
-          <%= image_tag("billcutting_step_3.png", class:"saver-header-icon") %>
-        </span>
-      </div>
-      <div class="col-xs-3 col-s-3 col-md-3 col-lg-3" style="text-align:center;">
-       
-        <span class="step-image">
-            <%= image_tag("billcutting_step_4.png", class:"saver-header-icon") %>
-        </span>
-      </div>
-    </div>
-
-
-
-    <div class="row">
-      <div class="col-xs-3 col-s-3 col-md-3 col-lg-3" style="text-align:center;">
+        </div>
+        <br />
         <span class="step-numbers">
         1.
         </span>
-         <br />
-        <span class="step-text">
-        You’ll send us your bill.
-        </span>
-    
-
+        <br />
+        <div class="step-text">
+          You’ll send us your bill.
+        </div>
+        <br />
       </div>
-      <div class="col-xs-3 col-s-3 col-md-3 col-lg-3" style="text-align:center;">
-         <span class="step-numbers">
+      <div class="savvy-step col-xs-12 col-sm-3 col-md-3 col-lg-3">
+        
+        <div class="step-image">
+          <%= image_tag("billcutting_step_2.png", class:"saver-header-icon") %>
+        </div>
+        <br />
+        <span class="step-numbers">
         2.
         </span>
         <br />
-        <span class="step-text">
+        <div class="step-text">
           We’ll call your cable company and negotiate a new monthly rate.
-        </span>
-
+        </div>
+        <br />
       </div>
-      <div class="col-xs-3 col-s-3 col-md-3 col-lg-3" style="text-align:center;">
-         <span class="step-numbers">
+      <div class="savvy-step col-xs-12 col-sm-3 col-md-3 col-lg-3">
+      
+        <div class="step-image">
+          <%= image_tag("billcutting_step_3.png", class:"saver-header-icon") %>
+        </div>
+        <br />
+        <span class="step-numbers">
         3.
         </span>  <br />
-        <span class="step-text">
+        <div class="step-text">
           We’ll email you with your new monthly rate. 
           (* We’ll only make changes to your rate, not your services *)
-        </span>
-
+        </div>
+        <br />
       </div>
-      <div class="col-xs-3 col-s-3 col-md-3 col-lg-3" style="text-align:center;">
-         <span class="step-numbers">
+      <div class="savvy-step col-xs-12 col-sm-3 col-md-3 col-lg-3">
+       
+        <div class="step-image">
+            <%= image_tag("billcutting_step_4.png", class:"saver-header-icon") %>
+        </div>
+        <br />
+        <span class="step-numbers">
          4.
          </span>  <br />
-         <span class="step-text">
+         <div class="step-text">
           You’ll pay us $100 if we save you $200+ annually. Otherwise, your savings are free.
-        </span>
-   
+        </div>
+        <br />
       </div>
     </div>
-
-
-
 
     <br />
 
 
-   	<div class="button-row option-row" style="margin-auto; text-align:center;">
-      <%= link_to "I’m fine with you making changes to my monthly bill \u2192", signup_saver_guests_path, class: "next-button" %>
+   	<div class="accept-button" style="margin-auto; text-align:center;">
+      <%= link_to "I’m fine with you making changes to my monthly bill \u2192", signup_saver_guests_path, class:"accept-link" %>
     </div>
     <div style="height:30px; color:transparent;">
       a
