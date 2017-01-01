@@ -12,6 +12,6 @@ ActiveAdmin.register Bill do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-	belongs_to :saver_guest, optional: true
+	belongs_to :ticket, optional: true
 
 end

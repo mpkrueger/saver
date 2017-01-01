@@ -1,7 +1,4 @@
 class BillsController < ApplicationController
-  def index
-  	@bills = Bill.all
-  end
 
   def new
   	@saver_guest = SaverGuest.find_by_id(params[:saver_guest_id])
@@ -11,7 +8,10 @@ class BillsController < ApplicationController
   def create
   	@bill = Bill.new(bill_params)
     @saver_guest = SaverGuest.find_by_id(params[:saver_guest_id])
-    @bill.saver_guest = @saver_guest
+    @ticket = @saver_guest.tickets.last
+    @ticket.has_bill = true
+    @ticket.save
+    @bill.ticket = @ticket
 
   	if @bill.save
   		redirect_to thanks_saver_guests_path
@@ -21,7 +21,9 @@ class BillsController < ApplicationController
   end
 
   def show
-    @bill = Bill.find(params[:id])
+    @saver_guest = SaverGuest.find_by_id(params[:saver_guest_id])
+    @ticket = @saver_guest.tickets.last
+    @bill = @ticket.bill
   end
 
   def destroy

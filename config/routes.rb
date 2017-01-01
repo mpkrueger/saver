@@ -4,11 +4,12 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   resources :saver_guests do
-    resources :bills
+    resources :tickets do
+      resources :bills
+    end
     collection do
       get 'how_it_works'
       get 'signup'
-      # get 'bill'
       get 'thanks'
     end
   end
