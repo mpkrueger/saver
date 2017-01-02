@@ -14,6 +14,7 @@ gem 'rounding'
 gem 'fog'
 gem 'activeadmin', github: 'activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+gem 'chartkick'
 
 
 group :production do
