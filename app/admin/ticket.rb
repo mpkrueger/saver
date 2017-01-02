@@ -13,8 +13,11 @@ ActiveAdmin.register Ticket do
 #   permitted
 # end
 
-	permit_params :has_bill, :has_phone, :call_complete, :summary_email_sent, :successfully_saved_money, :amount_saved, :owes_money, :has_paid, :has_referred, :status
-	belongs_to :saver_guest, optional: true
+	permit_params :admin_user_id, :has_bill, :has_phone, :call_complete, :summary_email_sent, :successfully_saved_money, :amount_saved, :owes_money, :has_paid, :has_referred, :status
+	
+	controller do
+		belongs_to :saver_guest, :admin_user, optional: true
+	end
 
 	sidebar "Bill", only: [:show, :edit] do
 		resource.bills.each do |bill|
@@ -23,6 +26,11 @@ ActiveAdmin.register Ticket do
 			end
 		end
 
+  	end
+
+  	scope :all, default: true
+  	scope :my_tickets do |tickets|
+  		tickets.where("admin_user_id = ?", current_admin_user.id)
   	end
 
 end

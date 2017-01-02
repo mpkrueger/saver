@@ -6,8 +6,6 @@ ActiveAdmin.setup do |config|
   #
   config.site_title = "Savvy"
 
-  config.register_javascript 'https://www.google.com/jsapi'
-
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
   #
@@ -195,6 +193,8 @@ ActiveAdmin.setup do |config|
   #
   # To load a javascript file:
   #   config.register_javascript 'my_javascript.js'
+
+  config.register_javascript 'https://www.google.com/jsapi'
 
   # == CSV options
   #
