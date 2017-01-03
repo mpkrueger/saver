@@ -32,5 +32,19 @@ ActiveAdmin.register Ticket do
   	scope :my_tickets do |tickets|
   		tickets.where("admin_user_id = ?", current_admin_user.id)
   	end
+  	scope :my_tix_to_call do |tickets|
+  		tickets.where("admin_user_id = ?", current_admin_user.id).where(has_bill: true).where(call_complete: false)
+  	end
+
+  	index do
+		column("Ticket", :sortable => :id) {|ticket| link_to "##{ticket.id} ", admin_ticket_path(ticket) }
+	    # column("State")                   {|ticket| status_tag(ticket.state) }
+	    column("Has Bill", :has_bill)
+	    column("Call Complete", :call_complete)
+	    column("Saved Money", :successfully_saved_money)
+	    column("Paid", :has_paid)
+	    column("Assigned to", :admin_user_id)
+	    
+	end
 
 end
