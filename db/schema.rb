@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161223041944) do
+ActiveRecord::Schema.define(version: 20170102003212) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,10 +58,10 @@ ActiveRecord::Schema.define(version: 20161223041944) do
   create_table "bills", force: :cascade do |t|
     t.string   "name"
     t.string   "attachment"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.integer  "saver_guest_id"
-    t.index ["saver_guest_id"], name: "index_bills_on_saver_guest_id", using: :btree
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "ticket_id"
+    t.index ["ticket_id"], name: "index_bills_on_ticket_id", using: :btree
   end
 
   create_table "feedbacks", force: :cascade do |t|
@@ -209,6 +209,26 @@ ActiveRecord::Schema.define(version: 20161223041944) do
     t.string   "personal_loans_interest"
   end
 
+  create_table "tickets", force: :cascade do |t|
+    t.string   "type"
+    t.boolean  "has_bill",                 default: false
+    t.boolean  "has_phone",                default: false
+    t.boolean  "call_complete",            default: false
+    t.boolean  "summary_email_sent",       default: false
+    t.boolean  "successfully_saved_money", default: false
+    t.string   "amount_saved"
+    t.boolean  "owes_money",               default: false
+    t.boolean  "has_paid",                 default: false
+    t.boolean  "has_referred",             default: false
+    t.string   "status"
+    t.integer  "saver_guest_id"
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+    t.integer  "admin_user_id"
+    t.index ["admin_user_id"], name: "index_tickets_on_admin_user_id", using: :btree
+    t.index ["saver_guest_id"], name: "index_tickets_on_saver_guest_id", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -236,8 +256,10 @@ ActiveRecord::Schema.define(version: 20161223041944) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
-  add_foreign_key "bills", "saver_guests"
+  add_foreign_key "bills", "tickets"
   add_foreign_key "fin_profiles", "users"
   add_foreign_key "investing_feedbacks", "users"
   add_foreign_key "investing_profiles", "users"
+  add_foreign_key "tickets", "admin_users"
+  add_foreign_key "tickets", "saver_guests"
 end

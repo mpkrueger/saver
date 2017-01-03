@@ -13,9 +13,20 @@ ActiveAdmin.register SaverGuest do
 #   permitted
 # end
 	sidebar "Customer's bills", only: [:show, :edit] do
-		resource.bills.each do |bill|
+  	resource.tickets.each do |ticket|	
+      ticket.bills.each do |bill|
+      		ul do
+        			li link_to "Cable or Internet Bill",    admin_ticket_bills_path(ticket, bill)
+      		end
+    		end
+      end
+
+  	end
+
+  	sidebar "Customer's tickets", only: [:show, :edit] do
+		resource.tickets.each do |ticket|
     		ul do
-      			li link_to "Cable or Internet Bill",    admin_saver_guest_bill_path(resource, bill)
+      			li link_to "Ticket",    admin_saver_guest_ticket_path(resource, ticket)
     		end
   		end
 

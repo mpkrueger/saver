@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  has_bill: false
+  has_phone: false
+  call_complete: false
+  summary_email_sent: false
+  successfully_saved_money: false
+  amount_saved: MyString
+  owes_money: false
+  has_paid: false
+  has_referred: false
+  status: MyString
+  saver_guest: one
+
+two:
+  type: 
+  has_bill: false
+  has_phone: false
+  call_complete: false
+  summary_email_sent: false
+  successfully_saved_money: false
+  amount_saved: MyString
+  owes_money: false
+  has_paid: false
+  has_referred: false
+  status: MyString
+  saver_guest: two

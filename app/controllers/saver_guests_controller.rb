@@ -5,6 +5,9 @@ class SaverGuestsController < ApplicationController
 
 	def create
 		@saver_guest = SaverGuest.new(saver_guest_params)
+		@ticket = Ticket.new
+		@ticket.saver_guest = @saver_guest
+		@ticket.save
 		if @saver_guest.save
 			session[:saver_guest_id] = @saver_guest.id
 			SaverGuestMailer.guest_signup(@saver_guest).deliver

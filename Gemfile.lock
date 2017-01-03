@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/activeadmin/activeadmin.git
+  remote: https://github.com/activeadmin/activeadmin.git
   revision: 4f494073c6c0c016ba4902faad65f07ee034bb1a
   specs:
     activeadmin (1.0.0.pre4)
@@ -18,7 +18,7 @@ GIT
       sprockets (< 4.1)
 
 GIT
-  remote: git://github.com/activeadmin/inherited_resources.git
+  remote: https://github.com/activeadmin/inherited_resources.git
   revision: 4434f0ae72f790cf371728838c927c338100555d
   specs:
     inherited_resources (1.6.0)
@@ -89,6 +89,7 @@ GEM
       json (>= 1.7)
       mime-types (>= 1.16)
       mimemagic (>= 0.3.0)
+    chartkick (2.2.1)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.2.x)
@@ -394,6 +395,7 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   carrierwave
+  chartkick
   coffee-rails (~> 4.2)
   devise
   figaro (= 1.0)

@@ -18,7 +18,7 @@
 <div class="saver-question-block">
    <div class="big-headline">Hi there! </div>
     <div class="headline option-row">We're excited to save you some money.</div>
-      <%= form_for [:saver_guest, @bill], html: { multipart: true } do |f| %>
+      <%= form_for [:saver_guest, :ticket, @bill], html: { multipart: true } do |f| %>
       <%= f.file_field :attachment %>
       <%= f.hidden_field :name, value: "Cable / Internet" %>
       <br />
