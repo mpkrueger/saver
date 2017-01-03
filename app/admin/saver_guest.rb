@@ -26,7 +26,7 @@ ActiveAdmin.register SaverGuest do
   	sidebar "Customer's tickets", only: [:show, :edit] do
 		resource.tickets.each do |ticket|
     		ul do
-      			li link_to "Ticket",    admin_saver_guest_ticket_path(resource, ticket)
+      			li link_to "Ticket",    admin_ticket_path(ticket)
     		end
   		end
 
