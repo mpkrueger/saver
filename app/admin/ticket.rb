@@ -13,7 +13,7 @@ ActiveAdmin.register Ticket do
 #   permitted
 # end
 
-	permit_params :admin_user_id, :has_bill, :has_phone, :call_complete, :summary_email_sent, :successfully_saved_money, :amount_saved, :owes_money, :has_paid, :has_referred, :status
+	permit_params :admin_user_id, :has_bill, :has_phone, :gave_consent, :call_complete, :summary_email_sent, :successfully_saved_money, :amount_saved, :owes_money, :has_paid, :has_referred, :status, :future_followup
 	
 	controller do
 		belongs_to :saver_guest, :admin_user, optional: true
@@ -33,13 +33,14 @@ ActiveAdmin.register Ticket do
   		tickets.where("admin_user_id = ?", current_admin_user.id)
   	end
   	scope :my_tix_to_call do |tickets|
-  		tickets.where("admin_user_id = ?", current_admin_user.id).where(has_bill: true).where(call_complete: false)
+  		tickets.where("admin_user_id = ?", current_admin_user.id).where(has_bill: true).where(call_complete: false).where(gave_consent: true)
   	end
 
   	index do
 		column("Ticket", :sortable => :id) {|ticket| link_to "##{ticket.id} ", admin_ticket_path(ticket) }
 	    # column("State")                   {|ticket| status_tag(ticket.state) }
 	    column("Has Bill", :has_bill)
+	    column("Gave Consent", :gave_consent)
 	    column("Call Complete", :call_complete)
 	    column("Saved Money", :successfully_saved_money)
 	    column("Paid", :has_paid)
