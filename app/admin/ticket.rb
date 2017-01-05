@@ -70,12 +70,12 @@ ActiveAdmin.register Ticket do
 		selectable_column
 		column("Ticket", :sortable => :id) {|ticket| link_to "##{ticket.id} ", admin_ticket_path(ticket) }
 	    # column("State")                   {|ticket| status_tag(ticket.state) }
+	  	column("Customer Name") {|ticket| ticket.saver_guest.name}
 	    column("Has Bill", :has_bill)
 	    column("Gave Consent", :gave_consent)
 	    column("Call Complete", :call_complete)
 	    column("Saved Money", :successfully_saved_money)
 	    column("Paid", :has_paid)
-	    column("Customer Name") {|ticket| ticket.saver_guest.name}
 	    column("Assigned to", :admin_user_id)
 	    
 	end
