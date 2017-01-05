@@ -19,6 +19,28 @@ ActiveAdmin.register Ticket do
 		belongs_to :saver_guest, :admin_user, optional: true
 	end
 
+	form do |f|
+		inputs 'Change ticket status' do
+			f.input :admin_user_id, as: :select, collection: AdminUser.all.collect {|agent| [agent.email, agent.id]}
+			f.input :has_bill
+			f.input :has_phone
+			f.input :gave_consent
+			f.input :call_complete
+			f.input :summary_email_sent
+			f.input :successfully_saved_money
+			f.input :amount_saved
+			f.input :owes_money
+			f.input :has_paid
+			f.input :has_referred
+			f.input :status
+			f.input :future_followup, as: :datepicker
+			f.input :saver_guest_id, as: :select, collection: SaverGuest.all.collect {|saver| [saver.email, saver.id]}
+		end
+		f.actions
+	end
+
+
+
 	sidebar "Bill", only: [:show, :edit] do
 		resource.bills.each do |bill|
 			ul do
@@ -47,5 +69,16 @@ ActiveAdmin.register Ticket do
 	    column("Assigned to", :admin_user_id)
 	    
 	end
+
+	show title: proc{|ticket| "#{ticket.saver_guest.name}'s ticket" }
+
+	sidebar :saver_guest, only: [:show, :edit] do
+		ul do
+			li link_to "#{resource.saver_guest.name}", admin_saver_guest_path(resource.saver_guest)
+			li "#{resource.saver_guest.email}"
+			li "Created on #{resource.saver_guest.created_at}"
+		end
+	end
+
 
 end
