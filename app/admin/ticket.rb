@@ -19,9 +19,13 @@ ActiveAdmin.register Ticket do
 		belongs_to :saver_guest, :admin_user, optional: true
 	end
 
+	batch_action :assign, form: -> { {admin_user_id: AdminUser.pluck(:email, :id)}} do |ids, inputs|
+		redirect_to collection_path, notice: [ids, inputs].to_s
+	end
+
 	form do |f|
 		inputs 'Change ticket status' do
-			f.input :admin_user_id, as: :select, collection: AdminUser.all.collect {|agent| [agent.email, agent.id]}
+			f.input :admin_user_id, as: :select, collection: AdminUser.all.collect {|admin_user| [admin_user.email, admin_user.id]}
 			f.input :has_bill
 			f.input :has_phone
 			f.input :gave_consent
@@ -59,6 +63,7 @@ ActiveAdmin.register Ticket do
   	end
 
   	index do
+		selectable_column
 		column("Ticket", :sortable => :id) {|ticket| link_to "##{ticket.id} ", admin_ticket_path(ticket) }
 	    # column("State")                   {|ticket| status_tag(ticket.state) }
 	    column("Has Bill", :has_bill)
@@ -66,6 +71,7 @@ ActiveAdmin.register Ticket do
 	    column("Call Complete", :call_complete)
 	    column("Saved Money", :successfully_saved_money)
 	    column("Paid", :has_paid)
+	    column("Customer Name") {|ticket| ticket.saver_guest.name}
 	    column("Assigned to", :admin_user_id)
 	    
 	end
