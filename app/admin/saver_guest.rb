@@ -12,7 +12,9 @@ ActiveAdmin.register SaverGuest do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-	sidebar "Customer's bills", only: [:show, :edit] do
+	config.per_page = 100
+
+  sidebar "Customer's bills", only: [:show, :edit] do
   	resource.tickets.each do |ticket|	
       ticket.bills.each do |bill|
       		ul do

@@ -15,6 +15,8 @@ ActiveAdmin.register Ticket do
 
 	permit_params :admin_user_id, :saver_guest_id, :has_bill, :has_phone, :gave_consent, :call_complete, :summary_email_sent, :successfully_saved_money, :amount_saved, :owes_money, :has_paid, :has_referred, :status, :future_followup
 	
+	config.per_page = 100
+
 	controller do
 		belongs_to :saver_guest, :admin_user, optional: true
 	end
