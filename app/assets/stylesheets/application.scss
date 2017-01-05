@@ -102,9 +102,9 @@ ul {
 }
 
 .next-button{
-  border: 1px solid #00A99D;
-  background-color: transparent;
-  color: #00A99D;
+  border: 2px solid #00A99D;
+  background-color: #00A99D;
+  color: #fff;
   padding: 10px 30px;
   text-align: center;
   border-radius:6px;
@@ -124,7 +124,8 @@ ul {
 }
 
 .next-button:hover, .short-option-button:hover{
-  background-color:#00A99D;
+  background-color:#33CCCC;
+  border: 2px solid #33CCCC;
   color:#fff;
   text-decoration: none;
 }
