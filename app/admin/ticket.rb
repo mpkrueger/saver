@@ -20,7 +20,11 @@ ActiveAdmin.register Ticket do
 	end
 
 	batch_action :assign, form: -> { {admin_user_id: AdminUser.pluck(:email, :id)}} do |ids, inputs|
-		redirect_to collection_path, notice: [ids, inputs].to_s
+		tickets = Ticket.find(ids)
+		tickets.each do |ticket|
+			ticket.update_attributes(admin_user_id: inputs["admin_user_id"])
+		end
+		redirect_to collection_path, notice: inputs.to_s
 	end
 
 	form do |f|
