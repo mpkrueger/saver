@@ -11,6 +11,8 @@ Rails.application.routes.draw do
       get 'how_it_works'
       get 'signup'
       get 'thanks'
+      get 'signup2'
+      get 'how_it_works2'
     end
   end
 
