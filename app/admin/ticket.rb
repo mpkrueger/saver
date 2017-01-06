@@ -65,7 +65,7 @@ ActiveAdmin.register Ticket do
   		tickets.where("admin_user_id = ?", current_admin_user.id)
   	end
   	scope :my_tix_to_call do |tickets|
-  		tickets.where("admin_user_id = ?", current_admin_user.id).where(has_bill: true).where(call_complete: false).where(gave_consent: true)
+  		tickets.where("admin_user_id = ?", current_admin_user.id).where(has_bill: true).where(call_complete: false).where(gave_consent: true).where(summary_email_sent: false)
   	end
 
   	index do
