@@ -1,0 +1,66 @@
+/* line 2, /Users/sushmita/Documents/Team Mocha/saver/app/assets/stylesheets/email.scss */
+.list {
+  line-height: 1.5;
+}
+
+/* line 6, /Users/sushmita/Documents/Team Mocha/saver/app/assets/stylesheets/email.scss */
+.email-link {
+  color: #00A99D;
+}
+
+/* line 10, /Users/sushmita/Documents/Team Mocha/saver/app/assets/stylesheets/email.scss */
+.email-button {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: sans-serif;
+  text-decoration: none;
+  line-height: 40px;
+  width: 100%;
+  display: inline-block;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 350px) {
+  /* line 24, /Users/sushmita/Documents/Team Mocha/saver/app/assets/stylesheets/email.scss */
+  .email-body {
+    /*padding: 50px 80px 50px 80px;*/
+    padding-left: 10%;
+    padding-top: 8%;
+    padding-right: 10%;
+    font-family: Arial, Verdana;
+    line-height: 1.4;
+  }
+}
+@media screen and (min-width: 350px) and (max-width: 480px) {
+  /* line 39, /Users/sushmita/Documents/Team Mocha/saver/app/assets/stylesheets/email.scss */
+  .email-body {
+    /*padding: 50px 80px 50px 80px;*/
+    padding-left: 10%;
+    padding-top: 8%;
+    padding-right: 10%;
+    font-family: Arial, Verdana;
+    line-height: 1.4;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 700px) {
+  /* line 52, /Users/sushmita/Documents/Team Mocha/saver/app/assets/stylesheets/email.scss */
+  .email-body {
+    /*padding: 50px 80px 50px 80px;*/
+    padding-left: 8%;
+    padding-top: 3%;
+    padding-right: 14%;
+    font-family: Arial, Verdana;
+    line-height: 1.4;
+  }
+}
+@media screen and (min-width: 700px) {
+  /* line 65, /Users/sushmita/Documents/Team Mocha/saver/app/assets/stylesheets/email.scss */
+  .email-body {
+    /*padding: 50px 80px 50px 80px;*/
+    padding-left: 8%;
+    padding-top: 3%;
+    padding-right: 14%;
+    font-family: Arial, Verdana;
+    line-height: 1.4;
+  }
+}
