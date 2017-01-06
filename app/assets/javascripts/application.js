@@ -58,7 +58,7 @@ $(document).on('turbolinks:load', function() {
       var is_valid = true;
         jQuery('[required]', this).each(function(){
           if(this.value == ''){
-            alert('Please choose a valid option');
+            alert('Please enter your name & email');
             is_valid = false;
           }
         });
