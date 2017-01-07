@@ -11,7 +11,11 @@ class SaverGuestsController < ApplicationController
 		if @saver_guest.save
 			session[:saver_guest_id] = @saver_guest.id
 			SaverGuestMailer.guest_signup(@saver_guest).deliver
-			redirect_to thanks_saver_guests_path
+			if @saver_guest.flow == "1"
+				redirect_to thanks_saver_guests_path
+			else 
+				redirect_to how_it_works2_saver_guests_path
+			end
 		else
 			flash[:error] = "uh oh"
 			redirect_to root_path
@@ -37,7 +41,7 @@ class SaverGuestsController < ApplicationController
   private
 
 	def saver_guest_params
-		params.require(:saver_guest).permit(:name, :last_moved, :negotiated, :another_year, :email, 
+		params.require(:saver_guest).permit(:name, :last_moved, :negotiated, :another_year, :email, :flow, 
 			services: [:cable, :phone, :internet, :other])
 	end
 

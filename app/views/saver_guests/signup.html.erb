@@ -20,6 +20,7 @@
   <br /> <br />
   All we need from you is your <span style="font-weight:700;"> first name </span>(so we know what to call you) and your <span style="font-weight:700;"> email </span> so we can contact you about your bill and your savings.
   <br /> <br />
+  <%= f.hidden_field :flow, value: "1" %>
   <div class="dropdown-style">
       <%= f.text_field :name, class: "madlib-sentence border-underline", style:"width:300px;", placeholder: "your first name", required: true %>
   </div>
