@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170107000151) do
+ActiveRecord::Schema.define(version: 20170107063435) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -217,7 +217,7 @@ ActiveRecord::Schema.define(version: 20170107000151) do
     t.boolean  "call_complete",            default: false
     t.boolean  "summary_email_sent",       default: false
     t.boolean  "successfully_saved_money", default: false
-    t.string   "amount_saved"
+    t.integer  "amount_saved"
     t.boolean  "owes_money",               default: false
     t.boolean  "has_paid",                 default: false
     t.boolean  "has_referred",             default: false
