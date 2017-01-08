@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   resources :savvy_score
 
+  resources :charges
+
   get 'services/welcome'
   get 'services/overview'
   get 'services/factors'
