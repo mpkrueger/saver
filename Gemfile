@@ -16,7 +16,8 @@ gem 'activeadmin', git: "https://github.com/activeadmin/activeadmin.git"
 gem 'inherited_resources', git: "https://github.com/activeadmin/inherited_resources.git"
 gem 'chartkick'
 gem 'groupdate'
-gem "strip_attributes"
+gem 'strip_attributes'
+gem 'stripe'
 
 
 group :production do

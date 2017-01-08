@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170107063435) do
+ActiveRecord::Schema.define(version: 20170108004505) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -176,6 +176,14 @@ ActiveRecord::Schema.define(version: 20170107063435) do
     t.index ["user_id"], name: "index_investing_profiles_on_user_id", using: :btree
   end
 
+  create_table "payment_methods", force: :cascade do |t|
+    t.string   "stripe_customer_id"
+    t.integer  "saver_guest_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.index ["saver_guest_id"], name: "index_payment_methods_on_saver_guest_id", using: :btree
+  end
+
   create_table "saver_guests", force: :cascade do |t|
     t.string   "last_moved"
     t.string   "negotiated"
@@ -263,6 +271,7 @@ ActiveRecord::Schema.define(version: 20170107063435) do
   add_foreign_key "fin_profiles", "users"
   add_foreign_key "investing_feedbacks", "users"
   add_foreign_key "investing_profiles", "users"
+  add_foreign_key "payment_methods", "saver_guests"
   add_foreign_key "tickets", "admin_users"
   add_foreign_key "tickets", "saver_guests"
 end
