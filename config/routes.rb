@@ -92,7 +92,7 @@ Rails.application.routes.draw do
     root to: 'dashboard#homepage'
   end
 
-  root to: 'goals#investing'
+  root to: redirect("http://try.getsavvier.com")
 
   get '/goals/invest_introductions'
   
