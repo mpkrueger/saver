@@ -92,5 +92,14 @@ ActiveAdmin.register Ticket do
 		end
 	end
 
+	sidebar :calls, only: :show do
+		ul do
+			resource.calls.each do |call|			
+				li link_to "Call with #{call.agent_name}", admin_call_path(call)
+			end
+		end
+		link_to "New Call", new_admin_call_path(call: {ticket_id: resource})
+	end
+
 
 end

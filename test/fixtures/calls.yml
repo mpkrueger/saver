@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_time: 2017-01-08 20:47:27
+  end_time: 2017-01-08 20:47:27
+  agent_name: MyString
+  new_monthly_rate: 1
+  courtesy_credit: 1
+  confirmation_number: MyString
+  notes: MyText
+  ticket: one
+
+two:
+  start_time: 2017-01-08 20:47:27
+  end_time: 2017-01-08 20:47:27
+  agent_name: MyString
+  new_monthly_rate: 1
+  courtesy_credit: 1
+  confirmation_number: MyString
+  notes: MyText
+  ticket: two

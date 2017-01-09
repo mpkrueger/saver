@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :saver_guests do
     resources :tickets do
       resources :bills
+      resources :calls
     end
     collection do
       get 'how_it_works'
