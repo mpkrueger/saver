@@ -112,7 +112,7 @@ ActiveAdmin.register Ticket do
 			attributes_table_for ticket do
 				row :service_provider
 				row :zip_code
-				row :old_monthly_rate
+				row("Old monthly rate") { |ticket| monetize(ticket.old_monthly_rate)}
 				row :tv_service
 				row :internet_service
 				row :phone_service
@@ -124,8 +124,8 @@ ActiveAdmin.register Ticket do
 				row :call_complete
 				row :summary_email_sent
 				row	:successfully_saved_money
-				row :amount_saved
-				row :amount_earned
+				row("Amount Saved") { |ticket| monetize(ticket.amount_saved)}
+				row("Amount Earned") { |ticket| monetize(ticket.amount_earned)}
 				row :owes_money
 				row :has_paid
 				row :has_referred
