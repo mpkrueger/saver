@@ -7,9 +7,9 @@ ActiveAdmin.register_page "Dashboard" do
         line_chart SaverGuest.group_by_day(:created_at, last: 30).count, xtitle: "Date", ytitle: "Saver Guests"
     end
     panel "Overall Stats" do
-        para "Average saved: $#{Ticket.average(:amount_saved)}"
-        para "Total saved: $#{Ticket.sum(:amount_saved)}"
-        para "Total earned: $#{Ticket.sum(:amount_earned)}"
+        para "Average saved: #{ monetize(Ticket.average(:amount_saved)) }"
+        para "Total saved: #{ monetize(Ticket.sum(:amount_saved)) }"
+        para "Total earned: #{ monetize(Ticket.sum(:amount_earned))}"
     end
 
     panel "Today's Stats" do
