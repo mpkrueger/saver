@@ -21,7 +21,7 @@ ActiveAdmin.register_page "Dashboard" do
 
     panel "Weekly Stats" do
         para "New customers added: #{ SaverGuest.where("created_at >= ?", Date.today.beginning_of_week).count }"
-        para "Calls made: #{ Call.where("created_at >= ?", Date.today.beginning_of_week) }"
+        para "Calls made: #{ Call.where("created_at >= ?", Date.today.beginning_of_week).count }"
         para "Amount earned: #{ monetize(Ticket.where("updated_at >= ?", Date.today.beginning_of_week).sum(:amount_earned))}"
     end
 
