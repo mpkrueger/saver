@@ -14,7 +14,7 @@ ActiveAdmin.register Ticket do
 # end
 
 	permit_params :admin_user_id, :saver_guest_id, :has_bill, :has_phone, :gave_consent, :call_complete, :summary_email_sent, 
-		:successfully_saved_money, :amount_saved, :owes_money, :has_paid, :has_referred, :status, :future_followup,
+		:successfully_saved_money, :amount_saved, :amount_earned, :owes_money, :has_paid, :has_referred, :status, :future_followup,
 		:service_provider, :zip_code, :old_monthly_rate, :tv_service, :internet_service, :phone_service
 	
 	config.per_page = 100
@@ -52,6 +52,7 @@ ActiveAdmin.register Ticket do
 			f.input :summary_email_sent
 			f.input :successfully_saved_money
 			f.input :amount_saved
+			f.input :amount_earned
 			f.input :owes_money
 			f.input :has_paid
 			f.input :has_referred
@@ -82,15 +83,16 @@ ActiveAdmin.register Ticket do
 
   	index do
 		selectable_column
-		column("Ticket", :sortable => :id) {|ticket| link_to "##{ticket.id} ", admin_ticket_path(ticket) }
+		column("TID", :sortable => :id) {|ticket| link_to "##{ticket.id} ", admin_ticket_path(ticket) }
 	    # column("State")                   {|ticket| status_tag(ticket.state) }
 	  	column("Customer Name") {|ticket| ticket.saver_guest.name}
+	  	column("Email") {|ticket| ticket.saver_guest.email }
 	    column("Has Bill", :has_bill)
 	    column("Gave Consent", :gave_consent)
-	    column("Call Complete", :call_complete)
-	    column("Saved Money", :successfully_saved_money)
+	    column("Call Done", :call_complete)
+	    column("Saved $", :successfully_saved_money)
 	    column("Paid", :has_paid)
-	    column("Assigned to", :admin_user_id)
+	    column("Owner", :admin_user_id)
 	    
 	end
 
@@ -123,6 +125,7 @@ ActiveAdmin.register Ticket do
 				row :summary_email_sent
 				row	:successfully_saved_money
 				row :amount_saved
+				row :amount_earned
 				row :owes_money
 				row :has_paid
 				row :has_referred

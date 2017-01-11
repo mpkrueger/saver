@@ -6,8 +6,15 @@ ActiveAdmin.register_page "Dashboard" do
     panel "Saver Guests created over time" do
         line_chart SaverGuest.group_by_day(:created_at, last: 30).count, xtitle: "Date", ytitle: "Saver Guests"
     end
-    panel "Average Savings" do
-        para "Average saved: #{Ticket.average(:amount_saved)}"
+    panel "Overall Stats" do
+        para "Average saved: $#{Ticket.average(:amount_saved)}"
+        para "Total saved: $#{Ticket.sum(:amount_saved)}"
+        para "Total earned: $#{Ticket.sum(:amount_earned)}"
+    end
+
+    panel "Today's Stats" do
+        para "Amount saved today: $#{Ticket.where("updated_at >= ?", Time.zone.now.beginning_of_day).sum(:amount_saved)}"
+        para "Amount we earned today: $#{Ticket.where("updated_at >= ?", Time.zone.now.beginning_of_day).sum(:amount_earned)}"
     end
   end
 
