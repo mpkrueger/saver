@@ -7,15 +7,23 @@ ActiveAdmin.register_page "Dashboard" do
         line_chart SaverGuest.group_by_day(:created_at, last: 30).count, xtitle: "Date", ytitle: "Saver Guests"
     end
     panel "Overall Stats" do
-        para "Average saved: #{ monetize(Ticket.average(:amount_saved)) }"
+        para "Average saved: #{ monetize(Ticket.average(:amount_saved).truncate(2)) }"
         para "Total saved: #{ monetize(Ticket.sum(:amount_saved)) }"
         para "Total earned: #{ monetize(Ticket.sum(:amount_earned))}"
     end
 
     panel "Today's Stats" do
-        para "Amount saved today: $#{Ticket.where("updated_at >= ?", Time.zone.now.beginning_of_day).sum(:amount_saved)}"
-        para "Amount we earned today: $#{Ticket.where("updated_at >= ?", Time.zone.now.beginning_of_day).sum(:amount_earned)}"
+        para "Amount saved: #{ monetize(Ticket.where("updated_at >= ?", Time.zone.now.beginning_of_day).sum(:amount_saved)) }"
+        para "Amount we earned: #{ monetize(Ticket.where("updated_at >= ?", Time.zone.now.beginning_of_day).sum(:amount_earned)) }"
+        para "New customers added: #{SaverGuest.where("created_at >= ?", Time.zone.now.beginning_of_day).count }"
     end
+
+    panel "Weekly Stats" do
+        para "# of calls made: #{ Ticket.count(:call_complete) }"
+        para "# of customers added: #{ SaverGuest.where("created_at >= ?", Date.today.beginning_of_week).count }"
+        para "Amount earned: #{ monetize(Ticket.where("updated_at >= ?", Date.today.beginning_of_week).sum(:amount_earned))}"
+    end
+
   end
 
 
