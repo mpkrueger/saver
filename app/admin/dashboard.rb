@@ -8,7 +8,7 @@ ActiveAdmin.register_page "Dashboard" do
     end
     panel "Overall Stats" do
         para "Average saved: #{ monetize(Ticket.average(:amount_saved).round(2)) }"
-        para "Total saved: #{ monetize(Ticket.sum(:amount_saved.round(2))) }"
+        para "Total saved: #{ monetize(Ticket.sum(:amount_saved)) }"
         para "Total earned: #{ monetize(Ticket.sum(:amount_earned))}"
     end
 
