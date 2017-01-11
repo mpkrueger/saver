@@ -14,7 +14,7 @@ class SaverGuestsController < ApplicationController
 			if @saver_guest.flow == "1"
 				redirect_to thanks_saver_guests_path
 			else 
-				redirect_to how_it_works2_saver_guests_path
+				redirect_to thanks_saver_guests_path
 			end
 		else
 			flash[:error] = "uh oh"

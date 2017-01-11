@@ -2,7 +2,7 @@
 
 .dropdown-style{
   display: inline-flex;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #00A99D;
   width: auto;
   max-width:100%;
   overflow: hidden;
@@ -21,7 +21,18 @@ select.my-dropdown{
 }
 
 select#prompt{
-  color:#666;
+  color:#00A99D;
+}
+
+::-webkit-input-placeholder {
+   color: #00A99D;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #00A99D;  
+}
+:-ms-input-placeholder {  
+   color: #00A99D;  
 }
 
 select{
