@@ -10,8 +10,13 @@ class SaverGuestMailer < ApplicationMailer
     
     @subject = "Send us your bill so we can save you money"
 
-    
+    mail(to: @user.email, subject: @subject)
+  end
 
+
+  def bill_reminder(user)
+    @user = user
+    @subject = "Take two minutes to kick off the new year with easy savings."
 
     mail(to: @user.email, subject: @subject)
   end
