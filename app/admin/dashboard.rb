@@ -13,16 +13,22 @@ ActiveAdmin.register_page "Dashboard" do
     end
 
     panel "Today's Stats" do
-        para "Amount saved: #{ monetize(Ticket.where("updated_at >= ?", Time.zone.now.beginning_of_day).sum(:amount_saved).round(2)) }"
-        para "Amount we earned: #{ monetize(Ticket.where("updated_at >= ?", Time.zone.now.beginning_of_day).sum(:amount_earned)) }"
         para "New customers added: #{SaverGuest.where("created_at >= ?", Time.zone.now.beginning_of_day).count }"
         para "Calls made: #{ Call.where("created_at >= ?", Time.zone.now.beginning_of_day).count }"
+        para "Amount saved: #{ monetize(Ticket.where("updated_at >= ?", Time.zone.now.beginning_of_day).sum(:amount_saved).round(2)) }"
+        para "Amount we earned: #{ monetize(Ticket.where("updated_at >= ?", Time.zone.now.beginning_of_day).sum(:amount_earned)) }"
     end
 
     panel "Weekly Stats" do
         para "New customers added: #{ SaverGuest.where("created_at >= ?", Date.today.beginning_of_week).count }"
         para "Calls made: #{ Call.where("created_at >= ?", Date.today.beginning_of_week).count }"
         para "Amount earned: #{ monetize(Ticket.where("updated_at >= ?", Date.today.beginning_of_week).sum(:amount_earned))}"
+    end
+
+    panel "March Weekly Goals" do
+        para "280 new customers added weekly"
+        para "87 calls made weekly"
+        para "$2906 earned weekly"
     end
 
   end
