@@ -6,4 +6,8 @@ class SaverGuestMailerPreview < ActionMailer::Preview
     SaverGuestMailer.guest_signup(SaverGuest.last)
   end
 
+  def bill_reminder
+  	SaverGuestMailer.bill_reminder(SaverGuest.last)
+  end
+
 end
