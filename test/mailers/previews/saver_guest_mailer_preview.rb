@@ -10,4 +10,8 @@ class SaverGuestMailerPreview < ActionMailer::Preview
   	SaverGuestMailer.bill_reminder(SaverGuest.last)
   end
 
+  def bill_reminder_v2
+  	SaverGuestMailer.bill_reminder_v2(SaverGuest.last)
+  end
+
 end
