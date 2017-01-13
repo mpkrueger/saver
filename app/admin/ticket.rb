@@ -40,10 +40,10 @@ ActiveAdmin.register Ticket do
 			f.input :gave_consent
 		end
 		f.inputs "Bill Information" do
-			f.input :service_provider, as: :select, collection: ["Comcast", "Spectrum", "Cox", "Frontier", "Sonic", "Optimum", "Webpass", "SuddenLink"]
+			f.input :service_provider, as: :select, collection: ["Comcast", "Spectrum", "AT&T", "Cox", "Frontier", "Sonic", "Optimum", "Webpass", "SuddenLink", "Verizon"]
 			f.input :zip_code
 			f.input :old_monthly_rate
-			f.input :tv_service, as: :select, collection: ["None", "Basic", "Standard", "Premium channels", "Sports Package"]
+			f.input :tv_service, as: :select, collection: ["None", "Basic", "Standard", "Premium channels", "Sports Package", "Premium and Sports"]
 			f.input :internet_service, as: :select, collection: ["None", "Less than 25 mbps", "25-100 mbps", "150 mbps", "200 mbps", "Over 200 mbps"]
 			f.input :phone_service, as: :select, collection: ["None", "Has phone service"]
 		end
