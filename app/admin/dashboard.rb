@@ -3,8 +3,13 @@ ActiveAdmin.register_page "Dashboard" do
   menu priority: 1, label: proc{ I18n.t("active_admin.dashboard") }
 
   content do
-    panel "Saver Guests created over time" do
-        line_chart SaverGuest.group_by_day(:created_at, last: 30).count, xtitle: "Date", ytitle: "Saver Guests"
+    panel "New customers by week" do
+      #  line_chart SaverGuest.group_by_day(:created_at, last: 30).count, xtitle: "Date", ytitle: "Saver Guests"
+        bar_chart SaverGuest.group_by_week(:created_at, last:4).count, xtitle:"New Customers", ytitle: "By Week"
+    end
+
+    panel "Bills collected by week" do
+        bar_chart Ticket.group_by_week(:created_at, last:4).where("has_bill" == true).count, xtitle:"Bills Collected", ytitle:"By Week"
     end
     panel "Overall Stats" do
         para "Average saved: #{ monetize(Ticket.average(:amount_saved).round(2)) }"
@@ -19,9 +24,10 @@ ActiveAdmin.register_page "Dashboard" do
         para "Amount we earned: #{ monetize(Ticket.where("updated_at >= ?", Time.zone.now.beginning_of_day).sum(:amount_earned)) }"
     end
 
-    panel "Weekly Stats" do
-        para "New customers added: #{ SaverGuest.where("created_at >= ?", Date.today.beginning_of_week).count }"
+    panel "Other Weekly Stats" do
+        #para "New customers added: #{ SaverGuest.where("created_at >= ?", Date.today.beginning_of_week).count }"
         para "Calls made: #{ Call.where("created_at >= ?", Date.today.beginning_of_week).count }"
+        para "Amount saved: #{ monetize(Ticket.where("updated_at >= ?", Date.today.beginning_of_week).sum(:amount_saved).round(2))}"
         para "Amount earned: #{ monetize(Ticket.where("updated_at >= ?", Date.today.beginning_of_week).sum(:amount_earned))}"
     end
 
