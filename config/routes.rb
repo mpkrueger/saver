@@ -13,7 +13,12 @@ Rails.application.routes.draw do
       get 'signup'
       get 'thanks'
       get 'signup2'
+      get 'signup3'
       get 'how_it_works2'
+      get 'about_us'
+      get 'bulletpoints'
+      get 'stats'
+      get 'testimonials'
     end
   end
 

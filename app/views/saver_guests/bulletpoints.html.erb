@@ -1,0 +1,34 @@
+<% @title=": Brief Bullets" %>
+<script type="text/javascript">
+    mixpanel.track("saver_bulletpoints", {
+
+    });
+</script>
+
+<div class="header saver-header">
+	<div class="saver-header-icon-block"><%= image_tag("piggybank2.png", class:"saver-header-icon") %> </div>
+	<div class="saver-header-logo-block">	<%= image_tag("savvysaverlogo.png", class:"saver-header-logo") %></div>
+		<br /> <hr class="saver-hr"/>
+</div>
+
+
+<div class="saver-question-block">
+    <div class="big-headline option-row">Here's what you need to know:<br /></div>
+    <div class="headline">
+      <ul>
+        <li>Most people overpay for their cable and internet. </li>
+        <li>Most people don't want to negotiate with their cable/internet companies. </li>
+        <li>There's real savings at stake – on average, we've saved people $300/year.</li>
+        <li>Nothing to lose to try us out. You only pay us if we save you money. </li>
+      </ul>
+      <br />
+
+   	<div style="margin-auto;">
+      <%= link_to "Save me money", signup3_saver_guests_path, class:"next-button" %>
+    </div>
+    <div style="height:30px; color:transparent;">
+      a
+    </div>
+</div>
+
+	
