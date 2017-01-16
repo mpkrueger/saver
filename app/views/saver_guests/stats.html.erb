@@ -1,0 +1,31 @@
+<% @title=": Stats" %>
+<script type="text/javascript">
+    mixpanel.track("saver_stats", {
+
+    });
+</script>
+
+<div class="header saver-header">
+	<div class="saver-header-icon-block"><%= image_tag("piggybank2.png", class:"saver-header-icon") %> </div>
+	<div class="saver-header-logo-block">	<%= image_tag("savvysaverlogo.png", class:"saver-header-logo") %></div>
+		<br /> <hr class="saver-hr"/>
+</div>
+
+<div class="saver-question-block">
+    <div class="big-headline option-row">Why Savvy?<br /></div>
+    <div class="headline">
+      <ul>
+        <li>Cable bills have increased 8% in the last 5 years – that's 4 times the rate of inflation!</li>
+        <li>Higher bills = higher revenue. Comcast, the largest cable company, increased their revenue last year, totaling $16.8 billion in 2016! </li>
+        <li>Higher bills ≠ better service. Comcast has a 1-star rating on Consumer Affairs out of 4,349 reviews. Many of these relate to inflated pricing and/or hidden fees. </li>
+        <li>There's real savings at stake for you. On average, we've saved people $300/year.</li>
+      </ul>
+      <br />
+
+   	<div style="margin-auto;">
+      <%= link_to "Save me money", signup3_saver_guests_path, class:"next-button" %>
+    </div>
+    <div style="height:30px; color:transparent;">
+      a
+    </div>
+</div>
