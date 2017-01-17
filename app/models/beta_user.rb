@@ -1,2 +1,0 @@
-class BetaUser < ApplicationRecord
-end
