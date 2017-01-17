@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  receiver_email: MyString
+  incentive_amt: 1
+  receiver_id: 1
+  has_bill: false
+  saved_money: false
+  customer: one
+
+two:
+  receiver_email: MyString
+  incentive_amt: 1
+  receiver_id: 1
+  has_bill: false
+  saved_money: false
+  customer: two

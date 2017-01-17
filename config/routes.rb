@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
-  devise_for :admin_users, ActiveAdmin::Devise.config
+  get 'invites/new'
+
+  devise_for :customers
+  devise_for :admin_users, ActiveAdmin::Devise.config 
   ActiveAdmin.routes(self)
 
   resources :saver_guests do
@@ -23,6 +26,14 @@ Rails.application.routes.draw do
   end
 
   resources :charges
+
+  get 'r/*referrer', to: 'invites#show'
+  get 'invite', to: 'invites#new'
+  resources :invites do
+    collection do
+      get 'thanks'
+    end
+  end
 
   # devise_for :users, :controllers => { :registrations => "registrations", :sessions => "sessions" }
   
