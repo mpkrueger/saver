@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170117013304) do
+ActiveRecord::Schema.define(version: 20170117203657) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,6 +76,23 @@ ActiveRecord::Schema.define(version: 20170117013304) do
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
     t.index ["ticket_id"], name: "index_calls_on_ticket_id", using: :btree
+  end
+
+  create_table "customers", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.index ["email"], name: "index_customers_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true, using: :btree
   end
 
   create_table "feedbacks", force: :cascade do |t|
@@ -190,6 +207,19 @@ ActiveRecord::Schema.define(version: 20170117013304) do
     t.index ["user_id"], name: "index_investing_profiles_on_user_id", using: :btree
   end
 
+  create_table "invites", force: :cascade do |t|
+    t.string   "receiver_email"
+    t.text     "email_message"
+    t.integer  "incentive_amt"
+    t.integer  "receiver_id"
+    t.boolean  "has_bill"
+    t.boolean  "saved_money"
+    t.integer  "customer_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["customer_id"], name: "index_invites_on_customer_id", using: :btree
+  end
+
   create_table "payment_methods", force: :cascade do |t|
     t.string   "stripe_customer_id"
     t.integer  "saver_guest_id"
@@ -263,6 +293,7 @@ ActiveRecord::Schema.define(version: 20170117013304) do
 
   add_foreign_key "bills", "tickets"
   add_foreign_key "calls", "tickets"
+  add_foreign_key "invites", "customers"
   add_foreign_key "payment_methods", "saver_guests"
   add_foreign_key "tickets", "admin_users"
   add_foreign_key "tickets", "saver_guests"
