@@ -4,12 +4,21 @@
 
     });
 </script>
-
+<script>
+  $('document').ready(function() {
+    $(".alert").animate({opacity:'0'}, 3000).hide(1500);
+    
+    $( "#show_form" ).on('click', function() {
+      $("#show_form").addClass('hidden');
+      $("#change_url").removeClass('hidden');
+    });
+  });
+</script>
 
 <div class="header saver-header">
-	<div class="saver-header-icon-block"><%= image_tag("piggybank2.png", class:"saver-header-icon") %> </div>
-	<div class="saver-header-logo-block">	<%= image_tag("savvysaverlogo.png", class:"saver-header-logo") %></div>
-		<br /> <hr class="saver-hr"/>
+  <div class="saver-header-icon-block"><%= image_tag("piggybank2.png", class:"saver-header-icon") %> </div>
+  <div class="saver-header-logo-block"> <%= image_tag("savvysaverlogo.png", class:"saver-header-logo") %></div>
+    <br /> <hr class="saver-hr"/>
 </div>
 
 <% if current_customer %>
@@ -17,6 +26,25 @@
   Get $10 for each friend that saves $$ with Savvy!
   <br /><br />
   Your unique URL: <%= link_to "www.getsavvier.com/r/#{current_customer.invite_url_param}", "/r/#{current_customer.invite_url_param}" %>
+  <br />
+  <%= link_to "Change link", "javascript:;", id: "show_form" %>
+  
+  <div id= "change_url" class="hidden">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      www.getsavvier.com/r/<div class="dropdown-style">
+        <%= f.text_field :invite_url_param, class: "madlib-sentence border-underline", style: "width:300px;" %>
+      </div>
+      <%= f.submit "Update link", class: "next-button" %>
+    <% end %>
+  </div>
+    <% if flash[:error] %>
+         <div class="alert alert-danger">
+           <%= flash[:error] %>
+         </div>
+    <% end %>
+  
+
+
 
   <%= form_for @invite do |f| %>
 

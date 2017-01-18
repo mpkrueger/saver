@@ -37,7 +37,7 @@ class RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/edit
   def edit
-    render :edit
+    # render :edit
   end
 
   # PUT /resource
@@ -58,9 +58,10 @@ class RegistrationsController < Devise::RegistrationsController
       bypass_sign_in resource, scope: resource_name
       respond_with resource, location: after_update_path_for(resource)
     else
-      clean_up_passwords resource
-      set_minimum_password_length
-      respond_with resource
+      # clean_up_passwords resource
+      # set_minimum_password_length
+      flash[:error] = "That link is already taken"
+      redirect_to invite_path
     end
   end
 
@@ -94,7 +95,7 @@ class RegistrationsController < Devise::RegistrationsController
   # By default we want to require a password checks on update.
   # You can overwrite this method in your own RegistrationsController.
   def update_resource(resource, params)
-    resource.update_with_password(params)
+    resource.update_without_password(params)
   end
 
   # Build a devise resource passing in the session. Useful to move
@@ -127,7 +128,7 @@ class RegistrationsController < Devise::RegistrationsController
   # The default url to be used after updating a resource. You need to overwrite
   # this method in your own RegistrationsController.
   def after_update_path_for(resource)
-    signed_in_root_path(resource)
+    stored_location_for(:customer) || root_path
   end
 
   # Authenticates the current scope and gets the current resource from the session.
@@ -141,7 +142,7 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def account_update_params
-    devise_parameter_sanitizer.sanitize(:account_update)
+    params.require(:customer).permit(:invite_url_param)
   end
 
   def translation_scope

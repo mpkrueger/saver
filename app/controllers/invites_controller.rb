@@ -1,6 +1,7 @@
 class InvitesController < ApplicationController
   def new
   	@invite = Invite.new
+    @customer = current_customer
     my_desired_path = invite_path
     store_location_for(:customer, my_desired_path)
   end
