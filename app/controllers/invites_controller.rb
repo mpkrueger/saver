@@ -1,6 +1,8 @@
 class InvitesController < ApplicationController
   def new
   	@invite = Invite.new
+    my_desired_path = invite_path
+    store_location_for(:customer, my_desired_path)
   end
 
   def create
@@ -24,9 +26,33 @@ class InvitesController < ApplicationController
     @referrer = params[:referrer]
   end
 
+  def index
+    @invites = Invite.all
+  end
+
   private
 
   def invite_params
   	params.require(:invite).permit(:receiver_email, :incentive_amt, :email_message)
   end
+
+  def resource_name
+    :customer
+  end
+  helper_method :resource_name
+ 
+  def resource
+    @resource ||= Customer.new
+  end
+  helper_method :resource
+ 
+  def devise_mapping
+    @devise_mapping ||= Devise.mappings[:customer]
+  end
+  helper_method :devise_mapping
+ 
+  def resource_class
+    Customer
+  end
+  helper_method :resource_class
 end
