@@ -15,42 +15,90 @@
       $("#show_form").addClass('hidden');
       $("#change_url").removeClass('hidden');
     });
+
+
+    $('#js-textareacopybtn').on('click', function() {
+      $('#js-copytextarea').select();
+
+      try {
+        var successful = document.execCommand('copy');
+        var msg = successful ? 'successful' : 'unsuccessful';
+        console.log('Copying text command was ' + msg);
+      } catch (err) {
+        console.log('Oops, unable to copy');
+      }
+    });
+
   });
 </script>
 
-<body style="background-color: #a7d3b9;">
-
-  <div class="header invite-header">
-  	<div class="hero-title">Be a hero.</div>
-    <div class="hero-tagline">Help others save hundreds with no effort. 
-  Because everyone likes $$ and no one likes their cable company.</div>
-  </div>
+  
 
 
 <% if current_customer %>
-  <div class="saver-question-block" id="email">
-  Get $10 for each friend that saves $$ with Savvy!
-  <br /><br />
-  Your unique URL: <%= link_to "www.getsavvier.com/r/#{current_customer.invite_url_param}", "/r/#{current_customer.invite_url_param}" %>
-  <br />
-  <%= link_to "Change link", "javascript:;", id: "show_form" %>
-  
-  <div id= "change_url" class="hidden">
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-      www.getsavvier.com/r/<div class="dropdown-style">
-        <%= f.text_field :invite_url_param, class: "madlib-sentence border-underline", style: "width:300px;" %>
+
+ <div class="header saver-header">
+  <div class="saver-header-icon-block"><%= image_tag("piggybank2.png", class:"saver-header-icon") %> </div>
+  <div class="saver-header-logo-block"> <%= image_tag("savvysaverlogo.png", class:"saver-header-logo") %></div>
+  Sign Out
+  <br /> <hr class="saver-hr"/>
+ </div>
+
+ <div class="refer-title-block">
+    <div class="refer-headline" style="color:#333333;">Let’s start spreading the love (and the wealth). </div>
+  <div class="refer-tagline">Invite more, earn more. You’ll earn $10 for every friend you invite who signs up and saves money with Savvy.</div>
+</div>
+
+  <div class="invite-link-block">
+    <div class="email-column col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <div class="refer-type-title">INVITE VIA EMAIL</div>
+ 
+    <%= form_for @invite do |f| %>
+
+      <div class="">
+          <%= f.text_area :receiver_email, class: "email-textarea", placeholder: "your friends' email addresses", required: true %>
       </div>
-      <%= f.submit "Update link", class: "next-button" %>
+      <div class="" style="margin-top:10px;">
+        <%= f.text_area :email_message, class: "email-body-textarea", placeholder: "Hey there, I tried out this new service...", required: true %>
+      </div>
+      <br /> 
+     
+      <%= f.submit "Send invite", class: "next-button" %>
+      <br />
     <% end %>
+
+    <br />
+    </div>
+
+    <div class="fb-link-column col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <div class="refer-type-title">POST TO FACEBOOK</div>
+      <br /><br /><br />
+
+
+      <div class="refer-type-title">YOUR SPECIAL INVITE LINK </div><br/>
+      <%= link_to "www.getsavvier.com/r/#{current_customer.invite_url_param}", "/r/#{current_customer.invite_url_param}", :class=>"editable-link", :id=> "js-copytextarea" %>
+      <%= link_to "Copy Link", :id=>"js-textareacopybtn", :class=>"copy-link" %>
+      <br /><br />
+      <%= link_to "Edit your link", "javascript:;", id: "show_form" %>
+      
+      <div id= "change_url" class="hidden">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+          www.getsavvier.com/r/<div class="dropdown-style">
+            <%= f.text_field :invite_url_param, class: "madlib-sentence border-underline", style: "width:300px;" %>
+          </div>
+          <%= f.submit "Update link", class: "next-button" %>
+        <% end %>
+      </div>
+        <% if flash[:error] %>
+             <div class="alert alert-danger">
+               <%= flash[:error] %>
+             </div>
+        <% end %>
+
+    </div>
   </div>
-    <% if flash[:error] %>
-         <div class="alert alert-danger">
-           <%= flash[:error] %>
-         </div>
-    <% end %>
-  
 
-
+  <!--
       <%= form_for @invite do |f| %>
 
     
@@ -73,42 +121,51 @@
     </div>
 
       <% end %>
+    -->
 
   <% else %>
 
-  <div class="inviter-content">
-    <div class="inviter-image-block">
-      <%= image_tag("invite_flying_pig.png", class:"inviter-image") %>
-    </div>
-    <div class="inviter-signin">
+    <body style="background-color: #a7d3b9;">
+      <div class="header invite-header">
+        <div class="hero-title">Be a hero.</div>
+        <div class="hero-tagline">Help others save hundreds with no effort. 
+      Because everyone likes $$ and no one likes their cable company.</div>
+      </div>
 
-      <div class="hero-title">Get $10 for every friend that saves with Savvy.</div><div class="spaced-row"></div>
+      <div class="inviter-content">
+        <div class="inviter-image-block">
+          <%= image_tag("invite_flying_pig.png", class:"inviter-image") %>
+        </div>
+        <div class="inviter-signin">
+          <div class="hero-title">Get $10 for every friend that saves with Savvy.</div>
+          <div class="spaced-row"></div>
 
-      Create an account to send invites and track your rewards <br /><br />
+          Create an account to send invites and track your rewards <br /><br />
 
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= devise_error_messages! %>
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= devise_error_messages! %>
 
-      <a name="email"></a>
-    
-            
-            <div class="dropdown-style">
-                <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:300px;", placeholder: "email address" %>
-            </div>
-            <br /> <br />
-            <div class="dropdown-style">
-              <%= f.password_field :password, class: "border-underline", style:"width:300px;", placeholder: "password (at least 6 characters)", autocomplete: "off" %>
-            </div>
-            <br />
+            <a name="email"></a>
+        
+                
+              <div class="dropdown-style">
+                  <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:300px;", placeholder: "email address" %>
+              </div>
+              <br /> <br />
+              <div class="dropdown-style">
+                <%= f.password_field :password, class: "border-underline", style:"width:300px;", placeholder: "password (at least 6 characters)", autocomplete: "off" %>
+              </div>
+              <br />
 
-            <div class="spaced-row"></div>
-            
+              <div class="spaced-row"></div>
+                
               <%= f.submit "Create Account", class: 'invite-button' %>
               
               <div class="signin-link">(or Sign In)</div>
-        <% end %>
-      </div>
+          <% end %>
+        </div>
 
+      </div>
+    </body> 
   <% end %>
-</div>
-</body>
+

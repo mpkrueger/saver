@@ -40,9 +40,39 @@
   text-decoration: none;
 }
 
+.invite-link-block{
+
+	position:relative;
+	background-color:#fff;
+	padding: 4% 2%;
+}
+
+.editable-link{
+	border: 1px solid lightgray;
+	padding:12px;
+}
 
 
+.email-textarea{
+  padding:10px 15px;
+  display: inline-block;
+  width: 85%;
+  border: 1px solid #999;
+}
 
+.email-body-textarea{
+	padding:10px 15px;
+  display: inline-block;
+  width: 85%;
+  height:300px;
+  border: 1px solid #999;
+  text-align:left;
+  vertical-align: top;
+}
+
+.refer-type-title{
+	margin-bottom:8px;
+}
 
 @media screen and (max-width: 480px) {
 
@@ -148,7 +178,7 @@
 }
 
 @media screen and (min-width: 1068px) {
-		.invite-header{
+	.invite-header{
 	    z-index: 3;
 	    width: 100%;
 	    background-color: #578778;
@@ -156,6 +186,25 @@
 	    position: relative;
 	    padding: 35px;
 	    color: #fff;
+	}
+
+	.refer-title-block{
+		width:100%;
+		padding:35px;
+		position: relative;
+		top: 40px;
+
+	}
+
+	.refer-headline{
+		font-size:24px;
+		color:#333333;
+		margin-bottom:10px;
+	}
+
+	.refer-tagline{
+		font-size: 18px;
+		height:30px;
 	}
 
 	.hero-title{

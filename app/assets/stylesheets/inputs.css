@@ -65,6 +65,13 @@ input[type="text"], input[type="tel"], input[type="email"], input[type="password
   border-radius: 0;
 }
 
+input[type="email"]#multiple-emails{
+    -webkit-appearance: none;  /*Removes default chrome and safari style*/
+  -moz-appearance: none; /* Removes Default Firefox style*/
+  outline: 0;
+  background: transparent;
+  border-radius: 0;
+}
 
 input[type=text]:focus {
   @include box-shadow(0 0 0);
