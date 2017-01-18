@@ -16,23 +16,37 @@
       $("#change_url").removeClass('hidden');
     });
 
-
-    $('#js-textareacopybtn').on('click', function() {
-      $('#js-copytextarea').select();
-
-      try {
-        var successful = document.execCommand('copy');
-        var msg = successful ? 'successful' : 'unsuccessful';
-        console.log('Copying text command was ' + msg);
-      } catch (err) {
-        console.log('Oops, unable to copy');
-      }
+    $( "#shareBtn" ).on('click', function() {
+      FB.ui({
+        method: 'share',
+        display: 'popup',
+        href: 'http://www.getsavvier.com/invite',
+      }, function(response){});
     });
 
   });
 </script>
 
-  
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1477024708992163',
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
 
 
 <% if current_customer %>
@@ -72,7 +86,9 @@
 
     <div class="fb-link-column col-xs-6 col-sm-6 col-md-6 col-lg-6">
       <div class="refer-type-title">POST TO FACEBOOK</div>
-      <br /><br /><br />
+      <br />
+      <div id="shareBtn" class="btn btn-success clearfix">Share</div>
+      <br /><br />
 
 
       <div class="refer-type-title">YOUR SPECIAL INVITE LINK </div><br/>
@@ -168,4 +184,12 @@
       </div>
     </body> 
   <% end %>
+
+
+
+<%# facebook integration %>
+
+
+
+
 

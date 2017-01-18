@@ -7,17 +7,21 @@ class InvitesController < ApplicationController
   end
 
   def create
-  	@invite = Invite.new(invite_params)
-  	@customer = current_customer
-  	@invite.customer = @customer
+  	@emails = invite_params[:receiver_email].split(/,\s*/)
+    @emails.each do |email|
+      @invite = Invite.new(receiver_email: email, incentive_amt: invite_params[:incentive_amt], 
+        email_message: invite_params[:email_message])
+    	@customer = current_customer
+    	@invite.customer = @customer
 
-  	if @invite.save
-  		InviteMailer.invitation(@invite).deliver
-  		redirect_to thanks_invites_path
-  	else
-  		flash[:error] = "uh oh"
-			redirect_to root_path
-		end
+    	if @invite.save
+    		InviteMailer.invitation(@invite).deliver
+    	else
+    		flash[:error] = "uh oh"
+  			redirect_to invite_path
+  		end
+    end
+    redirect_to thanks_invites_path
   end
 
   def update
