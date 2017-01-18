@@ -1,24 +1,27 @@
+
+
 <% @title=": Invite a Friend" %>
 <script type="text/javascript">
     mixpanel.track("invite", {
 
     });
 </script>
+<body style="background-color: #a7d3b9;">
+
+  <div class="header invite-header">
+  	<div class="hero-title">Be a hero.</div>
+    <div class="hero-tagline">Help others save hundreds with no effort. 
+  Because everyone likes $$ and no one likes their cable company.</div>
+  </div>
 
 
-<div class="header saver-header">
-	<div class="saver-header-icon-block"><%= image_tag("piggybank2.png", class:"saver-header-icon") %> </div>
-	<div class="saver-header-logo-block">	<%= image_tag("savvysaverlogo.png", class:"saver-header-logo") %></div>
-		<br /> <hr class="saver-hr"/>
-</div>
+  <% if current_customer %>
+    <div class="saver-question-block" id="email">
+      Get $10 for each friend that saves $$ with Savvy!
+      <br /><br />
+      Your unique URL: <%= link_to "www.getsavvier.com/r/#{current_customer.invite_url_param}", "/r/#{current_customer.invite_url_param}" %>
 
-<% if current_customer %>
-  <div class="saver-question-block" id="email">
-  Get $10 for each friend that saves $$ with Savvy!
-  <br /><br />
-  Your unique URL: <%= link_to "www.getsavvier.com/r/#{current_customer.invite_url_param}", "/r/#{current_customer.invite_url_param}" %>
-
-  <%= form_for @invite do |f| %>
+      <%= form_for @invite do |f| %>
 
     
       
@@ -39,34 +42,43 @@
       <br /><br /><br /><br />
     </div>
 
+      <% end %>
+
+  <% else %>
+
+  <div class="inviter-content">
+    <div class="inviter-image-block">
+      <%= image_tag("invite_flying_pig.png", class:"inviter-image") %>
+    </div>
+    <div class="inviter-signin">
+
+      <div class="hero-title">Get $10 for every friend that saves with Savvy.</div><div class="spaced-row"></div>
+
+      Create an account to send invites and track your rewards <br /><br />
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+
+      <a name="email"></a>
+    
+            
+            <div class="dropdown-style">
+                <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:300px;", placeholder: "email address" %>
+            </div>
+            <br /> <br />
+            <div class="dropdown-style">
+              <%= f.password_field :password, class: "border-underline", style:"width:300px;", placeholder: "password (at least 6 characters)", autocomplete: "off" %>
+            </div>
+            <br />
+
+            <div class="spaced-row"></div>
+            
+              <%= f.submit "Create Account", class: 'invite-button' %>
+              
+              <div class="signin-link">(or Sign In)</div>
+        <% end %>
+      </div>
+
   <% end %>
-
-<% else %>
-
-<div class="saver-question-block" id="email">
-Please sign in or create an account to send invites - that way we can track your reward!
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-<a name="email"></a>
-<div class="edu-block">     
-      Create your Savvy account.<br /> <br />
-      <div class="dropdown-style">
-          <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:300px;", placeholder: "email address" %>
-      </div>
-      <br /> <br />
-      <div class="dropdown-style">
-        <%= f.password_field :password, class: "border-underline", style:"width:300px;", placeholder: "password (at least 6 characters)", autocomplete: "off" %>
-      </div>
-      <br /> <br />
-
-      <div class="spaced-row"></div>
-      
-        <%= f.submit "Sign up", class: 'next-button' %>
-        
 </div>
-
-  <% end %>
-
-<% end %>
+</body>
