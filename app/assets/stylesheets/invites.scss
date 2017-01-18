@@ -1,3 +1,199 @@
 // Place all the styles related to the Invites controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+.inviter-content{
+	    top: -62px;
+    position: relative;
+}
+
+
+.invite-button{
+  border: 2px solid #e5806c;
+  background-color: #e5806c;
+  color: #fff;
+  padding: 10px 30px;
+  text-align: center;
+  border-radius:6px;
+  margin: auto;
+  text-decoration: none;
+}
+
+.invite-button:active{
+  background-color:#c66e60;
+  color: #c66e60;
+  outline:0;
+  text-decoration: none;
+}
+
+.invite-button:disabled{
+    opacity:0.5;
+}
+
+.invite-button:hover{
+  background-color:#f4907f;
+  border: 2px solid #f4907f;
+  color:#fff;
+  text-decoration: none;
+}
+
+
+
+
+
+@media screen and (max-width: 480px) {
+
+
+	.invite-header{
+	    z-index: 3;
+	    width: 100%;
+	    background-color: #578778;
+	    top: -62px;
+	    position: relative;
+	    padding: 35px;
+	    color: #fff;
+	}
+
+	.hero-title{
+		font-size:20px;
+	}
+
+	.hero-tagline{
+		font-size:16px;
+	}
+
+	.inviter-signin{
+	    background-color: #fff;
+	    width: 100%;
+	    display: block;
+	    padding: 10%;
+	}
+
+	.inviter-image-block{
+		width:100%;
+		display:inline-block;
+		padding: 30px;
+	}
+
+	.inviter-image{
+		width:70%;
+	}
+
+	.signin-link{
+		margin-left:10px;
+		display:inline-block;
+		position:relative;
+		text-decoration: underline;
+	}
+
+
+
+
+}
+
+
+@media screen and (min-width: 480px) and (max-width:1068px) {
+
+
+	.invite-header{
+	    z-index: 3;
+	    width: 100%;
+	    background-color: #578778;
+	    top: -62px;
+	    position: relative;
+	    padding: 35px;
+	    color: #fff;
+	}
+
+	.hero-title{
+		font-size:28px;
+	}
+
+	.hero-tagline{
+		font-size:21px;
+	}
+
+	.inviter-signin{
+	    background-color: #fff;
+	    max-width: 50%;
+	    display: inline-block;
+	    padding: 6%;
+	}
+
+	.inviter-image-block{
+		width:40%;
+		float:left;
+		display:inline-block;
+		padding: 20px;
+	}
+
+	.inviter-image{
+		width:90%;
+		margin:auto;
+	}
+
+	.signin-link{
+		margin-left:10px;
+		display:inline-block;
+		position:relative;
+		text-decoration: underline;
+	}
+
+
+
+
+}
+
+@media screen and (min-width: 1068px) {
+		.invite-header{
+	    z-index: 3;
+	    width: 100%;
+	    background-color: #578778;
+	    top: -62px;
+	    position: relative;
+	    padding: 35px;
+	    color: #fff;
+	}
+
+	.hero-title{
+		font-size:28px;
+	}
+
+	.hero-tagline{
+		font-size:21px;
+	}
+
+	.inviter-signin{
+	    background-color: #fff;
+	    max-width:40%;
+		display: inline-block;
+	    padding: 6%;
+	}
+
+	.inviter-image-block{
+		width:55%;
+		float:left;
+		display:inline-block;
+		padding-left:5%;
+		text-align:center;
+		margin:auto;
+	}
+
+	.inviter-image{
+
+		width:70%;
+
+	}
+
+	.signin-link{
+		margin-left:10px;
+		display:inline-block;
+		position:relative;
+		text-decoration: underline;
+	}
+
+}
+
