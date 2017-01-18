@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   get 'invites/new'
 
-  devise_for :customers
+  devise_for :customers, controllers: { registrations: "registrations" }
   devise_for :admin_users, ActiveAdmin::Devise.config 
   ActiveAdmin.routes(self)
 
@@ -38,9 +38,9 @@ Rails.application.routes.draw do
   # devise_for :users, :controllers => { :registrations => "registrations", :sessions => "sessions" }
   
   
-  # authenticated :user do
-  #   root to: 'dashboard#homepage'
-  # end
+  authenticated :customer do
+    root to: 'invites#index'
+  end
 
   root to: redirect("http://try.getsavvier.com")
 
