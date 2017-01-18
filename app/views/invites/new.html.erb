@@ -16,6 +16,16 @@
       $("#change_url").removeClass('hidden');
     });
 
+    $( "#signin_link" ).on('click', function() {
+      $("#create_account").addClass('hidden');
+      $("#sign_in").removeClass('hidden');
+    });
+
+    $( "#create_link" ).on('click', function() {
+      $("#sign_in").addClass('hidden');
+      $("#create_account").removeClass('hidden');
+    });
+
     $( "#shareBtn" ).on('click', function() {
       FB.ui({
         method: 'share',
@@ -148,18 +158,19 @@
       Because everyone likes $$ and no one likes their cable company.</div>
       </div>
 
-      <div class="inviter-content">
-        <div class="inviter-image-block">
-          <%= image_tag("invite_flying_pig.png", class:"inviter-image") %>
-        </div>
-        <div class="inviter-signin">
-          <div class="hero-title">Get $10 for every friend that saves with Savvy.</div>
-          <div class="spaced-row"></div>
+  <div class="inviter-content">
+    <div class="inviter-image-block">
+      <%= image_tag("invite_flying_pig.png", class:"inviter-image") %>
+    </div>
+    <div class="inviter-signin">
 
-          Create an account to send invites and track your rewards <br /><br />
+      <div class="hero-title">Get $10 for every friend that saves with Savvy.</div><div class="spaced-row"></div>
 
-          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-            <%= devise_error_messages! %>
+      <div id="create_account">
+      Create an account to send invites and track your rewards <br /><br />
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
 
             <a name="email"></a>
         
@@ -176,19 +187,39 @@
               <div class="spaced-row"></div>
                 
               <%= f.submit "Create Account", class: 'invite-button' %>
-              
-              <div class="signin-link">(or Sign In)</div>
-          <% end %>
-        </div>
+            
+              <%= link_to "(or Sign In)", "javascript:;", id: "signin_link", class: "signin-link" %>
+        <% end %>
+      </div>
+
+      <div id="sign_in" class="hidden">
+        Sign in to send invites and track your rewards <br /><br />
+
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="dropdown-style">
+            <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:300px;", placeholder: "email address" %>
+          </div>
+          <br /> <br />
+          <div class="dropdown-style">
+            <%= f.password_field :password, class: "border-underline", style:"width:300px;", placeholder: "password", autocomplete: "off" %>
+          </div>
+          <br />
+
+          <% if devise_mapping.rememberable? -%>
+            <div class="row-future">
+              <%= f.check_box :remember_me, class: "madlib-sentence" %>
+              <%= f.label :remember_me, class:"unbolded-label" %>
+            </div>
+          <% end -%>
+
+          <div class="spaced-row"></div>
+          <%= f.submit "Sign In", class: 'invite-button' %>
+          <%= link_to "(or Create Account)", "javascript:;", id: "create_link", class: "signin-link" %>
+        <% end %>
 
       </div>
     </body> 
   <% end %>
-
-
-
-<%# facebook integration %>
-
 
 
 
