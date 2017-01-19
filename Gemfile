@@ -19,6 +19,7 @@ gem 'active_admin_datetimepicker'
 gem 'groupdate'
 gem 'strip_attributes'
 gem 'stripe'
+gem 'clipboard-rails'
 
 
 group :production do

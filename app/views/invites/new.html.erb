@@ -34,6 +34,9 @@
       }, function(response){});
     });
 
+    var clip = new Clipboard('.clipboard-btn');
+    console.log(clip);
+
   });
 </script>
 
@@ -102,8 +105,11 @@
 
 
       <div class="refer-type-title">YOUR SPECIAL INVITE LINK </div><br/>
-      <%= link_to "www.getsavvier.com/r/#{current_customer.invite_url_param}", "/r/#{current_customer.invite_url_param}", :class=>"editable-link" %>
-      <%= link_to "Copy Link", :class=>"copy-link" %>
+      <%= link_to @invite_url, "/r/#{current_customer.invite_url_param}", :class=>"editable-link" %>
+
+      <button class="clipboard-btn" data-clipboard-action="copy" data-clipboard-text="<%= @invite_url %>">
+        Copy Link
+      </button>
       <br /><br />
       <%= link_to "Edit your link", "javascript:;", id: "show_form" %>
       

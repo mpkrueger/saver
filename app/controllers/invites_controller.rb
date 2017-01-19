@@ -2,6 +2,7 @@ class InvitesController < ApplicationController
   def new
   	@invite = Invite.new
     @customer = current_customer
+    @invite_url = "www.getsavvier.com/r/#{@customer.invite_url_param}"
     my_desired_path = invite_path
     store_location_for(:customer, my_desired_path)
   end
