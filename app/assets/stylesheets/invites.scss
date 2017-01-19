@@ -5,18 +5,17 @@
 
 
 .invite-header{
-    position: fixed;
-    width: 100%;
+	width: 100%;
     background-color: white;
-    padding-top:0%;
-    top:0;
-    z-index:3;
+    padding-top: 0;
+    margin-top: 0;
+    z-index: 3;
 }
 
 .invite-header-icon-block{
-    float: left;
-    display: inline-block;
+    margin: auto;
     width: 7%;
+    text-align: center;
 }
 
 .invite-header-logo-block{
@@ -226,6 +225,7 @@
 	    padding: 35px 35px 5px 35px;
 	    position: relative;
 	    top: 10px;
+	    text-align:center;
 
 	}
 
