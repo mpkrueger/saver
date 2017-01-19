@@ -102,8 +102,8 @@
 
 
       <div class="refer-type-title">YOUR SPECIAL INVITE LINK </div><br/>
-      <%= link_to "www.getsavvier.com/r/#{current_customer.invite_url_param}", "/r/#{current_customer.invite_url_param}", :class=>"editable-link", :id=> "js-copytextarea" %>
-      <%= link_to "Copy Link", :id=>"js-textareacopybtn", :class=>"copy-link" %>
+      <%= link_to "www.getsavvier.com/r/#{current_customer.invite_url_param}", "/r/#{current_customer.invite_url_param}", :class=>"editable-link" %>
+      <%= link_to "Copy Link", :class=>"copy-link" %>
       <br /><br />
       <%= link_to "Edit your link", "javascript:;", id: "show_form" %>
       
