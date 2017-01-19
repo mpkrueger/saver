@@ -64,11 +64,11 @@
 
 <% if current_customer %>
 
- <div class="header saver-header">
-  <div class="saver-header-icon-block"><%= image_tag("piggybank2.png", class:"saver-header-icon") %> </div>
-  <div class="saver-header-logo-block"> <%= image_tag("savvysaverlogo.png", class:"saver-header-logo") %></div>
+ <div class="header invite-header">
+  <div class="invite-header-icon-block"><%= image_tag("piggybank2.png", class:"saver-header-icon") %> </div>
+  <div class="invite-header-logo-block"> <%= image_tag("savvysaverlogo.png", class:"saver-header-logo") %></div>
   Sign Out
-  <br /> <hr class="saver-hr"/>
+  <br /> <hr class="invite-hr"/>
  </div>
 
  <div class="refer-title-block">
@@ -83,10 +83,10 @@
     <%= form_for @invite do |f| %>
 
       <div class="">
-          <%= f.text_area :receiver_email, class: "email-textarea", placeholder: "your friends' email addresses", required: true %>
+          <%= f.text_area :receiver_email, class: "email-textarea", placeholder: "Enter your friends' email addresses separated by commas\ne.g. bob@email.com, savvy@getsavvier.com, ...", required: true %>
       </div>
       <div class="" style="margin-top:10px;">
-        <%= f.text_area :email_message, class: "email-body-textarea", placeholder: "Hey there, I tried out this new service...", required: true %>
+        <%= f.text_area :email_message, class: "email-body-textarea", :value=>"Hey there, I just saved money with no effort using this new service called Savvy. They lower your monthly cable/internet bill by negotiating on your behalf. On average, they save people $300/year.\n\nCheck them out at try.getsavvier.com. It was pain-free, easy money for me!", required: true %>
       </div>
       <br /> 
      
@@ -99,8 +99,8 @@
 
     <div class="fb-link-column col-xs-6 col-sm-6 col-md-6 col-lg-6">
       <div class="refer-type-title">POST TO FACEBOOK</div>
-      <br />
-      <div id="shareBtn" class="btn btn-success clearfix">Share</div>
+      <div id="shareBtn" class="fb-button"><%= image_tag('fb_button.png', class:"fb-button") %> <div class="fb-share-text">Share on Facebook</div>
+      </div>
       <br /><br />
 
 
