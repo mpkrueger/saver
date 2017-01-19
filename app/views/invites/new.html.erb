@@ -36,6 +36,16 @@
 
     var clip = new Clipboard('.clipboard-btn');
     console.log(clip);
+ 
+    clip.on('success', function(e) {
+     
+      $('.link-tooltip').show().fadeOut(2000);
+    });
+
+    
+
+  
+
 
   });
 </script>
@@ -63,52 +73,47 @@
 
 
 <% if current_customer %>
-
- <div class="header invite-header">
-  <div class="invite-header-icon-block"><%= image_tag("piggybank2.png", class:"saver-header-icon") %> </div>
-  <br /> <hr class="invite-hr"/>
- </div>
-
- <div class="refer-title-block">
-    <div class="refer-headline" style="color:#333333;">Let’s start spreading the love (and the wealth). </div>
-  <div class="refer-tagline">Invite more, earn more. You’ll earn $10 for every friend you invite who signs up and saves money with Savvy.</div>
-</div>
-
-  <div class="invite-link-block">
-    <div class="email-column col-xs-6 col-sm-6 col-md-6 col-lg-6">
-      <div class="refer-type-title">INVITE VIA EMAIL</div>
  
-    <%= form_for @invite do |f| %>
+   <div class="header invite-header">
+    <div class="invite-header-icon-block"><%= image_tag("piggybank2.png", class:"saver-header-icon") %> </div>
+    <hr class="invite-hr"/>
+   </div>
 
-      <div class="">
-          <%= f.text_area :receiver_email, class: "email-textarea", placeholder: "Enter your friends' email addresses separated by commas\ne.g. bob@email.com, savvy@getsavvier.com, ...", required: true %>
-      </div>
-      <div class="" style="margin-top:10px;">
-        <%= f.text_area :email_message, class: "email-body-textarea", :value=>"Hey there, I just saved money with no effort using this new service called Savvy. They lower your monthly cable/internet bill by negotiating on your behalf. On average, they save people $300/year.\n\nCheck them out at try.getsavvier.com. It was pain-free, easy money for me!", required: true %>
-      </div>
-      <br /> 
-     
-      <%= f.submit "Send invite", class: "next-button" %>
-      <br />
-    <% end %>
-
-    <br />
+    <div class="refer-title-block">
+        <div class="refer-headline" style="color:#333333;">NAME, let’s start spreading the love (and the wealth). </div>
+      <div class="refer-tagline">Invite more, earn more. You’ll earn $10 for every friend you invite who signs up and saves money with Savvy.</div>
     </div>
 
-    <div class="fb-link-column col-xs-6 col-sm-6 col-md-6 col-lg-6">
-      <div class="refer-type-title">POST TO FACEBOOK</div>
-      <div id="shareBtn" class="fb-button"><%= image_tag('fb_button.png', class:"fb-button") %> <div class="fb-share-text">Share on Facebook</div>
+    <div class="invite-link-block">
+      
+      <div class="email-box">
+        <div class="refer-type-title">Invite Via Email</div>
+        <%= form_for @invite do |f| %>
+
+          <div class="email-field-box">
+              <%= f.text_area :receiver_email, class: "email-textarea", placeholder: "e.g. savvy@getsavvier.com, bob@email.com, ...", required: true %>
+          </div>
+         
+          <%= f.submit "Send invite", class: "invite-button" %>
+        <% end %>
       </div>
-      <br /><br />
 
+      <div class="other-refer-box">
+        <div class="refer-type-title">Or share another way</div>
+        <div id="shareBtn" class="fb-button"><%= image_tag('fb_button_icon.png', class:"fb-button-icon") %> </div>
+      
+        <button class="clipboard-btn copy-link-button" data-clipboard-action="copy" data-clipboard-text="<%= @invite_url %>">
+          <%= image_tag('copy_link_icon.png', class:"copy-link-icon") %>
+        </button>
+        <div class="copy-url"> <%= link_to @invite_url, "/r/#{current_customer.invite_url_param}", :class=>"editable-link" %>
+        </div> <br />
+        <div class="link-tooltip"><span class="tooltiptext">Copied!</span></div>
+      </div>  
+    </div>    
+    <br /><br />
+  <div class="city-bottom"></div>
 
-      <div class="refer-type-title">YOUR SPECIAL INVITE LINK </div><br/>
-      <%= link_to @invite_url, "/r/#{current_customer.invite_url_param}", :class=>"editable-link" %>
-
-      <button class="clipboard-btn" data-clipboard-action="copy" data-clipboard-text="<%= @invite_url %>">
-        Copy Link
-      </button>
-      <br /><br />
+    <!--
       <%= link_to "Edit your link", "javascript:;", id: "show_form" %>
       
       <div id= "change_url" class="hidden">
@@ -128,7 +133,7 @@
     </div>
   </div>
 
-  <!--
+  
       <%= form_for @invite do |f| %>
 
     
@@ -155,75 +160,77 @@
 
   <% else %>
 
-    <body style="background-color: #a7d3b9;">
-      <div class="header invite-header">
+    <body class="city-bottom" style="background-color: #a7d3b9;">
+      <div class="header invite-logout-header">
         <div class="hero-title">Be a hero.</div>
         <div class="hero-tagline">Help others save hundreds with no effort. 
-      Because everyone likes $$ and no one likes their cable company.</div>
+        Because everyone likes $$ and no one likes their cable company.</div>
       </div>
 
-  <div class="inviter-content">
-    <div class="inviter-image-block">
-      <%= image_tag("invite_flying_pig.png", class:"inviter-image") %>
-    </div>
-    <div class="inviter-signin">
-
-      <div class="hero-title">Get $10 for every friend that saves with Savvy.</div><div class="spaced-row"></div>
-
-      <div id="create_account">
-      Create an account to send invites and track your rewards <br /><br />
-
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= devise_error_messages! %>
-
-            <a name="email"></a>
-        
-                
-              <div class="dropdown-style">
-                  <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:300px;", placeholder: "email address" %>
-              </div>
-              <br /> <br />
-              <div class="dropdown-style">
-                <%= f.password_field :password, class: "border-underline", style:"width:300px;", placeholder: "password (at least 6 characters)", autocomplete: "off" %>
-              </div>
-              <br />
-
-              <div class="spaced-row"></div>
-                
-              <%= f.submit "Create Account", class: 'invite-button' %>
-            
-              <%= link_to "(or Sign In)", "javascript:;", id: "signin_link", class: "signin-link" %>
-        <% end %>
+    <div class="inviter-content">
+      <div class="inviter-image-block">
+        <%= image_tag("invite_flying_pig.png", class:"inviter-image") %>
       </div>
+      
+      <div class="inviter-signin">
+      
+        <div class="hero-title">Get $10 for every friend that saves with Savvy.</div><div class="spaced-row"></div>
 
-      <div id="sign_in" class="hidden">
-        Sign in to send invites and track your rewards <br /><br />
+        <div id="create_account">
+        Create an account to send invites and track your rewards <br /><br />
 
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <div class="dropdown-style">
-            <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:300px;", placeholder: "email address" %>
-          </div>
-          <br /> <br />
-          <div class="dropdown-style">
-            <%= f.password_field :password, class: "border-underline", style:"width:300px;", placeholder: "password", autocomplete: "off" %>
-          </div>
-          <br />
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= devise_error_messages! %>
 
-          <% if devise_mapping.rememberable? -%>
-            <div class="row-future">
-              <%= f.check_box :remember_me, class: "madlib-sentence" %>
-              <%= f.label :remember_me, class:"unbolded-label" %>
+              <a name="email"></a>
+                <div class="dropdown-style">
+                    <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:300px;", placeholder: "email address" %>
+                </div>
+                <br /> <br />
+                <div class="dropdown-style">
+                  <%= f.password_field :password, class: "border-underline", style:"width:300px;", placeholder: "password (at least 6 characters)", autocomplete: "off" %>
+                </div>
+                <br />
+
+                <div class="spaced-row"></div>
+                  
+                <%= f.submit "Create Account", class: 'invite-button' %>
+              
+                <%= link_to "(or Sign In)", "javascript:;", id: "signin_link", class: "signin-link" %>
+          <% end %>
+        </div>
+
+        <div id="sign_in" class="hidden">
+          Sign in to send invites and track your rewards <br /><br />
+
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="dropdown-style">
+              <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:300px;", placeholder: "email address" %>
             </div>
-          <% end -%>
+            <br /> <br />
+            <div class="dropdown-style">
+              <%= f.password_field :password, class: "border-underline", style:"width:300px;", placeholder: "password", autocomplete: "off" %>
+            </div>
+            <br />
 
-          <div class="spaced-row"></div>
-          <%= f.submit "Sign In", class: 'invite-button' %>
-          <%= link_to "(or Create Account)", "javascript:;", id: "create_link", class: "signin-link" %>
-        <% end %>
+            <% if devise_mapping.rememberable? -%>
+              <div class="row-future">
+                <%= f.check_box :remember_me, class: "madlib-sentence" %>
+                <%= f.label :remember_me, class:"unbolded-label" %>
+              </div>
+            <% end -%>
 
+            <div class="spaced-row"></div>
+            <%= f.submit "Sign In", class: 'invite-button' %>
+            <%= link_to "(or Create Account)", "javascript:;", id: "create_link", class: "signin-link" %>
+          <% end %>
+
+        </div>
       </div>
-    </body> 
-  <% end %>
+    </div>
+  </body> 
+<% end %>
+
 
 
 
