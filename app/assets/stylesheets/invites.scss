@@ -4,6 +4,31 @@
 
 
 
+.invite-header{
+    position: fixed;
+    width: 100%;
+    background-color: white;
+    padding-top:0%;
+    top:0;
+    z-index:3;
+}
+
+.invite-header-icon-block{
+    float: left;
+    display: inline-block;
+    width: 7%;
+}
+
+.invite-header-logo-block{
+	position: relative;
+    width: 50%;
+    margin-top: 1.1%;
+    display: inline-block;
+	}
+
+.invite-hr{
+	margin-top:1%;
+}
 
 .inviter-content{
 	    top: -62px;
@@ -61,17 +86,34 @@
 
 .email-body-textarea{
 	padding:10px 15px;
-  display: inline-block;
-  width: 85%;
-  height:300px;
-  border: 1px solid #999;
-  text-align:left;
-  vertical-align: top;
+	  display: inline-block;
+	  width: 85%;
+	  height:250px;
+	  border: 1px solid #999;
+	  text-align:left;
+	  vertical-align: top;
 }
 
 .refer-type-title{
 	margin-bottom:8px;
 }
+
+
+.fb-button{
+	width: 75%;
+    height: auto;
+    display: inline-block;
+    position: relative;
+}
+
+.fb-share-text{
+	position: relative;
+    left: 65px;
+    color: white;
+    display: inline-block;
+    top: -40px;
+}
+
 
 @media screen and (max-width: 480px) {
 
@@ -177,22 +219,13 @@
 }
 
 @media screen and (min-width: 1068px) {
-	.invite-header{
-	    z-index: 3;
-	    width: 100%;
-	    background-color: #578778;
-	    top: -62px;
-	    position: relative;
-	    padding: 35px;
-	    color: #fff;
-	}
+
 
 	.refer-title-block{
-		width:100%;
-		padding:35px;
-		position: relative;
-		top: 70px;
-		height: 140px;
+	    width: 100%;
+	    padding: 35px 35px 5px 35px;
+	    position: relative;
+	    top: 10px;
 
 	}
 
