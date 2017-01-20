@@ -113,7 +113,17 @@
 	width:100%;
 }
 
-
+.link-tooltip .tooltiptext {
+    width: 60px;
+    background-color: transparent;
+    color: #00cc99;
+    text-align: center;
+  	margin-top:10px;
+  	margin:auto;
+    /* Position the tooltip text - see examples below! */
+    position: relative;
+    z-index: 1;
+}
 
 .editable-link{
 	padding: 14px 10px;
@@ -194,17 +204,7 @@
 		margin-bottom:20px;
 	}
 
-	.link-tooltip .tooltiptext {
-	    width: 60px;
-	    background-color: transparent;
-	    color: #00cc99;
-	    text-align: center;
-	  	margin-top:10px;
-	  	margin:auto;
-	    /* Position the tooltip text - see examples below! */
-	    position: relative;
-	    z-index: 1;
-	}
+
 
 
 	.hero-title{
@@ -345,17 +345,6 @@
 	  resize:none;
 	}
 
-	.link-tooltip .tooltiptext {
-	    width: 60px;
-	    background-color: transparent;
-	    color: #00cc99;
-	    text-align: left;
-	  	margin-top:10px;
-	  	margin-left:150px;
-	    /* Position the tooltip text - see examples below! */
-	    position: absolute;
-	    z-index: 1;
-	}
 
 
 	.fb-button{
@@ -505,17 +494,6 @@
 	  resize:none;
 	}
 
-	.link-tooltip .tooltiptext {
-	    width: 60px;
-	    background-color: transparent;
-	    color: #00cc99;
-	    text-align: left;
-	  	margin-top:10px;
-	  	margin-left:150px;
-	    /* Position the tooltip text - see examples below! */
-	    position: absolute;
-	    z-index: 1;
-	}
 
 	.hero-title{
 		font-size:28px;
