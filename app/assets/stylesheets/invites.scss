@@ -155,10 +155,9 @@
 	.invite-logout-header{
 	    z-index: 3;
 	    width: 100%;
-	    background-color: #578778;
 	    top: 0px;
 	    position: relative;
-	    padding: 35px;
+	    padding: 35px 35px 0px 35px;
 	    color: #fff;
 	    text-align:center;
 	}
@@ -209,11 +208,15 @@
 
 	.hero-title{
 		font-size: 24px;
-    	margin-bottom: 5px
+    		color:#333333;
+		margin-bottom:10px;
 	}
 
 	.hero-tagline{
 		font-size:16px;
+		color:#333;
+		width:80%;
+		margin:auto;
 	}
 
 	.inviter-signin{
@@ -241,6 +244,7 @@
 		display:inline-block;
 		position:relative;
 		text-decoration: underline;
+		color:#f4907f !important;
 	}
 
 
@@ -300,11 +304,11 @@
 	.invite-logout-header{
 	    z-index: 3;
 	    width: 100%;
-	    background-color: #578778;
 	    top: 0px;
 	    position: relative;
-	    padding: 35px;
+	    padding: 35px 35px 0px 35px;
 	    color: #fff;
+	    text-align:center;
 	}
 
 
@@ -358,11 +362,16 @@
 
 
 	.hero-title{
-		font-size:28px;
+		font-size:24px;
+		color:#333333;
+		margin-bottom:10px;
 	}
 
 	.hero-tagline{
-		font-size:21px;
+		font-size:18px;
+		color:#333;
+		width:80%;
+		margin:auto;
 	}
 
 	.inviter-signin{
@@ -392,6 +401,7 @@
 		display:inline-block;
 		position:relative;
 		text-decoration: underline;
+		color:#f4907f !important;
 	}
 
 	.fb-button{
@@ -449,10 +459,9 @@
 	.invite-logout-header{
 	    z-index: 3;
 	    width: 100%;
-	    //background-color: #578778;
 	    top: 0px;
 	    position: relative;
-	    padding: 35px;
+	    padding: 35px 35px 0px 35px;
 	    color: #444;
 	    text-align:center;
 	    margin:auto;
@@ -496,11 +505,16 @@
 
 
 	.hero-title{
-		font-size:28px;
+		font-size:24px;
+		color:#333333;
+		margin-bottom:10px;
 	}
 
 	.hero-tagline{
-		font-size:21px;
+		font-size:18px;
+		color:#333;
+		width:80%;
+		margin:auto;
 	}
 
 	.inviter-signin{
