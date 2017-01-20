@@ -12,6 +12,18 @@
 }
 
 
+
+
+.referral-input-style{
+	display: inline-flex;
+  border-bottom: 1px solid #5d5d5d;
+  width: auto;
+  max-width:100%;
+  overflow: hidden;
+  white-space: nowrap;
+  color:#5d5d5d;
+}
+
 .invite-header{
 	width: 100%;
     background-color: white;
@@ -34,6 +46,8 @@
 .inviter-content{
 	  
     position: relative;
+    text-align:center;
+    margin:auto;
 }
 
 
@@ -203,6 +217,8 @@
 	    width: 100%;
 	    display: block;
 	    padding: 10%;
+	    text-align:center;
+	    margin:auto;
 	}
 
 	.inviter-image-block{
@@ -351,6 +367,8 @@
 	    max-width: 36%;
 	    display: inline-block;
 	    padding: 5% 2% 5% 3%;
+	    text-align:center;
+	    margin:auto;
 	}
 
 	.inviter-image-block{
@@ -419,11 +437,13 @@
 	.invite-logout-header{
 	    z-index: 3;
 	    width: 100%;
-	    background-color: #578778;
+	    //background-color: #578778;
 	    top: 0px;
 	    position: relative;
 	    padding: 35px;
-	    color: #fff;
+	    color: #444;
+	    text-align:center;
+	    margin:auto;
 	}
 
 	.refer-title-block{
@@ -487,6 +507,8 @@
 	    max-width:36%;
 		display: inline-block;
 	    padding: 5% 2% 5% 3%;
+	    text-align:center;
+	    margin:auto;
 	}
 
 	.inviter-image-block{
@@ -505,10 +527,11 @@
 	}
 
 	.signin-link{
-		margin-left:10px;
+		margin-left:0px;
 		display:inline-block;
 		position:relative;
 		text-decoration: underline;
+		color:#f4907f !important;
 	}
 
 	.fb-button{
