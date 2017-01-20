@@ -3,13 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.city-bottom{
-	background-image: url('cityscape.png');
-	background-position: center bottom;
-    background-repeat: no-repeat;
-    width:100%;
-    height:160px;
-}
+
 
 
 
@@ -138,6 +132,16 @@
 @media screen and (max-width: 480px) {
 
 
+	.city-bottom{
+		background-image: url('cityscape.png');
+		background-position: center bottom;
+	    background-repeat: no-repeat;
+	    width:100%;
+	    height:160px;
+	    background-size: 220% 10%;
+	}
+
+
 	.invite-logout-header{
 	    z-index: 3;
 	    width: 100%;
@@ -170,7 +174,7 @@
 	}
 
 	.refer-tagline{
-		font-size: 18px;
+		font-size: 16px;
 	}
 
 	.email-textarea{
@@ -187,7 +191,7 @@
 		width: 80%;
 		text-align:center;
 		margin:auto;
-		margin-bottom:30px;
+		margin-bottom:20px;
 	}
 
 	.link-tooltip .tooltiptext {
@@ -269,11 +273,11 @@
 
 	.copy-url{
 		position: relative;
-	    display: inline-block;
+	    overflow: hidden;
 	    padding: 10px 0px;
 	    height: 40px;
 	    border: 1px solid lightgray;
-	    margin-left: -5px;
+	    
 	}
 
 
@@ -282,6 +286,16 @@
 
 
 @media screen and (min-width: 480px) and (max-width:1068px) {
+
+	.city-bottom{
+		background-image: url('cityscape.png');
+		background-position: center bottom;
+	    background-repeat: no-repeat;
+	    width:100%;
+	    height:160px;
+
+	}
+
 
 	.invite-logout-header{
 	    z-index: 3;
@@ -434,6 +448,15 @@
 
 @media screen and (min-width: 1068px) {
 
+
+	.city-bottom{
+		background-image: url('cityscape.png');
+		background-position: center bottom;
+	    background-repeat: no-repeat;
+	    width:100%;
+	    height:160px;
+	}
+
 	.invite-logout-header{
 	    z-index: 3;
 	    width: 100%;
@@ -565,7 +588,7 @@
 	.copy-url{
 		position: relative;
 	    display: inline-block;
-	    padding: 10px 0px;
+	    padding: 10px 5px;
 	    height: 50px;
 	    border: 1px solid lightgray;
 	    margin-left: -5px;
