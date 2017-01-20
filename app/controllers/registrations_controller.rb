@@ -16,6 +16,16 @@ class RegistrationsController < Devise::RegistrationsController
 
     resource.invite_url_param = resource.email.split("@").first
 
+    if resource.referred_by
+      unless Invite.find_by_receiver_email(resource.email)
+        @invite = Invite.new(receiver_email: resource.email)
+        @invite.customer = Customer.find_by_invite_url_param(resource.referred_by)
+        @invite.save
+      end
+    end
+
+
+
     resource.save
     yield resource if block_given?
     if resource.persisted?
@@ -138,7 +148,7 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def sign_up_params
-    params.require(:customer).permit(:first_name, :email, :password)
+    params.require(:customer).permit(:first_name, :email, :password, :referred_by)
   end
 
   def account_update_params

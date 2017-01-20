@@ -31,7 +31,8 @@ class InvitesController < ApplicationController
   end
 
   def show
-    @referrer = params[:referrer]
+    @sender = Customer.find_by_invite_url_param(params[:sender])
+    store_location_for(:customer, thanks_invites_path)
   end
 
   def index
