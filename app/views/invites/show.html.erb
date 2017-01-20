@@ -1,4 +1,93 @@
 // landing page for receiver
 
+<script type="text/javascript">
+    mixpanel.track("receiver_lp", {
 
-<%= @referrer %> would like you to save some money!
+    });
+</script>
+
+<script>
+  $('document').ready(function() {
+  	   $( "#signin_link" ).on('click', function() {
+      $("#create_account").addClass('hidden');
+      $("#sign_in").removeClass('hidden');
+    });
+
+    $( "#create_link" ).on('click', function() {
+      $("#sign_in").addClass('hidden');
+      $("#create_account").removeClass('hidden');
+    });
+
+  });
+</script>
+
+<body class="city-bottom">
+	<div class="header invite-header">
+	    <div class="invite-header-icon-block"><%= image_tag("piggybank2.png", class:"saver-header-icon") %> </div>
+		<hr class="invite-hr"/>
+	</div>
+
+	<div class="invite-logout-header">
+        <div class="hero-title" id="hero-title"><%= @referrer %> would like you to save some money!</div>
+        <div class="hero-tagline"> Savvy negotiates lower rates on your cable/internet bill so you can rest easy and save more.
+        </div>
+	</div>
+
+	<div class="inviter-content">
+      
+      <div class="inviter-signin">
+
+        <div id="create_account">
+
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= devise_error_messages! %>
+
+            <div class="referral-input-style">
+                <%= f.text_field :first_name, value: (params[:first_name]), class: "border-underline", style:"width:300px;", placeholder: "first name" %>
+            </div>
+            <br /> <br />
+            <div class="referral-input-style">
+                <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:300px;", placeholder: "email address" %>
+            </div>
+            <br /> <br />
+            <div class="referral-input-style">
+              <%= f.password_field :password, class: "border-underline", style:"width:300px;", placeholder: "password (at least 6 characters)", autocomplete: "off" %>
+            </div>
+            <br />
+
+            <div class="spaced-row"></div>
+              
+            <%= f.submit "Create Account", class: 'invite-button' %>
+            <div class="spaced-row"></div>
+            <%= link_to "(Or Sign In)", "javascript:;", id: "signin_link", class: "signin-link" %>
+          <% end %>
+        </div>
+
+        <div id="sign_in" class="hidden">
+          
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="referral-input-style">
+              <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:300px;", placeholder: "email address" %>
+            </div>
+            <br /> <br />
+            <div class="referral-input-style">
+              <%= f.password_field :password, class: "border-underline", style:"width:300px;", placeholder: "password", autocomplete: "off" %>
+            </div>
+            <br />
+
+            <% if devise_mapping.rememberable? -%>
+              <div style="margin-top:10px;">
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me, class:"unbolded-label" %>
+              </div>
+            <% end -%>
+
+            <div class="spaced-row"></div>
+            <%= f.submit "Sign In", class: 'invite-button' %>
+            <div class="spaced-row"></div>
+            <%= link_to "(or Create Account)", "javascript:;", id: "create_link", class: "signin-link" %>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
