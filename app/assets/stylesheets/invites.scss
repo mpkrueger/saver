@@ -82,25 +82,19 @@
 
 
 
-.email-field-box{
-	margin-bottom:10px;
-}
-
-
-
-
-.other-refer-box{
-	width:70%;
-	margin: auto;
-    text-align: center;
-}
-
-
-
 .refer-type-title{
-	margin-bottom:8px;
+	margin-bottom: 20px;
+    background-color: #5d5d5d;
+    padding: 10px;
+    color: #fff;
 }
 
+.other-refer-type-title{
+	background-color: transparent;
+    color: #5d5d5d;
+    width: 100%;
+    margin-bottom:20px;
+}
 
 
 .fb-button-icon{
@@ -186,6 +180,12 @@
 		font-size: 16px;
 	}
 
+	.email-field-box{
+		width: 80%;
+	    margin: auto;
+	    margin-bottom: 10px;
+	}
+
 	.email-textarea{
 	  padding:10px 15px;
 	  display: inline-block;
@@ -196,13 +196,18 @@
 
 	.email-box{
 		background-color:#EEE;
-		padding:20px;
-		width: 80%;
+		padding: 0 0 20px 0;
+		width: 90%;
 		text-align:center;
 		margin:auto;
 		margin-bottom:20px;
 	}
 
+	.other-refer-box{
+		width:90%;
+		margin: auto;
+	    text-align: center;
+	}
 
 
 
@@ -284,6 +289,15 @@
 	    
 	}
 
+	.rewards{
+		font-size: 24px;
+    	color:#333333;
+		margin-bottom:10px;
+		text-align:center;
+		margin:auto;
+		width:40%;
+	}
+
 
 
 }
@@ -328,14 +342,21 @@
 
 	.refer-tagline{
 		font-size: 18px;
-		width:80%;
+		width:82%;
 		margin:auto;
 	}
 
+	.email-field-box{
+		margin-bottom:10px;
+		width: 90%;
+	    margin: auto;
+	}
+
+
 	.email-box{
 		background-color:#EEE;
-		padding:20px;
-		width: 80%;
+		padding: 0 0 20px 0;
+		width: 70%;
 		text-align:center;
 		margin:auto;
 		margin-bottom:30px;
@@ -347,8 +368,14 @@
 	  width: 85%;
 	  border: 1px solid #CCC;
 	  resize:none;
+	  height: 50px;
 	}
 
+	.other-refer-box{
+		width:70%;
+		margin: auto;
+	    text-align: center;
+	}
 
 
 	.fb-button{
@@ -441,7 +468,14 @@
 	    margin-left: -5px;
 	}
 
-
+	.rewards{
+		font-size: 24px;
+    	color:#333333;
+		margin-bottom:10px;
+		text-align:center;
+		margin:auto;
+		width:40%;
+	}
 
 }
 
@@ -483,12 +517,20 @@
 
 	.refer-tagline{
 		font-size: 18px;
+		width:82%;
+		margin:auto;
+	}
+
+	.email-field-box{
+		margin-bottom:10px;
+		width: 90%;
+	    margin: auto;
 	}
 
 
 	.email-box{
 		background-color:#EEE;
-		padding:20px;
+		padding: 0 0 20px 0;
 		width: 70%;
 		text-align:center;
 		margin:auto;
@@ -501,6 +543,13 @@
 	  width: 85%;
 	  border: 1px solid #CCC;
 	  resize:none;
+	  height:50px;
+	}
+
+	.other-refer-box{
+		width:70%;
+		margin: auto;
+	    text-align: center;
 	}
 
 
@@ -584,6 +633,15 @@
 	    height: 50px;
 	    border: 1px solid lightgray;
 	    margin-left: -5px;
+	}
+
+	.rewards{
+		font-size: 24px;
+    	color:#333333;
+		margin-bottom:10px;
+		text-align:center;
+		margin:auto;
+		width:40%;
 	}
 
 }
