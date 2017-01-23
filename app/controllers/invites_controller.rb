@@ -31,7 +31,12 @@ class InvitesController < ApplicationController
   end
 
   def show
-    @sender = Customer.find_by_invite_url_param(params[:sender])
+    if Customer.find_by_invite_url_param(params[:sender])
+      @sender_name = Customer.find_by_invite_url_param(params[:sender])
+    else
+      @sender_name = "A friend"
+    end
+    
     store_location_for(:customer, thanks_saver_guests_path)
   end
 

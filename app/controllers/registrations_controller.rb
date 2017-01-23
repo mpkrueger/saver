@@ -14,13 +14,15 @@ class RegistrationsController < Devise::RegistrationsController
   def create
     build_resource(sign_up_params)
 
-    resource.invite_url_param = resource.email.split("@").first
+    resource.invite_url_param = resource.email.split("@").first.tr(".", "")
 
     if resource.referred_by
       unless Invite.find_by_receiver_email(resource.email)
-        @invite = Invite.new(receiver_email: resource.email)
-        @invite.customer = Customer.find_by_invite_url_param(resource.referred_by)
-        @invite.save
+        if Customer.find_by_invite_url_param(resource.referred_by)
+          @invite = Invite.new(receiver_email: resource.email)
+          @invite.customer = Customer.find_by_invite_url_param(resource.referred_by)
+          @invite.save
+        end
       end
     end
 
