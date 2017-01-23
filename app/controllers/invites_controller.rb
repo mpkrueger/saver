@@ -32,7 +32,7 @@ class InvitesController < ApplicationController
 
   def show
     @sender = Customer.find_by_invite_url_param(params[:sender])
-    store_location_for(:customer, thanks_invites_path)
+    store_location_for(:customer, thanks_saver_guests_path)
   end
 
   def index

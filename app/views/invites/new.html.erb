@@ -84,8 +84,8 @@
    </div>
 
     <div class="refer-title-block">
-        <div class="refer-headline" style="color:#333333;">Hi, <%= @customer.first_name %>! <br />Let’s start spreading the love (and the wealth). </div>
-      <div class="refer-tagline">You’ll earn $10 for every friend you invite who signs up and saves money with Savvy.</div>
+        <div class="refer-headline" style="color:#333333;"><%= @customer.first_name %>, invite your friends to Savvy to earn cash rewards. </div>
+      <div class="refer-tagline">Spread the love by saving your friends some money with Savvy. For every friend you invite who saves money with Savvy, you’ll earn $10.</div>
     </div>
 
     <div class="invite-link-block">
@@ -95,7 +95,7 @@
         <%= form_for @invite do |f| %>
 
           <div class="email-field-box">
-              <%= f.text_area :receiver_email, class: "email-textarea", placeholder: "e.g. savvy@getsavvier.com, bob@email.com, etc.", required: true %>
+              <%= f.text_area :receiver_email, class: "email-textarea", placeholder: "Separate each email with a comma, e.g. savvy@getsavvier.com, bob@email.com, etc.", required: true %>
           </div>
          
           <%= f.submit "Send invite", class: "invite-button" %>
@@ -103,7 +103,8 @@
       </div>
 
       <div class="other-refer-box">
-        <div class="refer-type-title">Or Invite Another Way</div>
+        <hr />
+        <div class="other-refer-type-title">Or Invite Another Way</div>
         <div id="shareBtn" class="fb-button"><%= image_tag('fb_button_icon.png', class:"fb-button-icon") %> </div>
       
         <button class="clipboard-btn copy-link-button" data-clipboard-action="copy" data-clipboard-text="<%= @invite_url %>">
@@ -113,8 +114,14 @@
         </div> <br />
         <div class="link-tooltip"><span class="tooltiptext">Copied!</span></div>
         <div class="spaced-row"></div><div class="spaced-row"></div>
-      </div>  
-    </div>    
+      </div> 
+    </div>   
+
+    <div class="rewards">
+    Your Total Rewards: 
+
+    </div>
+
     <br /><br />
   
   </body>
