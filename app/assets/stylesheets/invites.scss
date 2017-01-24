@@ -4,6 +4,41 @@
 
 
 
+.other-refer-type-title{
+	background-color: transparent;
+    color: #5d5d5d;
+    width: 100%;
+    margin-bottom:20px;
+    font-weight: 400;
+    display:inline-block;
+    padding: 0 15px;
+    position: relative;
+}
+
+
+other-refer-type-title:before,
+other-refer-type-title:after {
+  background-color: #ddd;
+  content: "";
+  display: block;
+  height: 2px;
+  position: absolute;
+    top: 50%;
+  width: 400%;
+}
+
+other-refer-type-title:before {
+  right: 100%;
+}
+
+other-refer-type-title:after {
+  left: 100%;
+}
+
+.title-container {
+  overflow: hidden;
+  text-align: center;
+}
 
 
 
@@ -84,17 +119,13 @@
 
 .refer-type-title{
 	margin-bottom: 20px;
-    background-color: #5d5d5d;
+    background-color: #aaa;
     padding: 10px;
     color: #fff;
+    font-weight:400;
 }
 
-.other-refer-type-title{
-	background-color: transparent;
-    color: #5d5d5d;
-    width: 100%;
-    margin-bottom:20px;
-}
+
 
 
 .fb-button-icon{
@@ -174,10 +205,12 @@
 		font-size:24px;
 		color:#333333;
 		margin-bottom:10px;
+		font-weight: 400;
 	}
 
 	.refer-tagline{
 		font-size: 16px;
+		font-weight:400;
 	}
 
 	.email-field-box{
@@ -296,6 +329,7 @@
 		text-align:center;
 		margin:auto;
 		width:40%;
+		margin-top:20px;
 	}
 
 
@@ -338,6 +372,7 @@
 		font-size:24px;
 		color:#333333;
 		margin-bottom:10px;
+		font-weight: 400;
 	}
 
 	.refer-tagline{
@@ -475,6 +510,7 @@
 		text-align:center;
 		margin:auto;
 		width:40%;
+		margin-top:40px;
 	}
 
 }
@@ -513,6 +549,7 @@
 		font-size:24px;
 		color:#333333;
 		margin-bottom:10px;
+		font-weight: 400;
 	}
 
 	.refer-tagline{
@@ -540,10 +577,11 @@
 	.email-textarea{
 	  padding:10px 15px;
 	  display: inline-block;
-	  width: 85%;
+	  width: 100%;
 	  border: 1px solid #CCC;
 	  resize:none;
 	  height:50px;
+	  margin-bottom:10px;
 	}
 
 	.other-refer-box{
@@ -642,6 +680,7 @@
 		text-align:center;
 		margin:auto;
 		width:40%;
+		margin-top:40px;
 	}
 
 }

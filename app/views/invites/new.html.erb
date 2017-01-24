@@ -79,7 +79,7 @@
 
 
 <% if current_customer %>
-  <body class="city-bottom">
+  <body class="city-bottom" style="overflow:auto; height:100%;">
    <div class="header invite-header">
     <div class="invite-header-icon-block"><%= image_tag("piggybank2.png", class:"saver-header-icon") %> </div>
     <hr class="invite-hr"/>
@@ -105,8 +105,7 @@
       </div>
 
       <div class="other-refer-box">
-        <hr />
-        <div class="other-refer-type-title">Or Invite Another Way</div>
+        <div class="title-container"><div class="other-refer-type-title">Or Invite Another Way</div></div>
         <div id="shareBtn" class="fb-button"><%= image_tag('fb_button_icon.png', class:"fb-button-icon") %> </div>
       
         <button class="clipboard-btn copy-link-button" data-clipboard-action="copy" data-clipboard-text="<%= @invite_url %>">
@@ -119,10 +118,7 @@
       </div> 
     </div>   
 
-    <div class="rewards">
-    Your Total Rewards: $<%= @customer.invites.where(saved_money: true).count * 10 %>
-
-    </div>
+    
 
     <br /><br />
   
