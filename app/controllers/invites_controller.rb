@@ -9,6 +9,14 @@ class InvitesController < ApplicationController
     store_location_for(:customer, my_desired_path)
   end
 
+  def thanks
+    @customer = current_customer
+    if(@customer)
+      @invite_url = "www.getsavvier.com/r/#{@customer.invite_url_param}"
+    end
+  end
+
+
   def create
   	@emails = invite_params[:receiver_email].split(/,\s*/)
     @emails.each do |email|
