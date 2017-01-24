@@ -3,7 +3,7 @@ class InviteMailerPreview < ActionMailer::Preview
 
   # Preview this email at http://localhost:3000/rails/mailers/invite_mailer/invitation
   def invitation
-    InviteMailer.invitation
+    InviteMailer.invitation(Invite.last)
   end
 
   # Preview this email at http://localhost:3000/rails/mailers/invite_mailer/claim_your_reward

@@ -1,7 +1,33 @@
-<h1>Save some money!</h1>
+Hey there,
 
-<p>
-  <%= @message %>
-</p>
+<p>Your friend, <%= @customer.first_name %>, invites you to try out Savvy!</p>
 
-<%= link_to "Sign Up", "http://localhost:3000/r/matt" %>
+<p><%= @customer.first_name %> used Savvy to save some money on their cable/internet bill and thought you should check it out.</p>
+
+<div>
+  <table cellspacing="0" cellpadding="0"> 
+	  <tr> 
+	  	<td align="center" width="300" height="40" bgcolor="#00A99D" style="-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; color: #ffffff; display: block;">
+	    	<span style="color: #ffffff;">
+	       		<%= link_to "Sign Up", "http://localhost:3000/r/#{@customer.invite_url_param}?email=#{@invite.receiver_email}", class: "email-button" %>
+	    	</span>
+	  	</td> 
+	  </tr> 
+  </table> 
+</div>
+
+<p><b>What's Savvy?</b></p>
+<p>Savvy is a service that calls your cable company and negotiates a lower price on your behalf. They deal with the hassle so you can relax.</p>
+
+<p><b>Why Savvy?</b></p>
+  <ul>
+    <li>Most people overpay for their cable and internet. That stinks. </li>
+    <li>Most people don't want to negotiate with their cable/internet companies. Understandable. </li>
+    <li>There's real savings at stake – on average, Savvy saves people $300/year. Seriously.</li>
+    <li>There's nothing to lose. You only pay if Savvy saves you money.</li>
+  </ul>
+
+<p>Join <%= @customer.first_name %> and start saving some money today!</p>
+
+<p>Happy savings,<br />
+Savvy</p>

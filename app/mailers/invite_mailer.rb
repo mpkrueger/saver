@@ -7,14 +7,9 @@ class InviteMailer < ApplicationMailer
   #
   def invitation(invite)
     @invite = invite
+    @customer = invite.customer
 
-    @subject = "#{@invite.customer.email} wants you to save some money!"
-
-    if @invite.email_message.nil?
-      @message = "#{@invite.customer.email} used Savvy and wants you to give it a try as well!"
-    else
-      @message = @invite.email_message
-    end
+    @subject = "#{@invite.customer.first_name} wants to help you save some money"
 
     mail(to: @invite.receiver_email, subject: @subject)
   end
