@@ -33,8 +33,9 @@
     $( "#shareBtn" ).on('click', function() {
       FB.ui({
         method: 'share',
-        display: 'popup',
+        
         href: 'http://www.getsavvier.com/invite',
+        quote: 'I\'ve used Savvy and it was awesome - they saved me a bunch of money and I didn\'t have to do anything!'
       }, function(response){});
     });
 
@@ -118,7 +119,7 @@
     </div>   
 
     <div class="rewards">
-    Your Total Rewards: 
+    Your Total Rewards: $<%= @customer.invites.where(saved_money: true).count * 10 %>
 
     </div>
 

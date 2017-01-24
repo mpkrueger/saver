@@ -32,7 +32,7 @@ class InvitesController < ApplicationController
 
   def show
     if Customer.find_by_invite_url_param(params[:sender])
-      @sender_name = Customer.find_by_invite_url_param(params[:sender])
+      @sender_name = Customer.find_by_invite_url_param(params[:sender]).first_name.capitalize
     else
       @sender_name = "A friend"
     end
