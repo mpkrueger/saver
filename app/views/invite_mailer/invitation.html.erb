@@ -1,8 +1,6 @@
 Hey there,
 
-<p>Your friend, <%= @customer.first_name %>, invites you to try out Savvy!</p>
-
-<p><%= @customer.first_name %> used Savvy to save some money on their cable/internet bill and thought you should check it out.</p>
+<p>Your friend <%= @customer.first_name %> wants you to check out Savvy! Savvy saves you money by negotiating a lower cable/internet bill on your behalf. They deal with the hassle so you can relax. Sign up now! You can thank <%= @customer.first_name %> after we save you some money.</p>
 
 <div>
   <table cellspacing="0" cellpadding="0"> 
@@ -16,15 +14,13 @@ Hey there,
   </table> 
 </div>
 
-<p><b>What's Savvy?</b></p>
-<p>Savvy is a service that calls your cable company and negotiates a lower price on your behalf. They deal with the hassle so you can relax.</p>
 
 <p><b>Why Savvy?</b></p>
   <ul>
     <li>Most people overpay for their cable and internet. That stinks. </li>
     <li>Most people don't want to negotiate with their cable/internet companies. Understandable. </li>
     <li>There's real savings at stake – on average, Savvy saves people $300/year. Seriously.</li>
-    <li>There's nothing to lose. You only pay if Savvy saves you money.</li>
+    <li>There's nothing to lose. You pay 1/3 of what Savvy saves you in the first year and you keep the rest.</li>
   </ul>
 
 <p>Join <%= @customer.first_name %> and start saving some money today!</p>

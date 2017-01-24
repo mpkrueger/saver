@@ -9,7 +9,7 @@ class InviteMailer < ApplicationMailer
     @invite = invite
     @customer = invite.customer
 
-    @subject = "#{@invite.customer.first_name} wants to help you save some money"
+    @subject = "#{@invite.customer.first_name} wants to help you save money with no effort"
 
     mail(to: @invite.receiver_email, subject: @subject)
   end
