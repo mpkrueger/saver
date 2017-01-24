@@ -34,7 +34,7 @@
       FB.ui({
         method: 'share',
         
-        href: 'http://www.getsavvier.com/r/<%= @customer.invite_url_param %>',
+        href: '<%= @invite_url %>',
       }, function(response){});
     });
 

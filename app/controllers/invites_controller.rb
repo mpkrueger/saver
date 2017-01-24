@@ -4,6 +4,8 @@ class InvitesController < ApplicationController
     @customer = current_customer
     if(@customer)
       @invite_url = "www.getsavvier.com/r/#{@customer.invite_url_param}"
+    else
+      @invite_url = "http://try.getsavvier.com"
     end
     my_desired_path = invite_path
     store_location_for(:customer, my_desired_path)
