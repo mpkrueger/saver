@@ -25,7 +25,7 @@
 
 
 	<div class="receiver-headline-block">
-        <div class="receiver-lp-headline" id="receiver-lp-headline"><%= @sender.first_name.capitalize %> wants you to get easy savings with Savvy!</div>
+        <div class="receiver-lp-headline" id="receiver-lp-headline"><%= @sender_name %> wants you to get easy savings with Savvy!</div>
         <div class="receiver-lp-tagline"> What an awesome friend.
         </div>
 	</div>
@@ -68,12 +68,12 @@
 		        <div id="sign_in" class="hidden">
 		          
 		          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-		            <div class="referral-input-style">
+		            <div class="referral-input-field">
 		              <%= f.hidden_field :referred_by, value: (params[:sender]) %>
 		              <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:95%;", placeholder: "email address" %>
 		            </div>
 		            <br /> <br />
-		            <div class="referral-input-style">
+		            <div class="referral-input-field">
 		              <%= f.password_field :password, class: "border-underline", style:"width:95%;", placeholder: "password", autocomplete: "off" %>
 		            </div>
 		            <br />
@@ -107,7 +107,7 @@
 		    		<li>You’ll send us your latest cable/internet bill. </li>
 		    		<li>We’ll save you time, stress, and money by negotiating on your behalf.</li>
 		    		<li>We’ll charge a third of what we save you the 1st year and you’ll keep the rest. </li>
-		    		<li>You and <%= @sender.first_name.capitalize %> can celebrate your easy savings!</li>
+		    		<li>You and <%= @sender_name %> can celebrate your easy savings!</li>
 	    		</ul>
 	    	</div>
 	    	<div class="receiver-lp-image">
