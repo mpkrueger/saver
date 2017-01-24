@@ -21,76 +21,99 @@
   });
 </script>
 
-<body class="city-bottom">
-	<div class="header invite-header">
-	    <div class="invite-header-icon-block"><%= image_tag("piggybank2.png", class:"saver-header-icon") %> </div>
-		<hr class="invite-hr"/>
-	</div>
+<body class="city-bottom" style="background-color:#3d7892; overflow:auto; height:100%">
 
-	<div class="invite-logout-header">
-        <div class="hero-title" id="hero-title"><%= @sender.first_name.capitalize %> would like you to save some money!</div>
-        <div class="hero-tagline"> Savvy negotiates lower rates on your cable/internet bill so you can rest easy and save more.
+	<div class="receiver-headline-block">
+        <div class="receiver-lp-headline" id="receiver-lp-headline"><%= @sender.first_name.capitalize %> wants you to get easy savings with Savvy!</div>
+        <div class="receiver-lp-tagline"> What an awesome friend.
         </div>
 	</div>
 
-	<div class="inviter-content">
+
+	<div class="receiver-lp-content">
       
-      <div class="inviter-signin">
+	    <div class="receiver-left-column col-xs-12 col-sm-6 col-md-6 col-lg-5">
 
-        <div id="create_account">
+		    <div class="receiver-signin">
+		    	<div class="receiver-lp-tagline">SIGN UP FOR SAVVY! </div>
+				<div id="create_account">
 
-          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-            <%= devise_error_messages! %>
+		        	<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+		            <%= devise_error_messages! %>
 
-            <%= f.hidden_field :referred_by, value: (params[:sender]) %>
+		            <%= f.hidden_field :referred_by, value: (params[:sender]) %>
 
-            <div class="referral-input-style">
-                <%= f.text_field :first_name, value: (params[:first_name]), class: "border-underline", style:"width:300px;", placeholder: "first name" %>
-            </div>
-            <br /> <br />
-            <div class="referral-input-style">
-                <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:300px;", placeholder: "email address" %>
-            </div>
-            <br /> <br />
-            <div class="referral-input-style">
-              <%= f.password_field :password, class: "border-underline", style:"width:300px;", placeholder: "password (at least 6 characters)", autocomplete: "off" %>
-            </div>
-            <br />
+		            <div class="receiver-input-field">
+		                <%= f.text_field :first_name, value: (params[:first_name]), class: "border-underline", style:"width:95%;", placeholder: "first name" %>
+		            </div>
+		            <br /> 
+		            <div class="receiver-input-field">
+		                <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:95%;", placeholder: "email address" %>
+		            </div>
+		            <br /> 
+		            <div class="receiver-input-field">
+		              <%= f.password_field :password, class: "border-underline", style:"width:95%;", placeholder: "password (at least 6 characters)", autocomplete: "off" %>
+		            </div>
+		            
+					<br />
+		            
+		              
+		            <%= f.submit "Save Me Money", class: 'receiver-button' %>
+		            <br />
+		            <%= link_to "Or Sign In", "javascript:;", id: "signin_link", class: "receiver-signin-link" %>
+		          <% end %>
+		        </div>
 
-            <div class="spaced-row"></div>
-              
-            <%= f.submit "Save Me Money", class: 'invite-button' %>
-            <div class="spaced-row"></div>
-            <%= link_to "(Or Sign In)", "javascript:;", id: "signin_link", class: "signin-link" %>
-          <% end %>
-        </div>
+		        <div id="sign_in" class="hidden">
+		          
+		          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+		            <div class="referral-input-style">
+		              <%= f.hidden_field :referred_by, value: (params[:sender]) %>
+		              <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:95%;", placeholder: "email address" %>
+		            </div>
+		            <br /> <br />
+		            <div class="referral-input-style">
+		              <%= f.password_field :password, class: "border-underline", style:"width:95%;", placeholder: "password", autocomplete: "off" %>
+		            </div>
+		            <br />
 
-        <div id="sign_in" class="hidden">
-          
-          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-            <div class="referral-input-style">
-              <%= f.hidden_field :referred_by, value: (params[:sender]) %>
-              <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:300px;", placeholder: "email address" %>
-            </div>
-            <br /> <br />
-            <div class="referral-input-style">
-              <%= f.password_field :password, class: "border-underline", style:"width:300px;", placeholder: "password", autocomplete: "off" %>
-            </div>
-            <br />
+		            <% if devise_mapping.rememberable? -%>
+		              <div style="margin-top:10px;">
+		                <%= f.check_box :remember_me %>
+		                <%= f.label :remember_me, class:"unbolded-label" %>
+		              </div>
+		            <% end -%>
 
-            <% if devise_mapping.rememberable? -%>
-              <div style="margin-top:10px;">
-                <%= f.check_box :remember_me %>
-                <%= f.label :remember_me, class:"unbolded-label" %>
-              </div>
-            <% end -%>
+		            <div class="spaced-row"></div>
+		            <%= f.submit "Sign In", class: 'receiver-button' %>
+		            <div class="spaced-row"></div>
+		            <%= link_to "(or Create Account)", "javascript:;", id: "create_link", class: "signin-link" %>
+		          <% end %>
 
-            <div class="spaced-row"></div>
-            <%= f.submit "Sign In", class: 'invite-button' %>
-            <div class="spaced-row"></div>
-            <%= link_to "(or Create Account)", "javascript:;", id: "create_link", class: "signin-link" %>
-          <% end %>
+		        </div>
+		        
+	      	</div>
+	      	<div class="sslbadge">
+			      	<a href='https://www.expeditedssl.com/simple-ssl-scanner/scan?target_domain=www.getsavvier.com' target='_blank' rel='nofollow'><img src='https://www.expeditedssl.com/ssl-secure-badge.png'  alt='Expedited SSL Scanner'></a>
+	      	</div>
+	      	
+	    </div>	
 
-        </div>
-      </div>
+	    <div class="receiver-right-column col-xs-12 col-sm-6 col-md-6 col-lg-7">
+	    	<div class="receiver-lp-bullets">
+	    		<div class="receiver-lp-tagline">HOW SAVVY WORKS</div>
+	    		<ul>
+		    		<li>You’ll send us your latest cable/internet bill. </li>
+		    		<li>We’ll save you time, stress, and money by negotiating on your behalf.</li>
+		    		<li>We’ll charge a third of what we save you the 1st year and you’ll keep the rest. </li>
+		    		<li>You and <%= @sender.first_name.capitalize %> can celebrate your easy savings!</li>
+	    		</ul>
+	    	</div>
+	    	<div class="receiver-lp-image">
+	    	<%= image_tag("pig_flying_moon.png", class:"saver-header-icon") %>
+	    	</div>
+
+	    </div>
+
     </div>
+</body>
