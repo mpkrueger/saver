@@ -16,8 +16,8 @@
 }
 
 
-other-refer-type-title:before,
-other-refer-type-title:after {
+.other-refer-type-title:before,
+.other-refer-type-title:after {
   background-color: #ddd;
   content: "";
   display: block;
@@ -27,11 +27,11 @@ other-refer-type-title:after {
   width: 400%;
 }
 
-other-refer-type-title:before {
+.other-refer-type-title:before {
   right: 100%;
 }
 
-other-refer-type-title:after {
+.other-refer-type-title:after {
   left: 100%;
 }
 
@@ -118,11 +118,13 @@ other-refer-type-title:after {
 
 
 .refer-type-title{
-	margin-bottom: 20px;
-    background-color: #aaa;
+	//margin-bottom: 20px;
+   // background-color: #aaa;
     padding: 10px;
-    color: #fff;
+   // color: #fff;
+   color:#333;
     font-weight:400;
+    padding: 16px 0;
 }
 
 
@@ -153,7 +155,7 @@ other-refer-type-title:after {
 .editable-link{
 	padding: 14px 10px;
     pointer-events: none;
-    color: #999 !important;
+    color: #0a8d9d !important;
 }
 
 .link-tooltip{
@@ -176,6 +178,9 @@ other-refer-type-title:after {
 	    background-size: 220% 10%;
 	}
 
+	.invite-link-block{
+		padding: 1% 0;
+	}
 
 	.invite-logout-header{
 	    z-index: 3;
@@ -230,7 +235,7 @@ other-refer-type-title:after {
 	.email-box{
 		background-color:#EEE;
 		padding: 0 0 20px 0;
-		width: 90%;
+		width: 100%;
 		text-align:center;
 		margin:auto;
 		margin-bottom:20px;
@@ -318,7 +323,9 @@ other-refer-type-title:after {
 	    overflow: hidden;
 	    padding: 10px 0px;
 	    height: 40px;
-	    border: 1px solid lightgray;
+	    background-color: #00cc99;
+	    opacity: .5;
+	    color: #0a8d9d;
 	    
 	}
 
