@@ -106,13 +106,14 @@
 
       <div class="other-refer-box">
         <div class="title-container"><div class="other-refer-type-title">Or Invite Another Way</div></div>
-        <div id="shareBtn" class="fb-button"><%= image_tag('fb_button_icon.png', class:"fb-button-icon") %> </div>
-      
+        <div id="shareBtn" class="fb-button"><%= image_tag('fb_button_icon.png', class:"fb-button-icon") %>  
+          <span style="color:#fff">Share on Facebook </span> 
+        </div>
+        
         <button class="clipboard-btn copy-link-button" data-clipboard-action="copy" data-clipboard-text="<%= @invite_url %>">
-          <%= image_tag('copy_link_icon.png', class:"copy-link-icon") %>
+          <%= image_tag('copy_link_icon.png', class:"copy-link-icon") %> <span style="color:#fff"> Copy your unique link </span>
         </button>
-        <div class="copy-url">  <%= link_to @invite_url, "/r/#{current_customer.invite_url_param}", :class=>"editable-link" %>
-        </div> <br />
+        <br />
         <div class="link-tooltip"><span class="tooltiptext">Copied!</span></div>
         <div class="spaced-row"></div><div class="spaced-row"></div>
       </div> 

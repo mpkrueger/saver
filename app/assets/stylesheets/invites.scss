@@ -2,56 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-
-.other-refer-type-title{
-	background-color: transparent;
-    color: #5d5d5d;
-    width: 100%;
-    margin-bottom:20px;
-    font-weight: 400;
-    display:inline-block;
-    padding: 0 15px;
-    position: relative;
-}
-
-
-.other-refer-type-title:before,
-.other-refer-type-title:after {
-  background-color: #ddd;
-  content: "";
-  display: block;
-  height: 2px;
-  position: absolute;
-    top: 50%;
-  width: 400%;
-}
-
-.other-refer-type-title:before {
-  right: 100%;
-}
-
-.other-refer-type-title:after {
-  left: 100%;
-}
-
-.title-container {
-  overflow: hidden;
-  text-align: center;
-}
-
-
-
-
-.referral-input-style{
-	display: inline-flex;
-  border-bottom: 1px solid #5d5d5d;
-  width: auto;
-  max-width:100%;
-  overflow: hidden;
-  white-space: nowrap;
-  color:#5d5d5d;
-}
+/***********************************************/
+/********** Global Invites variables ***********/
+/***********************************************/
 
 .invite-header{
 	width: 100%;
@@ -67,18 +20,9 @@
     text-align: center;
 }
 
-
 .invite-hr{
 	margin-top:1%;
 }
-
-.inviter-content{
-	  
-    position: relative;
-    text-align:center;
-    margin:auto;
-}
-
 
 .invite-button{
   border: 2px solid #e5806c;
@@ -109,13 +53,19 @@
   text-decoration: none;
 }
 
-.invite-link-block{
-	position:relative;
-	background-color:#fff;
-	padding: 1% 2%;
+.city-bottom{
+	background-image: url('cityscape.png');
+	background-position: center bottom;
+    background-repeat: no-repeat;
+    width:100%;
+    height:160px;
 }
 
 
+
+/***********************************************/
+/********** Invite and Thanks pages ************/
+/***********************************************/
 
 .refer-type-title{
 	//margin-bottom: 20px;
@@ -127,17 +77,16 @@
     padding: 16px 0;
 }
 
-
-
-
 .fb-button-icon{
-	width:100%;
+	width:12%;
+	margin-right: 12px;
+    margin-left: -18px;
 }
 
 
-
 .copy-link-icon{
-	width:100%;
+	width:12%;
+	margin-right: 5px;
 }
 
 .link-tooltip .tooltiptext {
@@ -164,46 +113,95 @@
     display:none;
 }
 
+.refer-title-block{
+    width: 100%;
+    padding: 15px 35px 5px 35px;
+    position: relative;
+    text-align:center;
+
+}
+
+
+/***********************************************/
+/***** Referral Invite sign-up/login page ******/
+/***********************************************/
+
+
+.inviter-content{  
+    position: relative;
+    text-align:center;
+    margin:auto;
+}
+
+.referral-input-style{
+	display: inline-flex;
+	border-bottom: 1px solid #5d5d5d;
+	width: auto;
+	max-width:100%;
+	overflow: hidden;
+	white-space: nowrap;
+	color:#5d5d5d;
+}
+
+.invite-logout-header{
+    z-index: 3;
+    width: 100%;
+    top: 0px;
+    position: relative;
+    padding: 35px 35px 0px 35px;
+    color: #444;
+    text-align:center;
+    margin:auto;
+}
+
+
+
+/***********************************************/
+/*****************  Invite page ****************/
+/***********************************************/
+
+.invite-link-block{
+	position:relative;
+	background-color:transparent;
+	padding: 1% 2%;
+}
+
+.other-refer-type-title{
+	background-color: transparent;
+    color: #5d5d5d;
+    width: 100%;
+    margin-bottom:20px;
+    font-weight: 400;
+    display:inline-block;
+    padding: 0 15px;
+    position: relative;
+}
+
+
+
+
+
+
 
 
 @media screen and (max-width: 480px) {
 
 
 	.city-bottom{
-		background-image: url('cityscape.png');
-		background-position: center bottom;
-	    background-repeat: no-repeat;
-	    width:100%;
-	    height:160px;
-	    background-size: 220% 10%;
+	    background-size: 220% 10%;   //customized just for mobile
 	}
 
 	.invite-link-block{
 		padding: 1% 0;
 	}
 
-	.invite-logout-header{
-	    z-index: 3;
-	    width: 100%;
-	    top: 0px;
-	    position: relative;
-	    padding: 35px 35px 0px 35px;
-	    color: #fff;
-	    text-align:center;
-	}
 
 	.invite-header-icon-block{
-	    margin: auto;
-	    width: 20%;
-	    text-align: center;
+	    width: 20%;			//customized just for mobile, wider width
 	}
 
 	.refer-title-block{
-	    width: 100%;
 	    padding: 15px 35px 10px 35px;
-	    position: relative;
-	    text-align:center;
-
 	}
 
 	.refer-headline{
@@ -292,30 +290,33 @@
 
 
 	.fb-button{
-		width: 60px;
+		
 	    height: auto;
-	    display: inline-block;
+	    display: block;
 	    position: relative;
 	    background-color: #3d5a98;
 	    margin: auto;
 	    text-align: center;
-	    padding: 10px 18px;
-	    margin-right: 8px;
+	    padding: 13px 0px;
+	    width: 250px;
+	    margin-bottom: 20px;
+	    
 	}
 
 
 	.copy-link-button{
-		width: 60px;
+		//width: 60px;
 	    height: auto;
 	    display: inline-block;
 	    position: relative;
 	    background-color: #00cc99;
 	    margin: auto;
 	    text-align: center;
-	    padding: 7px 15px;
+	    padding: 13px 0px;
 	    outline: 0;
 	    border: none;
-	    margin-bottom: 10px;
+	   // margin-bottom: 10px;
+	    width: 250px;
 	}
 
 	.copy-url{
@@ -333,7 +334,7 @@
 	.rewards{
 		font-size: 24px;
     	color:#333333;
-		margin-bottom:10px;
+		margin-bottom:20px;
 		text-align:center;
 		margin:auto;
 		width:70%;
@@ -347,34 +348,9 @@
 
 @media screen and (min-width: 480px) and (max-width:1068px) {
 
-	.city-bottom{
-		background-image: url('cityscape.png');
-		background-position: center bottom;
-	    background-repeat: no-repeat;
-	    width:100%;
-	    height:160px;
-
-	}
 
 
-	.invite-logout-header{
-	    z-index: 3;
-	    width: 100%;
-	    top: 0px;
-	    position: relative;
-	    padding: 35px 35px 0px 35px;
-	    color: #fff;
-	    text-align:center;
-	}
 
-
-	.refer-title-block{
-	    width: 100%;
-	    padding: 15px 35px 5px 35px;
-	    position: relative;
-	    text-align:center;
-
-	}
 
 	.refer-headline{
 		font-size:24px;
@@ -418,15 +394,6 @@
 		width:70%;
 		margin: auto;
 	    text-align: center;
-	}
-
-
-	.fb-button{
-		width: 50px;
-	}
-
-	.copy-link-button{
-		width: 50px;
 	}
 
 
@@ -475,7 +442,7 @@
 	}
 
 	.fb-button{
-		width: 60px;
+		
 	    height: auto;
 	    display: inline-block;
 	    position: relative;
@@ -483,13 +450,15 @@
 	    margin: auto;
 	    text-align: center;
 	    padding: 10px 15px;
-	    margin-right: 8px;
+	   // margin-right: 8px;
+	   	width:300px;
+	   	margin-right:10px;
 	}
 
 
 
 	.copy-link-button{
-		width: 60px;
+		//width: 60px;
 	    height: auto;
 	    display: inline-block;
 	    position: relative;
@@ -500,6 +469,7 @@
 	    outline: 0;
 	    border: none;
 	    margin-bottom: 10px;
+	    width: 300px;
 	}
 
 	.copy-url{
@@ -526,33 +496,6 @@
 
 @media screen and (min-width: 1068px) {
 
-
-	.city-bottom{
-		background-image: url('cityscape.png');
-		background-position: center bottom;
-	    background-repeat: no-repeat;
-	    width:100%;
-	    height:160px;
-	}
-
-	.invite-logout-header{
-	    z-index: 3;
-	    width: 100%;
-	    top: 0px;
-	    position: relative;
-	    padding: 35px 35px 0px 35px;
-	    color: #444;
-	    text-align:center;
-	    margin:auto;
-	}
-
-	.refer-title-block{
-	    width: 100%;
-	    padding: 15px 35px 5px 35px;
-	    position: relative;
-	    text-align:center;
-
-	}
 
 	.refer-headline{
 		font-size:24px;
@@ -646,7 +589,7 @@
 	}
 
 	.fb-button{
-		width: 60px;
+		//width: 60px;
 	    height: auto;
 	    display: inline-block;
 	    position: relative;
@@ -654,13 +597,14 @@
 	    margin: auto;
 	    text-align: center;
 	    padding: 10px 15px;
-	    margin-right: 8px;
+	    width: 300px;
+	    margin-right:10px;
 	}
 
 
 
 	.copy-link-button{
-		width: 60px;
+		//width: 60px;
 	    height: auto;
 	    display: inline-block;
 	    position: relative;
@@ -671,6 +615,7 @@
 	    outline: 0;
 	    border: none;
 	    margin-bottom: 10px;
+	    width: 300px;
 	}
 
 	.copy-url{
