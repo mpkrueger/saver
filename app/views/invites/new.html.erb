@@ -97,7 +97,7 @@
         <%= form_for @invite do |f| %>
 
           <div class="email-field-box">
-              <%= f.text_area :receiver_email, class: "email-textarea", placeholder: "Separate each email with a comma, e.g. savvy@getsavvier.com, bob@email.com, etc.", required: true %>
+              <%= f.text_area :receiver_email, class: "email-textarea", placeholder: "Enter email addresses, separated by commas.", required: true %>
           </div>
          
           <%= f.submit "Send invite", class: "invite-button" %>
@@ -111,7 +111,7 @@
         <button class="clipboard-btn copy-link-button" data-clipboard-action="copy" data-clipboard-text="<%= @invite_url %>">
           <%= image_tag('copy_link_icon.png', class:"copy-link-icon") %>
         </button>
-        <div class="copy-url"> <%= link_to @invite_url, "/r/#{current_customer.invite_url_param}", :class=>"editable-link" %>
+        <div class="copy-url">  <%= link_to @invite_url, "/r/#{current_customer.invite_url_param}", :class=>"editable-link" %>
         </div> <br />
         <div class="link-tooltip"><span class="tooltiptext">Copied!</span></div>
         <div class="spaced-row"></div><div class="spaced-row"></div>
