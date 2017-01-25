@@ -1,3 +1,62 @@
+<% @title=": Invite a Friend" %>
+<script type="text/javascript">
+    mixpanel.track("invite_thanks", {
+
+    });
+</script>
+
+<script>
+  $('document').ready(function() {
+    $(".alert").animate({opacity:'0'}, 3000).hide(1500);
+    
+    $( "#show_form" ).on('click', function() {
+      $("#show_form").addClass('hidden');
+      $("#change_url").removeClass('hidden');
+    });
+
+
+    $( "#shareBtn" ).on('click', function() {
+      FB.ui({
+        method: 'share',
+        
+        href: '<%= @invite_url %>',
+      }, function(response){});
+    });
+
+    var clip = new Clipboard('.clipboard-btn');
+    console.log(clip);
+ 
+    clip.on('success', function(e) {
+     
+      $('.link-tooltip').show().fadeOut(2000);
+    });
+
+  
+
+  });
+</script>
+
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1477024708992163',
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
 
 <body class="city-bottom" style="overflow:auto; height:100%;">
 	<div class="header invite-header">
