@@ -46,7 +46,9 @@
 
     });
 
-    
+    $('#send-invite').on('click', function() {
+      mixpanel.track("email_share", {});
+    });
 
   
 
@@ -106,7 +108,7 @@
               <%= f.text_area :receiver_email, class: "email-textarea", placeholder: "Enter email addresses, separated by commas.", required: true %>
           </div>
          
-          <%= f.submit "Send invite", class: "invite-button" %>
+          <%= f.submit "Send invite", class: "invite-button", id:"send-invite" %>
         <% end %>
       </div>
 
