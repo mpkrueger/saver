@@ -21,18 +21,18 @@ select.my-dropdown{
 }
 
 select#prompt{
-  color:#00A99D;
+  color: #FFF;
 }
 
 ::-webkit-input-placeholder {
-   color: #00A99D;
+   color: #FFF;
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color: #00A99D;  
+   color: #FFF;  
 }
 :-ms-input-placeholder {  
-   color: #00A99D;  
+   color: #FFF;  
 }
 
 select{
@@ -63,6 +63,7 @@ input[type="text"], input[type="tel"], input[type="email"], input[type="password
   outline: 0;
   background: transparent;
   border-radius: 0;
+  color:#eee;
 }
 
 input[type="email"]#multiple-emails{
@@ -127,24 +128,24 @@ outline:none;
 /***** placeholder text *******/
 
 ::-webkit-input-placeholder {
-    color: #888;
+    color: #bfcdd1;
     opacity: 1 !important; /* for chrome */
 }
 
 :-moz-placeholder { /* Firefox 18- */
-    color: #888;
+    color: #bfcdd1;
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-    color: #888;
+    color: #bfcdd1;
 }
 
 :-ms-input-placeholder {  
-   color: #888;
+   color: #bfcdd1;
 }
 
 ::-webkit-input-prompt{
-  color: #888;
+  color: #bfcdd1;
   opacity: 1 !important;
 }
 

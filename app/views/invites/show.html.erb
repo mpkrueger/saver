@@ -23,10 +23,14 @@
 
 <body class="city-bottom" style="background-color:#0a8d9d; overflow:auto; height:100%;">
 
+	<div class="mobile-image-header">
+		<%= image_tag("flying_pig_header.png", class:"saver-header-icon") %>
+	</div>
+
 
 	<div class="receiver-headline-block">
         <div class="receiver-lp-headline" id="receiver-lp-headline"><%= @sender_name %> wants you to get easy savings with Savvy!</div>
-        <div class="receiver-lp-tagline"> What an awesome friend.
+        <div class="receiver-lp-headline"> What an awesome friend.
         </div>
 	</div>
 
@@ -34,6 +38,9 @@
 	<div class="receiver-lp-content">
       
 	    <div class="receiver-left-column col-xs-12 col-sm-6 col-md-6 col-lg-5">
+
+
+
 
 		    <div class="receiver-signin">
 		    	<div class="receiver-lp-tagline">Sign up for Savvy </div>
@@ -45,7 +52,8 @@
 		            <%= f.hidden_field :referred_by, value: (params[:sender]) %>
 
 		            <div class="receiver-input-field">
-		                <%= f.text_field :first_name, value: (params[:first_name]), class: "border-underline", style:"width:95%;", placeholder: "first name" %>
+		                <%= f.text_field :first_name, value: (params[:first_name]), class: "border-underline", 
+		                style:"width:95%; color:#eeeeee", placeholder: "first name" %>
 		            </div>
 		            <br /> 
 		            <div class="receiver-input-field">
@@ -94,9 +102,7 @@
 		        </div>
 		        
 	      	</div>
-	      	<div class="sslbadge">
-			      	<a href='https://www.expeditedssl.com/simple-ssl-scanner/scan?target_domain=www.getsavvier.com' target='_blank' rel='nofollow'><img src='https://www.expeditedssl.com/ssl-secure-badge.png'  alt='Expedited SSL Scanner'></a>
-	      	</div>
+	      	
 	      	
 	    </div>	
 
@@ -117,4 +123,7 @@
 	    </div>
 
     </div>
+    <div class="sslbadge">
+	      	<a href='https://www.expeditedssl.com/simple-ssl-scanner/scan?target_domain=www.getsavvier.com' target='_blank' rel='nofollow'><img src='https://www.expeditedssl.com/ssl-secure-badge.png'  alt='Expedited SSL Scanner'></a>
+  	</div>
 </body>
