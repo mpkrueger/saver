@@ -32,6 +32,8 @@
         
         href: '<%= @invite_url %>',
       }, function(response){});
+
+       mixpanel.track("fb_share", {});
     });
 
     var clip = new Clipboard('.clipboard-btn');
@@ -40,6 +42,8 @@
     clip.on('success', function(e) {
      
       $('.link-tooltip').show().fadeOut(2000);
+      mixpanel.track("copy_link_share", {});
+
     });
 
     
