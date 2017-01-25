@@ -155,7 +155,7 @@
 .editable-link{
 	padding: 14px 10px;
     pointer-events: none;
-    color: #0a8d9d !important;
+    color: #bbb !important;
 }
 
 .link-tooltip{
@@ -326,6 +326,7 @@
 	    background-color: #00cc99;
 	    opacity: .5;
 	    color: #0a8d9d;
+		background-color: #eee;
 	    
 	}
 
@@ -508,6 +509,7 @@
 	    height: 50px;
 	    border: 1px solid lightgray;
 	    margin-left: -5px;
+	    background-color: #eee;
 	}
 
 	.rewards{
@@ -678,6 +680,7 @@
 	    height: 50px;
 	    border: 1px solid lightgray;
 	    margin-left: -5px;
+		background-color: #eee;
 	}
 
 	.rewards{

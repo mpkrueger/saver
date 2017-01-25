@@ -93,6 +93,6 @@
 <div class="rewards">
     <span class="refer-headline">Your Total Rewards: $<%= @customer.invites.where(saved_money: true).count * 10 %> </span>
     <% if @customer.invites.where(saved_money: true).count * 10 == 0 %>
-      <br /><div class="refer-tagline">Send some invites to get some $!</div>
+      <br /><div class="refer-tagline">Send some invites to get those rewards!</div>
     <% end %>
 </div>
