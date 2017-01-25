@@ -26,8 +26,6 @@ class RegistrationsController < Devise::RegistrationsController
       end
     end
 
-
-
     resource.save
     yield resource if block_given?
     if resource.persisted?
@@ -42,8 +40,8 @@ class RegistrationsController < Devise::RegistrationsController
       end
     else
       clean_up_passwords resource
-      set_minimum_password_length
-      respond_with resource
+      resource.errors.full_messages.each {|x| set_flash_message :error, x}
+      redirect_to after_sign_up_path_for(resource)
     end
   end
 

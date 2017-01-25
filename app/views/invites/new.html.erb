@@ -9,7 +9,7 @@
 
 <script>
   $('document').ready(function() {
-    $(".alert").animate({opacity:'0'}, 3000).hide(1500);
+    $(".alert").animate({opacity:'0'}, 10000).hide(1500);
     
     $( "#show_form" ).on('click', function() {
       $("#show_form").addClass('hidden');
@@ -123,50 +123,6 @@
     <br /><br />
   
   </body>
-    <!--
-      <%= link_to "Edit your link", "javascript:;", id: "show_form" %>
-      
-      <div id= "change_url" class="hidden">
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-          www.getsavvier.com/r/<div class="dropdown-style">
-            <%= f.text_field :invite_url_param, class: "madlib-sentence border-underline", style: "width:300px;" %>
-          </div>
-          <%= f.submit "Update link", class: "next-button" %>
-        <% end %>
-      </div>
-        <% if flash[:error] %>
-             <div class="alert alert-danger">
-               <%= flash[:error] %>
-             </div>
-        <% end %>
-
-    </div>
-  </div>
-
-  
-      <%= form_for @invite do |f| %>
-
-    
-      
-      <br /> <br />
-      All we need from you is your <span style="font-weight:700;"> friend's email </span>(so we can send them the invite) and a <span style="font-weight:700;"> message </span> to send them.
-      <br /> <br />
-      
-      <div class="dropdown-style">
-          <%= f.email_field :receiver_email, class: "madlib-sentence border-underline", style:"width:300px;", placeholder: "your friend's email address", required: true %>
-      </div>
-      <br />
-      <div class="dropdown-style" style="margin-top:10px;">
-        <%= f.text_field :email_message, class: "madlib-sentence border-underline", style:"width:300px;", placeholder: "Hey there, I tried out this new service...", required: true %>
-      </div>
-      <br /> <br />
-     
-      <%= f.submit "Send invite", class: "next-button" %>
-      <br /><br /><br /><br />
-    </div>
-
-      <% end %>
-    -->
 
   <% else %>
 
@@ -178,7 +134,11 @@
 
       <div class="invite-logout-header">
         <div class="hero-title" id="hero-title">Get $10 for every friend that saves with Savvy.</div>
-        <div class="hero-tagline"> Add a password to your account to send invites and track your rewards. <Br />
+        <% if params[:email] %>
+          <div class="hero-tagline"> Add a password to your account to send invites and track your rewards. <Br />
+        <% else %>
+          <div class="hero-tagline"> Create an account to send invites and track your rewards. <Br />
+        <% end %>
         </div>
       </div>
 
