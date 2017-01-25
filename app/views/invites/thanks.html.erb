@@ -68,24 +68,23 @@
 
 	<div class="refer-title-block">
         <div class="refer-headline" style="color:#333333;"><%= @customer.first_name %>, thanks for sharing! </div>
-      <div class="refer-tagline">Keep your eye on your inbox – we’ll let you know each time a friend saves with Savvy and you can collect your $10.</div>
+      <div class="refer-tagline">Keep an eye on your inbox – we’ll let you know each time a friend saves with Savvy and you can collect your $10.</div>
     </div>
     <Br /><br />
-    <div class="title-container"><div class="other-refer-type-title">Send More Invites</div></div>
     <div class="other-refer-box">
-        <div id="shareBtn" class="fb-button"><%= image_tag('fb_button_icon.png', class:"fb-button-icon") %> </div>
-      
-        <button class="clipboard-btn copy-link-button" data-clipboard-action="copy" data-clipboard-text="<%= @invite_url %>">
-          <%= image_tag('copy_link_icon.png', class:"copy-link-icon") %>
-        </button>
-        <div class="copy-url"> <%= link_to @invite_url, "/r/#{current_customer.invite_url_param}", :class=>"editable-link" %>
-        </div> <br />
-        <div class="link-tooltip"><span class="tooltiptext">Copied!</span></div>
+        <div class="title-container"><div class="other-refer-type-title">Send More Invites</div></div>
+        <div id="shareBtn" class="fb-button"><%= image_tag('fb_button_icon.png', class:"fb-button-icon") %>  
+          <span style="color:#fff">Share on Facebook </span> 
+        </div>
         
-        <%= link_to "Or Send More emails", "https://www.getsavvier.com/invite", :class=>"signin-link", :style=>"margin-top:3%;" %>
+        <button class="clipboard-btn copy-link-button" data-clipboard-action="copy" data-clipboard-text="<%= @invite_url %>">
+          <%= image_tag('copy_link_icon.png', class:"copy-link-icon") %> <span style="color:#fff"> Copy your unique link </span>
+        </button>
         <br />
+        <div class="link-tooltip"><span class="tooltiptext">Copied!</span></div>
+        <div class="spaced-row"></div><div class="spaced-row"></div>
       </div> 
-    </div>   
+    </div>  
 
 
 
@@ -96,3 +95,5 @@
       <br /><div class="refer-tagline">Send some invites to get those rewards!</div>
     <% end %>
 </div>
+<div class="spaced-row"></div>
+</body>
