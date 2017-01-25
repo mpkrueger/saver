@@ -20,4 +20,15 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    errors:
+      models:
+        customer:
+          attributes:
+            password:
+              too_short: "Password is too short (minimum is %{count} characters)"
+            email:
+              taken: "That email has already been used - please try again."
+            invite_url_param:
+              taken: "That email has already been used - please try again."
+              blank: "can't really happen"
