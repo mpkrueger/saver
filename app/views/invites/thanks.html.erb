@@ -21,6 +21,7 @@
         
         href: '<%= @invite_url %>',
       }, function(response){});
+      mixpanel.track("thanks_fb_share", {});
     });
 
     var clip = new Clipboard('.clipboard-btn');
@@ -29,9 +30,12 @@
     clip.on('success', function(e) {
      
       $('.link-tooltip').show().fadeOut(2000);
+      mixpanel.track("thanks_copy_link_share", {});
     });
 
-  
+    $('#more-emails').on('click', function() {
+      mixpanel.track("thanks_more_emails", {});
+    });
 
   });
 </script>
@@ -83,7 +87,7 @@
         <br />
         <div class="link-tooltip"><span class="tooltiptext">Copied!</span></div>
         <div class="spaced-row"></div><div class="spaced-row"></div>
-        <%= link_to "Or Send More emails", "https://www.getsavvier.com/invite", :class=>"signin-link", :style=>"margin-top:3%;" %>
+        <%= link_to "Or Send More emails", "https://www.getsavvier.com/invite", :class=>"signin-link", :id=>"more-emails", :style=>"margin-top:3%;" %>
     </div> 
     <br />
     
