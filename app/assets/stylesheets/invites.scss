@@ -77,17 +77,6 @@
     padding: 16px 0;
 }
 
-.fb-button-icon{
-	width:12%;
-	margin-right: 12px;
-    margin-left: -18px;
-}
-
-
-.copy-link-icon{
-	width:12%;
-	margin-right: 5px;
-}
 
 .link-tooltip .tooltiptext {
     width: 60px;
@@ -128,7 +117,59 @@
 	font-weight: 400;
 }
 
+.other-refer-box{
+	width:70%;
+	margin: auto;
+    text-align: center;
+}
 
+.fb-button{
+    height: auto;
+    display: inline-block;
+    position: relative;
+    background-color: #3d5a98;
+    margin: auto;
+    text-align: center;
+    padding: 10px 15px;
+    width: 300px;
+    margin-right:10px;
+}
+
+.copy-link-button{
+    height: auto;
+    display: inline-block;
+    position: relative;
+    background-color: #00cc99;
+    margin: auto;
+    text-align: center;
+    padding: 10px 15px;
+    outline: 0;
+    border: none;
+    margin-bottom: 10px;
+    width: 300px;
+}
+
+.fb-button-icon{
+	width:12%;
+	margin-right: 12px;
+    margin-left: -18px;
+}
+
+
+.copy-link-icon{
+	width:12%;
+	margin-right: 5px;
+}
+
+.copy-url{
+	position: relative;
+    display: inline-block;
+    padding: 10px 5px;
+    height: 50px;
+    border: 1px solid lightgray;
+    margin-left: -5px;
+	background-color: #eee;
+}
 
 /***********************************************/
 /***** Referral Invite sign-up/login page ******/
@@ -162,6 +203,35 @@
     margin:auto;
 }
 
+.hero-title{
+	font-size: 24px;
+	color:#333333;
+	margin-bottom:10px;
+}
+
+.hero-tagline{
+	font-size:18px;
+	color:#333;
+	width:80%;
+	margin:auto;
+}
+
+.inviter-signin{
+    background-color: transparent;
+    max-width:36%;
+	display: inline-block;
+    padding: 5% 2% 5% 3%;
+    text-align:center;
+    margin:auto;
+}
+
+.signin-link{
+	margin-left:10px;
+	display:inline-block;
+	position:relative;
+	text-decoration: underline;
+	color:#f4907f !important;
+}
 
 
 /***********************************************/
@@ -185,18 +255,36 @@
     position: relative;
 }
 
+.email-box{
+	background-color:#EEE;
+	padding: 0 0 20px 0;
+	text-align:center;
+	margin:auto;
+}
+
+/***********************************************/
+/*****************  Thanks page ****************/
+/***********************************************/
+
+.rewards{
+	font-size: 24px;
+	color:#333333;
+	margin-bottom:10px;
+	text-align:center;
+	margin:auto;
+	width:40%;
+	margin-top:40px;
+}
 
 
 
 
 
-
-
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 480px) {  /* mobile */
 
 
 	.city-bottom{
-	    background-size: 220% 10%;   //customized just for mobile
+	    background-size: 220% 10%;   /* customized just for mobile */
 	}
 
 	.invite-link-block{
@@ -205,7 +293,7 @@
 
 
 	.invite-header-icon-block{
-	    width: 20%;			//customized just for mobile, wider width
+	    width: 20%;			/* customized just for mobile, wider  */
 	}
 
 	.refer-title-block{
@@ -213,11 +301,11 @@
 	}
 
 
-
 	.refer-tagline{
 		font-size: 16px;
 		font-weight:400;
 	}
+
 
 	.email-field-box{
 		width: 80%;
@@ -234,42 +322,24 @@
 	}
 
 	.email-box{
-		background-color:#EEE;
-		padding: 0 0 20px 0;
 		width: 100%;
-		text-align:center;
-		margin:auto;
 		margin-bottom:20px;
 	}
 
 	.other-refer-box{
-		width:90%;
-		margin: auto;
-	    text-align: center;
+		width:90%;   /* diff width for mobile */
 	}
 
-
-
-	.hero-title{
-		font-size: 24px;
-    		color:#333333;
-		margin-bottom:10px;
-	}
 
 	.hero-tagline{
-		font-size:16px;
-		color:#333;
-		width:80%;
-		margin:auto;
+		font-size:16px;  /* smaller font size for mobile */
 	}
 
+
 	.inviter-signin{
-	    background-color: transparent;
 	    width: 100%;
 	    display: block;
 	    padding: 10%;
-	    text-align:center;
-	    margin:auto;
 	}
 
 	.inviter-image-block{
@@ -283,67 +353,34 @@
 		width:70%;
 	}
 
-	.signin-link{
-		margin-left:10px;
-		display:inline-block;
-		position:relative;
-		text-decoration: underline;
-		color:#f4907f !important;
-	}
-
 
 	.fb-button{
-		
-	    height: auto;
 	    display: block;
-	    position: relative;
-	    background-color: #3d5a98;
-	    margin: auto;
-	    text-align: center;
 	    padding: 13px 0px;
 	    width: 250px;
 	    margin-bottom: 20px;
-	    
 	}
 
 
 	.copy-link-button{
-		//width: 60px;
-	    height: auto;
-	    display: inline-block;
-	    position: relative;
-	    background-color: #00cc99;
-	    margin: auto;
-	    text-align: center;
 	    padding: 13px 0px;
-	    outline: 0;
-	    border: none;
-	   // margin-bottom: 10px;
 	    width: 250px;
 	}
 
+
 	.copy-url{
-		position: relative;
 	    overflow: hidden;
 	    padding: 10px 0px;
 	    height: 40px;
-	    background-color: #00cc99;
-	    opacity: .5;
-	    color: #0a8d9d;
 		background-color: #eee;
 	    
 	}
 
 	.rewards{
-		font-size: 24px;
-    	color:#333333;
 		margin-bottom:20px;
-		text-align:center;
-		margin:auto;
 		width:70%;
 		margin-top:20px;
 	}
-
 
 
 }
@@ -367,13 +404,11 @@
 
 
 	.email-box{
-		background-color:#EEE;
-		padding: 0 0 20px 0;
 		width: 70%;
-		text-align:center;
-		margin:auto;
 		margin-bottom:30px;
 	}
+
+
 
 	.email-textarea{
 	  padding:10px 15px;
@@ -384,35 +419,16 @@
 	  height: 50px;
 	}
 
-	.other-refer-box{
-		width:70%;
-		margin: auto;
-	    text-align: center;
-	}
-
-
-
-	.hero-title{
-		font-size:24px;
-		color:#333333;
-		margin-bottom:10px;
-	}
-
-	.hero-tagline{
-		font-size:18px;
-		color:#333;
-		width:80%;
-		margin:auto;
-	}
 
 	.inviter-signin{
-	    background-color: #fff;
+	    background-color: transparent;
 	    max-width: 36%;
 	    display: inline-block;
 	    padding: 5% 2% 5% 3%;
 	    text-align:center;
 	    margin:auto;
 	}
+
 
 	.inviter-image-block{
 		width:40%;
@@ -427,70 +443,14 @@
 		margin:auto;
 	}
 
-	.signin-link{
-		margin-left:10px;
-		display:inline-block;
-		position:relative;
-		text-decoration: underline;
-		color:#f4907f !important;
-	}
-
-	.fb-button{
-		
-	    height: auto;
-	    display: inline-block;
-	    position: relative;
-	    background-color: #3d5a98;
-	    margin: auto;
-	    text-align: center;
-	    padding: 10px 15px;
-	   // margin-right: 8px;
-	   	width:300px;
-	   	margin-right:10px;
-	}
-
-
-
-	.copy-link-button{
-		//width: 60px;
-	    height: auto;
-	    display: inline-block;
-	    position: relative;
-	    background-color: #00cc99;
-	    margin: auto;
-	    text-align: center;
-	    padding: 10px 15px;
-	    outline: 0;
-	    border: none;
-	    margin-bottom: 10px;
-	    width: 300px;
-	}
-
 	.copy-url{
-		position: relative;
-	    display: inline-block;
 	    padding: 10px 0px;
-	    height: 50px;
-	    border: 1px solid lightgray;
-	    margin-left: -5px;
-	    background-color: #eee;
 	}
 
-	.rewards{
-		font-size: 24px;
-    	color:#333333;
-		margin-bottom:10px;
-		text-align:center;
-		margin:auto;
-		width:40%;
-		margin-top:40px;
-	}
 
 }
 
 @media screen and (min-width: 1068px) {
-
-
 
 
 	.refer-tagline{
@@ -507,11 +467,7 @@
 
 
 	.email-box{
-		background-color:#EEE;
-		padding: 0 0 20px 0;
 		width: 70%;
-		text-align:center;
-		margin:auto;
 		margin-bottom:30px;
 	}
 
@@ -525,34 +481,6 @@
 	  margin-bottom:10px;
 	}
 
-	.other-refer-box{
-		width:70%;
-		margin: auto;
-	    text-align: center;
-	}
-
-
-	.hero-title{
-		font-size:24px;
-		color:#333333;
-		margin-bottom:10px;
-	}
-
-	.hero-tagline{
-		font-size:18px;
-		color:#333;
-		width:80%;
-		margin:auto;
-	}
-
-	.inviter-signin{
-	    background-color: #fff;
-	    max-width:36%;
-		display: inline-block;
-	    padding: 5% 2% 5% 3%;
-	    text-align:center;
-	    margin:auto;
-	}
 
 	.inviter-image-block{
 		width:55%;
@@ -569,62 +497,9 @@
 
 	}
 
-	.signin-link{
-		margin-left:0px;
-		display:inline-block;
-		position:relative;
-		text-decoration: underline;
-		color:#f4907f !important;
-	}
-
-	.fb-button{
-		//width: 60px;
-	    height: auto;
-	    display: inline-block;
-	    position: relative;
-	    background-color: #3d5a98;
-	    margin: auto;
-	    text-align: center;
-	    padding: 10px 15px;
-	    width: 300px;
-	    margin-right:10px;
-	}
-
-
-
-	.copy-link-button{
-		//width: 60px;
-	    height: auto;
-	    display: inline-block;
-	    position: relative;
-	    background-color: #00cc99;
-	    margin: auto;
-	    text-align: center;
-	    padding: 10px 15px;
-	    outline: 0;
-	    border: none;
-	    margin-bottom: 10px;
-	    width: 300px;
-	}
 
 	.copy-url{
-		position: relative;
-	    display: inline-block;
 	    padding: 10px 5px;
-	    height: 50px;
-	    border: 1px solid lightgray;
-	    margin-left: -5px;
-		background-color: #eee;
-	}
-
-	.rewards{
-		font-size: 24px;
-    	color:#333333;
-		margin-bottom:10px;
-		text-align:center;
-		margin:auto;
-		width:40%;
-		margin-top:40px;
 	}
 
 }
