@@ -8,7 +8,9 @@
 
 <script>
   $('document').ready(function() {
-  	   $( "#signin_link" ).on('click', function() {
+  	$(".alert").animate({opacity:'0'}, 10000).hide(1500);
+  	
+  	  $( "#signin_link" ).on('click', function() {
       $("#create_account").addClass('hidden');
       $("#sign_in").removeClass('hidden');
     });

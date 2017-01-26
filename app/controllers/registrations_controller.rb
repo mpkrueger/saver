@@ -43,8 +43,9 @@ class RegistrationsController < Devise::RegistrationsController
     else
       clean_up_passwords resource
       resource.errors.messages.keys.each {|x| set_flash_message :error, x}
-      if params[:customer][:referred_by]
-        redirect_to "https://www.getsavvier.com/r/#{params[:customer][:referred_by]}"
+      
+      if resource.referred_by
+        redirect_to "https://www.getsavvier.com/r/#{resource.referred_by}"
       else
         redirect_to after_sign_up_path_for(resource)
       end
