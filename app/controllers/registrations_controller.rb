@@ -45,7 +45,7 @@ class RegistrationsController < Devise::RegistrationsController
       resource.errors.messages.keys.each {|x| set_flash_message :error, x}
       
       if resource.referred_by
-        redirect_to "https://www.getsavvier.com/r/#{resource.referred_by}"
+        redirect_to "https://www.getsavvier.com/r/#{resource.referred_by}", turbolinks: false
       else
         redirect_to after_sign_up_path_for(resource)
       end
