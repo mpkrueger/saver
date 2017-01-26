@@ -79,6 +79,7 @@
 <meta property="og:image" content="http://www.getsavvier.com/assets/fb_sharing_image_1.png">
 <meta property="og:description" content="Save hundreds on your cable/internet bill with no effort."/>
 
+<%# experience for users that ARE logged in as a Customer %>
 
 <% if current_customer %>
 
@@ -132,6 +133,9 @@
     <br /><br />
   
   </body>
+
+
+<%# experience for users that are NOT logged in as a Customer %>
 
   <% else %>
   <script type="text/javascript">

@@ -5,57 +5,44 @@
     });
 </script>
 
-<script>
-$(document).ready(function() {
-  $('a[href*="#email"]:not([href="#"])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html, body').animate({
-          scrollTop: target.offset().top
-        }, 1000);
-
-        
-        return false;
-      }
-    }
-  });
-});
-
-</script>
-
-
-<div class="edu-block">
-    <div class="big-headline">What's next? </div>
-
-    <div class="headline">
-      <p>Based on the info you provided, we'll identify the best options and our recommendation for you. We'll also walk you through the steps to make an investment. </p>
-
-      <p>First, let's create an account so that we can save your info and stay in touch.</p>
-    </div>
-   <br /><br /><a href="#email", class="next-button">Next</a>
+<div class="header saver-header">
+  <div class="saver-header-icon-block"><%= image_tag("piggybank2.png", class:"saver-header-icon") %> </div>
+  <div class="saver-header-logo-block"> <%= image_tag("savvysaverlogo.png", class:"saver-header-logo") %></div>
+    <br /> <hr class="saver-hr"/>
+  </div>
 </div>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-<a name="email"></a>
-<div class="edu-block">     
-      Create your Savvy account.<br /> <br />
-      <div class="dropdown-style">
-          <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:300px;", placeholder: "email address" %>
-      </div>
-      <br /> <br />
-      <div class="dropdown-style">
-        <%= f.password_field :password, class: "border-underline", style:"width:300px;", placeholder: "password (at least 6 characters)", autocomplete: "off" %>
-      </div>
-      <br /> <br />
+  <div class="saver-question-block" id="email">
+    We're here to do the work so you can save time and money. On average we've saved people $300 a year. 
+    <br /> <br />
+    All we need from you is:
+    <ul>
+      <li>your <span style="font-weight:700;"> first name </span> so we know what to call you</li>
+      <li>your <span style="font-weight:700;"> email </span> so we can contact you about your bill and your savings</li>
+      <li>a <span style="font-weight:700;"> password </span> so you can see the status of your account in the future</li>
+    </ul>
+    <br /> <br />
 
-      <div class="spaced-row"></div>
-      
-        <%= f.submit "Sign up", class: 'next-button' %>
-        
-</div>
+    <div class="dropdown-style">
+      <%= f.text_field :first_name, class: "madlib-sentence border-underline", style:"width:300px;", placeholder: "your first name", required: true %>
+    </div>
+    <br />
+    <div class="dropdown-style" style="margin-top:10px;">
+      <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:300px;", placeholder: "email address" %>
+    </div>
+    <div class="subtext">
+      We promise not to spam your inbox.
+    </div>
+    
+    <div class="dropdown-style" style="margin-top:10px;">
+      <%= f.password_field :password, class: "border-underline", style:"width:300px;", placeholder: "password (at least 6 characters)", autocomplete: "off" %>
+    </div>
+    <br /><br /><br />
+    <%= f.submit "I'm ready to save", class: "next-button" %>
+    <br /><br /><br /><br />
+  </div>
 
   <% end %>

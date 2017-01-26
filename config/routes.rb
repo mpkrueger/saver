@@ -27,7 +27,7 @@ Rails.application.routes.draw do
 
   resources :charges
 
-  get 'r/*sender', to: 'invites#show'
+  get 'r/*sender', to: 'invites#show', as: 'landing_page'
   get 'invite', to: 'invites#new'
   resources :invites do
     collection do
