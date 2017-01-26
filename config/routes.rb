@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
 
-  get 'invites/new'
+  root to: redirect("http://try.getsavvier.com")
+  authenticated :customer do
+    root to: 'invites#index'
+  end
 
   devise_for :customers, controllers: { registrations: "registrations" }
   devise_for :admin_users, ActiveAdmin::Devise.config 
-  ActiveAdmin.routes(self)
+    ActiveAdmin.routes(self)
 
   resources :saver_guests do
     resources :tickets do
@@ -35,13 +38,6 @@ Rails.application.routes.draw do
     end
   end
 
-  # devise_for :users, :controllers => { :registrations => "registrations", :sessions => "sessions" }
   
-  
-  authenticated :customer do
-    root to: 'invites#index'
-  end
-
-  root to: redirect("http://try.getsavvier.com")
 
 end
