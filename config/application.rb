@@ -15,6 +15,7 @@ module FinGoals
 
     # Setting time zone for app to West Coast US
 	config.time_zone = 'Pacific Time (US & Canada)'
+  config.i18n.default_locale = :en
 
 	# assets pipeline config to work on Heroku
     # config.assets.initialize_on_precompile = false
@@ -23,4 +24,5 @@ module FinGoals
     #config.assets.precompile += %w( active_admin.js active_admin.css.scss )
 
   end
+
 end

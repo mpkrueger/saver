@@ -44,6 +44,8 @@ en:
       updated: ""
       customer:
         invite_url_param: "That email has already been used - please try again."
+        email: "That email has already been used - please try again."
+        password: "Password is too short (minimum is 6 characters)"
     sessions:
       signed_in: ""
       signed_out: ""
@@ -63,3 +65,15 @@ en:
         one: "1 error prohibited this %{resource} from being saved:"
         other: "%{count} errors prohibited this %{resource} from being saved:"
       taken: "Please try again"
+  activerecord:
+    errors:
+      models:
+        customer:
+          attributes:
+            password:
+              too_short: "Password is too short (minimum is %{count} characters)"
+            email:
+              taken: "That email has already been used - please try again."
+            invite_url_param:
+              taken: "That email has already been used - please try again."
+              blank: "can't really happen"

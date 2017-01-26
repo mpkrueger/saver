@@ -169,17 +169,17 @@
 
                 <div class="referral-input-style">
                     <%= f.text_field :first_name, value: (params[:first_name]), class: "border-underline", 
-                    style:"width:300px; color:#333;", placeholder: "first name" %>
+                    style:"width:300px; color:#333;", placeholder: "first name", required: true %>
                 </div>
                 <br /> <br />
                 <div class="referral-input-style">
                     <%= f.email_field :email, value: (params[:email]), class: "border-underline", 
-                    style:"width:300px; color:#333;", placeholder: "email address" %>
+                    style:"width:300px; color:#333;", placeholder: "email address", required: true %>
                 </div>
                 <br /> <br />
                 <div class="referral-input-style">
                   <%= f.password_field :password, class: "border-underline", 
-                  style:"width:300px; color:#333", placeholder: "password (at least 6 characters)", autocomplete: "off" %>
+                  style:"width:300px; color:#333", placeholder: "password (at least 6 characters)", required: true, autocomplete: "off" %>
                 </div>
                 <br />
 

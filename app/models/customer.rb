@@ -6,6 +6,5 @@ class Customer < ApplicationRecord
 
    has_many :invites
 
-   validates :email, presence: true, uniqueness: true
    validates :invite_url_param, presence: true, uniqueness: true
 end

@@ -16,19 +16,18 @@ class RegistrationsController < Devise::RegistrationsController
 
     resource.invite_url_param = resource.email.split("@").first.tr(".", "")
 
-    if resource.referred_by
-      unless Invite.find_by_receiver_email(resource.email)
-        if Customer.find_by_invite_url_param(resource.referred_by)
-          @invite = Invite.new(receiver_email: resource.email)
-          @invite.customer = Customer.find_by_invite_url_param(resource.referred_by)
-          @invite.save
-        end
-      end
-    end
-
     resource.save
     yield resource if block_given?
     if resource.persisted?
+      if resource.referred_by
+        unless Invite.find_by_receiver_email(resource.email)
+          if Customer.find_by_invite_url_param(resource.referred_by)
+            @invite = Invite.new(receiver_email: resource.email)
+            @invite.customer = Customer.find_by_invite_url_param(resource.referred_by)
+            @invite.save
+          end
+        end
+      end
       unless SaverGuest.find_by_email(resource.email)
         CustomerMailer.signup_bill(resource).deliver
       end
@@ -43,8 +42,12 @@ class RegistrationsController < Devise::RegistrationsController
       end
     else
       clean_up_passwords resource
-      resource.errors.full_messages.each {|x| set_flash_message :error, x}
-      redirect_to after_sign_up_path_for(resource)
+      resource.errors.messages.keys.each {|x| set_flash_message :error, x}
+      if params[:customer][:referred_by]
+        redirect_to "https://www.getsavvier.com/r/#{params[:customer][:referred_by]}"
+      else
+        redirect_to after_sign_up_path_for(resource)
+      end
     end
   end
 
