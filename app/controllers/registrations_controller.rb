@@ -14,11 +14,20 @@ class RegistrationsController < Devise::RegistrationsController
   def create
     build_resource(sign_up_params)
 
+    # create the invite_url_param from the first part of their email and strip out periods
     resource.invite_url_param = resource.email.split("@").first.tr(".", "")
+
+    # create a ticket that will be used to track their bill and savings
+    @ticket = Ticket.new
+    @ticket.customer = resource
+    @ticket.save
 
     resource.save
     yield resource if block_given?
     if resource.persisted?
+      
+      # if the customer is signing up on the invite landing page & doesn't yet have an invite associated with them
+      # this code will create an invite for them
       if resource.referred_by
         unless Invite.find_by_receiver_email(resource.email)
           if Customer.find_by_invite_url_param(resource.referred_by)
@@ -28,9 +37,14 @@ class RegistrationsController < Devise::RegistrationsController
           end
         end
       end
+
+      # if the customer doesn't already have a saver_guest with the same email:
+      # send the customer an email asking them to send us their bill
+      # (if they have a saver guest with that email, they've already received the send us your bill email)
       unless SaverGuest.find_by_email(resource.email)
         CustomerMailer.signup_bill(resource).deliver
       end
+
       if resource.active_for_authentication?
         set_flash_message! :notice, :signed_up
         sign_up(resource_name, resource)
@@ -42,8 +56,13 @@ class RegistrationsController < Devise::RegistrationsController
       end
     else
       clean_up_passwords resource
+
+      # this sends the errors associated with signing up to whichever page the signup is occuring on
       resource.errors.messages.keys.each {|x| set_flash_message :error, x}
       
+      # if the customer is signing up on the invite landing page and has an error
+      # send them back to the invite landing page
+      # otherwise send them back to the page they were signing up on
       if resource.referred_by
         redirect_to "https://www.getsavvier.com/r/#{resource.referred_by}", turbolinks: false
       else

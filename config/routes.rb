@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
 
-  root to: redirect("http://try.getsavvier.com")
-  authenticated :customer do
-    root to: 'invites#index'
-  end
 
-  devise_for :customers, controllers: { registrations: "registrations" }
+  authenticated :customer do
+    root to: 'dashboards#dashboard'
+  end
+  root to: redirect("http://try.getsavvier.com")
+
+  get 'dashboard', to: 'dashboards#dashboard', as: 'dashboard'
+  get 'whysavvy', to: 'onboarding#why_savvy', as: 'why_savvy'
+  get 'onboarding/landing_page'
+
+  devise_for :customers, controllers: { registrations: "registrations" }, path: '', path_names: { sign_up: 'signup' }
   devise_for :admin_users, ActiveAdmin::Devise.config 
     ActiveAdmin.routes(self)
 
