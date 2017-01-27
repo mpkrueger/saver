@@ -6,42 +6,45 @@
 </script>
 
 
-  
-<div style="margin-top:20%">
-<section id="intro-page">
-  <div class="intro_image_block"><%= image_tag("savvy_thumbnail.png", style:"width:150px;height:auto;") %> </div>
-  <p class="app-tagline"> Welcome to Savvy </p>
+<div class="header saver-header">
+  <div class="saver-header-icon-block"><%= image_tag("piggybank2.png", class:"saver-header-icon") %> </div>
+  <div class="saver-header-logo-block"> <%= image_tag("savvysaverlogo.png", class:"saver-header-logo") %></div>
+    <br /> <hr class="saver-hr"/>
+  </div>
+</div>  
+
+<div class="saver-question-block">
+  <div class="big-headline"> Welcome to Savvy </div>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <section id="user-section">
-        <div class="spaced-row user-content">
-          <div class="row-future">
+      
+        <div class="spaced-row ">
             <div class="dropdown-style">
-            <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:250px;", placeholder: "email address", autofocus: true %>
+            <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:250px;color:#333;", placeholder: "email address", autofocus: true %>
             </div>
-          </div>
+        </div>
 
-          <div class="row-future">
+        <div class="spaced-row">
           <div class="dropdown-style">
-            <%= f.password_field :password, class: "border-underline", style:"width:250px;", placeholder: "password", autocomplete: "off" %>
+            <%= f.password_field :password, class: "border-underline", style:"width:250px; color:#333;", placeholder: "password", autocomplete: "off" %>
             </div>
-          </div>
+        </div>
 
           <% if devise_mapping.rememberable? -%>
-            <div class="row-future">
+            <div class="spaced-row">
               <%= f.check_box :remember_me, class: "madlib-sentence" %>
               <%= f.label :remember_me, class:"unbolded-label" %>
             </div>
           <% end -%>
 
-          <div class="spaced-row"></div>
+        <div class="spaced-row"></div>
           <div class="button-row">
             <%= f.submit "Sign In", class: 'next-button' %>
           </div>
         </div>
-      </section>
+      
     <% end %>
-
+</div>
 
 
 
