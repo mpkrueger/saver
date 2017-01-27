@@ -64,10 +64,11 @@ class RegistrationsController < Devise::RegistrationsController
       # if the customer is signing up on the invite landing page and has an error
       # send them back to the invite landing page
       # otherwise send them back to the page they were signing up on
-      if resource.referred_by
+      binding.pry
+      if resource.signup_page == "invite receiver page"
         redirect_to "https://www.getsavvier.com/r/#{resource.referred_by}", turbolinks: false
-      elsif stored_location_for(resource)
-        redirect_to after_sign_up_path_for(resource)
+      elsif resource.signup_page == "invite sender page"
+        redirect_to invite_path
       else
         respond_with resource
       end
@@ -177,7 +178,7 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def sign_up_params
-    params.require(:customer).permit(:first_name, :email, :password, :referred_by)
+    params.require(:customer).permit(:first_name, :email, :password, :referred_by, :signup_page)
   end
 
   def account_update_params

@@ -49,6 +49,7 @@
 		            <%= devise_error_messages! %>
 
 		            <%= f.hidden_field :referred_by, value: (params[:sender]) %>
+		            <%= f.hidden_field :signup_page, value: "invite receiver page" %>
 
 		            <div class="receiver-input-field">
 		                <%= f.text_field :first_name, value: (params[:first_name]), class: "border-underline", 
