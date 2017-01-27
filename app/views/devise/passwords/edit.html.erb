@@ -4,40 +4,42 @@
         
     });
 </script>
-<div style="margin-top:20%">
-  <section id="intro-page">
-    <div class="intro_image_block"><%= image_tag("savvy_thumbnail.png", style:"width:150px;height:auto;") %> </div>
-    <p class="app-tagline"> Change your password </p>
-    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-      <%= devise_error_messages! %>
-      <%= f.hidden_field :reset_password_token %>
 
-      <section id="user-section">
-        <div class="spaced-row user-content">
-          <div class="row-future">
-            <div class="dropdown-style">
-              <%= f.password_field :password, autofocus: true, autocomplete: "off", placeholder: "new password" %>
-            </div>
-          </div>
-        </div>
 
-        <div class="spaced-row user-content">
-          <div class="row-future">
-            <div class="dropdown-style">
-              <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "confirm new password" %>
-            </div>
+<div class="header saver-header">
+  <div class="saver-header-icon-block"><%= image_tag("piggybank2.png", class:"saver-header-icon") %> </div>
+  <div class="saver-header-logo-block"> <%= image_tag("savvysaverlogo.png", class:"saver-header-logo") %></div>
+    <br /> <hr class="saver-hr"/>
+  </div>
+</div>
+
+
+   
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+    <%= devise_error_messages! %>
+    <%= f.hidden_field :reset_password_token %>
+
+    <div class="saver-question-block">
+      <div class="big-headline"> Change your password </div>
+      <div class="spaced-row ">
+          <div class="dropdown-style">
+            <%= f.password_field :password, autofocus: true, autocomplete: "off", style:"width:250px; color:#333;", placeholder: "new password" %>
           </div>
-        </div>
+      </div>
+
+      <div class="spaced-row ">
+          <div class="dropdown-style">
+            <%= f.password_field :password_confirmation, autocomplete: "off", style:"width:250px; color:#333;", placeholder: "confirm new password" %>
+          </div>
+      </div>
 
       <div class="spaced-row"></div>
       <div class="button-row">
         <%= f.submit "Change my password", class: 'next-button' %>
       </div>
-    </section>
+    </div>
   <% end %>
 
   <div class="sign-in-link">
     <%= render "devise/shared/links" %>
   </div>
-</section>
-</div>

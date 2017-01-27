@@ -5,18 +5,8 @@
  *
  */
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
 
 
-
-#user-section{
-  width:80%;
-  margin-top:15px;
-  padding-top:40px;
-  margin: auto;
- // background-color:#364249;
-}
 
 
 /***** MADLIB STRUCTURE  *****/
@@ -30,37 +20,10 @@
   margin: auto;
  }
 
- .user-content{
-  display: block;
-  text-align: center;
- }
 
 
 
 
-.col-toggle-btn{
-  padding-right: 5px;
-  float: left;
-  width: 30%;
-  text-align: right;
-  height: 50px;
-}
-
-.col-investment-type{
-  width: 70%;
-  display: inline-block;
-  text-align: left;
-  height: 50px;
-  vertical-align: middle;
-  margin-top:-8px;
-}
-
-.multichoice{
-  font-size: 14px;
-  width:60%;
-  display:inline-block;
-  text-align: left;
-}
 
 
 
