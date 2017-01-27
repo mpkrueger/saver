@@ -1,0 +1,31 @@
+<% @title=": Thanks" %>
+<script type="text/javascript">
+    mixpanel.track("dashboard", {
+
+    });
+</script>
+<script>
+    fbq('track', 'CompleteRegistration', {
+    value: 10.00,
+    currency: 'USD'
+    });
+</script>
+
+<div class="header saver-header">
+	<div class="saver-header-icon-block"><%= image_tag("piggybank2.png", class:"saver-header-icon") %> </div>
+	<div class="saver-header-logo-block">	<%= image_tag("savvysaverlogo.png", class:"saver-header-logo") %></div>
+		<br /> <hr class="saver-hr"/>
+	</div>
+</div>
+
+
+
+<div class="saver-question-block big-headline">
+  <!--% if @saver_guest.bill.present? %>
+    <p>Thanks for uploading your bill. </p>
+    <br />
+    <p>We'll call your cable company to negotiate a lower price and send you the result!</p-->
+    Great, we'll send you an email with more info on sending us your bill. Check your inbox to get started! 
+
+</div>
+<%= link_to "Sign out", destroy_customer_session_path, method: :delete %>

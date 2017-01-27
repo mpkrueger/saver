@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170120215603) do
+ActiveRecord::Schema.define(version: 20170127000058) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -290,7 +290,9 @@ ActiveRecord::Schema.define(version: 20170120215603) do
     t.string   "internet_service"
     t.string   "phone_service"
     t.integer  "amount_earned"
+    t.integer  "customer_id"
     t.index ["admin_user_id"], name: "index_tickets_on_admin_user_id", using: :btree
+    t.index ["customer_id"], name: "index_tickets_on_customer_id", using: :btree
     t.index ["saver_guest_id"], name: "index_tickets_on_saver_guest_id", using: :btree
   end
 
@@ -299,5 +301,6 @@ ActiveRecord::Schema.define(version: 20170120215603) do
   add_foreign_key "invites", "customers"
   add_foreign_key "payment_methods", "saver_guests"
   add_foreign_key "tickets", "admin_users"
+  add_foreign_key "tickets", "customers"
   add_foreign_key "tickets", "saver_guests"
 end

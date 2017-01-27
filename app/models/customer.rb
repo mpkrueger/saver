@@ -5,6 +5,7 @@ class Customer < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
    has_many :invites
+   has_many :tickets
 
    validates :invite_url_param, presence: true, uniqueness: true
 end
