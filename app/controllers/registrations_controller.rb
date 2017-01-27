@@ -17,11 +17,6 @@ class RegistrationsController < Devise::RegistrationsController
     # create the invite_url_param from the first part of their email and strip out periods
     resource.invite_url_param = resource.email.split("@").first.tr(".", "")
 
-    # create a ticket that will be used to track their bill and savings
-    @ticket = Ticket.new
-    @ticket.customer = resource
-    @ticket.save
-
     resource.save
     yield resource if block_given?
     if resource.persisted?
@@ -39,10 +34,16 @@ class RegistrationsController < Devise::RegistrationsController
       end
 
       # if the customer doesn't already have a saver_guest with the same email:
-      # send the customer an email asking them to send us their bill
-      # (if they have a saver guest with that email, they've already received the send us your bill email)
       unless SaverGuest.find_by_email(resource.email)
+        
+        # send the customer an email asking them to send us their bill
+        # (if they have a saver guest with that email, they've already received the send us your bill email)
         CustomerMailer.signup_bill(resource).deliver
+
+        # create a ticket that will be used to track their bill and savings
+        @ticket = Ticket.new
+        @ticket.customer = resource
+        @ticket.save
       end
 
       if resource.active_for_authentication?
@@ -63,10 +64,13 @@ class RegistrationsController < Devise::RegistrationsController
       # if the customer is signing up on the invite landing page and has an error
       # send them back to the invite landing page
       # otherwise send them back to the page they were signing up on
+      binding.pry
       if resource.referred_by
         redirect_to "https://www.getsavvier.com/r/#{resource.referred_by}", turbolinks: false
-      else
+      elsif stored_location_for(resource)
         redirect_to after_sign_up_path_for(resource)
+      else
+        respond_with resource
       end
     end
   end
