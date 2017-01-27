@@ -16,15 +16,9 @@
   <%= devise_error_messages! %>
 
   <div class="saver-question-block" id="email">
-    We're here to do the work so you can save time and money. On average we've saved people $300 a year. 
+    We're here to do the work so you can save time and money. On average we've saved people $300 a year. Sign up so we can contact you about your bill and your savings (we promise not to spam your inbox).
     <br /> <br />
-    All we need from you is:
-    <ul>
-      <li><span style="font-weight:500;"> your first name</span>, so we know what to call you</li>
-      <li><span style="font-weight:500;"> your email</span>, so we can contact you about your bill and your savings (we promise not to spam your inbox)</li>
-      <li><span style="font-weight:500;"> a password</span>, so you can log in to access your account activity, savings, rewards, etc.</li>
-    </ul>
-    <br /> 
+    
 
     <div class="dropdown-style">
       <%= f.text_field :first_name, class: "madlib-sentence border-underline", style:"width:300px; color:#333;", placeholder: "your first name", required: true %>
