@@ -64,7 +64,6 @@ class RegistrationsController < Devise::RegistrationsController
       # if the customer is signing up on the invite landing page and has an error
       # send them back to the invite landing page
       # otherwise send them back to the page they were signing up on
-      binding.pry
       if resource.signup_page == "invite receiver page"
         redirect_to "https://www.getsavvier.com/r/#{resource.referred_by}", turbolinks: false
       elsif resource.signup_page == "invite sender page"

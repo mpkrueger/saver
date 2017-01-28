@@ -20,7 +20,7 @@ ActiveAdmin.register Ticket do
 	config.per_page = 100
 
 	controller do
-		belongs_to :saver_guest, :admin_user, optional: true
+		belongs_to :saver_guest, :admin_user, :customer, optional: true
 	end
 
 	batch_action :assign, form: -> { {admin_user_id: AdminUser.pluck(:email, :id)}} do |ids, inputs|
