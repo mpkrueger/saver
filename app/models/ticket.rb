@@ -14,8 +14,8 @@ class Ticket < ApplicationRecord
   			first_name: self.saver_guest.name,
   			password: "password+#{rand(1000)}"
   			)
-  		self.customer = @customer
   		@customer.save
+      self.update_attributes(customer_id: @customer.id)
   	end
   end
 
