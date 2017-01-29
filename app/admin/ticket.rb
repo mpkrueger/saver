@@ -135,7 +135,7 @@ ActiveAdmin.register Ticket do
 		end
 	end
 
-	sidebar :customer, only: [:show, :edit] do
+	sidebar :customer_or_saver_guest, only: [:show, :edit] do
 		if resource.saver_guest
 			ul do
 				li link_to "#{resource.saver_guest.name}", admin_saver_guest_path(resource.saver_guest)
