@@ -3,43 +3,53 @@
 
 <section class="hero_section">
 
-	<div class="lp_hero_image_block">
+	<div class="spacer col-md-1 col-lg-1">
+	</div>
+
+	<div class="lp_hero_image_block col-xs-12 col-sm-5 col-md-4 col-lg-4">
 	<%= image_tag("lp_hero_image.png", class:"saver-header-icon") %>
 	</div>
 
-	<div class="lp_headline">
-		Save $300 on your cable bill
-	</div>
 
-	<div class="lp_subline">
-		We negotiate lower rates on your cable/internet bill so you can rest easy and save more.
-	</div>
-	<div class="spaced-row"></div>
-	<div class="spaced-row">
-		<%= link_to "Save Me Money", why_savvy_path,  :class=>"lp_button" %>
+	<div class="lp_hero_text_block col-xs-12 col-sm-6 col-md-6 col-lg-6">
+		<div class="lp_headline">
+			Save $300 on your cable bill
+		</div>
+
+		<div class="lp_subline">
+			We negotiate lower rates on your cable/internet bill so you can rest easy and save more.
+		</div>
+		<div class="spaced-row"></div>
+		<div class="spaced-row">
+			<%= link_to "Save Me Money", why_savvy_path,  :class=>"lp_button" %>
+		</div>
 	</div>
 </section>
 
 <section class="lp_details_section">
 
-	<div class="lp_subimage">
-		<%= image_tag("lp_cut_bills.png", class:"saver-header-icon") %>
-	</div>
-	<div class="lp_subline">
-		Cut your bills big-time
-	</div>
-	<div class="lp_explanation">
-		We save people an average of $300 annually on their monthly cable/interent bills.
+	<div class="lp_detail col-xs-12 col-sm-6 col-md-6 col-lg-6" style="padding: 0 40px;">
+		<div class="lp_subimage">
+			<%= image_tag("lp_cut_bills.png", class:"saver-header-icon") %>
+		</div>
+		<div class="lp_subline">
+			Cut your bills big-time
+		</div>
+		<div class="lp_explanation">
+			We save people an average of $300 annually on their monthly cable/interent bills.
+		</div>
 	</div>
 
-	<div class="lp_subimage">
-		<%= image_tag("lp_relax.png", class:"saver-header-icon") %>
-	</div>
-	<div class="lp_subline">
-		Sit back and relax
-	</div>
-	<div class="lp_explanation">
-		We use your last statement to negotiate your monthly rate with no change in service. We do the work, you get the savings.
+	<div class="lp_detail col-xs-12 col-sm-6 col-md-6 col-lg-6" style="padding: 0 40px;">
+		<div class="lp_subimage">
+			<%= image_tag("lp_relax.png", class:"saver-header-icon") %>
+		</div>
+		<div class="lp_subline">
+			Sit back and relax
+		</div>
+		<div class="lp_explanation">
+			We negotiate your monthly rate with no change in service. We do the work, you get the savings.
+		</div>
 	</div>
 
 </section>
