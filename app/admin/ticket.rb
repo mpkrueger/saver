@@ -20,7 +20,7 @@ ActiveAdmin.register Ticket do
 	config.per_page = 100
 
 	controller do
-		belongs_to :saver_guest, :admin_user, :customer, optional: true
+		belongs_to :admin_user, :customer, optional: true
 	end
 
 	batch_action :assign, form: -> { {admin_user_id: AdminUser.pluck(:email, :id)}} do |ids, inputs|
@@ -33,7 +33,7 @@ ActiveAdmin.register Ticket do
 
 	form do |f|
 		f.inputs "Signup Info" do
-			f.input :saver_guest_id, as: :select, collection: SaverGuest.all.collect {|saver| [saver.email, saver.id]}
+			f.input :customer_id, as: :select, collection: Customer.all.collect {|customer| [customer.email, customer.id]}
 			f.input :admin_user_id, as: :select, collection: AdminUser.all.collect {|admin_user| [admin_user.email, admin_user.id]}
 			f.input :has_bill
 			f.input :has_phone
@@ -85,8 +85,8 @@ ActiveAdmin.register Ticket do
 		selectable_column
 		column("TID", :sortable => :id) {|ticket| link_to "##{ticket.id} ", admin_ticket_path(ticket) }
 	    # column("State")                   {|ticket| status_tag(ticket.state) }
-	  	column("Customer Name") {|ticket| ticket.saver_guest.name}
-	  	column("Email") {|ticket| ticket.saver_guest.email }
+	  	column("Customer Name") {|ticket| ticket.customer.first_name}
+	  	column("Email") {|ticket| ticket.customer.email }
 	    column("Has Bill", :has_bill)
 	    column("Gave Consent", :gave_consent)
 	    column("Call Done", :call_complete)
@@ -96,7 +96,7 @@ ActiveAdmin.register Ticket do
 	    
 	end
 
-	show title: proc{|ticket| "#{ticket.saver_guest.name}'s ticket" } do
+	show title: proc{|ticket| "#{ticket.customer.first_name}'s ticket" } do
 		panel "Signup Info" do
 			attributes_table_for ticket  do
 				row :saver_guest_id
@@ -135,11 +135,19 @@ ActiveAdmin.register Ticket do
 		end
 	end
 
-	sidebar :saver_guest, only: [:show, :edit] do
-		ul do
-			li link_to "#{resource.saver_guest.name}", admin_saver_guest_path(resource.saver_guest)
-			li "#{resource.saver_guest.email}"
-			li "Created on #{resource.saver_guest.created_at}"
+	sidebar :customer, only: [:show, :edit] do
+		if resource.saver_guest
+			ul do
+				li link_to "#{resource.saver_guest.name}", admin_saver_guest_path(resource.saver_guest)
+				li "#{resource.saver_guest.email}"
+				li "Created on #{resource.saver_guest.created_at}"
+			end
+		else
+			ul do
+				li link_to "#{resource.customer.first_name}", admin_customer_path(resource.customer)
+				li "#{resource.customer.email}"
+				li "Created on #{resource.customer.created_at}"
+			end
 		end
 	end
 
