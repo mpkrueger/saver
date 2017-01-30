@@ -8,4 +8,14 @@
   <div class="email-body">
     <%= yield %>
   </div>
+
+  <div class="email-footer">
+	<div class="footer-icons">
+	  	<%= link_to image_tag("fb_circle_icon.png", class:"fb_email_icon"), "www.facebook.com/getsavvier" %>
+	  	<%= link_to image_tag("twitter_circle_icon.png", class:"twitter_email_icon"), "www.twitter.com/get_savvier" %>
+  	</div>
+  	<hr class="hr-footer"/>
+  	<div class="footer-text">Savvy Finances, LLC</div>
+  </div>
+
 </html>
