@@ -60,6 +60,15 @@
    }(document, 'script', 'facebook-jssdk'));
 </script>
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 
 
 <body class="city-bottom" style="overflow:auto; height:100%;">
@@ -73,6 +82,8 @@
 	<div class="refer-title-block">
         <div class="refer-headline" style="color:#333333;"><%= @customer.first_name %>, thanks for sharing! </div>
       <div class="refer-tagline">Keep an eye on your inbox – we’ll let you know each time a friend saves with Savvy and you can collect your $10.</div>
+      <div class="spaced-row"></div>
+    <div class="fb-like" data-href="https://www.facebook.com/getsavvier" data-width="50px" data-layout="button" data-action="like" data-show-faces="true" data-share="false"></div>
     </div>
     <Br /><br />
     <div class="other-refer-box">
@@ -86,10 +97,11 @@
         </button>
         <br />
         <div class="link-tooltip"><span class="tooltiptext">Copied!</span></div>
-        <div class="spaced-row"></div><div class="spaced-row"></div>
+        
         <%= link_to "Or Send More emails", "https://www.getsavvier.com/invite", :class=>"signin-link", :id=>"more-emails", :style=>"margin-top:3%;" %>
     </div> 
     <br />
+    
     
 
   </div>  
@@ -102,6 +114,10 @@
     <% if @customer.invites.where(saved_money: true).count * 10 == 0 %>
       <br /><div class="refer-tagline">Send some invites to get those rewards!</div>
     <% end %>
+
+
+
+
 </div>
 <div class="spaced-row"></div>
 </body>
