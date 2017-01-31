@@ -29,7 +29,7 @@
     $( "#shareBtn" ).on('click', function() {
       FB.ui({
         method: 'share',
-        // mobile_iframe: true,
+        
         href: '<%= @invite_url %>',
       }, function(response){});
 
