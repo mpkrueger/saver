@@ -15,7 +15,7 @@
 
 
 
-<div class="saver-question-block">
+<div class="saver-question-block centered-title">
 	<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
 		<%= devise_error_messages! %>
 
@@ -29,7 +29,7 @@
 			</div>
 
 			<div class="button-row">
-				<%= f.submit "Send me instructions to reset my password", class: 'next-button' %>
+				<%= f.submit "Send me a reset link", class: 'next-button' %>
 			</div>
 		</div>
 	

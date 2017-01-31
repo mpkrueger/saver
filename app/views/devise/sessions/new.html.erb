@@ -18,7 +18,7 @@
   </div>
 </div>  
 
-<div class="saver-question-block">
+<div class="saver-question-block centered-title">
   <div class="big-headline"> Sign in to Savvy </div>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -49,13 +49,13 @@
         </div>
       
     <% end %>
+    <div class="spaced-row"></div>
+    <%= link_to "Forgot your password?", new_customer_password_path, class:"accept-link" %>
     
-    <%= link_to "Forgot your password?", new_customer_password_path %><br /><br />
-  
 
-  
-    <%= link_to "Sign up", new_customer_registration_path %><br />
-  
+    <div class="spaced-row"></div> 
+    <%= link_to "Sign up", new_customer_registration_path, class:"accept-link" %><br />
+     
 
   </section>
 </div>
