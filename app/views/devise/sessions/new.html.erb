@@ -38,20 +38,18 @@
           <% end -%>
 
         <div class="spaced-row"></div>
-          <div class="button-row">
-            <%= f.submit "Sign In", class: 'next-button' %>
-          </div>
+        <div class="button-row">
+          <%= f.submit "Sign In", class: 'next-button' %>
         </div>
       
     <% end %>
-</div>
+    
+    <%= link_to "Forgot your password?", new_customer_password_path %><br /><br />
+  
 
-
-
-  <div class="sign-in-link">
-    <%= link_to "Sign up", root_path %><br />
-    <%= render "devise/shared/links" %>
-  </div>
+  
+    <%= link_to "Sign up", new_customer_registration_path %><br />
+  
 
   </section>
 </div>
