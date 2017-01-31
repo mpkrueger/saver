@@ -5,6 +5,12 @@
     });
 </script>
 
+<script>
+  $('document').ready(function() {
+    $(".alert").animate({opacity:'0'}, 10000).hide(1500);
+  });
+</script>
+
 <div class="header saver-header">
   <div class="saver-header-icon-block"><%= image_tag("piggybank2.png", class:"saver-header-icon") %> </div>
   <div class="saver-header-logo-block"> <%= image_tag("savvysaverlogo.png", class:"saver-header-logo") %></div>
@@ -13,7 +19,7 @@
 </div>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+  
 
   <div class="saver-question-block" id="email">
     We're here to do the work so you can save time and money. On average we've saved people $300 a year. Sign up so we can contact you about your bill and your savings (we promise not to spam your inbox).

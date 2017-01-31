@@ -5,6 +5,11 @@
     });
 </script>
 
+<script>
+  $('document').ready(function() {
+    $(".alert").animate({opacity:'0'}, 10000).hide(1500);
+  });
+</script>
 
 <div class="header saver-header">
   <div class="saver-header-icon-block"><%= image_tag("piggybank2.png", class:"saver-header-icon") %> </div>
@@ -14,9 +19,10 @@
 </div>  
 
 <div class="saver-question-block">
-  <div class="big-headline"> Welcome to Savvy </div>
+  <div class="big-headline"> Sign in to Savvy </div>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
       
         <div class="spaced-row ">
             <div class="dropdown-style">
