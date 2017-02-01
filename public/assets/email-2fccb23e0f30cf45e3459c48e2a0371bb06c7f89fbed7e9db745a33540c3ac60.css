@@ -1,0 +1,218 @@
+/* line 4, /Users/matt/code/saver/app/assets/stylesheets/email.scss */
+.list {
+  line-height: 1.5;
+}
+
+/* line 8, /Users/matt/code/saver/app/assets/stylesheets/email.scss */
+.email-link {
+  color: #00A99D;
+}
+
+/* line 12, /Users/matt/code/saver/app/assets/stylesheets/email.scss */
+.email-button {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: sans-serif;
+  text-decoration: none;
+  line-height: 40px;
+  width: 100%;
+  display: inline-block;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 350px) {
+  /* line 26, /Users/matt/code/saver/app/assets/stylesheets/email.scss */
+  .email-body {
+    /*padding: 50px 80px 50px 80px;*/
+    padding-left: 10%;
+    padding-top: 8%;
+    padding-right: 10%;
+    font-family: Arial, Verdana;
+    line-height: 1.4;
+  }
+}
+@media screen and (min-width: 350px) and (max-width: 480px) {
+  /* line 42, /Users/matt/code/saver/app/assets/stylesheets/email.scss */
+  .email-body {
+    /*padding: 50px 80px 50px 80px;*/
+    padding-left: 10%;
+    padding-top: 8%;
+    padding-right: 10%;
+    font-family: Arial, Verdana;
+    line-height: 1.4;
+  }
+
+  /* line 52, /Users/matt/code/saver/app/assets/stylesheets/email.scss */
+  .email-html {
+    background-color: #eee;
+    padding: 2% 2%;
+  }
+
+  /* line 57, /Users/matt/code/saver/app/assets/stylesheets/email.scss */
+  .email-body {
+    background-color: #fff;
+    /*padding: 50px 80px 50px 80px;*/
+    padding: 3% 3%;
+    font-family: Arial, Verdana;
+    line-height: 1.4;
+  }
+
+  /* line 65, /Users/matt/code/saver/app/assets/stylesheets/email.scss */
+  .email-header-image {
+    width: 150px;
+    height: auto;
+    text-align: center;
+    margin: auto;
+  }
+
+  /* line 72, /Users/matt/code/saver/app/assets/stylesheets/email.scss */
+  .email-footer {
+    text-align: center;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  /* line 79, /Users/matt/code/saver/app/assets/stylesheets/email.scss */
+  .footer-text {
+    color: #bbb;
+    font-family: Arial, Verdana;
+  }
+
+  /* line 84, /Users/matt/code/saver/app/assets/stylesheets/email.scss */
+  .hr-footer {
+    border: 1px solid #ddd;
+  }
+
+  /* line 88, /Users/matt/code/saver/app/assets/stylesheets/email.scss */
+  .fb_email_icon {
+    width: 40px;
+    margin-right: 5px;
+  }
+
+  /* line 93, /Users/matt/code/saver/app/assets/stylesheets/email.scss */
+  .twitter_email_icon {
+    width: 40px;
+    margin-left: 5px;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 700px) {
+  /* line 103, /Users/matt/code/saver/app/assets/stylesheets/email.scss */
+  .email-body {
+    /*padding: 50px 80px 50px 80px;*/
+    padding-left: 12%;
+    padding-top: 3%;
+    padding-right: 12%;
+    font-family: Arial, Verdana;
+    line-height: 1.4;
+  }
+
+  /* line 112, /Users/matt/code/saver/app/assets/stylesheets/email.scss */
+  .email-html {
+    background-color: #eee;
+    padding: 2% 5%;
+  }
+
+  /* line 117, /Users/matt/code/saver/app/assets/stylesheets/email.scss */
+  .email-body {
+    background-color: #fff;
+    /*padding: 50px 80px 50px 80px;*/
+    padding: 3% 3%;
+    font-family: Arial, Verdana;
+    line-height: 1.4;
+  }
+
+  /* line 125, /Users/matt/code/saver/app/assets/stylesheets/email.scss */
+  .email-header-image {
+    width: 150px;
+    height: auto;
+    text-align: center;
+    margin: auto;
+  }
+
+  /* line 132, /Users/matt/code/saver/app/assets/stylesheets/email.scss */
+  .email-footer {
+    text-align: center;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  /* line 139, /Users/matt/code/saver/app/assets/stylesheets/email.scss */
+  .footer-text {
+    color: #bbb;
+    font-family: Arial, Verdana;
+  }
+
+  /* line 144, /Users/matt/code/saver/app/assets/stylesheets/email.scss */
+  .hr-footer {
+    border: 1px solid #ddd;
+  }
+
+  /* line 148, /Users/matt/code/saver/app/assets/stylesheets/email.scss */
+  .fb_email_icon {
+    width: 40px;
+    margin-right: 5px;
+  }
+
+  /* line 153, /Users/matt/code/saver/app/assets/stylesheets/email.scss */
+  .twitter_email_icon {
+    width: 40px;
+    margin-left: 5px;
+  }
+}
+@media screen and (min-width: 700px) {
+  /* line 164, /Users/matt/code/saver/app/assets/stylesheets/email.scss */
+  .email-html {
+    background-color: #eee;
+    padding: 2% 20%;
+  }
+
+  /* line 169, /Users/matt/code/saver/app/assets/stylesheets/email.scss */
+  .email-body {
+    background-color: #fff;
+    /*padding: 50px 80px 50px 80px;*/
+    padding: 3% 3%;
+    font-family: Arial, Verdana;
+    line-height: 1.4;
+  }
+
+  /* line 177, /Users/matt/code/saver/app/assets/stylesheets/email.scss */
+  .email-header-image {
+    width: 150px;
+    height: auto;
+    text-align: center;
+    margin: auto;
+  }
+
+  /* line 184, /Users/matt/code/saver/app/assets/stylesheets/email.scss */
+  .email-footer {
+    text-align: center;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  /* line 191, /Users/matt/code/saver/app/assets/stylesheets/email.scss */
+  .footer-text {
+    color: #bbb;
+    font-family: Arial, Verdana;
+  }
+
+  /* line 196, /Users/matt/code/saver/app/assets/stylesheets/email.scss */
+  .hr-footer {
+    border: 1px solid #ddd;
+  }
+
+  /* line 200, /Users/matt/code/saver/app/assets/stylesheets/email.scss */
+  .fb_email_icon {
+    width: 40px;
+    margin-right: 5px;
+  }
+
+  /* line 205, /Users/matt/code/saver/app/assets/stylesheets/email.scss */
+  .twitter_email_icon {
+    width: 40px;
+    margin-left: 5px;
+  }
+}
