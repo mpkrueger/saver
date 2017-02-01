@@ -97,25 +97,14 @@
 
     <div class="refer-title-block">
         <div class="hero-title"><%= @customer.first_name %>, invite your friends to earn rewards. </div>
-      <div class="hero-tagline">You'll earn $10 for every friend who saves money with Savvy.</div>
+      <div class="hero-tagline">You'll earn $10 for every friend who saves money with Savvy. <br />
+      <% link_to "https://www.getsavvier.com/faq#referralfaq" "See Referral FAQ" %>
+      </div>
     </div>
 
     <div class="invite-link-block">
       
-      <div class="email-box">
-        <div class="refer-tagline">Invite Via Email</div>
-        <%= form_for @invite do |f| %>
-
-          <div class="email-field-box">
-              <%= f.text_area :receiver_email, class: "custom-text-area", placeholder: "Enter email addresses, separated by commas.", required: true %>
-          </div>
-         
-          <%= f.submit "Send invite", class: "invite-button", style:"margin-top:20px;", id:"send-invite" %>
-        <% end %>
-      </div>
-
       <div class="other-refer-box">
-        <div class="title-container"><div class="other-refer-type-title">Or Invite Another Way</div></div>
         <div id="shareBtn" class="fb-button"><%= image_tag('fb_button_icon.png', class:"fb-button-icon") %>  
           <span style="color:#fff">Share on Facebook </span> 
         </div>
@@ -127,6 +116,22 @@
         <div class="link-tooltip"><span class="tooltiptext">Copied!</span></div>
         <div class="spaced-row"></div><div class="spaced-row"></div>
       </div> 
+
+
+
+      <div class="email-box">
+        <div class="refer-tagline">Or Invite Via Email</div>
+        <%= form_for @invite do |f| %>
+
+          <div class="email-field-box">
+              <%= f.text_area :receiver_email, class: "custom-text-area", placeholder: "Enter email addresses, separated by commas.", required: true %>
+          </div>
+         
+          <%= f.submit "Send invite", class: "invite-button", style:"margin-top:20px;", id:"send-invite" %>
+        <% end %>
+      </div>
+
+      
     </div>   
 
     
