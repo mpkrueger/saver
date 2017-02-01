@@ -20,191 +20,58 @@
 	color: #ffffff;
 }
 
-
-@media screen and (max-width: 350px) {
-
-	.email-body {
-
+.email-body {
 	/*padding: 50px 80px 50px 80px;*/
 	padding-left: 10%;
 	padding-top: 8%;
 	padding-right: 10%;
 	font-family:Arial, Verdana;
 	line-height:1.4;
-	}
-
-
 }
 
 
-@media screen and (min-width: 350px) and (max-width: 480px) {
+.email-html{
+	background-color:#eee;
+	padding: 2% 2%;
+}
 
-	.email-body {
+.email-body {
+	background-color: #fff;
 	/*padding: 50px 80px 50px 80px;*/
-	padding-left: 10%;
-	padding-top: 8%;
-	padding-right: 10%;
+	padding: 3% 3%;
 	font-family:Arial, Verdana;
 	line-height:1.4;
-	}
-
-
-	.email-html{
-		background-color:#eee;
-		padding: 2% 2%;
-	}
-
-	.email-body {
-		background-color: #fff;
-		/*padding: 50px 80px 50px 80px;*/
-		padding: 3% 3%;
-		font-family:Arial, Verdana;
-		line-height:1.4;
-	}
-
-	.email-header-image{
-		width:150px; 
-		height:auto; 
-		text-align:center; 
-		margin:auto;
-	}
-
-	.email-footer{
-		text-align:center;
-		margin:auto;
-		padding-top:20px;
-		padding-bottom:20px;
-	}
-
-	.footer-text{
-		color:#bbb;
-		font-family:Arial, Verdana;
-	}
-
-	.hr-footer{
-		border: 1px solid #ddd;
-	}
-
-	.fb_email_icon{
-		width:40px;
-		margin-right:5px;
-	}
-
-	.twitter_email_icon{
-		width:40px;
-		margin-left:5px;
-	}
-
-
 }
 
-@media screen and (min-width: 480px) and (max-width:700px){
+.email-header-image{
+	width:150px; 
+	height:auto; 
+	text-align:center; 
+	margin:auto;
+}
 
-	.email-body {
-	/*padding: 50px 80px 50px 80px;*/
-	padding-left: 12%;
-	padding-top: 3%;
-	padding-right: 12%;
+.email-footer{
+	text-align:center;
+	margin:auto;
+	padding-top:20px;
+	padding-bottom:20px;
+}
+
+.footer-text{
+	color:#bbb;
 	font-family:Arial, Verdana;
-	line-height:1.4;
-	}
-
-	.email-html{
-		background-color:#eee;
-		padding: 2% 5%;
-	}
-
-	.email-body {
-		background-color: #fff;
-		/*padding: 50px 80px 50px 80px;*/
-		padding: 3% 3%;
-		font-family:Arial, Verdana;
-		line-height:1.4;
-	}
-
-	.email-header-image{
-		width:150px; 
-		height:auto; 
-		text-align:center; 
-		margin:auto;
-	}
-
-	.email-footer{
-		text-align:center;
-		margin:auto;
-		padding-top:20px;
-		padding-bottom:20px;
-	}
-
-	.footer-text{
-		color:#bbb;
-		font-family:Arial, Verdana;
-	}
-
-	.hr-footer{
-		border: 1px solid #ddd;
-	}
-
-	.fb_email_icon{
-		width:40px;
-		margin-right:5px;
-	}
-
-	.twitter_email_icon{
-		width:40px;
-		margin-left:5px;
-	}
-
-
-
 }
 
-@media screen and (min-width:700px){
+.hr-footer{
+	border: 1px solid #ddd;
+}
 
-	.email-html{
-		background-color:#eee;
-		padding: 2% 20%;
-	}
+.fb_email_icon{
+	width:40px;
+	margin-right:5px;
+}
 
-	.email-body {
-		background-color: #fff;
-		/*padding: 50px 80px 50px 80px;*/
-		padding: 3% 3%;
-		font-family:Arial, Verdana;
-		line-height:1.4;
-	}
-
-	.email-header-image{
-		width:150px; 
-		height:auto; 
-		text-align:center; 
-		margin:auto;
-	}
-
-	.email-footer{
-		text-align:center;
-		margin:auto;
-		padding-top:20px;
-		padding-bottom:20px;
-	}
-
-	.footer-text{
-		color:#bbb;
-		font-family:Arial, Verdana;
-	}
-
-	.hr-footer{
-		border: 1px solid #ddd;
-	}
-
-	.fb_email_icon{
-		width:40px;
-		margin-right:5px;
-	}
-
-	.twitter_email_icon{
-		width:40px;
-		margin-left:5px;
-	}
-
+.twitter_email_icon{
+	width:40px;
+	margin-left:5px;
 }
