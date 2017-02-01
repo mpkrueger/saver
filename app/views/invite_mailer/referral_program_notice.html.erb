@@ -13,7 +13,7 @@ Hi <%= @saver_guest.name %>,</p>
     <tr> 
       <td align="center" width="300" height="40" bgcolor="#00A99D" style="-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; color: #ffffff; display: block;">
         <span style="color: #ffffff;">
-            <%= link_to "Share the savings", invite_url(email: @saver_guest.email), class: "email-button" %>
+            <%= link_to "Share the savings", invite_url(first_name: @saver_guest.name, email: @saver_guest.email), class: "email-button" %>
         </span>
       </td> 
     </tr> 
