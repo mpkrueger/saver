@@ -1,0 +1,36 @@
+// Place all the styles related to the Info controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.faq_shortcuts{
+	padding: 50px;
+}
+
+.faq_link{
+	color:#00A99D;
+}
+
+.faq-block{
+	padding:50px;
+}
+
+.QA_block{
+	font-family: 'Raleway', 'Museo Sans', sans-serif;
+	font-size:16px;
+	font-weight:500;
+	padding:15px 5px;
+}
+
+.faq-letter{
+	float:left;
+	display:inline-block;
+	width: 30px;
+	line-height: 1.5em;
+}
+
+.faq-content{
+	display:inline-block;
+	max-width: 70%;
+	line-height: 1.5em;
+}
