@@ -88,28 +88,29 @@
 
     });
 </script>
-  <body class="city-bottom" style="overflow:auto; height:100%;">
-   <div class="header invite-header">
-    <div class="invite-header-icon-block"><%= image_tag("piggybank2.png", class:"saver-header-icon") %> </div>
-    <hr class="invite-hr"/>
-   </div>
+  <body class="city-bottom" style="background-color:#0a8d9d; overflow:auto; height:100%;">
+  
+    <div class="invite-signin-image">
+      <%= image_tag("flying_pig_header.png", class:"saver-header-icon") %>
+    </div>   
+
 
     <div class="refer-title-block">
-        <div class="refer-headline" style="color:#333333;"><%= @customer.first_name %>, invite your friends to Savvy to earn cash rewards. </div>
-      <div class="refer-tagline">Spread the love by saving your friends some money with Savvy. For every friend you invite who saves money with Savvy, you’ll earn $10.</div>
+        <div class="hero-title"><%= @customer.first_name %>, invite your friends to earn rewards. </div>
+      <div class="hero-tagline">You'll earn $10 for every friend who saves money with Savvy.</div>
     </div>
 
     <div class="invite-link-block">
       
       <div class="email-box">
-        <div class="refer-type-title">Invite Via Email</div>
+        <div class="refer-tagline">Invite Via Email</div>
         <%= form_for @invite do |f| %>
 
           <div class="email-field-box">
-              <%= f.text_area :receiver_email, class: "email-textarea", placeholder: "Enter email addresses, separated by commas.", required: true %>
+              <%= f.text_area :receiver_email, class: "custom-text-area", placeholder: "Enter email addresses, separated by commas.", required: true %>
           </div>
          
-          <%= f.submit "Send invite", class: "invite-button", id:"send-invite" %>
+          <%= f.submit "Send invite", class: "invite-button", style:"margin-top:20px;", id:"send-invite" %>
         <% end %>
       </div>
 
@@ -144,87 +145,84 @@
     });
 </script>
 
-    <body class="city-bottom" style="overflow:auto; height:100%;">
-      <div class="header invite-header">
-        <div class="invite-header-icon-block"><%= image_tag("piggybank2.png", class:"saver-header-icon") %> </div>
-        <hr class="invite-hr"/>
-       </div>
+    <body class="city-bottom" style="background-color:#0a8d9d; overflow:auto; height:100%;">
+      <div class="invite-signin-image">
+        <%= image_tag("flying_pig_header.png", class:"saver-header-icon") %>
+      </div>  
 
       <div class="invite-logout-header">
         <div class="hero-title" id="hero-title">Get $10 for every friend that saves with Savvy.</div>
-        <% if params[:email] %>
-          <div class="hero-tagline"> Add a password to your account to send invites and track your rewards. <Br />
-        <% else %>
-          <div class="hero-tagline"> Create an account to send invites and track your rewards. <Br />
-        <% end %>
-        </div>
+        
       </div>
 
     <div class="inviter-content">
       
-      
-      <div class="inviter-signin">
-        
-
-        <div id="create_account">
-
-          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-            <%= devise_error_messages! %>
-
-                <%= f.hidden_field :signup_page, value: "invite sender page" %>
-
-                <div class="referral-input-style">
-                    <%= f.text_field :first_name, value: (params[:first_name]), class: "border-underline", 
-                    style:"width:300px; color:#333;", placeholder: "first name", required: true %>
-                </div>
-                <br /> <br />
-                <div class="referral-input-style">
-                    <%= f.email_field :email, value: (params[:email]), class: "border-underline", 
-                    style:"width:300px; color:#333;", placeholder: "email address", required: true %>
-                </div>
-                <br /> <br />
-                <div class="referral-input-style">
-                  <%= f.password_field :password, class: "border-underline", 
-                  style:"width:300px; color:#333", placeholder: "password (at least 6 characters)", required: true, autocomplete: "off" %>
-                </div>
-                <br />
-
-                <div class="spaced-row"></div>
-                  
-                <%= f.submit "Create Account", class: 'invite-button' %>
-                <div class="spaced-row"></div>
-                <%= link_to "(Or Sign In)", "javascript:;", id: "signin_link", class: "signin-link" %>
-          <% end %>
-        </div>
-
-        <div id="sign_in" class="hidden">
+        <div class="inviter-signin">
           
-
-          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-            <div class="referral-input-style">
-              <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:300px; color:#333;", placeholder: "email address" %>
-            </div>
-            <br /> <br />
-            <div class="referral-input-style">
-              <%= f.password_field :password, class: "border-underline", style:"width:300px; color:#333;", placeholder: "password", autocomplete: "off" %>
-            </div>
-            <br />
-
-            <% if devise_mapping.rememberable? -%>
-              <div style="margin-top:10px;">
-                <%= f.check_box :remember_me %>
-                <%= f.label :remember_me, class:"unbolded-label" %>
-              </div>
-            <% end -%>
-
-            <div class="spaced-row"></div>
-            <%= f.submit "Sign In", class: 'invite-button' %>
-            <div class="spaced-row"></div>
-            <%= link_to "(or Create Account)", "javascript:;", id: "create_link", class: "signin-link" %>
+          <% if params[:email] %>
+            <div class="hero-tagline"> Add a password to your account to send invites and track your rewards. <Br />
+          <% else %>
+            <div class="hero-tagline"> Create an account to send invites and track your rewards. <Br />
           <% end %>
+          </div>
 
+          <div id="create_account">
+
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+              <%= devise_error_messages! %>
+
+                  <%= f.hidden_field :signup_page, value: "invite sender page" %>
+
+                  <div class="referral-input-style">
+                      <%= f.text_field :first_name, value: (params[:first_name]), class: "border-underline", 
+                      style:"width:300px; color:#fff;", placeholder: "first name", required: true %>
+                  </div>
+                  <br /> <br />
+                  <div class="referral-input-style">
+                      <%= f.email_field :email, value: (params[:email]), class: "border-underline", 
+                      style:"width:300px; color:#fff;", placeholder: "email address", required: true %>
+                  </div>
+                  <br /> <br />
+                  <div class="referral-input-style">
+                    <%= f.password_field :password, class: "border-underline", 
+                    style:"width:300px; color:#fff", placeholder: "password (at least 6 characters)", required: true, autocomplete: "off" %>
+                  </div>
+                  <br />
+
+                    
+                  <%= f.submit "Create Account", class: 'invite-button' %>
+                  <div class="spaced-row"></div>
+                  <%= link_to "(Or Sign In)", "javascript:;", id: "signin_link", class: "signin-link" %>
+            <% end %>
+          </div>
+
+          <div id="sign_in" class="hidden">
+            
+
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+              <div class="referral-input-style">
+                <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:300px; color:#fff;", placeholder: "email address" %>
+              </div>
+              <br /> <br />
+              <div class="referral-input-style">
+                <%= f.password_field :password, class: "border-underline", style:"width:300px; color:#fff;", placeholder: "password", autocomplete: "off" %>
+              </div>
+              <br />
+
+              <% if devise_mapping.rememberable? -%>
+                <div style="margin-top:20px; color:#fff; margin-bottom: -5px;">
+                  <%= f.check_box :remember_me %>
+                  <%= f.label :remember_me, class:"refer-tagline" %>
+                </div>
+              <% end -%>
+
+              <%= f.submit "Sign In", class: 'invite-button' %>
+              <div class="spaced-row"></div>
+              <%= link_to "(Or Create Account)", "javascript:;", id: "create_link", class: "signin-link" %>
+            <% end %>
+
+          </div>
         </div>
-      </div>
     </div>
 
   </body> 

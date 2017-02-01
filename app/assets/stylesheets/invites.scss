@@ -14,6 +14,7 @@
     z-index: 3;
 }
 
+
 .invite-header-icon-block{
     margin: auto;
     width: 7%;
@@ -33,6 +34,7 @@
   border-radius:0px;
   margin: auto;
   text-decoration: none;
+  margin-top:30px;
 }
 
 .invite-button:active{
@@ -81,7 +83,7 @@
 .link-tooltip .tooltiptext {
     width: 60px;
     background-color: transparent;
-    color: #00cc99;
+    color: #fff;
     text-align: center;
   	margin-top:10px;
   	margin:auto;
@@ -112,7 +114,7 @@
 
 .refer-headline{
 	font-size:24px;
-	color:#333333;
+	color:#fff;
 	margin-bottom:10px;
 	font-weight: 400;
 }
@@ -184,12 +186,12 @@
 
 .referral-input-style{
 	display: inline-flex;
-	border-bottom: 1px solid #5d5d5d;
+	border-bottom: 1px solid #fff;
 	width: auto;
 	max-width:100%;
 	overflow: hidden;
 	white-space: nowrap;
-	color:#5d5d5d;
+	color:#fff;
 }
 
 .invite-logout-header{
@@ -197,30 +199,40 @@
     width: 100%;
     top: 0px;
     position: relative;
-    padding: 35px 35px 0px 35px;
-    color: #444;
+    padding: 35px 35px 15px 35px;
+    color: #fff;
     text-align:center;
     margin:auto;
 }
 
 .hero-title{
 	font-size: 24px;
-	color:#333333;
+	color:#fff;
 	margin-bottom:10px;
 }
 
 .hero-tagline{
 	font-size:18px;
-	color:#333;
+	color:#fff;
 	width:80%;
 	margin:auto;
+	margin-bottom:30px;
 }
 
 .inviter-signin{
-    background-color: transparent;
-    max-width:36%;
+    background-color: #2c5968;
+    max-width:60%;
 	display: inline-block;
-    padding: 5% 2% 5% 3%;
+    padding: 5% 2% 5% 2%;
+    text-align:center;
+    margin:auto;
+}
+
+.facebook-like-block{
+	background-color: #2c5968;
+    width:60%;
+	display: inline-block;
+    padding: 4% 1%;
     text-align:center;
     margin:auto;
 }
@@ -230,13 +242,19 @@
 	display:inline-block;
 	position:relative;
 	text-decoration: underline;
-	color:#f4907f !important;
+	color:#fff !important;
 }
 
 
 /***********************************************/
 /*****************  Invite page ****************/
 /***********************************************/
+
+.invite-signin-image{
+	width: 20%;
+    margin: auto;
+    margin-top: 40px;
+}
 
 .invite-link-block{
 	position:relative;
@@ -246,7 +264,7 @@
 
 .other-refer-type-title{
 	background-color: transparent;
-    color: #5d5d5d;
+    color: #fff;
     width: 100%;
     margin-bottom:20px;
     font-weight: 400;
@@ -256,8 +274,8 @@
 }
 
 .email-box{
-	background-color:#EEE;
-	padding: 0 0 20px 0;
+	background-color:#2c5968;
+	padding: 20px 0 25px 0;
 	text-align:center;
 	margin:auto;
 }
@@ -297,20 +315,21 @@
 	}
 
 	.refer-title-block{
-	    padding: 15px 35px 10px 35px;
+	    padding: 15px 35px 0px 35px;
 	}
 
 
 	.refer-tagline{
 		font-size: 16px;
 		font-weight:400;
+		color: #fff;
+    	margin-bottom: 15px;
 	}
 
 
 	.email-field-box{
-		width: 80%;
+		width: 90%;
 	    margin: auto;
-	    margin-bottom: 10px;
 	}
 
 	.email-textarea{
@@ -327,7 +346,9 @@
 	}
 
 	.other-refer-box{
-		width:90%;   /* diff width for mobile */
+		width:100%;   /* diff width for mobile */
+		background-color: #24a8b2;	
+		padding:20px;
 	}
 
 
@@ -343,12 +364,24 @@
 	    max-width: 100%;
 	}
 
+	.facebook-like-block{
+		width: 100%;
+	    display: block;
+	    padding: 10% 0;
+	}
+
+	.invite-signin-image{
+		padding: 1% 25% 0 25%;
+		width: 100%;
+	}
+
 	.inviter-image-block{
 		width:100%;
 		display:inline-block;
 		padding: 30px;
 		text-align: center;
 	}
+
 
 	.inviter-image{
 		width:70%;
@@ -398,6 +431,8 @@
 		font-size: 18px;
 		width:82%;
 		margin:auto;
+		color:#fff;
+		margin-bottom: 15px;
 	}
 
 	.email-field-box{
@@ -425,13 +460,14 @@
 
 
 	.inviter-signin{
-	    background-color: transparent;
-	    max-width: 36%;
+	    background-color: #2c5968;
+	    max-width: 60%;
 	    display: inline-block;
-	    padding: 5% 2% 5% 3%;
+	    padding: 5% 2% 5% 2%;
 	    text-align:center;
 	    margin:auto;
 	}
+
 
 
 	.inviter-image-block{
@@ -461,6 +497,8 @@
 		font-size: 18px;
 		width:82%;
 		margin:auto;
+		color:#fff;
+		margin-bottom:15px;
 	}
 
 	.email-field-box{
