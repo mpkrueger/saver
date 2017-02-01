@@ -71,37 +71,25 @@
 
 
 
-<body class="city-bottom" style="overflow:auto; height:100%;">
-	<div class="header invite-header">
-		<div class="invite-header-icon-block"><%= image_tag("piggybank2.png", class:"saver-header-icon") %> </div>
-		<hr class="invite-hr"/>
-	</div>
+<body class="city-bottom" style="background-color:#0a8d9d; overflow:auto; height:100%;">
+	 <div class="invite-signin-image">
+      <%= image_tag("flying_pig_header.png", class:"saver-header-icon") %>
+    </div>  
 
 
 
 	<div class="refer-title-block">
-        <div class="refer-headline" style="color:#333333;"><%= @customer.first_name %>, thanks for sharing! </div>
-      <div class="refer-tagline">Keep an eye on your inbox – we’ll let you know each time a friend saves with Savvy and you can collect your $10.</div>
-      <div class="spaced-row"></div>
-    <div class="fb-like" data-href="https://www.facebook.com/getsavvier" data-width="50px" data-layout="button" data-action="like" data-show-faces="true" data-share="false"></div>
-    </div>
-    <Br /><br />
-    <div class="other-refer-box">
-        <div class="title-container"><div class="other-refer-type-title">Send More Invites</div></div>
-        <div id="shareBtn" class="fb-button"><%= image_tag('fb_button_icon.png', class:"fb-button-icon") %>  
-          <span style="color:#fff">Share on Facebook </span> 
+        <div class="refer-headline"><%= @customer.first_name %>, thanks for sharing! </div>
+        <div class="refer-tagline">Keep an eye on your inbox – we’ll let you know each time a friend saves with Savvy so you can collect your $10.</div>
+        <div class="spaced-row"></div>
+  
+
+    <div class="facebook-like-block">
+      <div class="refer-tagline">Like Us On Facebook </div>
+       <div class="fb-like" data-href="https://www.facebook.com/getsavvier" data-width="100" data-layout="button" data-action="like" data-size="large" data-show-faces="false" data-share="false"></div>
         </div>
-        
-        <button class="clipboard-btn copy-link-button" data-clipboard-action="copy" data-clipboard-text="<%= @invite_url %>">
-          <%= image_tag('copy_link_icon.png', class:"copy-link-icon") %> <span style="color:#fff"> Copy your unique link </span>
-        </button>
-        <br />
-        <div class="link-tooltip"><span class="tooltiptext">Copied!</span></div>
-        
-        <%= link_to "Or Send More emails", "https://www.getsavvier.com/invite", :class=>"signin-link", :id=>"more-emails", :style=>"margin-top:3%;" %>
-    </div> 
-    <br />
-    
+    </div>
+  </div>
     
 
   </div>  
@@ -109,11 +97,12 @@
 
 
 
-<div class="rewards">
+<!--div class="rewards">
     <span class="refer-headline">Your Total Rewards: $<%= @customer.invites.where(saved_money: true).count * 10 %> </span>
     <% if @customer.invites.where(saved_money: true).count * 10 == 0 %>
       <br /><div class="refer-tagline">Send some invites to get those rewards!</div>
     <% end %>
+    -->
 
 
 

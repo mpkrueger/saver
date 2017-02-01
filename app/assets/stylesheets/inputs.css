@@ -45,6 +45,10 @@ option[default]{
 }
 
 
+.unbolded-label{
+  font-weight:300;
+}
+
 
 /* overloading default text input fields */
 input[type="text"], input[type="tel"], input[type="email"], input[type="password"]{
@@ -95,7 +99,7 @@ outline:none;
 .custom-text-area{
   background-color: transparent;
   border: 1px solid #DDD;
-  color:#00A99D;
+  color:#fff;
   resize: none;
   padding:10px 15px;
   width:90%;
