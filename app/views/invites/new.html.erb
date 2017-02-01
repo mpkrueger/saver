@@ -98,7 +98,7 @@
     <div class="refer-title-block">
         <div class="hero-title"><%= @customer.first_name %>, invite your friends to earn rewards. </div>
       <div class="hero-tagline">You'll earn $10 for every friend who saves money with Savvy. <br />
-      <% link_to "https://www.getsavvier.com/faq#referralfaq" "See Referral FAQ" %>
+      <%= link_to 'Learn More', faq_path(anchor:"referralfaq"), :target => "_blank", :class => "faq-referral-page-link" %>
       </div>
     </div>
 
