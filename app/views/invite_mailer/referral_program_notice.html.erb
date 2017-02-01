@@ -1,0 +1,26 @@
+<p style="text-align:center; margin:auto;"><%= image_tag('https://www.getsavvier.com/assets/lp_hero_image.png', class:"email-header-image") %></p>
+
+<p>
+Hi <%= @saver_guest.name %>,</p>
+
+<p>We’re announcing a new referral program today: share Savvy with friends & family and earn $10 for every person that saves.</p>
+
+<p>Because helping your loved ones save money is a win-win for everyone!</p>
+
+<p>Just head to our invite page and add a password to your account so that we can track your rewards:
+<div>
+  <table cellspacing="0" cellpadding="0"> 
+    <tr> 
+      <td align="center" width="300" height="40" bgcolor="#00A99D" style="-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; color: #ffffff; display: block;">
+        <span style="color: #ffffff;">
+            <%= link_to "Share the savings", invite_url(email: @saver_guest.email), class: "email-button" %>
+        </span>
+      </td> 
+    </tr> 
+  </table> 
+</div>
+<br />
+<p>The more people you help, the more you earn.</p>
+
+<p>Thanks for spreading the word,<br />
+Matt & Sushmita</p>

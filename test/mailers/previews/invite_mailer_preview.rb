@@ -11,4 +11,8 @@ class InviteMailerPreview < ActionMailer::Preview
     InviteMailer.claim_your_reward
   end
 
+  def referral_program_notice
+  	InviteMailer.referral_program_notice(SaverGuest.last)
+  end
+
 end

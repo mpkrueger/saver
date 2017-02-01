@@ -11,10 +11,6 @@ class InviteMailer < ApplicationMailer
 
     @subject = "#{@invite.customer.first_name} wants to help you save money with no effort"
 
-    attachments.inline['lp_hero_image.png'] = File.read("#{Rails.root}/app/assets/images/lp_hero_image.png")
-    attachments.inline['fb_circle_icon.png'] = File.read("#{Rails.root}/app/assets/images/fb_circle_icon.png")
-    attachments.inline['twitter_circle_icon.png'] = File.read("#{Rails.root}/app/assets/images/twitter_circle_icon.png")
-
     mail(to: @invite.receiver_email, subject: @subject)
   end
 
@@ -27,5 +23,13 @@ class InviteMailer < ApplicationMailer
     @greeting = "Hi"
 
     mail to: "to@example.org"
+  end
+
+  def referral_program_notice(saver_guest)
+    @saver_guest = saver_guest
+
+    @subject = "Earn $10 for each friend who saves with Savvy"
+
+    mail(to: @saver_guest.email, subject: @subject)
   end
 end
