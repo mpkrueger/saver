@@ -35,15 +35,18 @@ class RegistrationsController < Devise::RegistrationsController
 
       # if the customer doesn't already have a saver_guest with the same email:
       unless SaverGuest.find_by_email(resource.email)
-        
-        # send the customer an email asking them to send us their bill
-        # (if they have a saver guest with that email, they've already received the send us your bill email)
-        CustomerMailer.signup_bill(resource).deliver
 
         # create a ticket that will be used to track their bill and savings
         @ticket = Ticket.new
         @ticket.customer = resource
         @ticket.save
+      end
+
+      # if the customer already has a saver_guest but hasn't yet sent us their bill:
+      if SaverGuest.find_by_email(resource.email).ticket.where(has_bill: nil)
+
+        # send the customer an email asking them to send us their bill
+        CustomerMailer.signup_bill(resource).deliver
       end
 
       if resource.active_for_authentication?
