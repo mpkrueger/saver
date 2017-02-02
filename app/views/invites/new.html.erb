@@ -124,7 +124,7 @@
         <%= form_for @invite do |f| %>
 
           <div class="email-field-box referral-input-style">
-              <%= f.text_field :receiver_email, class: "border-underline", style:"width:100%;", placeholder: "Enter email addresses, separated by commas.", required: true %>
+              <%= f.text_field :receiver_email, class: "border-underline", style:"width:100%;", placeholder: "Enter emails, separated by commas.", required: true %>
           </div>
          
           <%= f.submit "Send invite", class: "invite-button", style:"margin-top:20px;", id:"send-invite" %>
