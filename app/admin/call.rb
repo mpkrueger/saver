@@ -21,7 +21,7 @@ ActiveAdmin.register Call do
 
 	form do |f|
 		inputs 'New Call' do
-			f.input :ticket, as: :select, collection: Ticket.all.collect {|ticket| [ticket.saver_guest.name, ticket.id]}
+			f.input :ticket, as: :select, collection: Ticket.all.collect {|ticket| [ticket.customer.first_name, ticket.id]}
 			f.input :start_time, as: :date_time_picker
 			f.input :end_time, as: :date_time_picker
 			f.input :agent_name
@@ -37,7 +37,7 @@ ActiveAdmin.register Call do
 		selectable_column
 		column("Call ID", sortable: :id) {|call| link_to "##{call.id}", admin_call_path(call)}
 		column("TID", :sortable => :id) {|call| link_to "##{call.ticket_id} ", admin_ticket_path(call.ticket) }
-		column("Saver Guest Name") {|call| link_to "#{call.ticket.saver_guest.name}", admin_saver_guest_path(call.ticket.saver_guest)}
+		column("Customer Name") {|call| link_to "#{call.ticket.customer.first_name}", admin_customer_path(call.ticket.customer)}
 		column("Agent Name", :agent_name)
 		column("Day of call") {|call| "#{call.start_time.strftime("%A, %b %d, %Y")}"}
 	    # column("State")                   {|ticket| status_tag(ticket.state) }
