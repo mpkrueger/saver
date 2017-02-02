@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   root to: 'onboarding#landing_page'
 
   constraints subdomain: "try" do
-    get "/"
+    get "/", to: 'onboarding#landing_page'
   end
 
   get 'dashboard', to: 'dashboards#dashboard', as: 'dashboard'
