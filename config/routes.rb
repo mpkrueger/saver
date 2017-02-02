@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   end
   root to: 'onboarding#landing_page'
 
+  match '/', to: 'onboarding#landing_page', constraints: { subdomain: 'try' }
+
   get 'dashboard', to: 'dashboards#dashboard', as: 'dashboard'
   get 'whysavvy', to: 'onboarding#why_savvy', as: 'why_savvy'
   get 'onboarding/landing_page'
