@@ -123,8 +123,8 @@
         <div class="refer-tagline">Or Invite Via Email</div>
         <%= form_for @invite do |f| %>
 
-          <div class="email-field-box">
-              <%= f.text_area :receiver_email, class: "custom-text-area", placeholder: "Enter email addresses, separated by commas.", required: true %>
+          <div class="email-field-box referral-input-style">
+              <%= f.text_field :receiver_email, class: "border-underline", style:"width:100%;", placeholder: "Enter emails, separated by commas.", required: true %>
           </div>
          
           <%= f.submit "Send invite", class: "invite-button", style:"margin-top:20px;", id:"send-invite" %>
