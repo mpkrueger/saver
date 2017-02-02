@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   authenticated :customer do
     root to: 'dashboards#dashboard'
   end
-  root to: redirect("http://try.getsavvier.com")
+  root to: 'onboarding#landing_page'
 
   get 'dashboard', to: 'dashboards#dashboard', as: 'dashboard'
   get 'whysavvy', to: 'onboarding#why_savvy', as: 'why_savvy'
