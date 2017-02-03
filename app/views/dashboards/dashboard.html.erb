@@ -51,15 +51,15 @@
   <div class="dashboard-main-module">
     <div class="dashboard-main-module-icon-block"><div class="fb-like" data-href="https://www.facebook.com/getsavvier" data-width="100px" data-layout="button" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div></div>
     
-    <div class="headline"><%= link_to "Like Us On Facebook", "https://www.facebook.com/getsavvier" %></div>
+    <div class="headline"><%= link_to "Like Us On Facebook", "https://www.facebook.com/getsavvier", class:"dashboard-link" %></div>
   </div>
 
   <div class="dashboard-main-module">
     <div class="dashboard-main-module-icon-block"><%= image_tag('piggybank2.png', class:"saver-header-icon") %></div>
-    <div class="headline"><%= link_to "Refer A Friend", "https://www.getsavvier.com/invite" %></div>
+    <div class="headline"><%= link_to "Refer A Friend", "https://www.getsavvier.com/invite", class:"dashboard-link" %></div>
   </div>
 
-<%= link_to "Sign out", destroy_customer_session_path, method: :delete %>
+<%= link_to "Sign out", destroy_customer_session_path, class:"dashboard-link", method: :delete %>
 </div>
 
 </body>
