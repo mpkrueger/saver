@@ -20,6 +20,7 @@ gem 'groupdate'
 gem 'strip_attributes'
 gem 'stripe'
 gem 'clipboard-rails'
+gem 'newrelic_rpm'
 
 
 group :production do
