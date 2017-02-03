@@ -46,8 +46,7 @@ class InvitesController < ApplicationController
     else
       @sender_name = "A friend"
     end
-    
-    store_location_for(:customer, thanks_saver_guests_path)
+
   end
 
   def index
