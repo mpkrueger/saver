@@ -19,26 +19,47 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
+<body style="background-color:#eee;">
 
-
-<div class="header saver-header">
-	<div class="saver-header-icon-block"><%= image_tag("piggybank2.png", class:"saver-header-icon") %> </div>
-	<div class="saver-header-logo-block">	<%= image_tag("savvysaverlogo.png", class:"saver-header-logo") %></div>
-		<br /> <hr class="saver-hr"/>
+<div class="header dashboard_header">
+	<div class="dashboard-header-icon-block"><%= image_tag("flying_pig_header.png", class:"dashboard-header-icon") %> </div>
+	<div class="dashboard-header-logo-block">	<%= image_tag("savvysaverlogo.png", class:"dashboard-header-logo") %></div>
+		<br />
 	</div>
 </div>
 
 
+<div class="dashboard-content-block">
 
-<div class="saver-question-block big-headline">
-  <!--% if @saver_guest.bill.present? %>
-    <p>Thanks for uploading your bill. </p>
-    <br />
-    <p>We'll call your cable company to negotiate a lower price and send you the result!</p-->
-    Great, we'll send you an email with more info on sending us your bill. Check your inbox to get started! 
-    <div class="spaced-row"></div>
-    <div class="fb-like" data-href="https://www.facebook.com/getsavvier" data-width="100px" data-layout="button" data-action="like" data-show-faces="true" data-share="false"></div>
+  <div class="dashboard-main-module">
+    <div class="big-headline">Next Step: Check Your Email</div>
+    <div class="dashboard-main-module-icon-block"><%= image_tag('email_icon.png', class:"dashboard-main-module-icon") %></div>
+    <div class="headline">
+      <!--% if @saver_guest.bill.present? %>
+        <p>Thanks for uploading your bill. </p>
+        <br />
+        <p>We'll call your cable company to negotiate a lower price and send you the result!</p-->
+        Great, we'll send you an email with more info on sending us your bill. <br />Check your inbox to get started!
+        <div class="spaced-row"></div>
+        
 
 
-</div>
+    </div>
+  
+  </div>
+
+  <div class="dashboard-main-module">
+    <div class="dashboard-main-module-icon-block"><div class="fb-like" data-href="https://www.facebook.com/getsavvier" data-width="100px" data-layout="button" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div></div>
+    
+    <div class="headline"><%= link_to "Like Us On Facebook", "https://www.facebook.com/getsavvier" %></div>
+  </div>
+
+  <div class="dashboard-main-module">
+    <div class="dashboard-main-module-icon-block"><%= image_tag('piggybank2.png', class:"saver-header-icon") %></div>
+    <div class="headline"><%= link_to "Refer A Friend", "https://www.getsavvier.com/invite" %></div>
+  </div>
+
 <%= link_to "Sign out", destroy_customer_session_path, method: :delete %>
+</div>
+
+</body>
