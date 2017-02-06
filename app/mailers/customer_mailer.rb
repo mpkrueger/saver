@@ -18,7 +18,7 @@ class CustomerMailer < ApplicationMailer
     @customer = customer
 
     
-    @subject = "Oops, sorry for the delay in your Savvy signup email!"
+    @subject = "Sorry that your Savvy email was delayed on #{@customer.created_at.strftime("%A")}!"
 
     mail(to: @customer.email, subject: @subject)
   end
