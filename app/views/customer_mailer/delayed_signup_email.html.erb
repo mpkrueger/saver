@@ -2,7 +2,7 @@
 
 <p>Hi <%= @customer.first_name %>,</p>
 
-<p>Thanks again for signing up for Savvy! We wanted to send a quick apology for the delay in your Savvy signup email. </p>
+<p>Thanks again for signing up for Savvy! We wanted to send a quick apology for the delay in your Savvy signup email on <%= @customer.created_at.strftime("%A") %>. </p>
 
 <p>We’d love to say that we were busy prepping Melissa McCarthy for her SNL appearance and showing Lady Gaga how to perfect her aerial moves, but sadly it was just a mundane hiccup on our end. We made a fix and you should have received that much-anticipated email. :)</p>
 
