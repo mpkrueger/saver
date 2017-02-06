@@ -6,4 +6,8 @@ class CustomerMailerPreview < ActionMailer::Preview
     CustomerMailer.signup_bill(Customer.last)
   end
 
+  def delayed_signup_email
+  	CustomerMailer.delayed_signup_email(Customer.last)
+  end
+
 end

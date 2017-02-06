@@ -13,5 +13,14 @@ class CustomerMailer < ApplicationMailer
 
     mail(to: @customer.email, subject: @subject)
   end
+
+  def delayed_signup_email(customer)
+    @customer = customer
+
+    
+    @subject = "Oops, sorry for the delay in your Savvy signup email!"
+
+    mail(to: @customer.email, subject: @subject)
+  end
 end
   
