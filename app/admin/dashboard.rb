@@ -3,12 +3,12 @@ ActiveAdmin.register_page "Dashboard" do
   menu priority: 1, label: proc{ I18n.t("active_admin.dashboard") }
 
   content do
-    panel "New customers by week" do
+    panel "New tickets by week" do
       #  line_chart SaverGuest.group_by_day(:created_at, last: 30).count, xtitle: "Date", ytitle: "Saver Guests"
-        bar_chart SaverGuest.group_by_week(:created_at, last:4).count, xtitle:"New Customers", ytitle: "By Week"
+        bar_chart Ticket.group_by_week(:created_at, last:4).count, xtitle:"New Tickets", ytitle: "By Week"
     end
 
-    panel "Bills collected by week" do
+    panel "Percent of new tickets w/ bills collected by week" do
         bar_chart Ticket.group_by_week(:created_at, last:4).where("has_bill" == true).count, xtitle:"Bills Collected", ytitle:"By Week"
     end
     panel "Overall Stats" do
