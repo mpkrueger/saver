@@ -8,16 +8,16 @@ ActiveAdmin.register_page "Dashboard" do
         bar_chart Ticket.group_by_week(:created_at, last:5).count, xtitle:"New Tickets", ytitle: "By Week"
     end
 
-    panel "Percent of new tickets w/ bills collected by week" do
-        bar_chart Ticket.group_by_week(:created_at, last:5).where("has_bill" == true).count, xtitle:"Bills Collected", ytitle:"By Week"
+    panel "# of new tickets w/ bills collected by week" do
+        bar_chart Ticket.group_by_week(:created_at, last:5).where(has_bill: true).count, xtitle:"Bills Collected", ytitle:"By Week"
     end
 
     panel "Amount earned by week" do
-        bar_chart Ticket.group_by_week(:created_at, last:5).where("successfully_saved_money" == true).sum(:amount_earned), xtitle:"Amount earned", ytitle:"By Week"
+        bar_chart Ticket.group_by_week(:created_at, last:5).where(successfully_saved_money: true).sum(:amount_earned), xtitle:"Amount earned", ytitle:"By Week"
     end
 
     panel "Overall Stats" do
-        para "Average saved: #{ monetize( Ticket.where(has_bill: true).average(:amount_saved) ) }"
+        para "Average saved: #{ monetize( Ticket.where(has_bill: true).average(:amount_saved).round(2) ) }"
         para "Total saved: #{ monetize(Ticket.sum(:amount_saved)) }"
         para "Total earned: #{ monetize(Ticket.sum(:amount_earned))}"
     end
