@@ -22,7 +22,8 @@ ActiveAdmin.register_page "Dashboard" do
         para "Total earned: #{ monetize(Ticket.sum(:amount_earned))}"
         para "Total bills received: #{ Ticket.where(has_bill: true).count }"
         para "Total bills where we saved more than $100: #{ Ticket.where("amount_saved > ?", 10000).count }"
-        para "Average saved per bill received with savings > $100: #{ monetize (Ticket.where("amount_saved > ?", 10000).sum(:amount_saved) / Ticket.where("amount_saved > ?", 100).count) }"
+        para "Average saved per bill received with savings > $100: #{ monetize ( Ticket.where("amount_saved > ?", 10000).sum(:amount_saved) / Ticket.where("amount_saved > ?", 10000).count ) }"
+        para "Average earned per bill: #{ monetize ( Ticket.where("amount_saved > ?", 10000).sum(:amount_saved) / Ticket.where(has_bill: true).count ) } "
     end
 
     # panel "Today's Stats" do
