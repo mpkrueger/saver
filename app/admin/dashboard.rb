@@ -5,15 +5,15 @@ ActiveAdmin.register_page "Dashboard" do
   content do
     panel "New tickets by week" do
       #  line_chart SaverGuest.group_by_day(:created_at, last: 30).count, xtitle: "Date", ytitle: "Saver Guests"
-        bar_chart Ticket.group_by_week(:created_at, last:5).count, xtitle:"New Tickets", ytitle: "By Week"
+        column_chart Ticket.group_by_week(:created_at, last:5).count, xtitle:"New Tickets", ytitle: "By Week"
     end
 
     panel "# of new tickets w/ bills collected by week" do
-        bar_chart Ticket.group_by_week(:created_at, last:5).where(has_bill: true).count, xtitle:"Bills Collected", ytitle:"By Week"
+        column_chart Ticket.group_by_week(:created_at, last:5).where(has_bill: true).count, xtitle:"Bills Collected", ytitle:"By Week"
     end
 
     panel "Amount earned by week" do
-        bar_chart Ticket.group_by_week(:created_at, last:5).where(successfully_saved_money: true).sum(:amount_earned), xtitle:"Amount earned", ytitle:"By Week"
+        column_chart Ticket.group_by_week(:created_at, last:5).where(successfully_saved_money: true).sum(:amount_earned), xtitle:"Amount earned", ytitle:"By Week"
     end
 
     panel "Overall Stats" do
