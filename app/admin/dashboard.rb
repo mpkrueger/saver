@@ -13,11 +13,11 @@ ActiveAdmin.register_page "Dashboard" do
     end
 
     panel "Amount earned by week" do
-        bar_chart Ticket.group_by_week(:created_at, last:10).where("successfully_saved_money" == true).sum(&:amount_earned), xtitle:"Bills Collected", ytitle:"By Week"
+        bar_chart Ticket.group_by_week(:created_at, last:10).where("successfully_saved_money" == true).sum(:amount_earned), xtitle:"Bills Collected", ytitle:"By Week"
     end
 
     panel "Overall Stats" do
-        para "Average saved: #{ monetize(Ticket.where("has_bill" == true).average(:amount_saved).round(2)) }"
+        para "Average saved: #{ monetize( Ticket.where(has_bill: true).average(:amount_saved).round(2) ) }"
         para "Total saved: #{ monetize(Ticket.sum(:amount_saved)) }"
         para "Total earned: #{ monetize(Ticket.sum(:amount_earned))}"
     end
