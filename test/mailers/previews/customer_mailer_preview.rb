@@ -10,4 +10,8 @@ class CustomerMailerPreview < ActionMailer::Preview
   	CustomerMailer.delayed_signup_email(Customer.last)
   end
 
+  def bill_reminder
+  	CustomerMailer.bill_reminder(Customer.last)
+  end
+
 end

@@ -22,5 +22,14 @@ class CustomerMailer < ApplicationMailer
 
     mail(to: @customer.email, subject: @subject)
   end
+
+  def bill_reminder(customer)
+    @customer = customer
+
+    
+    @subject = "Send bill, save money!"
+
+    mail(to: @customer.email, subject: @subject)
+  end
 end
   
