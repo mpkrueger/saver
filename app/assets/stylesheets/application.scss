@@ -32,6 +32,14 @@ html{
  background-color: #125D70;
 }
 
+.blue-bkgd{
+  background-color:#0a8d9d; 
+  overflow-y:auto; 
+  overflow-x:hiddden; 
+  height:100%;
+}
+
+
 .splash-body{
     font-size: 18px;
     line-height: 1.4;
@@ -103,8 +111,8 @@ ul {
 }
 
 .next-button{
-  border: 2px solid #00A99D;
-  background-color: #00A99D;
+  border: 2px solid #e5806c;
+  background-color: #e5806c;
   color: #fff;
   padding: 10px 30px;
   text-align: center;
@@ -114,8 +122,8 @@ ul {
 }
 
 .next-button:active, .short-option-button:active{
-  background-color:#399986;
-  color: #50aa9e;
+  background-color:#c66e60;
+  color: #c66e60;
   outline:0;
   text-decoration: none;
 }
@@ -125,8 +133,8 @@ ul {
 }
 
 .next-button:hover, .short-option-button:hover{
-  background-color:#33CCCC;
-  border: 2px solid #33CCCC;
+  background-color:#f4907f;
+  border: 2px solid #f4907f;
   color:#fff;
   text-decoration: none;
 }
@@ -142,6 +150,23 @@ ul {
   border-radius:4px;
   margin:auto;
 }
+
+.lightgray-link{
+  text-decoration: underline;
+  color:#eee;
+}
+.lightgray-link:hover{
+  color:#eee;
+  text-decoration: underline;
+  opacity:.8;
+}
+
+.lightgray-link:visited{
+  color:#eee;
+  text-decoration: none;
+}
+
+
 
 .edu-link{
   border:none;
@@ -192,7 +217,7 @@ ul {
     font-size: 14px;
     font-weight:500;
     font-family: Helvetica, sans-serif;
-    color:#333;
+    color:#FFF;
    }
 
 .centered-title{
@@ -222,7 +247,7 @@ ul {
 .big-headline{
   font-size:16px;
   font-weight:bold;
-  color: #333;
+  color: #FFF;
   margin-top:20px;
   margin-bottom:10px;
 }
@@ -230,7 +255,7 @@ ul {
 .headline{
   font-size: 14px;
   font-weight:500;
-  color: #333;
+  color: #FFF;
 }
 
 .subtext{
@@ -287,7 +312,7 @@ ul {
    	font-size: 16px;
     font-family: 'Museo Sans', 'Lato', Helvetica, sans-serif;
     font-weight: 500;
-    color:#333;
+    color:#FFF;
    }
 
 .centered-title{
@@ -317,7 +342,7 @@ ul {
 .big-headline{
   font-size:16px;
   font-weight:700;
-  color: #333;
+  color: #FFF;
   margin-top:20px;
   margin-bottom:10px;
 }
@@ -325,7 +350,7 @@ ul {
 .headline{
   font-size: 14px;
   font-weight:500;
-  color: #333;
+  color: #FFF;
 }
 
 .subtext{
@@ -375,7 +400,7 @@ ul {
     line-height:1.4;
     font-family: 'Museo Sans', 'Lato', Helvetica, sans-serif;
     font-weight: 300;
-    color:#333;
+    color:#FFF;
    }
 
 .centered-title{
@@ -407,14 +432,14 @@ ul {
   .big-headline{
   font-size:21px;
   font-weight:500;
-  color: #333;
+  color: #FFF;
   margin-top:20px;
   margin-bottom:10px;
 }
 
 .headline{
   font-size: 18px;
-  color: #333;
+  color: #FFF;
 }
 
 .subtext{

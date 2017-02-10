@@ -2,12 +2,12 @@
 
 .dropdown-style{
   display: inline-flex;
-  border-bottom: 1px solid #00A99D;
+  border-bottom: 1px solid #eee;
   width: auto;
   max-width:100%;
   overflow: hidden;
   white-space: nowrap;
-  color:#00A99D;
+  color:#fff;
 }
 
 select.my-dropdown{

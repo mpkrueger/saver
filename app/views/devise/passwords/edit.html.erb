@@ -6,12 +6,11 @@
 </script>
 
 
-<div class="header saver-header">
-  <div class="saver-header-icon-block"><%= image_tag("piggybank2.png", class:"saver-header-icon") %> </div>
-  <div class="saver-header-logo-block"> <%= image_tag("savvysaverlogo.png", class:"saver-header-logo") %></div>
-    <br /> <hr class="saver-hr"/>
+<body class="city-bottom blue-bkgd">
+
+  <div class="receiver-header-image">
+    <%= image_tag("invite_flying_pig_savings.png", class:"saver-header-icon") %>
   </div>
-</div>
 
 
    
@@ -20,16 +19,16 @@
     <%= f.hidden_field :reset_password_token %>
 
     <div class="saver-question-block centered-title">
-      <div class="big-headline"> Change your password </div>
+      <div class="hero-title"> Change your password </div>
       <div class="spaced-row ">
           <div class="dropdown-style">
-            <%= f.password_field :password, autofocus: true, autocomplete: "off", style:"width:250px; color:#333;", placeholder: "new password" %>
+            <%= f.password_field :password, autofocus: true, autocomplete: "off", style:"width:250px; color:#fff;", placeholder: "new password" %>
           </div>
       </div>
 
       <div class="spaced-row ">
           <div class="dropdown-style">
-            <%= f.password_field :password_confirmation, autocomplete: "off", style:"width:250px; color:#333;", placeholder: "confirm new password" %>
+            <%= f.password_field :password_confirmation, autocomplete: "off", style:"width:250px; color:#fff;", placeholder: "confirm new password" %>
           </div>
       </div>
 
@@ -43,3 +42,5 @@
   <div class="sign-in-link">
     <%= render "devise/shared/links" %>
   </div>
+
+</body>

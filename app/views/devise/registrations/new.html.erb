@@ -11,36 +11,36 @@
   });
 </script>
 
-<div class="header saver-header">
-  <div class="saver-header-icon-block"><%= image_tag("piggybank2.png", class:"saver-header-icon") %> </div>
-  <div class="saver-header-logo-block"> <%= image_tag("savvysaverlogo.png", class:"saver-header-logo") %></div>
-    <br /> <hr class="saver-hr"/>
+<body class="city-bottom blue-bkgd">
+
+  <div class="receiver-header-image">
+    <%= image_tag("invite_flying_pig_savings.png", class:"saver-header-icon") %>
   </div>
-</div>
+
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   
 
   <div class="saver-question-block" id="email">
     <!-- We're here to do the work so you can save time and money. On average we've saved people $300 a year. Sign up so we can contact you about your bill and your savings (we promise not to spam your inbox). -->
-
+    <div class="refer-title" style="margin-bottom:28px;">
     We save people an average of $300 a year. How much will we save you?
-    <br /> <br />
-    Create a Savvy account to get started!
+    <br /> <br/>
+    Create a Savvy account to get started! <br />
+    </div>
 
-    <br /> <br />
     
 
     <div class="dropdown-style">
-      <%= f.text_field :first_name, class: "madlib-sentence border-underline", style:"width:300px; color:#333;", placeholder: "your first name", required: true %>
+      <%= f.text_field :first_name, class: "madlib-sentence border-underline", style:"width:300px; color:#fff;", placeholder: "your first name", required: true %>
     </div>
     <div class="spaced-row"></div>
     <div class="dropdown-style" style="margin-top:10px;">
-      <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:300px;color:#333;", placeholder: "email address" %>
+      <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:300px;color:#fff;", placeholder: "email address" %>
     </div>
     <div class="spaced-row"></div>
     <div class="dropdown-style" style="margin-top:10px;">
-      <%= f.password_field :password, class: "border-underline", style:"width:300px;color:#333;", placeholder: "password (at least 6 characters)", autocomplete: "off" %>
+      <%= f.password_field :password, class: "border-underline", style:"width:300px;color:#fff;", placeholder: "password (at least 6 characters)", autocomplete: "off" %>
     </div>
     <div class="spaced-row"></div>
     
@@ -50,3 +50,5 @@
   </div>
 
   <% end %>
+
+</body>

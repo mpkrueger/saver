@@ -11,28 +11,27 @@
   });
 </script>
 
-<div class="header saver-header">
-  <div class="saver-header-icon-block"><%= image_tag("piggybank2.png", class:"saver-header-icon") %> </div>
-  <div class="saver-header-logo-block"> <%= image_tag("savvysaverlogo.png", class:"saver-header-logo") %></div>
-    <br /> <hr class="saver-hr"/>
+<body class="city-bottom blue-bkgd">
+
+  <div class="receiver-header-image">
+    <%= image_tag("invite_flying_pig_savings.png", class:"saver-header-icon") %>
   </div>
-</div>  
 
 <div class="saver-question-block centered-title">
-  <div class="big-headline"> Sign in to Savvy </div>
+  <div class="hero-title"> Sign in to Savvy </div>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
       
         <div class="spaced-row ">
             <div class="dropdown-style">
-            <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:250px;color:#333;", placeholder: "email address", autofocus: true %>
+            <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:250px;color:#fff;", placeholder: "email address", autofocus: true %>
             </div>
         </div>
 
         <div class="spaced-row">
           <div class="dropdown-style">
-            <%= f.password_field :password, class: "border-underline", style:"width:250px; color:#333;", placeholder: "password", autocomplete: "off" %>
+            <%= f.password_field :password, class: "border-underline", style:"width:250px; color:#fff;", placeholder: "password", autocomplete: "off" %>
             </div>
         </div>
 
@@ -50,12 +49,13 @@
       
     <% end %>
     <div class="spaced-row"></div>
-    <%= link_to "Forgot your password?", new_customer_password_path, class:"accept-link" %>
+    <%= link_to "Forgot your password?", new_customer_password_path, class:"lightgray-link" %>
     
 
     <div class="spaced-row"></div> 
-    <%= link_to "Sign up", new_customer_registration_path, class:"accept-link" %><br />
+    <%= link_to "Sign up", new_customer_registration_path, class:"lightgray-link" %><br />
      
 
   </section>
 </div>
+</body>

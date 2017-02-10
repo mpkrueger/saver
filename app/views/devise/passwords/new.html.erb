@@ -5,12 +5,14 @@
     });
 </script>
 
-<div class="header saver-header">
-  <div class="saver-header-icon-block"><%= image_tag("piggybank2.png", class:"saver-header-icon") %> </div>
-  <div class="saver-header-logo-block"> <%= image_tag("savvysaverlogo.png", class:"saver-header-logo") %></div>
-    <br /> <hr class="saver-hr"/>
+
+<body class="city-bottom blue-bkgd">
+
+  <div class="receiver-header-image">
+    <%= image_tag("invite_flying_pig_savings.png", class:"saver-header-icon") %>
   </div>
-</div>
+
+
 
 
 
@@ -20,12 +22,12 @@
 		<%= devise_error_messages! %>
 
 	
-		<div class="big-headline"> Reset password </div>
+		<div class="hero-title"> Reset password </div>
 
 
     <div class="spaced-row">
        <div class="dropdown-style">
-				<%= f.email_field :email, class: "border-underline", style:"width:250px; color:#333", placeholder: "email address" %>
+				<%= f.email_field :email, class: "border-underline", style:"width:250px; color:#fff", placeholder: "email address" %>
 			</div>
 
 			<div class="button-row">
@@ -36,7 +38,8 @@
 	<% end %>
 
 	
-		<%= link_to "Sign in", new_customer_session_path %>
+		<%= link_to "Sign in", new_customer_session_path, class:"lightgray-link" %>
 	
 </div>
 
+</body>
