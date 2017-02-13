@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'dashboards#dashboard', as: 'dashboard'
   get 'whysavvy', to: 'onboarding#why_savvy', as: 'why_savvy'
   get 'onboarding/landing_page'
+  get 'privacy_policy', to: 'info#privacy_policy'
+  get 'terms_of_service', to: 'info#terms_of_service'
 
   devise_for :customers, controllers: { registrations: "registrations" }, path: '', path_names: { sign_up: 'signup' }
   devise_for :admin_users, ActiveAdmin::Devise.config 
