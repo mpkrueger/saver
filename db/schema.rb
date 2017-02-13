@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170127200312) do
+ActiveRecord::Schema.define(version: 20170213040152) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -226,10 +226,20 @@ ActiveRecord::Schema.define(version: 20170127200312) do
 
   create_table "payment_methods", force: :cascade do |t|
     t.string   "stripe_customer_id"
-    t.integer  "saver_guest_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
-    t.index ["saver_guest_id"], name: "index_payment_methods_on_saver_guest_id", using: :btree
+    t.integer  "customer_id"
+    t.index ["customer_id"], name: "index_payment_methods_on_customer_id", using: :btree
+  end
+
+  create_table "payments", force: :cascade do |t|
+    t.string   "stripe_charge_id"
+    t.integer  "customer_id"
+    t.integer  "payment_method_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["customer_id"], name: "index_payments_on_customer_id", using: :btree
+    t.index ["payment_method_id"], name: "index_payments_on_payment_method_id", using: :btree
   end
 
   create_table "saver_guests", force: :cascade do |t|
@@ -300,7 +310,9 @@ ActiveRecord::Schema.define(version: 20170127200312) do
   add_foreign_key "bills", "tickets"
   add_foreign_key "calls", "tickets"
   add_foreign_key "invites", "customers"
-  add_foreign_key "payment_methods", "saver_guests"
+  add_foreign_key "payment_methods", "customers"
+  add_foreign_key "payments", "customers"
+  add_foreign_key "payments", "payment_methods"
   add_foreign_key "tickets", "admin_users"
   add_foreign_key "tickets", "customers"
   add_foreign_key "tickets", "saver_guests"

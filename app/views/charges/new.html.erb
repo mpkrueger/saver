@@ -1,25 +1,67 @@
-<% if @saver_guest.payment_methods.present? %>
-    <%= link_to "Charge my card", controller: "charges", action: "create" %>
-<% else %>
-  <%= form_tag charges_path do %>
-    <article>
-      <% if flash[:error].present? %>
-        <div id="error_explanation">
-          <p><%= flash[:error] %></p>
-        </div>
-      <% end %>
-      <label class="amount">
-        <span>Amount: $5.00</span>
-      </label>
-    </article>
+<% @title=": Make Payment" %>
+<script type="text/javascript">
+    mixpanel.track("payment_page", {
 
-    
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-      data-description="Savings on Cable & Internet"
-      data-name="Savvy"
-      data-amount="500"
-      data-email="<%= @saver_guest.email %>"
-      data-locale="auto"></script>
-  <% end %>
-<% end %>
+    });
+</script>
+
+<%= stylesheet_link_tag "application", media: "all" %>
+
+<body style="background-color:#eee;">
+
+<div class="header dashboard_header">
+  <div class="dashboard-header-icon-block"><%= image_tag("flying_pig_header.png", class:"dashboard-header-icon") %> </div>
+  <div class="dashboard-header-logo-block"> <%= image_tag("savvysaverlogo.png", class:"dashboard-header-logo") %></div>
+    <br />
+  </div>
+</div>
+
+
+<div class="dashboard-content-block">
+
+  <div class="dashboard-main-module">
+    <div class="dashboard-headline">
+      
+        Thank you for using Savvy to save money! <br /><br />
+
+        We charge 1/3 of the annual savings. <br /><br />
+
+        Your total annual savings: <%= monetize(@customer.tickets.last.amount_saved) %>
+        <div class="spaced-row"></div>
+        
+
+
+    </div>
+  
+  
+
+    <% if @customer.payment_methods.present? %>
+        <%= link_to "Charge my card", controller: "charges", action: "create" %>
+    <% elsif @customer.tickets.last.amount_earned %>
+      <%= form_tag charges_path do %>
+        <article>
+          <% if flash[:error].present? %>
+            <div id="error_explanation">
+              <p><%= flash[:error] %></p>
+            </div>
+          <% end %>
+          <label class="amount">
+            <div class="dashboard-big-headline">Amount Due: <%= monetize(@customer.tickets.last.amount_earned) %></div>
+          </label>
+        </article>
+
+        
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="Savings on Cable & Internet"
+          data-name="Savvy"
+          data-amount="<%= @customer.tickets.last.amount_earned %>"
+          data-email="<%= @customer.email %>"
+          data-locale="auto"></script>
+      <% end %>
+    <% else %>
+      No payments to be made yet!
+    <% end %>
+</div>
+</div>
+</body>
