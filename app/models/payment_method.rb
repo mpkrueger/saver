@@ -1,3 +1,4 @@
 class PaymentMethod < ApplicationRecord
-  belongs_to :saver_guest
+  belongs_to :customer
+  has_many :payments
 end

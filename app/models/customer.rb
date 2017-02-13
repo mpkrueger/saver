@@ -6,6 +6,8 @@ class Customer < ApplicationRecord
 
    has_many :invites
    has_many :tickets
+   has_many :payment_methods
+   has_many :payments
 
    validates :invite_url_param, presence: true, uniqueness: true
 end
