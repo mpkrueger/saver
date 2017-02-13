@@ -310,7 +310,6 @@ ActiveRecord::Schema.define(version: 20170213040152) do
   add_foreign_key "bills", "tickets"
   add_foreign_key "calls", "tickets"
   add_foreign_key "invites", "customers"
-  add_foreign_key "payment_methods", "customers"
   add_foreign_key "payments", "customers"
   add_foreign_key "payments", "payment_methods"
   add_foreign_key "tickets", "admin_users"
