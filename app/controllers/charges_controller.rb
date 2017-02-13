@@ -38,10 +38,19 @@ class ChargesController < ApplicationController
 	  	customer: @customer,
 	  	payment_method: payment_method
 	  )
+
+	  if charge
+	  	redirect_to payment_thanks_path
+	  end
 	  
 
 	rescue Stripe::CardError => e
 	  flash[:error] = e.message
 	  redirect_to new_charge_path
+	end
+
+	def payment_thanks
+		@customer = current_customer
+		@payment_amount = Stripe::Charge.retrieve(@customer.payments.last.stripe_charge_id)[:amount]
 	end
 end

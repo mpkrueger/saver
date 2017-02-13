@@ -42,6 +42,10 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'pay', to: 'charges#new', as: :charge
+  get 'payment_thanks', to: 'charges#payment_thanks'
+  
+
   resources :charges
 
   get 'r/*sender', to: 'invites#show', as: 'landing_page'
