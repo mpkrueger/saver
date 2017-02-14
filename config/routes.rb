@@ -1,27 +1,27 @@
 Rails.application.routes.draw do
 
 
-  get 'about_us', to: 'info#about_us', as: 'about_us'
+  get 'about-us', to: 'info#about-us', as: 'about-us'
   get 'faq', to: 'info#faq', as:'faq'
-  get 'privacy_policy', to: 'info#privacy_policy', as: 'privacy_policy'
-  get 'terms_of_service', to: 'info#terms_of_service', as: 'terms_of_service'
+  get 'privacy-policy', to: 'info#privacy-policy', as: 'privacy-policy'
+  get 'terms-of-service', to: 'info#terms-of-service', as: 'terms-of-service'
 
   authenticated :customer do
     root to: 'dashboards#dashboard'
   end
-  root to: 'onboarding#landing_page'
+  root to: 'onboarding#landing-page'
 
   constraints subdomain: "try" do
-    get "/", to: 'onboarding#landing_page'
+    get "/", to: 'onboarding#landing-page'
   end
 
   get 'dashboard', to: 'dashboards#dashboard', as: 'dashboard'
-  get 'whysavvy', to: 'onboarding#why_savvy', as: 'why_savvy'
-  get 'onboarding/landing_page'
-  get 'privacy_policy', to: 'info#privacy_policy'
-  get 'terms_of_service', to: 'info#terms_of_service'
+  get 'why-savvy', to: 'onboarding#why-savvy', as: 'why-savvy'
+  get 'onboarding/landing-page'
+  get 'privacy-policy', to: 'info#privacy_policy'
+  get 'terms-of-service', to: 'info#terms-of-service'
 
-  devise_for :customers, controllers: { registrations: "registrations" }, path: '', path_names: { sign_up: 'signup' }
+  devise_for :customers, controllers: { registrations: "registrations" }, path: '', path_names: { sign_up: 'sign-up' }
   devise_for :admin_users, ActiveAdmin::Devise.config 
     ActiveAdmin.routes(self)
 
@@ -31,7 +31,7 @@ Rails.application.routes.draw do
       resources :calls
     end
     collection do
-      get 'how_it_works'
+      get 'how-it-works'
       get 'signup'
       get 'thanks'
       get 'signup2'
@@ -45,12 +45,12 @@ Rails.application.routes.draw do
   end
 
   get 'pay', to: 'charges#new', as: :charge
-  get 'payment_thanks', to: 'charges#payment_thanks'
+  get 'payment-thanks', to: 'charges#payment-thanks'
   
 
   resources :charges
 
-  get 'r/*sender', to: 'invites#show', as: 'landing_page'
+  get 'r/*sender', to: 'invites#show', as: 'landing-page'
   get 'invite', to: 'invites#new'
   resources :invites do
     collection do
