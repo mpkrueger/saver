@@ -51,6 +51,7 @@ class InvitesController < ApplicationController
       else
         @headline = "#{@sender_name} wants you to get easy savings with Savvy!"
         @subheading = "What an awesome friend."
+        @celebrate_with = "and #{@sender_name} can "
       end
     else
       @sender_name = "A friend"
