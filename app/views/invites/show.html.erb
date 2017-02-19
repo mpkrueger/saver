@@ -31,8 +31,8 @@
 
 
 	<div class="receiver-headline-block">
-        <div class="receiver-lp-headline" id="receiver-lp-headline"><%= @sender_name %> wants you to get easy savings with Savvy!</div>
-        <div class="receiver-lp-headline"> What an awesome friend.
+        <div class="receiver-lp-headline" id="receiver-lp-headline"><%= @headline %></div>
+        <div class="receiver-lp-headline"> <%= @subheading %>
         </div>
 	</div>
 
@@ -113,7 +113,7 @@
 		    		<li>You’ll send us your latest cable/internet bill. </li>
 		    		<li>We’ll save you time, stress, and money by negotiating on your behalf.</li>
 		    		<li>We’ll charge a third of what we save you the 1st year and you’ll keep the rest. </li>
-		    		<li>You and <%= @sender_name %> can celebrate your easy savings!</li>
+		    		<li>You <%= @celebrate_with %>celebrate your easy savings!</li>
 	    		</ul>
 	    	</div>
 	    	<div class="receiver-lp-image">

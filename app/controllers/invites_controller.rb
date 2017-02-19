@@ -41,11 +41,25 @@ class InvitesController < ApplicationController
   end
 
   def show
-    if Customer.find_by_invite_url_param(params[:sender])
-      @sender_name = Customer.find_by_invite_url_param(params[:sender]).first_name.capitalize
+    @referrer = Customer.find_by_invite_url_param(params[:sender])
+
+    if @referrer
+      @sender_name = @referrer.first_name.capitalize
+      if @referrer.invite_url_param == "HowDoIMoney"
+        @headline = "How Do I Money"
+        @subheading = "recommends saving money with Savvy!"
+      else
+        @headline = "#{@sender_name} wants you to get easy savings with Savvy!"
+        @subheading = "What an awesome friend."
+        @celebrate_with = "and #{@sender_name} can "
+      end
     else
       @sender_name = "A friend"
+      @headline = "#{@sender_name} wants you to get easy savings with Savvy!"
+      @subheading = "What an awesome friend."
     end
+
+    
 
   end
 
