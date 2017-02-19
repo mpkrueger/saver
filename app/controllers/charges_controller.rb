@@ -33,7 +33,7 @@ class ChargesController < ApplicationController
 	    :currency    => 'usd'
 	  )
 
-	  Payment.create(
+	  payment = Payment.new(
 	  	stripe_charge_id: charge[:id],
 	  	customer: @customer,
 	  	payment_method: payment_method

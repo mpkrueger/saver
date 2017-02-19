@@ -44,6 +44,10 @@ Rails.application.routes.draw do
 
   resources :charges
 
+  get 'pay', to: 'charges#new'
+  get 'payment_thanks', to: 'charges#create'
+
+
   get 'r/*sender', to: 'invites#show', as: 'landing_page'
   get 'invite', to: 'invites#new'
   resources :invites do
