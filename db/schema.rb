@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170213040152) do
+ActiveRecord::Schema.define(version: 20170219182228) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,15 +53,6 @@ ActiveRecord::Schema.define(version: 20170213040152) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "start_or_remind"
-  end
-
-  create_table "bills", force: :cascade do |t|
-    t.string   "name"
-    t.string   "attachment"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "ticket_id"
-    t.index ["ticket_id"], name: "index_bills_on_ticket_id", using: :btree
   end
 
   create_table "calls", force: :cascade do |t|
@@ -307,7 +298,6 @@ ActiveRecord::Schema.define(version: 20170213040152) do
     t.index ["saver_guest_id"], name: "index_tickets_on_saver_guest_id", using: :btree
   end
 
-  add_foreign_key "bills", "tickets"
   add_foreign_key "calls", "tickets"
   add_foreign_key "invites", "customers"
   add_foreign_key "payments", "customers"
