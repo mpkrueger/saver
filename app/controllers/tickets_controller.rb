@@ -1,4 +1,5 @@
 class TicketsController < ApplicationController
+	before_action :authenticate_customer!
 	before_action :set_ticket
 	before_action :set_s3_direct_post
 
