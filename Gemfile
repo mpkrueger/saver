@@ -21,6 +21,7 @@ gem 'strip_attributes'
 gem 'stripe'
 gem 'clipboard-rails'
 gem 'newrelic_rpm'
+gem 'aws-sdk', '~> 2'
 
 
 group :production do

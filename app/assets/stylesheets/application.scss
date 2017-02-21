@@ -49,6 +49,22 @@ html{
     background-color: #26b99a;
 }
 
+.progress {
+  max-width: 600px;
+  margin:    0.2em 0 0.2em 0;
+}
+
+.progress .bar {
+  height:  1.2em;
+  padding-left: 0.2em;
+  color:   white;
+  display: none;
+}
+
+.directUpload {
+  
+}
+
 
 
 hr { width:100%; height:-0.5px; background: #fff; margin-top:0; }

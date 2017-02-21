@@ -13,7 +13,7 @@ ActiveAdmin.register Ticket do
 #   permitted
 # end
 
-	permit_params :admin_user_id, :saver_guest_id, :has_bill, :has_phone, :gave_consent, :call_complete, :summary_email_sent, 
+	permit_params :admin_user_id, :customer_id, :has_bill, :has_phone, :gave_consent, :call_complete, :summary_email_sent, 
 		:successfully_saved_money, :amount_saved, :amount_earned, :owes_money, :has_paid, :has_referred, :status, :future_followup,
 		:service_provider, :zip_code, :old_monthly_rate, :tv_service, :internet_service, :phone_service
 	
@@ -64,15 +64,6 @@ ActiveAdmin.register Ticket do
 
 
 
-	sidebar "Bill", only: [:show, :edit] do
-		resource.bills.each do |bill|
-			ul do
-	  			li link_to "Cable or Internet Bill",    admin_ticket_bills_path(resource, bill)
-			end
-		end
-
-  	end
-
   	scope :all, default: true
   	scope :my_tickets do |tickets|
   		tickets.where("admin_user_id = ?", current_admin_user.id)
@@ -96,6 +87,9 @@ ActiveAdmin.register Ticket do
 	    
 	end
 
+	signer = Aws::S3::Presigner.new
+ 	
+
 	show title: proc{|ticket| "#{ticket.customer.first_name}'s ticket" } do
 		panel "Signup Info" do
 			attributes_table_for ticket  do
@@ -107,18 +101,6 @@ ActiveAdmin.register Ticket do
 			end
 		end
 		
-
-		panel "Bill Information" do
-			attributes_table_for ticket do
-				row :service_provider
-				row :zip_code
-				row("Old monthly rate") { |ticket| monetize(ticket.old_monthly_rate)}
-				row :tv_service
-				row :internet_service
-				row :phone_service
-			end
-		end
-
 		panel "Ticket Outcome" do
 			attributes_table_for ticket do
 				row :call_complete
@@ -132,7 +114,23 @@ ActiveAdmin.register Ticket do
 				row :status
 				row :future_followup
 			end
+		end		
+
+		panel "Bill Information" do
+			attributes_table_for ticket do
+				row :service_provider
+				row :zip_code
+				row("Old monthly rate") { |ticket| monetize(ticket.old_monthly_rate)}
+				row :tv_service
+				row :internet_service
+				row :phone_service
+				row ("Bill") do |ticket|
+					key = signer.presigned_url(:get_object, bucket: "savvy-bills-dev", key: "#{ticket.bill_key}")
+					%{<iframe src="#{key}" width="800" height="600"></iframe>}.html_safe
+				end
+			end
 		end
+		
 	end
 
 	sidebar :customer_or_saver_guest, only: [:show, :edit] do
