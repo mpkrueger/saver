@@ -21,15 +21,17 @@ Rails.application.routes.draw do
   get 'privacy-policy', to: 'info#privacy_policy'
   get 'terms-of-service', to: 'info#terms-of-service'
 
+  get 'bill-upload', to: 'tickets#bill-upload'
+
   devise_for :customers, controllers: { registrations: "registrations" }, path: '', path_names: { sign_up: 'sign-up' }
   devise_for :admin_users, ActiveAdmin::Devise.config 
     ActiveAdmin.routes(self)
 
+  resources :tickets do
+    resources :calls
+  end
+
   resources :saver_guests do
-    resources :tickets do
-      resources :bills
-      resources :calls
-    end
     collection do
       get 'how-it-works'
       get 'signup'
