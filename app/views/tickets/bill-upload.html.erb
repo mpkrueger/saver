@@ -13,9 +13,12 @@
 	    var submitButton = form.find('input[type="submit"]');
 	    var progressBar  = $("<div class='bar'></div>");
 	    var barContainer = $("<div class='progress'></div>").append(progressBar);
+	    submitButton.prop('disabled', true);
 	    fileInput.after(barContainer);
 	    fileInput.fileupload({
+	      
 	      fileInput:       fileInput,
+
 	      url:             form.data('url'),
 	      type:            'POST',
 	      autoUpload:       true,
@@ -38,7 +41,7 @@
 	      },
 	      done: function(e, data) {
 	        submitButton.prop('disabled', false);
-	        progressBar.text("Uploading done");
+	        progressBar.text("File ready to upload");
 
 	        // extract key and generate URL from response
 	        var key   = $(data.jqXHR.responseXML).find("Key").text();
@@ -59,10 +62,39 @@
 	});
 </script>
 
+<body style="background-color:#eee;">
+
+<div class="header dashboard_header">
+  <div class="dashboard-header-icon-block"><%= image_tag("flying_pig_header.png", class:"dashboard-header-icon") %> </div>
+  <div class="dashboard-header-logo-block"> <%= image_tag("savvysaverlogo.png", class:"dashboard-header-logo") %></div>
+    <br />
+  </div>
+</div>
+
+
+<div class="dashboard-content-block">
+
+  <div class="dashboard-main-module">
+    <div class="dashboard-big-headline">
+      
+        Upload your latest cable / internet bill and we'll take it from there! <br /><br />
+
+        
+
+
+    </div>
+
 <%= form_for @ticket, url: ticket_path(@ticket), html: { method: :put, class: 'directUpload', data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } } do |f| %>
-	<div class="field">
-	  <%= f.label :bill_key %><br>
-	  <%= f.file_field :bill_key %>
+	<div class="bill-upload">
+	  <div class="fileContainer">
+	    Click here to select your latest bill<br /><br />
+
+	    <%= f.file_field :bill_key %>
+	  </div>
+	  
 	</div>
 	<%= f.submit "Upload bill", class: "next-button" %>
 <% end %>
+</div>
+</div>
+</body>
