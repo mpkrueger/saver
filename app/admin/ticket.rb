@@ -125,8 +125,10 @@ ActiveAdmin.register Ticket do
 				row :internet_service
 				row :phone_service
 				row ("Bill") do |ticket|
-					key = signer.presigned_url(:get_object, bucket: "savvy-bills-dev", key: "#{ticket.bill_key}")
-					%{<iframe src="#{key}" width="800" height="600"></iframe>}.html_safe
+					if ticket.bill_key
+						key = signer.presigned_url(:get_object, bucket: "savvy-bills-dev", key: "#{ticket.bill_key}")
+						%{<iframe src="#{key}" width="800" height="600"></iframe>}.html_safe
+					end
 				end
 			end
 		end
