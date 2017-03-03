@@ -83,6 +83,7 @@ ActiveAdmin.register Ticket do
 	    column("Call Done", :call_complete)
 	    column("Saved $", :successfully_saved_money)
 	    column("Paid", :has_paid)
+	    column("Referred") {|ticket| ticket.customer.referred_by}
 	    column("Owner", :admin_user_id)
 	    
 	end
