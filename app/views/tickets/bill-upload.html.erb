@@ -13,6 +13,9 @@
 	    var submitButton = form.find('input[type="submit"]');
 	    var progressBar  = $("<div class='bar'></div>");
 	    var barContainer = $("<div class='progress'></div>").append(progressBar);
+
+	    progressBar.css('background', '#FFF').css('display', 'block').css('width','100%').css('height', '50px');
+	    submitButton.hide();
 	    submitButton.prop('disabled', true);
 	    fileInput.after(barContainer);
 	    fileInput.fileupload({
@@ -26,36 +29,48 @@
 	      paramName:        'file', // S3 does not like nested name fields i.e. name="user[avatar_url]"
 	      dataType:         'XML',  // S3 returns XML if success_action_status is set to 201
 	      replaceFileInput: false,
+	      
 	      progressall: function (e, data) {
+	      	submitButton.prop('disabled', true);
 	        var progress = parseInt(data.loaded / data.total * 100, 10);
 	        progressBar.css('width', progress + '%')
 	      },
+
+
 	      start: function (e) {
-	        submitButton.prop('disabled', true);
+	        submitButton.show();
+		
+			progressBar.css('background-color', '#84D1B5').css('display', 'block').css('width','100%');
 
 	        progressBar.
-	          css('background', 'green').
+	          css('background', '#54C4AA').
 	          css('display', 'block').
 	          css('width', '0%').
-	          text("Loading...");
+	          text("");
+
+	       
 	      },
 	      done: function(e, data) {
 	        submitButton.prop('disabled', false);
-	        progressBar.text("File ready to upload");
+	        progressBar.text("");
 
 	        // extract key and generate URL from response
 	        var key   = $(data.jqXHR.responseXML).find("Key").text();
 
+
 	        // create hidden field
 	        var input = $("<input />", { type:'hidden', name: fileInput.attr('name'), value: key })
 	        form.append(input);
+
+	        $('#bill_file_name').value = key;
 	      },
 	      fail: function(e, data) {
 	        submitButton.prop('disabled', false);
 
 	        progressBar.
 	          css("background", "red").
-	          text("Failed");
+	          text("");
+	        
 	      }
 	    });
 	  });
@@ -84,17 +99,21 @@
 
     </div>
 
-<%= form_for @ticket, url: ticket_path(@ticket), html: { method: :put, class: 'directUpload', data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } } do |f| %>
-	<div class="bill-upload">
-	  <div class="fileContainer">
-	    Click here to select your latest bill<br /><br />
+    <%= form_for @ticket, url: ticket_path(@ticket), html: { method: :put, class: 'directUpload', data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } } do |f| %>
 
-	    <%= f.file_field :bill_key %>
-	  </div>
-	  
+    <div class="bill-file-row">
+    	
+    	<div class="bill-select-btn-block">
+			<div class="fileContainer">
+				Select File
+			<%= f.file_field :bill_key, :class=>'bill-select-link' %>
+			</div>
+		</div>
 	</div>
+	
+	<br />
 	<%= f.submit "Upload bill", class: "next-button" %>
-<% end %>
-</div>
-</div>
+	<% end %>
+
+	</div>
 </body>
