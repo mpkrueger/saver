@@ -55,7 +55,7 @@ body {
 
 .lp_footer{
     background-color: #21434c;
-    padding: 20px 35%;
+    padding: 20px 20px 30px 20px;
     width: 100%;
     text-align: center;
     margin: auto;
@@ -123,6 +123,10 @@ body {
     font-weight: 500;
     color: #ddd;
     padding: 0px 10px 10px 10px;
+  }
+
+  .lp_footer{
+    padding:20px 20px 200px 20px;
   }
 
 }
@@ -196,7 +200,7 @@ body {
   }
 
   .lp_footer{
-    padding: 2% 45%;
+    height:80px;
   }
 
 
@@ -273,8 +277,9 @@ body {
   }
 
   .lp_footer{
-    padding: 2% 45%;
+    height:80px;
   }
+
 
 
 }

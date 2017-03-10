@@ -62,5 +62,13 @@
 </section>
 
 <section class="lp_footer">
-	<%= image_tag("savvy_logo_subtle.png", class:"saver-header-icon") %>
+	<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+		<div class="footer-logo">
+			<%= image_tag("savvy_logo_subtle.png", class:"saver-header-icon") %>
+		</div>
+	</div>
+	<div class="footer-links col-xs-12 col-sm-8 col-md-8 col-lg-8">
+		<%= link_to "Terms of Service", terms_of_service_path, class:"dashboard-link footer-link col-xs-12 col-sm-3 col-md-3 col-lg-3" %>
+		<%= link_to "Privacy Policy", privacy_policy_path, class:"dashboard-link footer-link col-xs-12 col-sm-3 col-md-3 col-lg-3" %>
+	</div>
 </section>
