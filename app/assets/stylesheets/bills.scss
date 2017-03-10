@@ -1,0 +1,90 @@
+
+.bill-file-row{
+	height:50px;
+	width:80%;
+	margin:auto;
+}
+
+
+
+
+.bill-file-name-block{
+	height:100%;
+	width:70%;
+	float:left;
+	display:inline-block;
+}
+
+.bill-select-btn-block{
+	height:100%;
+	width:30%;
+	display:inline-block;
+	position: relative;
+}
+
+.bill-select-btn{
+	width:100%;
+	height:100%;
+	text-align:center;
+	background-color:lightblue;
+}
+
+.bill-select-link{
+  width:100%;
+  height:100%;
+  text-decoration: underline;
+  color: lightblue;
+}
+
+
+.progress {
+  max-width: 600px;
+  margin:    auto;
+  height: 50px;
+}
+
+.progress .bar {
+  height:  100%;
+  padding-left: 0.2em;
+  color:   white;
+  display: none;
+}
+
+.barContainer{
+	height:50px;
+}
+
+
+.directUpload {
+ 
+}
+
+.bill-upload{
+  vertical-align: middle;
+  padding: 20px;
+}
+
+.fileContainer {
+    overflow: hidden;
+    position: relative;
+//    background: #84D1B5;
+    color: #84D1B5;
+    background: transparent;
+    text-decoration:underline;
+    height:100%;
+    padding-top:10px;
+}
+
+.fileContainer [type=file] {
+    cursor: pointer;
+    display: block;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    min-height: 100%;
+    min-width: 100%;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: 0;
+}
