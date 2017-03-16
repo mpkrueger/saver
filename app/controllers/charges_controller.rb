@@ -40,6 +40,8 @@ class ChargesController < ApplicationController
 	  )
 
 	  if charge
+	  	@customer.ticket.last.has_paid = true
+	  	@customer.ticket.last.owes_money = false
 	  	redirect_to payment_thanks_path
 	  end
 	  
