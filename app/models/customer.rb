@@ -21,7 +21,7 @@ class Customer < ApplicationRecord
       customer.password = Devise.friendly_token[0,20]
       customer.first_name = auth.info.name   # assuming the customer model has a name
 
-      CustomerMailer.signup_bill(resource).deliver
+      CustomerMailer.signup_bill(customer).deliver
       # create a ticket that will be used to track their bill and savings
       @ticket = Ticket.new
       @ticket.customer = customer
