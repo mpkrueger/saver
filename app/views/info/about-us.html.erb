@@ -1,2 +1,19 @@
-<h1>Info#about_us</h1>
-<p>Find me in app/views/info/about_us.html.erb</p>
+<% @title=": Privacy Policy" %>
+<script type="text/javascript">
+    mixpanel.track("privacy_policy", {
+
+    });
+</script>
+
+<body style="background-color:#eee;">
+
+<div class="header dashboard_header">
+  <div class="dashboard-header-icon-block"><%= image_tag("flying_pig_header.png", class:"dashboard-header-icon") %> </div>
+  <div class="dashboard-header-logo-block"> <%= image_tag("savvysaverlogo.png", class:"dashboard-header-logo") %></div>
+    <br />
+  </div>
+</div>
+
+<%= link_to "Sign in with Facebook", customer_facebook_omniauth_authorize_path %><br />
+
+</body>

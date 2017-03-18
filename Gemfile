@@ -22,6 +22,7 @@ gem 'stripe'
 gem 'clipboard-rails'
 gem 'newrelic_rpm'
 gem 'aws-sdk', '~> 2'
+gem 'omniauth-facebook'
 
 
 group :production do
