@@ -20,6 +20,12 @@ class Customer < ApplicationRecord
       customer.invite_url_param = customer.email.split("@").first.tr(".", "")
       customer.password = Devise.friendly_token[0,20]
       customer.first_name = auth.info.name   # assuming the customer model has a name
+
+      CustomerMailer.signup_bill(resource).deliver
+      # create a ticket that will be used to track their bill and savings
+      @ticket = Ticket.new
+      @ticket.customer = customer
+      @ticket.save
       
       # If you are using confirmable and the provider(s) you use validate emails, 
       # uncomment the line below to skip the confirmation emails.
