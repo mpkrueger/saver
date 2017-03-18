@@ -13,6 +13,7 @@ class Customers::OmniauthCallbacksController < Devise::OmniauthCallbacksControll
     	else
       		session["devise.facebook_data"] = request.env["omniauth.auth"]
       		redirect_to new_customer_registration_url
+          set_flash_message(:error, :kind => "You already have a Savvy account")
     	end
   	end
 

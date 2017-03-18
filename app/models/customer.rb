@@ -13,7 +13,7 @@ class Customer < ApplicationRecord
    validates :invite_url_param, presence: true, uniqueness: true
 
    def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |customer|
+    where(provider: auth.provider, uid: auth.uid).first_or_create! do |customer|
       customer.provider = auth.provider
       customer.uid = auth.uid
       customer.email = auth.info.email
