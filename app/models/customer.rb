@@ -17,6 +17,7 @@ class Customer < ApplicationRecord
       customer.provider = auth.provider
       customer.uid = auth.uid
       customer.email = auth.info.email
+      customer.invite_url_param = customer.email.split("@").first.tr(".", "")
       customer.password = Devise.friendly_token[0,20]
       customer.first_name = auth.info.name   # assuming the customer model has a name
       
