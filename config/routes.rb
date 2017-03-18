@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
   get 'bill-upload', to: 'tickets#bill-upload'
 
-  devise_for :customers, controllers: { registrations: "registrations" }, path: '', path_names: { sign_up: 'sign-up' }
+  devise_for :customers, controllers: { registrations: "registrations", omniauth_callbacks: "customers/omniauth_callbacks" }, path: '', path_names: { sign_up: 'sign-up' }
   devise_for :admin_users, ActiveAdmin::Devise.config 
     ActiveAdmin.routes(self)
 
