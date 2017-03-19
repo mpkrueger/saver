@@ -25,7 +25,7 @@ class Customer < ApplicationRecord
       @email = auth.info.email
       
       # check to see if omniauth email is associated with an existing customer
-      if @customer.where(email: @email).first
+      if Customer.find_by_email(@email)
         @customer = @customer.where(email: @email).first
 
       # create customer since one doesn't exist with the identity's email
