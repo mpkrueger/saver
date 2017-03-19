@@ -22,12 +22,14 @@ class Customer < ApplicationRecord
     # check if no customer attached to that identity
     if @customer.nil?
 
-      # check to see if omniauth email is associated with an existing customer
       @email = auth.info.email
-      @customer = @customer.where(email: @email).first
+      
+      # check to see if omniauth email is associated with an existing customer
+      if @customer.where(email: @email).first
+        @customer = @customer.where(email: @email).first
 
-      # check if still no customer found; create customer if that's the case
-      if @customer.nil?
+      # create customer since one doesn't exist with the identity's email
+      else  
         @customer = Customer.new(
           first_name: auth.info.name,
           email: @email,
