@@ -13,22 +13,20 @@ class Customer < ApplicationRecord
 
    validates :invite_url_param, presence: true, uniqueness: true
 
-   def self.find_with_omniauth(auth, signed_in_resource = nil)
-    # Get the identity and customer if they exist
-    identity = Identity.find_with_omniauth(auth)
+   def self.from_omniauth(auth)
+    # create or find the identity
+    @identity = Identity.from_omniauth(auth)
 
-    # If a signed_in_resource is provided it always overrides the existing customer
-    # to prevent the identity being locked with accidentally created accounts.
-    # Note that this may leave zombie accounts (with no associated identity) which
-    # can be cleaned up at a later date.
-    customer = signed_in_resource ? signed_in_resource : identity.customer
+    @customer = @identity.customer
 
-    # Create the customer if needed
-    if customer.nil?
+    # check if no customer attached to that identity
+    if @customer.nil?
 
-      email = auth.info.email
-      customer = customer.where(email: email).first
+      # check to see if omniauth email is associated with an existing customer
+      @email = auth.info.email
+      @customer = customer.where(email: @email).first
 
+      # check if still no customer found; create customer if that's the case
       if customer.nil?
         customer = customer.new(
           first_name: auth.extra.raw_info.name,
@@ -41,16 +39,16 @@ class Customer < ApplicationRecord
         CustomerMailer.signup_bill(@customer).deliver
         # create a ticket that will be used to track their bill and savings
         @ticket = Ticket.new
-        @ticket.customer = customer
+        @ticket.customer = @customer
         @ticket.save!
       end
     end
 
-    # Associate the identity with the user if needed
-    if identity.user != user
-      identity.user = user
-      identity.save!
+    # if identity was not attached to customer or customer was created, attach identity to customer
+    if @identity.customer != @customer
+      @identity.customer = @customer
+      @identity.save!
     end
-    user
+    @customer
   end
 end
