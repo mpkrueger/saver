@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170318161621) do
+ActiveRecord::Schema.define(version: 20170318230410) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -163,6 +163,15 @@ ActiveRecord::Schema.define(version: 20170318161621) do
     t.string   "previous_investment_service"
   end
 
+  create_table "identities", force: :cascade do |t|
+    t.integer  "customer_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["customer_id"], name: "index_identities_on_customer_id", using: :btree
+  end
+
   create_table "investing_feedbacks", force: :cascade do |t|
     t.string   "investment_service"
     t.string   "invested_amount"
@@ -304,6 +313,7 @@ ActiveRecord::Schema.define(version: 20170318161621) do
   end
 
   add_foreign_key "calls", "tickets"
+  add_foreign_key "identities", "customers"
   add_foreign_key "invites", "customers"
   add_foreign_key "payments", "customers"
   add_foreign_key "payments", "payment_methods"
