@@ -33,7 +33,7 @@ class Customer < ApplicationRecord
         @customer = Customer.new(
           first_name: auth.info.name,
           email: @email,
-          invite_url_param: @customer.email.split("@").first.tr(".", ""),
+          invite_url_param: @email.split("@").first.tr(".", ""),
           password: Devise.friendly_token[0,20]
         )
         if @customer.save
