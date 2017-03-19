@@ -36,13 +36,16 @@ class Customer < ApplicationRecord
           invite_url_param: @customer.email.split("@").first.tr(".", ""),
           password: Devise.friendly_token[0,20]
         )
-        @customer.save!
-        # send an email welcoming them and asking them to send bill
-        CustomerMailer.signup_bill(@customer).deliver
-        # create a ticket that will be used to track their bill and savings
-        @ticket = Ticket.new
-        @ticket.customer = @customer
-        @ticket.save!
+        if @customer.save
+
+          # send an email welcoming them and asking them to send bill
+          CustomerMailer.signup_bill(@customer).deliver
+          
+          # create a ticket that will be used to track their bill and savings
+          @ticket = Ticket.new
+          @ticket.customer = @customer
+          @ticket.save!
+        end
       end
     end
 
