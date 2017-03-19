@@ -23,6 +23,7 @@ gem 'clipboard-rails'
 gem 'newrelic_rpm'
 gem 'aws-sdk', '~> 2'
 gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
 
 
 group :production do
