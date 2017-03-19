@@ -27,14 +27,14 @@ class Customer < ApplicationRecord
       @customer = customer.where(email: @email).first
 
       # check if still no customer found; create customer if that's the case
-      if customer.nil?
-        customer = customer.new(
-          first_name: auth.extra.raw_info.name,
-          email: email,
-          invite_url_param: customer.email.split("@").first.tr(".", ""),
+      if @customer.nil?
+        @customer = Customer.new(
+          first_name: auth.info.name,
+          email: @email,
+          invite_url_param: @customer.email.split("@").first.tr(".", ""),
           password: Devise.friendly_token[0,20]
         )
-        customer.save!
+        @customer.save!
         # send an email welcoming them and asking them to send bill
         CustomerMailer.signup_bill(@customer).deliver
         # create a ticket that will be used to track their bill and savings
