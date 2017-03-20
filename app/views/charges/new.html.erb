@@ -9,12 +9,14 @@
 
 <body style="background-color:#eee;">
 
-<div class="header dashboard_header">
-  <div class="dashboard-header-icon-block"><%= image_tag("flying_pig_header.png", class:"dashboard-header-icon") %> </div>
-  <div class="dashboard-header-logo-block"> <%= image_tag("savvysaverlogo.png", class:"dashboard-header-logo") %></div>
-    <br />
+<%= link_to root_path do %>
+  <div class="header dashboard_header">
+    <div class="dashboard-header-icon-block"><%= image_tag("flying_pig_header.png", class:"dashboard-header-icon") %> </div>
+    <div class="dashboard-header-logo-block"> <%= image_tag("savvysaverlogo.png", class:"dashboard-header-logo") %></div>
+      <br />
+    </div>
   </div>
-</div>
+<% end %>
 
 
 <div class="dashboard-content-block">
@@ -36,7 +38,9 @@
   
 
     <% if @customer.payment_methods.present? %>
-        <%= link_to "Charge my card", controller: "charges", action: "create" %>
+        <div class="dashboard-headline">
+          You've already paid!
+        </div>
     <% elsif @customer.tickets.last.amount_earned %>
       <%= form_tag charges_path do %>
         <article>

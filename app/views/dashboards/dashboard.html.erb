@@ -53,19 +53,29 @@ var google_remarketing_only = false;
 <div class="dashboard-content-block">
 
   <div class="dashboard-main-module">
-    <div class="dashboard-big-headline">Next Step: Check Your Email</div>
-    <div class="dashboard-main-module-icon-block"><%= image_tag('email_icon.png', class:"dashboard-main-module-icon") %></div>
-    <div class="dashboard-headline">
-      
-        We'll send you an email with more info on sending us your bill. <br /><br />
-
-        Check your inbox to get started!
-        <div class="spaced-row"></div>
+    <% if @ticket.has_paid == true %>
+      <div class="dashboard-big-headline">Thanks for saving with Savvy!</div>
+    <% elsif @ticket.has_bill == true && @ticket.amount_earned != nil %>
+      <div class="dashboard-big-headline">Savvy has saved you some money!</div>
+      <div class="dashboard-headline">
+          To pay, please go <%= link_to "here", charge_path %>
+      </div>
+    <% elsif @ticket.has_bill == true %>
+      <div class="dashboard-big-headline">Thanks for sending your bill, we're working on saving you some money!</div>
+    <% else %>
+      <div class="dashboard-big-headline">Next Step: Check Your Email</div>
+      <div class="dashboard-main-module-icon-block"><%= image_tag('email_icon.png', class:"dashboard-main-module-icon") %></div>
+      <div class="dashboard-headline">
         
+          We'll send you an email with more info on sending us your bill. <br /><br />
+
+          Check your inbox to get started!
+          <div class="spaced-row"></div>
+          
 
 
-    </div>
-  
+      </div>
+    <% end %>  
   </div>
 
   <div class="dashboard-main-module">

@@ -7,12 +7,13 @@ class ChargesController < ApplicationController
 
 	def create
 	  @customer = current_customer
+	  @ticket = Ticket.find_by_customer_id(@customer.id)
 
 	  # Amount in cents
 	  @amount = @customer.tickets.last.amount_earned
 
 	  if @customer.payment_methods.present?
-	  	stripe_customer = Stripe::Customer.retrieve(@customer.payment_methods.last.stripe_customer_id)
+	  	stripe_customer = Stripe::Customer.retrieve(@customer.payment_methods.last.stripe_customer.id)
 	  else
 	  	stripe_customer = Stripe::Customer.create(
 	    	:email => params[:stripeEmail],
@@ -40,8 +41,8 @@ class ChargesController < ApplicationController
 	  )
 
 	  if charge
-	  	@customer.ticket.last.has_paid = true
-	  	@customer.ticket.last.owes_money = false
+	  	@ticket.update_attributes(has_paid: true)
+	  	@ticket.update_attributes(owes_money: false)
 	  	redirect_to payment_thanks_path
 	  end
 	  
