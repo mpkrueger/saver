@@ -1,4 +1,9 @@
 <% @title=": Sign Up" %>
+
+<head>
+  <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+</head>
+
 <script type="text/javascript">
     mixpanel.track("sign_up", {
         
@@ -8,8 +13,42 @@
 <script>
   $('document').ready(function() {
     $(".alert").animate({opacity:'0'}, 10000).hide(1500);
+
+    $('#email-fields').on('click', function() {
+      $('#email-fields-area').toggle();
+
+      $('html, body').animate({
+      scrollTop: $("#email-fields-area").offset().top
+      }, 1000);
+
+    });
+
+
   });
 </script>
+
+
+<script>
+    function onSuccess(googleUser) {
+      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+    }
+    function onFailure(error) {
+      console.log(error);
+    }
+    function renderButton() {
+      gapi.signin2.render('google-signin2', {
+        'scope': 'profile email',
+        'width': 280,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'dark',
+        'onsuccess': onSuccess,
+        'onfailure': onFailure
+      });
+    }
+</script>
+<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+
 
 <body class="city-bottom blue-bkgd">
 
@@ -23,32 +62,63 @@
 
   <div class="saver-question-block" id="email">
     <!-- We're here to do the work so you can save time and money. On average we've saved people $300 a year. Sign up so we can contact you about your bill and your savings (we promise not to spam your inbox). -->
-    <div class="hero-title">Sign up and save with Savvy!</div>
-    <div class="refer-title" style="margin-bottom:28px;">
+    <div class="hero-title" style="text-align:center;">Sign up and save with Savvy!</div>
+    <div class="refer-title" style="margin-bottom:28px; text-align:center;">
     We save people an average of $300 a year. How much will we save you?
     <br /> 
     </div>
 
     
+    <div class="">
+      <div class="signup-button">
+        <div class="fb-button">
+          <div class="fb-icon-box">
+          <%= image_tag("fb_button_icon_blue.png", class:"fb_signin_icon") %>
+          </div>
+          <%= link_to "Sign in with Facebook", customer_facebook_omniauth_authorize_path, class:"signin-button-text", style:"margin-left:0px; color: #3d5a98; text-decoration:none;" %>
+        </div>
+      </div>
+
+      <div class="signup-button">
+        <!--div id="google-signin2"-->
+        <div class="google-button">
+          <div class="google-icon-box">
+            <%= image_tag("google_button_icon", class:"fb_signin_icon") %>
+          </div>
+          <%= link_to "Sign in with Google", customer_google_oauth2_omniauth_authorize_path, class:"signin-button-text",  style:"margin-left:-25px; color: #3d5a98; text-decoration:none;" %>
+        </div>
+      </div>
+
+      <div class="signup-button" id="email-fields">
+        <div class="email-signin-button">
+          <div class="email-icon-box">
+            <%= image_tag("email_signup_icon.png", class:"email_signin_icon") %>
+          </div>
+           
+            <span class="signin-button-text" style="margin-left:-40px; color: #3d5a98; text-decoration:none;">Sign in with Email</span>
+        </div>
+      </div>
+  </div>
 
     
-
+  <div id="email-fields-area" style="display:none;">
     <div class="dropdown-style">
-      <%= f.text_field :first_name, class: "madlib-sentence border-underline", style:"width:300px; color:#fff;", placeholder: "your first name", required: true %>
-    </div>
-    <div class="spaced-row"></div>
-    <div class="dropdown-style" style="margin-top:10px;">
-      <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:300px;color:#fff;", placeholder: "email address" %>
-    </div>
-    <div class="spaced-row"></div>
-    <div class="dropdown-style" style="margin-top:10px;">
-      <%= f.password_field :password, class: "border-underline", style:"width:300px;color:#fff;", placeholder: "password (at least 6 characters)", autocomplete: "off" %>
-    </div>
-    <div class="spaced-row"></div>
+        <%= f.text_field :first_name, class: "madlib-sentence border-underline", style:"width:300px; color:#fff;", placeholder: "your first name", required: true %>
+      </div>
+      <div class="spaced-row"></div>
+      <div class="dropdown-style" style="margin-top:10px;">
+        <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:300px;color:#fff;", placeholder: "email address" %>
+      </div>
+      <div class="spaced-row"></div>
+      <div class="dropdown-style" style="margin-top:10px;">
+        <%= f.password_field :password, class: "border-underline", style:"width:300px;color:#fff;", placeholder: "password (at least 6 characters)", autocomplete: "off" %>
+      </div>
+      <div class="spaced-row"></div>
+      
     
-  
-    <%= f.submit "I'm ready to save", class: "next-button" %>
-    <br /><br /><br /><br />
+      <%= f.submit "I'm ready to save", class: "next-button" %>
+      <br /><br /><br /><br />
+    </div>
   </div>
 
   <% end %>
