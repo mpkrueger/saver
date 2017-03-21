@@ -11,14 +11,25 @@
   $('document').ready(function() {
     $(".alert").animate({opacity:'0'}, 10000).hide(1500);
 
-    $('#email-fields').on('click', function() {
-      $('#email-fields-area').toggle();
+    
+      
 
-      $('html, body').animate({
-      scrollTop: $("#email-fields-area").offset().top
-      }, 1000);
+    $('a[href*="#email-fields"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
 
-    });
+        $('#email-fields-area').toggle();
+        
+        return false;
+      }
+
+    }
+  });
 
 
   });
@@ -54,33 +65,38 @@
         <div class="fb-icon-box">
         <%= image_tag("fb_button_icon_blue.png", class:"fb_signin_icon") %>
         </div>
-        Connect with Facebook
+        <span class="signin-button-text">Connect with Facebook</span>
       </div>
       <% end %>
     </div>
 
     <div class="signup-button">
+      <%= link_to customer_google_oauth2_omniauth_authorize_path do %>
       <div class="google-button">
         <div class="google-icon-box">
           <%= image_tag("google_button_icon", class:"fb_signin_icon") %>
         </div>
-        <%= link_to "Connect with Google", customer_google_oauth2_omniauth_authorize_path, class:"signin-button-text",  style:"margin-left:32px; color: #3d5a98; text-decoration:none; float:left;" %>
+        <span class="signin-button-text" style="margin-left:32px; float:left;">Connect with Google</span>
       </div>
+      <% end %>
     </div>
 
-    <div class="signup-button" id="email-fields">
+    <div class="signup-button">
+      <a href="email-fields">
       <div class="email-signin-button">
         <div class="email-icon-box">
           <%= image_tag("email_signup_icon.png", class:"email_signin_icon") %>
         </div>
          
-          <span class="signin-button-text" style="margin-left:32px; color: #3d5a98; text-decoration:none; float:left;">Sign up with your email</span>
+          <span class="signin-button-text">Sign up with your email</span>
       </div>
+      </a>
     </div>
   
 
-    
+  <a id="email-fields"></a>  
   <div id="email-fields-area" style="display:none;">
+
     <div class="dropdown-style">
         <%= f.text_field :first_name, class: "madlib-sentence border-underline", style:"width:300px; color:#fff;", placeholder: "your first name", required: true %>
       </div>
