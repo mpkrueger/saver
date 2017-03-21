@@ -41,6 +41,109 @@
     outline: 0;
 }
 
+.signup-buttons{
+	background-color: #fff;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 96%;
+    margin: auto;
+}
+
+
+.signup-button{
+	width: 350px;
+	text-align:center;
+	margin: auto;
+	height: 80px;
+	padding:10px;
+}
+
+.fb-button{
+//	background-color: #3d5a98;
+//	color: #fff;
+	background-color:#fff;
+	color:#333;
+	height: 100%;
+    width: 100%;
+    padding-top: 20px;
+    padding-left:0;
+    text-decoration:none;
+    border-radius:6px;
+}
+
+.fb_signin_icon{
+	float: left;
+    width: 28px;
+    margin-top: -4px;
+
+}
+
+.fb-icon-box{
+//	background-color: #365182;
+    width: 51px;
+    height: 50px;
+    padding-left: 24px;
+    display: inline-block;
+    float: left;
+}
+
+.google-button{
+	color:#e0492f;
+	background-color: #fff;
+	height: 100%;
+    width: 100%;
+    padding-top:20px;
+    text-decoration:none;
+    border-radius:6px;
+}
+
+.google-icon-box{
+    width: 51px;
+    height: 50px;
+    padding-left: 24px;
+    display: inline-block;
+    float: left;
+}
+
+.email-signin-button{
+	height:100%;
+	width:100%;
+	text-decoration:none;
+	color:#444;
+	background-color: #fff;
+	padding-top:20px;
+	border-radius:6px;
+}
+
+.email-icon-box{
+    width: 51px;
+    height: 50px;
+    margin-top: -17px;
+    padding-top: 13px;
+    padding-left: 21px;
+    display: inline-block;
+    float: left;
+}
+
+.email_signin_icon{
+	float: left;
+    width: 32px;
+    margin-top: -1px;
+}
+
+.signin-button-text{
+    color: #3d5a98;
+	text-align: left;
+	text-decoration: none;
+	font-weight:500;
+}
+
+#email-fields-area{
+	padding-top: 30px;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+}
 
 
 @media screen and (max-width: 350px) {

@@ -1,4 +1,6 @@
 <% @title=": Sign Up" %>
+
+
 <script type="text/javascript">
     mixpanel.track("sign_up", {
         
@@ -8,8 +10,23 @@
 <script>
   $('document').ready(function() {
     $(".alert").animate({opacity:'0'}, 10000).hide(1500);
+
+    $('#email-fields').on('click', function() {
+      $('#email-fields-area').toggle();
+
+      $('html, body').animate({
+      scrollTop: $("#email-fields-area").offset().top
+      }, 1000);
+
+    });
+
+
   });
 </script>
+
+
+
+
 
 <body class="city-bottom blue-bkgd">
 
@@ -23,32 +40,62 @@
 
   <div class="saver-question-block" id="email">
     <!-- We're here to do the work so you can save time and money. On average we've saved people $300 a year. Sign up so we can contact you about your bill and your savings (we promise not to spam your inbox). -->
-    <div class="hero-title">Sign up and save with Savvy!</div>
-    <div class="refer-title" style="margin-bottom:28px;">
+    <div class="hero-title" style="text-align:center;">Sign up and save with Savvy!</div>
+    <div class="refer-title" style="margin-bottom:28px; text-align:center;">
     We save people an average of $300 a year. How much will we save you?
     <br /> 
     </div>
 
     
-
     
+    <div class="signup-button">
+      <div class="fb-button">
+        <div class="fb-icon-box">
+        <%= image_tag("fb_button_icon_blue.png", class:"fb_signin_icon") %>
+        </div>
+        <%= link_to "Connect with Facebook", customer_facebook_omniauth_authorize_path, class:"signin-button-text", style:"margin-left:32px; color: #3d5a98; text-decoration:none; float:left;" %>
+      </div>
+    </div>
 
-    <div class="dropdown-style">
-      <%= f.text_field :first_name, class: "madlib-sentence border-underline", style:"width:300px; color:#fff;", placeholder: "your first name", required: true %>
+    <div class="signup-button">
+      <div class="google-button">
+        <div class="google-icon-box">
+          <%= image_tag("google_button_icon", class:"fb_signin_icon") %>
+        </div>
+        <%= link_to "Connect with Google", customer_google_oauth2_omniauth_authorize_path, class:"signin-button-text",  style:"margin-left:32px; color: #3d5a98; text-decoration:none; float:left;" %>
+      </div>
     </div>
-    <div class="spaced-row"></div>
-    <div class="dropdown-style" style="margin-top:10px;">
-      <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:300px;color:#fff;", placeholder: "email address" %>
+
+    <div class="signup-button" id="email-fields">
+      <div class="email-signin-button">
+        <div class="email-icon-box">
+          <%= image_tag("email_signup_icon.png", class:"email_signin_icon") %>
+        </div>
+         
+          <span class="signin-button-text" style="margin-left:32px; color: #3d5a98; text-decoration:none; float:left;">Sign up with your email</span>
+      </div>
     </div>
-    <div class="spaced-row"></div>
-    <div class="dropdown-style" style="margin-top:10px;">
-      <%= f.password_field :password, class: "border-underline", style:"width:300px;color:#fff;", placeholder: "password (at least 6 characters)", autocomplete: "off" %>
-    </div>
-    <div class="spaced-row"></div>
-    
   
-    <%= f.submit "I'm ready to save", class: "next-button" %>
-    <br /><br /><br /><br />
+
+    
+  <div id="email-fields-area" style="display:none;">
+    <div class="dropdown-style">
+        <%= f.text_field :first_name, class: "madlib-sentence border-underline", style:"width:300px; color:#fff;", placeholder: "your first name", required: true %>
+      </div>
+      <div class="spaced-row"></div>
+      <div class="dropdown-style" style="margin-top:10px;">
+        <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:300px;color:#fff;", placeholder: "email address" %>
+      </div>
+      <div class="spaced-row"></div>
+      <div class="dropdown-style" style="margin-top:10px;">
+        <%= f.password_field :password, class: "border-underline", style:"width:300px;color:#fff;", placeholder: "password (at least 6 characters)", autocomplete: "off" %>
+      </div>
+      <div class="spaced-row"></div>
+      
+    
+      <%= f.submit "I'm ready to save", class: "next-button" %>
+      <br /><br /><br /><br />
+    </div>
   </div>
 
   <% end %>
