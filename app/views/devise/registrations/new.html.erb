@@ -49,12 +49,14 @@
     
     
     <div class="signup-button">
+      <%= link_to customer_facebook_omniauth_authorize_path do %>
       <div class="fb-button">
         <div class="fb-icon-box">
         <%= image_tag("fb_button_icon_blue.png", class:"fb_signin_icon") %>
         </div>
-        <%= link_to "Connect with Facebook", customer_facebook_omniauth_authorize_path, class:"signin-button-text", style:"margin-left:32px; color: #3d5a98; text-decoration:none; float:left;" %>
+        Connect with Facebook
       </div>
+      <% end %>
     </div>
 
     <div class="signup-button">
