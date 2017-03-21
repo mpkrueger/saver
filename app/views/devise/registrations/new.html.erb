@@ -1,8 +1,5 @@
 <% @title=": Sign Up" %>
 
-<head>
-  <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
-</head>
 
 <script type="text/javascript">
     mixpanel.track("sign_up", {
@@ -28,26 +25,7 @@
 </script>
 
 
-<script>
-    function onSuccess(googleUser) {
-      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-    }
-    function onFailure(error) {
-      console.log(error);
-    }
-    function renderButton() {
-      gapi.signin2.render('google-signin2', {
-        'scope': 'profile email',
-        'width': 280,
-        'height': 50,
-        'longtitle': true,
-        'theme': 'dark',
-        'onsuccess': onSuccess,
-        'onfailure': onFailure
-      });
-    }
-</script>
-<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+
 
 
 <body class="city-bottom blue-bkgd">
@@ -69,36 +47,35 @@
     </div>
 
     
-    <div class="">
-      <div class="signup-button">
-        <div class="fb-button">
-          <div class="fb-icon-box">
-          <%= image_tag("fb_button_icon_blue.png", class:"fb_signin_icon") %>
-          </div>
-          <%= link_to "Sign in with Facebook", customer_facebook_omniauth_authorize_path, class:"signin-button-text", style:"margin-left:0px; color: #3d5a98; text-decoration:none;" %>
+    
+    <div class="signup-button">
+      <div class="fb-button">
+        <div class="fb-icon-box">
+        <%= image_tag("fb_button_icon_blue.png", class:"fb_signin_icon") %>
         </div>
+        <%= link_to "Connect with Facebook", customer_facebook_omniauth_authorize_path, class:"signin-button-text", style:"margin-left:32px; color: #3d5a98; text-decoration:none; float:left;" %>
       </div>
+    </div>
 
-      <div class="signup-button">
-        <!--div id="google-signin2"-->
-        <div class="google-button">
-          <div class="google-icon-box">
-            <%= image_tag("google_button_icon", class:"fb_signin_icon") %>
-          </div>
-          <%= link_to "Sign in with Google", customer_google_oauth2_omniauth_authorize_path, class:"signin-button-text",  style:"margin-left:-25px; color: #3d5a98; text-decoration:none;" %>
+    <div class="signup-button">
+      <div class="google-button">
+        <div class="google-icon-box">
+          <%= image_tag("google_button_icon", class:"fb_signin_icon") %>
         </div>
+        <%= link_to "Connect with Google", customer_google_oauth2_omniauth_authorize_path, class:"signin-button-text",  style:"margin-left:32px; color: #3d5a98; text-decoration:none; float:left;" %>
       </div>
+    </div>
 
-      <div class="signup-button" id="email-fields">
-        <div class="email-signin-button">
-          <div class="email-icon-box">
-            <%= image_tag("email_signup_icon.png", class:"email_signin_icon") %>
-          </div>
-           
-            <span class="signin-button-text" style="margin-left:-40px; color: #3d5a98; text-decoration:none;">Sign in with Email</span>
+    <div class="signup-button" id="email-fields">
+      <div class="email-signin-button">
+        <div class="email-icon-box">
+          <%= image_tag("email_signup_icon.png", class:"email_signin_icon") %>
         </div>
+         
+          <span class="signin-button-text" style="margin-left:32px; color: #3d5a98; text-decoration:none; float:left;">Sign up with your email</span>
       </div>
-  </div>
+    </div>
+  
 
     
   <div id="email-fields-area" style="display:none;">
