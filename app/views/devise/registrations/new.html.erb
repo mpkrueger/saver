@@ -25,42 +25,42 @@
     <br /> 
     </div>
 
+    <div class="signup-buttons-block">
     
-    
-    <div class="signup-button">
-      <%= link_to customer_facebook_omniauth_authorize_path do %>
-      <div class="fb-button">
-        <div class="fb-icon-box">
-        <%= image_tag("fb_button_icon_blue.png", class:"fb_signin_icon") %>
+      <div class="signup-button">
+        <%= link_to customer_facebook_omniauth_authorize_path do %>
+        <div class="fb-button">
+          <div class="fb-icon-box">
+          <%= image_tag("fb_button_icon_blue.png", class:"fb_signin_icon") %>
+          </div>
+          <span class="signin-button-text">Connect with Facebook</span>
         </div>
-        <span class="signin-button-text">Connect with Facebook</span>
+        <% end %>
       </div>
-      <% end %>
-    </div>
 
-    <div class="signup-button">
-      <%= link_to customer_google_oauth2_omniauth_authorize_path do %>
-      <div class="google-button">
-        <div class="google-icon-box">
-          <%= image_tag("google_button_icon", class:"fb_signin_icon") %>
+      <div class="signup-button">
+        <%= link_to customer_google_oauth2_omniauth_authorize_path do %>
+        <div class="google-button">
+          <div class="google-icon-box">
+            <%= image_tag("google_button_icon", class:"fb_signin_icon") %>
+          </div>
+          <span class="signin-button-text" style="margin-left:32px; float:left;">Connect with Google</span>
         </div>
-        <span class="signin-button-text" style="margin-left:32px; float:left;">Connect with Google</span>
+        <% end %>
       </div>
-      <% end %>
-    </div>
 
-    <div class="signup-button">
-      <a href="#email-fields">
-      <div class="email-signin-button">
-        <div class="email-icon-box">
-          <%= image_tag("email_signup_icon.png", class:"email_signin_icon") %>
+      <div class="signup-button">
+        <a href="#email-fields">
+        <div class="email-signin-button">
+          <div class="email-icon-box">
+            <%= image_tag("email_signup_icon.png", class:"email_signin_icon") %>
+          </div>
+           
+            <span class="signin-button-text" style="margin-left:32px; float:left;">Sign up with your email</span>
         </div>
-         
-          <span class="signin-button-text" style="margin-left:32px; float:left;">Sign up with your email</span>
+        </a>
       </div>
-      </a>
-    </div>
-  
+     
 
     <div id="email-fields"> 
       <div id="email-fields-area">
@@ -82,7 +82,7 @@
       </div>
     </div>
   </div>
-
+  </div> 
   <% end %>
 
 </body>
