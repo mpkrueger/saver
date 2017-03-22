@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get 'terms-of-service', to: 'info#terms-of-service'
 
   get 'bill-upload', to: 'tickets#bill-upload'
+  get 'terms', to: 'tickets#terms'
 
   devise_for :customers, controllers: { registrations: "registrations", omniauth_callbacks: "customers/omniauth_callbacks" }, path: '', path_names: { sign_up: 'sign-up' }
   devise_for :admin_users, ActiveAdmin::Devise.config 
