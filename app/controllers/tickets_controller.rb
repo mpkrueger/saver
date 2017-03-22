@@ -26,7 +26,13 @@ class TicketsController < ApplicationController
 				flash[:error] = "uh oh"
 				redirect_to bill_upload_path
 			end
+
 		end
+	end
+
+	def terms
+
+
 	end
 
 	def bill_upload
