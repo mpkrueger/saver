@@ -9,6 +9,43 @@
 
 <body class="city-bottom blue-bkgd">
 
-  
+  <div class="receiver-header-image">
+    <%= image_tag("invite_flying_pig_savings.png", class:"saver-header-icon") %>
+  </div>
+
+
+  <div class="saver-question-block" id="email">
+    
+    <div class="hero-title" style="text-align:center;">Sign up and save with Savvy!</div>
+    <div class="refer-title" style="margin-bottom:28px; text-align:center;">
+      We save people an average of $300 a year. How much will we save you?
+      <br /> 
+    </div>
+
+    <div class="signup-buttons-block">
+    
+      <div class="signup-button">
+        <%= link_to customer_facebook_omniauth_authorize_path do %>
+        <div class="fb-button">
+          <div class="fb-icon-box">
+          <%= image_tag("fb_button_icon_blue.png", class:"fb_signin_icon") %>
+          </div>
+          <span class="signin-button-text">Connect with Facebook</span>
+        </div>
+        <% end %>
+      </div>
+
+      <div class="signup-button">
+        <%= link_to customer_google_oauth2_omniauth_authorize_path do %>
+        <div class="google-button">
+          <div class="google-icon-box">
+            <%= image_tag("google_button_icon", class:"fb_signin_icon") %>
+          </div>
+          <span class="signin-button-text" style="margin-left:32px; float:left;">Connect with Google</span>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 
 </body>
