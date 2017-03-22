@@ -32,7 +32,7 @@
   <div class="dashboard-main-module">
     <div class="dashboard-big-headline">
       
-        Thanks, you paid <strong><%=monetize(@payment_amount)%>! <br /><br />
+        Thanks, you paid <strong><%=monetize(Stripe::Charge.retrieve(current_customer.payments.last.stripe_charge_id)[:amount])%>! <br /><br />
         <div class="spaced-row"></div>
         
 

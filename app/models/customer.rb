@@ -5,11 +5,11 @@ class Customer < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, 
          :omniauthable, :omniauth_providers => [:facebook, :google_oauth2]
 
-   has_many :invites
-   has_many :tickets
-   has_many :payment_methods
+   has_many :invites, dependent: :destroy
+   has_many :tickets, dependent: :destroy
+   has_many :payment_methods, dependent: :destroy
    has_many :payments
-   has_many :identities
+   has_many :identities, dependent: :destroy
 
    validates :invite_url_param, presence: true, uniqueness: true
 
@@ -31,7 +31,8 @@ class Customer < ApplicationRecord
       # create customer since one doesn't exist with the identity's email
       else  
         @customer = Customer.new(
-          first_name: auth.info.name,
+          first_name: auth.info.first_name,
+          last_name: auth.info.last_name,
           email: @email,
           invite_url_param: @email.split("@").first.tr(".", ""),
           password: Devise.friendly_token[0,20]
