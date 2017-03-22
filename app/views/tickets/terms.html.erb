@@ -17,97 +17,107 @@
 
 
 
-	<div class="dashboard-main-module">
-	    <div class="dashboard-big-headline">
-	        Just to be clear, please read through our terms. <br />
+	<div class="saver-question-block">
+
+		<%= form_for @ticket, url: ticket_path(@ticket), html: { method: :put } do |f| %>
+
+
+	    <div class="hero-title centered-title" style="color:#333;">  
+			Our Terms of Service <br />
+			Updated as of Feb 2017 
+		</div>
+
+		<br />
+
+		<div class="headline" style="color:#333333;">
 	        Some highlights: <br />
 			<ul>
 			<li>You're granting Savvy authorization to act on your behalf. </li>
 			<li>We'll change your rate, but won't change your service or contract without checking in with you first. </li>
 			<li>We'll charge you 1/3 of the total amount we save you for the first year, and you'll keep 2/3.</li>
 			</ul>
-	</div>
-
-
-	<div class="terms-pane">
-		<div class="tos-headline">
-		Updated as of February 2017<br />
-		TERMS OF SERVICE<br />
 		</div>
-		<div class="tos-content">
 
-		<b><p>TERMS AND CONDITIONS OF SERVICE</p></b>
-		<p>Welcome to our website. This site is maintained as a service to our customers. By using this site, you agree to comply with and be bound by the following terms and conditions of service. Please review these terms and conditions carefully. If you do not agree to these terms and conditions, you should not use this site.</p>
+		<br />
+		<div class="terms-pane">
+			<div class="tos-content">
 
-		<ol>
-		<p><li><b>Agreement.</b> This Terms of Service agreement ("the "Agreement") specifies the Terms and Conditions for access to and use of Savvy via <%= link_to "www.getsavvier.com", "https://www.getsavvier.com", class: "dashboard-link" %> (the "Site") and describe the terms and conditions applicable to your access of and use of the Site. This Agreement may be modified at any time by Savvy upon posting of the modified Agreement. Any such modifications shall be effective immediately. You can view the most recent version of these terms at any time at <%= link_to "www.getsavvier.com", "https://www.getsavvier.com", class: "dashboard-link" %>. Each use by you shall constitute and be deemed your unconditional acceptance of this Agreement.</li></p>
+			<b><p>TERMS AND CONDITIONS OF SERVICE</p></b>
+			<p>Welcome to our website. This site is maintained as a service to our customers. By using this site, you agree to comply with and be bound by the following terms and conditions of service. Please review these terms and conditions carefully. If you do not agree to these terms and conditions, you should not use this site.</p>
 
-		<p><li><b>Privacy.</b> Your visit to our site is also governed by our Privacy Policy. Please review our Privacy Policy at <%= link_to "www.getsavvier.com/privacy-policy", "https://www.getsavvier.com/privacy-policy", class: "dashboard-link" %>.</li></p>
+			<ol>
+			<p><li><b>Agreement.</b> This Terms of Service agreement ("the "Agreement") specifies the Terms and Conditions for access to and use of Savvy via <%= link_to "www.getsavvier.com", "https://www.getsavvier.com", class: "dashboard-link" %> (the "Site") and describe the terms and conditions applicable to your access of and use of the Site. This Agreement may be modified at any time by Savvy upon posting of the modified Agreement. Any such modifications shall be effective immediately. You can view the most recent version of these terms at any time at <%= link_to "www.getsavvier.com", "https://www.getsavvier.com", class: "dashboard-link" %>. Each use by you shall constitute and be deemed your unconditional acceptance of this Agreement.</li></p>
 
-		<p><li><b>Ownership.</b> All content included on this site is and shall continue to be the property of Savvy or its content suppliers and is protected under applicable copyright, patent, trademark, and other proprietary rights. Any copying, redistribution, use or publication by you of any such content or any part of the Site is prohibited, except as expressly permitted in this Agreement. Under no circumstances will you acquire any ownership rights or other interest in any content by or through your use of this Site.</li></p>
+			<p><li><b>Privacy.</b> Your visit to our site is also governed by our Privacy Policy. Please review our Privacy Policy at <%= link_to "www.getsavvier.com/privacy-policy", "https://www.getsavvier.com/privacy-policy", class: "dashboard-link" %>.</li></p>
 
-		<p><li><b>Intended Audience.</b> This website is intended for adults only. This website is not intended for any children under the age of 13.</li></p>
+			<p><li><b>Ownership.</b> All content included on this site is and shall continue to be the property of Savvy or its content suppliers and is protected under applicable copyright, patent, trademark, and other proprietary rights. Any copying, redistribution, use or publication by you of any such content or any part of the Site is prohibited, except as expressly permitted in this Agreement. Under no circumstances will you acquire any ownership rights or other interest in any content by or through your use of this Site.</li></p>
 
-		<p><li><b>Site Use.</b> Savvy grants you a limited, revocable, nonexclusive license to use this site solely for your own personal use and not for republication, distribution, assignment, sublicense, sale, preparation of derivative works, or other use. You agree not to copy materials on the site, reverse engineer or break into the site, or use materials, products or services in violation of any law. The use of this website is at the discretion of Savvy and Savvy  may terminate your use of this website at any time.</li></p>
+			<p><li><b>Intended Audience.</b> This website is intended for adults only. This website is not intended for any children under the age of 13.</li></p>
 
-		<p><li><b>Compliance with Laws.</b> You agree to comply with all applicable laws regarding your use of the website. You further agreed that information provided by you is truthful and accurate to the best of your knowledge.</li></p>
+			<p><li><b>Site Use.</b> Savvy grants you a limited, revocable, nonexclusive license to use this site solely for your own personal use and not for republication, distribution, assignment, sublicense, sale, preparation of derivative works, or other use. You agree not to copy materials on the site, reverse engineer or break into the site, or use materials, products or services in violation of any law. The use of this website is at the discretion of Savvy and Savvy  may terminate your use of this website at any time.</li></p>
 
-		<p><li><b>Indemnification.</b> You agree to indemnify, defend and hold Savvy and our partners, employees, and affiliates, harmless from any liability, loss, claim and expense, including reasonable attorney's fees, related to your violation of this Agreement or use of the Site.</li></p>
+			<p><li><b>Compliance with Laws.</b> You agree to comply with all applicable laws regarding your use of the website. You further agreed that information provided by you is truthful and accurate to the best of your knowledge.</li></p>
 
-		<p><li><b>Disclaimer.</b> THE INFORMATION ON THIS SITE IS PROVIDED ON AN "AS IS," "AS AVAILABLE" BASIS. YOU AGREE THAT USE OF THIS SITE IS AT YOUR SOLE RISK. SAVVY DISCLAIMS ALL WARRANTIES OF ANY KIND, INCLUDING BUT NOT LIMITED TO ANY EXPRESS WARRANTIES, STATUTORY WARRANTIES, AND ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. TO THE EXTENT YOUR JURISDICTION DOES NOT ALLOW LIMITATIONS ON WARRANTIES, THIS LIMITATION MAY NOT APPLY TO YOU. YOUR SOLE AND EXCLUSIVE REMEDY RELATING TO YOUR USE OF THE SITE SHALL BE TO DISCONTINUE USING THE SITE.</li></p>
+			<p><li><b>Indemnification.</b> You agree to indemnify, defend and hold Savvy and our partners, employees, and affiliates, harmless from any liability, loss, claim and expense, including reasonable attorney's fees, related to your violation of this Agreement or use of the Site.</li></p>
 
-		<p><li><b>Limitation of Liability.</b> UNDER NO CIRCUMSTANCES WILL SAVVY BE LIABLE OR RESPONSIBLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, CONSEQUENTIAL (INCLUDING DAMAGES FROM LOSS OF BUSINESS, LOST PROFITS, LITIGATION, OR THE LIKE), SPECIAL, EXEMPLARY, PUNITIVE, OR OTHER DAMAGES, UNDER ANY LEGAL THEORY, ARISING OUT OF OR IN ANY WAY RELATING TO THE SITE, YOUR SITE USE, OR THE CONTENT, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. YOUR SOLE REMEDY FOR DISSATISFACTION WITH THE SITE AND/OR CONTENT IS TO CEASE ALL OF YOUR SITE USE.</p>
+			<p><li><b>Disclaimer.</b> THE INFORMATION ON THIS SITE IS PROVIDED ON AN "AS IS," "AS AVAILABLE" BASIS. YOU AGREE THAT USE OF THIS SITE IS AT YOUR SOLE RISK. SAVVY DISCLAIMS ALL WARRANTIES OF ANY KIND, INCLUDING BUT NOT LIMITED TO ANY EXPRESS WARRANTIES, STATUTORY WARRANTIES, AND ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. TO THE EXTENT YOUR JURISDICTION DOES NOT ALLOW LIMITATIONS ON WARRANTIES, THIS LIMITATION MAY NOT APPLY TO YOU. YOUR SOLE AND EXCLUSIVE REMEDY RELATING TO YOUR USE OF THE SITE SHALL BE TO DISCONTINUE USING THE SITE.</li></p>
 
-		<p>You may have additional rights under certain laws (including consumer laws) which do not allow the exclusion of implied warranties, or the exclusion or limitation of certain damages. If these laws apply to you, the exclusions or limitations in this Agreement that directly conflict with such laws may not apply to you.</li></p>
+			<p><li><b>Limitation of Liability.</b> UNDER NO CIRCUMSTANCES WILL SAVVY BE LIABLE OR RESPONSIBLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, CONSEQUENTIAL (INCLUDING DAMAGES FROM LOSS OF BUSINESS, LOST PROFITS, LITIGATION, OR THE LIKE), SPECIAL, EXEMPLARY, PUNITIVE, OR OTHER DAMAGES, UNDER ANY LEGAL THEORY, ARISING OUT OF OR IN ANY WAY RELATING TO THE SITE, YOUR SITE USE, OR THE CONTENT, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. YOUR SOLE REMEDY FOR DISSATISFACTION WITH THE SITE AND/OR CONTENT IS TO CEASE ALL OF YOUR SITE USE.</p>
 
-		<p><li><b>Use of Information.</b> Savvy reserves the right, and you authorize us, to use and assign all information regarding site uses by you and all information provided by you in any manner consistent with our Privacy Policy.</li></p>
+			<p>You may have additional rights under certain laws (including consumer laws) which do not allow the exclusion of implied warranties, or the exclusion or limitation of certain damages. If these laws apply to you, the exclusions or limitations in this Agreement that directly conflict with such laws may not apply to you.</li></p>
 
-		<p><li><b>Authorizations Granted to Savvy.</b> You are required to grant Savvy and its authorized agents, as a precondition to use of services, an affirmative authorization to permit Savvy to act on your behalf. In addition to this affirmative authorization, by registering with Savvy, you agree to authorize Savvy and its authorized agents to utilize your name and account information in any way necessary to accomplish the goal of obtaining lower rates for your monthly bills, except by changing your service or contract without written consent from you. Savvy agrees to honor any instructions provided in writing by you in advance of negotiating services.</li></p>
+			<p><li><b>Use of Information.</b> Savvy reserves the right, and you authorize us, to use and assign all information regarding site uses by you and all information provided by you in any manner consistent with our Privacy Policy.</li></p>
 
-		<p><li><b>Fees.</b> In exchange for lowering your bill, Savvy will charge you one-third (⅓) of  your total annual savings for the first twelve (12) months of savings. Savings will be calculated as the difference between the rate of the bill when Savvy initiates negotiations with your provider or providers on your behalf (“Current Rate”) and the renegotiated rate achieved by Savvy (“New Rate”). If the Current Rate differs from the rate shown on the bill you initially submit to Savvy when you sign up, savings will be calculated from the Current Rate, rather than the bill submitted. Any discounts previously applied to your bill, but that are no longer in effect when Savvy initiates negotiation because of a scheduled increase, the end of a promotion, or any other reasons, will not be included in the Current Rate. If your exact services are no longer offered by the provider (for example, the speed of internet service) and Savvy is able to negotiate lower rates than your Current Rate for both worse and better service levels than your current service level, Savvy will offer you the choice of which service level you prefer and will charge you based on the savings for the better service level (this would be the smaller charge) regardless of your choice. If Savvy is unable to negotiate a savings, there will be no cost to you. </li></p>
+			<p><li><b>Authorizations Granted to Savvy.</b> You are required to grant Savvy and its authorized agents, as a precondition to use of services, an affirmative authorization to permit Savvy to act on your behalf. In addition to this affirmative authorization, by registering with Savvy, you agree to authorize Savvy and its authorized agents to utilize your name and account information in any way necessary to accomplish the goal of obtaining lower rates for your monthly bills, except by changing your service or contract without written consent from you. Savvy agrees to honor any instructions provided in writing by you in advance of negotiating services.</li></p>
 
-		<p><li><b>Billing.</b> Savvy uses an online billing system. You will receive an invoice via email, and can view and pay invoices on our website. We accept online payments via Stripe. Payment is due within 15 days of the invoice date. If payment is not received within 15 days, we may charge you a ten dollar ($10.00) late fee per month. Savvy reserves the right to turn delinquent accounts over to collection agencies and/or report overdue balances to credit bureaus, including Experian, TransUnion and Equifax. </li></p>
+			<p><li><b>Fees.</b> In exchange for lowering your bill, Savvy will charge you one-third (⅓) of  your total annual savings for the first twelve (12) months of savings. Savings will be calculated as the difference between the rate of the bill when Savvy initiates negotiations with your provider or providers on your behalf (“Current Rate”) and the renegotiated rate achieved by Savvy (“New Rate”). If the Current Rate differs from the rate shown on the bill you initially submit to Savvy when you sign up, savings will be calculated from the Current Rate, rather than the bill submitted. Any discounts previously applied to your bill, but that are no longer in effect when Savvy initiates negotiation because of a scheduled increase, the end of a promotion, or any other reasons, will not be included in the Current Rate. If your exact services are no longer offered by the provider (for example, the speed of internet service) and Savvy is able to negotiate lower rates than your Current Rate for both worse and better service levels than your current service level, Savvy will offer you the choice of which service level you prefer and will charge you based on the savings for the better service level (this would be the smaller charge) regardless of your choice. If Savvy is unable to negotiate a savings, there will be no cost to you. </li></p>
 
-		<p><li><b>Copyrights and Copyright Agent.</b> If you believe your work has been copied in a way that constitutes copyright infringement, or your intellectual property rights have otherwise been violated, please provide a notice containing all of the following information to our Copyright Agent:</p>
+			<p><li><b>Billing.</b> Savvy uses an online billing system. You will receive an invoice via email, and can view and pay invoices on our website. We accept online payments via Stripe. Payment is due within 15 days of the invoice date. If payment is not received within 15 days, we may charge you a ten dollar ($10.00) late fee per month. Savvy reserves the right to turn delinquent accounts over to collection agencies and/or report overdue balances to credit bureaus, including Experian, TransUnion and Equifax. </li></p>
 
-		<p>
-		<ol type="a">
-		<li>An electronic or physical signature of the person authorized to act on behalf of the owner of the copyright or other intellectual property interest;</li>
-		<li>A description of the copyrighted work that you claim has been infringed;</li>
-		<li>A description of where the material that you claim is infringing is located on the Site;</li>
-		<li>Your address, telephone number, and e-mail address;</li>
-		<li>A statement by you that you have a good faith belief that the disputed use is not authorized by the copyright owner, its agent, or the law; and</li>
-		<li>A statement by you, made under penalty of perjury, that the above information in your notice is accurate and that you are the copyright owner or authorized to act on the copyright owner's behalf.</li>
-		</ol>
-		</p>
-		<p>Our Copyright Agent for Notice of claims of copyright infringement on the Site is Smith Shapourian Mignano, LLP, who can be reached as follows:</p>
-		<p>By Mail: 201 Spear Street, Suite 1100, San Francisco, CA 94105</p>
-		<p>By Phone: (415) 228-040</p>
-		<p>By E-mail: info@smithshapourian.com</p>
-		<p><li><b>Applicable Law.</b> You agree that the laws of the state of California, without regard to conflicts of laws provisions will govern these Terms and Condition of Use and any dispute that may arise between you and Savvy or its affiliates.</li></p>
+			<p><li><b>Copyrights and Copyright Agent.</b> If you believe your work has been copied in a way that constitutes copyright infringement, or your intellectual property rights have otherwise been violated, please provide a notice containing all of the following information to our Copyright Agent:</p>
 
-		<p><li><b>Severability.</b> If any provision of this Agreement shall be adjudged by any court of competent jurisdiction to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary so that this Agreement will otherwise remain in full force and effect.</li></p>
+			<p>
+			<ol type="a">
+			<li>An electronic or physical signature of the person authorized to act on behalf of the owner of the copyright or other intellectual property interest;</li>
+			<li>A description of the copyrighted work that you claim has been infringed;</li>
+			<li>A description of where the material that you claim is infringing is located on the Site;</li>
+			<li>Your address, telephone number, and e-mail address;</li>
+			<li>A statement by you that you have a good faith belief that the disputed use is not authorized by the copyright owner, its agent, or the law; and</li>
+			<li>A statement by you, made under penalty of perjury, that the above information in your notice is accurate and that you are the copyright owner or authorized to act on the copyright owner's behalf.</li>
+			</ol>
+			</p>
+			<p>Our Copyright Agent for Notice of claims of copyright infringement on the Site is Smith Shapourian Mignano, LLP, who can be reached as follows:</p>
+			<p>By Mail: 201 Spear Street, Suite 1100, San Francisco, CA 94105</p>
+			<p>By Phone: (415) 228-040</p>
+			<p>By E-mail: info@smithshapourian.com</p>
+			<p><li><b>Applicable Law.</b> You agree that the laws of the state of California, without regard to conflicts of laws provisions will govern these Terms and Condition of Use and any dispute that may arise between you and Savvy or its affiliates.</li></p>
 
-		<p><li><b>Waiver.</b> The failure of Savvy to exercise or enforce any right or provision of this Agreement shall not operate as a waiver of such right or provision.  Any waiver of this Agreement by Savvy must be in writing and signed by an authorized representative of Savvy.</li></p>
+			<p><li><b>Severability.</b> If any provision of this Agreement shall be adjudged by any court of competent jurisdiction to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary so that this Agreement will otherwise remain in full force and effect.</li></p>
 
-		<p><li><b>Termination.</b> Savvy may terminate this Agreement at any time, with or without notice, for any reason.</li></p>
+			<p><li><b>Waiver.</b> The failure of Savvy to exercise or enforce any right or provision of this Agreement shall not operate as a waiver of such right or provision.  Any waiver of this Agreement by Savvy must be in writing and signed by an authorized representative of Savvy.</li></p>
 
-		<p><li><b>Relationship of the Parties.</b>  Nothing contained in this Agreement or your use of the Site shall be construed to constitute either party as a partner, joint venturer, employee or agent of the other party, nor shall either party hold itself out as such.  Neither party has any right or authority to incur, assume or create, in writing or otherwise, any warranty, liability or other obligation of any kind, express or implied, in the name of or on behalf of the other party, it being intended by both parties that each shall remain independent contractors responsible for its own actions.</li></p>
+			<p><li><b>Termination.</b> Savvy may terminate this Agreement at any time, with or without notice, for any reason.</li></p>
 
-		<p><li><b>Entire Agreement.</b> This Terms of Service constitutes the entire agreement between you and Savvy and governs the terms and conditions of your use of the Site, and supersedes all prior or contemporaneous communications and proposals, whether electronic, oral or written, between you and Savvy with respect to this Site.  Notwithstanding the foregoing, you may also be subject to additional terms and conditions, posted policies (including but not limited to the Privacy Policy), guidelines, or rules that may apply when you use the website. Savvy  may revise this Terms of Service at any time by updating this Agreement and posting it on the Site.  Accordingly, you should visit the Site and review the Terms of Service periodically to determine if any changes have been made. Your continued use of this website after any changes have been made to the Terms of Service signifies and confirms your acceptance of any such changes or amendments to the Terms of Service.</li></p>
+			<p><li><b>Relationship of the Parties.</b>  Nothing contained in this Agreement or your use of the Site shall be construed to constitute either party as a partner, joint venturer, employee or agent of the other party, nor shall either party hold itself out as such.  Neither party has any right or authority to incur, assume or create, in writing or otherwise, any warranty, liability or other obligation of any kind, express or implied, in the name of or on behalf of the other party, it being intended by both parties that each shall remain independent contractors responsible for its own actions.</li></p>
 
-		<p><li><b>Contact Information.</b></p>
-		<p>Savvy Finances, LLC</p>
-		<p>Address: PO Box 194742, San Francisco, CA 94119-4742</p>
-		<p>Phone: 425-502-5280</p>
-		<p>Email: info@getsavvier.com</p>
-		</li>
-		</ol>
+			<p><li><b>Entire Agreement.</b> This Terms of Service constitutes the entire agreement between you and Savvy and governs the terms and conditions of your use of the Site, and supersedes all prior or contemporaneous communications and proposals, whether electronic, oral or written, between you and Savvy with respect to this Site.  Notwithstanding the foregoing, you may also be subject to additional terms and conditions, posted policies (including but not limited to the Privacy Policy), guidelines, or rules that may apply when you use the website. Savvy  may revise this Terms of Service at any time by updating this Agreement and posting it on the Site.  Accordingly, you should visit the Site and review the Terms of Service periodically to determine if any changes have been made. Your continued use of this website after any changes have been made to the Terms of Service signifies and confirms your acceptance of any such changes or amendments to the Terms of Service.</li></p>
 
+			<p><li><b>Contact Information.</b></p>
+			<p>Savvy Finances, LLC</p>
+			<p>Address: PO Box 194742, San Francisco, CA 94119-4742</p>
+			<p>Phone: 425-502-5280</p>
+			<p>Email: info@getsavvier.com</p>
+			</li>
+			</ol>
+
+			</div>
 		</div>
-	</div>
-
-
+		<br />
+		<%= f.hidden_field :gave_consent, value:true %>
+		<div class="centered-title">
+			<%= f.submit "I agree", class: "next-button" %>
+		</div>
+		<% end %>
 	</div>
 
 </body>
