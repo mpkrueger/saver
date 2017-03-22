@@ -23,7 +23,7 @@
     <%= image_tag("invite_flying_pig_savings.png", class:"saver-header-icon") %>
   </div>
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+ <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
 <div class="saver-question-block centered-title" id="email">
   <div class="hero-title" style="text-align:center;">Sign up and save with Savvy!</div>
@@ -66,10 +66,6 @@
   <div id="email-fields"> 
   <div id="email-fields-area">
 
-    <div class="dropdown-style">
-        <%= f.text_field :first_name, class: "madlib-sentence border-underline", style:"width:300px; color:#fff;", placeholder: "your first name", required: true %>
-      </div>
-      <div class="spaced-row"></div>
       <div class="dropdown-style" style="margin-top:10px;">
         <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:300px;color:#fff;", placeholder: "email address" %>
       </div>
