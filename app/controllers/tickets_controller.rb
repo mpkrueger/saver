@@ -12,7 +12,7 @@ class TicketsController < ApplicationController
 	end
 
 	def update
-		if @ticket.gave_consent == false
+		if @ticket.has_bill == false
 			if @ticket.update_attributes(ticket_params)
 				redirect_to bill_upload_path
 			else
