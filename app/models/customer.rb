@@ -31,7 +31,8 @@ class Customer < ApplicationRecord
       # create customer since one doesn't exist with the identity's email
       else  
         @customer = Customer.new(
-          first_name: auth.info.name,
+          first_name: auth.info.first_name,
+          last_name: auth.info.last_name,
           email: @email,
           invite_url_param: @email.split("@").first.tr(".", ""),
           password: Devise.friendly_token[0,20]
