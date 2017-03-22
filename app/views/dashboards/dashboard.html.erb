@@ -63,7 +63,7 @@ var google_remarketing_only = false;
     <% elsif @ticket.has_bill == true %>
       <div class="dashboard-big-headline">Thanks for sending your bill, we're working on saving you some money!</div>
     <% else %>
-      <div class="dashboard-big-headline">Next Step: Upload your bill</div>
+      <!--div class="dashboard-big-headline">Next Step: Upload your bill</div>
       <div class="dashboard-main-module-icon-block"><%= image_tag('dashboard_upload_icon.png', 
         class:"dashboard-main-module-icon") %></div>
       <div class="dashboard-headline">
@@ -76,7 +76,17 @@ var google_remarketing_only = false;
           
 
 
+      </div-->
+
+      <div class="dashboard-big-headline">Next Step: Check your email </div>
+      <div class="dashboard-main-module-icon-block"><%= image_tag('email_icon.png', class:"dashboard-main-module-icon") %></div>
+      <div class="dashboard-headline">
+        We sent you an email with more info on sending us your bill. <br /><br />
+ 
+        Check your inbox to get started!
+      <div class="spaced-row"></div>
       </div>
+
     <% end %>  
   </div>
 
