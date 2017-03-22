@@ -5,11 +5,11 @@ class Customer < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, 
          :omniauthable, :omniauth_providers => [:facebook, :google_oauth2]
 
-   has_many :invites
-   has_many :tickets
-   has_many :payment_methods
+   has_many :invites, dependent: :destroy
+   has_many :tickets, dependent: :destroy
+   has_many :payment_methods, dependent: :destroy
    has_many :payments
-   has_many :identities
+   has_many :identities, dependent: :destroy
 
    validates :invite_url_param, presence: true, uniqueness: true
 
