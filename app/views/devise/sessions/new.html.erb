@@ -20,7 +20,9 @@
  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
 <div class="saver-question-block centered-title" id="email">
-  <div class="hero-title" style="text-align:center;">Sign up and save with Savvy!</div>
+  <div class="hero-title" style="text-align:center;">Sign in to Savvy!</div>
+
+  <div class="signup-buttons-block">
 
     <div class="signup-button">
       <%= link_to customer_facebook_omniauth_authorize_path do %>
@@ -57,21 +59,23 @@
     </div>
   
 
-  <div id="email-fields"> 
-    <div id="email-fields-area">
+    <div id="email-fields"> 
+      <div id="email-fields-area">
 
-      <div class="dropdown-style" style="margin-top:10px;">
-        <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:300px;color:#fff;", placeholder: "email address" %>
+        <div class="dropdown-style" style="margin-top:10px;">
+          <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:300px;color:#fff;", placeholder: "email address" %>
+        </div>
+        <div class="spaced-row"></div>
+        <div class="dropdown-style" style="margin-top:10px;">
+          <%= f.password_field :password, class: "border-underline", style:"width:300px;color:#fff;", placeholder: "password (at least 6 characters)", autocomplete: "off" %>
+        </div>
+       <br />
+        
+        <%= f.submit "Get Started", class: "next-button", style:"margin-bottom:30px;margin-top:30px;" %>
       </div>
-      <div class="spaced-row"></div>
-      <div class="dropdown-style" style="margin-top:10px;">
-        <%= f.password_field :password, class: "border-underline", style:"width:300px;color:#fff;", placeholder: "password (at least 6 characters)", autocomplete: "off" %>
-      </div>
-     <br />
-      
-      <%= f.submit "Get Started", class: "next-button", style:"margin-bottom:30px;margin-top:30px;" %>
     </div>
-  </div>
+
+    </div>
 
   </div>
   <% end %>

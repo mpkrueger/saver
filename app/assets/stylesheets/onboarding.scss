@@ -41,6 +41,13 @@
     outline: 0;
 }
 
+.signup-buttons-block{
+	width:100%;
+	text-align:center;
+	margin:auto;
+}
+
+
 .signup-buttons{
 	background-color: #fff;
     padding-top: 20px;
@@ -51,7 +58,7 @@
 
 
 .signup-button{
-	width: 350px;
+	max-width: 350px;
 	text-align:center;
 	margin: auto;
 	height: 80px;
@@ -192,6 +199,7 @@
 		width:100%;
 	}
 
+
 }
 
 
@@ -231,12 +239,12 @@
 	}
 
 	#email-fields-area{
-		width:350px;
+		width:100%;
 		text-align: center;
     	margin: auto;
     	margin-top:30px;
-    	padding-left:5px;
-    	padding-right:5px;
+    	padding-left:15px;
+    	padding-right:15px;
 	}
 
 
