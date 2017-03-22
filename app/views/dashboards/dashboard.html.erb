@@ -63,13 +63,15 @@ var google_remarketing_only = false;
     <% elsif @ticket.has_bill == true %>
       <div class="dashboard-big-headline">Thanks for sending your bill, we're working on saving you some money!</div>
     <% else %>
-      <div class="dashboard-big-headline">Next Step: Check Your Email</div>
-      <div class="dashboard-main-module-icon-block"><%= image_tag('email_icon.png', class:"dashboard-main-module-icon") %></div>
+      <div class="dashboard-big-headline">Next Step: Upload your bill</div>
+      <div class="dashboard-main-module-icon-block"><%= image_tag('dashboard_upload_icon.png', 
+        class:"dashboard-main-module-icon") %></div>
       <div class="dashboard-headline">
         
-          We'll send you an email with more info on sending us your bill. <br /><br />
+          Take two minutes to grab a screenshot or download a PDF of your bill and upload it here. <br /><br />
 
-          Check your inbox to get started!
+          <%= link_to "Upload Bill", terms_path, class:'next-button' %>
+
           <div class="spaced-row"></div>
           
 
@@ -78,14 +80,14 @@ var google_remarketing_only = false;
     <% end %>  
   </div>
 
-  <div class="dashboard-main-module">
-    <div class="dashboard-main-module-icon-block"><div class="fb-like" data-href="https://www.facebook.com/getsavvier" data-width="100px" data-layout="button" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div></div>
+  <div class="dashboard-sub-module dashboard-sub-module-left" style="padding-top: 40px;">
+    <div class="dashboard-sub-module-icon-block"><div class="fb-like" data-href="https://www.facebook.com/getsavvier" data-width="100px" data-layout="button" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div></div>
     
     <div class="headline"><%= link_to "Like Us On Facebook", "https://www.facebook.com/getsavvier", class:"dashboard-link" %></div>
   </div>
 
-  <div class="dashboard-main-module">
-    <div class="dashboard-main-module-icon-block"><%= image_tag('piggybank2.png', class:"saver-header-icon") %></div>
+  <div class="dashboard-sub-module">
+    <div class="dashboard-sub-module-icon-block"><%= image_tag('piggybank2.png', class:"saver-header-icon") %></div>
     <div class="headline"><%= link_to "Refer A Friend", "https://www.getsavvier.com/invite", class:"dashboard-link" %></div>
   </div>
 

@@ -12,12 +12,17 @@ class TicketsController < ApplicationController
 	end
 
 	def update
-		if @ticket.update_attributes(ticket_params)
-			redirect_to root_path
-		else
+		if @ticket.update_attributes(ticket_params) && @ticket.gave_consent == false
+			redirect_to bill_upload_path
+		elsif
 			flash[:error] = "uh oh"
 			redirect_to bill_upload_path
 		end
+	end
+
+	def terms
+
+
 	end
 
 	def bill_upload
