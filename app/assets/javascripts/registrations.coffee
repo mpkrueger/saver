@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).on 'ready turbolinks:load', (event) ->
-
+  $('#email-fields-area').hide()
   $('a[href^="#email-fields"]').on 'click', (e) ->
 	  e.preventDefault()
 	  $("#email-fields-area").fadeIn(500);
