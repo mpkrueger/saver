@@ -183,7 +183,7 @@ ul {
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;         /* Opera/IE 8+ */
   outline:0;
-  box-shadow(0 0 0);
+  box-shadow(0,0,0);
 }
 
 
@@ -201,7 +201,7 @@ ul {
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;         /* Opera/IE 8+ */
   outline:0;
-  box-shadow(0 0 0);
+  box-shadow(0,0,0);
 }
 
 @media screen and (max-width: 350px) {
