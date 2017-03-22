@@ -71,26 +71,26 @@
     </div>
   
 
-  <div id="email-fields"> 
-  <div id="email-fields-area">
+    <div id="email-fields"> 
+      <div id="email-fields-area">
 
-    <div class="dropdown-style">
-        <%= f.text_field :first_name, class: "madlib-sentence border-underline", style:"width:300px; color:#fff;", placeholder: "your first name", required: true %>
+      <div class="dropdown-style">
+          <%= f.text_field :first_name, class: "madlib-sentence border-underline", style:"width:300px; color:#fff;", placeholder: "your first name", required: true %>
+        </div>
+        <div class="spaced-row"></div>
+        <div class="dropdown-style" style="margin-top:10px;">
+          <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:300px;color:#fff;", placeholder: "email address" %>
+        </div>
+        <div class="spaced-row"></div>
+        <div class="dropdown-style" style="margin-top:10px;">
+          <%= f.password_field :password, class: "border-underline", style:"width:300px;color:#fff;", placeholder: "password (at least 6 characters)", autocomplete: "off" %>
+        </div>
+       
+        
+        <%= f.submit "Get Started", class: "next-button", style:"margin-bottom:30px;margin-top:30px;" %>
       </div>
-      <div class="spaced-row"></div>
-      <div class="dropdown-style" style="margin-top:10px;">
-        <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:300px;color:#fff;", placeholder: "email address" %>
-      </div>
-      <div class="spaced-row"></div>
-      <div class="dropdown-style" style="margin-top:10px;">
-        <%= f.password_field :password, class: "border-underline", style:"width:300px;color:#fff;", placeholder: "password (at least 6 characters)", autocomplete: "off" %>
-      </div>
-     
-      
-      <%= f.submit "Get Started", class: "next-button", style:"margin-bottom:30px;margin-top:30px;" %>
     </div>
   </div>
-
 
   <% end %>
 
