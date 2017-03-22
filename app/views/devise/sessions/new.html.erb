@@ -11,51 +11,78 @@
   });
 </script>
 
+<script>
+  $(document).ready(function(){
+    $('#email-fields-area').hide();
+  });
+</script>
+
 <body class="city-bottom blue-bkgd">
 
   <div class="receiver-header-image">
     <%= image_tag("invite_flying_pig_savings.png", class:"saver-header-icon") %>
   </div>
 
-<div class="saver-question-block centered-title">
-  <div class="hero-title"> Sign in to Savvy </div>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
-      
-        <div class="spaced-row ">
-            <div class="dropdown-style">
-            <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:250px;color:#fff;", placeholder: "email address", autofocus: true %>
-            </div>
+<div class="saver-question-block centered-title" id="email">
+  <div class="hero-title" style="text-align:center;">Sign up and save with Savvy!</div>
+
+    <div class="signup-button">
+      <%= link_to customer_facebook_omniauth_authorize_path do %>
+      <div class="fb-button">
+        <div class="fb-icon-box">
+        <%= image_tag("fb_button_icon_blue.png", class:"fb_signin_icon") %>
         </div>
+        <span class="signin-button-text">Connect with Facebook</span>
+      </div>
+      <% end %>
+    </div>
 
-        <div class="spaced-row">
-          <div class="dropdown-style">
-            <%= f.password_field :password, class: "border-underline", style:"width:250px; color:#fff;", placeholder: "password", autocomplete: "off" %>
-            </div>
+    <div class="signup-button">
+      <%= link_to customer_google_oauth2_omniauth_authorize_path do %>
+      <div class="google-button">
+        <div class="google-icon-box">
+          <%= image_tag("google_button_icon", class:"fb_signin_icon") %>
         </div>
+        <span class="signin-button-text" style="margin-left:32px; float:left;">Connect with Google</span>
+      </div>
+      <% end %>
+    </div>
 
-          <% if devise_mapping.rememberable? -%>
-            <div class="spaced-row">
-              <%= f.check_box :remember_me, class: "madlib-sentence" %>
-              <%= f.label :remember_me, class:"unbolded-label" %>
-            </div>
-          <% end -%>
-
-        <div class="spaced-row"></div>
-        <div class="button-row">
-          <%= f.submit "Sign In", class: 'next-button' %>
+    <div class="signup-button">
+      <a href="#email-fields">
+      <div class="email-signin-button">
+        <div class="email-icon-box">
+          <%= image_tag("email_signup_icon.png", class:"email_signin_icon") %>
         </div>
-      
-    <% end %>
-    <div class="spaced-row"></div>
-    <%= link_to "Forgot your password?", new_customer_password_path, class:"lightgray-link" %>
-    
+         
+          <span class="signin-button-text" style="margin-left:32px; float:left;">Sign in with your email</span>
+      </div>
+      </a>
+    </div>
+  
 
-    <div class="spaced-row"></div> 
-    <%= link_to "Sign up", new_customer_registration_path, class:"lightgray-link" %><br />
+  <div id="email-fields"> 
+  <div id="email-fields-area">
+
+    <div class="dropdown-style">
+        <%= f.text_field :first_name, class: "madlib-sentence border-underline", style:"width:300px; color:#fff;", placeholder: "your first name", required: true %>
+      </div>
+      <div class="spaced-row"></div>
+      <div class="dropdown-style" style="margin-top:10px;">
+        <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:300px;color:#fff;", placeholder: "email address" %>
+      </div>
+      <div class="spaced-row"></div>
+      <div class="dropdown-style" style="margin-top:10px;">
+        <%= f.password_field :password, class: "border-underline", style:"width:300px;color:#fff;", placeholder: "password (at least 6 characters)", autocomplete: "off" %>
+      </div>
      
+      
+      <%= f.submit "Get Started", class: "next-button", style:"margin-bottom:30px;margin-top:30px;" %>
+    </div>
+  </div>
 
-  </section>
-</div>
+  <% end %>
+
 </body>
