@@ -12,21 +12,15 @@ class TicketsController < ApplicationController
 	end
 
 	def update
-		if @ticket.has_bill == false
-			if @ticket.update_attributes(ticket_params)
+		if @ticket.update_attributes(ticket_params)
+			if @ticket.has_bill == false
 				redirect_to bill_upload_path
 			else
-				flash[:error] = "uh oh"
-				redirect_to terms_path
+				redirect_to root_path
 			end
 		else
-			if @ticket.update_attributes(ticket_params)
-				redirect_to root_path
-			else
-				flash[:error] = "uh oh"
-				redirect_to bill_upload_path
-			end
-
+			flash[:error] = "uh oh"
+			redirect_to root_path
 		end
 	end
 
@@ -53,6 +47,6 @@ class TicketsController < ApplicationController
 	end
 
 	def set_s3_direct_post
-		@s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: '201', acl: 'authenticated-read', content_type: 'application/pdf', content_disposition: 'inline')
+		@s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: '201', acl: 'authenticated-read', content_disposition: 'inline')
 	end
 end
