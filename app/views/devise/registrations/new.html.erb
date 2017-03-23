@@ -9,44 +9,80 @@
 
 <body class="city-bottom blue-bkgd">
 
-  <!--div class="receiver-header-image">
-    <%= image_tag("invite_flying_pig_savings.png", class: "saver-header-icon") %>
-  </div-->
+  <div class="receiver-header-image">
+    <%= image_tag("invite_flying_pig_savings.png", class:"saver-header-icon") %>
+  </div>
 
 
-  <div class="signup-block" id="email">
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  
+
+  <div class="saver-question-block" id="email">
     
-    <div class="" style="text-align:center;">Sign up and save with Savvy!</div>
-    <div class="" style="margin-bottom:28px; text-align:center;">
-      We save people an average of $300 a year. How much will we save you?
-      <br /> 
+    <div class="hero-title" style="text-align:center;">Sign up and save with Savvy!</div>
+    <div class="refer-title" style="margin-bottom:28px; text-align:center;">
+    We save people an average of $300 a year. How much will we save you?
+    <br /> 
     </div>
 
     <div class="signup-buttons-block">
     
       <div class="signup-button">
         <%= link_to customer_facebook_omniauth_authorize_path do %>
-          <div class="fb-button">
-            <div class="fb-icon-box">
-              <%= image_tag("fb_button_icon_blue.png", class:"fb_signin_icon") %>
-            </div>
-            <span class="signin-button-text">Connect with Facebook</span>
+        <div class="fb-button">
+          <div class="fb-icon-box">
+          <%= image_tag("fb_button_icon_blue.png", class:"fb_signin_icon") %>
           </div>
+          <span class="signin-button-text">Connect with Facebook</span>
+        </div>
         <% end %>
       </div>
 
       <div class="signup-button">
         <%= link_to customer_google_oauth2_omniauth_authorize_path do %>
-          <div class="google-button">
+        <div class="google-button">
+          <div class="google-icon-box">
             <%= image_tag("google_button_icon.png", class:"fb_signin_icon") %>
-            <span class="signin-button-text" style="margin-left:32px; float:left;">Connect with Google</span>
           </div>
+          <span class="signin-button-text" style="margin-left:32px; float:left;">Connect with Google</span>
+        </div>
         <% end %>
       </div>
 
+      <div class="signup-button">
+        <a href="#email-fields">
+        <div class="email-signin-button">
+          <div class="email-icon-box">
+            <%= image_tag("email_signup_icon.png", class:"email_signin_icon") %>
+          </div>
+           
+            <span class="signin-button-text" style="margin-left:32px; float:left;">Sign up with your email</span>
+        </div>
+        </a>
+      </div>
+     
 
+    <div id="email-fields"> 
+      <div id="email-fields-area">
 
+      <div class="dropdown-style">
+          <%= f.text_field :first_name, class: "madlib-sentence border-underline", style:"width:300px; color:#fff;", placeholder: "your first name", required: true %>
+        </div>
+        <div class="spaced-row"></div>
+        <div class="dropdown-style" style="margin-top:10px;">
+          <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:300px;color:#fff;", placeholder: "email address" %>
+        </div>
+        <div class="spaced-row"></div>
+        <div class="dropdown-style" style="margin-top:10px;">
+          <%= f.password_field :password, class: "border-underline", style:"width:300px;color:#fff;", placeholder: "password (at least 6 characters)", autocomplete: "off" %>
+        </div>
+       
+        <br />
+        <%= f.submit "Get Started", class: "next-button", style:"margin-bottom:30px;margin-top:30px;" %>
+      </div>
     </div>
-  </div>
 
+  </div>
+  </div> 
+  <% end %>
 </body>
