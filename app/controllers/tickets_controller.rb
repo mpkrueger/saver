@@ -53,14 +53,6 @@ class TicketsController < ApplicationController
 	end
 
 	def set_s3_direct_post
-		@s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: '201', acl: 'authenticated-read')
-
-		file_ext = File.extname(@s3_direct_post.key)
-
-		if file_ext == ".pdf"
-	  	@s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: '201', acl: 'authenticated-read', content_type: 'application/pdf', content_disposition: 'inline')
-	  else
-	  	@s3_direct_post
-	  end
+		@s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: '201', acl: 'authenticated-read', content_type: 'application/pdf', content_disposition: 'inline')
 	end
 end
