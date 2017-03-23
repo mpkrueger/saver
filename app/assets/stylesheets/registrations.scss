@@ -165,6 +165,16 @@
     width:100%;
   }
 
+  .signup-block{
+    width: 85%;
+    margin: auto;
+    text-align: left;
+    height: 800px;
+    vertical-align: middle;
+    padding-top: 10%;
+  }
+
+
 }
 
 @media screen and (min-width: 350px) and (max-width: 480px) {
@@ -177,4 +187,39 @@
       padding-right:15px;
   }
 
+  .signup-block{
+      width: 85%;
+    margin: auto;
+    text-align: left;
+    height: 800px;
+    vertical-align: middle;
+    padding-top: 6%;
+  }
+
+}
+
+
+@media screen and (min-width: 480px) and (max-width:700px){
+
+  .signup-block{
+    width: 70%;
+    margin: auto;
+    text-align: left;
+    height: 800px;
+    vertical-align: middle;
+    padding-top: 4%;
+  }
+}
+
+
+@media screen and (min-width:700px){
+
+  .signup-block{
+    width: 66%;
+    margin: auto;
+    text-align: left;
+    height: 800px;
+    vertical-align: middle;
+    padding-top: 4%;
+  }
 }
