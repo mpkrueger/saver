@@ -20,7 +20,13 @@
 }
 
 
-
+.consent-label{
+  text-align: left;
+  font-size: 14px;
+  font-weight:500;
+  color: #000;
+  line-height: 26px;
+}
 
 .bill-file-name-block{
 	height:100%;
@@ -79,6 +85,10 @@
   padding: 20px;
 }
 
+.bill-upload-block{
+  text-align: center;
+}
+
 .fileContainer {
     overflow: hidden;
     position: relative;
@@ -104,6 +114,26 @@
     top: 0;
 }
 
+.bill-upload-headline{
+  width: 85%;
+  text-align: center;
+  font-size:16px;
+  font-weight:bold;
+  color: #000;
+  margin: auto;
+}
+
+.consent{
+  text-align: center;
+  font-size:24px;
+  font-weight:bold;
+  color: #000;
+}
+
+.bill-icon{
+  width: auto;
+  height: 40px;
+}
 
 @media screen and (max-width: 480px) {
 
@@ -124,5 +154,38 @@
   .bill-select-btn-block{
     width:80%;
   }
+  
+  .bill-upload-text{
+    width: 85%;
+    margin: auto;
+    text-align: left;
+    height: auto;
+    vertical-align: middle;
+    padding-top: 4%;
+  }
 
+}
+
+@media screen and (min-width: 480px) and (max-width:700px){
+
+  .bill-upload-text{
+    width: 70%;
+    margin: auto;
+    text-align: left;
+    height: auto;
+    vertical-align: middle;
+    padding-top: 4%;
+  }
+}
+
+@media screen and (min-width:700px){
+
+  .saver-question-block{
+    width: 66%;
+    margin: auto;
+    text-align: left;
+    height: auto;
+    vertical-align: middle;
+    padding-top: 4%;
+  }
 }
