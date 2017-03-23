@@ -89,35 +89,56 @@
 <% end %>
 
 
-<div class="dashboard-content-block">
+
 
   <div class="dashboard-main-module">
-    <div class="dashboard-big-headline">
-      	<div class="dashboard-main-module-icon-block">
-      		<%= image_tag('dashboard_upload_icon.png', class:"dashboard-main-module-icon") %>  	
-        </div>
+  	
+  	<div class="bill-upload-headline">
+    	
         Upload your latest cable / internet bill and we'll take it from there! <br /><br />
 
-        
-
-
     </div>
-
-    <%= form_for @ticket, url: ticket_path(@ticket), html: { method: :put, class: 'directUpload', data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } } do |f| %>
-
-    <div class="bill-file-row">
-    	
-    	<div class="bill-select-btn-block">
-			<div class="fileContainer">
-				• Select File •
-			<%= f.file_field :bill_key, :class=>'bill-select-link' %>
+  	<div class="bill-upload-text">
+	    <div class="highlights-block">
+				<div class="headline" style="color:#333333;">
+			        Highlights from our <%= link_to "Terms of Service", terms_of_service_path %>: <br />
+					<ul>
+					<li>You're granting Savvy authorization to act on your behalf. </li>
+					<li>We'll change your rate, but won't change your service or contract without checking in with you first. </li>
+					<li>We'll charge you 1/3 of the total amount we save you for the first year, and you'll keep 2/3.</li>
+					</ul>
+				</div>
 			</div>
 		</div>
-		<%= f.hidden_field :has_bill, value: true %>
-	</div>
-	<br />
-	<%= f.submit "Upload bill", class: "next-button" %>
-	<% end %>
+		
+	    
 
+
+    <%= form_for @ticket, url: ticket_path(@ticket), html: { method: :put, class: 'directUpload', data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } } do |f| %>
+    	<div class="consent">
+	    	<%= f.check_box :gave_consent, id: "consent" %>
+	    	<%= f.label "I agree to these terms", class: "consent-label" %>
+	    </div>
+
+    	<div id="bill-upload" class="bill-upload-block">
+				<div class="dashboard-main-module-icon-block">
+		  		<%= image_tag('dashboard_upload_icon.png', class:"dashboard-main-module-icon") %>  	
+		    </div>
+    		<div class="bill-file-row">
+    	
+		    	<div class="bill-select-btn-block">
+						<div class="fileContainer">
+							• Select File •
+						<%= f.file_field :bill_key, :class=>'bill-select-link' %>
+						</div>
+					</div>
+					<%= f.hidden_field :has_bill, value: true %>
+				</div>
+			<br />
+			<%= f.submit "Upload bill", class: "next-button" %>
+			</div>
+		<% end %>
+
+	
 	</div>
 </body>
