@@ -6,6 +6,7 @@ task :send_3_day_reminder => :environment do
   Ticket.where(has_bill: false).each do |ticket|
   	if ((Time.now - ticket.created_at) / 1.day).to_i == 3
   		CustomerMailer.bill_reminder(ticket.customer).deliver
+      puts "Customer ID ##{ticket.customer.id} was sent their 3-day reminder."
   	end
   end
 
@@ -18,6 +19,7 @@ task :send_10_day_reminder => :environment do
   Ticket.where(has_bill: false).each do |ticket|
   	if ((Time.now - ticket.created_at) / 1.day).to_i == 10
   		CustomerMailer.bill_reminder(ticket.customer).deliver
+      puts "Customer ID ##{ticket.customer.id} was sent their 10-day reminder."
   	end
   end
 
@@ -30,6 +32,7 @@ task :send_17_day_reminder => :environment do
   Ticket.where(has_bill: false).each do |ticket|
   	if ((Time.now - ticket.created_at) / 1.day).to_i == 17
   		CustomerMailer.bill_reminder(ticket.customer).deliver
+      puts "Customer ID ##{ticket.customer.id} was sent their 17-day reminder."
   	end
   end
 
@@ -42,6 +45,7 @@ task :send_24_day_reminder => :environment do
   Ticket.where(has_bill: false).each do |ticket|
   	if ((Time.now - ticket.created_at) / 1.day).to_i == 24
   		CustomerMailer.bill_reminder(ticket.customer).deliver
+      puts "Customer ID ##{ticket.customer.id} was sent their 24-day reminder."
   	end
   end
 
@@ -54,6 +58,7 @@ task :send_31_day_reminder => :environment do
   Ticket.where(has_bill: false).each do |ticket|
   	if ((Time.now - ticket.created_at) / 1.day).to_i == 31
   		CustomerMailer.bill_reminder(ticket.customer).deliver
+      puts "Customer ID ##{ticket.customer.id} was sent their 31-day reminder."
   	end
   end
 
