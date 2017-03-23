@@ -109,8 +109,8 @@
 			<%= f.file_field :bill_key, :class=>'bill-select-link' %>
 			</div>
 		</div>
+		<%= f.hidden_field :has_bill, value: true %>
 	</div>
-	
 	<br />
 	<%= f.submit "Upload bill", class: "next-button" %>
 	<% end %>
