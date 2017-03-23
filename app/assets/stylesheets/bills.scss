@@ -59,9 +59,10 @@
 
 .progress .bar {
   height:  100%;
-  padding-left: 0.2em;
+ // padding-left: 0.2em;
   color:   white;
   display: none;
+  border-radius: 4px;
 }
 
 .barContainer{
@@ -82,10 +83,10 @@
     overflow: hidden;
     position: relative;
 //    background: #84D1B5;
-    color: #84D1B5;
+    color: teal;
     background: transparent;
     text-decoration:underline;
-    height:100%;
+    height:60px;
     padding-top:10px;
 }
 

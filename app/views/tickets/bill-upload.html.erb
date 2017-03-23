@@ -91,7 +91,9 @@
 
   <div class="dashboard-main-module">
     <div class="dashboard-big-headline">
-      
+      	<div class="dashboard-main-module-icon-block">
+      		<%= image_tag('dashboard_upload_icon.png', class:"dashboard-main-module-icon") %>  	
+        </div>
         Upload your latest cable / internet bill and we'll take it from there! <br /><br />
 
         
@@ -105,7 +107,7 @@
     	
     	<div class="bill-select-btn-block">
 			<div class="fileContainer">
-				Select File
+				• Select File •
 			<%= f.file_field :bill_key, :class=>'bill-select-link' %>
 			</div>
 		</div>
