@@ -12,32 +12,42 @@ body {
 }
 
 
+
 .hero_section{
-  background-color:#0a8d9d;
-  text-align:center;
-  margin:auto;
-  display: inline-block;
-  margin-bottom: -10px;
+  color: white;
+    min-height: 500px;
+    text-align: center;
 }
 
 
+.hero_image{
+  background-size: cover;
+    background-image: url('couple_tv_med_edit.jpg');
+    width: 1440px;
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-position-y: 20%;
+}
+
 .lp_button{
-  border: 2px solid #1e3646;
-  background-color: #1e3646;
-  color: #fff;
-  font-family: 'Raleway', 'Museo Sans', sans-serif;
-  font-size:16px;
-  font-weight:500;
-  padding: 10px 30px;
-  text-align: center;
-  border-radius:0px;
-  margin: auto;
-  text-decoration: none !important;
+  border: 2px solid #e5806c;
+    background-color: #e5806c;
+    color: #fff;
+    padding: 16px 36px;
+    text-align: center;
+    border-radius: 6px;
+    margin: auto;
+    text-decoration: none;
+    margin-top: 30px;
+
 }
 
 .lp_button:active{
-  background-color:#14242d;
-  color: #14242d;
+   background-color:#c66e60;
+  color: #c66e60;
   outline:0;
   text-decoration: none;
 }
@@ -47,10 +57,24 @@ body {
 }
 
 .lp_button:hover{
-  background-color:#2c5968;
-  border: 2px solid #2c5968;
+  background-color:#f4907f;
+  border: 2px solid #f4907f;
   color:#fff;
   text-decoration: none;
+}
+
+
+.lp_step_num{
+  width: 70px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.lp_step{
+    text-align:center;
+    margin: auto;
+    color: #333;
+    margin-top: 10px;
 }
 
 .lp_footer{
@@ -60,8 +84,19 @@ body {
     text-align: center;
     margin: auto;
   }
+.lp_testimonials{
+    background-color: teal;
+    color: #fff;
+    padding-bottom: 40px;
+    padding-top: 10px;
+  }
 
-
+.lp_affiliates{
+  background-color: #fff;
+  padding-bottom:20px;
+  padding-top:10px;
+  min-height:300px;
+}
 
 .lp_details_section{
   background-color:#2c5968;
@@ -81,26 +116,81 @@ body {
     margin:auto;
   }
 
-  .hero_section{
-    padding: 40px 40px 15px 40px;
+  .mobile_container{
+    background-color: white;
+    opacity: .5;
+    width: 100%;
+    min-height: 500px;
+    /* display: inline-flex; */
+    position: absolute;
   }
 
+  .lp-saver-header-image{
+    width: 100%;
+    margin: auto;
+    display: inline-block;
+    position: relative;
+    opacity: .7;
+  }
+
+
+  .lp_hero_text_block{
+    width: 80%;
+    margin: auto;
+    position: relative;
+    margin-top: 33%;
+  }
 
   .lp_headline{
     font-family: 'Raleway', 'Museo Sans', sans-serif;
     font-size:28px;
     font-weight: 500;
-    color: #fff;
+    color: #333;
     padding: 15px 0px 5px 0px;
   }
 
   .lp_subline{
     font-family: 'Raleway', 'Museo Sans', sans-serif;
     font-size:16px;
+    color:#333;
     font-weight: 500;
-    color: #fff;
     padding: 10px 10px;
   }
+
+  .lp_section_title{
+    font-family: 'Raleway', 'Museo Sans', sans-serif;
+    font-size:21px;
+    color:#333;
+    font-weight: 300;
+    padding: 10px 0;
+    width:85%;
+  }
+
+  .lp_howitworks_block{
+      min-height: 480px;
+      padding-bottom:10px;
+      width: 75%;
+      margin: auto;
+  }
+
+  
+
+  .customer_quote{
+    padding-top: 40px;
+    text-align: center;
+    margin:auto;
+    color: #fff;
+    width: 76%;
+    font-family: 'Raleway', 'Museo Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 10px 0;
+}
+
+
+.lp_affiliates{
+  min-height:350px;
+}
 
   .lp_down_caret{
     text-align: center;
@@ -138,18 +228,24 @@ body {
     margin:auto;
   }
 
-  .hero_section{
-    padding: 160px 20px 20px 20px;
+
+  .lp-saver-header-image{
+    width: 100%;
+    margin: auto;
+    display: inline-block;
+    position: relative;
+    opacity: .7;
   }
 
   .lp_hero_text_block{
     padding-top: 2%;
-    text-align: left;
+    width: 85%;
+    margin: auto;
   }
 
   .lp_headline{
     font-family: 'Raleway', 'Museo Sans', sans-serif;
-    color: #fff;
+    color: #333;
     font-size: 30px;
     font-weight:500;
     padding: 15px 0px;
@@ -162,9 +258,22 @@ body {
   .lp_subline{
     font-family: 'Raleway', 'Museo Sans', sans-serif;
     font-size:21px;
+    color:#333;
     font-weight: 300;
-    color: #fff;
     padding: 10px 0;
+  }
+
+  .lp_section_title{
+    font-family: 'Raleway', 'Museo Sans', sans-serif;
+    font-size:21px;
+    color:#333;
+    font-weight: 300;
+    padding: 10px 0;
+  }
+
+  .lp_howitworks_block{
+      min-height: 200px;
+      padding-bottom:10px;
   }
 
   .lp_down_caret{
@@ -203,6 +312,17 @@ body {
     height:80px;
   }
 
+  .customer_quote{
+    padding-top: 40px;
+    text-align: center;
+    margin:auto;
+    color: #fff;
+    width: 76%;
+    font-family: 'Raleway', 'Museo Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 10px 0;
+  }
 
 }
 
@@ -214,19 +334,28 @@ body {
     margin:auto;
   }
 
-  .hero_section{
-    padding: 150px 20px 20px 20px;
+
+
+  .lp-saver-header-image{
+    width: 100%;
+    margin: auto;
+    display: inline-block;
+    position: relative;
+    opacity: .7;
   }
 
   .lp_hero_text_block{
-    padding-top: 3%;
-    margin-left: 5%;
-    text-align: left;
+    display: inline-block;
+    position: absolute;
+    top: 3%;
+    left: 47%;
+    color: #333;
+    width: 49%;
   }
 
   .lp_headline{
     font-family: 'Raleway', 'Museo Sans', sans-serif;
-    color: #fff;
+    color: #333;
     font-size: 36px;
     font-weight:500;
     padding: 15px 0px;
@@ -239,8 +368,16 @@ body {
   .lp_subline{
     font-family: 'Raleway', 'Museo Sans', sans-serif;
     font-size:21px;
+    color:#333;
     font-weight: 300;
-    color: #fff;
+    padding: 10px 0;
+  }
+
+  .lp_section_title{
+    font-family: 'Raleway', 'Museo Sans', sans-serif;
+    font-size:21px;
+    color:#333;
+    font-weight: 300;
     padding: 10px 0;
   }
 
@@ -254,6 +391,10 @@ body {
     opacity: .6;
   }
 
+  .lp_howitworks_block{
+      min-height: 200px;
+      padding-bottom:10px;
+  }
 
   .lp_subimage{
     width:32%;
@@ -280,6 +421,17 @@ body {
     height:80px;
   }
 
+   .customer_quote{
+      padding-top: 40px;
+      text-align: center;
+      margin:auto;
+      color: #fff;
+      width: 76%;
+      font-family: 'Raleway', 'Museo Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      padding: 10px 0;
+  }
 
 
 }

@@ -63,11 +63,7 @@
 	    display: inline-block;
 	}
 
-	.lp-saver-header-image{
-		width: 80%;
-	    height: auto;
-	    margin: auto;
-	}
+	
 
 	.saver-header-icon{
 		width: 100%;
@@ -109,18 +105,20 @@
 	    margin: auto;
 	}
 
-	.lp-saver-header-image{
-		width: 80%;
-	    height: auto;
-	    margin: auto;
-	}
 
 	.saver-header-logo{
 		width: 90%;
 	    height: auto;
 	}
 
-
+	.about-blurb{
+		color: #333;
+	    width: 85%;
+	    line-height: 1.4em;
+	    text-align: left;
+	    margin: auto;
+	    margin-top: 5%;
+	}
 
 
 }
@@ -157,10 +155,7 @@
 	    margin: auto;
 	}
 
-	.lp-saver-header-image{
-		width: 90%;
-	    margin: auto;
-	}
+
 
 	.saver-header-logo{
 		width: 25%;
@@ -172,6 +167,14 @@
 		text-align:center;
 	}
 
+	.about-blurb{
+		color: #333;
+	    width: 75%;
+	    line-height: 1.5em;
+	    text-align: center;
+	    margin: auto;
+	    margin-top: 5%;
+	}
 
 }
 
@@ -209,17 +212,21 @@
 	    margin: auto;
 	}
 
-	.lp-saver-header-image{
-		width: 90%;
-	    margin: auto;
-	}
+
 
 	.saver-header-logo{
 		width: 25%;
     	height: auto;
 	}	
 
-
+	.about-blurb{
+		color: #333;
+	    width: 75%;
+	    line-height: 1.5em;
+	    text-align: center;
+	    margin: auto;
+	    margin-top: 5%;
+	}
 
 }
 
