@@ -89,6 +89,7 @@ body {
     color: #fff;
     padding-bottom: 40px;
     padding-top: 10px;
+    min-height:500px;
   }
 
 .lp_affiliates{
@@ -167,7 +168,7 @@ body {
   }
 
   .lp_howitworks_block{
-      min-height: 480px;
+      min-height: 500px;
       padding-bottom:10px;
       width: 75%;
       margin: auto;
@@ -187,6 +188,9 @@ body {
     padding: 10px 0;
 }
 
+  .lp_testimonials{
+    min-height:1200px;
+  }
 
 .lp_affiliates{
   min-height:350px;
@@ -348,9 +352,10 @@ body {
     display: inline-block;
     position: absolute;
     top: 3%;
-    left: 47%;
+    left: 52%;
     color: #333;
-    width: 49%;
+    width: 43%;
+    text-align: left;
   }
 
   .lp_headline{
@@ -358,7 +363,7 @@ body {
     color: #333;
     font-size: 36px;
     font-weight:500;
-    padding: 15px 0px;
+    padding: 15px 0px 0 0;
   }
 
   .lp_button{
@@ -375,7 +380,7 @@ body {
 
   .lp_section_title{
     font-family: 'Raleway', 'Museo Sans', sans-serif;
-    font-size:21px;
+    font-size:24px;
     color:#333;
     font-weight: 300;
     padding: 10px 0;
