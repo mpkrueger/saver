@@ -27,7 +27,7 @@ body {
     width: 100%;
     height: 500px;
     position: absolute;
-    z-index: -1;
+    //z-index: -1;
     background-repeat: no-repeat;
     background-position-y: 20%;
 }
@@ -92,13 +92,6 @@ body {
     min-height:500px;
   }
 
-.lp_affiliates{
-  background-color: #fff;
-  padding-bottom:20px;
-  padding-top:10px;
-  min-height:340px;
-}
-
 .lp_details_section{
   background-color:#2c5968;
   text-align:center;
@@ -119,7 +112,7 @@ body {
 
   .mobile_container{
     background-color: white;
-    opacity: .5;
+    opacity: .7;
     width: 100%;
     min-height: 500px;
     /* display: inline-flex; */
@@ -186,10 +179,11 @@ body {
     font-size: 16px;
     font-weight: 300;
     padding: 10px 0;
+    margin-bottom:10px;
 }
 
   .lp_testimonials{
-    min-height:1200px;
+    min-height:1250px;
   }
 
 .lp_affiliates{
@@ -221,6 +215,7 @@ body {
 
   .lp_footer{
     padding:20px 20px 200px 20px;
+    min-height: 300px;
   }
 
 }
@@ -416,6 +411,8 @@ body {
 
   .lp_details_section{
     padding: 20px 20px 50px 20px;
+    margin-top:-20px;
+    
   }
 
   .lp_detail{
@@ -424,6 +421,10 @@ body {
 
   .lp_footer{
     height:80px;
+  }
+
+  .lp_affiliates{
+    display:none;
   }
 
    .customer_quote{
