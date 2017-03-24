@@ -7,17 +7,23 @@
 </script>
 
 
-<section class="hero_section">
+<div class="header dashboard_header">
+  <div class="dashboard-header-icon-block"><%= image_tag("flying_pig_header.png", class:"dashboard-header-icon") %> </div>
+  <div class="dashboard-header-logo-block"> <%= image_tag("savvysaverlogo.png", class:"dashboard-header-logo") %></div>
+    <br />
+  </div>
+</div>
 
+
+<section class="hero_section"> 
+
+	<section class="hero_image">
+    
+	<!--%= image_tag("couple_tv_med_edit.jpg", class:"lp-saver-header-image") %-->
 	<div class="spacer col-md-1 col-lg-1">
 	</div>
-
-	<div class="lp_hero_image_block col-xs-12 col-sm-5 col-md-4 col-lg-4">
-		<%= image_tag("lp_hero_image.png", class:"lp-saver-header-image") %>
-	</div>
-
-
-	<div class="lp_hero_text_block col-xs-12 col-sm-6 col-md-6 col-lg-6">
+	<div class="mobile_container"></div>
+	<div class="lp_hero_text_block">
 		<div class="lp_headline">
 			Save $300 on your cable bill
 		</div>
@@ -30,16 +36,97 @@
 			<%= link_to "Get Started", why_savvy_path,  :class=>"lp_button" %>
 		</div>
 	</div>
-	<div class="lp_down_caret"><%= image_tag("down_caret.png") %></div>
+	
+	</section>
 </section>
 
+
+<section class="lp_howitworks_block">
+
+	<div class="centered-title lp_section_title" style="margin-top:20px; font-weight:500;">
+		Same services you enjoy today. Just much cheaper.
+	</div>
+
+	<div class="lp_detail col-xs-12 col-sm-4 col-md-4 col-lg-4" style="padding:0 20px;">
+		<div class="lp_step_num">
+			<%= image_tag("lp_step_1.png", class:"saver-header-icon") %>
+		</div>
+		<div class="lp_step">
+			Send us your latest bill
+		</div>
+	</div>
+
+	<div class="lp_detail col-xs-12 col-sm-4 col-md-4 col-lg-4" style="padding:0 20px;">
+		<div class="lp_step_num">
+			<%= image_tag("lp_step_2.png", class:"saver-header-icon") %>
+		</div>
+		<div class="lp_step">
+			We'll call and lower your rate. 
+		</div>
+	</div>
+
+	<div class="lp_detail col-xs-12 col-sm-4 col-md-4 col-lg-4" style="padding:0 20px;">
+		<div class="lp_step_num">
+			<%= image_tag("lp_step_3.png", class:"saver-header-icon") %>
+		</div>
+		<div class="lp_step">
+			Celebrate your savings!
+		</div>
+	</div>
+
+</section>
+
+<section class="lp_testimonials">
+
+	<div class="centered-title lp_section_title" style="margin-top:20px; color: #fff; font-weight:500; margin-bottom:10px;">
+		Customers love Savvy!
+	</div>
+
+	<div class="centered-title" style="width:70%; padding:0 20px;">
+		<div class="">
+			<%= image_tag("savvy_customer.png") %>
+		</div>
+	</div>
+	<br />
+	<!--div style="width: 60%;
+    text-align: center;
+    margin: auto;
+    line-height: 1.4em;"-->
+		<div class="customer_quote">
+			"Something magical just happened. I sent Savvy my bill and they saved me $310/year! Awesome!"
+		</div>
+	<!--/div-->
+
+</section>
+
+<section class="lp_affiliates">
+	<div class="centered-title lp_section_title" style="margin-top:20px; font-weight:500;">
+		Featured On
+	</div>
+
+	<div class="lp_step col-xs-12 col-sm-6 col-md-6 col-lg-6">
+		<%= image_tag("how_do_i_money.jpg", style:"width:50%; margin-top:10%; margin-bottom:20px;") %><br/>
+		
+	</div>
+	<div class="lp_step col-xs-12 col-sm-6 col-md-6 col-lg-6">
+		<%= image_tag("principles_of_increase.png", style:"width:35%;") %><br/>
+		
+	</div>
+
+</section>
+
+
 <section class="lp_details_section">
+
+	<div class="centered-title lp_section_title" style="margin-top:20px; font-weight:500; color:#fff;">
+		What could you do with an extra $300?
+	</div>
 
 	<div class="lp_detail col-xs-12 col-sm-6 col-md-6 col-lg-6" style="padding: 0 40px;">
 		<div class="lp_subimage">
 			<%= image_tag("lp_cut_bills.png", class:"saver-header-icon") %>
 		</div>
-		<div class="lp_subline">
+		<div class="lp_subline" style="color:#fff;">
 			Cut your bills big-time
 		</div>
 		<div class="lp_explanation">
@@ -51,7 +138,7 @@
 		<div class="lp_subimage">
 			<%= image_tag("lp_relax.png", class:"saver-header-icon") %>
 		</div>
-		<div class="lp_subline">
+		<div class="lp_subline" style="color:#fff;">
 			Sit back and relax
 		</div>
 		<div class="lp_explanation">
@@ -68,7 +155,8 @@
 		</div>
 	</div>
 	<div class="footer-links col-xs-12 col-sm-8 col-md-8 col-lg-8">
-		<%= link_to "Terms of Service", terms_of_service_path, class:"dashboard-link footer-link col-xs-12 col-sm-3 col-md-3 col-lg-3" %>
+		<%= link_to "About", about_us_path, class:"dashboard-link footer-link col-xs-12 col-sm-3 col-md-3 col-lg-3" %>
+		<%= link_to "Terms", terms_of_service_path, class:"dashboard-link footer-link col-xs-12 col-sm-3 col-md-3 col-lg-3" %>
 		<%= link_to "Privacy Policy", privacy_policy_path, class:"dashboard-link footer-link col-xs-12 col-sm-3 col-md-3 col-lg-3" %>
 	</div>
 </section>
