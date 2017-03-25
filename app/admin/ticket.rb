@@ -13,7 +13,7 @@ ActiveAdmin.register Ticket do
 #   permitted
 # end
 
-	permit_params :admin_user_id, :customer_id, :has_bill, :has_phone, :gave_consent, :call_complete, :summary_email_sent, 
+	permit_params :admin_user_id, :customer_id, :has_bill, :has_phone, :phone_number, :gave_consent, :call_complete, :summary_email_sent, 
 		:successfully_saved_money, :amount_saved, :amount_earned, :owes_money, :has_paid, :has_referred, :status, :future_followup,
 		:service_provider, :zip_code, :old_monthly_rate, :tv_service, :internet_service, :phone_service
 	
@@ -36,7 +36,7 @@ ActiveAdmin.register Ticket do
 			f.input :customer_id, as: :select, collection: Customer.all.collect {|customer| [customer.email, customer.id]}
 			f.input :admin_user_id, as: :select, collection: AdminUser.all.collect {|admin_user| [admin_user.email, admin_user.id]}
 			f.input :has_bill
-			f.input :has_phone
+			f.input :phone_number
 			f.input :gave_consent
 		end
 		f.inputs "Bill Information" do
@@ -97,7 +97,7 @@ ActiveAdmin.register Ticket do
 				row :saver_guest_id
 				row :admin_user_id
 				row :has_bill
-				row :has_phone
+				row :phone_number
 				row :gave_consent
 			end
 		end

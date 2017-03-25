@@ -109,9 +109,10 @@
 					</ul>
 				</div>
 			</div>
-		</div>
+		<hr />
+	</div>
 	    
-<hr />
+
 
     <%= form_for @ticket, url: ticket_path(@ticket), html: { method: :put, class: 'directUpload', data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } } do |f| %>
     	<a href="#bill-upload">
