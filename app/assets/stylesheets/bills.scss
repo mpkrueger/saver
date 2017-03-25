@@ -35,6 +35,18 @@
   line-height: 26px;
 }
 
+.consent-button{
+  max-width: 300px;
+  text-align:center;
+  margin: auto;
+  height: 60px;
+  padding:10px;
+  font-size:24px;
+  font-weight:bold;
+  color: #333;
+  background-color:lightblue;
+}
+
 .bill-file-name-block{
 	height:100%;
 	width:70%;
@@ -132,13 +144,6 @@
   font-weight:500;
   color: #333;
   margin: auto;
-}
-
-.consent{
-  text-align: center;
-  font-size:24px;
-  font-weight:bold;
-  color: #333;
 }
 
 .bill-icon{

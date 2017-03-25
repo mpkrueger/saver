@@ -116,11 +116,12 @@
 
     <%= form_for @ticket, url: ticket_path(@ticket), html: { method: :put, class: 'directUpload', data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } } do |f| %>
     	
-    	<div class="consent" id="consent" style="background-color:#eee;">
-    		<a href="#bill-upload">
-	    		<%= f.label "I agree to these terms", class: "consent-label" %>
-	    	</a>
-	    </div>
+    	
+    		<div class="consent-button">
+	    		I agree to these terms
+	    		
+	    	</div>
+	    
 	   
 
 

@@ -4,8 +4,8 @@
 
 $(document).on 'ready turbolinks:load', (event) ->
   $('#bill-upload').hide()
-  $('a[href^="#bill-upload"]').on 'click', (e) ->
+  $('.consent-button').on 'click', (e) ->
 	  e.preventDefault()
 	  $("#bill-upload").fadeIn(200);
-	  $('#consent').hide()
+	  $('.consent-button').hide()
 	  $('#bill-terms').hide()
