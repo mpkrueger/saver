@@ -27,6 +27,10 @@
 
 }
 
+.consent-button{
+  cursor:pointer;
+}
+
 .consent-label{
   text-align: left;
   font-size: 14px;
@@ -35,17 +39,7 @@
   line-height: 26px;
 }
 
-.consent-button{
-  max-width: 300px;
-  text-align:center;
-  margin: auto;
-  height: 60px;
-  padding:10px;
-  font-size:24px;
-  font-weight:bold;
-  color: #333;
-  background-color:lightblue;
-}
+
 
 .bill-file-name-block{
 	height:100%;
@@ -79,7 +73,8 @@
   max-width: 600px;
   margin:    auto;
   height: 10px !important;
-  width:60%;
+  width:100%;
+  margin-top:10px;
 }
 
 .progress .bar {
@@ -184,6 +179,11 @@
     max-width: 600px;
     margin:    auto;
     height: 10px !important;
+    margin-top:10px;
+  }
+
+  .consent-button{
+    width:80%;
   }
 
 }
@@ -219,5 +219,9 @@
     width:50%;
     text-align:center;
     margin:auto
+  }
+
+  .consent-button{
+    width:40%;
   }
 }

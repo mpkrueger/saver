@@ -117,9 +117,8 @@
     <%= form_for @ticket, url: ticket_path(@ticket), html: { method: :put, class: 'directUpload', data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } } do |f| %>
     	
     	
-    		<div class="consent-button">
+    		<div class="next-button consent-button">
 	    		I agree to these terms
-	    		
 	    	</div>
 	    
 	   
@@ -134,9 +133,11 @@
 							<div class="bill-step">
 								<%= image_tag("lp_step_1.png", class:"saver-header-icon") %>
 							</div>
-							<span style="font-size:15px; color:#333;">Upload your bill</span>
-							<div class="dashboard-main-module-icon-block" style="width: 140px; margin-bottom: 0;">
+							<!--div class="dashboard-main-module-icon-block" style="width: 140px; margin-bottom: 0;">
 						  		<%= image_tag('bill_upload_btn.png', class:"dashboard-main-module-icon") %>  	
+						    </div-->
+						    <div class="next-button">
+						    	Upload your bill
 						    </div>
 						<%= f.file_field :bill_key, :class=>'bill-select-link' %>
 						</div>
@@ -158,7 +159,7 @@
 				<span style="font-size:13px; color:#666;"> (used to verify your account with your provider) </span>
 			</div>
 			<br /><br />
-			<%= f.submit "Upload bill", class: "next-button" %>
+			<%= f.submit "Submit", class: "next-button" %>
 			</div>
 		<% end %>
 		
