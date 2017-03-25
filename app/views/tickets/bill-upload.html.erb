@@ -76,7 +76,7 @@
 	});
 </script>
 
-<body style="background-color:#eee;">
+<body style="background-color:#fff;">
 
 <%= link_to root_path do %>
 	<div class="header dashboard_header">
@@ -90,7 +90,7 @@
 
 
 
-  <div class="dashboard-main-module">
+  <div style="padding: 20px;">
   	
   	<div class="bill-upload-headline">
     	
@@ -98,7 +98,7 @@
 
     </div>
   	<div class="bill-upload-text" id="bill-terms">
-  		<hr />
+  		<br />
 	    <div class="highlights-block">
 				<div class="headline" style="color:#333333;">
 			    Highlights from our <%= link_to "Terms of Service", terms_of_service_path %>: <br />
@@ -109,17 +109,19 @@
 					</ul>
 				</div>
 			</div>
-		<hr />
+		<br />
 	</div>
 	    
 
 
     <%= form_for @ticket, url: ticket_path(@ticket), html: { method: :put, class: 'directUpload', data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } } do |f| %>
-    	<a href="#bill-upload">
+    	
     	<div class="consent" id="consent" style="background-color:#eee;">
-	    	<%= f.label "I agree to these terms", class: "consent-label" %>
+    		<a href="#bill-upload">
+	    		<%= f.label "I agree to these terms", class: "consent-label" %>
+	    	</a>
 	    </div>
-	    </a>
+	   
 
 
     	<div id="bill-upload" class="bill-upload-block">

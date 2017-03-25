@@ -193,6 +193,11 @@
     vertical-align: middle;
     padding-top: 4%;
   }
+  .consent{
+    width:50%;
+    text-align:center;
+    margin:auto
+  }
 }
 
 @media screen and (min-width:700px){
@@ -204,5 +209,10 @@
     height: auto;
     vertical-align: middle;
     padding-top: 4%;
+  }
+  .consent{
+    width:50%;
+    text-align:center;
+    margin:auto
   }
 }
