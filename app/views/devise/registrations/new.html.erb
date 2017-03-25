@@ -9,14 +9,7 @@
 
 <script>
   function callbackFn(activate, options) {
-    var utils = window.optimizely.get('utils');
-    var $ = window.optimizely.get('jquery');
-
-    utils.waitForElement('form').then(function(formElement) {
-      if ($('form').length > 0) {
-          activate();
-      }
-    });
+    activate();
   }
 </script>
 
