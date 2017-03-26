@@ -10,6 +10,7 @@ class Customer < ApplicationRecord
    has_many :payment_methods, dependent: :destroy
    has_many :payments
    has_many :identities, dependent: :destroy
+   has_many :visits
 
    validates :invite_url_param, presence: true, uniqueness: true
 
