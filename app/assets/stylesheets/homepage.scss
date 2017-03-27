@@ -99,7 +99,6 @@ body {
   padding:30px 20px 50px 20px;
   display: inline-block;
   margin-bottom:-8px;
-  margin-top:-10px;
 }
 
 
@@ -151,6 +150,11 @@ body {
     padding: 10px 10px;
   }
 
+  .lp_section_category{
+    font-size:16px;
+    font-weight: 500;
+  }
+
   .lp_section_title{
     font-family: 'Raleway', 'Museo Sans', sans-serif;
     font-size:21px;
@@ -161,7 +165,7 @@ body {
   }
 
   .lp_howitworks_block{
-      min-height: 500px;
+      min-height: 510px;
       padding-bottom:10px;
       width: 75%;
       margin: auto;
@@ -183,12 +187,34 @@ body {
 }
 
   .lp_testimonials{
-    min-height:1250px;
+    min-height:1300px;
   }
 
 .lp_affiliates{
   min-height:350px;
 }
+
+  .lp_pricing_section{
+    margin:auto;
+    min-height:350px;
+    background-color:#eee;
+    padding: 10px 10px 20px 10px;
+  }
+
+  .lp_pricing_image{
+    width:80%;
+    text-align:center;
+    margin:auto;
+    margin-top:10px;
+  }
+
+  .lp_pricing_subline{
+    width:80%;
+    text-align:left;
+    margin:Auto;
+    color:#333;
+    margin-top:10px;
+  }
 
   .lp_down_caret{
     text-align: center;
@@ -373,6 +399,11 @@ body {
     padding: 10px 0;
   }
 
+  .lp_section_category{
+    font-size:18px;
+    font-weight: 300;
+  }
+
   .lp_section_title{
     font-family: 'Raleway', 'Museo Sans', sans-serif;
     font-size:24px;
@@ -392,12 +423,13 @@ body {
   }
 
   .lp_howitworks_block{
-      min-height: 200px;
+      min-height: 230px;
       padding-bottom:10px;
   }
 
   .lp_subimage{
     width:32%;
+    text-align:center;
     margin:auto;
   }
 
@@ -411,15 +443,35 @@ body {
 
   .lp_pricing_section{
     padding: 20px 20px 50px 20px;
-    min-height:200px;
+    min-height:400px;
     background-color:#eee;
     color:#333;
+    text-align:center;
+    margin:auto;
 
+  }
+
+  .lp_pricing_image{
+    margin: auto;
+    margin-bottom: 30px;
+    display: inline-block;
+    float: left;
+    margin-left: 15%;
+    text-align: right;
+  }
+
+  .lp_pricing_subline{
+    width: 25%;
+    float: left;
+    margin-left: 5%;
+    display: inline-block;
+    margin-top: 6%;
+    text-align: left;
+    font-weight: 500;
   }
 
   .lp_details_section{
     padding: 20px 20px 50px 20px;
-    margin-top:-42px;
 
   }
 
