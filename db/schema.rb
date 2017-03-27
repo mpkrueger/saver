@@ -49,12 +49,12 @@ ActiveRecord::Schema.define(version: 20170326032833) do
 
   create_table "ahoy_events", force: :cascade do |t|
     t.integer  "visit_id"
-    t.integer  "user_id"
+    t.integer  "customer_id"
     t.string   "name"
     t.jsonb    "properties"
     t.datetime "time"
+    t.index ["customer_id", "name"], name: "index_ahoy_events_on_customer_id_and_name", using: :btree
     t.index ["name", "time"], name: "index_ahoy_events_on_name_and_time", using: :btree
-    t.index ["user_id", "name"], name: "index_ahoy_events_on_user_id_and_name", using: :btree
     t.index ["visit_id", "name"], name: "index_ahoy_events_on_visit_id_and_name", using: :btree
   end
 
@@ -330,7 +330,7 @@ ActiveRecord::Schema.define(version: 20170326032833) do
     t.text     "user_agent"
     t.text     "referrer"
     t.text     "landing_page"
-    t.integer  "user_id"
+    t.integer  "customer_id"
     t.string   "referring_domain"
     t.string   "search_keyword"
     t.string   "browser"
@@ -350,7 +350,7 @@ ActiveRecord::Schema.define(version: 20170326032833) do
     t.string   "utm_content"
     t.string   "utm_campaign"
     t.datetime "started_at"
-    t.index ["user_id"], name: "index_visits_on_user_id", using: :btree
+    t.index ["customer_id"], name: "index_visits_on_customer_id", using: :btree
     t.index ["visit_token"], name: "index_visits_on_visit_token", unique: true, using: :btree
   end
 
