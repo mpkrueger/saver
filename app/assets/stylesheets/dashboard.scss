@@ -24,7 +24,7 @@
 }
 
 .dashboard-header-logo-block{
-	margin-top: .8%;
+	margin-top: .5%;
 	position: relative;
     width: 62%;
     display: inline-block;
@@ -114,6 +114,10 @@
 		margin-bottom: 10px;
     }
 
+    .nav-right{
+    	display:none;
+    }
+
 }
 
 
@@ -146,17 +150,49 @@
     	float:left;
     }
 
+    .nav-right{
+    	display:none;
+    }
+
 }
 
 
 
 @media screen and (min-width:700px){
+	
+	.dashboard_header{
+		min-height:80px;
+	}
+
 	.dashboard-header-icon-block{
 		width: 10%;  
 	}
 
 	.dashboard-header-logo-block{
-		width: 16%;
+		width: inherit;
+	    float: left;
+	    margin-left: 20px;
+	    max-width: 150px;
+	}
+
+	.nav-right{
+	    display: block;
+	    float: right;
+	    margin-right: 2%;
+	    width:40%;
+	    margin-top: 18px;
+	}
+
+	.nav-right-items{
+		list-style: none;
+		float:right;
+	}
+
+	.nav-right-items li{
+		position: relative;
+	    display: block;
+	    float: left;
+	    margin-right:40px;
 	}
 
 	.dashboard-content-block{
