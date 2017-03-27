@@ -1,7 +1,9 @@
-
-
 <% @title=": Invite a Friend" %>
+<script type="text/javascript">
+    mixpanel.track("invite_sender", {
 
+    });
+</script>
 
 <script>
   $('document').ready(function() {
@@ -79,169 +81,63 @@
 <meta property="og:image" content="http://www.getsavvier.com/assets/fb_sharing_image_1.png">
 <meta property="og:description" content="Save hundreds on your cable/internet bill with no effort."/>
 
-<%# experience for users that ARE logged in as a Customer %>
 
-<% if current_customer %>
+<body class="city-bottom" style="background-color:#0a8d9d; overflow:auto; height:100%;">
 
-<script type="text/javascript">
-    mixpanel.track("invite_logged_in", {
-
-    });
-</script>
-  <body class="city-bottom" style="background-color:#0a8d9d; overflow:auto; height:100%;">
-  
-    <div class="invite-signin-image">
-      <%= image_tag("flying_pig_header.png", class:"saver-header-icon") %>
-    </div>   
+  <div class="invite-signin-image">
+    <%= image_tag("flying_pig_header.png", class:"saver-header-icon") %>
+  </div>   
 
 
-    <div class="refer-title-block">
-        <div class="hero-title"><%= @customer.first_name %>, invite your friends to earn rewards. </div>
-      <div class="hero-tagline">You'll earn $10 for every friend who saves money with Savvy. <br />
-      <%= link_to 'Learn More', faq_path(anchor:"referralfaq"), :target => "_blank", :class => "faq-referral-page-link" %>
+  <div class="refer-title-block">
+      <div class="hero-title"><%= @customer.first_name %>, invite your friends to earn rewards. </div>
+    <div class="hero-tagline">You'll earn $10 for every friend who saves money with Savvy. <br />
+    <%= link_to 'Learn More', faq_path(anchor:"referralfaq"), :target => "_blank", :class => "faq-referral-page-link" %>
+    </div>
+  </div>
+
+  <div class="invite-link-block">
+    
+    <div class="other-refer-box">
+      
+
+      <div class="signup-button" id="shareBtn">
+        <div class="fb-button" style="padding-left:20px;">
+          <div class="fb-icon-box">
+          <%= image_tag("fb_button_icon_blue.png", class:"fb_signin_icon") %>
+          </div>
+          <span class="signin-button-text">Share on Facebook</span>
+        </div>
       </div>
+      
+      <div class="signup-button">
+      <button class="clipboard-btn copy-link-button" data-clipboard-action="copy" data-clipboard-text="<%= @invite_url %>">
+        <%= image_tag('copy_link_icon.png', class:"copy-link-icon") %> <span style="color:#fff"> Copy your unique link </span>
+      </button>
+      <br />
+      <div class="link-tooltip"><span class="tooltiptext">Copied!</span></div>
+      <div class="spaced-row"></div><div class="spaced-row"></div>
+    </div> 
     </div>
 
-    <div class="invite-link-block">
-      
-      <div class="other-refer-box">
-        
 
-        <div class="signup-button" id="shareBtn">
-          <div class="fb-button" style="padding-left:20px;">
-            <div class="fb-icon-box">
-            <%= image_tag("fb_button_icon_blue.png", class:"fb_signin_icon") %>
-            </div>
-            <span class="signin-button-text">Share on Facebook</span>
-          </div>
+    <div class="email-box">
+      <div class="refer-tagline">Or Invite Via Email</div>
+      <%= form_for @invite do |f| %>
+
+        <div class="email-field-box referral-input-style">
+            <%= f.text_field :receiver_email, class: "border-underline", style:"width:100%; text-align: center;", placeholder: "Enter emails, separated by commas.", required: true %>
         </div>
-        
-        <div class="signup-button">
-        <button class="clipboard-btn copy-link-button" data-clipboard-action="copy" data-clipboard-text="<%= @invite_url %>">
-          <%= image_tag('copy_link_icon.png', class:"copy-link-icon") %> <span style="color:#fff"> Copy your unique link </span>
-        </button>
-        <br />
-        <div class="link-tooltip"><span class="tooltiptext">Copied!</span></div>
-        <div class="spaced-row"></div><div class="spaced-row"></div>
-      </div> 
-      </div>
-
-
-      <div class="email-box">
-        <div class="refer-tagline">Or Invite Via Email</div>
-        <%= form_for @invite do |f| %>
-
-          <div class="email-field-box referral-input-style">
-              <%= f.text_field :receiver_email, class: "border-underline", style:"width:100%; text-align: center;", placeholder: "Enter emails, separated by commas.", required: true %>
-          </div>
-         
-          <%= f.submit "Send invite", class: "invite-button", style:"margin-top:20px;", id:"send-invite" %>
-        <% end %>
-      </div>
-
-      
-    </div>   
+       
+        <%= f.submit "Send invite", class: "invite-button", style:"margin-top:20px;", id:"send-invite" %>
+      <% end %>
+    </div>
 
     
+  </div>   
 
-    <br /><br />
   
-  </body>
 
+  <br /><br />
 
-<%# experience for users that are NOT logged in as a Customer %>
-
-  <% else %>
-  <script type="text/javascript">
-    mixpanel.track("invite_logged_out", {
-
-    });
-</script>
-
-    <body class="city-bottom" style="background-color:#0a8d9d; overflow:auto; height:100%;">
-      <div class="invite-signin-image">
-        <%= image_tag("flying_pig_header.png", class:"saver-header-icon") %>
-      </div>  
-
-      <div class="invite-logout-header">
-        <div class="hero-title" id="hero-title">Get $10 for every friend that saves with Savvy.</div>
-        
-      </div>
-
-    <div class="inviter-content">
-      
-        <div class="inviter-signin">
-          
-          <% if params[:email] %>
-            <div class="hero-tagline"> Add a password to your account to send invites and track your rewards. <Br />
-          <% else %>
-            <div class="hero-tagline"> Create an account to send invites and track your rewards. <Br />
-          <% end %>
-          </div>
-
-          <div id="create_account">
-
-            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-              <%= devise_error_messages! %>
-
-                  <%= f.hidden_field :signup_page, value: "invite sender page" %>
-
-                  <div class="referral-input-style">
-                      <%= f.text_field :first_name, value: (params[:first_name]), class: "border-underline", 
-                      style:"width:300px; color:#fff;", placeholder: "first name", required: true %>
-                  </div>
-                  <br /> <br />
-                  <div class="referral-input-style">
-                      <%= f.email_field :email, value: (params[:email]), class: "border-underline", 
-                      style:"width:300px; color:#fff;", placeholder: "email address", required: true %>
-                  </div>
-                  <br /> <br />
-                  <div class="referral-input-style">
-                    <%= f.password_field :password, class: "border-underline", 
-                    style:"width:300px; color:#fff", placeholder: "password (at least 6 characters)", required: true, autocomplete: "off" %>
-                  </div>
-                  <br />
-
-                    
-                  <%= f.submit "Create Account", class: 'invite-button' %>
-                  <div class="spaced-row"></div>
-                  <%= link_to "(Or Sign In)", "javascript:;", id: "signin_link", class: "signin-link" %>
-            <% end %>
-          </div>
-
-          <div id="sign_in" class="hidden">
-            
-
-            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-              <div class="referral-input-style">
-                <%= f.email_field :email, value: (params[:email]), class: "border-underline", style:"width:300px; color:#fff;", placeholder: "email address" %>
-              </div>
-              <br /> <br />
-              <div class="referral-input-style">
-                <%= f.password_field :password, class: "border-underline", style:"width:300px; color:#fff;", placeholder: "password", autocomplete: "off" %>
-              </div>
-              <br />
-
-              <% if devise_mapping.rememberable? -%>
-                <div style="margin-top:20px; color:#fff; margin-bottom: -5px;">
-                  <%= f.check_box :remember_me %>
-                  <%= f.label :remember_me, style:"color:#fff;font-weight:300;" %>
-                </div>
-              <% end -%>
-
-              <%= f.submit "Sign In", class: 'invite-button' %>
-              <div class="spaced-row"></div>
-              <%= link_to "(Or Create Account)", "javascript:;", id: "create_link", class: "signin-link" %>
-            <% end %>
-
-          </div>
-        </div>
-    </div>
-
-  </body> 
-<% end %>
-
-
-
-
-
+</body>
