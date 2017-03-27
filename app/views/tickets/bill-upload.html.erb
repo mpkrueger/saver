@@ -3,6 +3,8 @@
     mixpanel.track("bill_upload", {
 
     });
+
+    mixpanel.track_links('.consent-button', 'Clicked to consent');
 </script>
 
 <script>
@@ -33,6 +35,7 @@
 	      	submitButton.prop('disabled', true);
 	        var progress = parseInt(data.loaded / data.total * 100, 10);
 	        progressBar.css('width', progress + '%')
+	        mixpanel.track("upload_btn_click", {});
 	      },
 
 
@@ -52,6 +55,7 @@
 	      done: function(e, data) {
 	        submitButton.prop('disabled', false);
 	        progressBar.text("");
+	        mixpanel.track("upload_done", {});
 
 	        // extract key and generate URL from response
 	        var key   = $(data.jqXHR.responseXML).find("Key").text();
@@ -94,14 +98,15 @@
   	
   	<div class="bill-upload-headline">
     	
-        Upload your latest bill and we'll take it from there! <br />
+        Take 2 minutes to upload your bill and save $300! <br />
 
     </div>
   	<div class="bill-upload-text" id="bill-terms">
   		<br />
 	    <div class="highlights-block">
 				<div class="headline" style="color:#333333;">
-			    Highlights from our <%= link_to "Terms of Service", terms_of_service_path %>: <br />
+			    	<div style="margin-bottom:8px;">Highlights from our <%= link_to "Terms of Service", terms_of_service_path %></div> 
+			    	
 					<ul>
 					<li>You're granting Savvy authorization to act on your behalf. </li>
 					<li>We'll change your rate, but won't change your service or contract without checking in with you first. </li>
@@ -146,7 +151,7 @@
 					<%= f.hidden_field :gave_consent, value: true %>
 				</div>
 	
-			<hr />
+			
 			<div class="phonenum">
 				<div class="bill-step">
 					<%= image_tag("lp_step_2.png", class:"saver-header-icon") %>
