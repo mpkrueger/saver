@@ -26,10 +26,14 @@
 <body style="background-color:#eee;">
 
 <div class="header dashboard_header">
-	<div class="dashboard-header-icon-block"><%= image_tag("flying_pig_header.png", class:"dashboard-header-icon") %> </div>
 	<div class="dashboard-header-logo-block">	<%= image_tag("savvysaverlogo.png", class:"dashboard-header-logo") %></div>
-		<br />
-	</div>
+  <div class="nav-right">
+    <ul class="nav-right-items">
+      <li><%= link_to "Sign out", destroy_customer_session_path, class:"dashboard-link", method: :delete %></li>
+    </ul>
+    
+  </div>
+  
 </div>
 
 
@@ -84,7 +88,7 @@
     <div class="headline"><%= link_to "Refer A Friend", "https://www.getsavvier.com/invite", class:"dashboard-link" %></div>
   </div>
 
-<%= link_to "Sign out", destroy_customer_session_path, class:"dashboard-link", method: :delete %>
+
 </div>
 
 </body>
