@@ -1,4 +1,6 @@
 class InvitesController < ApplicationController
+  before_action :authenticate_customer!, only: [:new, :thanks]
+
   def new
   	@invite = Invite.new
     @customer = current_customer
