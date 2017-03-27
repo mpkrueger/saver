@@ -144,11 +144,12 @@
     background-color: #00cc99;
     margin: auto;
     text-align: center;
-    padding: 10px 15px;
+    padding: 14px 16px;
     outline: 0;
     border: none;
-    margin-bottom: 10px;
-    width: 300px;
+    margin-bottom: 20px;
+    width: 100%;
+    border-radius: 6px;
 }
 
 .fb-button-icon{
@@ -400,7 +401,6 @@
 
 	.copy-link-button{
 	    padding: 13px 0px;
-	    width: 250px;
 	    margin:auto;
 	}
 
@@ -445,6 +445,7 @@
 	.email-box{
 		width: 70%;
 		margin-bottom:30px;
+		margin-top:20px;
 	}
 
 
@@ -511,6 +512,7 @@
 	.email-box{
 		width: 70%;
 		margin-bottom:30px;
+		margin-top:20px;
 	}
 
 	.email-textarea{
