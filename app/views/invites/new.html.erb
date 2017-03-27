@@ -105,10 +105,18 @@
     <div class="invite-link-block">
       
       <div class="other-refer-box">
-        <div id="shareBtn" class="fb-button"><%= image_tag('fb_button_icon.png', class:"fb-button-icon") %>  
-          <span style="color:#fff">Share on Facebook </span> 
+        
+
+        <div class="signup-button" id="shareBtn">
+          <div class="fb-button" style="padding-left:20px;">
+            <div class="fb-icon-box">
+            <%= image_tag("fb_button_icon_blue.png", class:"fb_signin_icon") %>
+            </div>
+            <span class="signin-button-text">Share on Facebook</span>
+          </div>
         </div>
         
+        <div class="signup-button">
         <button class="clipboard-btn copy-link-button" data-clipboard-action="copy" data-clipboard-text="<%= @invite_url %>">
           <%= image_tag('copy_link_icon.png', class:"copy-link-icon") %> <span style="color:#fff"> Copy your unique link </span>
         </button>
@@ -116,7 +124,7 @@
         <div class="link-tooltip"><span class="tooltiptext">Copied!</span></div>
         <div class="spaced-row"></div><div class="spaced-row"></div>
       </div> 
-
+      </div>
 
 
       <div class="email-box">
@@ -124,7 +132,7 @@
         <%= form_for @invite do |f| %>
 
           <div class="email-field-box referral-input-style">
-              <%= f.text_field :receiver_email, class: "border-underline", style:"width:100%;", placeholder: "Enter emails, separated by commas.", required: true %>
+              <%= f.text_field :receiver_email, class: "border-underline", style:"width:100%; text-align: center;", placeholder: "Enter emails, separated by commas.", required: true %>
           </div>
          
           <%= f.submit "Send invite", class: "invite-button", style:"margin-top:20px;", id:"send-invite" %>
