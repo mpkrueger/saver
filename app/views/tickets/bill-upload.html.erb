@@ -109,7 +109,7 @@
   		<br />
 	    <div class="highlights-block">
 				<div class="headline" style="color:#333333;">
-			    	<div style="margin-bottom:8px;">Highlights from our <%= link_to "Terms of Service", terms_of_service_path, class:"dashboard-link" %></div> 
+			    	<div style="margin-bottom:8px;">Here are some highlights from our <%= link_to "Terms of Service", terms_of_service_path, class:"dashboard-link" %></div> 
 			    	
 					<ul>
 					<li>You're granting Savvy authorization to act on your behalf. </li>
@@ -140,39 +140,58 @@
 		    	<div class="bill-select-btn-block">
 						<div class="fileContainer">
 							<div class="bill-step">
-								<%= image_tag("lp_step_1.png", class:"saver-header-icon") %>
+								
+								STEP 1: <br />Upload your bill
 							</div>
-							<!--div class="dashboard-main-module-icon-block" style="width: 140px; margin-bottom: 0;">
-						  		<%= image_tag('bill_upload_btn.png', class:"dashboard-main-module-icon") %>  	
-						    </div-->
-						    <div class="next-button" id="uploadButton">
-						    	Upload your bill
-						    </div>
-						<%= f.file_field :bill_key, :class=>'bill-select-link' %>
+							
+							<div class="actual-bill-step">
+
+							    <div class="next-button" id="uploadButton">
+							    	Upload your bill
+							    </div>
+								<%= f.file_field :bill_key, :class=>'bill-select-link' %>
+							</div>
 						</div>
-					</div>
 					<%= f.hidden_field :has_bill, value: true %>
 					<%= f.hidden_field :gave_consent, value: true %>
 				</div>
 	
 			
-			<div class="phonenum">
+			<!--div class="phonenum"-->
+			<div class="bill-select-btn-block" style="width:100%;">
 				<div class="bill-step">
-					<%= image_tag("lp_step_2.png", class:"saver-header-icon") %>
+					STEP 2: <br />What's the phone number linked to this bill?
+					<br />
+					<span style="font-size:13px; color:#666;"> (used for verification with your provider) </span>
 				</div>
-				Tell us which phone # is linked to this bill <br />
-				<div class="dropdown-style" style="margin-bottom:8px; border-bottom:1px solid #333 !important;">
-					<%= f.telephone_field :phone_number, :class=>"madlib-sentence", :style=>"color:#333;text-align: center;"%>
+				<div class="actual-bill-step">
+					<div class="dropdown-style" style="margin-bottom:8px; border-bottom:1px solid #333 !important;">
+						<%= f.telephone_field :phone_number, :prompt=>"(111)123-4567", :class=>"madlib-sentence", :style=>"color:#333;text-align: left; padding-left:15px;"%>
+					</div>
+					
 				</div>
-				<br />
-				<span style="font-size:13px; color:#666;"> (used to verify your account with your provider) </span>
 			</div>
-			<br /><br />
-			<%= f.submit "Submit", class: "next-button" %>
+
+			<div class="bill-select-btn-block" style="width:100%;">
+				<div class="bill-step">
+					STEP 3: <br />Submit and then sit back and relax!
+				</div>
+				<div class="actual-bill-step">
+					<%= f.submit "Submit", class: "next-button" %>
+					
+				</div>
 			</div>
+			
+			<div class="sslbadge">
+	      		<a href='https://www.expeditedssl.com/simple-ssl-scanner/scan?target_domain=www.getsavvier.com' target='_blank' rel='nofollow'><img src='https://www.expeditedssl.com/ssl-secure-badge.png'  alt='Expedited SSL Scanner' style="height:40px;"></a>
+  			</div>
+  			<div class="awsbadge">
+  				<a href="http://aws.amazon.com/what-is-cloud-computing"><img src="http://awsmedia.s3.amazonaws.com/AWS_logo_poweredby_black_127px.png" alt="Powered by AWS Cloud Computing" style="height:40px;"></a>
+			</div>
+		</div>
 		<% end %>
 		
-		</div>
+	</div>
 	
 	</div>
 </body>

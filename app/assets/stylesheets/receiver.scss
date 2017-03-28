@@ -44,6 +44,12 @@
     bottom: 40px;
 }
 
+.awsbadge{
+	margin-left: 105px;
+    position: absolute;
+    bottom: 40px;
+    width: auto;
+}
 
 
 .receiver-button{
@@ -125,6 +131,10 @@
 	}
 
 	.sslbadge{
+		display:none;
+	}
+
+	.awsbadge{
 		display:none;
 	}
 
