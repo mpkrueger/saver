@@ -56,6 +56,7 @@
 	       
 	      },
 	      done: function(e, data) {
+	      	$('#uploadButton').css('opacity', '.5');
 	        submitButton.prop('disabled', false);
 	        progressBar.text("");
 	        mixpanel.track("upload_done", {});
@@ -144,7 +145,7 @@
 							<!--div class="dashboard-main-module-icon-block" style="width: 140px; margin-bottom: 0;">
 						  		<%= image_tag('bill_upload_btn.png', class:"dashboard-main-module-icon") %>  	
 						    </div-->
-						    <div class="next-button">
+						    <div class="next-button" id="uploadButton">
 						    	Upload your bill
 						    </div>
 						<%= f.file_field :bill_key, :class=>'bill-select-link' %>
