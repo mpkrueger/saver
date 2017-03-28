@@ -50,6 +50,9 @@ class InvitesController < ApplicationController
       if @referrer.invite_url_param == "PrinciplesOfIncrease"
         @headline = "Principles of Increase"
         @subheading = "recommends saving money with Savvy!"
+      elsif @referrer.invite_url_param == "LaurenGreutman"
+        @headline = "Lauren Greutman"
+        @subheading = "recommends saving money with Savvy!"
       else
         @headline = "#{@sender_name} wants you to get easy savings with Savvy!"
         @subheading = "What an awesome friend."
