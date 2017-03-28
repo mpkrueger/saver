@@ -14,10 +14,11 @@
 </script>
 
 <body class="city-bottom blue-bkgd">
-
-  <div class="receiver-header-image" style="padding-top:0%;">
-    <%= image_tag("invite_flying_pig_savings.png", class:"saver-header-icon") %>
-  </div>
+  <%= link_to root_path do %>
+    <div class="receiver-header-image" style="padding-top:0%;">
+      <%= image_tag("invite_flying_pig_savings.png", class:"saver-header-icon") %>
+    </div>
+  <% end %>
 
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
