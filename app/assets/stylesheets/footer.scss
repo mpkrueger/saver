@@ -10,6 +10,14 @@
 }
 
 
+.footer-nav-right{
+	display: block;
+    float: right;
+    margin-right: 2%;
+    width:60%;
+    margin-top: 18px;
+}
+
 @media screen and (max-width: 480px) {
 	
 	.footer-logo{
@@ -21,6 +29,11 @@
 	.footer-link{
 		margin-top:20px;
 		margin-bottom:10px;
+	}
+
+	.footer-nav-right{
+		text-align:center;
+		float:none;
 	}
 
 
@@ -35,6 +48,12 @@
 		float:left;
 		display:inline-block;
 	}
+
+	.footer-nav-right{
+		text-align:center;
+		float:none;
+	}
+
 
 
 }

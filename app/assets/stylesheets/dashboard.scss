@@ -88,6 +88,12 @@
 	color:#00A99D !important;
 }
 
+.nav-right-items{
+	list-style: none;
+	float:right;
+}
+
+
 @media screen and (max-width: 480px) {
 
 	.dashboard-header-icon-block{
@@ -117,6 +123,12 @@
     .nav-right{
     	display:none;
     }
+
+    .nav-right-items{
+		list-style: none;
+    	float: right;
+    	line-height: 2em;
+	}
 
 }
 
@@ -183,10 +195,7 @@
 	    margin-top: 18px;
 	}
 
-	.nav-right-items{
-		list-style: none;
-		float:right;
-	}
+	
 
 	.nav-right-items li{
 		position: relative;
