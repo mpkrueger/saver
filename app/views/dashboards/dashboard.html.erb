@@ -54,28 +54,19 @@
           <div class="dashboard-headline">Thanks for uploading your bill! We'll get started saving you some money!</div>
           <div class="spaced-row"></div>
     <% else %>
-      <!--div class="dashboard-big-headline">Next Step: Upload your bill</div>
+      <div class="dashboard-big-headline">Next Step: Upload your bill</div>
       <div class="dashboard-main-module-icon-block"><%= image_tag('dashboard_upload_icon.png', 
         class:"dashboard-main-module-icon") %></div>
       <div class="dashboard-headline">
         
           Take two minutes to grab a screenshot or download a PDF of your bill and upload it here. <br /><br />
 
-          <%= link_to "Upload Bill", terms_path, class:'next-button' %>
+          <%= link_to "Upload Bill", bill_upload_path, class:'next-button' %>
 
           <div class="spaced-row"></div>
           
 
 
-      </div-->
-
-      <div class="dashboard-big-headline">Next Step: Check your email </div>
-      <div class="dashboard-main-module-icon-block"><%= image_tag('email_icon.png', class:"dashboard-main-module-icon") %></div>
-      <div class="dashboard-headline">
-        We sent you an email with more info on sending us your bill. <br /><br />
- 
-        Check your inbox to get started!
-      <div class="spaced-row"></div>
       </div>
 
     <% end %>  
