@@ -17,4 +17,7 @@ class OnboardingController < ApplicationController
   def landing_page_busymom
   end
 
+  def landing_page_education
+  end
+
 end
