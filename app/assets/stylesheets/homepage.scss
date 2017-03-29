@@ -438,24 +438,23 @@ body {
   }
 
   .lp_hero_text_block{
-    display: inline-block;
+    width: 40%;
     position: absolute;
-    top: 3%;
-    left: 52%;
-    color: #333;
-    width: 43%;
-    text-align: left; 
+    left: 0;
+    top: 40px;
+    margin-left: 5%;
+    max-width: 450px;
   }
 
   .vector_text_block{
     display: inline-block;
     position: absolute;
-    top: 3%;
-    left: 52%;
+    top: 40px;
+    left: 45%;
     color: #333;
-    width: 43%;
-    text-align: left; 
-    margin-top:40px;
+    width: 42%;
+    text-align: left;
+    margin-top: 40px;
   }
 
 
