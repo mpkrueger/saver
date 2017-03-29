@@ -422,9 +422,12 @@ body {
 @media screen and (min-width: 960px) { /* web */
 
   .lp_hero_image_block{
-    width:68%;
-    margin:auto;
-    float: left;
+    width: 40%;
+    position: absolute;
+    left: 0;
+    top: 40px;
+    margin-left: 5%;
+    max-width: 450px;
   }
 
 
@@ -438,12 +441,13 @@ body {
   }
 
   .lp_hero_text_block{
-    width: 40%;
+    display: inline-block;
     position: absolute;
-    left: 0;
-    top: 40px;
-    margin-left: 5%;
-    max-width: 450px;
+    top: 3%;
+    left: 52%;
+    color: #333;
+    width: 43%;
+    text-align: left; 
   }
 
   .vector_text_block{
