@@ -26,21 +26,21 @@
 
 <section class="hero_section"> 
 
-	<section class="hero_image">
-		<div class="spacer col-md-1 col-lg-1">
+	<section class="hero_image_vector">
+		<div class="lp_hero_image_block">
+			<%= image_tag('lp_hero_image.png') %>
 		</div>
-		<div class="mobile_container"></div>
-		<div class="lp_hero_text_block">
-			<div class="lp_headline">
+		<div class="lp_hero_text_block" style="margin-top:40px;">
+			<div class="lp_headline" style="color:#fff;">
 				Save $300 on your cable bill with zero effort
 			</div>
 
-			<div class="lp_subline">
+			<div class="lp_subline" style="color:#fff;">
 				We negotiate lower rates on your cable/internet bill so you can rest easy and save more.
 			</div>
 			<div class="spaced-row"></div>
 			<div class="spaced-row">
-				<%= link_to "Get Started", new_customer_registration_path,  :class=>"lp_button", style:"text-decoration:none;"%>
+				<%= link_to "Get Started", new_customer_registration_path,  :class=>"lp_button_dark", style:"text-decoration:none;"%>
 			</div>
 		</div>
 	
