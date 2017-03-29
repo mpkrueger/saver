@@ -37,6 +37,10 @@ Rails.application.routes.draw do
     resources :calls
   end
 
+  resources :questions
+
+  get 'contact-us', to: 'questions#new'
+
   resources :saver_guests do
     collection do
       get 'how-it-works'
