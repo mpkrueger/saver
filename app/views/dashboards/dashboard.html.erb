@@ -3,13 +3,13 @@
     mixpanel.track("dashboard", {
 
     });
-    mixpanel.identify("<%= current_customer.id %>");
-    mixpanel.people.set({
-      "$email": "<%= current_customer.email %>",    // only special properties need the $
-      "$first_name": "<%= current_customer.first_name %>",
-      "$last_name": "<%= current_customer.last_name %>",
-      "$created": "<%= current_customer.created_at %>",
-      "$last_login": "<%= current_customer.last_sign_in_at %>",         // properties can be dates...
+    // mixpanel.identify("<%= current_customer.id %>");
+    // mixpanel.people.set({
+    //   "$email": "<%= current_customer.email %>",    // only special properties need the $
+    //   "$first_name": "<%= current_customer.first_name %>",
+    //   "$last_name": "<%= current_customer.last_name %>",
+    //   "$created": "<%= current_customer.created_at %>",
+    //   "$last_login": "<%= current_customer.last_sign_in_at %>",         // properties can be dates...
       
       
   });
