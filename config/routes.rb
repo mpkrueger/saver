@@ -26,6 +26,8 @@ Rails.application.routes.draw do
 
   get '2', to: 'onboarding#landing-page-photo2'
   get '3', to: 'onboarding#landing-page-vector'
+  get '4', to: 'onboarding#landing-page-painpoints'
+  get '5', to: 'onboarding#landing-page-busymom'
 
   devise_for :customers, controllers: { registrations: "registrations", omniauth_callbacks: "customers/omniauth_callbacks" }, path: '', path_names: { sign_up: 'sign-up', sign_in: 'sign-in' }
   devise_for :admin_users, ActiveAdmin::Devise.config 

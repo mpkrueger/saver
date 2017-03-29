@@ -11,4 +11,10 @@ class OnboardingController < ApplicationController
   def landing_page_vector
   end
 
+  def landing_page_painpoints
+  end
+
+  def landing_page_busymom
+  end
+
 end
