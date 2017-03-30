@@ -86,7 +86,34 @@ body {
   text-decoration: none;
 }
 
+.lp_button_pink{
+  border: 2px solid #e5806c;
+  background-color: #e5806c;
+  padding: 16px 36px;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  margin: auto;
+  text-decoration: none !important;
+}
 
+.lp_button_pink:active{
+  background-color:#c66e60;
+  color: #c66e60;
+  outline:0;
+  text-decoration: none;
+}
+
+.lp_button_pink:disabled{
+    opacity:0.5;
+}
+
+.lp_button_pink:hover{
+  background-color:#f4907f;
+  border: 2px solid #f4907f;
+  color:#fff;
+  text-decoration: none;
+}
 
 
 
