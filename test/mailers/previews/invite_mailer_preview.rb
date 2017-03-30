@@ -19,4 +19,8 @@ class InviteMailerPreview < ActionMailer::Preview
     InviteMailer.give_20_get_20_email(Customer.last)
   end
 
+  def sg_give_20_get_20_email
+    InviteMailer.sg_give_20_get_20_email(SaverGuest.last)
+  end
+
 end
