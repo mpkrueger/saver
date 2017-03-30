@@ -41,11 +41,11 @@ class InviteMailer < ApplicationMailer
     mail(to: @customer.email, subject: @subject)
   end
 
-  def sg_give_20_get_20_email(saver_guest)
-    @saver_guest = saver_guest
+  def sg_give_20_get_20_email(customer)
+    @customer = customer
 
     @subject = "Give $20, Get $20!"
 
-    mail(to: @saver_guest.email, subject: @subject)
+    mail(to: @customer.email, subject: @subject)
   end
 end
