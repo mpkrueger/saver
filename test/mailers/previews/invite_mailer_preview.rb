@@ -15,4 +15,8 @@ class InviteMailerPreview < ActionMailer::Preview
   	InviteMailer.referral_program_notice(SaverGuest.last)
   end
 
+  def give_20_get_20_email
+    InviteMailer.give_20_get_20_email(Customer.last)
+  end
+
 end
