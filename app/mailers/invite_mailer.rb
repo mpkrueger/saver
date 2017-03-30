@@ -32,4 +32,12 @@ class InviteMailer < ApplicationMailer
 
     mail(to: @saver_guest.email, subject: @subject)
   end
+
+  def give_20_get_20_email(customer)
+    @customer = customer
+
+    @subject = "Give $20, Get $20!"
+
+    mail(to: @customer.email, subject: @subject)
+  end
 end
