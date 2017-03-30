@@ -32,6 +32,30 @@ body {
     background-position-y: 20%;
 }
 
+.hero_image_vector{
+  background-size: cover;
+  background-color: #028d9d;
+  width: 1440px;
+  width: 100%;
+  height: 500px;
+  position: absolute;
+  //z-index: -1;
+  background-repeat: no-repeat;
+  background-position-y: 20%;
+}
+
+.hero_image_mom{
+  background-color: #fff;
+  width: 1440px;
+  width: 100%;
+  height: 500px;
+  position: absolute;
+  //z-index: -1;
+  background-repeat: no-repeat;
+  background-position-y: 20%;
+  border_bottom: 1px solid #eee;
+}
+
 .lp_button{
   border: 2px solid #02a99d;
     background-color: #02a99d;
@@ -64,17 +88,7 @@ body {
 }
 
 
-.hero_image_vector{
-  background-size: cover;
-  background-color: #028d9d;
-  width: 1440px;
-  width: 100%;
-  height: 500px;
-  position: absolute;
-  //z-index: -1;
-  background-repeat: no-repeat;
-  background-position-y: 20%;
-}
+
 
 
 .lp_button_dark{
