@@ -43,9 +43,6 @@ class RegistrationsController < Devise::RegistrationsController
         @ticket = Ticket.new
         @ticket.customer = resource
         @ticket.save
-
-        @visit = current_visit
-        @visit.update_attributes(customer: resource)
       end
 
       # if the customer already has a saver_guest but hasn't yet sent us their bill:

@@ -6,8 +6,6 @@ class QuestionsController < ApplicationController
 	def create
 		@question = Question.new(question_params)
 
-		@question.visit = current_visit
-
 		if @question.save
 			flash[:notice] = "Your comment has been submitted!"
 			redirect_to root_path

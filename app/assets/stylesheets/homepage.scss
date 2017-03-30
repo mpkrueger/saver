@@ -32,6 +32,29 @@ body {
     background-position-y: 20%;
 }
 
+.hero_image_vector{
+  background-size: cover;
+  background-color: #028d9d;
+  width: 1440px;
+  width: 100%;
+  height: 500px;
+  position: absolute;
+  //z-index: -1;
+  background-repeat: no-repeat;
+  background-position-y: 20%;
+}
+
+.hero_image_mom{
+  background-color: #e3e4e5;
+  width: 1440px;
+  width: 100%;
+  height: 500px;
+  position: absolute;
+  //z-index: -1;
+  background-repeat: no-repeat;
+  background-position-y: 20%;
+}
+
 .lp_button{
   border: 2px solid #02a99d;
     background-color: #02a99d;
@@ -63,18 +86,35 @@ body {
   text-decoration: none;
 }
 
-
-.hero_image_vector{
-  background-size: cover;
-  background-color: #028d9d;
-  width: 1440px;
-  width: 100%;
-  height: 500px;
-  position: absolute;
-  //z-index: -1;
-  background-repeat: no-repeat;
-  background-position-y: 20%;
+.lp_button_pink{
+  border: 2px solid #e5806c;
+  background-color: #e5806c;
+  padding: 16px 36px;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  margin: auto;
+  text-decoration: none !important;
 }
+
+.lp_button_pink:active{
+  background-color:#c66e60;
+  color: #c66e60;
+  outline:0;
+  text-decoration: none;
+}
+
+.lp_button_pink:disabled{
+    opacity:0.5;
+}
+
+.lp_button_pink:hover{
+  background-color:#f4907f;
+  border: 2px solid #f4907f;
+  color:#fff;
+  text-decoration: none;
+}
+
 
 
 .lp_button_dark{
@@ -135,6 +175,14 @@ body {
     padding-bottom: 40px;
     padding-top: 10px;
     min-height:500px;
+  }
+
+  .lp_testimonials_5{
+    background-color: teal;
+    color: #fff;
+    padding-bottom: 40px;
+    padding-top: 10px;
+    min-height:550px;
   }
 
 .lp_details_section{
@@ -216,13 +264,26 @@ body {
   }
 
   .lp_howitworks_block{
-      min-height: 510px;
+      min-height: 530px;
       padding-bottom:10px;
       width: 75%;
       margin: auto;
   }
 
-  
+  .lp_detail{
+    padding:0px 20px;
+    margin-bottom:10px;
+  }
+
+  .lp_detail_left{
+    padding:0 20px; 
+    margin-bottom:10px; 
+  }
+
+  .lp_detail_right{
+    padding:0 20px; 
+    margin-bottom:20px;
+  }
 
   .customer_quote{
     padding-top: 40px;
@@ -241,8 +302,13 @@ body {
     min-height:1300px;
   }
 
+  .lp_testimonials_5{
+    min-height:1330px;
+  }
+
 .lp_affiliates{
   min-height:350px;
+  border_bottom: 1px solid #eee;
 }
 
   .lp_pricing_section{
@@ -252,12 +318,20 @@ body {
     padding: 10px 10px 20px 10px;
   }
 
+  .lp_pricing_section_5{
+    background-color: #eee;
+    margin:auto;
+    /* min-height: 420px; */
+    padding: 10px 0 20px 0;
+  }
+
   .lp_pricing_image{
     width:80%;
     text-align:center;
     margin:auto;
     margin-top:10px;
   }
+
 
   .lp_pricing_subline{
     width:80%;
@@ -377,12 +451,17 @@ body {
     width: 100%;
     opacity: .6;
   }
-
+  .lp_howitworks_block{
+      min-height: 230px;
+      padding-bottom:10px;
+  }
 
   .lp_subimage{
-    width:40%;
+    width:32%;
+    text-align:center;
     margin:auto;
   }
+
 
   .lp_explanation{
     font-family: 'Raleway', 'Museo Sans', sans-serif;
@@ -392,12 +471,62 @@ body {
     padding: 0px 10px;
   }
 
+
+  .lp_pricing_section{
+    padding: 20px 20px 50px 20px;
+    min-height:400px;
+    background-color:#eee;
+    color:#333;
+    text-align:center;
+    margin:auto;
+
+  }
+
+  .lp_pricing_section_5{
+    padding: 20px 20px 50px 20px;
+    min-height:400px;
+    background-color:#eee;
+    color:#333;
+    text-align:center;
+    margin:auto;
+
+  }
+
+
+  .lp_pricing_image{
+    margin: auto;
+    margin-bottom: 30px;
+    display: inline-block;
+    float: left;
+    margin-left: 15%;
+    text-align: right;
+  }
+
+  .lp_pricing_subline{
+    width: 25%;
+    float: left;
+    margin-left: 5%;
+    display: inline-block;
+    margin-top: 6%;
+    text-align: left;
+    font-weight: 500;
+  }
   .lp_details_section{
     padding: 0px 20px 50px 20px;
   }
 
   .lp_detail{
-    padding:0px 10px;
+    padding:0px 20px;
+  }
+
+  .lp_detail_left{
+    padding:0 0 0 60px; 
+    margin-bottom:10px; 
+  }
+
+  .lp_detail_right{
+    padding:0 60px 0 0; 
+    margin-bottom:10px;
   }
 
   .lp_footer{
@@ -534,6 +663,17 @@ body {
 
   }
 
+  .lp_pricing_section_5{
+    padding: 20px 20px 50px 20px;
+    min-height:400px;
+    background-color:#eee;
+    color:#333;
+    text-align:center;
+    margin:auto;
+
+  }
+
+
   .lp_pricing_image{
     margin: auto;
     margin-bottom: 30px;
@@ -559,7 +699,19 @@ body {
   }
 
   .lp_detail{
-    padding:0px 10px;
+    padding: 0 20px;
+    margin-bottom:10px; 
+    //text-align:right;
+  }
+
+  .lp_detail_left{
+    padding:0 0 0 7% !important; 
+    margin-bottom:10px; 
+  }
+
+  .lp_detail_right{
+    padding:0 7% 0 0 !important; 
+    margin-bottom:10px;
   }
 
   .lp_footer{

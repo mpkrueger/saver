@@ -3,15 +3,12 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
-
-gem 'wicked'
 gem 'pg'
 gem 'devise'
 gem 'figaro', '1.0'
 gem 'premailer-rails'
 gem 'nokogiri'
 gem 'rounding'
-gem 'fog'
 gem 'activeadmin', git: "https://github.com/activeadmin/activeadmin.git"
 gem 'inherited_resources', git: "https://github.com/activeadmin/inherited_resources.git"
 gem 'chartkick'
@@ -24,19 +21,11 @@ gem 'newrelic_rpm'
 gem 'aws-sdk', '~> 2'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
-gem 'ahoy_matey'
-
+gem 'bootstrap-sass'
 
 group :production do
    gem 'rails_12factor'
  end
- 
- group :development do
- 	gem 'pry'
- end
-
- gem 'bootstrap-sass'
- gem 'carrierwave'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
@@ -75,6 +64,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'pry'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
