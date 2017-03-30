@@ -24,22 +24,34 @@
 
 <div class="lp_subline about-blurb" >
 	<div class="about-blurb-headline">Contact Us</div>
+	<div class="centered-title" style="margin-top:10px;">We'd love to hear from you!</div>
 	<br />
-	<p>We'd love to hear from you!</p>
-	<br />
-	<p><b>Email:</b> info@getsavvier.com</p>
-	<br />
-	<p><b>Phone:</b> 425-502-5280</p>
-	<br />
-	<p><b>Or submit a note</b></p>
+	<div class="contact-block">
+		<div class="contact-row"><b>Email:</b> info@getsavvier.com<br/>
+		</div>
+		<div class="contact-row"><b>Phone:</b> 425-502-5280<br/>
+		</div>
+		<div class="contact-row">
+			<b>Or send us a note:</b><br/>
+		</div>
 	<%= form_for @question do |f| %>
-		<p>Question or comment</p>
-		<%= f.text_area :message %>
-		<p>Your email if you'd like us to respond</p>
-		<%= f.text_field :email_contact, class: "madlib-sentence border-underline", placeholder: "email address"  %>
-		<br />
-		<%= f.submit "Submit" %>
+		<div class="contact-row">
+		<%= f.text_area :message, :class=>"custom-text-area", :style=>"background-color:#fff;color:#333;", :prompt=>"Questions or comments?" %>
+		</div>
+		<div class="contact-row">Enter your email if you'd like a reply:<br />
+		<%= f.text_field :email_contact, class: "madlib-sentence border-underline", style:"border-bottom:1px solid #333; color:#333; width:80%;", placeholder: "email address"  %>
+		</div>
+		<div class="button-row">
+		<%= f.submit "Submit", class:"next-button" %>
+		</div>
 	<% end %>
+	</div>
+
+	<div class="contact-block" style="margin-top:35px; line-height:1.5em; width:80%;">
+		<b>Or if you prefer to contact us the old-fashioned way: </b><br />
+		<p style="margin-top:10px;">P.O.Box 194742 <br />
+		San Francisco, CA 94119-4742</p>
+	</div>
 </div>
 
 </body>
