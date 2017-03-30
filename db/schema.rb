@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170326032833) do
+ActiveRecord::Schema.define(version: 20170329210327) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -256,6 +256,15 @@ ActiveRecord::Schema.define(version: 20170326032833) do
     t.index ["payment_method_id"], name: "index_payments_on_payment_method_id", using: :btree
   end
 
+  create_table "questions", force: :cascade do |t|
+    t.text     "message"
+    t.string   "email_contact"
+    t.integer  "visit_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["visit_id"], name: "index_questions_on_visit_id", using: :btree
+  end
+
   create_table "saver_guests", force: :cascade do |t|
     t.string   "last_moved"
     t.string   "negotiated"
@@ -359,6 +368,7 @@ ActiveRecord::Schema.define(version: 20170326032833) do
   add_foreign_key "invites", "customers"
   add_foreign_key "payments", "customers"
   add_foreign_key "payments", "payment_methods"
+  add_foreign_key "questions", "visits"
   add_foreign_key "tickets", "admin_users"
   add_foreign_key "tickets", "customers"
   add_foreign_key "tickets", "saver_guests"
