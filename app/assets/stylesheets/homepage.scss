@@ -308,7 +308,7 @@ body {
 
 .lp_affiliates{
   min-height:350px;
-  border_bottom: 1px solid #eee;
+  border-bottom: 1px solid #eee;
 }
 
   .lp_pricing_section{
@@ -336,7 +336,7 @@ body {
   .lp_pricing_subline{
     width:80%;
     text-align:left;
-    margin:Auto;
+    margin:auto;
     color:#333;
     margin-top:10px;
   }
@@ -531,6 +531,8 @@ body {
 
   .lp_footer{
     height:80px;
+ //   bottom: 0;
+ //   position: absolute;
   }
 
   .customer_quote{
@@ -716,6 +718,8 @@ body {
 
   .lp_footer{
     height:100px;
+  //  bottom: 0;
+  //  position: absolute;
   }
 
   .lp_affiliates{

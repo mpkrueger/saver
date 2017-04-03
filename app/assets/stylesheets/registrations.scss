@@ -41,6 +41,14 @@
   list-style: none;
 }
 
+
+.signup-header-image{
+  width: 25%;
+  margin: auto;
+  margin-top: 40px;
+}
+
+
 .signup-buttons-block{
   width:100%;
   text-align:center;
@@ -168,14 +176,13 @@
     width:100%;
   }
 
-  .signup-block{
-    width: 85%;
-    margin: auto;
-    text-align: left;
-    height: 800px;
-    vertical-align: middle;
-    padding-top: 10%;
+  .signup-header-image{
+    padding: 1% 30% 0 30%;
+    width: 100%;
+    margin-top: 20px;
   }
+
+  
 
 
 }
@@ -190,39 +197,23 @@
       padding-right:15px;
   }
 
-  .signup-block{
-      width: 85%;
-    margin: auto;
-    text-align: left;
-    height: 800px;
-    vertical-align: middle;
-    padding-top: 6%;
+  .signup-header-image{
+    padding: 1% 30% 0 30%;
+    width: 100%;
+    margin-top: 20px;
   }
+  
 
 }
 
 
 @media screen and (min-width: 480px) and (max-width:700px){
 
-  .signup-block{
-    width: 70%;
-    margin: auto;
-    text-align: left;
-    height: 800px;
-    vertical-align: middle;
-    padding-top: 4%;
-  }
+ 
 }
 
 
 @media screen and (min-width:700px){
 
-  .signup-block{
-    width: 66%;
-    margin: auto;
-    text-align: left;
-    height: 800px;
-    vertical-align: middle;
-    padding-top: 4%;
-  }
+  
 }
