@@ -1,0 +1,240 @@
+<% @title=": Save Money" %>
+
+<script type="text/javascript">
+    mixpanel.track("landing_page_6", {
+ 			"LP_version": "busy-guy-5"
+    });
+</script>
+
+
+
+<div class="header dashboard_header">
+  <div class="dashboard-header-logo-block"> 
+  	<%= image_tag("savvysaverlogo.png", class:"dashboard-header-logo") %>
+  </div>
+
+	<div class="nav-right">
+	  <ul class="nav-right-items">
+	    <li><a href="#pricing" class="dashboard-link">Pricing</a></li>
+	   	<li><a href="/sign-in" class="dashboard-link">Sign In </a></li>
+	  </ul>
+	  
+	</div>
+
+</div>
+
+
+
+<section class="hero_section" style="background-color:#1e3646;"> 
+
+	<section class="hero_image_guy">
+		<div class="lp_hero_image_block">
+			<%= image_tag('couple_tv_guy.png', style:"width: 80%; margin-top: 9%;") %>
+		</div>
+		<div class="vector_text_block">
+			<div class="lp_headline" style="color:#fff;">
+				Save $300 with <span id="zero" color="#02a99d">zero</span> effort
+			</div>
+
+			<div class="lp_subline" style="color:#fff;">
+				Be smart with your time and money. Let us do the work so you get the savings.
+			</div>
+			<div class="spaced-row"></div>
+			<div class="spaced-row" style="margin-top:30px;">
+				<%= link_to "Get Savvy", new_customer_registration_path,  :class=>"lp_button_pink", style:"text-decoration:none;"%>
+			</div>
+		</div>
+	
+	</section>
+</section>
+
+
+<section class="lp_howitworks_block">
+
+	<div class="centered-title lp_section_title" style="margin-top:20px; font-weight:500;">
+		We lower your cable & internet bills. Same services, just pay less.
+	</div>
+
+	<div class="centered-title">
+		
+
+		<div class="lp_detail_left col-xs-12 col-sm-4 col-md-4 col-lg-4">
+			<div class="lp_step_num">
+				<%= image_tag("lp_step_1.png", class:"saver-header-icon") %>
+			</div>
+			<div class="lp_step">
+				Send us your latest bill
+			</div>
+		</div>
+
+		<div class="lp_detail col-xs-12 col-sm-4 col-md-4 col-lg-4">
+			<div class="lp_step_num">
+				<%= image_tag("lp_step_2.png", class:"saver-header-icon") %>
+			</div>
+			<div class="lp_step">
+				We'll call and lower your rate. 
+			</div>
+		</div>
+
+		<div class="lp_detail_right col-xs-12 col-sm-4 col-md-4 col-lg-4">
+			<div class="lp_step_num">
+				<%= image_tag("lp_step_3.png", class:"saver-header-icon") %>
+			</div>
+			<div class="lp_step">
+				Celebrate your savings!
+			</div>
+		</div>
+		
+	</div>
+
+
+</section>
+
+<section class="lp_testimonials_5">
+
+	<div class="centered-title lp_section_title" style="color:#fff;margin-top:20px; font-weight:500; margin-bottom:10px;">
+		<div class="lp_section_category"> CUSTOMERS LOVE US </div>
+		"Savvy feels like magic"
+		
+	</div>
+
+	<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" style="padding:0 20px;">
+		<div class="centered-title" style="width:70%; padding:0 20px;">
+			<div class="">
+				<%= image_tag("savvy_customer.png") %>
+			</div>
+		</div>
+		<br />
+		<!--div style="width: 60%;
+	    text-align: center;
+	    margin: auto;
+	    line-height: 1.4em;"-->
+			<div class="customer_quote">
+				<span style="font-weight:500;"> Hallie <br />
+				San Francisco, CA<br /></span>
+				"Something magical just happened. I sent Savvy my bill and they saved me $310/year! Awesome!"
+			</div>
+		<br />
+	</div>
+	<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" style="padding:0 20px;">
+		<div class="centered-title" style="width:70%; padding:0 20px;">
+			<div class="">
+				<%= image_tag("savvy_customer2.png") %>
+			</div>
+		</div>
+		<br />
+			<div class="customer_quote">
+				<span style="font-weight:500;"> David <br />
+				Seattle, WA <br /></span>
+				"I can't bear the thought of talking to Comcast support. So glad Savvy was there to do it for me!"
+
+			</div>
+		<br />
+	</div>
+	<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" style="padding:0 20px;">
+		<div class="centered-title" style="width:70%; padding:0 20px;">
+			<div class="">
+				<%= image_tag("savvy_customer3.png") %>
+			</div>
+		</div>
+		<br />
+			<div class="customer_quote">
+				<span style="font-weight:500;"> Natalie <br />
+				Kansas City, MO <br /></span>
+				"After grumbling to myself about my slow, expensive internet for months, I just saved $280/yr on my internet with almost zero effort on my part!"
+
+			</div>
+		<br /><br />
+	</div>
+
+</section>
+
+<section class="lp_affiliates">
+	<div class="centered-title lp_section_title" style="margin-top:20px; font-weight:500;">
+		Featured On
+	</div>
+
+	<div class="lp_step col-xs-12 col-sm-6 col-md-6 col-lg-6">
+		<%= image_tag("how_do_i_money.jpg", style:"width:70%; margin-top:10%; margin-bottom:20px;") %><br/>
+		
+	</div>
+	<div class="lp_step col-xs-12 col-sm-6 col-md-6 col-lg-6">
+		<%= image_tag("principles_of_increase.png", style:"width:33%;") %><br/>
+		Principles of Increase
+	</div>
+
+</section>
+
+<section class="lp_pricing_section_5">
+<a id="pricing"></a>
+
+	<div class="centered-title lp_section_title" style="margin-top:20px; font-weight:500;">
+		<div class="lp_section_category"> OUR PRICING </div>
+		Give us 1/3 & keep 2/3 for yourself
+		
+	</div>
+	<div class="lp_pricing_image">
+		<%= image_tag("pie_chart.png", :style=>"width:60%;") %>
+	</div>
+	<div class="lp_pricing_subline">
+		<ul>
+		<li>Risk-free! You only pay if we save you money.</li>
+		<li>No changes to your services or contract. Just a lower bill.</li>
+		</ul>
+	</div>
+</section>
+
+<section class="lp_details_section">
+
+	<div class="centered-title lp_section_title" style="margin-top:20px; font-weight:500; color:#fff;">
+		What could you do with an extra $200?
+	</div>
+
+	<div class="lp_detail col-xs-12 col-sm-6 col-md-6 col-lg-6" style="padding: 0 40px;">
+		<div class="lp_subimage">
+			<%= image_tag("lp_cut_bills.png", class:"saver-header-icon") %>
+		</div>
+		<div class="lp_subline" style="color:#fff;">
+			Cut your bills big-time
+		</div>
+		<div class="lp_explanation">
+			We save people an average of $300 annually on their monthly cable/interent bills.
+		</div>
+	</div>
+
+	<div class="lp_detail col-xs-12 col-sm-6 col-md-6 col-lg-6" style="padding: 0 40px;">
+		<div class="lp_subimage">
+			<%= image_tag("lp_relax.png", class:"saver-header-icon") %>
+		</div>
+		<div class="lp_subline" style="color:#fff;">
+			Sit back and relax
+		</div>
+		<div class="lp_explanation">
+			We negotiate your monthly rate with no change in service. We do the work, you get the savings.
+		</div>
+	</div>
+
+	<div class="spaced-row col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-top: 10%;">
+		<%= link_to "Get Started", new_customer_registration_path,  :class=>"lp_button", style:"text-decoration:none;"%>
+	</div>
+
+</section>
+
+<section class="lp_footer">
+	<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+		<div class="footer-logo" style="margin-top: 20px;">
+			<%= image_tag("savvy_logo_subtle.png", class:"saver-header-icon") %>
+		</div>
+	</div>
+	<div class="footer-links col-xs-12 col-sm-8 col-md-8 col-lg-8">
+		<div class="footer-nav-right">
+		  <ul class="nav-right-items">
+		    <li><a href="/about-us" class="dashboard-link">About</a></li>
+		    <li><a href="/faq" class="dashboard-link">FAQ</a></li>
+		   	<li><a href="/terms-of-service" class="dashboard-link">Terms</a></li>
+        	<li><a href="/privacy-policy" class="dashboard-link">Privacy</a></li>
+		  </ul>
+		  
+		</div>
+	</div>
+</section>
