@@ -7,10 +7,10 @@
     });
 </script>
 
-<body class="city-bottom blue-bkgd">
+<body style="background-color:#eee;">
   <%= link_to root_path do %>
-    <div class="receiver-header-image" style="padding-top:0%;">
-      <%= image_tag("invite_flying_pig_savings.png", class:"saver-header-icon") %>
+    <div class="receiver-header-image" style="padding-top:0%;text-align: center;">
+      <%= image_tag("savvy_logo_subtle.png", class:"saver-header-icon") %>
     </div>
   <% end %>
 
@@ -20,8 +20,8 @@
 
   <div class="saver-question-block" id="email">
     
-    <div class="hero-title" style="text-align:center;">Sign up and save with Savvy!</div>
-    <div class="refer-title" style="margin-bottom:28px; text-align:center;">
+    <div class="hero-title" style="text-align:center;color:#333;font-weight:500;">Sign up and save with Savvy!</div>
+    <div class="refer-title" style="margin-bottom:28px; text-align:center; color:#333;font-weight:500;">
     We save people an average of $300 a year. How much will we save you?
     <br /> 
     </div>
@@ -30,7 +30,7 @@
     
       <div class="signup-button">
         <%= link_to customer_facebook_omniauth_authorize_path do %>
-        <div class="fb-button">
+        <div class="signup-fb-button">
           <div class="fb-icon-box">
           <%= image_tag("fb_button_icon_blue.png", class:"fb_signin_icon") %>
           </div>
@@ -41,7 +41,7 @@
 
       <div class="signup-button">
         <%= link_to customer_google_oauth2_omniauth_authorize_path do %>
-        <div class="google-button">
+        <div class="signup-google-button">
           <div class="google-icon-box">
             <%= image_tag("google_button_icon.png", class:"fb_signin_icon") %>
           </div>
@@ -52,7 +52,7 @@
 
       <div class="signup-button">
         <a href="#email-fields">
-        <div class="email-signin-button">
+        <div class="signup-email-button">
           <div class="email-icon-box">
             <%= image_tag("email_signup_icon.png", class:"email_signin_icon") %>
           </div>
@@ -94,12 +94,12 @@
   <% end %>
 
 <section class="lp_footer">
-  <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+  <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
     <div class="footer-logo" style="margin-top: 20px;">
       <%= image_tag("savvy_logo_subtle.png", class:"saver-header-icon") %>
     </div>
   </div>
-  <div class="footer-links col-xs-12 col-sm-8 col-md-8 col-lg-8">
+  <div class="footer-links col-xs-12 col-sm-9 col-md-9 col-lg-9">
     <div class="footer-nav-right">
       <ul class="nav-right-items">
         <li><a href="/about-us" class="dashboard-link">About</a></li>
