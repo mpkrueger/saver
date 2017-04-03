@@ -14,7 +14,7 @@
 	display: block;
     float: right;
     margin-right: 2%;
-    width:60%;
+    width:90%;
     margin-top: 18px;
 }
 
@@ -34,6 +34,7 @@
 	.footer-nav-right{
 		text-align:center;
 		float:none;
+		width:100%;
 	}
 
 
@@ -43,7 +44,7 @@
 @media screen and (min-width: 480px) and (max-width: 960px) { /* tablets */
 
 	.footer-logo{
-		width: 50%;
+		width: 70%;
     	margin-top: 8px;
 		float:left;
 		display:inline-block;

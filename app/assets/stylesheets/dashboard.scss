@@ -120,14 +120,16 @@
 		margin-bottom: 10px;
     }
 
+
     .nav-right{
     	display:none;
     }
 
     .nav-right-items{
 		list-style: none;
-    	float: right;
+    	float: none;
     	line-height: 2em;
+    	padding-left: 0;
 	}
 
 }

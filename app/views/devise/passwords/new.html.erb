@@ -6,11 +6,13 @@
 </script>
 
 
-<body class="city-bottom blue-bkgd">
+<body style="background-color:#eee;">
 
-  <div class="receiver-header-image">
-    <%= image_tag("invite_flying_pig_savings.png", class:"saver-header-icon") %>
-  </div>
+  <%= link_to root_path do %>
+    <div class="receiver-header-image" style="padding-top:0%;text-align: center;">
+      <%= image_tag("savvy_logo_subtle.png", class:"saver-header-icon") %>
+    </div>
+  <% end %>
 
 
 
@@ -22,12 +24,12 @@
 		<%= devise_error_messages! %>
 
 	
-		<div class="hero-title"> Reset password </div>
+		<div class="hero-title" style="text-align:center;color:#333;font-weight:500;"> Reset password </div>
 
 
     <div class="spaced-row">
        <div class="dropdown-style">
-				<%= f.email_field :email, class: "border-underline", style:"width:250px; color:#fff", placeholder: "email address" %>
+				<%= f.email_field :email, class: "border-underline", style:"width:250px; color:#333; border-bottom:1px solid #666;", placeholder: "email address" %>
 			</div>
 
 			<div class="button-row">
