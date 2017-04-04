@@ -8,11 +8,18 @@
 </script>
 
 <body style="background-color:#fff;">
-  <%= link_to root_path do %>
-    <div class="signup-header-image" style="padding-top:0%;text-align: center;">
-      <%= image_tag("savvy_logo_subtle.png", class:"saver-header-icon") %>
+  
+
+  <div class="header dashboard_header">
+    <%= link_to root_path do %>
+    <div class="dashboard-header-logo-block"> 
+      <%= image_tag("savvysaverlogo.png", class:"dashboard-header-logo") %>
     </div>
-  <% end %>
+    <% end %>
+
+  </div>
+
+
 
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -22,9 +29,12 @@
     
     <div class="hero-title" style="text-align:center;color:#333;font-weight:500;">Sign up and save with Savvy!</div>
     <div class="refer-title" style="margin-bottom:28px; text-align:center; color:#333;font-weight:500;">
-    We save people an average of $300 a year. How much will we save you?
-    <br /> 
+    
+      Big savings: $300/year on average
+      <br />Risk-free: you only pay if you save
+     
     </div>
+   
 
     <div class="signup-buttons-block">
     
