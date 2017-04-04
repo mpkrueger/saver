@@ -16,11 +16,14 @@
 
 <body style="background-color:#fff;">
 
-  <%= link_to root_path do %>
-    <div class="receiver-header-image" style="padding-top:0%;text-align: center;">
-      <%= image_tag("savvy_logo_subtle.png", class:"saver-header-icon") %>
+  <div class="header dashboard_header">
+    <%= link_to root_path do %>
+    <div class="dashboard-header-logo-block"> 
+      <%= image_tag("savvysaverlogo.png", class:"dashboard-header-logo") %>
     </div>
-  <% end %>
+    <% end %>
+
+  </div>
 
  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
