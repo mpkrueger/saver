@@ -36,7 +36,7 @@ class CustomerMailer < ApplicationMailer
     @customer = customer
 
     
-    @subject = "Announcement: We're shutting down Savvy"
+    @subject = "We're shutting down Savvy"
 
     mail(to: @customer.email, subject: @subject)
   end
