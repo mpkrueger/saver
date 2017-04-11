@@ -31,5 +31,14 @@ class CustomerMailer < ApplicationMailer
 
     mail(to: @customer.email, subject: @subject)
   end
+
+  def shutdown_email(customer)
+    @customer = customer
+
+    
+    @subject = "Announcement: We're shutting down Savvy"
+
+    mail(to: @customer.email, subject: @subject)
+  end
 end
   

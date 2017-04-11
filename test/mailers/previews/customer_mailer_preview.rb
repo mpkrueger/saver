@@ -14,4 +14,8 @@ class CustomerMailerPreview < ActionMailer::Preview
   	CustomerMailer.bill_reminder(Customer.last)
   end
 
+  def shutdown_email
+    CustomerMailer.shutdown_email(Customer.last)
+  end
+
 end
